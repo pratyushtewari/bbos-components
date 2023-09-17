@@ -54,21 +54,39 @@
       hover:bg-slate-200;
     }
     &.btn-menu-item {
-      @apply
-      rounded-none
+      @apply flex-col items-start rounded-none
       border-none
       px-4 py-3
-      hover:bg-slate-200;
-
+      hover:bg-slate-200 gap-1;
+      >p {
+        @apply flex flex-row items-start gap-2;
+      }
       &.selected {
         @apply shadow-selected-horizontal;
       }
     }
+  }
+  .menu {
+    @apply flex max-w-[400px] flex-col 
+    items-start gap-1 
+    rounded-md
+    border
+    border-slate-300 bg-white p-1 shadow-lg;
+
+    .btn-menu-item {
+      @apply w-full;
+    }
+  }
+  hr {
+    @apply h-[1px] w-full bg-slate-200;
   }
   .top-nav {
     @apply flex flex-row bg-white;
     .top-nav-logo {
       @apply flex flex-row items-center gap-2 px-2;
     }
+  }
+  .caption {
+    @apply text-xs text-slate-500 text-start;
   }
 }
