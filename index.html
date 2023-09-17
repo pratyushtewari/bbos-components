@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/asset/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
     <link rel="stylesheet" href="./src/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -21,11 +21,24 @@
     <button class="btn btn-tag-secondary">
       Close tag<span class="msicon">close</span>
     </button>
-    <button class="btn btn-menu-item-horizontal">
-      <span class="msicon">search</span>Nav Bar Main Item
-    </button>
-    <button class="btn btn-menu-item-horizontal">
-      <span class="msicon">search</span>Menu Item
-    </button>
+
+    <div class="top-nav">
+      <div class="top-nav-logo">
+        <img src="/assets/BBS_logo_small.svg" />
+        <img style="width: 122px; height: 12px;" src="/assets/Blue-Book-Services.png" />
+      </div>
+      <button class="btn btn-menu-item selected">
+        <span class="msicon">home</span>Home
+      </button>
+      <button class="btn btn-menu-item">
+        <span class="msicon">search</span>Advanced Search
+      </button>
+      <button class="btn btn-menu-item">
+        <span class="msicon">handyman</span>Tools
+      </button>
+      <button class="btn btn-menu-item">
+        <span class="msicon">school</span>Learning
+      </button>
+    </div>
   </body>
 </html>

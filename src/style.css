@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-brand: "#0055A5";
+}
+
 .msicon {
   font-family: "Material Symbols Outlined";
   font-size: 14px; /* Preferred icon size */
@@ -35,13 +39,9 @@
     }
 
     &.btn-primary {
-      @apply bg-[#0055A5] 
+      @apply bg-primary-brand 
       text-white 
-      hover:bg-blue-700
-      focus:outline-none 
-      focus:ring-2
-      focus:ring-blue-400 
-      focus:ring-opacity-75;
+      hover:bg-blue-700;
     }
 
     &.btn-secondary {
@@ -53,9 +53,22 @@
       bg-white
       hover:bg-slate-200;
     }
-    &.btn-menu-item-horizontal {
-      @apply rounded-3xl
+    &.btn-menu-item {
+      @apply
+      rounded-none
+      border-none
+      px-4 py-3
       hover:bg-slate-200;
+
+      &.selected {
+        @apply shadow-selected-horizontal;
+      }
+    }
+  }
+  .top-nav {
+    @apply flex flex-row bg-white;
+    .top-nav-logo {
+      @apply flex flex-row items-center gap-2 px-2;
     }
   }
 }
