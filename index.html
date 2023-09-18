@@ -23,100 +23,203 @@
     </button>
 
     <div class="top-nav">
-      <div class="top-nav-logo">
-        <img src="/assets/BBS_logo_small.svg" />
-        <img
-          style="width: 122px; height: 12px"
-          src="/assets/Blue-Book-Services.png"
-        />
+      <div class="flex-grow">
+        <div class="top-nav-logo">
+          <img src="/assets/BBS_logo_small.svg" />
+          <img
+            style="width: 122px; height: 12px"
+            src="/assets/Blue-Book-Services.png"
+          />
+        </div>
+        <button class="btn btn-menu-item selected">
+          <p><span class="msicon">home</span>Home</p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p><span class="msicon">search</span>Advanced Search</p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p><span class="msicon">handyman</span>Tools</p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p><span class="msicon">school</span>Learning</p>
+        </button>
       </div>
-      <button class="btn btn-menu-item selected">
-        <p><span class="msicon">home</span>Home</p>
-      </button>
-      <button class="btn btn-menu-item">
-        <p><span class="msicon">search</span>Advanced Search</p>
-      </button>
-      <button class="btn btn-menu-item">
-        <p><span class="msicon">handyman</span>Tools</p>
-      </button>
-      <button class="btn btn-menu-item">
-        <p><span class="msicon">school</span>Learning</p>
-      </button>
+      <div class="flex-grow-0">
+        <div class="input">
+          <span class="icon-left msicon">search</span>
+          <input
+            type="search"
+            placeholder="Quick Search a company name or BBS id"
+          />
+        </div>
+        <button class="btn btn-menu-item">
+          <p><span class="msicon">account_circle</span></p>
+        </button>
+      </div>
     </div>
-<div class="flex flex-row gap-4">
-    <div class="menu">
-      <button class="btn btn-menu-item">
-        <p><span class="msicon">factory</span>Company Search</p>
-      </button>
-      <button class="btn btn-menu-item">
-        <p><span class="msicon">person_search</span>People Search</p>
-      </button>
-      <button class="btn btn-menu-item">
-        <p><span class="msicon">work_history</span>Company Updates</p>
-      </button>
-      <button class="btn btn-menu-item">
-        <p><span class="msicon">universal_currency_alt</span>Claim Search</p>
-      </button>
-      <hr />
-      <button class="btn btn-menu-item">
-        <p><span class="msicon">history</span>Recent Views</p>
-      </button>
-      <button class="btn btn-menu-item">
-        <p><span class="msicon">youtube_searched_for</span>Run Last Search</p>
-      </button>
-      <hr />
-      <button class="btn btn-menu-item">
-        <p><span class="msicon">saved_search</span>Saved Searches</p>
-      </button>
-    </div>
+    <div class="flex flex-row gap-4">
+      <div class="menu">
+        <button class="btn btn-menu-item">
+          <p><span class="msicon">factory</span>Company Search</p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p><span class="msicon">person_search</span>People Search</p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p><span class="msicon">work_history</span>Company Updates</p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p><span class="msicon">universal_currency_alt</span>Claim Search</p>
+        </button>
+        <hr />
+        <button class="btn btn-menu-item">
+          <p><span class="msicon">history</span>Recent Views</p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p><span class="msicon">youtube_searched_for</span>Run Last Search</p>
+        </button>
+        <hr />
+        <button class="btn btn-menu-item">
+          <p><span class="msicon">saved_search</span>Saved Searches</p>
+        </button>
+      </div>
 
-    <div class="menu">
-      <button class="btn btn-menu-item">
-        <p>Notes</p>
-        <p class="caption">
-          Save important details about companies and share it with coworkers
-        </p>
-      </button>
-      <button class="btn btn-menu-item">
-        <p>Watchdog Groups & Alerts</p>
-        <p class="caption">
-          Create your own custom lists of companies which you can then use for a
-          variety of purposes
-        </p>
-      </button>
-      <button class="btn btn-menu-item">
-        <p>Trading Assistance / Collection Services</p>
-        <p class="caption">
-          Blue Book Services collection and claim activity involving your
-          company.
-        </p>
-      </button>
-      <button class="btn btn-menu-item">
-        <p>Online Business Reports</p>
-        <p class="caption">
-          Blue Book Online Business Reports that you have purchased
-        </p>
-      </button>
-      <button class="btn btn-menu-item">
-        <p>Submit Trade Experience Survey</p>
-        <p class="caption">
-          Confidentially share feedback about trade partners to keep Blue Book
-          Ratings accurate.
-        </p>
-      </button>
-      <button class="btn btn-menu-item">
-        <p>Additional Tools</p>
-        <p class="caption">Mobile apps, Industry information, etc</p>
-      </button>
-      <hr />
-      <button class="btn btn-menu-item">
-        <p>Custom Data</p>
-        <p class="caption">
-          Special fields of information that you add into BBOS that are specific
-          to your organization.
-        </p>
-      </button>
+      <div class="menu">
+        <button class="btn btn-menu-item">
+          <p>Notes</p>
+          <p class="caption">
+            Save important details about companies and share it with coworkers
+          </p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p>Watchdog Groups & Alerts</p>
+          <p class="caption">
+            Create your own custom lists of companies which you can then use for
+            a variety of purposes
+          </p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p>Trading Assistance / Collection Services</p>
+          <p class="caption">
+            Blue Book Services collection and claim activity involving your
+            company.
+          </p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p>Online Business Reports</p>
+          <p class="caption">
+            Blue Book Online Business Reports that you have purchased
+          </p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p>Submit Trade Experience Survey</p>
+          <p class="caption">
+            Confidentially share feedback about trade partners to keep Blue Book
+            Ratings accurate.
+          </p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p>Additional Tools</p>
+          <p class="caption">Mobile apps, Industry information, etc</p>
+        </button>
+        <hr />
+        <button class="btn btn-menu-item">
+          <p>Custom Data</p>
+          <p class="caption">
+            Special fields of information that you add into BBOS that are
+            specific to your organization.
+          </p>
+        </button>
+      </div>
+
+      <div class="menu">
+        <button class="btn btn-menu-item">
+          <p>Learning Center Search</p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p>Produce Blueprints Magazine</p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p>Know Your Commodity</p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p>Reference Documents</p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p>Membership Guide</p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p>New Hire Academy</p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p>Blue Book Membership Training</p>
+        </button>
+        <hr />
+        <button class="btn btn-menu-item">
+          <p>
+            <span class="msicon">menu_book</span>
+            <span class="text">Blueprints Flipbook</span>
+            <span class="msicon">arrow_outward</span>
+          </p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p>
+            <span class="msicon">full_coverage</span>
+            <span class="text">News / Articles</span>
+            <span class="msicon">arrow_outward</span>
+          </p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p>
+            <span class="msicon">key</span>
+            <span class="text">Rating Key Numerals</span>
+            <span class="msicon">arrow_outward</span>
+          </p>
+        </button>
+      </div>
+
+      <div class="menu">
+        <button class="btn btn-menu-item">
+          <p>
+            <span class="msicon">home</span>
+            <span class="text">My Home</span>
+          </p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p>
+            <span class="msicon">message</span>
+            <span class="text">Message Center</span>
+            <span class="badge">9</span>
+          </p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p>
+            <span class="msicon">settings</span>
+            <span class="text">Account Settings</span>
+          </p>
+        </button>
+        <hr />
+
+        <button class="btn btn-menu-item">
+          <p>
+            <span class="msicon">g_translate</span>
+            <span class="text">Cambiar a Español</span>
+          </p>
+        </button>
+        <button class="btn btn-menu-item">
+          <p>
+            <span class="msicon">help</span>
+            <span class="text">Help and Support</span>
+          </p>
+        </button>
+        <hr />
+        <button class="btn btn-menu-item">
+          <p>
+            <span class="msicon">logout</span>
+            <span class="text">Logout</span>
+          </p>
+        </button>
+      </div>
     </div>
-  </div>
   </body>
 </html>
