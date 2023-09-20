@@ -113,9 +113,6 @@ button > * {
       .badge {
         float: left;
       }
-      .menu-label {
-        @apply whitespace-nowrap;
-      }
     }
   }
 
@@ -135,7 +132,7 @@ button > * {
     }
   }
   .caption {
-    @apply text-start   text-xs text-text-secondary;
+    @apply text-start text-xs text-text-secondary;
   }
   .input {
     @apply relative;
