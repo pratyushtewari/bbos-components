@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/**
+ * Google Material Symbols (new) icon-font
+ */
 .msicon {
   font-family: "Material Symbols Outlined";
   color: currentColor;
@@ -30,13 +33,20 @@ input:focus {
  */
 :focus,
 .focus-visible:focus:not(:focus-visible) {
-  @apply outline-focus-outline outline outline-1;
+  @apply outline outline-1 outline-focus-outline;
+}
+button > * {
+  pointer-events: none;
 }
 
+/**
+ * components and css using tailwind css
+ */
 @layer components {
   body {
     @apply text-text-primary;
   }
+  /* Button */
   .btn {
     @apply flex
     w-max
@@ -45,8 +55,8 @@ input:focus {
     border
     border-slate-400
     bg-white
-    px-3 
-    py-1
+    px-3
+    py-1 
     text-sm
     hover:bg-slate-100
     active:bg-slate-200;
@@ -56,19 +66,23 @@ input:focus {
     }
 
     &.btn-primary {
-      @apply bg-brand hover:bg-brand/90
-      active:bg-brand/80 
-      text-white;
+      @apply bg-brand text-white
+      hover:bg-brand/90 
+      active:bg-brand/80;
     }
 
     &.btn-secondary {
       @apply bg-transparent
       hover:bg-slate-200 active:bg-slate-300;
     }
+
+    /* Rounded tag button - best with a close end icon */
     &.btn-tag-secondary {
       @apply rounded-3xl bg-white
       hover:bg-slate-200 active:bg-slate-300;
     }
+
+    /* Menu item button  -- supposed to in to a menu or top-nav*/
     &.btn-menu-item {
       @apply flex-col items-start gap-1
       rounded-none
@@ -76,8 +90,8 @@ input:focus {
       py-3 text-left;
       > p {
         @apply flex w-full flex-row items-start gap-2;
-        .text {
-          @apply basis-full text-left;
+        .text-label {
+          @apply basis-full whitespace-nowrap text-left;
         }
       }
       &.selected {
@@ -85,8 +99,10 @@ input:focus {
       }
     }
   }
+
+  /* Menu or listbox -  */
   .menu {
-    @apply flex max-w-[400px] flex-col 
+    @apply flex min-w-[200px] max-w-[400px] flex-col 
     items-start gap-1 
     rounded-md
     border
@@ -94,11 +110,21 @@ input:focus {
 
     .btn-menu-item {
       @apply w-full;
+      .badge {
+        float: left;
+      }
+      .menu-label {
+        @apply whitespace-nowrap;
+      }
     }
   }
+
+  /* Divider */
   hr {
     @apply h-[1px] w-full bg-slate-200;
   }
+
+  /* Global nav */
   .top-nav {
     @apply flex max-w-screen-xl flex-row gap-1 bg-white;
     > div {
@@ -109,25 +135,24 @@ input:focus {
     }
   }
   .caption {
-    @apply text-text-secondary   text-start text-xs;
+    @apply text-start   text-xs text-text-secondary;
   }
   .input {
     @apply relative;
     > .icon-left {
-      @apply text-text-tertiary
-        pointer-events-none
+      @apply pointer-events-none
         absolute
         left-2
         top-1
         inline-block
         h-14
         w-14
-        cursor-text;
+        cursor-text
+        text-text-tertiary;
     }
   }
   input {
-    @apply placeholder-text-tertiary
-    h-8
+    @apply h-8
     w-[118px]
     rounded-3xl
     border
@@ -136,9 +161,15 @@ input:focus {
     pe-1
     ps-7
     text-xs
+    placeholder-text-tertiary
     md:w-[260px];
   }
   .badge {
-    @apply rounded-3xl bg-violet-700 px-2 text-sm text-white;
+    @apply rounded-3xl
+    border
+    border-violet-800
+    bg-violet-100
+    px-1.5 text-[10px]
+    text-violet-800;
   }
 }

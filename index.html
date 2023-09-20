@@ -24,6 +24,8 @@
 
     <h2 class="text-text-tertiary">Top Nav Bar</h2>
 
+    <!-- TOP NAV BAR -->
+
     <div class="top-nav">
       <div class="flex-grow">
         <div class="top-nav-logo">
@@ -37,25 +39,77 @@
         <button class="btn btn-menu-item selected">
           <p>
             <span class="msicon notranslate">home</span>
-            <span class="text hidden lg:inline-block">Home</span>
+            <span class="text-label hidden lg:inline-block">Home</span>
           </p>
         </button>
-        <button class="btn btn-menu-item">
-          <p>
-            <span class="msicon notranslate">search</span>
-            <span class="text hidden lg:inline-block">Advanced Search</span>
-          </p>
-        </button>
+        <div class="relative">
+          <button
+            class="btn btn-menu-item"
+            id="advanced-search-dropdown"
+            onclick="toggelAdvancedSearchMenu(event)"
+          >
+            <p>
+              <span class="msicon notranslate">search</span>
+              <span class="text-label hidden lg:inline-block"
+                >Advanced Search</span
+              >
+            </p>
+          </button>
+          <div class="menu absolute hidden">
+            <button class="btn btn-menu-item">
+              <p>
+                <span class="msicon notranslate">factory</span>
+                <span class="text-label">Company Search</span>
+                <span class="badge">New</span>
+              </p>
+            </button>
+            <button class="btn btn-menu-item">
+              <p>
+                <span class="msicon notranslate">person_search</span>People
+                Search
+              </p>
+            </button>
+            <button class="btn btn-menu-item">
+              <p>
+                <span class="msicon notranslate">work_history</span>Company
+                Updates
+              </p>
+            </button>
+            <button class="btn btn-menu-item">
+              <p>
+                <span class="msicon notranslate">universal_currency_alt</span
+                >Claim Search
+              </p>
+            </button>
+            <hr />
+            <button class="btn btn-menu-item">
+              <p><span class="msicon notranslate">history</span>Recent Views</p>
+            </button>
+            <button class="btn btn-menu-item">
+              <p>
+                <span class="msicon notranslate">youtube_searched_for</span>Run
+                Last Search
+              </p>
+            </button>
+            <hr />
+            <button class="btn btn-menu-item">
+              <p>
+                <span class="msicon notranslate">saved_search</span>Saved
+                Searches
+              </p>
+            </button>
+          </div>
+        </div>
         <button class="btn btn-menu-item">
           <p>
             <span class="msicon notranslate">handyman</span>
-            <span class="text hidden lg:inline-block">Tools</span>
+            <span class="text-label hidden lg:inline-block">Tools</span>
           </p>
         </button>
         <button class="btn btn-menu-item">
           <p>
             <span class="msicon notranslate">school</span>
-            <span class="text hidden lg:inline-block">Learning</span>
+            <span class="text-label hidden lg:inline-block">Learning</span>
           </p>
         </button>
       </div>
@@ -82,7 +136,9 @@
         <button class="btn btn-menu-item">
           <p>
             <span class="msicon notranslate">search</span>
-            <span class="text hidden lg:inline-block">Advanced Search</span>
+            <span class="text-label hidden lg:inline-block"
+              >Advanced Search</span
+            >
           </p>
         </button>
 
@@ -130,7 +186,7 @@
         <button class="btn btn-menu-item">
           <p>
             <span class="msicon notranslate">handyman</span>
-            <span class="text hidden lg:inline-block">Tools</span>
+            <span class="text-label hidden lg:inline-block">Tools</span>
           </p>
         </button>
 
@@ -187,7 +243,7 @@
         <button class="btn btn-menu-item">
           <p>
             <span class="msicon notranslate">school</span>
-            <span class="text hidden lg:inline-block">Learning</span>
+            <span class="text-label hidden lg:inline-block">Learning</span>
           </p>
         </button>
 
@@ -217,21 +273,21 @@
           <button class="btn btn-menu-item">
             <p>
               <span class="msicon notranslate">menu_book</span>
-              <span class="text">Blueprints Flipbook</span>
+              <span lass="text-label">Blueprints Flipbook</span>
               <span class="msicon notranslate">arrow_outward</span>
             </p>
           </button>
           <button class="btn btn-menu-item">
             <p>
               <span class="msicon notranslate">full_coverage</span>
-              <span class="text">News / Articles</span>
+              <span lass="text-label">News / Articles</span>
               <span class="msicon notranslate">arrow_outward</span>
             </p>
           </button>
           <button class="btn btn-menu-item">
             <p>
               <span class="msicon notranslate">key</span>
-              <span class="text">Rating Key Numerals</span>
+              <span lass="text-label">Rating Key Numerals</span>
               <span class="msicon notranslate">arrow_outward</span>
             </p>
           </button>
@@ -245,21 +301,21 @@
         <div class="menu">
           <button class="btn btn-menu-item">
             <p>
-              <span class="msicon notranslate">home</span>
-              <span class="text">My Home</span>
+              <span class="notranslate msicon">home</span>
+              <span lass="text-label">My Company Profile </span>
             </p>
           </button>
           <button class="btn btn-menu-item">
             <p>
               <span class="msicon notranslate">message</span>
-              <span class="text">Message Center</span>
+              <span class="text-label">Message Center</span>
               <span class="badge">9</span>
             </p>
           </button>
           <button class="btn btn-menu-item">
             <p>
               <span class="msicon notranslate">settings</span>
-              <span class="text">Account Settings</span>
+              <span lass="text-label">Account Settings</span>
             </p>
           </button>
           <hr />
@@ -267,24 +323,25 @@
           <button class="btn btn-menu-item">
             <p>
               <span class="msicon notranslate">g_translate</span>
-              <span class="text">Cambiar a Español</span>
+              <span lass="text-label">Cambiar a Español</span>
             </p>
           </button>
           <button class="btn btn-menu-item">
             <p>
               <span class="msicon notranslate">help</span>
-              <span class="text">Help and Support</span>
+              <span lass="text-label">Help and Support</span>
             </p>
           </button>
           <hr />
           <button class="btn btn-menu-item">
             <p>
               <span class="msicon notranslate">logout</span>
-              <span class="text">Logout</span>
+              <span lass="text-label">Logout</span>
             </p>
           </button>
         </div>
       </div>
     </div>
+    <script async src="./src/navbarEvents.js"></script>
   </body>
 </html>
