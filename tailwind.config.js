@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors");
 
 export default {
   content: ["./index.html", "./src/**/*.js"],
@@ -6,24 +7,23 @@ export default {
     extend: {
       colors: {
         brand: "#0055A5",
-        // Voilet-600
-        "focus-outline": "#7c3aed",
-        // slate-950
-        "text-primary": "#020617",
-        // slate-500
-        "text-secondary": "#64748b",
-        // slate-400
-        "text-tertiary": "#94a3b8",
-        // slate-200
-        "text-disabled": "#e2e8f0",
-        // green-700
-        success: "#15803d",
-        // yellow-700
-        warn: "#a16207",
-        // blue-700
-        info: "#1d4ed8",
-        // red-700
-        error: "#b91c1c",
+        border: colors.slate[300],
+        "border-component": colors.slate[400],
+        "bg-primary": colors.white,
+        "bg-secondary": colors.slate[100],
+        "bg-tertiary": colors.slate[200],
+        "bg-disabled": colors.zinc[100],
+        "bg-component-hover": colors.slate[200],
+        "bg-component-active": colors.slate[300],
+        "focus-outline": colors.violet[600],
+        "text-primary": colors.slate[950],
+        "text-secondary": colors.slate[500],
+        "text-tertiary": colors.slate[400],
+        "text-disabled": colors.zinc[300],
+        success: colors.green[700],
+        warn: colors.yellow[700],
+        info: colors.blue[700],
+        error: colors.red[700],
       },
       boxShadow: {
         "selected-horizontal": "inset 0 -2px 0 #0055A5",

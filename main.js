@@ -10,13 +10,6 @@ const closeALLMenu = () => {
   );
 };
 
-// Escape key press
-document.addEventListener("keydown", function (e) {
-  if (e.keyCode == 27) {
-    closeALLMenu();
-  }
-});
-
 const toggleTopNavMenu = (event) => {
   // close all the other open menus
   closeALLMenu();
@@ -35,3 +28,10 @@ const toggleTopNavMenu = (event) => {
     );
   }
 };
+
+// Escape key press
+document.addEventListener("keydown", function (e) {
+  if (e.keyCode == 27) {
+    closeALLMenu();
+  }
+});
