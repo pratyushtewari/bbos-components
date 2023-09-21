@@ -1,6 +1,6 @@
 const hide = (htmlElement) => {
   htmlElement.classList.add("hidden");
-}
+};
 
 const closeALLMenu = () => {
   [...document.querySelectorAll(".menu:not(.hidden)")].forEach(
@@ -8,11 +8,11 @@ const closeALLMenu = () => {
       htmlElement.classList.add("hidden");
     },
   );
-}
+};
 
 // Escape key press
-document.addEventListener('keydown', function(e) {
-  if(e.keyCode == 27){
+document.addEventListener("keydown", function (e) {
+  if (e.keyCode == 27) {
     closeALLMenu();
   }
 });
