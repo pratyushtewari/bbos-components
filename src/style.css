@@ -35,9 +35,6 @@ input:focus {
 .focus-visible:focus:not(:focus-visible) {
   @apply outline outline-1 outline-focus-outline;
 }
-button > * {
-  pointer-events: none;
-}
 
 /**
  * components and css using tailwind css
