@@ -4,9 +4,11 @@ function hide(htmlElement) {
 }
 
 function closeALLMenu() {
-  [...document.querySelectorAll(".menu")].forEach((htmlElement) => {
-    htmlElement.classList.add("hidden");
-  });
+  [...document.querySelectorAll(".menu:not(.hidden)")].forEach(
+    (htmlElement) => {
+      htmlElement.classList.add("hidden");
+    },
+  );
 }
 
 const toggleTopNavMenu = (event) => {
