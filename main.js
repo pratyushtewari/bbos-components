@@ -12,13 +12,15 @@ const closeALLMenu = () => {
 
 const toggleTopNavMenu = (event) => {
   // close all the other open menus
-  closeALLMenu();
   event.stopPropagation();
   const sibling = event.currentTarget.parentElement.querySelector(".menu");
-  sibling.classList.toggle("hidden");
+  //check if this is closed. this is important to know because we are closing all the menus before opening this one.
+  const isClosed = sibling.classList.contains("hidden");
+  closeALLMenu();
   // this is just to prevent adding a lot of event listners
   // this still adds at max two listners.
-  if (!sibling.classList.contains("hidden")) {
+  if (isClosed) {
+    sibling.classList.remove("hidden");
     document.addEventListener(
       "click",
       (event) => {
@@ -26,6 +28,8 @@ const toggleTopNavMenu = (event) => {
       },
       { once: true },
     );
+  } else {
+    sibling.classList.add("hidden");
   }
 };
 
