@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
     <title>BBOS COMPONENTS</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="m-6 flex flex-col gap-4 bg-slate-100">
+  <body class="m-6 flex flex-col gap-4 bg-bg-secondary">
     <button class="btn btn-primary">
       <span class="msicon notranslate">search</span>Primary Button
     </button>
@@ -23,6 +23,68 @@
       Close tag<span class="msicon notranslate">close</span>
     </button>
 
+    <details>
+      <summary>Show Colors</summary>
+
+      <div class="grid grid-cols-4 gap-2">
+        <div class="rounded border border-border bg-bg-primary p-2">
+          <h2 class="font-bold">On bg-primary</h2>
+          <div class="text-brand">brand</div>
+          <div class="text-border">border</div>
+          <div class="text-focus-outline">focus-outline</div>
+          <div class="text-text-primary">text-primary</div>
+          <div class="text-text-secondary">text-secondary</div>
+          <div class="text-text-tertiary">text-tertiary</div>
+          <div class="text-text-disabled">text-disabled</div>
+          <div class="text-success">success</div>
+          <div class="text-warn">warn</div>
+          <div class="text-info">info</div>
+          <div class="text-error">error</div>
+        </div>
+        <div class="rounded border border-border bg-bg-secondary p-2">
+          <h2 class="font-bold">On bg-secondary</h2>
+          <div class="text-brand">brand</div>
+          <div class="text-border">border</div>
+          <div class="text-focus-outline">focus-outline</div>
+          <div class="text-text-primary">text-primary</div>
+          <div class="text-text-secondary">text-secondary</div>
+          <div class="text-text-tertiary">text-tertiary</div>
+          <div class="text-text-disabled">text-disabled</div>
+          <div class="text-success">success</div>
+          <div class="text-warn">warn</div>
+          <div class="text-info">info</div>
+          <div class="text-error">error</div>
+        </div>
+        <div class="rounded border border-border bg-bg-tertiary p-2">
+          <h2 class="font-bold">On bg-tertiary</h2>
+          <div class="text-brand">brand</div>
+          <div class="text-border">border</div>
+          <div class="text-focus-outline">focus-outline</div>
+          <div class="text-text-primary">text-primary</div>
+          <div class="text-text-secondary">text-secondary</div>
+          <div class="text-text-tertiary">text-tertiary</div>
+          <div class="text-text-disabled">text-disabled</div>
+          <div class="text-success">success</div>
+          <div class="text-warn">warn</div>
+          <div class="text-info">info</div>
+          <div class="text-error">error</div>
+        </div>
+        <div class="rounded border border-border bg-bg-disabled p-2">
+          <h2 class="font-bold">On bg-disabled</h2>
+          <div class="text-brand">brand</div>
+          <div class="text-border">border</div>
+          <div class="text-focus-outline">focus-outline</div>
+          <div class="text-text-primary">text-primary</div>
+          <div class="text-text-secondary">text-secondary</div>
+          <div class="text-text-tertiary">text-tertiary</div>
+          <div class="text-text-disabled">text-disabled</div>
+          <div class="text-success">success</div>
+          <div class="text-warn">warn</div>
+          <div class="text-info">info</div>
+          <div class="text-error">error</div>
+        </div>
+      </div>
+    </details>
     <h2 class="text-text-tertiary">Top Nav Bar</h2>
 
     <!-- TOP NAV BAR -->
@@ -292,8 +354,60 @@
         </div>
       </div>
     </div>
+    <h2 class="text-text-tertiary">Footer</h2>
 
-    <script async src="./main.js"></script>
+    <div class="footer">
+      <div class="flex flex-col gap-4 md:flex-row">
+        <div class="flex basis-full items-center gap-2 align-middle">
+          <img src="assets/BBOS_logo_full.svg" />
+          <div class="flex flex-col gap-1">
+            <p
+              class="whitespace-nowrap font-serif text-xl font-semibold text-brand"
+            >
+              Blue Book Services
+            </p>
+            <p class="-my-1 text-sm text-success">
+              Credit Rating and Marketing Information
+            </p>
+            <p class="flex gap-2 pt-2">
+              <a class="w-6 text-center" href="#">
+                <img class="m-auto h-4" src="assets/youtube.svg"
+              /></a>
+              <a class="w-6 text-center" href="#">
+                <img class="m-auto h-4" src="assets/linkedin-in.svg"
+              /></a>
+              <a class="w-6 text-center" href="#">
+                <img class="m-auto h-4" src="assets/x-twitter.svg"
+              /></a>
+              <a class="w-6 text-center" href="#">
+                <img class="m-auto h-4" src="assets/facebook-f.svg"
+              /></a>
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center gap-6 whitespace-nowrap text-xs">
+          <div class="flex flex-col gap-2">
+            <p><a href="#">Home</a></p>
+            <p><a href="#">Terms Of Use</a></p>
+            <p><a href="#">Advertise</a></p>
+            <p><a href="#">Feedback</a></p>
+          </div>
+          <div class="flex flex-col gap-2">
+            <p><a href="#">Contact Us</a></p>
+            <p><a href="#">Privacy Policy</a></p>
+            <p><a href="#">Community Standards</a></p>
+            <p><a href="#">Membership Agreement</a></p>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div
+        class="flex flex-col items-center border border-t-border pt-2 text-xs"
+      >
+        <p>© 2023 Blue Book Services | 630 668-3500</p>
+      </div>
+    </div>
 
+    <script async src="main.js"></script>
   </body>
 </html>
