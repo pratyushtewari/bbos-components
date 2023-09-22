@@ -36,6 +36,9 @@ input:focus {
   @apply outline outline-1 outline-focus-outline;
 }
 
+a {
+  @apply hover:bg-bg-component-hover;
+}
 /**
  * components and css using tailwind css
  */
