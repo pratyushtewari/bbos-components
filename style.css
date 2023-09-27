@@ -47,7 +47,7 @@ a {
     @apply text-text-primary;
   }
   /* Button */
-  .btn {
+  .bbsButton {
     @apply flex
     w-max
     gap-x-1.5
@@ -61,29 +61,38 @@ a {
     hover:bg-bg-component-hover
     active:bg-bg-component-active;
 
+    &.disabled {
+      @apply border-border-disabled
+      cursor-not-allowed
+      bg-bg-disabled
+      text-text-disabled
+      hover:bg-bg-disabled
+      active:bg-bg-disabled !important;
+    }
+
     &.full-width {
       @apply w-full;
     }
 
-    &.btn-primary {
+    &.bbsButton-primary {
       @apply bg-brand text-white
       hover:bg-brand/90
       active:bg-brand/80;
     }
 
-    &.btn-secondary {
+    &.bbsButton-secondary {
       @apply bg-transparent
       hover:bg-bg-component-hover active:bg-bg-component-active;
     }
 
     /* Rounded tag button - best with a close end icon */
-    &.btn-tag-secondary {
+    &.bbsButton-tag-secondary {
       @apply rounded-3xl bg-white
       hover:bg-bg-component-hover active:bg-bg-component-active;
     }
 
     /* Menu item button  -- supposed to in to a menu or top-nav*/
-    &.btn-menu-item {
+    &.bbsButton-menu-item {
       @apply flex-col items-start gap-1
       rounded-none
       border-none px-4
@@ -101,16 +110,16 @@ a {
   }
 
   /* Menu or listbox -  */
-  .menu {
-    @apply flex min-w-[200px] max-w-[400px] flex-col
-    items-start gap-1
+  .bbsMenu {
+    @apply z-[100] flex min-w-[200px] max-w-[400px]
+    flex-col items-start
+    gap-1
     rounded-md
-    border
-    border-border bg-white p-1 shadow-lg;
+    border border-border bg-white p-1 shadow-lg;
 
-    .btn-menu-item {
+    .bbsButton-menu-item {
       @apply w-full;
-      .badge {
+      .bbsBadge {
         float: left;
       }
     }
@@ -161,7 +170,7 @@ a {
     placeholder-text-tertiary
     md:w-[260px];
   }
-  .badge {
+  .bbsBadge {
     @apply rounded-3xl
     border
     border-violet-800
@@ -171,6 +180,11 @@ a {
   }
   .footer {
     @apply flex max-w-screen-xl flex-col gap-1 border-t border-border bg-bg-tertiary p-4;
+  }
+
+  /* Bootstrap tooltip */
+  .tooltip {
+    z-index: 1000;
   }
 
   /* end of the layer components */

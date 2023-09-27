@@ -8,6 +8,7 @@ export default {
       colors: {
         brand: "#0055A5",
         border: colors.slate[300],
+        "border-disabled": colors.zinc[300],
         "border-component": colors.slate[400],
         "bg-primary": colors.white,
         "bg-secondary": colors.slate[100],
