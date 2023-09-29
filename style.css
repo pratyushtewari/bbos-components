@@ -151,13 +151,14 @@ a {
   }
   /* Global nav */
   .top-nav {
-    @apply tw-top-0
-    tw-w-full
+    @apply tw-flex tw-top-0
     tw-border-b
     tw-border-border
     tw-bg-white
     tw-sticky
-    tw-place-items-center;
+    tw-items-center
+    tw-justify-center
+    tw-w-full;
     .top-nav-container {
       @apply tw-relative
       tw-flex
@@ -165,7 +166,8 @@ a {
       tw-flex-row
       tw-items-center
       tw-gap-1
-      tw-align-middle;
+      tw-align-middle
+      tw-w-full;
       > div {
         @apply tw-flex
         tw-align-middle;
@@ -225,6 +227,12 @@ a {
     tw-text-violet-800
     tw-rounded-3xl;
   }
+  .content {
+    @apply tw-max-w-screen-xl
+    tw-p-8
+    tw-bg-bg-secondary
+    tw-w-full;
+  }
   .footer {
     @apply tw-max-w-screen-xl
     tw-flex-col
@@ -233,7 +241,8 @@ a {
     tw-border-border
     tw-bg-bg-tertiary
     tw-p-4
-    tw-flex;
+    tw-flex
+    tw-w-full;
     .social {
       @apply tw-w-6
       tw-text-center;
