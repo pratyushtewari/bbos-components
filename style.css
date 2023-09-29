@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 /**
  * Google Material Symbols (new) icon-font
  */
@@ -23,9 +22,10 @@
 }
 textarea:focus,
 input:focus {
-  @apply outline outline-1 outline-offset-0;
+  @apply outline
+  outline-1
+  outline-offset-0;
 }
-
 /**
  * Cross-browser styles for explicit focus via
  * keyboard-based (eg Tab) navigation or the
@@ -33,9 +33,10 @@ input:focus {
  */
 :focus,
 .focus-visible:focus:not(:focus-visible) {
-  @apply outline outline-1 outline-focus-outline;
+  @apply outline
+  outline-1
+  outline-focus-outline;
 }
-
 a {
   @apply hover:bg-bg-component-hover;
 }
@@ -60,47 +61,58 @@ a {
     text-sm
     hover:bg-bg-component-hover
     active:bg-bg-component-active;
-
     &.disabled {
       @apply border-border-disabled
       cursor-not-allowed
       bg-bg-disabled
       text-text-disabled
       hover:bg-bg-disabled
-      active:bg-bg-disabled !important;
+      active:bg-bg-disabled
+      !important;
     }
-
     &.full-width {
       @apply w-full;
     }
-
     &.bbsButton-primary {
-      @apply bg-brand text-white
+      @apply bg-brand
+      text-white
       hover:bg-brand/90
       active:bg-brand/80;
     }
-
     &.bbsButton-secondary {
       @apply bg-transparent
-      hover:bg-bg-component-hover active:bg-bg-component-active;
+      hover:bg-bg-component-hover
+      active:bg-bg-component-active;
     }
-
-    /* Rounded tag button - best with a close end icon */
+    /*
+    Rounded tag button - best with a close end icon
+    */
     &.bbsButton-tag-secondary {
-      @apply rounded-3xl bg-white
-      hover:bg-bg-component-hover active:bg-bg-component-active;
+      @apply rounded-3xl
+      bg-white
+      hover:bg-bg-component-hover
+      active:bg-bg-component-active;
     }
-
-    /* Menu item button  -- supposed to in to a menu or top-nav*/
+    /* Menu item button -- supposed to in to a menu or top-nav */
     &.bbsButton-menu-item {
-      @apply flex-col items-start gap-1
+      @apply flex-col
+      items-start
+      gap-1
       rounded-none
-      border-none px-4
-      py-3 text-left;
+      border-none
+      px-4
+      py-3
+      text-left;
       > p {
-        @apply flex w-full flex-row items-start gap-2;
+        @apply flex
+        w-full
+        flex-row
+        items-start
+        gap-2;
         .text-label {
-          @apply basis-full whitespace-nowrap text-left;
+          @apply basis-full
+          whitespace-nowrap
+          text-left;
         }
       }
       &.selected {
@@ -108,15 +120,22 @@ a {
       }
     }
   }
-
-  /* Menu or listbox -  */
+  /* Menu or listbox -
+  */
   .bbsMenu {
-    @apply z-[100] flex min-w-[200px] max-w-[400px]
-    flex-col items-start
+    @apply z-[100]
+    flex
+    min-w-[200px]
+    max-w-[400px]
+    flex-col
+    items-start
     gap-1
     rounded-md
-    border border-border bg-white p-1 shadow-lg;
-
+    border
+    border-border
+    bg-white
+    p-1
+    shadow-lg;
     .bbsButton-menu-item {
       @apply w-full;
       .bbsBadge {
@@ -124,35 +143,57 @@ a {
       }
     }
   }
-
   /* Divider */
   hr {
-    @apply h-[1px] w-full bg-bg-tertiary;
+    @apply h-[1px]
+    w-full
+    bg-bg-tertiary;
   }
-
   /* Global nav */
   .top-nav {
-    @apply flex max-w-screen-xl flex-row gap-1 border-b border-border bg-white;
-    > div {
-      @apply flex flex-row items-center gap-1;
+    @apply fixed
+    top-0
+    w-full
+    border-b
+    border-border
+    bg-white;
+    .top-nav-container {
+      @apply relative
+      flex
+      max-w-screen-xl
+      flex-row
+      items-center
+      gap-1
+      align-middle;
     }
     .top-nav-logo {
-      @apply flex flex-row items-center gap-2 px-2;
+      @apply flex
+      flex-row
+      items-center
+      gap-2
+      px-2;
+      > div {
+        @apply flex
+        flex-row
+        items-center
+        gap-1;
+      }
     }
   }
   .caption {
-    @apply text-start text-xs text-text-secondary;
+    @apply text-start
+    text-xs
+    text-text-secondary;
   }
-  .input {
-    @apply relative;
+  .input-wrapper {
+    @apply relative
+    h-full;
     > .icon-left {
       @apply pointer-events-none
-        absolute
+      absolute
         left-2
         top-1
         inline-block
-        h-14
-        w-14
         cursor-text
         text-text-tertiary;
     }
@@ -175,17 +216,23 @@ a {
     border
     border-violet-800
     bg-violet-100
-    px-1.5 text-[10px]
+    px-1.5
+    text-[10px]
     text-violet-800;
   }
   .footer {
-    @apply flex max-w-screen-xl flex-col gap-1 border-t border-border bg-bg-tertiary p-4;
+    @apply flex
+    max-w-screen-xl
+    flex-col
+    gap-1
+    border-t
+    border-border
+    bg-bg-tertiary
+    p-4;
   }
-
   /* Bootstrap tooltip */
   .tooltip {
     z-index: 1000;
   }
-
   /* end of the layer components */
 }

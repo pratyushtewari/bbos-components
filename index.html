@@ -22,432 +22,457 @@
     <link rel="stylesheet" href="./style.css" />
     <title>BBOS COMPONENTS</title>
   </head>
-  <body class="m-6 flex flex-col gap-4 bg-bg-secondary">
-    <div class="grid w-80 grid-cols-2 gap-2">
-      <h2>Buttons</h2>
-      <h2>Disabled</h2>
-      <button class="bbsButton bbsButton-primary">
-        <span class="msicon notranslate">search</span>Primary Button
-      </button>
-      <button disabled class="bbsButton bbsButton-primary disabled">
-        <span class="msicon notranslate">search</span>
-        <span>Primary Button</span>
-        <span class="msicon notranslate">lock</span>
-      </button>
-      <button class="bbsButton bbsButton-secondary">
-        <span class="msicon notranslate">search</span>Secondary Button
-      </button>
-      <button disabled class="bbsButton bbsButton-secondary disabled">
-        <span class="msicon notranslate">search</span>
-        <span>Secondary Button</span>
-        <span class="msicon notranslate">lock</span>
-      </button>
-      <button class="bbsButton bbsButton-tag-secondary">
-        Close tag<span class="msicon notranslate">close</span>
-      </button>
-      <button disabled class="bbsButton bbsButton-tag-secondary disabled">
-        <span class="msicon notranslate">search</span>
-        <span>Close tag</span>
-        <span class="msicon notranslate">lock</span>
-      </button>
-    </div>
-
-    <details>
-      <summary>Show Colors</summary>
-
-      <div class="grid grid-cols-4 gap-2">
-        <div class="rounded border border-border bg-bg-primary p-2">
-          <h2 class="font-bold">On bg-primary</h2>
-          <div class="text-brand">brand</div>
-          <div class="text-border">border</div>
-          <div class="text-focus-outline">focus-outline</div>
-          <div class="text-text-primary">text-primary</div>
-          <div class="text-text-secondary">text-secondary</div>
-          <div class="text-text-tertiary">text-tertiary</div>
-          <div class="text-text-disabled">text-disabled</div>
-          <div class="text-success">success</div>
-          <div class="text-warn">warn</div>
-          <div class="text-info">info</div>
-          <div class="text-error">error</div>
-        </div>
-        <div class="rounded border border-border bg-bg-secondary p-2">
-          <h2 class="font-bold">On bg-secondary</h2>
-          <div class="text-brand">brand</div>
-          <div class="text-border">border</div>
-          <div class="text-focus-outline">focus-outline</div>
-          <div class="text-text-primary">text-primary</div>
-          <div class="text-text-secondary">text-secondary</div>
-          <div class="text-text-tertiary">text-tertiary</div>
-          <div class="text-text-disabled">text-disabled</div>
-          <div class="text-success">success</div>
-          <div class="text-warn">warn</div>
-          <div class="text-info">info</div>
-          <div class="text-error">error</div>
-        </div>
-        <div class="rounded border border-border bg-bg-tertiary p-2">
-          <h2 class="font-bold">On bg-tertiary</h2>
-          <div class="text-brand">brand</div>
-          <div class="text-border">border</div>
-          <div class="text-focus-outline">focus-outline</div>
-          <div class="text-text-primary">text-primary</div>
-          <div class="text-text-secondary">text-secondary</div>
-          <div class="text-text-tertiary">text-tertiary</div>
-          <div class="text-text-disabled">text-disabled</div>
-          <div class="text-success">success</div>
-          <div class="text-warn">warn</div>
-          <div class="text-info">info</div>
-          <div class="text-error">error</div>
-        </div>
-        <div class="rounded border border-border bg-bg-disabled p-2">
-          <h2 class="font-bold">On bg-disabled</h2>
-          <div class="text-brand">brand</div>
-          <div class="text-border">border</div>
-          <div class="text-focus-outline">focus-outline</div>
-          <div class="text-text-primary">text-primary</div>
-          <div class="text-text-secondary">text-secondary</div>
-          <div class="text-text-tertiary">text-tertiary</div>
-          <div class="text-text-disabled">text-disabled</div>
-          <div class="text-success">success</div>
-          <div class="text-warn">warn</div>
-          <div class="text-info">info</div>
-          <div class="text-error">error</div>
-        </div>
-      </div>
-    </details>
-    <h2 class="text-text-tertiary">Top Nav Bar</h2>
-
+  <body class="bg-bg-secondary">
     <!-- TOP NAV BAR -->
-
-    <div class="top-nav">
-      <div class="flex-grow">
-        <div class="top-nav-logo">
-          <img src="/assets/BBS_logo_small.svg" />
-          <img
-            class="hidden xl:inline-block"
-            style="width: 122px; height: 12px"
-            src="/assets/Blue-Book-Services.png"
-          />
-        </div>
-        <button class="bbsButton bbsButton-menu-item selected">
-          <p>
-            <span class="msicon notranslate">home</span>
-            <span class="text-label hidden md:inline-block">Home</span>
-          </p>
-        </button>
-        <!-- advanced-search-dropdown -->
-        <div class="relative">
-          <button
-            class="bbsButton bbsButton-menu-item"
-            id="advanced-search-dropdown"
-            onclick="toggleTopNavMenu(event)"
-          >
-            <p>
-              <span class="msicon notranslate">search</span>
-              <span class="text-label hidden md:inline-block"
-                >Advanced Search</span
-              >
-            </p>
-          </button>
-          <div id="search-top-menu" class="bbsMenu absolute hidden">
+    <header>
+      <div class="top-nav">
+        <div class="top-nav-container">
+          <div class="flex flex-grow">
+            <div class="top-nav-logo">
+              <img src="/assets/BBS_logo_small.svg" />
+              <img
+                class="hidden xl:inline-block"
+                style="width: 122px; height: 12px"
+                src="/assets/Blue-Book-Services.png"
+              />
+            </div>
             <button class="bbsButton bbsButton-menu-item">
               <p>
-                <span class="msicon notranslate">factory</span>
-                <span class="text-label">Company Search</span>
-                <span class="bbsBadge">New</span>
+                <span class="msicon notranslate">home</span>
+                <span class="text-label hidden md:inline-block">Home</span>
               </p>
             </button>
-            <span
-              class="d-inline-block w-full"
-              tabindex="0"
-              data-bs-toggle="tooltip"
-              data-bs-placement="right"
-              data-bs-html="true"
-              data-bs-title="This option is not available with your membership"
-            >
-              <button disabled class="bbsButton bbsButton-menu-item disabled">
+            <!-- advanced-search-dropdown -->
+            <div class="relative">
+              <button
+                class="bbsButton bbsButton-menu-item selected"
+                id="advanced-search-dropdown"
+                onclick="toggleTopNavMenu(event)"
+              >
                 <p>
-                  <span class="msicon notranslate">person_search</span>
-                  <span class="text-label">People Search</span>
-                  <span class="msicon notranslate">lock</span>
+                  <span class="msicon notranslate">search</span>
+                  <span class="text-label hidden md:inline-block"
+                    >Advanced Search</span
+                  >
                 </p>
               </button>
-            </span>
-
-            <button class="bbsButton bbsButton-menu-item">
-              <p>
-                <span class="msicon notranslate">work_history</span>Company
-                Updates
-              </p>
-            </button>
-            <button class="bbsButton bbsButton-menu-item">
-              <p>
-                <span class="msicon notranslate">universal_currency_alt</span
-                >Claim Search
-              </p>
-            </button>
-            <hr />
-            <button class="bbsButton bbsButton-menu-item">
-              <p><span class="msicon notranslate">history</span>Recent Views</p>
-            </button>
-            <button class="bbsButton bbsButton-menu-item">
-              <p>
-                <span class="msicon notranslate">youtube_searched_for</span>Run
-                Last Search
-              </p>
-            </button>
-            <hr />
-            <button class="bbsButton bbsButton-menu-item">
-              <p>
-                <span class="msicon notranslate">saved_search</span>Saved
-                Searches
-              </p>
-            </button>
-          </div>
-        </div>
-        <!-- tools-dropdown -->
-        <div class="relative">
-          <button
-            id="tools-dropdown"
-            onclick="toggleTopNavMenu(event)"
-            class="bbsButton bbsButton-menu-item"
-          >
-            <p>
-              <span class="msicon notranslate">handyman</span>
-              <span class="text-label hidden md:inline-block">Tools</span>
-            </p>
-          </button>
-          <div id="tools-top-menu" class="bbsMenu absolute hidden">
-            <button class="bbsButton bbsButton-menu-item">
-              <p><span class="text-label">Notes</span></p>
-              <p class="caption">
-                Save important details about companies and share it with
-                coworkers
-              </p>
-            </button>
-            <button class="bbsButton bbsButton-menu-item">
-              <p><span class="text-label">Watchdog Groups & Alerts</span></p>
-              <p class="caption">
-                Create your own custom lists of companies which you can then use
-                for a variety of purposes
-              </p>
-            </button>
-            <button class="bbsButton bbsButton-menu-item">
-              <p>
-                <span class="text-label"
-                  >Trading Assistance / Collection Services</span
+              <div id="search-top-menu" class="bbsMenu absolute hidden">
+                <button class="bbsButton bbsButton-menu-item">
+                  <p>
+                    <span class="msicon notranslate">factory</span>
+                    <span class="text-label">Company Search</span>
+                    <span class="bbsBadge">New</span>
+                  </p>
+                </button>
+                <span
+                  class="d-inline-block w-full"
+                  tabindex="0"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="right"
+                  data-bs-html="true"
+                  data-bs-title="This option is not available with your membership"
                 >
-              </p>
-              <p class="caption">
-                Blue Book Services collection and claim activity involving your
-                company.
-              </p>
-            </button>
-            <button class="bbsButton bbsButton-menu-item">
-              <p><span class="text-label">Online Business Reports</span></p>
-              <p class="caption">
-                Blue Book Online Business Reports that you have purchased
-              </p>
-            </button>
-            <button class="bbsButton bbsButton-menu-item">
-              <p>
-                <span class="text-label">Submit Trade Experience Survey</span>
-              </p>
-              <p class="caption">
-                Confidentially share feedback about trade partners to keep Blue
-                Book Ratings accurate.
-              </p>
-            </button>
-            <button class="bbsButton bbsButton-menu-item">
-              <p><span class="text-label">Additional Tools</span></p>
-              <p class="caption">Mobile apps, Industry information, etc</p>
-            </button>
-            <hr />
-            <button class="bbsButton bbsButton-menu-item">
-              <p><span class="text-label">Custom Data</span></p>
-              <p class="caption">
-                Special fields of information that you add into BBOS that are
-                specific to your organization.
-              </p>
-            </button>
-          </div>
-        </div>
-        <!-- learning-dropdown -->
-        <div class="relative">
-          <button
-            id="learning-dropdown"
-            onclick="toggleTopNavMenu(event)"
-            class="bbsButton bbsButton-menu-item"
-          >
-            <p>
-              <span class="msicon notranslate">school</span>
-              <span class="text-label hidden md:inline-block">Learning</span>
-            </p>
-          </button>
-          <div id="learning-top-menu" class="bbsMenu absolute hidden">
-            <button class="bbsButton bbsButton-menu-item">
-              <p><span class="text-label">Learning Center Search</span></p>
-            </button>
-            <button class="bbsButton bbsButton-menu-item">
-              <p><span class="text-label">Produce Blueprints Magazine</span></p>
-            </button>
-            <button class="bbsButton bbsButton-menu-item">
-              <p><span class="text-label">Know Your Commodity</span></p>
-            </button>
-            <button class="bbsButton bbsButton-menu-item">
-              <p><span class="text-label">Reference Documents</span></p>
-            </button>
-            <button class="bbsButton bbsButton-menu-item">
-              <p><span class="text-label">Membership Guide</span></p>
-            </button>
-            <button class="bbsButton bbsButton-menu-item">
-              <p><span class="text-label">New Hire Academy</span></p>
-            </button>
-            <button class="bbsButton bbsButton-menu-item">
-              <p>
-                <span class="text-label">Blue Book Membership Training</span>
-              </p>
-            </button>
-            <hr />
-            <button class="bbsButton bbsButton-menu-item">
-              <p>
-                <span class="msicon notranslate">menu_book</span>
-                <span class="text-label">Blueprints Flipbook</span>
-                <span class="msicon notranslate">arrow_outward</span>
-              </p>
-            </button>
-            <button class="bbsButton bbsButton-menu-item">
-              <p>
-                <span class="msicon notranslate">full_coverage</span>
-                <span class="text-label">News / Articles</span>
-                <span class="msicon notranslate">arrow_outward</span>
-              </p>
-            </button>
-            <button class="bbsButton bbsButton-menu-item">
-              <p>
-                <span class="msicon notranslate">key</span>
-                <span class="text-label">Rating Key Numerals</span>
-                <span class="msicon notranslate">arrow_outward</span>
-              </p>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="flex-grow-0">
-        <div class="input">
-          <span class="icon-left msicon notranslate">search</span>
-          <input
-            type="search"
-            placeholder="Quick Search a company name or BBS id"
-          />
-        </div>
-        <!-- account-setting-dropdown -->
-        <div class="relative">
-          <button
-            id="account-dropdown"
-            onclick="toggleTopNavMenu(event)"
-            class="bbsButton bbsButton-menu-item"
-          >
-            <p><span class="msicon notranslate">account_circle</span></p>
-          </button>
-          <div id="account-top-menu" class="bbsMenu absolute right-0 hidden">
-            <button class="bbsButton bbsButton-menu-item">
-              <p>
-                <span class="notranslate msicon">home</span>
-                <span class="text-label">My Company Profile </span>
-              </p>
-            </button>
-            <button class="bbsButton bbsButton-menu-item">
-              <p>
-                <span class="msicon notranslate">message</span>
-                <span class="text-label">Message Center</span>
-                <span class="bbsBadge">9</span>
-              </p>
-            </button>
-            <button class="bbsButton bbsButton-menu-item">
-              <p>
-                <span class="msicon notranslate">settings</span>
-                <span class="text-label">Account Settings</span>
-              </p>
-            </button>
-            <hr />
+                  <button
+                    disabled
+                    class="bbsButton bbsButton-menu-item disabled"
+                  >
+                    <p>
+                      <span class="msicon notranslate">person_search</span>
+                      <span class="text-label">People Search</span>
+                      <span class="msicon notranslate">lock</span>
+                    </p>
+                  </button>
+                </span>
 
-            <button class="bbsButton bbsButton-menu-item">
-              <p>
-                <span class="msicon notranslate">g_translate</span>
-                <span class="text-label">Cambiar a Español</span>
-              </p>
-            </button>
-            <button class="bbsButton bbsButton-menu-item">
-              <p>
-                <span class="msicon notranslate">help</span>
-                <span class="text-label">Help and Support</span>
-              </p>
-            </button>
-            <hr />
-            <button class="bbsButton bbsButton-menu-item">
-              <p>
-                <span class="msicon notranslate">logout</span>
-                <span class="text-label">Logout</span>
-              </p>
-            </button>
+                <button class="bbsButton bbsButton-menu-item">
+                  <p>
+                    <span class="msicon notranslate">work_history</span>Company
+                    Updates
+                  </p>
+                </button>
+                <button class="bbsButton bbsButton-menu-item">
+                  <p>
+                    <span class="msicon notranslate"
+                      >universal_currency_alt</span
+                    >Claim Search
+                  </p>
+                </button>
+                <hr />
+                <button class="bbsButton bbsButton-menu-item">
+                  <p>
+                    <span class="msicon notranslate">history</span>Recent Views
+                  </p>
+                </button>
+                <button class="bbsButton bbsButton-menu-item">
+                  <p>
+                    <span class="msicon notranslate">youtube_searched_for</span
+                    >Run Last Search
+                  </p>
+                </button>
+                <hr />
+                <button class="bbsButton bbsButton-menu-item">
+                  <p>
+                    <span class="msicon notranslate">saved_search</span>Saved
+                    Searches
+                  </p>
+                </button>
+              </div>
+            </div>
+            <!-- tools-dropdown -->
+            <div class="relative">
+              <button
+                id="tools-dropdown"
+                onclick="toggleTopNavMenu(event)"
+                class="bbsButton bbsButton-menu-item"
+              >
+                <p>
+                  <span class="msicon notranslate">handyman</span>
+                  <span class="text-label hidden md:inline-block">Tools</span>
+                </p>
+              </button>
+              <div id="tools-top-menu" class="bbsMenu absolute hidden">
+                <button class="bbsButton bbsButton-menu-item">
+                  <p><span class="text-label">Notes</span></p>
+                  <p class="caption">
+                    Save important details about companies and share it with
+                    coworkers
+                  </p>
+                </button>
+                <button class="bbsButton bbsButton-menu-item">
+                  <p>
+                    <span class="text-label">Watchdog Groups & Alerts</span>
+                  </p>
+                  <p class="caption">
+                    Create your own custom lists of companies which you can then
+                    use for a variety of purposes
+                  </p>
+                </button>
+                <button class="bbsButton bbsButton-menu-item">
+                  <p>
+                    <span class="text-label"
+                      >Trading Assistance / Collection Services</span
+                    >
+                  </p>
+                  <p class="caption">
+                    Blue Book Services collection and claim activity involving
+                    your company.
+                  </p>
+                </button>
+                <button class="bbsButton bbsButton-menu-item">
+                  <p><span class="text-label">Online Business Reports</span></p>
+                  <p class="caption">
+                    Blue Book Online Business Reports that you have purchased
+                  </p>
+                </button>
+                <button class="bbsButton bbsButton-menu-item">
+                  <p>
+                    <span class="text-label"
+                      >Submit Trade Experience Survey</span
+                    >
+                  </p>
+                  <p class="caption">
+                    Confidentially share feedback about trade partners to keep
+                    Blue Book Ratings accurate.
+                  </p>
+                </button>
+                <button class="bbsButton bbsButton-menu-item">
+                  <p><span class="text-label">Additional Tools</span></p>
+                  <p class="caption">Mobile apps, Industry information, etc</p>
+                </button>
+                <hr />
+                <button class="bbsButton bbsButton-menu-item">
+                  <p><span class="text-label">Custom Data</span></p>
+                  <p class="caption">
+                    Special fields of information that you add into BBOS that
+                    are specific to your organization.
+                  </p>
+                </button>
+              </div>
+            </div>
+            <!-- learning-dropdown -->
+            <div class="relative">
+              <button
+                id="learning-dropdown"
+                onclick="toggleTopNavMenu(event)"
+                class="bbsButton bbsButton-menu-item"
+              >
+                <p>
+                  <span class="msicon notranslate">school</span>
+                  <span class="text-label hidden md:inline-block"
+                    >Learning</span
+                  >
+                </p>
+              </button>
+              <div id="learning-top-menu" class="bbsMenu absolute hidden">
+                <button class="bbsButton bbsButton-menu-item">
+                  <p><span class="text-label">Learning Center Search</span></p>
+                </button>
+                <button class="bbsButton bbsButton-menu-item">
+                  <p>
+                    <span class="text-label">Produce Blueprints Magazine</span>
+                  </p>
+                </button>
+                <button class="bbsButton bbsButton-menu-item">
+                  <p><span class="text-label">Know Your Commodity</span></p>
+                </button>
+                <button class="bbsButton bbsButton-menu-item">
+                  <p><span class="text-label">Reference Documents</span></p>
+                </button>
+                <button class="bbsButton bbsButton-menu-item">
+                  <p><span class="text-label">Membership Guide</span></p>
+                </button>
+                <button class="bbsButton bbsButton-menu-item">
+                  <p><span class="text-label">New Hire Academy</span></p>
+                </button>
+                <button class="bbsButton bbsButton-menu-item">
+                  <p>
+                    <span class="text-label"
+                      >Blue Book Membership Training</span
+                    >
+                  </p>
+                </button>
+                <hr />
+                <button class="bbsButton bbsButton-menu-item">
+                  <p>
+                    <span class="msicon notranslate">menu_book</span>
+                    <span class="text-label">Blueprints Flipbook</span>
+                    <span class="msicon notranslate">arrow_outward</span>
+                  </p>
+                </button>
+                <button class="bbsButton bbsButton-menu-item">
+                  <p>
+                    <span class="msicon notranslate">full_coverage</span>
+                    <span class="text-label">News / Articles</span>
+                    <span class="msicon notranslate">arrow_outward</span>
+                  </p>
+                </button>
+                <button class="bbsButton bbsButton-menu-item">
+                  <p>
+                    <span class="msicon notranslate">key</span>
+                    <span class="text-label">Rating Key Numerals</span>
+                    <span class="msicon notranslate">arrow_outward</span>
+                  </p>
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <h2 class="text-text-tertiary">Footer</h2>
+          <div class="flex flex-grow-0 align-middle">
+            <div class="input-wrapper">
+              <span class="icon-left msicon notranslate">search</span>
+              <input
+                type="search"
+                placeholder="Quick Search a company name or BBS id"
+              />
+            </div>
+            <!-- account-setting-dropdown -->
+            <div class="relative">
+              <button
+                id="account-dropdown"
+                onclick="toggleTopNavMenu(event)"
+                class="bbsButton bbsButton-menu-item"
+              >
+                <p><span class="msicon notranslate">account_circle</span></p>
+              </button>
+              <div
+                id="account-top-menu"
+                class="bbsMenu absolute right-0 hidden"
+              >
+                <button class="bbsButton bbsButton-menu-item">
+                  <p>
+                    <span class="notranslate msicon">home</span>
+                    <span class="text-label">My Company Profile </span>
+                  </p>
+                </button>
+                <button class="bbsButton bbsButton-menu-item">
+                  <p>
+                    <span class="msicon notranslate">message</span>
+                    <span class="text-label">Message Center</span>
+                    <span class="bbsBadge">9</span>
+                  </p>
+                </button>
+                <button class="bbsButton bbsButton-menu-item">
+                  <p>
+                    <span class="msicon notranslate">settings</span>
+                    <span class="text-label">Account Settings</span>
+                  </p>
+                </button>
+                <hr />
 
-    <div class="footer">
-      <div class="flex flex-col gap-4 md:flex-row">
-        <div class="flex basis-full items-center gap-2 align-middle">
-          <img src="/assets/BBOS_logo_full.svg" />
-          <div class="flex flex-col gap-1">
-            <p
-              class="whitespace-nowrap font-serif text-xl font-semibold text-brand"
-            >
-              Blue Book Services
-            </p>
-            <p class="-my-1 text-sm text-success">
-              Credit Rating and Marketing Information
-            </p>
-            <p class="flex gap-2 pt-2">
-              <img class="h-5" src="/assets/digiCert-basic-seal-new.svg " />
-              <a class="w-6 text-center" href="#">
-                <img class="m-auto h-4" src="/assets/youtube.svg"
-              /></a>
-              <a class="w-6 text-center" href="#">
-                <img class="m-auto h-4" src="/assets/linkedin-in.svg"
-              /></a>
-              <a class="w-6 text-center" href="#">
-                <img class="m-auto h-4" src="/assets/x-twitter.svg"
-              /></a>
-              <a class="w-6 text-center" href="#">
-                <img class="m-auto h-4" src="/assets/facebook-f.svg"
-              /></a>
-            </p>
-          </div>
-        </div>
-        <div class="flex items-center gap-6 whitespace-nowrap text-xs">
-          <div class="flex flex-col gap-2">
-            <p><a href="#">Home</a></p>
-            <p><a href="#">Terms Of Use</a></p>
-            <p><a href="#">Advertise</a></p>
-            <p><a href="#">Feedback</a></p>
-          </div>
-          <div class="flex flex-col gap-2">
-            <p><a href="#">Contact Us</a></p>
-            <p><a href="#">Privacy Policy</a></p>
-            <p><a href="#">Community Standards</a></p>
-            <p><a href="#">Membership Agreement</a></p>
+                <button class="bbsButton bbsButton-menu-item">
+                  <p>
+                    <span class="msicon notranslate">g_translate</span>
+                    <span class="text-label">Cambiar a Español</span>
+                  </p>
+                </button>
+                <button class="bbsButton bbsButton-menu-item">
+                  <p>
+                    <span class="msicon notranslate">help</span>
+                    <span class="text-label">Help and Support</span>
+                  </p>
+                </button>
+                <hr />
+                <button class="bbsButton bbsButton-menu-item">
+                  <p>
+                    <span class="msicon notranslate">logout</span>
+                    <span class="text-label">Logout</span>
+                  </p>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <hr />
-      <div
-        class="flex flex-col items-center border border-t-border pt-2 text-xs"
-      >
-        © 2023 Blue Book Services | 630 668-3500
+    </header>
+
+    <!-- Contnet -->
+    <content class="max-w-screen-xl">
+      <div class="grid grid-cols-2 gap-2">
+        <h2>Buttons</h2>
+        <h2>Disabled</h2>
+        <button class="bbsButton bbsButton-primary">
+          <span class="msicon notranslate">search</span>Primary Button
+        </button>
+        <button disabled class="bbsButton bbsButton-primary disabled">
+          <span class="msicon notranslate">search</span>
+          <span>Primary Button</span>
+          <span class="msicon notranslate">lock</span>
+        </button>
+        <button class="bbsButton bbsButton-secondary">
+          <span class="msicon notranslate">search</span>Secondary Button
+        </button>
+        <button disabled class="bbsButton bbsButton-secondary disabled">
+          <span class="msicon notranslate">search</span>
+          <span>Secondary Button</span>
+          <span class="msicon notranslate">lock</span>
+        </button>
+        <button class="bbsButton bbsButton-tag-secondary">
+          Close tag<span class="msicon notranslate">close</span>
+        </button>
+        <button disabled class="bbsButton bbsButton-tag-secondary disabled">
+          <span class="msicon notranslate">search</span>
+          <span>Close tag</span>
+          <span class="msicon notranslate">lock</span>
+        </button>
       </div>
-    </div>
+
+      <details>
+        <summary>Show Colors</summary>
+
+        <div class="grid grid-cols-4 gap-2">
+          <div class="rounded border border-border bg-bg-primary p-2">
+            <h2 class="font-bold">On bg-primary</h2>
+            <div class="text-brand">brand</div>
+            <div class="text-border">border</div>
+            <div class="text-focus-outline">focus-outline</div>
+            <div class="text-text-primary">text-primary</div>
+            <div class="text-text-secondary">text-secondary</div>
+            <div class="text-text-tertiary">text-tertiary</div>
+            <div class="text-text-disabled">text-disabled</div>
+            <div class="text-success">success</div>
+            <div class="text-warn">warn</div>
+            <div class="text-info">info</div>
+            <div class="text-error">error</div>
+          </div>
+          <div class="rounded border border-border bg-bg-secondary p-2">
+            <h2 class="font-bold">On bg-secondary</h2>
+            <div class="text-brand">brand</div>
+            <div class="text-border">border</div>
+            <div class="text-focus-outline">focus-outline</div>
+            <div class="text-text-primary">text-primary</div>
+            <div class="text-text-secondary">text-secondary</div>
+            <div class="text-text-tertiary">text-tertiary</div>
+            <div class="text-text-disabled">text-disabled</div>
+            <div class="text-success">success</div>
+            <div class="text-warn">warn</div>
+            <div class="text-info">info</div>
+            <div class="text-error">error</div>
+          </div>
+          <div class="rounded border border-border bg-bg-tertiary p-2">
+            <h2 class="font-bold">On bg-tertiary</h2>
+            <div class="text-brand">brand</div>
+            <div class="text-border">border</div>
+            <div class="text-focus-outline">focus-outline</div>
+            <div class="text-text-primary">text-primary</div>
+            <div class="text-text-secondary">text-secondary</div>
+            <div class="text-text-tertiary">text-tertiary</div>
+            <div class="text-text-disabled">text-disabled</div>
+            <div class="text-success">success</div>
+            <div class="text-warn">warn</div>
+            <div class="text-info">info</div>
+            <div class="text-error">error</div>
+          </div>
+          <div class="rounded border border-border bg-bg-disabled p-2">
+            <h2 class="font-bold">On bg-disabled</h2>
+            <div class="text-brand">brand</div>
+            <div class="text-border">border</div>
+            <div class="text-focus-outline">focus-outline</div>
+            <div class="text-text-primary">text-primary</div>
+            <div class="text-text-secondary">text-secondary</div>
+            <div class="text-text-tertiary">text-tertiary</div>
+            <div class="text-text-disabled">text-disabled</div>
+            <div class="text-success">success</div>
+            <div class="text-warn">warn</div>
+            <div class="text-info">info</div>
+            <div class="text-error">error</div>
+          </div>
+        </div>
+      </details>
+    </content>
+    <!-- Footer -->
+    <footer class="max-w-screen-xl">
+      <div class="footer">
+        <div class="flex flex-col gap-4 md:flex-row">
+          <div class="flex basis-full items-center gap-2 align-middle">
+            <img src="/assets/BBOS_logo_full.svg" />
+            <div class="flex flex-col gap-1">
+              <p
+                class="whitespace-nowrap font-serif text-xl font-semibold text-brand"
+              >
+                Blue Book Services
+              </p>
+              <p class="-my-1 text-sm text-success">
+                Credit Rating and Marketing Information
+              </p>
+              <p class="flex gap-2 pt-2">
+                <img class="h-5" src="/assets/digiCert-basic-seal-new.svg " />
+                <a class="w-6 text-center" href="#">
+                  <img class="m-auto h-4" src="/assets/youtube.svg"
+                /></a>
+                <a class="w-6 text-center" href="#">
+                  <img class="m-auto h-4" src="/assets/linkedin-in.svg"
+                /></a>
+                <a class="w-6 text-center" href="#">
+                  <img class="m-auto h-4" src="/assets/x-twitter.svg"
+                /></a>
+                <a class="w-6 text-center" href="#">
+                  <img class="m-auto h-4" src="/assets/facebook-f.svg"
+                /></a>
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-6 whitespace-nowrap text-xs">
+            <div class="flex flex-col gap-2">
+              <p><a href="#">Home</a></p>
+              <p><a href="#">Terms Of Use</a></p>
+              <p><a href="#">Advertise</a></p>
+              <p><a href="#">Feedback</a></p>
+            </div>
+            <div class="flex flex-col gap-2">
+              <p><a href="#">Contact Us</a></p>
+              <p><a href="#">Privacy Policy</a></p>
+              <p><a href="#">Community Standards</a></p>
+              <p><a href="#">Membership Agreement</a></p>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div
+          class="flex flex-col items-center border border-t-border pt-2 text-xs"
+        >
+          © 2023 Blue Book Services | 630 668-3500
+        </div>
+      </div>
+    </footer>
 
     <script async src="main.js"></script>
 
