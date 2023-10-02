@@ -144,23 +144,32 @@ a {
     }
   }
   .left-sidebar {
-    @apply tw-w-60
+    @apply tw-max-w-[200px]
     tw-border-r
     tw-border-border
     tw-bg-bg-primary
-    tw-p-3;
+    tw-p-3
+    max-sm:tw-p-0;
     .bbsButton.bbsButton-menu-item {
-      @apply tw-rounded;
+      @apply tw-rounded max-sm:tw-rounded-none;
       &.selected {
         @apply tw-bg-bg-component-selected
         tw-shadow-none;
       }
+      .text-label {
+        @apply tw-whitespace-break-spaces
+        max-sm:tw-hidden;
+      }
+      .bbsBadge {
+        @apply max-sm:tw-hidden;
+      }
     }
     .group-label {
       @apply tw-py-2
-      tw-text-sm
+       tw-text-sm
       tw-font-semibold
-      tw-text-text-secondary;
+      tw-text-text-secondary
+      max-sm:tw-hidden;
     }
     hr {
       @apply tw-my-3;
@@ -261,6 +270,7 @@ a {
       tw-max-w-screen-xl;
       .main-content {
         @apply tw-w-full
+        tw-overflow-x-hidden
         tw-p-6;
       }
     }

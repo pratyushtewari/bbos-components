@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const colors = require("tailwindcss/colors");
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 export default {
   prefix: 'tw-',
@@ -31,6 +32,9 @@ export default {
       boxShadow: {
         "selected-horizontal": "inset 0 -2px 0 #0055A5",
       },
+      screens: {
+        xs: '400px'
+      }
     },
   },
   plugins: [],
