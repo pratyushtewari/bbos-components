@@ -17,6 +17,7 @@ export default {
         "bg-disabled": colors.zinc[100],
         "bg-component-hover": colors.slate[300],
         "bg-component-active": colors.slate[200],
+        "bg-component-selected": colors.violet[100],
         "focus-outline": colors.violet[600],
         "text-primary": colors.slate[950],
         "text-secondary": colors.slate[500],

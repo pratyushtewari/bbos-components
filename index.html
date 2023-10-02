@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="./style.css" />
     <title>BBOS COMPONENTS</title>
   </head>
-  <body class="tw-flex tw-flex-col tw-align-middle tw-items-center">
+  <body class="tw-flex tw-flex-col tw-items-center tw-align-middle">
     <!-- TOP NAV BAR -->
 
     <div class="top-nav">
@@ -31,7 +31,7 @@
           <div class="top-nav-logo">
             <img src="/assets/BBS_logo_small.svg" />
             <img
-              class="xl:tw-inline-block tw-hidden"
+              class="tw-hidden xl:tw-inline-block"
               style="width: 122px; height: 12px"
               src="/assets/Blue-Book-Services.png"
             />
@@ -319,105 +319,176 @@
     <!-- Content  -->
     <div class="content">
       <div class="content-container">
-        <div class="tw-grid tw-grid-cols-2 tw-gap-2">
-          <h2>Buttons</h2>
-          <h2>Disabled</h2>
-          <button class="bbsButton bbsButton-primary">
-            <span class="msicon notranslate">search</span>Primary Button
+        <div class="left-sidebar">
+          <p class="group-label">Advanced Company Search</p>
+          <button class="bbsButton bbsButton-menu-item full-width selected">
+            <p>
+              <span class="msicon notranslate">psychiatry</span>
+              <span class="text-label">Produce</span>
+              <span class="bbsBadge">New</span>
+            </p>
           </button>
-          <button disabled class="bbsButton bbsButton-primary disabled">
-            <span class="msicon notranslate">search</span>
-            <span>Primary Button</span>
-            <span class="msicon notranslate">lock</span>
+          <button class="bbsButton bbsButton-menu-item full-width">
+            <p>
+              <span class="msicon notranslate">local_shipping</span>
+              <span class="text-label">Transport</span>
+            </p>
           </button>
-          <button class="bbsButton bbsButton-secondary">
-            <span class="msicon notranslate">search</span>Secondary Button
+          <button class="bbsButton bbsButton-menu-item full-width">
+            <p>
+              <span class="msicon notranslate">conveyor_belt</span>
+              <span class="text-label">Supply</span>
+            </p>
           </button>
-          <button disabled class="bbsButton bbsButton-secondary disabled">
-            <span class="msicon notranslate">search</span>
-            <span>Secondary Button</span>
-            <span class="msicon notranslate">lock</span>
+          <hr />
+          <p class="group-label">My Lists</p>
+          <button class="bbsButton bbsButton-menu-item full-width">
+            <p>
+              <span class="msicon notranslate">saved_search</span>
+              <span class="text-label">Saved Searches</span>
+            </p>
           </button>
-          <button class="bbsButton bbsButton-tag-secondary">
-            Close tag<span class="msicon notranslate">close</span>
+          <button class="bbsButton bbsButton-menu-item full-width">
+            <p>
+              <span class="msicon notranslate">history</span>
+              <span class="text-label">Recent Views</span>
+            </p>
           </button>
-          <button disabled class="bbsButton bbsButton-tag-secondary disabled">
-            <span class="msicon notranslate">search</span>
-            <span>Close tag</span>
-            <span class="msicon notranslate">lock</span>
+          <button class="bbsButton bbsButton-menu-item full-width">
+            <p>
+              <span class="msicon notranslate">youtube_searched_for</span>
+              <span class="text-label">Run Last Search</span>
+            </p>
+          </button>
+          <hr />
+          <p class="group-label">Other Searches</p>
+          <button class="bbsButton bbsButton-menu-item full-width">
+            <p>
+              <span class="msicon notranslate">person_search</span>
+              <span class="text-label">People Search</span>
+            </p>
+          </button>
+          <button class="bbsButton bbsButton-menu-item full-width">
+            <p>
+              <span class="msicon notranslate">work_history</span>
+              <span class="text-label">Company updates</span>
+            </p>
+          </button>
+          <button class="bbsButton bbsButton-menu-item full-width">
+            <p>
+              <span class="msicon notranslate">universal_currency_alt</span>
+              <span class="text-label">Claim Search</span>
+            </p>
+          </button>
+          <hr />
+          <button class="bbsButton bbsButton-menu-item full-width">
+            <p>
+              <span class="msicon notranslate">help</span>
+              <span class="text-label">Help</span>
+            </p>
           </button>
         </div>
-        <br />
-        <details>
-          <summary>Show All Colors</summary>
-
-          <div class="tw-grid tw-grid-cols-4 tw-gap-2">
-            <div
-              class="tw-rounded tw-border tw-border-border tw-bg-bg-primary tw-p-2"
-            >
-              <h2 class="tw-font-bold">On bg-primary</h2>
-              <div class="tw-text-brand">brand</div>
-              <div class="tw-text-border">border</div>
-              <div class="tw-text-focus-outline">focus-outline</div>
-              <div class="tw-text-text-primary">text-primary</div>
-              <div class="tw-text-text-secondary">text-secondary</div>
-              <div class="tw-text-text-tertiary">text-tertiary</div>
-              <div class="tw-text-text-disabled">text-disabled</div>
-              <div class="tw-text-success">success</div>
-              <div class="tw-text-warn">warn</div>
-              <div class="tw-text-info">info</div>
-              <div class="tw-text-error">error</div>
-            </div>
-            <div
-              class="tw-rounded tw-border tw-border-border tw-bg-bg-secondary tw-p-2"
-            >
-              <h2 class="tw-font-bold">On bg-secondary</h2>
-              <div class="tw-text-brand">brand</div>
-              <div class="tw-text-border">border</div>
-              <div class="tw-text-focus-outline">focus-outline</div>
-              <div class="tw-text-text-primary">text-primary</div>
-              <div class="tw-text-text-secondary">text-secondary</div>
-              <div class="tw-text-text-tertiary">text-tertiary</div>
-              <div class="tw-text-text-disabled">text-disabled</div>
-              <div class="tw-text-success">success</div>
-              <div class="tw-text-warn">warn</div>
-              <div class="tw-text-info">info</div>
-              <div class="tw-text-error">error</div>
-            </div>
-            <div
-              class="tw-rounded tw-border tw-border-border tw-bg-bg-tertiary tw-p-2"
-            >
-              <h2 class="tw-font-bold">On bg-tertiary</h2>
-              <div class="tw-text-brand">brand</div>
-              <div class="tw-text-border">border</div>
-              <div class="tw-text-focus-outline">focus-outline</div>
-              <div class="tw-text-text-primary">text-primary</div>
-              <div class="tw-text-text-secondary">text-secondary</div>
-              <div class="tw-text-text-tertiary">text-tertiary</div>
-              <div class="tw-text-text-disabled">text-disabled</div>
-              <div class="tw-text-success">success</div>
-              <div class="tw-text-warn">warn</div>
-              <div class="tw-text-info">info</div>
-              <div class="tw-text-error">error</div>
-            </div>
-            <div
-              class="tw-rounded tw-border tw-border-border tw-bg-bg-disabled tw-p-2"
-            >
-              <h2 class="tw-font-bold">On bg-disabled</h2>
-              <div class="tw-text-brand">brand</div>
-              <div class="tw-text-border">border</div>
-              <div class="tw-text-focus-outline">focus-outline</div>
-              <div class="tw-text-text-primary">text-primary</div>
-              <div class="tw-text-text-secondary">text-secondary</div>
-              <div class="tw-text-text-tertiary">text-tertiary</div>
-              <div class="tw-text-text-disabled">text-disabled</div>
-              <div class="tw-text-success">success</div>
-              <div class="tw-text-warn">warn</div>
-              <div class="tw-text-info">info</div>
-              <div class="tw-text-error">error</div>
-            </div>
+        <div class="main-content">
+          <div class="tw-grid tw-grid-cols-2 tw-gap-2">
+            <h2>Buttons</h2>
+            <h2>Disabled</h2>
+            <button class="bbsButton bbsButton-primary">
+              <span class="msicon notranslate">search</span>Primary Button
+            </button>
+            <button disabled class="bbsButton bbsButton-primary disabled">
+              <span class="msicon notranslate">search</span>
+              <span>Primary Button</span>
+              <span class="msicon notranslate">lock</span>
+            </button>
+            <button class="bbsButton bbsButton-secondary">
+              <span class="msicon notranslate">search</span>Secondary Button
+            </button>
+            <button disabled class="bbsButton bbsButton-secondary disabled">
+              <span class="msicon notranslate">search</span>
+              <span>Secondary Button</span>
+              <span class="msicon notranslate">lock</span>
+            </button>
+            <button class="bbsButton bbsButton-tag-secondary">
+              Close tag<span class="msicon notranslate">close</span>
+            </button>
+            <button disabled class="bbsButton bbsButton-tag-secondary disabled">
+              <span class="msicon notranslate">search</span>
+              <span>Close tag</span>
+              <span class="msicon notranslate">lock</span>
+            </button>
           </div>
-        </details>
+          <br />
+          <details>
+            <summary>Show All Colors</summary>
+
+            <div class="tw-grid tw-grid-cols-4 tw-gap-2">
+              <div
+                class="tw-rounded tw-border tw-border-border tw-bg-bg-primary tw-p-2"
+              >
+                <h2 class="tw-font-bold">On bg-primary</h2>
+                <div class="tw-text-brand">brand</div>
+                <div class="tw-text-border">border</div>
+                <div class="tw-text-focus-outline">focus-outline</div>
+                <div class="tw-text-text-primary">text-primary</div>
+                <div class="tw-text-text-secondary">text-secondary</div>
+                <div class="tw-text-text-tertiary">text-tertiary</div>
+                <div class="tw-text-text-disabled">text-disabled</div>
+                <div class="tw-text-success">success</div>
+                <div class="tw-text-warn">warn</div>
+                <div class="tw-text-info">info</div>
+                <div class="tw-text-error">error</div>
+              </div>
+              <div
+                class="tw-rounded tw-border tw-border-border tw-bg-bg-secondary tw-p-2"
+              >
+                <h2 class="tw-font-bold">On bg-secondary</h2>
+                <div class="tw-text-brand">brand</div>
+                <div class="tw-text-border">border</div>
+                <div class="tw-text-focus-outline">focus-outline</div>
+                <div class="tw-text-text-primary">text-primary</div>
+                <div class="tw-text-text-secondary">text-secondary</div>
+                <div class="tw-text-text-tertiary">text-tertiary</div>
+                <div class="tw-text-text-disabled">text-disabled</div>
+                <div class="tw-text-success">success</div>
+                <div class="tw-text-warn">warn</div>
+                <div class="tw-text-info">info</div>
+                <div class="tw-text-error">error</div>
+              </div>
+              <div
+                class="tw-rounded tw-border tw-border-border tw-bg-bg-tertiary tw-p-2"
+              >
+                <h2 class="tw-font-bold">On bg-tertiary</h2>
+                <div class="tw-text-brand">brand</div>
+                <div class="tw-text-border">border</div>
+                <div class="tw-text-focus-outline">focus-outline</div>
+                <div class="tw-text-text-primary">text-primary</div>
+                <div class="tw-text-text-secondary">text-secondary</div>
+                <div class="tw-text-text-tertiary">text-tertiary</div>
+                <div class="tw-text-text-disabled">text-disabled</div>
+                <div class="tw-text-success">success</div>
+                <div class="tw-text-warn">warn</div>
+                <div class="tw-text-info">info</div>
+                <div class="tw-text-error">error</div>
+              </div>
+              <div
+                class="tw-rounded tw-border tw-border-border tw-bg-bg-disabled tw-p-2"
+              >
+                <h2 class="tw-font-bold">On bg-disabled</h2>
+                <div class="tw-text-brand">brand</div>
+                <div class="tw-text-border">border</div>
+                <div class="tw-text-focus-outline">focus-outline</div>
+                <div class="tw-text-text-primary">text-primary</div>
+                <div class="tw-text-text-secondary">text-secondary</div>
+                <div class="tw-text-text-tertiary">text-tertiary</div>
+                <div class="tw-text-text-disabled">text-disabled</div>
+                <div class="tw-text-success">success</div>
+                <div class="tw-text-warn">warn</div>
+                <div class="tw-text-info">info</div>
+                <div class="tw-text-error">error</div>
+              </div>
+            </div>
+          </details>
+        </div>
       </div>
     </div>
     <!-- Footer -->
