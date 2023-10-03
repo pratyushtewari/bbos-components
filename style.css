@@ -148,8 +148,9 @@ a {
     tw-border-r
     tw-border-border
     tw-bg-bg-primary
-    tw-p-3
-    max-sm:tw-p-0;
+    tw-p-2
+    max-sm:tw-p-0
+    md:tw-w-full;
     .bbsButton.bbsButton-menu-item {
       @apply tw-rounded max-sm:tw-rounded-none;
       &.selected {
@@ -158,15 +159,17 @@ a {
       }
       .text-label {
         @apply tw-whitespace-break-spaces
-        max-sm:tw-hidden;
+         max-sm:tw-hidden;
       }
       .bbsBadge {
         @apply max-sm:tw-hidden;
       }
     }
     .group-label {
-      @apply tw-py-2
-       tw-text-sm
+      @apply tw-pointer-events-none
+      tw-py-2
+      tw-ps-2
+      tw-text-xs
       tw-font-semibold
       tw-text-text-secondary
       max-sm:tw-hidden;
