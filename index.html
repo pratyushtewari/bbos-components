@@ -451,38 +451,164 @@
           </button>
         </div>
         <div class="main-content">
-          <div class="tw-grid tw-grid-cols-2 tw-gap-2">
-            <h2>Buttons</h2>
-            <h2>Disabled</h2>
-            <button class="bbsButton bbsButton-primary">
-              <span class="msicon notranslate">search</span>Primary Button
-            </button>
-            <button disabled class="bbsButton bbsButton-primary disabled">
-              <span class="msicon notranslate">search</span>
-              <span>Primary Button</span>
-              <span class="msicon notranslate">lock</span>
-            </button>
-            <button class="bbsButton bbsButton-secondary">
-              <span class="msicon notranslate">search</span>Secondary Button
-            </button>
-            <button disabled class="bbsButton bbsButton-secondary disabled">
-              <span class="msicon notranslate">search</span>
-              <span>Secondary Button</span>
-              <span class="msicon notranslate">lock</span>
-            </button>
-            <button class="bbsButton bbsButton-tag-secondary">
-              Close tag<span class="msicon notranslate">close</span>
-            </button>
-            <button disabled class="bbsButton bbsButton-tag-secondary disabled">
-              <span class="msicon notranslate">search</span>
-              <span>Close tag</span>
-              <span class="msicon notranslate">lock</span>
-            </button>
+          <div class="search-selection">
+            <div>
+              <h2>Search Produce Companies</h2>
+              <div class="bbs-accordion">
+                <div class="bbs-accordion-item">
+                  <button class="bbs-accordion-header">
+                    <div>
+                      <span class="msicon notranslate">expand_more</span>
+                    </div>
+                    <div class="label">
+                      <span class="text-label">Company Details</span>
+                      <span class="caption">
+                        Company name, listing status, phone, etc.
+                      </span>
+                    </div>
+                  </button>
+                  <div class="bbs-accordion-content"></div>
+                </div>
+                <div class="bbs-accordion-item">
+                  <button class="bbs-accordion-header">
+                    <div>
+                      <span class="msicon notranslate">expand_more</span>
+                    </div>
+                    <div class="label">
+                      <span class="text-label">Rating</span>
+                      <span class="caption"> BBS score or rating </span>
+                    </div>
+                  </button>
+                  <div class="bbs-accordion-content"></div>
+                </div>
+                <div class="bbs-accordion-item">
+                  <button class="bbs-accordion-header">
+                    <div>
+                      <span class="msicon notranslate">expand_more</span>
+                    </div>
+                    <div class="label">
+                      <span class="text-label">Location</span>
+                      <span class="caption">
+                        State, city or zip (US) or other countries or distance
+                        (US only)
+                      </span>
+                    </div>
+                  </button>
+                  <div class="bbs-accordion-content"></div>
+                </div>
+                <div class="bbs-accordion-item">
+                  <button class="bbs-accordion-header">
+                    <div>
+                      <span class="msicon notranslate">expand_more</span>
+                    </div>
+                    <div class="label">
+                      <span class="text-label">Commodities</span>
+                      <span class="caption">
+                        Types of fruits, vegetables, etc
+                      </span>
+                    </div>
+                  </button>
+                  <div class="bbs-accordion-content"></div>
+                </div>
+                <div class="bbs-accordion-item">
+                  <button class="bbs-accordion-header">
+                    <div>
+                      <span class="msicon notranslate">expand_more</span>
+                    </div>
+                    <div class="label">
+                      <span class="text-label">Classification</span>
+                      <span class="caption">
+                        Industry supplier or type of service
+                      </span>
+                    </div>
+                  </button>
+                  <div class="bbs-accordion-content"></div>
+                </div>
+                <div class="bbs-accordion-item">
+                  <button class="bbs-accordion-header">
+                    <div>
+                      <span class="msicon notranslate">expand_more</span>
+                    </div>
+                    <div class="label">
+                      <span class="text-label"
+                        >Licenses and Certifications</span
+                      >
+                      <span class="caption">
+                        Volume, Licenses or certifications
+                      </span>
+                    </div>
+                  </button>
+                  <div class="bbs-accordion-content"></div>
+                </div>
+                <div class="bbs-accordion-item">
+                  <button class="bbs-accordion-header">
+                    <div>
+                      <span class="msicon notranslate">expand_more</span>
+                    </div>
+                    <div class="label">
+                      <span class="text-label">Other Details</span>
+                      <span class="caption">
+                        Blue book member or other information
+                      </span>
+                    </div>
+                  </button>
+                  <div class="bbs-accordion-content"></div>
+                </div>
+              </div>
+            </div>
+            <div class="tw-max-w-[400px]">
+              <h2>Selected Criteria</h2>
+              <div class="tw-flex tw-gap-4">
+                <button class="bbsButton bbsButton-secondary filled">
+                  <span class="msicon notranslate">clear</span>
+                  <span>Clear all</span>
+                </button>
+                <button class="bbsButton bbsButton-secondary filled">
+                  <span class="msicon notranslate">saved_search</span>
+                  <span>Save Search</span>
+                </button>
+                <button class="bbsButton bbsButton-primary">
+                  <span class="msicon notranslate">search</span>
+                  <span>Search</span>
+                </button>
+              </div>
+            </div>
           </div>
           <br />
           <details>
-            <summary>Show All Colors</summary>
-
+            <summary>Show components</summary>
+            <div class="tw-grid tw-grid-cols-2 tw-gap-2">
+              <h2>Buttons</h2>
+              <h2>Disabled</h2>
+              <button class="bbsButton bbsButton-primary">
+                <span class="msicon notranslate">search</span>
+                <span>Primary Button</span>
+              </button>
+              <button disabled class="bbsButton bbsButton-primary disabled">
+                <span class="msicon notranslate">search</span>
+                <span>Primary Button</span>
+                <span class="msicon notranslate">lock</span>
+              </button>
+              <button class="bbsButton bbsButton-secondary">
+                <span class="msicon notranslate">search</span>Secondary Button
+              </button>
+              <button disabled class="bbsButton bbsButton-secondary disabled">
+                <span class="msicon notranslate">search</span>
+                <span>Secondary Button</span>
+                <span class="msicon notranslate">lock</span>
+              </button>
+              <button class="bbsButton bbsButton-tag-secondary">
+                Close tag<span class="msicon notranslate">close</span>
+              </button>
+              <button
+                disabled
+                class="bbsButton bbsButton-tag-secondary disabled"
+              >
+                <span class="msicon notranslate">search</span>
+                <span>Close tag</span>
+                <span class="msicon notranslate">lock</span>
+              </button>
+            </div>
             <div class="tw-grid tw-grid-cols-4 tw-gap-2">
               <div
                 class="tw-rounded tw-border tw-border-border tw-bg-bg-primary tw-p-2"

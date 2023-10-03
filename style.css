@@ -83,6 +83,11 @@ a {
       @apply tw-bg-transparent
       hover:tw-bg-bg-component-hover
       active:tw-bg-bg-component-active;
+      &.filled {
+        @apply tw-bg-bg-primary
+        hover:tw-bg-bg-component-hover
+        active:tw-bg-bg-component-active;
+      }
     }
     /*
     Rounded tag button - best with a close end icon
@@ -312,9 +317,47 @@ a {
       }
     }
   }
+  .bbs-accordion {
+    @apply tw-rounded
+    tw-border
+    tw-border-border;
+    .bbs-accordion-item {
+      .bbs-accordion-header {
+        @apply tw-flex
+        tw-w-full
+        tw-gap-2
+        tw-border-b
+        tw-border-border
+        tw-bg-bg-primary
+        tw-bg-bg-tertiary
+        tw-px-3
+        tw-py-4
+        hover:tw-bg-bg-component-hover
+        active:tw-bg-bg-component-active;
+        .label {
+          @apply tw-flex
+          tw-flex-col
+          tw-items-start
+          tw-gap-1
+          tw-text-sm;
+        }
+      }
+      .bbs-accordion-content {
+      }
+    }
+  }
+  .search-selection {
+    @apply tw-flex
+    tw-flex-row
+    tw-gap-6;
+  }
   /* Bootstrap tooltip */
   .tooltip {
     z-index: 1000;
+  }
+  h2 {
+    @apply tw-mb-4
+    tw-font-semibold;
   }
   /* end of the layer components */
 }
