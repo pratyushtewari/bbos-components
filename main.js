@@ -39,3 +39,16 @@ document.addEventListener("keydown", function (e) {
     closeALLMenu();
   }
 });
+
+const toggleAccordion = (event) => {
+  const parentElement = event.currentTarget.parentElement
+  parentElement.classList.toggle("open");
+  const isOpen = parentElement.classList.contains("open");
+  const contentWrapper  = parentElement.querySelector(".content-wrapper");
+  const content = parentElement.querySelector(".bbs-accordion-content");
+  if (isOpen) {
+    content.style.height = contentWrapper.clientHeight + "px";
+  } else {
+    content.style.height = 0;
+  }
+};

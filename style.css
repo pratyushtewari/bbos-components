@@ -51,6 +51,7 @@ a {
   .bbsButton {
     @apply tw-flex
     tw-w-max
+    tw-justify-center
     tw-gap-x-1.5
     tw-rounded-md
     tw-border
@@ -212,6 +213,11 @@ a {
         @apply tw-flex
         tw-align-middle;
       }
+      .input-wrapper {
+        input {
+          @apply tw-w-[118px] md:tw-w-[300px];
+        }
+      }
     }
     .top-nav-logo {
       @apply tw-flex
@@ -245,17 +251,33 @@ a {
       tw-text-text-tertiary;
     }
     input {
-      @apply tw-my-2
-      tw-w-[118px]
-      tw-rounded-3xl
+      @apply tw-w-full
+      tw-rounded-md
       tw-border
       tw-border-border
+      tw-px-2
       tw-py-1
-      tw-pe-1
-      tw-ps-7
-      tw-text-xs
-      tw-placeholder-text-tertiary
-      md:tw-w-[260px];
+      tw-text-sm
+      tw-placeholder-text-tertiary;
+
+      &.pill {
+        @apply tw-rounded-3xl;
+      }
+    }
+
+    &.left-icon {
+      input {
+        @apply tw-my-2
+        tw-ps-7;
+      }
+    }
+    label {
+      @apply tw-mb-1
+      tw-text-sm
+      tw-font-semibold;
+    }
+    .caption {
+      @apply tw-py-2;
     }
   }
   .bbsBadge {
@@ -318,7 +340,8 @@ a {
     }
   }
   .bbs-accordion {
-    @apply tw-rounded
+    @apply tw-overflow-hidden
+    tw-rounded-lg
     tw-border
     tw-border-border;
     .bbs-accordion-item {
@@ -328,10 +351,10 @@ a {
         tw-gap-2
         tw-border-b
         tw-border-border
-        tw-bg-bg-primary
         tw-bg-bg-tertiary
-        tw-px-3
-        tw-py-4
+        tw-py-3
+        tw-pe-4
+        tw-ps-3
         hover:tw-bg-bg-component-hover
         active:tw-bg-bg-component-active;
         .label {
@@ -341,15 +364,38 @@ a {
           tw-gap-1
           tw-text-sm;
         }
+        .expand-icon {
+          transition: all 250ms;
+          display: inline-block;
+        }
+      }
+      &.open {
+        .bbs-accordion-header {
+          .expand-icon {
+            transform: rotate(180deg);
+          }
+        }
+        .bbs-accordion-content {
+        }
       }
       .bbs-accordion-content {
+        @apply tw-overflow-hidden
+        tw-bg-bg-primary;
+        transition: all 250ms;
+        .content-wrapper {
+          @apply tw-p-4;
+        }
       }
     }
   }
-  .search-selection {
-    @apply tw-flex
-    tw-flex-row
-    tw-gap-6;
+  .search-selection-container {
+    @apply tw-grid
+    tw-grid-cols-1
+    tw-gap-6
+    lg:tw-grid-cols-2;
+    .search-form {
+      @apply max-lg:tw-order-last;
+    }
   }
   /* Bootstrap tooltip */
   .tooltip {

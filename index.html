@@ -251,9 +251,10 @@
           </div>
         </div>
         <div class="tw-flex-grow-0">
-          <div class="input-wrapper">
+          <div class="input-wrapper left-icon">
             <span class="icon-left msicon notranslate">search</span>
             <input
+              class="pill"
               type="search"
               placeholder="Quick Search a company name or BBS id"
             />
@@ -451,14 +452,19 @@
           </button>
         </div>
         <div class="main-content">
-          <div class="search-selection">
-            <div>
+          <div class="search-selection-container">
+            <div class="search-form tw-max-w-[400px]">
               <h2>Search Produce Companies</h2>
               <div class="bbs-accordion">
                 <div class="bbs-accordion-item">
-                  <button class="bbs-accordion-header">
+                  <button
+                    onclick="toggleAccordion(event)"
+                    class="bbs-accordion-header"
+                  >
                     <div>
-                      <span class="msicon notranslate">expand_more</span>
+                      <span class="msicon notranslate expand-icon"
+                        >expand_more</span
+                      >
                     </div>
                     <div class="label">
                       <span class="text-label">Company Details</span>
@@ -467,24 +473,85 @@
                       </span>
                     </div>
                   </button>
-                  <div class="bbs-accordion-content"></div>
+                  <div class="bbs-accordion-content">
+                    <div class="content-wrapper">
+                      <div class="input-wrapper">
+                        <label for="companyName">Company Name</label>
+                        <p>
+                          <input
+                            id="companyName"
+                            type="text"
+                            placeholder="Full or part of the name"
+                            aria-label=".form-control-sm example"
+                          />
+                        </p>
+                        <p class="caption">
+                          Use the quick search field located at the top right
+                          corner if you only want to search by company name and
+                          not combine with other search criteria.
+                        </p>
+                      </div>
+
+                      <input
+                        type="radio"
+                        id="html"
+                        name="fav_language"
+                        value="HTML"
+                      />
+                      <label for="html">HTML</label><br />
+
+                      <input
+                        type="radio"
+                        id="css"
+                        name="fav_language"
+                        value="CSS"
+                      />
+                      <label for="css">CSS</label><br />
+
+                      <input
+                        type="radio"
+                        id="javascript"
+                        name="fav_language"
+                        value="JavaScript"
+                      />
+                      <label for="javascript">JavaScript</label>
+                      <p>Please select your age:</p>
+                      <input
+                        type="radio"
+                        id="dsf"
+                        name="dfgs"
+                        value="JavaScript"
+                      />
+                      <label for="dsf">JavaScript</label>
+                    </div>
+                  </div>
                 </div>
                 <div class="bbs-accordion-item">
-                  <button class="bbs-accordion-header">
+                  <button
+                    onclick="toggleAccordion(event)"
+                    class="bbs-accordion-header"
+                  >
                     <div>
-                      <span class="msicon notranslate">expand_more</span>
+                      <span class="msicon notranslate expand-icon"
+                        >expand_more</span
+                      >
                     </div>
                     <div class="label">
                       <span class="text-label">Rating</span>
-                      <span class="caption"> BBS score or rating </span>
+                      <span class="caption"> BBS score or rating</span>
                     </div>
                   </button>
                   <div class="bbs-accordion-content"></div>
                 </div>
                 <div class="bbs-accordion-item">
-                  <button class="bbs-accordion-header">
+                  <button
+                    onclick="toggleAccordion(event)"
+                    class="bbs-accordion-header"
+                  >
                     <div>
-                      <span class="msicon notranslate">expand_more</span>
+                      <span class="msicon notranslate expand-icon"
+                        >expand_more</span
+                      >
                     </div>
                     <div class="label">
                       <span class="text-label">Location</span>
@@ -497,9 +564,14 @@
                   <div class="bbs-accordion-content"></div>
                 </div>
                 <div class="bbs-accordion-item">
-                  <button class="bbs-accordion-header">
+                  <button
+                    onclick="toggleAccordion(event)"
+                    class="bbs-accordion-header"
+                  >
                     <div>
-                      <span class="msicon notranslate">expand_more</span>
+                      <span class="msicon notranslate expand-icon"
+                        >expand_more</span
+                      >
                     </div>
                     <div class="label">
                       <span class="text-label">Commodities</span>
@@ -511,9 +583,14 @@
                   <div class="bbs-accordion-content"></div>
                 </div>
                 <div class="bbs-accordion-item">
-                  <button class="bbs-accordion-header">
+                  <button
+                    onclick="toggleAccordion(event)"
+                    class="bbs-accordion-header"
+                  >
                     <div>
-                      <span class="msicon notranslate">expand_more</span>
+                      <span class="msicon notranslate expand-icon"
+                        >expand_more</span
+                      >
                     </div>
                     <div class="label">
                       <span class="text-label">Classification</span>
@@ -525,9 +602,14 @@
                   <div class="bbs-accordion-content"></div>
                 </div>
                 <div class="bbs-accordion-item">
-                  <button class="bbs-accordion-header">
+                  <button
+                    onclick="toggleAccordion(event)"
+                    class="bbs-accordion-header"
+                  >
                     <div>
-                      <span class="msicon notranslate">expand_more</span>
+                      <span class="msicon notranslate expand-icon"
+                        >expand_more</span
+                      >
                     </div>
                     <div class="label">
                       <span class="text-label"
@@ -541,9 +623,14 @@
                   <div class="bbs-accordion-content"></div>
                 </div>
                 <div class="bbs-accordion-item">
-                  <button class="bbs-accordion-header">
+                  <button
+                    onclick="toggleAccordion(event)"
+                    class="bbs-accordion-header"
+                  >
                     <div>
-                      <span class="msicon notranslate">expand_more</span>
+                      <span class="msicon notranslate expand-icon"
+                        >expand_more</span
+                      >
                     </div>
                     <div class="label">
                       <span class="text-label">Other Details</span>
@@ -556,18 +643,18 @@
                 </div>
               </div>
             </div>
-            <div class="tw-max-w-[400px]">
+            <div class="selected-criteria tw-w-[400px]">
               <h2>Selected Criteria</h2>
-              <div class="tw-flex tw-gap-4">
-                <button class="bbsButton bbsButton-secondary filled">
+              <div class="tw-flex tw-gap-3">
+                <button class="bbsButton bbsButton-secondary filled full-width">
                   <span class="msicon notranslate">clear</span>
                   <span>Clear all</span>
                 </button>
-                <button class="bbsButton bbsButton-secondary filled">
+                <button class="bbsButton bbsButton-secondary filled full-width">
                   <span class="msicon notranslate">saved_search</span>
                   <span>Save Search</span>
                 </button>
-                <button class="bbsButton bbsButton-primary">
+                <button class="bbsButton bbsButton-primary full-width">
                   <span class="msicon notranslate">search</span>
                   <span>Search</span>
                 </button>
