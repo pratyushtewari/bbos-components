@@ -20,7 +20,7 @@ export default {
         "bg-component-active": colors.slate[200],
         "bg-component-selected": colors.violet[100],
         "focus-outline": colors.violet[600],
-        "text-primary": colors.slate[950],
+        "text-primary": colors.slate[800],
         "text-secondary": colors.slate[500],
         "text-tertiary": colors.slate[400],
         "text-disabled": colors.zinc[300],

@@ -456,7 +456,7 @@
             <div class="search-form tw-max-w-[400px]">
               <h2>Search Produce Companies</h2>
               <div class="bbs-accordion">
-                <div class="bbs-accordion-item">
+                <div class="bbs-accordion-item open">
                   <button
                     onclick="toggleAccordion(event)"
                     class="bbs-accordion-header"
@@ -474,15 +474,16 @@
                     </div>
                   </button>
                   <div class="bbs-accordion-content">
-                    <div class="content-wrapper">
+                    <div class="content-wrapper tw-flex tw-flex-col tw-gap-4">
                       <div class="input-wrapper">
                         <label for="companyName">Company Name</label>
                         <p>
                           <input
+                            class="full-width"
                             id="companyName"
                             type="text"
                             placeholder="Full or part of the name"
-                            aria-label=".form-control-sm example"
+                            aria-label="Full or part of the name"
                           />
                         </p>
                         <p class="caption">
@@ -491,38 +492,60 @@
                           not combine with other search criteria.
                         </p>
                       </div>
-
-                      <input
-                        type="radio"
-                        id="html"
-                        name="fav_language"
-                        value="HTML"
-                      />
-                      <label for="html">HTML</label><br />
-
-                      <input
-                        type="radio"
-                        id="css"
-                        name="fav_language"
-                        value="CSS"
-                      />
-                      <label for="css">CSS</label><br />
-
-                      <input
-                        type="radio"
-                        id="javascript"
-                        name="fav_language"
-                        value="JavaScript"
-                      />
-                      <label for="javascript">JavaScript</label>
-                      <p>Please select your age:</p>
-                      <input
-                        type="radio"
-                        id="dsf"
-                        name="dfgs"
-                        value="JavaScript"
-                      />
-                      <label for="dsf">JavaScript</label>
+                      <div class="input-wrapper">
+                        <p class="label">Type</p>
+                        <div class="tw-flex tw-gap-4">
+                          <div class="bbs-radio-input">
+                            <input
+                              type="radio"
+                              id="type-any"
+                              name="company_type"
+                              value="type-any"
+                            />
+                            <label for="type-any">Any</label><br />
+                          </div>
+                          <div class="bbs-radio-input">
+                            <input
+                              type="radio"
+                              id="type-headquater"
+                              name="company_type"
+                              value="type-headquater"
+                            />
+                            <label for="type-headquater">Headquater</label
+                            ><br />
+                          </div>
+                          <div class="bbs-radio-input">
+                            <input
+                              type="radio"
+                              id="type-branch"
+                              name="company_type"
+                              value="type-branch"
+                            />
+                            <label for="type-branch">Branch</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="input-wrapper">
+                        <p class="label">
+                          <span>Rejected shipments</span>
+                          <span
+                            class="msicon notranslate tw-align-bottom tw-text-text-secondary"
+                            tabindex="0"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="right"
+                            data-bs-html="true"
+                            data-bs-title="Show companies that take rejected shipments"
+                          >
+                            help
+                          </span>
+                        </p>
+                        <div class="bbs-radio-input">
+                          <input type="checkbox" id="handle_rejects" />
+                          <label for="handle_rejects"
+                            >Handles rejected shipments</label
+                          ><br />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

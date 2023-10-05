@@ -6,7 +6,7 @@
  */
 .msicon {
   font-family: "Material Symbols Outlined";
-  color: currentColor;
+  /* color: currentColor; */
   font-variation-settings:
     "FILL" 0,
     "wght" 400,
@@ -140,8 +140,7 @@ a {
     tw-border
     tw-border-border
     tw-bg-white
-    tw-p-1
-    tw-shadow-lg;
+    tw-p-1 tw-shadow-lg;
     .bbsButton-menu-item {
       @apply tw-w-full;
       .bbsBadge {
@@ -240,7 +239,9 @@ a {
     tw-text-text-secondary;
   }
   .input-wrapper {
-    @apply tw-relative;
+    @apply tw-flex
+    tw-flex-col
+    tw-gap-2;
     > .icon-left {
       @apply tw-pointer-events-none
       tw-absolute
@@ -251,8 +252,7 @@ a {
       tw-text-text-tertiary;
     }
     input {
-      @apply tw-w-full
-      tw-rounded-md
+      @apply tw-rounded-md
       tw-border
       tw-border-border
       tw-px-2
@@ -263,6 +263,9 @@ a {
       &.pill {
         @apply tw-rounded-3xl;
       }
+      &.full-width {
+        @apply tw-w-full;
+      }
     }
 
     &.left-icon {
@@ -271,13 +274,15 @@ a {
         tw-ps-7;
       }
     }
+  }
+  label,
+  .label {
+    @apply tw-text-sm
+    tw-font-semibold;
+  }
+  .bbs-radio-input {
     label {
-      @apply tw-mb-1
-      tw-text-sm
-      tw-font-semibold;
-    }
-    .caption {
-      @apply tw-py-2;
+      @apply tw-font-normal;
     }
   }
   .bbsBadge {
@@ -369,6 +374,13 @@ a {
           display: inline-block;
         }
       }
+
+      &:not(.open) {
+        .bbs-accordion-content {
+          @apply tw-h-0;
+        }
+      }
+
       &.open {
         .bbs-accordion-header {
           .expand-icon {
@@ -376,6 +388,7 @@ a {
           }
         }
         .bbs-accordion-content {
+          @apply tw-h-fit;
         }
       }
       .bbs-accordion-content {
