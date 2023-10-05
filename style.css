@@ -354,8 +354,7 @@ a {
         @apply tw-flex
         tw-w-full
         tw-gap-2
-        tw-border-b
-        tw-border-border
+
         tw-bg-bg-tertiary
         tw-py-3
         tw-pe-4
@@ -388,17 +387,24 @@ a {
           }
         }
         .bbs-accordion-content {
-          @apply tw-h-fit;
+          @apply tw-h-fit
+          tw-border-t
+          tw-border-border;
         }
       }
       .bbs-accordion-content {
         @apply tw-overflow-hidden
+
         tw-bg-bg-primary;
         transition: all 250ms;
         .content-wrapper {
           @apply tw-p-4;
         }
       }
+    }
+    .bbs-accordion-item:not(:last-child) {
+      @apply tw-border-b
+      tw-border-border;
     }
   }
   .search-selection-container {
