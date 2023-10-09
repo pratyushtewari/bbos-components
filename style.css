@@ -280,7 +280,8 @@ a {
     @apply tw-text-sm
     tw-font-semibold;
   }
-  .bbs-radio-input {
+  .bbs-radio-input,
+  .bbs-checkbox-input {
     label {
       @apply tw-font-normal;
     }
