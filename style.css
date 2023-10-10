@@ -436,22 +436,25 @@ a {
   .AutoCompleteFlyout {
     @apply tw-z-[100]
     tw-flex
+    tw-h-[400px]
     tw-min-w-[200px]
     tw-max-w-[400px]
     tw-flex-col
     tw-items-start
-    tw-gap-1
+    tw-overflow-auto
     tw-rounded-md
     tw-border
     tw-border-border
     tw-bg-white
-     tw-shadow-lg;
+    tw-shadow-lg;
   }
 
   .AutoCompleteFlyoutItem,
   .AutoCompleteFlyoutShadeItem,
   .AutoCompleteFlyoutHilightedItem {
     @apply tw-w-full
+    tw-border-b
+    tw-border-border
     tw-p-3
     tw-text-left
     tw-text-sm;
