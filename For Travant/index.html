@@ -252,9 +252,10 @@
           </div>
         </div>
         <div class="tw-flex-grow-0">
-          <div class="input-wrapper">
+          <div class="input-wrapper left-icon">
             <span class="icon-left msicon notranslate">search</span>
             <input
+              class="pill"
               type="search"
               placeholder="Quick Search a company name or BBS id"
             />
@@ -452,38 +453,413 @@
           </button>
         </div>
         <div class="main-content">
-          <div class="tw-grid tw-grid-cols-2 tw-gap-2">
-            <h2>Buttons</h2>
-            <h2>Disabled</h2>
-            <button class="bbsButton bbsButton-primary">
-              <span class="msicon notranslate">search</span>Primary Button
-            </button>
-            <button disabled class="bbsButton bbsButton-primary disabled">
-              <span class="msicon notranslate">search</span>
-              <span>Primary Button</span>
-              <span class="msicon notranslate">lock</span>
-            </button>
-            <button class="bbsButton bbsButton-secondary">
-              <span class="msicon notranslate">search</span>Secondary Button
-            </button>
-            <button disabled class="bbsButton bbsButton-secondary disabled">
-              <span class="msicon notranslate">search</span>
-              <span>Secondary Button</span>
-              <span class="msicon notranslate">lock</span>
-            </button>
-            <button class="bbsButton bbsButton-tag-secondary">
-              Close tag<span class="msicon notranslate">close</span>
-            </button>
-            <button disabled class="bbsButton bbsButton-tag-secondary disabled">
-              <span class="msicon notranslate">search</span>
-              <span>Close tag</span>
-              <span class="msicon notranslate">lock</span>
-            </button>
+          <div class="search-selection-container">
+            <div class="search-form tw-max-w-[400px]">
+              <h2>Search Produce Companies</h2>
+              <div class="bbs-accordion">
+                <div class="bbs-accordion-item open">
+                  <button
+                    onclick="toggleAccordion(event)"
+                    class="bbs-accordion-header"
+                  >
+                    <div>
+                      <span class="msicon notranslate expand-icon"
+                        >expand_more</span
+                      >
+                    </div>
+                    <div class="label">
+                      <span class="text-label">Company Details</span>
+                      <span class="caption">
+                        Company name, listing status, phone, etc.
+                      </span>
+                    </div>
+                  </button>
+                  <div class="bbs-accordion-content">
+                    <div class="content-wrapper tw-flex tw-flex-col tw-gap-4">
+                      <div class="input-wrapper">
+                        <label for="companyName">Company Name</label>
+                        <p>
+                          <input
+                            class="full-width"
+                            id="companyName"
+                            type="text"
+                            placeholder="Full or part of the name"
+                            aria-label="Full or part of the name"
+                          />
+                        </p>
+                        <p class="caption">
+                          Use the quick search field located at the top right
+                          corner if you only want to search by company name and
+                          not combine with other search criteria.
+                        </p>
+                      </div>
+                      <div class="input-wrapper">
+                        <p class="label">Type</p>
+                        <div class="tw-flex tw-gap-4">
+                          <div class="bbs-radio-input">
+                            <input
+                              type="radio"
+                              id="type-any"
+                              name="company_type"
+                              value="type-any"
+                            />
+                            <label for="type-any">Any</label><br />
+                          </div>
+                          <div class="bbs-radio-input">
+                            <input
+                              type="radio"
+                              id="type-headquater"
+                              name="company_type"
+                              value="type-headquater"
+                            />
+                            <label for="type-headquater">Headquater</label
+                            ><br />
+                          </div>
+                          <div class="bbs-radio-input">
+                            <input
+                              type="radio"
+                              id="type-branch"
+                              name="company_type"
+                              value="type-branch"
+                            />
+                            <label for="type-branch">Branch</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="input-wrapper">
+                        <p class="label">
+                          <span>Rejected shipments</span>
+                          <span
+                            class="msicon notranslate tw-align-bottom tw-text-text-secondary"
+                            tabindex="0"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="right"
+                            data-bs-html="true"
+                            data-bs-title="Show companies that take rejected shipments"
+                          >
+                            help
+                          </span>
+                        </p>
+                        <div class="bbs-checkbox-input">
+                          <input type="checkbox" id="handle_rejects" />
+                          <label for="handle_rejects"
+                            >Handles rejected shipments</label
+                          ><br />
+                        </div>
+                      </div>
+                      <div class="input-wrapper">
+                        <label for="phonenumber">Phone</label>
+                        <p>
+                          <input
+                            class="full-width"
+                            id="phonenumber"
+                            type="text"
+                            placeholder="e.g. +1201670527 or (201) 637-0527 or part of the number"
+                            aria-label="Full or part of the phone number"
+                          />
+                        </p>
+                        <div class="bbs-checkbox-input">
+                          <input type="checkbox" id="must_have_phone" />
+                          <label for="must_have_phone"
+                            >Must have a phone number</label
+                          ><br />
+                        </div>
+                        <p class="caption">
+                          Leave the phone number text box empty if you need the
+                          listing to have any number.
+                        </p>
+                      </div>
+                      <div class="input-wrapper">
+                        <label for="companyemail">Email</label>
+                        <p>
+                          <input
+                            class="full-width"
+                            id="companyemail"
+                            type="text"
+                            placeholder="email@domain.com or part of the email"
+                            aria-label="Full or part of the email"
+                          />
+                        </p>
+                        <div class="bbs-checkbox-input">
+                          <input type="checkbox" id="must_have_email" />
+                          <label for="must_have_email"
+                            >Must have a email address </label
+                          ><br />
+                        </div>
+                        <p class="caption">
+                          Leave the phone number text box empty if you need the
+                          listing to have any number.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="bbs-accordion-item open">
+                  <button
+                    onclick="toggleAccordion(event)"
+                    class="bbs-accordion-header"
+                  >
+                    <div>
+                      <span class="msicon notranslate expand-icon"
+                        >expand_more</span
+                      >
+                    </div>
+                    <div class="label">
+                      <span class="text-label">Rating</span>
+                      <span class="caption">BBS score or rating</span>
+                    </div>
+                  </button>
+                  <div class="bbs-accordion-content">
+                    <div class="content-wrapper tw-flex tw-flex-col tw-gap-4">
+                      <div class="input-wrapper">
+                        <div class="bbs-checkbox-input">
+                          <input type="checkbox" id="must_have_email" />
+                          <label for="must_have_email"
+                            >Trading / Transportation Members only</label
+                          ><br />
+                        </div>
+                      </div>
+                      <div class="input-wrapper">
+                        <label for="companyemail">Blue Book Score</label>
+                        <p class="tw-flex tw-gap-4">
+                          <select aria-label="Small select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                          <input
+                            class="full-width"
+                            id="companyemail"
+                            type="text"
+                            placeholder="email@domain.com or part of the email"
+                            aria-label="Full or part of the email"
+                          />
+                        </p>
+                        <div class="bbs-checkbox-input">
+                          <input type="checkbox" id="must_have_email" />
+                          <label for="must_have_email"
+                            >Must have a email address </label
+                          ><br />
+                        </div>
+                        <p class="caption">
+                          Leave the phone number text box empty if you need the
+                          listing to have any number.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="bbs-accordion-item">
+                  <button
+                    onclick="toggleAccordion(event)"
+                    class="bbs-accordion-header"
+                  >
+                    <div>
+                      <span class="msicon notranslate expand-icon"
+                        >expand_more</span
+                      >
+                    </div>
+                    <div class="label">
+                      <span class="text-label">Location</span>
+                      <span class="caption">
+                        State, city or zip (US) or other countries or distance
+                        (US only)
+                      </span>
+                    </div>
+                  </button>
+                  <div class="bbs-accordion-content">
+                    <div class="content-wrapper tw-opacity-50">
+                      <img src="assets/there_is_nothing_here.svg" />
+                      <span>THERE IS NOTHING HERE</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="bbs-accordion-item">
+                  <button
+                    onclick="toggleAccordion(event)"
+                    class="bbs-accordion-header"
+                  >
+                    <div>
+                      <span class="msicon notranslate expand-icon"
+                        >expand_more</span
+                      >
+                    </div>
+                    <div class="label">
+                      <span class="text-label">Commodities</span>
+                      <span class="caption">
+                        Types of fruits, vegetables, etc
+                      </span>
+                    </div>
+                  </button>
+                  <div class="bbs-accordion-content">
+                    <div class="content-wrapper tw-opacity-50">
+                      <img src="assets/there_is_nothing_here.svg" />
+                      <span>THERE IS NOTHING HERE</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="bbs-accordion-item">
+                  <button
+                    onclick="toggleAccordion(event)"
+                    class="bbs-accordion-header"
+                  >
+                    <div>
+                      <span class="msicon notranslate expand-icon"
+                        >expand_more</span
+                      >
+                    </div>
+                    <div class="label">
+                      <span class="text-label">Classification</span>
+                      <span class="caption">
+                        Industry supplier or type of service
+                      </span>
+                    </div>
+                  </button>
+                  <div class="bbs-accordion-content">
+                    <div class="content-wrapper tw-opacity-50">
+                      <img src="assets/there_is_nothing_here.svg" />
+                      <span>THERE IS NOTHING HERE</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="bbs-accordion-item">
+                  <button
+                    onclick="toggleAccordion(event)"
+                    class="bbs-accordion-header"
+                  >
+                    <div>
+                      <span class="msicon notranslate expand-icon"
+                        >expand_more</span
+                      >
+                    </div>
+                    <div class="label">
+                      <span class="text-label"
+                        >Licenses and Certifications</span
+                      >
+                      <span class="caption">
+                        Volume, Licenses or certifications
+                      </span>
+                    </div>
+                  </button>
+                  <div class="bbs-accordion-content">
+                    <div class="content-wrapper tw-opacity-50">
+                      <img src="assets/there_is_nothing_here.svg" />
+                      <span>THERE IS NOTHING HERE</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="bbs-accordion-item">
+                  <button
+                    onclick="toggleAccordion(event)"
+                    class="bbs-accordion-header"
+                  >
+                    <div>
+                      <span class="msicon notranslate expand-icon"
+                        >expand_more</span
+                      >
+                    </div>
+                    <div class="label">
+                      <span class="text-label">Other Details</span>
+                      <span class="caption">
+                        Blue book member or other information
+                      </span>
+                    </div>
+                  </button>
+                  <div class="bbs-accordion-content">
+                    <div class="content-wrapper tw-opacity-50">
+                      <img src="assets/there_is_nothing_here.svg" />
+                      <span>THERE IS NOTHING HERE</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="selected-criteria tw-w-[400px]">
+              <h2>Selected Criteria</h2>
+              <div class="tw-flex tw-gap-3">
+                <button class="bbsButton bbsButton-secondary filled full-width">
+                  <span class="msicon notranslate">clear</span>
+                  <span>Clear all</span>
+                </button>
+                <button class="bbsButton bbsButton-secondary filled full-width">
+                  <span class="msicon notranslate">saved_search</span>
+                  <span>Save Search</span>
+                </button>
+                <button class="bbsButton bbsButton-primary full-width">
+                  <span class="msicon notranslate">search</span>
+                  <span>Search</span>
+                </button>
+              </div>
+            </div>
           </div>
           <br />
+          <div
+            style="z-index: 1000; width: 400px; left: 2px; top: 37px"
+            class="AutoCompleteFlyout"
+          >
+            <div class="AutoCompleteFlyoutItem">
+              <p class="AutoCompleteFlyoutItem-title">
+                Straight From The Farm (H)
+              </p>
+              <p class="AutoCompleteFlyoutItem-subtext">
+                Saunders Enterprises, LLC.
+              </p>
+              <p class="AutoCompleteFlyoutItem-subtext">Orlando, FL</p>
+            </div>
+            <div class="AutoCompleteFlyoutHilightedItem">
+              <p class="AutoCompleteFlyoutItem-title">
+                Straight From The Farm (H)
+              </p>
+              <p class="AutoCompleteFlyoutItem-subtext">
+                Saunders Enterprises, LLC.
+              </p>
+              <p class="AutoCompleteFlyoutItem-subtext">Orlando, FL</p>
+            </div>
+            <div class="AutoCompleteFlyoutItem">
+              <p class="AutoCompleteFlyoutItem-title">
+                Straight From The Farm (H)
+              </p>
+              <p class="AutoCompleteFlyoutItem-subtext">
+                Saunders Enterprises, LLC.
+              </p>
+              <p class="AutoCompleteFlyoutItem-subtext">Orlando, FL</p>
+            </div>
+          </div>
           <details>
-            <summary>Show All Colors</summary>
-
+            <summary>Show components</summary>
+            <div class="tw-grid tw-grid-cols-2 tw-gap-2">
+              <h2>Buttons</h2>
+              <h2>Disabled</h2>
+              <button class="bbsButton bbsButton-primary">
+                <span class="msicon notranslate">search</span>
+                <span>Primary Button</span>
+              </button>
+              <button disabled class="bbsButton bbsButton-primary disabled">
+                <span class="msicon notranslate">search</span>
+                <span>Primary Button</span>
+                <span class="msicon notranslate">lock</span>
+              </button>
+              <button class="bbsButton bbsButton-secondary">
+                <span class="msicon notranslate">search</span>Secondary Button
+              </button>
+              <button disabled class="bbsButton bbsButton-secondary disabled">
+                <span class="msicon notranslate">search</span>
+                <span>Secondary Button</span>
+                <span class="msicon notranslate">lock</span>
+              </button>
+              <button class="bbsButton bbsButton-tag-secondary">
+                Close tag<span class="msicon notranslate">close</span>
+              </button>
+              <button
+                disabled
+                class="bbsButton bbsButton-tag-secondary disabled"
+              >
+                <span class="msicon notranslate">search</span>
+                <span>Close tag</span>
+                <span class="msicon notranslate">lock</span>
+              </button>
+            </div>
             <div class="tw-grid tw-grid-cols-4 tw-gap-2">
               <div
                 class="tw-rounded tw-border tw-border-border tw-bg-bg-primary tw-p-2"

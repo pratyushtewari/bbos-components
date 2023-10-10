@@ -13,6 +13,7 @@
     "GRAD" 0,
     "opsz" 24;
 }
+
 /**
  * Remove focus styles for non-keyboard focus.
  */
@@ -21,7 +22,8 @@
   box-shadow: none;
 }
 textarea:focus,
-input:focus {
+input:focus,
+select:focus {
   @apply tw-outline
   tw-outline-1
   tw-outline-offset-0;
@@ -192,6 +194,7 @@ a {
   /* Global nav */
   .top-nav {
     @apply tw-sticky tw-top-0
+    tw-z-[100]
     tw-flex
     tw-w-full
     tw-items-center
@@ -213,7 +216,8 @@ a {
         tw-align-middle;
       }
       .input-wrapper {
-        input {
+        input,
+        select {
           @apply tw-w-[118px] md:tw-w-[300px];
         }
       }
@@ -251,7 +255,8 @@ a {
       tw-cursor-text
       tw-text-text-tertiary;
     }
-    input {
+    input,
+    select {
       @apply tw-rounded-md
       tw-border
       tw-border-border
@@ -269,7 +274,8 @@ a {
     }
 
     &.left-icon {
-      input {
+      input,
+      select {
         @apply tw-my-2
         tw-ps-7;
       }
@@ -424,6 +430,42 @@ a {
   h2 {
     @apply tw-mb-4
     tw-font-semibold;
+  }
+
+  /* Auto Complete Flyout from the old BBOS */
+  .AutoCompleteFlyout {
+    @apply tw-z-[100]
+    tw-flex
+    tw-min-w-[200px]
+    tw-max-w-[400px]
+    tw-flex-col
+    tw-items-start
+    tw-gap-1
+    tw-rounded-md
+    tw-border
+    tw-border-border
+    tw-bg-white
+     tw-shadow-lg;
+  }
+
+  .AutoCompleteFlyoutItem,
+  .AutoCompleteFlyoutShadeItem,
+  .AutoCompleteFlyoutHilightedItem {
+    @apply tw-w-full
+    tw-p-3
+    tw-text-left
+    tw-text-sm;
+    .AutoCompleteFlyoutItem-title {
+      @apply tw-font-semibold;
+    }
+    .AutoCompleteFlyoutItem-subtext {
+      @apply tw-text-xs
+      tw-text-text-secondary;
+    }
+  }
+
+  .AutoCompleteFlyoutHilightedItem {
+    @apply tw-bg-bg-component-hover;
   }
   /* end of the layer components */
 }

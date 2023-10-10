@@ -593,7 +593,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="bbs-accordion-item">
+                <div class="bbs-accordion-item open">
                   <button
                     onclick="toggleAccordion(event)"
                     class="bbs-accordion-header"
@@ -609,9 +609,43 @@
                     </div>
                   </button>
                   <div class="bbs-accordion-content">
-                    <div class="content-wrapper tw-opacity-50">
-                      <img src="/assets/there_is_nothing_here.svg" />
-                      <span>THERE IS NOTHING HERE</span>
+                    <div class="content-wrapper tw-flex tw-flex-col tw-gap-4">
+                      <div class="input-wrapper">
+                        <div class="bbs-checkbox-input">
+                          <input type="checkbox" id="must_have_email" />
+                          <label for="must_have_email"
+                            >Trading / Transportation Members only</label
+                          ><br />
+                        </div>
+                      </div>
+                      <div class="input-wrapper">
+                        <label for="companyemail">Blue Book Score</label>
+                        <p class="tw-flex tw-gap-4">
+                          <select aria-label="Small select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                          <input
+                            class="full-width"
+                            id="companyemail"
+                            type="text"
+                            placeholder="email@domain.com or part of the email"
+                            aria-label="Full or part of the email"
+                          />
+                        </p>
+                        <div class="bbs-checkbox-input">
+                          <input type="checkbox" id="must_have_email" />
+                          <label for="must_have_email"
+                            >Must have a email address </label
+                          ><br />
+                        </div>
+                        <p class="caption">
+                          Leave the phone number text box empty if you need the
+                          listing to have any number.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -759,6 +793,38 @@
             </div>
           </div>
           <br />
+          <div
+            style="z-index: 1000; width: 400px; left: 2px; top: 37px"
+            class="AutoCompleteFlyout"
+          >
+            <div class="AutoCompleteFlyoutItem">
+              <p class="AutoCompleteFlyoutItem-title">
+                Straight From The Farm (H)
+              </p>
+              <p class="AutoCompleteFlyoutItem-subtext">
+                Saunders Enterprises, LLC.
+              </p>
+              <p class="AutoCompleteFlyoutItem-subtext">Orlando, FL</p>
+            </div>
+            <div class="AutoCompleteFlyoutHilightedItem">
+              <p class="AutoCompleteFlyoutItem-title">
+                Straight From The Farm (H)
+              </p>
+              <p class="AutoCompleteFlyoutItem-subtext">
+                Saunders Enterprises, LLC.
+              </p>
+              <p class="AutoCompleteFlyoutItem-subtext">Orlando, FL</p>
+            </div>
+            <div class="AutoCompleteFlyoutItem">
+              <p class="AutoCompleteFlyoutItem-title">
+                Straight From The Farm (H)
+              </p>
+              <p class="AutoCompleteFlyoutItem-subtext">
+                Saunders Enterprises, LLC.
+              </p>
+              <p class="AutoCompleteFlyoutItem-subtext">Orlando, FL</p>
+            </div>
+          </div>
           <details>
             <summary>Show components</summary>
             <div class="tw-grid tw-grid-cols-2 tw-gap-2">
