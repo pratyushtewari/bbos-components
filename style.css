@@ -48,7 +48,30 @@ a {
 @layer components {
   body {
     @apply tw-text-text-primary;
+    &.qa::after {
+      content: "QA";
+      @apply
+        tw-w-[100px]
+        tw-p-0.5
+        tw-text-center
+        tw-text-error
+        tw-fixed
+        tw-top-[10px]
+        tw-text-xs
+        tw-font-semibold
+        tw-left-[-30px]
+        tw-border
+        tw-border-error
+        tw-border-opacity-25
+        tw-pointer-events-none
+        tw-z-[100]
+        tw-bg-error
+        tw-bg-opacity-25
+        tw--rotate-45
+        ;
+      }
   }
+
   /* Button */
   .bbsButton {
     @apply tw-flex
