@@ -3,7 +3,7 @@ const colors = require("tailwindcss/colors");
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 export default {
-  prefix: 'tw-',
+  prefix: "tw-",
   content: ["./index.html", "./src/**/*.js"],
   theme: {
     extend: {
@@ -11,7 +11,7 @@ export default {
         brand: "#0055A5",
         border: colors.slate[300],
         "border-disabled": colors.zinc[300],
-        "border-component": colors.slate[400],
+        "border-component": colors.slate[300],
         "bg-primary": colors.white,
         "bg-secondary": colors.slate[50],
         "bg-tertiary": colors.slate[100],
@@ -33,8 +33,8 @@ export default {
         "selected-horizontal": "inset 0 -2px 0 #0055A5",
       },
       screens: {
-        xs: '400px'
-      }
+        xs: "400px",
+      },
     },
   },
   plugins: [],

@@ -79,6 +79,7 @@ a {
     &.bbsButton-primary {
       @apply tw-bg-brand
       tw-text-white
+      tw-border-brand
       hover:tw-bg-brand/90
       active:tw-bg-brand/80;
     }
@@ -243,7 +244,8 @@ a {
     tw-text-text-secondary;
   }
   .input-wrapper {
-    @apply tw-flex
+    @apply tw-relative
+    tw-flex
     tw-flex-col
     tw-gap-2;
     > .icon-left {
@@ -368,8 +370,25 @@ a {
       tw-font-semibold;
     }
   }
+
+  .bbs-list-group table tbody tr:last-child {
+    border: transparent;
+    border: 0px solid transparent;
+  }
   .bbs-list-group {
     @apply tw-bg-bg-primary;
+    table {
+      @apply tw-mb-0;
+      tbody {
+        tr {
+          &:last-child {
+            @apply tw-border-collapse
+            tw-border-0
+            tw-border-transparent;
+          }
+        }
+      }
+    }
     .bbs-list-item {
       @apply tw-flex
       tw-w-full
@@ -470,6 +489,7 @@ a {
     tw-font-semibold;
   }
 
+  /* OLD BBOS OVERWITES */
   /* Auto Complete Flyout from the old BBOS */
   .AutoCompleteFlyout {
     @apply tw-z-[100]
@@ -508,5 +528,25 @@ a {
   .AutoCompleteFlyoutHilightedItem {
     @apply tw-bg-bg-component-hover;
   }
+
+  .market-update-block {
+    &.clr-block-1,
+    &.clr-block-2,
+    &.clr-block-3 {
+      @apply tw-h-full
+      tw-rounded
+      tw-shadow-none;
+    }
+    &.clr-block-1 {
+      background: #337ab7;
+    }
+    &.clr-block-2 {
+      background: #9cc54a;
+    }
+    &.clr-block-3 {
+      background: #73bede;
+    }
+  }
+  /* END OF OLD BBOS OVERWITES */
   /* end of the layer components */
 }
