@@ -50,26 +50,24 @@ a {
     @apply tw-text-text-primary;
     &.qa::after {
       content: "QA";
-      @apply
-        tw-w-[100px]
-        tw-p-0.5
-        tw-text-center
-        tw-text-error
+      @apply tw-pointer-events-none
         tw-fixed
-        tw-top-[10px]
-        tw-text-xs
-        tw-font-semibold
         tw-left-[-30px]
+        tw-top-[10px]
+        tw-z-[100]
+        tw-w-[100px]
+        tw--rotate-45
         tw-border
         tw-border-error
         tw-border-opacity-25
-        tw-pointer-events-none
-        tw-z-[100]
         tw-bg-error
         tw-bg-opacity-25
-        tw--rotate-45
-        ;
-      }
+        tw-p-0.5
+        tw-text-center
+        tw-text-xs
+        tw-font-semibold
+        tw-text-error;
+    }
   }
 
   /* Button */
@@ -100,14 +98,25 @@ a {
       @apply tw-w-full;
     }
     &.bbsButton-primary {
-      @apply tw-bg-brand
+      @apply tw-border-brand
+      tw-bg-brand
       tw-text-white
-      tw-border-brand
       hover:tw-bg-brand/90
       active:tw-bg-brand/80;
     }
     &.bbsButton-secondary {
       @apply tw-bg-transparent
+      hover:tw-bg-bg-component-hover
+      active:tw-bg-bg-component-active;
+      &.filled {
+        @apply tw-bg-bg-primary
+        hover:tw-bg-bg-component-hover
+        active:tw-bg-bg-component-active;
+      }
+    }
+    &.bbsButton-tertiary {
+      @apply tw-border-0
+      tw-bg-transparent
       hover:tw-bg-bg-component-hover
       active:tw-bg-bg-component-active;
       &.filled {
@@ -211,10 +220,9 @@ a {
   }
   /* Divider */
   hr {
-    @apply
-    tw-w-full
-    tw-opacity-75
-    tw-border-border;
+    @apply tw-w-full
+    tw-border-border
+    tw-opacity-75;
   }
   /* Global nav */
   .top-nav {
@@ -282,12 +290,12 @@ a {
     }
     input,
     select {
-      @apply tw-rounded-md
+      @apply tw-my-1
+      tw-rounded-md
       tw-border
       tw-border-border
       tw-px-2
       tw-py-1
-      tw-my-1
       tw-text-sm
       tw-placeholder-text-tertiary;
 
@@ -309,11 +317,10 @@ a {
   }
   label,
   .label {
-    @apply tw-text-sm
-    tw-font-semibold
-    tw-mb-1
+    @apply tw-mb-1
     tw-break-words
-    ;
+    tw-text-sm
+    tw-font-semibold;
   }
   .help {
     @apply tw-ms-1 tw-mt-0.5 tw-text-text-secondary;
@@ -526,6 +533,44 @@ a {
   h2 {
     @apply tw-mb-4
     tw-font-semibold;
+  }
+  .search-criteria-group {
+    @apply tw-mt-4;
+    .title-containter {
+      @apply tw-flex
+      tw-items-center;
+      .label {
+        @apply tw-flex-grow;
+      }
+    }
+    .content-containter {
+      @apply tw-flex
+      tw-flex-col
+      tw-gap-2
+      tw-rounded-md
+      tw-border
+      tw-border-border
+      tw-bg-bg-primary
+      tw-p-4;
+      .subheading {
+        @apply tw-text-xs
+        tw-font-semibold;
+      }
+      .tag-container {
+        @apply tw-mt-1
+        tw-flex
+        tw-flex-wrap
+        tw-gap-2;
+        .tag {
+          @apply tw-whitespace-nowrap
+          tw-rounded
+          tw-bg-bg-secondary
+          tw-px-2
+          tw-py-1
+          tw-text-xs;
+        }
+      }
+    }
   }
 
   /* OLD BBOS OVERWITES */
