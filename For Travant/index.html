@@ -24,7 +24,7 @@
     <title>BBOS COMPONENTS</title>
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body class="tw-flex tw-flex-col tw-items-center tw-align-middle qa">
+  <body class="qa tw-flex tw-flex-col tw-items-center tw-align-middle">
     <!-- TOP NAV BAR -->
 
     <div class="top-nav">
@@ -458,7 +458,7 @@
             <div class="search-form tw-max-w-[400px]">
               <h2>Search Produce Companies</h2>
               <div class="bbs-accordion">
-                <div class="bbs-accordion-item open">
+                <div class="bbs-accordion-item">
                   <button
                     onclick="toggleAccordion(event)"
                     class="bbs-accordion-header"
@@ -531,7 +531,7 @@
                         <p class="label">
                           <span>Rejected shipments</span>
                           <span
-                            class="msicon notranslate tw-align-bottom tw-text-text-secondary"
+                            class="msicon notranslate help"
                             tabindex="0"
                             data-bs-toggle="tooltip"
                             data-bs-placement="right"
@@ -612,7 +612,7 @@
                   </button>
                   <div class="bbs-accordion-content">
                     <div class="content-wrapper tw-flex tw-flex-col tw-gap-4">
-                      <div class="input-wrapper">
+                      <div data-info="Trading checkbox" class="input-wrapper">
                         <div class="bbs-checkbox-input">
                           <input type="checkbox" id="must_have_email" />
                           <label for="must_have_email"
@@ -620,33 +620,133 @@
                           ><br />
                         </div>
                       </div>
-                      <div class="input-wrapper">
+                      <div data-info="Blue Book Score" class="input-wrapper">
                         <label for="companyemail">Blue Book Score</label>
                         <p class="tw-flex tw-gap-4">
                           <select aria-label="Small select example">
-                            <option selected>Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option selected value="1">Equal to</option>
+                            <option value="2">Greate than</option>
+                            <option value="3">Less than</option>
                           </select>
                           <input
                             class="full-width"
                             id="companyemail"
                             type="text"
-                            placeholder="email@domain.com or part of the email"
+                            placeholder="Enter a number (0 to 1000)"
                             aria-label="Full or part of the email"
                           />
                         </p>
-                        <div class="bbs-checkbox-input">
-                          <input type="checkbox" id="must_have_email" />
-                          <label for="must_have_email"
-                            >Must have a email address </label
-                          ><br />
+                      </div>
+                      <div data-info="Trade Practices">
+                        <p class="label tw-mb-2">Trade Practices</p>
+                        <div class="tw-grid tw-grid-cols-2 tw-gap-x-4">
+                          <div class="bbs-checkbox-input">
+                            <input type="checkbox" id="XXXX" />
+                            <label for="XXXX"
+                              >XXXX - Excellent</label
+                            >
+                          </div>
+                          <div class="bbs-checkbox-input">
+                            <input type="checkbox" id="XX" />
+                            <label for="XX"
+                            >XX - Unsatisfactory</label
+                            >
+                          </div>
+
+                          <div class="bbs-checkbox-input">
+                            <input type="checkbox" id="XXX" />
+                            <label for="XXX">XXX - Good</label>
+                          </div>
+                          <div class="bbs-checkbox-input">
+                            <input type="checkbox" id="X" />
+                            <label for="X">X - Poor</label>
+                          </div>
                         </div>
-                        <p class="caption">
-                          Leave the phone number text box empty if you need the
-                          listing to have any number.
+                      </div>
+                      <hr />
+                      <div data-info="Pay Description">
+                        <p class="label tw-mb-2">Pay Description</p>
+                        <div class="tw-grid tw-grid-cols-2 tw-gap-x-4">
+
+                          <div class="bbs-checkbox-input">
+                            <input type="checkbox" id="AA" />
+                            <label for="AA"
+                              >AA - 1 - 14 days on average</label
+                            >
+                          </div>
+                          <div class="bbs-checkbox-input">
+                            <input type="checkbox" id="D" />
+                            <label for="D"
+                              >D - 36 - 45 days on average</label
+                            >
+                          </div>
+                          <div class="bbs-checkbox-input">
+                            <input type="checkbox" id="A" />
+                            <label for="A"
+                              >A - 15-21 days on average</label
+                            >
+                          </div>
+                          <div class="bbs-checkbox-input">
+                            <input type="checkbox" id="E" />
+                            <label for="E"
+                              >E - 46 - 60 days on average</label
+                            >
+                          </div>
+                          <div class="bbs-checkbox-input">
+                            <input type="checkbox" id="B" />
+                            <label for="B"
+                              >B - 22 - 28 days on average</label
+                            >
+                          </div>
+                          <div class="bbs-checkbox-input">
+                            <input type="checkbox" id="F" />
+                            <label for="F"
+                              >F - 60+ days on average</label
+                            >
+                          </div>
+                          <div class="bbs-checkbox-input">
+                            <input type="checkbox" id="C" />
+                            <label for="C"
+                              >C - 29 - 35 days on average</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <hr />
+                      <div data-info="Credit Worth Rating">
+                        <p class="label">
+                          Credit Worth Rating
+                          <span
+                            class="msicon notranslate help"
+                            tabindex="0"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="right"
+                            data-bs-html="true"
+                            data-bs-title="M = thousand"
+                          >
+                            help
+                          </span>
                         </p>
+
+                        <div class="tw-grid tw-grid-cols-2 tw-gap-x-4">
+                          <div data-info="Blue Book Score" class="input-wrapper">
+                            <label for="min-score">Min</label>
+
+                              <select id="min-score" aria-label="Small select example">
+                                <option value="1">-M (min)</option>
+                              </select>
+
+                          </div>
+                          <div data-info="Blue Book Score" class="input-wrapper">
+                            <label for="max-score">Max</label>
+
+                              <select id="max-score" aria-label="Small select example">
+                                <option value="1">500,000M (max)</option>
+                              </select>
+
+                          </div>
+
+                        </div>
                       </div>
                     </div>
                   </div>

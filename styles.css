@@ -211,9 +211,10 @@ a {
   }
   /* Divider */
   hr {
-    @apply tw-h-[1px]
+    @apply
     tw-w-full
-    tw-bg-bg-tertiary;
+    tw-opacity-75
+    tw-border-border;
   }
   /* Global nav */
   .top-nav {
@@ -269,8 +270,7 @@ a {
   .input-wrapper {
     @apply tw-relative
     tw-flex
-    tw-flex-col
-    tw-gap-2;
+    tw-flex-col;
     > .icon-left {
       @apply tw-pointer-events-none
       tw-absolute
@@ -287,6 +287,7 @@ a {
       tw-border-border
       tw-px-2
       tw-py-1
+      tw-my-1
       tw-text-sm
       tw-placeholder-text-tertiary;
 
@@ -309,12 +310,27 @@ a {
   label,
   .label {
     @apply tw-text-sm
-    tw-font-semibold;
+    tw-font-semibold
+    tw-mb-1
+    tw-break-words
+    ;
+  }
+  .help {
+    @apply tw-ms-1 tw-mt-0.5 tw-text-text-secondary;
+  }
+  p.label {
+    @apply tw-flex;
   }
   .bbs-radio-input,
   .bbs-checkbox-input {
+    @apply tw-flex
+    tw-items-start
+    tw-gap-1.5;
     label {
       @apply tw-font-normal;
+    }
+    input {
+      @apply tw-mt-1;
     }
   }
   .bbsBadge {
