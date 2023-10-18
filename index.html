@@ -594,7 +594,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="bbs-accordion-item open">
+                <div class="bbs-accordion-item">
                   <button
                     onclick="toggleAccordion(event)"
                     class="bbs-accordion-header"
@@ -740,7 +740,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="bbs-accordion-item">
+                <div class="bbs-accordion-item open">
                   <button
                     onclick="toggleAccordion(event)"
                     class="bbs-accordion-header"
@@ -759,9 +759,213 @@
                     </div>
                   </button>
                   <div class="bbs-accordion-content">
-                    <div class="content-wrapper tw-opacity-50">
-                      <img src="/assets/there_is_nothing_here.svg" />
-                      <span>THERE IS NOTHING HERE</span>
+                    <div class="content-wrapper tw-flex tw-flex-col tw-gap-4">
+                      <div data-info="Trading checkbox" class="input-wrapper">
+                        <p class="label">Country</p>
+                        <p class="caption">
+                          Select a country and add a state(s). Each country and
+                          their respective states are applied to the search
+                          independently.
+                        </p>
+                        <div class="tw-mt-2 tw-flex tw-items-center tw-gap-4">
+                          <div class="bbs-checkbox-input tw-w-24">
+                            <input
+                              type="checkbox"
+                              id="usa-country"
+                              onchange="toggleStateInput(event, 'usa-states-input')"
+                            />
+                            <label for="usa-country">USA</label>
+                          </div>
+                          <div class="tw-w-full">
+                            <input
+                              placeholder="Select or type a state"
+                              type="text"
+                              list="US-states"
+                              class="tw-w-full"
+                              disabled
+                              id="usa-states-input"
+                            />
+                            <datalist id="US-states">
+                              <option value="Alabama"></option>
+                              <option value="Alaska"></option>
+                              <option value="Arizona"></option>
+                              <option value="Arkansas"></option>
+                              <option value="California"></option>
+                              <option value="Colorado"></option>
+                              <option value="Connecticut"></option>
+                              <option value="Delaware"></option>
+                              <option value="Florida"></option>
+                              <option value="Georgia"></option>
+                              <option value="Hawaii"></option>
+                              <option value="Idaho"></option>
+                              <option value="Illinois"></option>
+                              <option value="Indiana"></option>
+                              <option value="Iowa"></option>
+                              <option value="Kansas"></option>
+                              <option value="Kentucky"></option>
+                              <option value="Louisiana"></option>
+                              <option value="Maine"></option>
+                              <option value="Maryland"></option>
+                              <option value="Massachusetts"></option>
+                              <option value="Michigan"></option>
+                              <option value="Minnesota"></option>
+                              <option value="Mississippi"></option>
+                              <option value="Missouri"></option>
+                              <option value="Montana"></option>
+                              <option value="Nebraska"></option>
+                              <option value="Nevada"></option>
+                              <option value="New Hampshire"></option>
+                              <option value="New Jersey"></option>
+                              <option value="New Mexico"></option>
+                              <option value="New York"></option>
+                              <option value="North Carolina"></option>
+                              <option value="North Dakota"></option>
+                              <option value="Ohio"></option>
+                              <option value="Oklahoma"></option>
+                              <option value="Oregon"></option>
+                              <option value="Pennsylvania"></option>
+                              <option value="Rhode Island"></option>
+                              <option value="South Carolina"></option>
+                              <option value="South Dakota"></option>
+                              <option value="Tennessee"></option>
+                              <option value="Texas"></option>
+                              <option value="Utah"></option>
+                              <option value="Vermont"></option>
+                              <option value="Virginia"></option>
+                              <option value="Washington"></option>
+                              <option value="West Virginia"></option>
+                              <option value="Wisconsin"></option>
+                              <option value="Wyoming"></option>
+                            </datalist>
+                          </div>
+                        </div>
+                        <div class="tw-mt-2 tw-flex tw-items-center tw-gap-4">
+                          <div class="bbs-checkbox-input tw-w-24">
+                            <input
+                              type="checkbox"
+                              id="canada-country"
+                              onchange="toggleStateInput(event, 'canada-states-input')"
+                            />
+                            <label for="canada-country">Canada</label>
+                          </div>
+                          <div class="tw-w-full">
+                            <input
+                              placeholder="Select or type a state"
+                              type="text"
+                              list="US-states"
+                              class="tw-w-full"
+                              disabled
+                              id="canada-states-input"
+                            />
+                            <datalist id="US-states">
+                              <option value="Alabama"></option>
+                              <option value="Alaska"></option>
+                              <option value="Arizona"></option>
+                              <option value="Arkansas"></option>
+                              <option value="California"></option>
+                              <option value="Colorado"></option>
+                              <option value="Connecticut"></option>
+                              <option value="Delaware"></option>
+                              <option value="Florida"></option>
+                              <option value="Georgia"></option>
+                              <option value="Hawaii"></option>
+                              <option value="Idaho"></option>
+                              <option value="Illinois"></option>
+                              <option value="Indiana"></option>
+                              <option value="Iowa"></option>
+                              <option value="Kansas"></option>
+                              <option value="Kentucky"></option>
+                              <option value="Louisiana"></option>
+                              <option value="Maine"></option>
+                              <option value="Maryland"></option>
+                              <option value="Massachusetts"></option>
+                              <option value="Michigan"></option>
+                              <option value="Minnesota"></option>
+                              <option value="Mississippi"></option>
+                              <option value="Missouri"></option>
+                              <option value="Montana"></option>
+                              <option value="Nebraska"></option>
+                              <option value="Nevada"></option>
+                              <option value="New Hampshire"></option>
+                              <option value="New Jersey"></option>
+                              <option value="New Mexico"></option>
+                              <option value="New York"></option>
+                              <option value="North Carolina"></option>
+                              <option value="North Dakota"></option>
+                              <option value="Ohio"></option>
+                              <option value="Oklahoma"></option>
+                              <option value="Oregon"></option>
+                              <option value="Pennsylvania"></option>
+                              <option value="Rhode Island"></option>
+                              <option value="South Carolina"></option>
+                              <option value="South Dakota"></option>
+                              <option value="Tennessee"></option>
+                              <option value="Texas"></option>
+                              <option value="Utah"></option>
+                              <option value="Vermont"></option>
+                              <option value="Virginia"></option>
+                              <option value="Washington"></option>
+                              <option value="West Virginia"></option>
+                              <option value="Wisconsin"></option>
+                              <option value="Wyoming"></option>
+                            </datalist>
+                          </div>
+                        </div>
+                        <div class="tw-mt-2 tw-flex tw-items-center tw-gap-4">
+                          <div class="bbs-checkbox-input tw-w-24">
+                            <input
+                              type="checkbox"
+                              id="mexico-country"
+                              onchange="toggleStateInput(event, 'mexico-states-input')"
+                            />
+                            <label for="mexico-country">Mexico</label>
+                          </div>
+                          <div class="tw-w-full">
+                            <input
+                              placeholder="Select or type a state"
+                              type="text"
+                              list="mexico-states"
+                              class="tw-w-full"
+                              disabled
+                              id="mexico-states-input"
+                            />
+                            <datalist id="mexico-states">
+                              <option value="Chihuahua"></option>
+                              <option value="Sonora"></option>
+                              <option value="Coahuila"></option>
+                              <option value="Durango"></option>
+                              <option value="Oaxaca"></option>
+                              <option value="Tamaulipas"></option>
+                              <option value="Jalisco"></option>
+                              <option value="Zacatecas"></option>
+                              <option value="Baja California Sur"></option>
+                              <option value="Chiapas"></option>
+                              <option value="Veracruz"></option>
+                              <option value="Baja California"></option>
+                              <option value="Nuevo León"></option>
+                              <option value="Guerrero"></option>
+                              <option value="San Luis Potosí"></option>
+                              <option value="Michoacán"></option>
+                              <option value="Sinaloa"></option>
+                              <option value="Campeche"></option>
+                              <option value="Quintana Roo"></option>
+                              <option value="Yucatán"></option>
+                              <option value="Puebla"></option>
+                              <option value="Guanajuato"></option>
+                              <option value="Nayarit"></option>
+                              <option value="Tabasco"></option>
+                              <option value="México"></option>
+                              <option value="Hidalgo"></option>
+                              <option value="Querétaro"></option>
+                              <option value="Colima"></option>
+                              <option value="Aguascalientes"></option>
+                              <option value="Morelos"></option>
+                              <option value="Tlaxcala"></option>
+                              <option value="México City"></option>
+                            </datalist>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

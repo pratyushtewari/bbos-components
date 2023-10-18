@@ -564,10 +564,13 @@ a {
         .tag {
           @apply tw-whitespace-nowrap
           tw-rounded
+          tw-font-mono
           tw-bg-bg-secondary
           tw-px-2
           tw-py-1
-          tw-text-xs;
+          tw-text-xs
+          tw-border
+          tw-border-border;
         }
       }
     }

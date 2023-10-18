@@ -52,3 +52,13 @@ const toggleAccordion = (event) => {
     content.style.height = 0;
   }
 };
+
+const toggleStateInput = (event, id) => {
+  const inputElement = document.querySelector("#" + id);
+  inputElement.toggleAttribute("disabled");
+  if (!inputElement.attributes.getNamedItem("disabled")) {
+    inputElement.focus();
+  } else {
+    inputElement.value = "";
+  }
+};
