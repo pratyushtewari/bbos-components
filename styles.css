@@ -536,14 +536,14 @@ a {
   }
   .search-criteria-group {
     @apply tw-mt-4;
-    .title-containter {
+    .title-container {
       @apply tw-flex
       tw-items-center;
       .label {
         @apply tw-flex-grow;
       }
     }
-    .content-containter {
+    .content-container {
       @apply tw-flex
       tw-flex-col
       tw-gap-2
