@@ -41,10 +41,10 @@ document.addEventListener("keydown", function (e) {
 });
 
 const toggleAccordion = (event) => {
-  const parentElement = event.currentTarget.parentElement
+  const parentElement = event.currentTarget.parentElement;
   parentElement.classList.toggle("open");
   const isOpen = parentElement.classList.contains("open");
-  const contentWrapper  = parentElement.querySelector(".content-wrapper");
+  const contentWrapper = parentElement.querySelector(".content-wrapper");
   const content = parentElement.querySelector(".bbs-accordion-content");
   if (isOpen) {
     content.style.height = contentWrapper.clientHeight + "px";
@@ -61,4 +61,43 @@ const toggleStateInput = (event, id) => {
   } else {
     inputElement.value = "";
   }
+};
+
+const addMultiselect = (event) => {
+  const inputElement = event.target;
+  const parentElement = inputElement.parentElement;
+  let tagContainer = parentElement.querySelector(".multiselect-tag-container");
+  if (!tagContainer) {
+    // create a tag container
+    // and append it to the parent of the input
+    tagContainer = document.createElement("div");
+    tagContainer.setAttribute("class", "multiselect-tag-container");
+    parentElement.appendChild(tagContainer);
+  }
+  const inputValue = event.target.value;
+  // clear the input
+  inputElement.value = "";
+
+  // check if there is any tag with that value exist in the parent
+  const tagid = "data-" + inputValue;
+  const tagElement = tagContainer.querySelector("#" + tagid);
+  if (!tagElement) {
+    // create the tag if it does not exists
+    const newTag = document.createElement("button");
+    newTag.setAttribute("class", "bbsButton bbsButton-tag-secondary small");
+    newTag.setAttribute("id", tagid);
+    newTag.setAttribute("onclick", "removemultiselectTag(event)");
+    newTag.innerHTML = `
+    <span>${inputValue}</span>
+    <span class="msicon notranslate">clear</span>
+    `;
+    tagContainer.appendChild(newTag);
+  }
+
+  // focus the input (it is automatic)
+};
+
+const removemultiselectTag = (event) => {
+  event.currentTarget.remove();
+  // console.log(event.target.value);
 };

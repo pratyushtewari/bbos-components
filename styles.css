@@ -133,6 +133,14 @@ a {
       tw-bg-white
       hover:tw-bg-bg-component-hover
       active:tw-bg-bg-component-active;
+      &.small {
+        @apply tw-px-1.5
+        tw-py-0.5
+        tw-text-xs;
+        .msicon {
+          @apply tw-pt-[1px];
+        }
+      }
     }
     /* Menu item button -- supposed to in to a menu or top-nav */
     &.bbsButton-menu-item {
@@ -564,16 +572,23 @@ a {
         .tag {
           @apply tw-whitespace-nowrap
           tw-rounded
-          tw-font-mono
+          tw-border
+          tw-border-border
           tw-bg-bg-secondary
           tw-px-2
           tw-py-1
-          tw-text-xs
-          tw-border
-          tw-border-border;
+          tw-font-mono
+          tw-text-xs;
         }
       }
     }
+  }
+
+  .multiselect-tag-container {
+    @apply tw-mt-1
+    tw-flex
+    tw-flex-wrap
+    tw-gap-1;
   }
 
   /* OLD BBOS OVERWITES */
