@@ -55,12 +55,39 @@ const toggleAccordion = (event) => {
 
 const toggleStateInput = (event, id) => {
   const inputElement = document.querySelector("#" + id);
-  inputElement.toggleAttribute("disabled");
-  if (!inputElement.attributes.getNamedItem("disabled")) {
+  // disable other country inputs
+  document.querySelector("#usa-states-input").setAttribute("disabled", "");
+  document.querySelector("#canada-states-input").setAttribute("disabled", "");
+  document.querySelector("#mexico-states-input").setAttribute("disabled", "");
+
+  if (event.currentTarget.checked) {
+    inputElement.removeAttribute("disabled");
     inputElement.focus();
   } else {
+    inputElement.setAttribute("disabled", "");
     inputElement.value = "";
   }
+
+  // // inputElement.toggleAttribute("disabled");
+  // if (!inputElement.attributes.getNamedItem("disabled")) {
+
+  // } else {
+
+  // }
+};
+
+const selectStateDatalist = (event, datalistId) => {
+  // clear and disable other-countries input
+  const otherCountryInput = document.querySelector("#otherCountries");
+  otherCountryInput.setAttribute("disabled", "");
+  otherCountryInput.value = "";
+
+  // set the datalist of the states to the respective country
+  console.log(datalistId);
+
+  const stateInput = document.querySelector("#na-states-input");
+  stateInput.value = "";
+  stateInput.setAttribute("list", datalistId);
 };
 
 const addMultiselect = (event) => {
@@ -100,4 +127,10 @@ const addMultiselect = (event) => {
 const removemultiselectTag = (event) => {
   event.currentTarget.remove();
   // console.log(event.target.value);
+};
+
+const enableOtherCountries = (event, id) => {
+  const otherCountryInput = document.querySelector("#" + id);
+  otherCountryInput.removeAttribute("disabled");
+  otherCountryInput.focus();
 };
