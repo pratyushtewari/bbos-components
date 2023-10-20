@@ -74,6 +74,7 @@ a {
   .bbsButton {
     @apply tw-flex
     tw-w-max
+    tw-items-center
     tw-justify-center
     tw-gap-x-1.5
     tw-rounded-md
@@ -90,8 +91,7 @@ a {
       tw-border-border-disabled
       tw-bg-bg-disabled
       tw-text-text-disabled
-      hover:tw-bg-bg-disabled
-      active:tw-bg-bg-disabled
+      tw-pointer-events-none
       !important;
     }
     &.full-width {
@@ -191,6 +191,42 @@ a {
       }
     }
   }
+
+  .bbs-combobox {
+    @apply
+    tw-relative;
+    .bbs-combobox-input {
+      @apply tw-flex;
+      input {
+        @apply tw-rounded-r-none
+      !important;
+      }
+      .bbsButton {
+        &.bbsButton-secondary {
+          @apply tw-my-1
+        tw-rounded-l-none
+        tw-border-l-0
+        tw-px-2
+        tw-py-1;
+        }
+      }
+    }
+    .bbsMenu {
+      @apply
+      tw-absolute
+      tw-w-full
+      tw-max-h-48
+      tw-overflow-hidden
+      tw-z-[999]
+      tw-overflow-y-auto;
+      ul {
+        @apply
+        tw-w-full;
+
+      }
+    }
+  }
+
   .left-sidebar {
     @apply tw-max-w-[200px]
     tw-border-r
@@ -469,6 +505,8 @@ a {
     tw-border
     tw-border-border;
     .bbs-accordion-item {
+      @apply
+      tw-relative;
       .bbs-accordion-header {
         @apply tw-flex
         tw-w-full
@@ -511,8 +549,7 @@ a {
         }
       }
       .bbs-accordion-content {
-        @apply tw-overflow-hidden
-
+        @apply
         tw-bg-bg-primary;
         transition: all 250ms;
         .content-wrapper {

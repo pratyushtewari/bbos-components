@@ -762,18 +762,14 @@
                     <div class="content-wrapper tw-flex tw-flex-col tw-gap-4">
                       <div data-info="Country Selection" class="input-wrapper">
                         <p class="label">Country</p>
-                        <p class="caption">
-                          Select a country and add a state(s). Each country and
-                          their respective states are applied to the search
-                          independently.
-                        </p>
+
                         <div class="tw-mt-2 tw-flex tw-gap-8">
                           <div class="bbs-radio-input">
                             <input
                               type="radio"
                               id="country-usa"
                               name="select-country"
-                              onchange="selectStateDatalist(event, 'us-states')"
+                              onchange="addCountryStateOptions(event, 'us')"
                               value="usa"
                             />
                             <label for="country-usa">USA</label>
@@ -783,7 +779,7 @@
                               type="radio"
                               id="country-canada"
                               name="select-country"
-                              onchange="selectStateDatalist(event, 'canada-states')"
+                              onchange="addCountryStateOptions(event, 'canada')"
                               value="canada"
                             />
                             <label for="country-canada">Canada</label>
@@ -793,7 +789,7 @@
                               type="radio"
                               id="country-mexico"
                               name="select-country"
-                              onchange="selectStateDatalist(event, 'mexico-states')"
+                              onchange="addCountryStateOptions(event, 'mexico')"
                               value="mexico"
                             />
                             <label for="country-mexico">Mexico</label>
@@ -806,7 +802,7 @@
                                 type="radio"
                                 id="country-other"
                                 name="select-country"
-                                onchange="enableOtherCountries(event, 'otherCountries')"
+                                onchange="enableOtherCountriesInput(event, 'otherCountries')"
                                 value="other"
                               />
                               <label for="country-other">Other</label>
@@ -824,128 +820,52 @@
                             </div>
                           </div>
                         </div>
+
                         <p class="caption">
                           Selecting other country disables State, city, Terminal
                           Market, and distance feature
                         </p>
                       </div>
                       <div data-info="State Selection" class="input-wrapper">
-                        <label for="stateName">State</label>
-                        <div>
-                          <input
-                            placeholder="Select or type a state"
-                            type="text"
-                            list="us-states"
-                            class="tw-w-full"
-                            id="na-states-input"
-                            onchange="addMultiselect(event)"
-                          />
-                          <datalist id="us-states">
-                            <option disabled value="Alabama"></option>
-                            <option value="Alaska"></option>
-                            <option value="Arizona"></option>
-                            <option value="Arkansas"></option>
-                            <option value="California"></option>
-                            <option value="Colorado"></option>
-                            <option value="Connecticut"></option>
-                            <option value="Delaware"></option>
-                            <option value="Florida"></option>
-                            <option value="Georgia"></option>
-                            <option value="Hawaii"></option>
-                            <option value="Idaho"></option>
-                            <option value="Illinois"></option>
-                            <option value="Indiana"></option>
-                            <option value="Iowa"></option>
-                            <option value="Kansas"></option>
-                            <option value="Kentucky"></option>
-                            <option value="Louisiana"></option>
-                            <option value="Maine"></option>
-                            <option value="Maryland"></option>
-                            <option value="Massachusetts"></option>
-                            <option value="Michigan"></option>
-                            <option value="Minnesota"></option>
-                            <option value="Mississippi"></option>
-                            <option value="Missouri"></option>
-                            <option value="Montana"></option>
-                            <option value="Nebraska"></option>
-                            <option value="Nevada"></option>
-                            <option value="New Hampshire"></option>
-                            <option value="New Jersey"></option>
-                            <option value="New Mexico"></option>
-                            <option value="New York"></option>
-                            <option value="North Carolina"></option>
-                            <option value="North Dakota"></option>
-                            <option value="Ohio"></option>
-                            <option value="Oklahoma"></option>
-                            <option value="Oregon"></option>
-                            <option value="Pennsylvania"></option>
-                            <option value="Rhode Island"></option>
-                            <option value="South Carolina"></option>
-                            <option value="South Dakota"></option>
-                            <option value="Tennessee"></option>
-                            <option value="Texas"></option>
-                            <option value="Utah"></option>
-                            <option value="Vermont"></option>
-                            <option value="Virginia"></option>
-                            <option value="Washington"></option>
-                            <option value="West Virginia"></option>
-                            <option value="Wisconsin"></option>
-                            <option value="Wyoming"></option>
-                          </datalist>
-                          <datalist id="canada-states">
-                            <option value="Alberta"></option>
-                            <option value="British Columbia"></option>
-                            <option value="Manitoba"></option>
-                            <option value="New Brunswick"></option>
-                            <option value="Newfoundland and Labrador"></option>
-                            <option value="Northwest Territories"></option>
-                            <option value="Nova Scotia"></option>
-                            <option value="Nunavut"></option>
-                            <option value="Ontario"></option>
-                            <option value="Prince Edward Island"></option>
-                            <option value="Quebec"></option>
-                            <option value="Saskatchewan"></option>
-                            <option value="Yukon"></option>
-                          </datalist>
-                          <datalist id="mexico-states">
-                            <option value="Chihuahua"></option>
-                            <option value="Sonora"></option>
-                            <option value="Coahuila"></option>
-                            <option value="Durango"></option>
-                            <option value="Oaxaca"></option>
-                            <option value="Tamaulipas"></option>
-                            <option value="Jalisco"></option>
-                            <option value="Zacatecas"></option>
-                            <option value="Baja California Sur"></option>
-                            <option value="Chiapas"></option>
-                            <option value="Veracruz"></option>
-                            <option value="Baja California"></option>
-                            <option value="Nuevo León"></option>
-                            <option value="Guerrero"></option>
-                            <option value="San Luis Potosí"></option>
-                            <option value="Michoacán"></option>
-                            <option value="Sinaloa"></option>
-                            <option value="Campeche"></option>
-                            <option value="Quintana Roo"></option>
-                            <option value="Yucatán"></option>
-                            <option value="Puebla"></option>
-                            <option value="Guanajuato"></option>
-                            <option value="Nayarit"></option>
-                            <option value="Tabasco"></option>
-                            <option value="México"></option>
-                            <option value="Hidalgo"></option>
-                            <option value="Querétaro"></option>
-                            <option value="Colima"></option>
-                            <option value="Aguascalientes"></option>
-                            <option value="Morelos"></option>
-                            <option value="Tlaxcala"></option>
-                            <option value="México City"></option>
-                          </datalist>
+                        <label for="na-states-input">State</label>
+
+                        <div class="bbs-combobox" id="stateSelectionCombobox">
                           <div class="multiselect-tag-container"></div>
+                          <div class="bbs-combobox-input">
+                            <!-- list="us-states" -->
+                            <!-- onblur="closeComboMenu(event)" -->
+                            <input
+                              placeholder="Select or type a state"
+                              type="text"
+                              class="tw-w-full"
+                              id="na-states-input"
+                              oninput="handleComboMenuTyping(event)"
+                              disabled
+                            />
+                            <button
+                              class="bbsButton bbsButton-secondary disabled"
+                              onclick="toggleComboMenu(event)"
+                            >
+                              <span class="msicon notranslate"
+                                >expand_more</span
+                              >
+                            </button>
+                          </div>
+                          <div class="bbsMenu tw-hidden" role="listbox">
+                            <ul>
+                              <!-- this will be filled by javascript function
+                              addCountryStateOptions (event, country) -->
+                              <!-- <li onclick="addMultiselectOption(event)" data-value="Alabama" tabindex="-1" class="bbsButton bbsButton-menu-item" role="option">Alabama</li> -->
+                            </ul>
+                          </div>
                         </div>
+                        <p class="caption">
+                          US, Canada or Mexico only
+                        </p>
                       </div>
                       <div data-info="City Selection" class="input-wrapper">
                         <label for="cityName">City</label>
+
                         <p>
                           <input
                             class="full-width"
@@ -954,6 +874,9 @@
                             placeholder="Search for a city from above country"
                             aria-label="Search for a city from above country"
                           />
+                        </p>
+                        <p class="caption">
+                          US, Canada or Mexico only
                         </p>
                       </div>
                     </div>
