@@ -211,7 +211,6 @@ const addMultiselectOption = (event, value) => {
   event.stopPropagation();
   const comboboxParent = event.currentTarget.closest(".bbs-combobox");
   const inputElement = comboboxParent.querySelector("input");
-  // const parentElement = inputElement.parentElement;
   let tagContainer = comboboxParent.querySelector(".multiselect-tag-container");
   if (!tagContainer) {
     // create a tag container
@@ -227,7 +226,7 @@ const addMultiselectOption = (event, value) => {
   inputElement.focus();
 
   // check if there is any tag with that value exist in the parent
-  const tagid = "data-" + value.replace(" ", "");
+  const tagid = "data-" + value.replace(" ", "-");
   const tagElement = tagContainer.querySelector("#" + tagid);
   if (!tagElement) {
     // create the tag if it does not exists
@@ -244,13 +243,31 @@ const addMultiselectOption = (event, value) => {
 
   // focus the input (it is automatic)
 
-  // TODO - remove the selected option from the menu
+  // Filter the menu items based on the input
+  event.currentTarget.classList.add("tw-hidden");
 };
 
 // if a removable bbsButton bbsButton-tag-secondary
 // is clicked, this is the function
 // that needs to be called to remove it
 const removeMultiselectTag = (event) => {
+  // TODO - unhide the menu items with this value.
+  const comboboxParent = event.currentTarget.closest(".bbs-combobox");
+  const menu = comboboxParent.querySelector(".bbsMenu");
+  const value = event.currentTarget.id
+    .replace("data-", "")
+    .replace("-", " ")
+    .toLowerCase();
+
+  // un-Filter the menu items based on the tag value
+  [...menu.querySelectorAll("li")].forEach((htmlElement) => {
+    const inner = htmlElement.innerHTML.toLowerCase().trim();
+
+    if (inner.includes(value)) {
+      htmlElement.classList.remove("tw-hidden");
+    }
+  });
+
   event.currentTarget.remove();
 };
 
@@ -334,18 +351,18 @@ const handleComboMenuTyping = (event) => {
     }
   });
 
-  // Show no options if empty
-  if (menu.querySelectorAll("li:not(.tw-hidden)").length > 0) {
-    const newTag = document.createElement("p");
-    newTag.setAttribute("id", "menu-no-data");
-    newTag.innerHTML = "No states found with the string " + inputValue;
-    menu.appendChild(newTag);
-  } else {
-    const nodata = menu.querySelector("#menu-no-data");
-    if (nodata) {
-      nodata.remove();
-    }
-  }
+  // // Show no options if empty
+  // if (menu.querySelectorAll("li:not(.tw-hidden)").length > 0) {
+  //   const newTag = document.createElement("p");
+  //   newTag.setAttribute("id", "menu-no-data");
+  //   newTag.innerHTML = "No states found with the string " + inputValue;
+  //   menu.appendChild(newTag);
+  // } else {
+  //   const nodata = menu.querySelector("#menu-no-data");
+  //   if (nodata) {
+  //     nodata.remove();
+  //   }
+  // }
 };
 
 const closeComboMenu = (event) => {
