@@ -457,7 +457,7 @@
             <div class="search-form tw-max-w-[400px]">
               <h2>Search Produce Companies</h2>
               <div class="bbs-accordion">
-                <div class="bbs-accordion-item">
+                <div class="bbs-accordion-item open">
                   <button
                     onclick="toggleAccordion(event)"
                     class="bbs-accordion-header"
@@ -740,7 +740,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="bbs-accordion-item open">
+                <div class="bbs-accordion-item">
                   <button
                     onclick="toggleAccordion(event)"
                     class="bbs-accordion-header"
@@ -859,9 +859,7 @@
                             </ul>
                           </div>
                         </div>
-                        <p class="caption">
-                          US, Canada or Mexico only
-                        </p>
+                        <p class="caption">US, Canada or Mexico only</p>
                       </div>
                       <div data-info="City Selection" class="input-wrapper">
                         <label for="cityName">City</label>
@@ -875,9 +873,7 @@
                             aria-label="Search for a city from above country"
                           />
                         </p>
-                        <p class="caption">
-                          US, Canada or Mexico only
-                        </p>
+                        <p class="caption">US, Canada or Mexico only</p>
                       </div>
                     </div>
                   </div>
@@ -985,7 +981,10 @@
             <div class="selected-criteria tw-w-[400px]">
               <h2>Selected Criteria</h2>
               <div class="tw-flex tw-gap-3">
-                <button class="bbsButton bbsButton-secondary filled full-width">
+                <button
+                  onclick="clearallsearch()"
+                  class="bbsButton bbsButton-secondary filled full-width"
+                >
                   <span class="msicon notranslate">clear</span>
                   <span>Clear all</span>
                 </button>
@@ -993,15 +992,20 @@
                   <span class="msicon notranslate">saved_search</span>
                   <span>Save Search</span>
                 </button>
-                <button class="bbsButton bbsButton-primary full-width">
-                  <span class="msicon notranslate">search</span>
-                  <span>Search</span>
-                </button>
+                <form action="search.html" class="tw-w-full">
+                  <button
+                    type="submit"
+                    class="bbsButton bbsButton-primary full-width"
+                  >
+                    <span class="msicon notranslate">search</span>
+                    <span>Search</span>
+                  </button>
+                </form>
               </div>
               <!-- Selection criteria begins -->
               <div class="search-criteria-group">
                 <div class="title-container">
-                  <div class="label">Conpany Details</div>
+                  <div class="label">Company Details</div>
                   <button class="bbsButton bbsButton-tertiary">
                     <span class="msicon notranslate">clear</span>
                     <span>Clear</span>
@@ -1072,6 +1076,38 @@
           <details>
             <summary>Show components</summary>
             <div class="container">
+              <div class="tw-my-4 tw-flex tw-items-center tw-justify-between">
+                <p class="caption">39 Companies found</p>
+                <div class="bbsButtonGroup rounded tw-justify-end">
+                  <button class="bbsButton bbsButton-secondary filled">
+                    <span class="msicon notranslate">thumbs_up_down</span>
+                    <span>Rate Company</span>
+                  </button>
+                  <button class="bbsButton bbsButton-secondary filled">
+                    <span class="msicon notranslate">summarize</span>
+                    <span>Get business Report</span>
+                  </button>
+                  <button class="bbsButton bbsButton-secondary filled">
+                    <span class="msicon notranslate">compare_arrows</span>
+                    <span>Analyze companies</span></button
+                  ><button class="bbsButton bbsButton-secondary filled">
+                    <span class="msicon notranslate">export_notes</span>
+                    <span>Export Data</span></button
+                  ><button class="bbsButton bbsButton-secondary filled">
+                    <span class="msicon notranslate"
+                      >local_printshop</span
+                    ></button
+                  ><button class="bbsButton bbsButton-secondary filled">
+                    <span class="msicon notranslate">location_pin</span></button
+                  ><button class="bbsButton bbsButton-secondary filled">
+                    <span class="msicon notranslate"
+                      >sound_detection_dog_barking</span
+                    ></button
+                  ><button class="bbsButton bbsButton-secondary filled">
+                    <span class="msicon notranslate">mode_edit_outline</span>
+                  </button>
+                </div>
+              </div>
               <div
                 class="tw-grid tw-grid-cols-1 tw-gap-4 md:tw-grid-cols-2 lg:tw-grid-cols-3"
               >
@@ -1579,9 +1615,185 @@
       </div>
     </footer>
 
+    <div class="bbsModal tw-hidden">
+      <div class="bbsSidebar show tw-relative tw-top-0">
+        <div
+          class="tw-sticky tw-top-0 tw-border-b tw-border-border tw-bg-bg-primary tw-p-4"
+        >
+          <div class="tw-flex tw-justify-between">
+            <div class="tw-flex">
+              <button
+                onclick="hidesidebar()"
+                class="bbsButton bbsButton-tertiary"
+              >
+                <span class="msicon notranslate">clear</span>
+              </button>
+              <span class="title">Search criteria</span>
+            </div>
+            <div class="tw-flex tw-gap-3">
+              <form action="index.html" class="tw-w-full">
+                <button type="submit" class="bbsButton bbsButton-secondary">
+                  <span class="msicon notranslate">arrow_back</span>
+                  <span>Back to edit search</span>
+                </button>
+              </form>
+              <button class="bbsButton bbsButton-primary filled tw-w-full">
+                <span class="msicon notranslate">saved_search</span>
+                <span>Save Search</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="tw-p-4">
+          <div class="search-criteria-group">
+            <div class="title-container">
+              <div class="label">Company Details</div>
+            </div>
+            <div class="content-container">
+              <div class="input-container">
+                <p class="subheading">Company Name</p>
+                <div class="tag-container">
+                  <span class="tag">Test name</span>
+                </div>
+              </div>
+
+              <div class="input-container">
+                <p class="subheading">Handles rejected shipments</p>
+                <div class="tag-container">
+                  <span class="tag">Yes</span>
+                </div>
+              </div>
+              <div class="input-container">
+                <p class="subheading">Phone</p>
+                <div class="tag-container">
+                  <span class="tag">201384938</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="search-criteria-group">
+            <div class="title-container">
+              <div class="label">Rating</div>
+            </div>
+            <div class="content-container">
+              <div class="input-container">
+                <p class="subheading">Blue Book Score</p>
+                <div class="tag-container">
+                  <span class="tag">Equal to: 20</span>
+                </div>
+              </div>
+              <div class="input-container">
+                <p class="subheading">Trade Practices</p>
+                <div class="tag-container">
+                  <span class="tag">XXXX - Excellent</span>
+                  <span class="tag">XX - Unsatisfactory</span>
+                  <span class="tag">XXX - Good</span>
+                  <span class="tag">X - Poor</span>
+                </div>
+              </div>
+              <div class="input-container">
+                <p class="subheading">Pay Description</p>
+                <div class="tag-container">
+                  <span class="tag">AA - 1 - 14 days on average</span>
+                  <span class="tag">D - 36 - 45 days on average</span>
+                  <span class="tag">A - 15-21 days on average</span>
+                  <span class="tag">E - 46 - 60 days on average</span>
+                  <span class="tag">B - 22 - 28 days on average</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="search-criteria-group">
+            <div class="title-container">
+              <div class="label">Rating</div>
+            </div>
+            <div class="content-container">
+              <div class="input-container">
+                <p class="subheading">Blue Book Score</p>
+                <div class="tag-container">
+                  <span class="tag">Equal to: 20</span>
+                </div>
+              </div>
+              <div class="input-container">
+                <p class="subheading">Trade Practices</p>
+                <div class="tag-container">
+                  <span class="tag">XXXX - Excellent</span>
+                  <span class="tag">XX - Unsatisfactory</span>
+                  <span class="tag">XXX - Good</span>
+                  <span class="tag">X - Poor</span>
+                </div>
+              </div>
+              <div class="input-container">
+                <p class="subheading">Pay Description</p>
+                <div class="tag-container">
+                  <span class="tag">AA - 1 - 14 days on average</span>
+                  <span class="tag">D - 36 - 45 days on average</span>
+                  <span class="tag">A - 15-21 days on average</span>
+                  <span class="tag">E - 46 - 60 days on average</span>
+                  <span class="tag">B - 22 - 28 days on average</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="search-criteria-group">
+            <div class="title-container">
+              <div class="label">Rating</div>
+            </div>
+            <div class="content-container">
+              <div class="input-container">
+                <p class="subheading">Blue Book Score</p>
+                <div class="tag-container">
+                  <span class="tag">Equal to: 20</span>
+                </div>
+              </div>
+              <div class="input-container">
+                <p class="subheading">Trade Practices</p>
+                <div class="tag-container">
+                  <span class="tag">XXXX - Excellent</span>
+                  <span class="tag">XX - Unsatisfactory</span>
+                  <span class="tag">XXX - Good</span>
+                  <span class="tag">X - Poor</span>
+                </div>
+              </div>
+              <div class="input-container tw-overflow-none">
+                <p class="subheading">Pay Description</p>
+                <div class="tag-container">
+                  <span class="tag">AA - 1 - 14 days on average</span>
+                  <span class="tag">D - 36 - 45 days on average</span>
+                  <span class="tag">A - 15-21 days on average</span>
+                  <span class="tag">E - 46 - 60 days on average</span>
+                  <span class="tag">B - 22 - 28 days on average</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script async src="main.js"></script>
 
     <script>
+      const showsidebar = () => {
+        document.querySelector("body").style.overflow = "hidden";
+        const modal = document.querySelector(".bbsModal");
+        modal.classList.remove("tw-hidden");
+
+        setTimeout(function () {
+          const bbsSidebar = modal.querySelector(".bbsSidebar");
+          bbsSidebar.classList.add("show");
+        }, 100);
+      };
+      const hidesidebar = () => {
+        const modal = document.querySelector(".bbsModal");
+        const bbsSidebar = modal.querySelector(".bbsSidebar");
+        bbsSidebar.classList.remove("show");
+        setTimeout(function () {
+          document.querySelector("body").style.overflow = "auto";
+          const modal = document.querySelector(".bbsModal");
+          modal.classList.add("tw-hidden");
+        }, 300);
+      };
       const tooltipTriggerList = document.querySelectorAll(
         '[data-bs-toggle="tooltip"]',
       );

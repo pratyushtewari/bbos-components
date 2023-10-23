@@ -69,14 +69,40 @@ a {
         tw-text-error;
     }
   }
+  .bbsModal {
+    @apply tw-absolute
+    tw-z-[9999]
+    tw-h-full
+    tw-w-full
+    tw-bg-slate-900
+    tw-bg-opacity-50;
 
+    .bbsSidebar {
+      @apply tw-absolute
+      tw-right-0
+      tw-mr-[-800px]
+      tw-h-full
+      tw-w-[800px]
+      tw-min-w-[200px]
+      tw-max-w-[800px]
+      tw-overflow-y-auto
+      tw-bg-bg-secondary
+      tw-shadow-lg;
+      transition: all 300ms;
+      &.show {
+        @apply tw-mr-0;
+      }
+    }
+  }
   /* Button */
   .bbsButton {
     @apply tw-flex
+    tw-h-fit
     tw-w-max
     tw-items-center
     tw-justify-center
     tw-gap-x-1.5
+    tw-whitespace-nowrap
     tw-rounded-md
     tw-border
     tw-border-border-component
@@ -87,11 +113,11 @@ a {
     hover:tw-bg-bg-component-hover
     active:tw-bg-bg-component-active;
     &.disabled {
-      @apply tw-cursor-not-allowed
+      @apply tw-pointer-events-none
+      tw-cursor-not-allowed
       tw-border-border-disabled
       tw-bg-bg-disabled
       tw-text-text-disabled
-      tw-pointer-events-none
       !important;
     }
     &.full-width {
@@ -169,6 +195,33 @@ a {
       }
     }
   }
+
+  .bbsButtonGroup {
+    @apply tw-flex;
+
+    .bbsButton {
+      @apply tw-rounded-none
+      tw-border-r-0;
+      &:first-child {
+        @apply tw-rounded-l;
+      }
+      &:last-child {
+        @apply tw-rounded-r
+        tw-border-r;
+      }
+    }
+    &.rounded {
+      .bbsButton {
+        &:first-child {
+          @apply tw-rounded-l-full;
+        }
+        &:last-child {
+          @apply tw-rounded-r-full;
+        }
+      }
+    }
+  }
+
   /* Menu or listbox -
   */
   .bbsMenu {
@@ -193,8 +246,7 @@ a {
   }
 
   .bbs-combobox {
-    @apply
-    tw-relative;
+    @apply tw-relative;
     .bbs-combobox-input {
       @apply tw-flex;
       input {
@@ -212,17 +264,14 @@ a {
       }
     }
     .bbsMenu {
-      @apply
-      tw-absolute
-      tw-w-full
-      tw-max-h-48
-      tw-overflow-hidden
+      @apply tw-absolute
       tw-z-[999]
+      tw-max-h-48
+      tw-w-full
+      tw-overflow-hidden
       tw-overflow-y-auto;
       ul {
-        @apply
-        tw-w-full;
-
+        @apply tw-w-full;
       }
     }
   }
@@ -505,8 +554,7 @@ a {
     tw-border
     tw-border-border;
     .bbs-accordion-item {
-      @apply
-      tw-relative;
+      @apply tw-relative;
       .bbs-accordion-header {
         @apply tw-flex
         tw-w-full
@@ -549,8 +597,7 @@ a {
         }
       }
       .bbs-accordion-content {
-        @apply
-        tw-bg-bg-primary;
+        @apply tw-bg-bg-primary;
         transition: all 250ms;
         .content-wrapper {
           @apply tw-p-4;
