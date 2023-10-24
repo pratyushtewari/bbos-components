@@ -38,6 +38,7 @@ select:focus {
   @apply tw-outline
   tw-outline-1
   tw-outline-focus-outline;
+  z-index: 9999;
 }
 a {
   @apply hover:tw-bg-bg-component-hover;
@@ -555,6 +556,7 @@ a {
     tw-border-border;
     .bbs-accordion-item {
       @apply tw-relative;
+
       .bbs-accordion-header {
         @apply tw-flex
         tw-w-full
@@ -578,9 +580,18 @@ a {
         }
       }
 
-      &:not(.open) {
-        .bbs-accordion-content {
-          @apply tw-h-0;
+      .bbs-accordion-content {
+        @apply tw-bg-bg-primary
+        tw-grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.3s ease-out;
+
+        .content-wrapper {
+          @apply
+          tw-px-4
+          tw-overflow-hidden
+          tw-opacity-0;
+          transition: all 0.3s ease-out;
         }
       }
 
@@ -591,16 +602,12 @@ a {
           }
         }
         .bbs-accordion-content {
-          @apply tw-h-fit
-          tw-border-t
-          tw-border-border;
-        }
-      }
-      .bbs-accordion-content {
-        @apply tw-bg-bg-primary;
-        transition: all 250ms;
-        .content-wrapper {
-          @apply tw-p-4;
+          grid-template-rows: 1fr;
+          .content-wrapper {
+            @apply tw-py-4
+            tw-opacity-100
+            tw-overflow-visible;
+          }
         }
       }
     }

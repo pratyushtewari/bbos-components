@@ -476,121 +476,122 @@
                   </button>
                   <div class="bbs-accordion-content">
                     <div class="content-wrapper tw-flex tw-flex-col tw-gap-4">
-                      <div class="input-wrapper">
-                        <label for="companyName">Company Name</label>
-                        <p>
-                          <input
-                            class="full-width"
-                            id="companyName"
-                            type="text"
-                            placeholder="Full or part of the name"
-                            aria-label="Full or part of the name"
-                          />
-                        </p>
-                        <p class="caption">
-                          Use the quick search field located at the top right
-                          corner if you only want to search by company name and
-                          not combine with other search criteria.
-                        </p>
-                      </div>
-                      <div class="input-wrapper">
-                        <p class="label">Type</p>
-                        <div class="tw-flex tw-gap-4">
-                          <div class="bbs-radio-input">
+                      <fieldset disabled>
+                        <div class="input-wrapper">
+                          <label for="companyName">Company Name</label>
+                          <p>
                             <input
-                              type="radio"
-                              id="type-any"
-                              name="company_type"
-                              value="type-any"
+                              class="full-width"
+                              id="companyName"
+                              type="text"
+                              placeholder="Full or part of the name"
+                              aria-label="Full or part of the name"
                             />
-                            <label for="type-any">Any</label><br />
+                          </p>
+                          <p class="caption">
+                            Use the quick search field located at the top right
+                            corner if you only want to search by company name
+                            and not combine with other search criteria.
+                          </p>
+                        </div>
+                        <div class="input-wrapper">
+                          <p class="label">Type</p>
+                          <div class="tw-flex tw-gap-4">
+                            <div class="bbs-radio-input">
+                              <input
+                                type="radio"
+                                id="type-any"
+                                name="company_type"
+                                value="type-any"
+                              />
+                              <label for="type-any">Any</label><br />
+                            </div>
+                            <div class="bbs-radio-input">
+                              <input
+                                type="radio"
+                                id="type-headquater"
+                                name="company_type"
+                                value="type-headquater"
+                              />
+                              <label for="type-headquater">Headquater</label
+                              ><br />
+                            </div>
+                            <div class="bbs-radio-input">
+                              <input
+                                type="radio"
+                                id="type-branch"
+                                name="company_type"
+                                value="type-branch"
+                              />
+                              <label for="type-branch">Branch</label>
+                            </div>
                           </div>
-                          <div class="bbs-radio-input">
-                            <input
-                              type="radio"
-                              id="type-headquater"
-                              name="company_type"
-                              value="type-headquater"
-                            />
-                            <label for="type-headquater">Headquater</label
+                        </div>
+                        <div class="input-wrapper">
+                          <p class="label">
+                            <span>Rejected shipments</span>
+                            <button
+                              class="msicon notranslate help"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="right"
+                              data-bs-html="true"
+                              data-bs-title="Show companies that take rejected shipments"
+                            >
+                              help
+                            </button>
+                          </p>
+                          <div class="bbs-checkbox-input">
+                            <input type="checkbox" id="handle_rejects" />
+                            <label for="handle_rejects"
+                              >Handles rejected shipments</label
                             ><br />
                           </div>
-                          <div class="bbs-radio-input">
+                        </div>
+                        <div class="input-wrapper">
+                          <label for="phonenumber">Phone</label>
+                          <p>
                             <input
-                              type="radio"
-                              id="type-branch"
-                              name="company_type"
-                              value="type-branch"
+                              class="full-width"
+                              id="phonenumber"
+                              type="text"
+                              placeholder="e.g. +1201670527 or (201) 637-0527 or part of the number"
+                              aria-label="Full or part of the phone number"
                             />
-                            <label for="type-branch">Branch</label>
+                          </p>
+                          <div class="bbs-checkbox-input">
+                            <input type="checkbox" id="must_have_phone" />
+                            <label for="must_have_phone"
+                              >Must have a phone number</label
+                            ><br />
                           </div>
+                          <p class="caption">
+                            Leave the phone number text box empty if you need
+                            the listing to have any number.
+                          </p>
                         </div>
-                      </div>
-                      <div class="input-wrapper">
-                        <p class="label">
-                          <span>Rejected shipments</span>
-                          <span
-                            class="msicon notranslate help"
-                            tabindex="0"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="right"
-                            data-bs-html="true"
-                            data-bs-title="Show companies that take rejected shipments"
-                          >
-                            help
-                          </span>
-                        </p>
-                        <div class="bbs-checkbox-input">
-                          <input type="checkbox" id="handle_rejects" />
-                          <label for="handle_rejects"
-                            >Handles rejected shipments</label
-                          ><br />
+                        <div class="input-wrapper">
+                          <label for="companyemail">Email</label>
+                          <p>
+                            <input
+                              class="full-width"
+                              id="companyemail"
+                              type="text"
+                              placeholder="email@domain.com or part of the email"
+                              aria-label="Full or part of the email"
+                            />
+                          </p>
+                          <div class="bbs-checkbox-input">
+                            <input type="checkbox" id="must_have_email" />
+                            <label for="must_have_email"
+                              >Must have a email address </label
+                            ><br />
+                          </div>
+                          <p class="caption">
+                            Leave the phone number text box empty if you need
+                            the listing to have any number.
+                          </p>
                         </div>
-                      </div>
-                      <div class="input-wrapper">
-                        <label for="phonenumber">Phone</label>
-                        <p>
-                          <input
-                            class="full-width"
-                            id="phonenumber"
-                            type="text"
-                            placeholder="e.g. +1201670527 or (201) 637-0527 or part of the number"
-                            aria-label="Full or part of the phone number"
-                          />
-                        </p>
-                        <div class="bbs-checkbox-input">
-                          <input type="checkbox" id="must_have_phone" />
-                          <label for="must_have_phone"
-                            >Must have a phone number</label
-                          ><br />
-                        </div>
-                        <p class="caption">
-                          Leave the phone number text box empty if you need the
-                          listing to have any number.
-                        </p>
-                      </div>
-                      <div class="input-wrapper">
-                        <label for="companyemail">Email</label>
-                        <p>
-                          <input
-                            class="full-width"
-                            id="companyemail"
-                            type="text"
-                            placeholder="email@domain.com or part of the email"
-                            aria-label="Full or part of the email"
-                          />
-                        </p>
-                        <div class="bbs-checkbox-input">
-                          <input type="checkbox" id="must_have_email" />
-                          <label for="must_have_email"
-                            >Must have a email address </label
-                          ><br />
-                        </div>
-                        <p class="caption">
-                          Leave the phone number text box empty if you need the
-                          listing to have any number.
-                        </p>
-                      </div>
+                      </fieldset>
                     </div>
                   </div>
                 </div>
@@ -611,132 +612,135 @@
                   </button>
                   <div class="bbs-accordion-content">
                     <div class="content-wrapper tw-flex tw-flex-col tw-gap-4">
-                      <div data-info="Trading checkbox" class="input-wrapper">
-                        <div class="bbs-checkbox-input">
-                          <input type="checkbox" id="must_have_email" />
-                          <label for="must_have_email"
-                            >Trading / Transportation Members only</label
-                          ><br />
-                        </div>
-                      </div>
-                      <div data-info="Blue Book Score" class="input-wrapper">
-                        <label for="companyemail">Blue Book Score</label>
-                        <p class="tw-flex tw-gap-4">
-                          <select aria-label="Small select example">
-                            <option selected value="1">Equal to</option>
-                            <option value="2">Greate than</option>
-                            <option value="3">Less than</option>
-                          </select>
-                          <input
-                            class="full-width"
-                            id="companyemail"
-                            type="text"
-                            placeholder="Enter a number (0 to 1000)"
-                            aria-label="Full or part of the email"
-                          />
-                        </p>
-                      </div>
-                      <div data-info="Trade Practices">
-                        <p class="label tw-mb-2">Trade Practices</p>
-                        <div class="tw-grid tw-grid-cols-2 tw-gap-x-4">
+                      <fieldset disabled>
+                        <div data-info="Trading checkbox" class="input-wrapper">
                           <div class="bbs-checkbox-input">
-                            <input type="checkbox" id="XXXX" />
-                            <label for="XXXX">XXXX - Excellent</label>
-                          </div>
-                          <div class="bbs-checkbox-input">
-                            <input type="checkbox" id="XX" />
-                            <label for="XX">XX - Unsatisfactory</label>
-                          </div>
-
-                          <div class="bbs-checkbox-input">
-                            <input type="checkbox" id="XXX" />
-                            <label for="XXX">XXX - Good</label>
-                          </div>
-                          <div class="bbs-checkbox-input">
-                            <input type="checkbox" id="X" />
-                            <label for="X">X - Poor</label>
+                            <input type="checkbox" id="must_have_email" />
+                            <label for="must_have_email"
+                              >Trading / Transportation Members only</label
+                            ><br />
                           </div>
                         </div>
-                      </div>
-                      <hr />
-                      <div data-info="Pay Description">
-                        <p class="label tw-mb-2">Pay Description</p>
-                        <div class="tw-grid tw-grid-cols-2 tw-gap-x-4">
-                          <div class="bbs-checkbox-input">
-                            <input type="checkbox" id="AA" />
-                            <label for="AA">AA - 1 - 14 days on average</label>
-                          </div>
-                          <div class="bbs-checkbox-input">
-                            <input type="checkbox" id="D" />
-                            <label for="D">D - 36 - 45 days on average</label>
-                          </div>
-                          <div class="bbs-checkbox-input">
-                            <input type="checkbox" id="A" />
-                            <label for="A">A - 15-21 days on average</label>
-                          </div>
-                          <div class="bbs-checkbox-input">
-                            <input type="checkbox" id="E" />
-                            <label for="E">E - 46 - 60 days on average</label>
-                          </div>
-                          <div class="bbs-checkbox-input">
-                            <input type="checkbox" id="B" />
-                            <label for="B">B - 22 - 28 days on average</label>
-                          </div>
-                          <div class="bbs-checkbox-input">
-                            <input type="checkbox" id="F" />
-                            <label for="F">F - 60+ days on average</label>
-                          </div>
-                          <div class="bbs-checkbox-input">
-                            <input type="checkbox" id="C" />
-                            <label for="C">C - 29 - 35 days on average</label>
-                          </div>
-                        </div>
-                      </div>
-                      <hr />
-                      <div data-info="Credit Worth Rating">
-                        <p class="label">
-                          Credit Worth Rating
-                          <span
-                            class="msicon notranslate help"
-                            tabindex="0"
-                            data-bs-toggle="tooltip"
-                            data-bs-placement="right"
-                            data-bs-html="true"
-                            data-bs-title="M = thousand"
-                          >
-                            help
-                          </span>
-                        </p>
-
-                        <div class="tw-grid tw-grid-cols-2 tw-gap-x-4">
-                          <div
-                            data-info="Blue Book Score"
-                            class="input-wrapper"
-                          >
-                            <label for="min-score">Min</label>
-
-                            <select
-                              id="min-score"
-                              aria-label="Small select example"
-                            >
-                              <option value="1">-M (min)</option>
+                        <div data-info="Blue Book Score" class="input-wrapper">
+                          <label for="companyemail">Blue Book Score</label>
+                          <p class="tw-flex tw-gap-4">
+                            <select aria-label="Small select example">
+                              <option selected value="1">Equal to</option>
+                              <option value="2">Greate than</option>
+                              <option value="3">Less than</option>
                             </select>
-                          </div>
-                          <div
-                            data-info="Blue Book Score"
-                            class="input-wrapper"
-                          >
-                            <label for="max-score">Max</label>
+                            <input
+                              class="full-width"
+                              id="companyemail"
+                              type="text"
+                              placeholder="Enter a number (0 to 1000)"
+                              aria-label="Full or part of the email"
+                            />
+                          </p>
+                        </div>
+                        <div data-info="Trade Practices">
+                          <p class="label tw-mb-2">Trade Practices</p>
+                          <div class="tw-grid tw-grid-cols-2 tw-gap-x-4">
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="XXXX" />
+                              <label for="XXXX">XXXX - Excellent</label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="XX" />
+                              <label for="XX">XX - Unsatisfactory</label>
+                            </div>
 
-                            <select
-                              id="max-score"
-                              aria-label="Small select example"
-                            >
-                              <option value="1">500,000M (max)</option>
-                            </select>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="XXX" />
+                              <label for="XXX">XXX - Good</label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="X" />
+                              <label for="X">X - Poor</label>
+                            </div>
                           </div>
                         </div>
-                      </div>
+                        <hr />
+                        <div data-info="Pay Description">
+                          <p class="label tw-mb-2">Pay Description</p>
+                          <div class="tw-grid tw-grid-cols-2 tw-gap-x-4">
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="AA" />
+                              <label for="AA"
+                                >AA - 1 - 14 days on average</label
+                              >
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="D" />
+                              <label for="D">D - 36 - 45 days on average</label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="A" />
+                              <label for="A">A - 15-21 days on average</label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="E" />
+                              <label for="E">E - 46 - 60 days on average</label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="B" />
+                              <label for="B">B - 22 - 28 days on average</label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="F" />
+                              <label for="F">F - 60+ days on average</label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="C" />
+                              <label for="C">C - 29 - 35 days on average</label>
+                            </div>
+                          </div>
+                        </div>
+                        <hr />
+                        <div data-info="Credit Worth Rating">
+                          <p class="label">
+                            Credit Worth Rating
+                            <button
+                              class="msicon notranslate help"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="right"
+                              data-bs-html="true"
+                              data-bs-title="M = thousand"
+                            >
+                              help
+                          </button>
+                          </p>
+
+                          <div class="tw-grid tw-grid-cols-2 tw-gap-x-4">
+                            <div
+                              data-info="Blue Book Score"
+                              class="input-wrapper"
+                            >
+                              <label for="min-score">Min</label>
+
+                              <select
+                                id="min-score"
+                                aria-label="Small select example"
+                              >
+                                <option value="1">-M (min)</option>
+                              </select>
+                            </div>
+                            <div
+                              data-info="Blue Book Score"
+                              class="input-wrapper"
+                            >
+                              <label for="max-score">Max</label>
+
+                              <select
+                                id="max-score"
+                                aria-label="Small select example"
+                              >
+                                <option value="1">500,000M (max)</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
                     </div>
                   </div>
                 </div>
@@ -760,121 +764,126 @@
                   </button>
                   <div class="bbs-accordion-content">
                     <div class="content-wrapper tw-flex tw-flex-col tw-gap-4">
-                      <div data-info="Country Selection" class="input-wrapper">
-                        <p class="label">Country</p>
+                      <fieldset disabled>
+                        <div
+                          data-info="Country Selection"
+                          class="input-wrapper"
+                        >
+                          <p class="label">Country</p>
 
-                        <div class="tw-mt-2 tw-flex tw-gap-8">
-                          <div class="bbs-radio-input">
-                            <input
-                              type="radio"
-                              id="country-usa"
-                              name="select-country"
-                              onchange="addCountryStateOptions(event, 'us')"
-                              value="usa"
-                            />
-                            <label for="country-usa">USA</label>
-                          </div>
-                          <div class="bbs-radio-input">
-                            <input
-                              type="radio"
-                              id="country-canada"
-                              name="select-country"
-                              onchange="addCountryStateOptions(event, 'canada')"
-                              value="canada"
-                            />
-                            <label for="country-canada">Canada</label>
-                          </div>
-                          <div class="bbs-radio-input">
-                            <input
-                              type="radio"
-                              id="country-mexico"
-                              name="select-country"
-                              onchange="addCountryStateOptions(event, 'mexico')"
-                              value="mexico"
-                            />
-                            <label for="country-mexico">Mexico</label>
-                          </div>
-                        </div>
-                        <div data-info="Other Country" class="input-wrapper">
-                          <div class="tw-flex tw-items-center tw-gap-4">
+                          <div class="tw-mt-2 tw-flex tw-gap-8">
                             <div class="bbs-radio-input">
                               <input
                                 type="radio"
-                                id="country-other"
+                                id="country-usa"
                                 name="select-country"
-                                onchange="enableOtherCountriesInput(event, 'otherCountries')"
-                                value="other"
+                                onchange="addCountryStateOptions(event, 'us')"
+                                value="usa"
                               />
-                              <label for="country-other">Other</label>
+                              <label for="country-usa">USA</label>
                             </div>
-
-                            <div class="tw-w-full">
+                            <div class="bbs-radio-input">
                               <input
-                                placeholder="Select or type other country"
+                                type="radio"
+                                id="country-canada"
+                                name="select-country"
+                                onchange="addCountryStateOptions(event, 'canada')"
+                                value="canada"
+                              />
+                              <label for="country-canada">Canada</label>
+                            </div>
+                            <div class="bbs-radio-input">
+                              <input
+                                type="radio"
+                                id="country-mexico"
+                                name="select-country"
+                                onchange="addCountryStateOptions(event, 'mexico')"
+                                value="mexico"
+                              />
+                              <label for="country-mexico">Mexico</label>
+                            </div>
+                          </div>
+                          <div data-info="Other Country" class="input-wrapper">
+                            <div class="tw-flex tw-items-center tw-gap-4">
+                              <div class="bbs-radio-input">
+                                <input
+                                  type="radio"
+                                  id="country-other"
+                                  name="select-country"
+                                  onchange="enableOtherCountriesInput(event, 'otherCountries')"
+                                  value="other"
+                                />
+                                <label for="country-other">Other</label>
+                              </div>
+
+                              <div class="tw-w-full">
+                                <input
+                                  placeholder="Select or type other country"
+                                  type="text"
+                                  list="other-countries"
+                                  class="tw-w-full"
+                                  id="otherCountries"
+                                  disabled
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          <p class="caption">
+                            Selecting other country disables State, city,
+                            Terminal Market, and distance feature
+                          </p>
+                        </div>
+                        <div data-info="State Selection" class="input-wrapper">
+                          <label for="na-states-input">State</label>
+
+                          <div class="bbs-combobox" id="stateSelectionCombobox">
+                            <div class="multiselect-tag-container"></div>
+                            <div class="bbs-combobox-input">
+                              <!-- list="us-states" -->
+                              <!-- onblur="closeComboMenu(event)" -->
+                              <input
+                                placeholder="Select or type a state"
                                 type="text"
-                                list="other-countries"
                                 class="tw-w-full"
-                                id="otherCountries"
+                                id="na-states-input"
+                                oninput="handleComboMenuTyping(event)"
                                 disabled
                               />
+                              <button
+                                class="bbsButton bbsButton-secondary disabled"
+                                onclick="toggleComboMenu(event)"
+                              >
+                                <span class="msicon notranslate"
+                                  >expand_more</span
+                                >
+                              </button>
+                            </div>
+                            <div class="bbsMenu tw-hidden" role="listbox">
+                              <ul>
+                                <!-- this will be filled by javascript function
+                              addCountryStateOptions (event, country) -->
+                                <!-- <li onclick="addMultiselectOption(event)" data-value="Alabama" tabindex="-1" class="bbsButton bbsButton-menu-item" role="option">Alabama</li> -->
+                              </ul>
                             </div>
                           </div>
+                          <p class="caption">US, Canada or Mexico only</p>
                         </div>
+                        <div data-info="City Selection" class="input-wrapper">
+                          <label for="cityName">City</label>
 
-                        <p class="caption">
-                          Selecting other country disables State, city, Terminal
-                          Market, and distance feature
-                        </p>
-                      </div>
-                      <div data-info="State Selection" class="input-wrapper">
-                        <label for="na-states-input">State</label>
-
-                        <div class="bbs-combobox" id="stateSelectionCombobox">
-                          <div class="multiselect-tag-container"></div>
-                          <div class="bbs-combobox-input">
-                            <!-- list="us-states" -->
-                            <!-- onblur="closeComboMenu(event)" -->
+                          <p>
                             <input
-                              placeholder="Select or type a state"
+                              class="full-width"
+                              id="cityName"
                               type="text"
-                              class="tw-w-full"
-                              id="na-states-input"
-                              oninput="handleComboMenuTyping(event)"
-                              disabled
+                              placeholder="Search for a city from above country"
+                              aria-label="Search for a city from above country"
                             />
-                            <button
-                              class="bbsButton bbsButton-secondary disabled"
-                              onclick="toggleComboMenu(event)"
-                            >
-                              <span class="msicon notranslate"
-                                >expand_more</span
-                              >
-                            </button>
-                          </div>
-                          <div class="bbsMenu tw-hidden" role="listbox">
-                            <ul>
-                              <!-- this will be filled by javascript function
-                              addCountryStateOptions (event, country) -->
-                              <!-- <li onclick="addMultiselectOption(event)" data-value="Alabama" tabindex="-1" class="bbsButton bbsButton-menu-item" role="option">Alabama</li> -->
-                            </ul>
-                          </div>
+                          </p>
+                          <p class="caption">US, Canada or Mexico only</p>
                         </div>
-                        <p class="caption">US, Canada or Mexico only</p>
-                      </div>
-                      <div data-info="City Selection" class="input-wrapper">
-                        <label for="cityName">City</label>
-
-                        <p>
-                          <input
-                            class="full-width"
-                            id="cityName"
-                            type="text"
-                            placeholder="Search for a city from above country"
-                            aria-label="Search for a city from above country"
-                          />
-                        </p>
-                        <p class="caption">US, Canada or Mexico only</p>
-                      </div>
+                      </fieldset>
                     </div>
                   </div>
                 </div>
@@ -897,8 +906,10 @@
                   </button>
                   <div class="bbs-accordion-content">
                     <div class="content-wrapper tw-opacity-50">
-                      <img src="/assets/there_is_nothing_here.svg" />
-                      <span>THERE IS NOTHING HERE</span>
+                      <fieldset disabled>
+                        <img src="/assets/there_is_nothing_here.svg" />
+                        <span>THERE IS NOTHING HERE</span>
+                      </fieldset>
                     </div>
                   </div>
                 </div>
@@ -921,8 +932,10 @@
                   </button>
                   <div class="bbs-accordion-content">
                     <div class="content-wrapper tw-opacity-50">
-                      <img src="/assets/there_is_nothing_here.svg" />
-                      <span>THERE IS NOTHING HERE</span>
+                      <fieldset disabled>
+                        <img src="/assets/there_is_nothing_here.svg" />
+                        <span>THERE IS NOTHING HERE</span>
+                      </fieldset>
                     </div>
                   </div>
                 </div>
@@ -947,8 +960,10 @@
                   </button>
                   <div class="bbs-accordion-content">
                     <div class="content-wrapper tw-opacity-50">
-                      <img src="/assets/there_is_nothing_here.svg" />
-                      <span>THERE IS NOTHING HERE</span>
+                      <fieldset disabled>
+                        <img src="/assets/there_is_nothing_here.svg" />
+                        <span>THERE IS NOTHING HERE</span>
+                      </fieldset>
                     </div>
                   </div>
                 </div>
@@ -971,8 +986,10 @@
                   </button>
                   <div class="bbs-accordion-content">
                     <div class="content-wrapper tw-opacity-50">
-                      <img src="/assets/there_is_nothing_here.svg" />
-                      <span>THERE IS NOTHING HERE</span>
+                      <fieldset disabled>
+                        <img src="/assets/there_is_nothing_here.svg" />
+                        <span>THERE IS NOTHING HERE</span>
+                      </fieldset>
                     </div>
                   </div>
                 </div>

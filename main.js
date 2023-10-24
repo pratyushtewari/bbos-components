@@ -50,11 +50,12 @@ const toggleAccordion = (event) => {
   parentElement.classList.toggle("open");
   const isOpen = parentElement.classList.contains("open");
   const contentWrapper = parentElement.querySelector(".content-wrapper");
-  const content = parentElement.querySelector(".bbs-accordion-content");
   if (isOpen) {
-    content.style.height = contentWrapper.clientHeight + "px";
+    contentWrapper.querySelector("fieldset").removeAttribute("disabled");
   } else {
-    content.style.height = 0;
+    contentWrapper
+      .querySelector("fieldset")
+      .setAttribute("disabled", "disabled");
   }
 };
 
