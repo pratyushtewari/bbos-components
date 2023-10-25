@@ -17,10 +17,10 @@
 /**
  * Remove focus styles for non-keyboard focus.
  */
-:focus:not(:focus-visible) {
+/* :focus:not(:focus-visible) {
   outline: 0;
   box-shadow: none;
-}
+} */
 textarea:focus,
 input:focus,
 select:focus {
@@ -85,7 +85,7 @@ a {
       tw-h-full
       tw-w-[800px]
       tw-min-w-[200px]
-      tw-max-w-[800px]
+      tw-max-w-[80%]
       tw-overflow-y-auto
       tw-bg-bg-secondary
       tw-shadow-lg;
@@ -113,7 +113,8 @@ a {
     tw-text-sm
     hover:tw-bg-bg-component-hover
     active:tw-bg-bg-component-active;
-    &.disabled {
+    &.disabled,
+    &:disabled {
       @apply tw-pointer-events-none
       tw-cursor-not-allowed
       tw-border-border-disabled
@@ -174,6 +175,7 @@ a {
       @apply tw-flex-col
       tw-items-start
       tw-gap-1
+      tw-whitespace-normal
       tw-rounded-none
       tw-border-none
       tw-px-4
@@ -225,6 +227,15 @@ a {
 
   /* Menu or listbox -
   */
+  .dropdown-menu {
+    @apply tw-min-w-[200px]
+    tw-max-w-[400px]
+    tw-rounded-md
+    tw-border
+    tw-border-border
+    tw-bg-white
+    tw-p-1 tw-shadow-lg;
+  }
   .bbsMenu {
     @apply tw-z-[100]
     tw-flex
@@ -264,6 +275,33 @@ a {
         }
       }
     }
+    .dropdown-menu {
+      @apply tw-max-h-48
+        tw-w-full
+        tw-overflow-hidden
+        tw-overflow-y-auto;
+
+      li {
+        &.selected {
+          /* @apply
+          tw-bg-bg-disabled
+          tw-text-text-disabled; */
+          @apply tw-hidden;
+        }
+        button {
+          @apply tw-w-full;
+        }
+      }
+
+      p.notfound {
+        @apply tw-w-full
+        tw-rounded
+        tw-bg-red-100
+        tw-p-1
+        tw-text-xs
+        tw-text-error;
+      }
+    }
     .bbsMenu {
       @apply tw-absolute
       tw-z-[999]
@@ -271,8 +309,20 @@ a {
       tw-w-full
       tw-overflow-hidden
       tw-overflow-y-auto;
-      ul {
-        @apply tw-w-full;
+
+      li.selected {
+        /* @apply
+        tw-bg-bg-disabled
+        tw-text-text-disabled; */
+        @apply tw-hidden;
+      }
+      p.notfound {
+        @apply tw-w-full
+        tw-rounded
+        tw-bg-red-100
+        tw-p-1
+        tw-text-xs
+        tw-text-error;
       }
     }
   }
@@ -580,21 +630,6 @@ a {
         }
       }
 
-      .bbs-accordion-content {
-        @apply tw-bg-bg-primary
-        tw-grid;
-        grid-template-rows: 0fr;
-        transition: grid-template-rows 0.3s ease-out;
-
-        .content-wrapper {
-          @apply
-          tw-px-4
-          tw-overflow-hidden
-          tw-opacity-0;
-          transition: all 0.3s ease-out;
-        }
-      }
-
       &.open {
         .bbs-accordion-header {
           .expand-icon {
@@ -602,12 +637,18 @@ a {
           }
         }
         .bbs-accordion-content {
-          grid-template-rows: 1fr;
           .content-wrapper {
-            @apply tw-py-4
-            tw-opacity-100
-            tw-overflow-visible;
+            @apply tw-py-4;
+            height: unset;
           }
+        }
+      }
+      .bbs-accordion-content {
+        @apply tw-grid
+        tw-bg-bg-primary;
+        .content-wrapper {
+          @apply tw-px-4;
+          height: 0px;
         }
       }
     }

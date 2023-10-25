@@ -457,7 +457,7 @@
             <div class="search-form tw-max-w-[400px]">
               <h2>Search Produce Companies</h2>
               <div class="bbs-accordion">
-                <div class="bbs-accordion-item open">
+                <div class="bbs-accordion-item">
                   <button
                     onclick="toggleAccordion(event)"
                     class="bbs-accordion-header"
@@ -475,8 +475,8 @@
                     </div>
                   </button>
                   <div class="bbs-accordion-content">
-                    <div class="content-wrapper tw-flex tw-flex-col tw-gap-4">
-                      <fieldset disabled>
+                    <div class="content-wrapper">
+                      <fieldset disabled class="tw-flex tw-flex-col tw-gap-4">
                         <div class="input-wrapper">
                           <label for="companyName">Company Name</label>
                           <p>
@@ -611,8 +611,8 @@
                     </div>
                   </button>
                   <div class="bbs-accordion-content">
-                    <div class="content-wrapper tw-flex tw-flex-col tw-gap-4">
-                      <fieldset disabled>
+                    <div class="content-wrapper">
+                      <fieldset disabled class="tw-flex tw-flex-col tw-gap-4">
                         <div data-info="Trading checkbox" class="input-wrapper">
                           <div class="bbs-checkbox-input">
                             <input type="checkbox" id="must_have_email" />
@@ -708,7 +708,7 @@
                               data-bs-title="M = thousand"
                             >
                               help
-                          </button>
+                            </button>
                           </p>
 
                           <div class="tw-grid tw-grid-cols-2 tw-gap-x-4">
@@ -763,8 +763,8 @@
                     </div>
                   </button>
                   <div class="bbs-accordion-content">
-                    <div class="content-wrapper tw-flex tw-flex-col tw-gap-4">
-                      <fieldset disabled>
+                    <div class="content-wrapper">
+                      <fieldset disabled class="tw-flex tw-flex-col tw-gap-4">
                         <div
                           data-info="Country Selection"
                           class="input-wrapper"
@@ -834,55 +834,80 @@
                             Terminal Market, and distance feature
                           </p>
                         </div>
-                        <div data-info="State Selection" class="input-wrapper">
-                          <label for="na-states-input">State</label>
+                        <fieldset
+                          id="us-canada-mexico"
+                          disabled
+                          class="tw-flex tw-flex-col tw-gap-4"
+                        >
+                          <div
+                            data-info="State Selection"
+                            class="input-wrapper"
+                          >
+                            <label for="na-states-input">State</label>
 
-                          <div class="bbs-combobox" id="stateSelectionCombobox">
-                            <div class="multiselect-tag-container"></div>
-                            <div class="bbs-combobox-input">
-                              <!-- list="us-states" -->
-                              <!-- onblur="closeComboMenu(event)" -->
-                              <input
-                                placeholder="Select or type a state"
-                                type="text"
-                                class="tw-w-full"
-                                id="na-states-input"
-                                oninput="handleComboMenuTyping(event)"
-                                disabled
-                              />
-                              <button
-                                class="bbsButton bbsButton-secondary disabled"
-                                onclick="toggleComboMenu(event)"
-                              >
-                                <span class="msicon notranslate"
-                                  >expand_more</span
+                            <div
+                              class="bbs-combobox"
+                              id="stateSelectionCombobox"
+                            >
+                              <div class="multiselect-tag-container"></div>
+
+                              <div class="dropdown">
+                                <div
+                                  class="bbs-combobox-input"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                  data-bs-auto-close="outside"
                                 >
-                              </button>
+                                  <input
+                                    placeholder="Select or search for a state"
+                                    type="text"
+                                    class="tw-w-full"
+                                    id="na-states-input"
+                                    onkeydown="myFunction(event)"
+                                    oninput="handleComboMenuTyping(event)"
+                                  />
+                                  <!-- onfocus="opencombomenu(event)" -->
+                                  <button
+                                    class="bbsButton bbsButton-secondary"
+                                    type="button"
+                                  >
+                                    <!-- class="bbsButton bbsButton-secondary"
+                                    type="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                    data-bs-auto-close="outside" -->
+                                    <span class="msicon notranslate">
+                                      expand_more
+                                    </span>
+                                  </button>
+                                </div>
+                                <ul
+                                  class="dropdown-menu tw-w-full"
+                                  role="listbox"
+                                >
+                                  <!-- // this will be filled by javascript function
+                                      // addCountryStateOptions (event, country)-->
+                                </ul>
+                              </div>
                             </div>
-                            <div class="bbsMenu tw-hidden" role="listbox">
-                              <ul>
-                                <!-- this will be filled by javascript function
-                              addCountryStateOptions (event, country) -->
-                                <!-- <li onclick="addMultiselectOption(event)" data-value="Alabama" tabindex="-1" class="bbsButton bbsButton-menu-item" role="option">Alabama</li> -->
-                              </ul>
-                            </div>
+                            <p class="caption">US, Canada or Mexico only</p>
                           </div>
-                          <p class="caption">US, Canada or Mexico only</p>
-                        </div>
-                        <div data-info="City Selection" class="input-wrapper">
-                          <label for="cityName">City</label>
+                          <div data-info="City Selection" class="input-wrapper">
+                            <label for="cityName">City</label>
 
-                          <p>
-                            <input
-                              class="full-width"
-                              id="cityName"
-                              type="text"
-                              placeholder="Search for a city from above country"
-                              aria-label="Search for a city from above country"
-                            />
-                          </p>
-                          <p class="caption">US, Canada or Mexico only</p>
-                        </div>
+                            <p>
+                              <input
+                                class="full-width"
+                                id="cityName"
+                                type="text"
+                                placeholder="Search for a city from above country"
+                                aria-label="Search for a city from above country"
+                              />
+                            </p>
+                            <p class="caption">US, Canada or Mexico only</p>
+                          </div>
+                        </fieldset>
+
                       </fieldset>
                     </div>
                   </div>
@@ -906,7 +931,7 @@
                   </button>
                   <div class="bbs-accordion-content">
                     <div class="content-wrapper tw-opacity-50">
-                      <fieldset disabled>
+                      <fieldset disabled class="tw-flex tw-flex-col tw-gap-4">
                         <img src="/assets/there_is_nothing_here.svg" />
                         <span>THERE IS NOTHING HERE</span>
                       </fieldset>
@@ -932,7 +957,7 @@
                   </button>
                   <div class="bbs-accordion-content">
                     <div class="content-wrapper tw-opacity-50">
-                      <fieldset disabled>
+                      <fieldset disabled class="tw-flex tw-flex-col tw-gap-4">
                         <img src="/assets/there_is_nothing_here.svg" />
                         <span>THERE IS NOTHING HERE</span>
                       </fieldset>
@@ -960,7 +985,7 @@
                   </button>
                   <div class="bbs-accordion-content">
                     <div class="content-wrapper tw-opacity-50">
-                      <fieldset disabled>
+                      <fieldset disabled class="tw-flex tw-flex-col tw-gap-4">
                         <img src="/assets/there_is_nothing_here.svg" />
                         <span>THERE IS NOTHING HERE</span>
                       </fieldset>
@@ -986,7 +1011,7 @@
                   </button>
                   <div class="bbs-accordion-content">
                     <div class="content-wrapper tw-opacity-50">
-                      <fieldset disabled>
+                      <fieldset disabled class="tw-flex tw-flex-col tw-gap-4">
                         <img src="/assets/there_is_nothing_here.svg" />
                         <span>THERE IS NOTHING HERE</span>
                       </fieldset>

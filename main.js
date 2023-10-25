@@ -20,6 +20,9 @@ const closeALLMenu = () => {
       htmlElement.classList.add("tw-hidden");
     },
   );
+  // [...document.querySelectorAll(".dropdown-menu")].forEach((htmlElement) => {
+  //   htmlElement.classList.remove("show");
+  // });
 };
 
 const toggleTopNavMenu = (event) => {
@@ -47,15 +50,20 @@ const toggleTopNavMenu = (event) => {
 
 const toggleAccordion = (event) => {
   const parentElement = event.currentTarget.parentElement;
-  parentElement.classList.toggle("open");
-  const isOpen = parentElement.classList.contains("open");
+  const isOpen = parentElement.classList.toggle("open");
   const contentWrapper = parentElement.querySelector(".content-wrapper");
   if (isOpen) {
     contentWrapper.querySelector("fieldset").removeAttribute("disabled");
+
+    contentWrapper.style.height = contentWrapper.clientHeight + "px";
+
+    // unset it so that it can expand with new content
+    contentWrapper.style.height = "unset";
   } else {
     contentWrapper
       .querySelector("fieldset")
       .setAttribute("disabled", "disabled");
+    contentWrapper.style.height = "0px";
   }
 };
 
@@ -172,11 +180,14 @@ const addCountryStateOptions = (event, country) => {
   otherCountryInput.setAttribute("disabled", "disabled");
   otherCountryInput.value = "";
 
-  const combobox = enableCombobox("stateSelectionCombobox");
+  const combobox = document.querySelector("#stateSelectionCombobox");
+  // enable state and city selection
+  document.querySelector("#us-canada-mexico").removeAttribute("disabled");
+
   // Clear the existing multiseled tags
   combobox.querySelector(".multiselect-tag-container").innerHTML = "";
 
-  const optionContainer = combobox.querySelector(".bbsMenu ul");
+  const optionContainer = combobox.querySelector("ul.dropdown-menu");
 
   // clear the previous list
   optionContainer.innerHTML = "";
@@ -188,19 +199,24 @@ const addCountryStateOptions = (event, country) => {
     country === "mexico" ? mexico : country === "canada" ? canada : us;
 
   for (let i in states) {
-    const option = document.createElement("li");
+    const outer = document.createElement("li");
+
+    const option = document.createElement("button");
+    outer.appendChild(option);
+    optionContainer.appendChild(outer);
+
     option.setAttribute(
       "onclick",
       `addMultiselectOption(event, "${states[i]}")`,
     );
     option.setAttribute("data-value", states[i]);
     option.setAttribute("tabindex", "-1");
-    option.setAttribute("class", "bbsButton bbsButton-menu-item");
+    option.setAttribute("class", "bbsButton bbsButton-menu-item dropdown-item");
     option.setAttribute("role", "option");
+    option.setAttribute("type", "button");
     option.innerHTML = `
       ${states[i]}
       `;
-    optionContainer.appendChild(option);
   }
 };
 
@@ -222,8 +238,8 @@ const addMultiselectOption = (event, value) => {
   }
 
   // const inputValue = event.target.value;
-  // clear the input
-  inputElement.value = "";
+  // focus the input
+  // inputElement.value = "";
   inputElement.focus();
 
   // check if there is any tag with that value exist in the parent
@@ -245,7 +261,7 @@ const addMultiselectOption = (event, value) => {
   // focus the input (it is automatic)
 
   // Filter the menu items based on the input
-  event.currentTarget.classList.add("tw-hidden");
+  event.currentTarget.closest("li").classList.add("selected");
 };
 
 // if a removable bbsButton bbsButton-tag-secondary
@@ -254,21 +270,29 @@ const addMultiselectOption = (event, value) => {
 const removeMultiselectTag = (event) => {
   // TODO - unhide the menu items with this value.
   const comboboxParent = event.currentTarget.closest(".bbs-combobox");
-  const menu = comboboxParent.querySelector(".bbsMenu");
+  const menu = comboboxParent.querySelector(".dropdown-menu");
   const value = event.currentTarget.id
     .replace("data-", "")
     .replace("-", " ")
     .toLowerCase();
 
-  // un-Filter the menu items based on the tag value
-  [...menu.querySelectorAll("li")].forEach((htmlElement) => {
-    const inner = htmlElement.innerHTML.toLowerCase().trim();
-
-    if (inner.includes(value)) {
-      htmlElement.classList.remove("tw-hidden");
+  // Filter the menu items based on the input
+  const optionss = menu.querySelectorAll("li");
+  optionss.forEach((htmlElement) => {
+    const innervalue = htmlElement.children[0].innerHTML.toLowerCase().trim();
+    if (innervalue.includes(value)) {
+      htmlElement.classList.remove("selected");
     }
   });
-
+  const nextsibling = event.currentTarget.nextElementSibling;
+  const prevsibling = event.currentTarget.previousElementSibling;
+  if (nextsibling) {
+    nextsibling.focus();
+    nextsibling.classList.add("focus-visible");
+  } else if (prevsibling) {
+    prevsibling.focus();
+    prevsibling.classList.add("focus-visible");
+  }
   event.currentTarget.remove();
 };
 
@@ -279,33 +303,13 @@ const enableOtherCountriesInput = (event, id) => {
   otherCountryInput.removeAttribute("disabled");
   otherCountryInput.focus();
 
-  const combobox = disableCombobox("stateSelectionCombobox");
+  // disabled state and city selection
+  document
+    .querySelector("#us-canada-mexico")
+    .setAttribute("disabled", "disabled");
+
   // Clear the existing multiseled tags
   combobox.querySelector(".multiselect-tag-container").innerHTML = "";
-};
-
-// Disables the input and the dropdown button
-// in the combobox .bbs-combobox
-const disableCombobox = (id) => {
-  const combobox = document.querySelector("#" + id);
-  const input = combobox.querySelector("input");
-  input.setAttribute("disabled", "disabled");
-  const button = combobox.querySelector(".bbsButton.bbsButton-secondary");
-  button.setAttribute("disabled", "disabled");
-  button.classList.add("disabled");
-  return combobox;
-};
-
-// Enables the input and the dropdown button
-// in the combobox .bbs-combobox
-const enableCombobox = (id) => {
-  const combobox = document.querySelector("#" + id);
-  const input = combobox.querySelector("input");
-  input.removeAttribute("disabled");
-  const button = combobox.querySelector(".bbsButton.bbsButton-secondary");
-  button.removeAttribute("disabled");
-  button.classList.remove("disabled");
-  return combobox;
 };
 
 // open or close the combomenu inside
@@ -314,13 +318,34 @@ const toggleComboMenu = (event) => {
   // find the menu
   const menu = event.currentTarget
     .closest(".bbs-combobox")
-    .querySelector(".bbsMenu");
+    .querySelector(".dropdown-menu");
 
-  menu.classList.toggle("tw-hidden");
+  const isHidden = menu.classList.toggle("tw-hidden");
 
   // this is important because there is an
   // event on the document click to close all menu
   event.stopPropagation();
+};
+
+const opencombomenu = (event) => {
+  const menu = event.currentTarget
+    .closest(".bbs-combobox")
+    .querySelector(".dropdown-menu");
+  event.stopPropagation();
+
+  const isHidden = menu.classList.add("show");
+};
+
+const myFunction = (event) => {
+  const key = event.key;
+  if (key == "ArrowDown" || key == "ArrowUp") {
+    event.currentTarget
+      .closest(".bbs-combobox-input")
+      .querySelector("button.bbsButton.bbsButton-secondary")
+      .click();
+    event.currentTarget.blur();
+  }
+  // console.log(event.keyCode);
 };
 
 // Open the combobox menu when
@@ -329,51 +354,62 @@ const toggleComboMenu = (event) => {
 // and filters the content
 const handleComboMenuTyping = (event) => {
   const inputValue = event.currentTarget.value;
-
+  // console.log(event.inputType);
+  // const dropdown = event.currentTarget.closest(".dropdown");
   const menu = event.currentTarget
     .closest(".bbs-combobox")
-    .querySelector(".bbsMenu");
+    .querySelector(".dropdown-menu");
 
-  if (inputValue === "") {
-    menu.classList.add("tw-hidden");
-  } else {
-    menu.classList.remove("tw-hidden");
-  }
+  // const bootstrapDropdown = bootstrap.Dropdown.getInstance(dropdown);
+  // bootstrapDropdown.show();
+  menu.classList.add("show");
+
+  // if (inputValue === "") {
+  //   menu.classList.add("tw-hidden");
+  // } else {
+  //   menu.classList.remove("tw-hidden");
+  // }
   // console.log(inputValue);
 
   // Filter the menu items based on the input
-  [...menu.querySelectorAll("li")].forEach((htmlElement) => {
-    if (
-      htmlElement.innerHTML.toLowerCase().includes(inputValue.toLowerCase())
-    ) {
+  const optionss = menu.querySelectorAll("li:not(.selected)");
+  optionss.forEach((htmlElement) => {
+    const value = htmlElement.children[0].innerHTML.toLowerCase().trim();
+    console.log(value, inputValue.toLowerCase());
+    if (value.includes(inputValue.toLowerCase())) {
       htmlElement.classList.remove("tw-hidden");
     } else {
       htmlElement.classList.add("tw-hidden");
     }
   });
+  event.stopPropagation();
 
-  // // Show no options if empty
-  // if (menu.querySelectorAll("li:not(.tw-hidden)").length > 0) {
-  //   const newTag = document.createElement("p");
-  //   newTag.setAttribute("id", "menu-no-data");
-  //   newTag.innerHTML = "No states found with the string " + inputValue;
-  //   menu.appendChild(newTag);
-  // } else {
-  //   const nodata = menu.querySelector("#menu-no-data");
-  //   if (nodata) {
-  //     nodata.remove();
-  //   }
-  // }
+  // Show no options if empty
+  if (menu.querySelectorAll("li:not(.tw-hidden):not(.selected)").length <= 0) {
+    let notfoundhtmlelement = menu.querySelector("p.notfound");
+    if (!notfoundhtmlelement) notfoundhtmlelement = document.createElement("p");
+    // const notfoundhtmlelement = document.createElement("p");
+    notfoundhtmlelement.setAttribute("id", "menu-no-data");
+    notfoundhtmlelement.classList.add("notfound");
+    notfoundhtmlelement.innerHTML =
+      "No unselected states found with the string " + inputValue;
+    menu.appendChild(notfoundhtmlelement);
+  } else {
+    const nodata = menu.querySelector("#menu-no-data");
+    if (nodata) {
+      nodata.remove();
+    }
+  }
 };
 
 const closeComboMenu = (event) => {
   const inputValue = event.currentTarget.value;
 
-  console.log("blur: ", inputValue);
+  // console.log("blur: ", inputValue);
   const menu = event.currentTarget
     .closest(".bbs-combobox")
-    .querySelector(".bbsMenu");
-  menu.classList.add("tw-hidden");
+    .querySelector(".dropdown-menu");
+  menu.classList.remove("show");
 };
 
 const clearallsearch = () => {
