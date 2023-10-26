@@ -17,10 +17,10 @@
 /**
  * Remove focus styles for non-keyboard focus.
  */
-/* :focus:not(:focus-visible) {
+:focus:not(:focus-visible) {
   outline: 0;
   box-shadow: none;
-} */
+}
 textarea:focus,
 input:focus,
 select:focus {
@@ -283,13 +283,20 @@ a {
 
       li {
         &.selected {
-          /* @apply
-          tw-bg-bg-disabled
-          tw-text-text-disabled; */
-          @apply tw-hidden;
+          button {
+            @apply tw-bg-bg-component-selected;
+            .msicon {
+              @apply tw-inline-block;
+            }
+          }
         }
         button {
-          @apply tw-w-full;
+          @apply tw-w-full
+            tw-flex-row
+            tw-justify-between;
+          .msicon {
+            @apply tw-hidden;
+          }
         }
       }
 
@@ -311,10 +318,12 @@ a {
       tw-overflow-y-auto;
 
       li.selected {
-        /* @apply
-        tw-bg-bg-disabled
-        tw-text-text-disabled; */
         @apply tw-hidden;
+        &::after {
+          content: "checked";
+          @apply tw-absolute
+      tw-right-0;
+        }
       }
       p.notfound {
         @apply tw-w-full

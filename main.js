@@ -20,9 +20,6 @@ const closeALLMenu = () => {
       htmlElement.classList.add("tw-hidden");
     },
   );
-  // [...document.querySelectorAll(".dropdown-menu")].forEach((htmlElement) => {
-  //   htmlElement.classList.remove("show");
-  // });
 };
 
 const toggleTopNavMenu = (event) => {
@@ -200,10 +197,10 @@ const addCountryStateOptions = (event, country) => {
 
   for (let i in states) {
     const outer = document.createElement("li");
+    optionContainer.appendChild(outer);
 
     const option = document.createElement("button");
     outer.appendChild(option);
-    optionContainer.appendChild(outer);
 
     option.setAttribute(
       "onclick",
@@ -215,7 +212,8 @@ const addCountryStateOptions = (event, country) => {
     option.setAttribute("role", "option");
     option.setAttribute("type", "button");
     option.innerHTML = `
-      ${states[i]}
+      <span class="text-label">${states[i]}</span>
+      <span class="msicon notranslate">check</span>
       `;
   }
 };
@@ -261,7 +259,8 @@ const addMultiselectOption = (event, value) => {
   // focus the input (it is automatic)
 
   // Filter the menu items based on the input
-  event.currentTarget.closest("li").classList.add("selected");
+  const menuoption = event.currentTarget.closest("li");
+  menuoption.classList.add("selected");
 };
 
 // if a removable bbsButton bbsButton-tag-secondary
@@ -304,48 +303,34 @@ const enableOtherCountriesInput = (event, id) => {
   otherCountryInput.focus();
 
   // disabled state and city selection
-  document
-    .querySelector("#us-canada-mexico")
-    .setAttribute("disabled", "disabled");
+  const stateCitiselector = document.querySelector("#us-canada-mexico");
+
+  stateCitiselector.setAttribute("disabled", "disabled");
 
   // Clear the existing multiseled tags
-  combobox.querySelector(".multiselect-tag-container").innerHTML = "";
+  stateCitiselector.querySelector(".multiselect-tag-container").innerHTML = "";
 };
 
-// open or close the combomenu inside
-// the combobox .bbs-combobox
-const toggleComboMenu = (event) => {
-  // find the menu
-  const menu = event.currentTarget
-    .closest(".bbs-combobox")
-    .querySelector(".dropdown-menu");
-
-  const isHidden = menu.classList.toggle("tw-hidden");
-
-  // this is important because there is an
-  // event on the document click to close all menu
-  event.stopPropagation();
-};
-
-const opencombomenu = (event) => {
-  const menu = event.currentTarget
-    .closest(".bbs-combobox")
-    .querySelector(".dropdown-menu");
-  event.stopPropagation();
-
-  const isHidden = menu.classList.add("show");
-};
-
-const myFunction = (event) => {
+const handleKeydownInComboInput = (event) => {
   const key = event.key;
+
+  // TODO - somehow Escape key is not detected here at all.
+  // cannot close the menu because of that.
+
   if (key == "ArrowDown" || key == "ArrowUp") {
-    event.currentTarget
-      .closest(".bbs-combobox-input")
-      .querySelector("button.bbsButton.bbsButton-secondary")
-      .click();
-    event.currentTarget.blur();
+    event.preventDefault();
+    // Bootstrap stuff!!
+    // find the instance of the dropdown
+    // this is the div with data-bs-toggle="dropdown" attribute
+
+    const instance = bootstrap.Dropdown.getOrCreateInstance(
+      event.currentTarget.closest(".bbs-combobox-input"),
+    );
+    if (instance) {
+      instance.show();
+      instance._selectMenuItem(event);
+    }
   }
-  // console.log(event.keyCode);
 };
 
 // Open the combobox menu when
@@ -354,62 +339,48 @@ const myFunction = (event) => {
 // and filters the content
 const handleComboMenuTyping = (event) => {
   const inputValue = event.currentTarget.value;
-  // console.log(event.inputType);
-  // const dropdown = event.currentTarget.closest(".dropdown");
   const menu = event.currentTarget
     .closest(".bbs-combobox")
     .querySelector(".dropdown-menu");
 
-  // const bootstrapDropdown = bootstrap.Dropdown.getInstance(dropdown);
-  // bootstrapDropdown.show();
-  menu.classList.add("show");
-
-  // if (inputValue === "") {
-  //   menu.classList.add("tw-hidden");
-  // } else {
-  //   menu.classList.remove("tw-hidden");
-  // }
-  // console.log(inputValue);
+  const instance = bootstrap.Dropdown.getOrCreateInstance(
+    event.currentTarget.closest(".bbs-combobox-input"),
+  );
+  if (instance) {
+    instance.show();
+  }
 
   // Filter the menu items based on the input
-  const optionss = menu.querySelectorAll("li:not(.selected)");
+  const optionss = menu.querySelectorAll("li");
   optionss.forEach((htmlElement) => {
-    const value = htmlElement.children[0].innerHTML.toLowerCase().trim();
-    console.log(value, inputValue.toLowerCase());
+    // text-label
+    const value = htmlElement
+      .querySelector(".text-label")
+      .innerHTML.toLowerCase()
+      .trim();
     if (value.includes(inputValue.toLowerCase())) {
       htmlElement.classList.remove("tw-hidden");
     } else {
       htmlElement.classList.add("tw-hidden");
     }
   });
-  event.stopPropagation();
 
   // Show no options if empty
-  if (menu.querySelectorAll("li:not(.tw-hidden):not(.selected)").length <= 0) {
-    let notfoundhtmlelement = menu.querySelector("p.notfound");
-    if (!notfoundhtmlelement) notfoundhtmlelement = document.createElement("p");
-    // const notfoundhtmlelement = document.createElement("p");
-    notfoundhtmlelement.setAttribute("id", "menu-no-data");
-    notfoundhtmlelement.classList.add("notfound");
-    notfoundhtmlelement.innerHTML =
+  if (menu.querySelectorAll("li:not(.tw-hidden)").length <= 0) {
+    let noResults = menu.querySelector("p.notfound");
+    if (!noResults) noResults = document.createElement("p");
+    noResults.setAttribute("class", "menu-no-data notfound");
+    noResults.innerHTML =
       "No unselected states found with the string " + inputValue;
-    menu.appendChild(notfoundhtmlelement);
+    menu.appendChild(noResults);
   } else {
-    const nodata = menu.querySelector("#menu-no-data");
+    const nodata = menu.querySelector(".menu-no-data");
     if (nodata) {
       nodata.remove();
     }
   }
-};
 
-const closeComboMenu = (event) => {
-  const inputValue = event.currentTarget.value;
-
-  // console.log("blur: ", inputValue);
-  const menu = event.currentTarget
-    .closest(".bbs-combobox")
-    .querySelector(".dropdown-menu");
-  menu.classList.remove("show");
+  event.stopPropagation();
 };
 
 const clearallsearch = () => {
