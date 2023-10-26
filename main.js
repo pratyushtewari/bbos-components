@@ -62,6 +62,9 @@ const toggleAccordion = (event) => {
       .setAttribute("disabled", "disabled");
     contentWrapper.style.height = "0px";
   }
+
+  // This is needed to .net form does not automatically post back
+  event.preventDefault();
 };
 
 const us = [
@@ -172,6 +175,7 @@ const canada = [
 // this function adds options in the
 // .bbs-combobox's menu.
 const addCountryStateOptions = (event, country) => {
+  // TODO:PT - USE CONTRY and STATE IDS instead of names
   // clear and disable other-countries input
   const otherCountryInput = document.querySelector("#otherCountries");
   otherCountryInput.setAttribute("disabled", "disabled");
@@ -189,9 +193,7 @@ const addCountryStateOptions = (event, country) => {
   // clear the previous list
   optionContainer.innerHTML = "";
 
-  // clear the previously selected states
-  combobox.querySelector(".multiselect-tag-container").innerHTML = "";
-
+  // TODO:JMT - CHANGE THIS TO THE DATA SOURCE FROM THE BBOS
   const states =
     country === "mexico" ? mexico : country === "canada" ? canada : us;
 
@@ -223,6 +225,7 @@ const addCountryStateOptions = (event, country) => {
 // this will add the tags in the .multiselect-tag-container
 // if it exits or append one in the combobox
 const handleMultiselectOptionSelection = (event, value) => {
+  // TODO:PT - USE CONTRY and STATE IDS instead of names
   event.stopPropagation();
   const comboboxParent = event.currentTarget.closest(".bbs-combobox");
   const inputElement = comboboxParent.querySelector("input");
@@ -273,7 +276,8 @@ const handleMultiselectOptionSelection = (event, value) => {
 // is clicked, this is the function
 // that needs to be called to remove it
 const removeMultiselectTag = (event) => {
-  // TODO - unhide the menu items with this value.
+  // TODO:PT - Make on the X on the tag clicable and focasable
+  // TODO:PT - USE CONTRY and STATE IDS instead of names
   const comboboxParent = event.currentTarget.closest(".bbs-combobox");
   const menu = comboboxParent.querySelector(".dropdown-menu");
   const value = event.currentTarget.id
@@ -315,6 +319,10 @@ const enableOtherCountriesInput = (event, id) => {
 
   // Clear the existing multiseled tags
   stateCitiselector.querySelector(".multiselect-tag-container").innerHTML = "";
+
+  // TODO:JMT - CHANGE THIS TO THE DATA SOURCE FROM THE BBOS
+
+  // TODO:PT - Populate a template country selection list.
 };
 
 const handleKeydownInComboInput = (event) => {
