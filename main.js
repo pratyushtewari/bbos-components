@@ -204,7 +204,7 @@ const addCountryStateOptions = (event, country) => {
 
     option.setAttribute(
       "onclick",
-      `addMultiselectOption(event, "${states[i]}")`,
+      `handleMultiselectOptionSelection(event, "${states[i]}")`,
     );
     option.setAttribute("data-value", states[i]);
     option.setAttribute("tabindex", "-1");
@@ -222,7 +222,7 @@ const addCountryStateOptions = (event, country) => {
 // .bbs-combobox. call this function with the value,
 // this will add the tags in the .multiselect-tag-container
 // if it exits or append one in the combobox
-const addMultiselectOption = (event, value) => {
+const handleMultiselectOptionSelection = (event, value) => {
   event.stopPropagation();
   const comboboxParent = event.currentTarget.closest(".bbs-combobox");
   const inputElement = comboboxParent.querySelector("input");
@@ -254,13 +254,19 @@ const addMultiselectOption = (event, value) => {
     <span class="msicon notranslate">clear</span>
     `;
     tagContainer.appendChild(newTag);
+
+    // mark option as selected
+    const menuoption = event.currentTarget.closest("li");
+    menuoption.classList.add("selected");
+  } else {
+    // remove the tag element and mark the item non selected
+    tagElement.remove();
+    // mark option as unselected
+    const menuoption = event.currentTarget.closest("li");
+    menuoption.classList.remove("selected");
   }
 
   // focus the input (it is automatic)
-
-  // Filter the menu items based on the input
-  const menuoption = event.currentTarget.closest("li");
-  menuoption.classList.add("selected");
 };
 
 // if a removable bbsButton bbsButton-tag-secondary
