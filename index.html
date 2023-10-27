@@ -73,7 +73,7 @@
                 data-bs-html="true"
                 data-bs-title="This option is not available with your membership"
               >
-                <button disabled class="bbsButton bbsButton-menu-item disabled">
+                <button disabled class="bbsButton bbsButton-menu-item">
                   <p>
                     <span class="msicon notranslate">person_search</span>
                     <span class="text-label">People Search</span>
@@ -802,6 +802,17 @@
                               />
                               <label for="country-mexico">Mexico</label>
                             </div>
+                            <div class="bbs-radio-input">
+                              <input
+                                type="radio"
+                                id="country-none"
+                                name="select-country"
+                                onchange="selectNoneCountry(event)"
+                                value="none"
+                                checked
+                              />
+                              <label for="country-none">None</label>
+                            </div>
                           </div>
                           <div data-info="Other Country" class="input-wrapper">
                             <div class="tw-flex tw-items-center tw-gap-4">
@@ -817,14 +828,12 @@
                               </div>
 
                               <div class="tw-w-full">
-                                <input
-                                  placeholder="Select or type other country"
-                                  type="text"
-                                  list="other-countries"
+                                <select
                                   class="tw-w-full"
+                                  aria-label="Default select example"
                                   id="otherCountries"
                                   disabled
-                                />
+                                ></select>
                               </div>
                             </div>
                           </div>
@@ -851,36 +860,34 @@
                             >
                               <div class="multiselect-tag-container"></div>
 
-                              <div class="dropdown">
-                                <div
-                                  class="bbs-combobox-input"
-                                  data-bs-toggle="dropdown"
-                                  aria-expanded="false"
-                                  data-bs-auto-close="outside"
-                                >
-                                  <input
-                                    placeholder="Select or search for a state"
-                                    type="text"
-                                    class="tw-w-full"
-                                    id="na-states-input"
-                                    onkeydown="handleKeydownInComboInput(event)"
-                                    oninput="handleComboMenuTyping(event)"
-                                  />
+                              <div
+                                class="bbs-combobox-input"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                data-bs-auto-close="outside"
+                              >
+                                <input
+                                  placeholder="Select or search for a state"
+                                  type="text"
+                                  class="tw-w-full"
+                                  id="na-states-input"
+                                  onkeydown="handleKeydownInComboInput(event)"
+                                  oninput="handleComboMenuTyping(event)"
+                                />
 
-                                  <button
-                                    class="bbsButton bbsButton-secondary"
-                                    type="button"
-                                  >
-                                    <span class="msicon notranslate">
-                                      expand_more
-                                    </span>
-                                  </button>
-                                </div>
-                                <ul class="dropdown-menu tw-w-full" role="menu">
-                                  <!-- // this will be filled by javascript function
-                                      // addCountryStateOptions (event, country)-->
-                                </ul>
+                                <button
+                                  class="bbsButton bbsButton-secondary"
+                                  type="button"
+                                >
+                                  <span class="msicon notranslate">
+                                    expand_more
+                                  </span>
+                                </button>
                               </div>
+                              <ul class="dropdown-menu tw-w-full" role="menu">
+                                <!-- // this will be filled by javascript function
+                                      // addCountryStateOptions (event, country)-->
+                              </ul>
                             </div>
                             <p class="caption">US, Canada or Mexico only</p>
                           </div>
@@ -899,6 +906,48 @@
                             <p class="caption">US, Canada or Mexico only</p>
                           </div>
                         </fieldset>
+
+                        <div data-info="Terminal Markets" class="input-wrapper">
+                          <label for="na-states-input">Terminal Markets</label>
+
+                          <div
+                            onload="addTerminalMarkets"
+                            class="bbs-combobox"
+                            id="terminalMarketSelectionCombobox"
+                          >
+                            <div class="multiselect-tag-container"></div>
+
+                            <div
+                              class="bbs-combobox-input"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                              data-bs-auto-close="outside"
+                            >
+                              <input
+                                placeholder="Add Terminal markets"
+                                type="text"
+                                class="tw-w-full"
+                                id="na-states-input"
+                                onkeydown="handleKeydownInComboInput(event)"
+                                oninput="handleComboMenuTyping(event)"
+                              />
+
+                              <button
+                                class="bbsButton bbsButton-secondary"
+                                type="button"
+                              >
+                                <span class="msicon notranslate">
+                                  expand_more
+                                </span>
+                              </button>
+                            </div>
+                            <ul class="dropdown-menu tw-w-full" role="menu">
+                              <!-- // this will be filled by javascript function
+                                      // addCountryStateOptions (event, country)-->
+                            </ul>
+                          </div>
+                        </div>
+                        <hr />
                       </fieldset>
                     </div>
                   </div>
@@ -1493,7 +1542,7 @@
                 <span class="msicon notranslate">search</span>
                 <span>Primary Button</span>
               </button>
-              <button disabled class="bbsButton bbsButton-primary disabled">
+              <button disabled class="bbsButton bbsButton-primary">
                 <span class="msicon notranslate">search</span>
                 <span>Primary Button</span>
                 <span class="msicon notranslate">lock</span>
@@ -1501,7 +1550,7 @@
               <button class="bbsButton bbsButton-secondary">
                 <span class="msicon notranslate">search</span>Secondary Button
               </button>
-              <button disabled class="bbsButton bbsButton-secondary disabled">
+              <button disabled class="bbsButton bbsButton-secondary">
                 <span class="msicon notranslate">search</span>
                 <span>Secondary Button</span>
                 <span class="msicon notranslate">lock</span>
@@ -1509,10 +1558,7 @@
               <button class="bbsButton bbsButton-tag-secondary">
                 Close tag<span class="msicon notranslate">close</span>
               </button>
-              <button
-                disabled
-                class="bbsButton bbsButton-tag-secondary disabled"
-              >
+              <button disabled class="bbsButton bbsButton-tag-secondary">
                 <span class="msicon notranslate">search</span>
                 <span>Close tag</span>
                 <span class="msicon notranslate">lock</span>

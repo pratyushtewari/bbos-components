@@ -28,6 +28,17 @@ select:focus {
   tw-outline-1
   tw-outline-offset-0;
 }
+textarea:disabled,
+input:disabled,
+select:disabled,
+button:disabled {
+  @apply tw-pointer-events-none
+  tw-cursor-not-allowed
+  tw-border-border-disabled
+  tw-bg-bg-disabled
+  tw-text-text-disabled
+  !important;
+}
 /**
  * Cross-browser styles for explicit focus via
  * keyboard-based (eg Tab) navigation or the
@@ -113,15 +124,6 @@ a {
     tw-text-sm
     hover:tw-bg-bg-component-hover
     active:tw-bg-bg-component-active;
-    &.disabled,
-    &:disabled {
-      @apply tw-pointer-events-none
-      tw-cursor-not-allowed
-      tw-border-border-disabled
-      tw-bg-bg-disabled
-      tw-text-text-disabled
-      !important;
-    }
     &.full-width {
       @apply tw-w-full;
     }
@@ -157,7 +159,8 @@ a {
     Rounded tag button - best with a close end icon
     */
     &.bbsButton-tag-secondary {
-      @apply tw-rounded-3xl
+      @apply tw-whitespace-break-spaces
+      tw-rounded-3xl
       tw-bg-white
       hover:tw-bg-bg-component-hover
       active:tw-bg-bg-component-active;
@@ -730,6 +733,10 @@ a {
     tw-flex
     tw-flex-wrap
     tw-gap-1;
+
+    button {
+      @apply tw-max-w-xs;
+    }
   }
 
   /* OLD BBOS OVERWITES */

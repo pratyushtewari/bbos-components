@@ -67,7 +67,7 @@ const toggleAccordion = (event) => {
   event.preventDefault();
 };
 
-  // TODO:JMT - CHANGE THIS TO THE DATA SOURCE FROM THE BBOS
+// TODO:JMT - CHANGE THIS TO THE DATA SOURCE FROM THE BBOS
 const countries = [
   { prcn_CountryId: 1, prcn_Country: "USA" },
   { prcn_CountryId: 2, prcn_Country: "Canada" },
@@ -186,7 +186,7 @@ const countries = [
   { prcn_CountryId: 119, prcn_Country: "Ethiopia" },
 ];
 
-  // TODO:JMT - CHANGE THIS TO THE DATA SOURCE FROM THE BBOS
+// TODO:JMT - CHANGE THIS TO THE DATA SOURCE FROM THE BBOS
 const states = [
   {
     prst_stateid: 1,
@@ -778,6 +778,427 @@ const states = [
   },
 ];
 
+// TODO:JMT - CHANGE THIS TO THE DATA SOURCE FROM THE BBOS
+const terminalMarkets = [
+  {
+    id: "0",
+    value: "1",
+    label: "Jefferson County Truck Growers Association/Alabama Farmers Market",
+    city: "Birmingham, AL",
+  },
+  {
+    id: "1",
+    value: "6032",
+    label: "Montgomery State Farmers Market",
+    city: "Montgomery, AL",
+  },
+  {
+    id: "2",
+    value: "2",
+    label: "Los Angeles Wholesale Produce Market",
+    city: "Los Angeles, CA",
+  },
+  {
+    id: "3",
+    value: "3",
+    label: "Seventh Street City Market",
+    city: "Los Angeles, CA",
+  },
+  { id: "4", value: "7", label: "Oakland Produce Market", city: "Oakland, CA" },
+  { id: "5", value: "5", label: "The SF Market", city: "San Francisco, CA" },
+  {
+    id: "6",
+    value: "6",
+    label: "Golden Gate Produce Terminal",
+    city: "So. San Francisco, CA",
+  },
+  {
+    id: "7",
+    value: "6007",
+    label: "State of Connecticut Regional Market",
+    city: "Hartford, CT",
+  },
+  {
+    id: "8",
+    value: "6000",
+    label: "Florida City State Farmers Market",
+    city: "Florida City, FL",
+  },
+  {
+    id: "9",
+    value: "6001",
+    label: "Fort Myers State Farmers Market",
+    city: "Fort Myers, FL",
+  },
+  {
+    id: "10",
+    value: "6034",
+    label: "Fort Pierce State Farmers Market",
+    city: "Fort Pierce, FL",
+  },
+  {
+    id: "11",
+    value: "8",
+    label: "Immokalee State Farmers Market",
+    city: "Immokalee, FL",
+  },
+  { id: "12", value: "6010", label: "Miami Produce Center", city: "Miami, FL" },
+  {
+    id: "13",
+    value: "9",
+    label: "Plant City State Farmers Market",
+    city: "Plant City, FL",
+  },
+  {
+    id: "14",
+    value: "10",
+    label: "Edward L. Myrick State Farmers Market",
+    city: "Pompano Beach, FL",
+  },
+  {
+    id: "15",
+    value: "11",
+    label: "Tampa Wholesale Produce Market",
+    city: "Tampa, FL",
+  },
+  {
+    id: "16",
+    value: "14",
+    label: "Cordele State Farmers Market",
+    city: "Cordele, GA",
+  },
+  {
+    id: "17",
+    value: "15",
+    label: "Atlanta State Farmers Market",
+    city: "Forest Park, GA",
+  },
+  {
+    id: "18",
+    value: "17",
+    label: "Savannah State Farmers Market",
+    city: "Savannah, GA",
+  },
+  {
+    id: "19",
+    value: "18",
+    label: "Thomasville State Farmers Market",
+    city: "Thomasville, GA",
+  },
+  {
+    id: "20",
+    value: "19",
+    label: "Chicago International Produce Market",
+    city: "Chicago, IL",
+  },
+  {
+    id: "21",
+    value: "6021",
+    label: "Louisville Produce Terminal",
+    city: "Louisville, KY",
+  },
+  {
+    id: "22",
+    value: "20",
+    label: "New England Produce Center",
+    city: "Chelsea, MA",
+  },
+  {
+    id: "23",
+    value: "22",
+    label: "Maryland Wholesale Produce Market",
+    city: "Jessup, MD",
+  },
+  {
+    id: "24",
+    value: "6023",
+    label: "Detroit Eastern Market",
+    city: "Detroit, MI",
+  },
+  {
+    id: "25",
+    value: "23",
+    label: "Detroit Produce Terminal",
+    city: "Detroit, MI",
+  },
+  {
+    id: "26",
+    value: "24",
+    label: "St. Louis Produce Market",
+    city: "St. Louis, MO",
+  },
+  {
+    id: "27",
+    value: "6002",
+    label: "Chihuahua Wholesale Produce Market",
+    city: "Chihuahua, MX",
+  },
+  {
+    id: "28",
+    value: "6004",
+    label: "Culiacan Wholesale Produce Market",
+    city: "Culiacan, MX",
+  },
+  {
+    id: "29",
+    value: "6005",
+    label: "Guadalajara Wholesale Produce Market",
+    city: "Guadalajara, MX",
+  },
+  {
+    id: "30",
+    value: "25",
+    label: "Mexico City Wholesale Produce Market",
+    city: "Mexico City, MX",
+  },
+  {
+    id: "31",
+    value: "6017",
+    label: "Western North Carolina Farmers Market",
+    city: "Asheville, NC",
+  },
+  {
+    id: "32",
+    value: "6022",
+    label: "Raleigh Farmers Market",
+    city: "Raleigh, NC",
+  },
+  {
+    id: "33",
+    value: "6033",
+    label: "Vineland Co-op Produce Auction Assn., Inc.",
+    city: "Vineland, NJ",
+  },
+  {
+    id: "34",
+    value: "26",
+    label: "Hunts Point Terminal Produce Co-op Association, Inc.",
+    city: "Bronx, NY",
+  },
+  {
+    id: "35",
+    value: "27",
+    label: "Brooklyn Terminal Market",
+    city: "Brooklyn, NY",
+  },
+  {
+    id: "36",
+    value: "6014",
+    label: "Niagara Frontier Food Terminal",
+    city: "Buffalo, NY",
+  },
+  {
+    id: "37",
+    value: "6013",
+    label: "Capital District Regional Market",
+    city: "Menands, NY",
+  },
+  {
+    id: "38",
+    value: "6015",
+    label: "Genesee Valley Regional Market Authority",
+    city: "Rochester, NY",
+  },
+  {
+    id: "39",
+    value: "6016",
+    label: "Central New York Regional Market Authority",
+    city: "Syracuse, NY",
+  },
+  {
+    id: "40",
+    value: "28",
+    label: "Cleveland Produce Terminal",
+    city: "Cleveland, OH",
+  },
+  {
+    id: "41",
+    value: "6018",
+    label: "Produce Terminal Company",
+    city: "Columbus, OH",
+  },
+  {
+    id: "42",
+    value: "29",
+    label: "Ontario Food Terminal",
+    city: "Toronto, ON",
+  },
+  {
+    id: "43",
+    value: "6026",
+    label: "Philadelphia Wholesale Produce Market",
+    city: "Philadelphia, PA",
+  },
+  {
+    id: "44",
+    value: "6024",
+    label: "South Carolina State Farmers Market",
+    city: "West Columbia, SC",
+  },
+  {
+    id: "45",
+    value: "6029",
+    label: "Houston Produce Center",
+    city: "Houston, TX",
+  },
+  {
+    id: "46",
+    value: "33",
+    label: "McAllen Produce Terminal Market",
+    city: "McAllen, TX",
+  },
+  {
+    id: "47",
+    value: "34",
+    label: "San Antonio Produce Terminal Market",
+    city: "San Antonio, TX",
+  },
+  {
+    id: "48",
+    value: "6035",
+    label: "San Antonio Wholesale Produce Market",
+    city: "San Antonio, TX",
+  },
+];
+
+// Based ont the country,
+// this function adds options in the
+// .bbs-combobox's menu.
+
+const addTerminalMarkets = () => {
+  const combobox = document.querySelector("#terminalMarketSelectionCombobox");
+  // Clear the existing multiseled tags
+  combobox.querySelector(".multiselect-tag-container").innerHTML = "";
+
+  const optionContainer = combobox.querySelector("ul.dropdown-menu");
+
+  // clear the previous list
+  optionContainer.innerHTML = "";
+
+  // const terminalMarkets = [
+  // {
+  //   id: "48",
+  //   value: "6035",
+  //   label: "San Antonio Wholesale Produce Market",
+  //   city: "San Antonio, TX",
+  // }],
+
+  // populate the state combobox
+  for (let i in terminalMarkets) {
+    const outer = document.createElement("li");
+    optionContainer.appendChild(outer);
+
+    const option = document.createElement("button");
+    outer.appendChild(option);
+
+    option.setAttribute(
+      "onclick",
+      `handleTerminalMultiselectOptionSelection(event, "${terminalMarkets[i].id}")`,
+    );
+    option.setAttribute("data-terminal_id", terminalMarkets[i].id);
+    option.setAttribute("tabindex", "-1");
+    option.setAttribute("class", "bbsButton bbsButton-menu-item dropdown-item");
+    option.setAttribute("role", "option");
+    option.setAttribute("type", "button");
+    option.innerHTML = `
+      <div class="tw-flex tw-flex-col">
+        <span class="text-label">${terminalMarkets[i].label}</span>
+        <span class="caption">${terminalMarkets[i].city}</span>
+      </div>
+      <span class="msicon notranslate">check</span>
+      `;
+  }
+};
+
+// call the above function
+(() => {
+  addTerminalMarkets();
+})();
+
+// if a removable bbsButton bbsButton-tag-secondary
+// is clicked, this is the function
+// that needs to be called to remove it
+const removeTerminalMultiselectTag = (event) => {
+  // TODO:PT - low priority, Make on the X on the tag clicable and focasable
+
+  const comboboxParent = event.currentTarget.closest(".bbs-combobox");
+  const menu = comboboxParent.querySelector(".dropdown-menu");
+  const terminal_id = event.currentTarget.dataset.terminal_id;
+
+  const menuitembutton = menu.querySelector(
+    `li button[data-terminal_id="${terminal_id}"]`,
+  );
+  if (menuitembutton) menuitembutton.parentElement.classList.remove("selected");
+
+  const nextsibling = event.currentTarget.nextElementSibling;
+  const prevsibling = event.currentTarget.previousElementSibling;
+  if (nextsibling) {
+    nextsibling.focus();
+    nextsibling.classList.add("focus-visible");
+  } else if (prevsibling) {
+    prevsibling.focus();
+    prevsibling.classList.add("focus-visible");
+  }
+  event.currentTarget.remove();
+};
+
+const handleTerminalMultiselectOptionSelection = (event, terminal_id) => {
+  // const terminalMarkets = [
+  // {
+  //   id: "48",
+  //   value: "6035",
+  //   label: "San Antonio Wholesale Produce Market",
+  //   city: "San Antonio, TX",
+  // }],
+
+  // find the market
+  const terminalMarket = terminalMarkets.find(
+    (object) => object.id == terminal_id,
+  );
+
+  event.stopPropagation();
+  const comboboxParent = event.currentTarget.closest(".bbs-combobox");
+  const inputElement = comboboxParent.querySelector("input");
+  let tagContainer = comboboxParent.querySelector(".multiselect-tag-container");
+  if (!tagContainer) {
+    // create a tag container
+    // and append it to the parent of the input
+    tagContainer = document.createElement("div");
+    tagContainer.setAttribute("class", "multiselect-tag-container");
+    comboboxParent.appendChild(tagContainer);
+  }
+
+  // check if there is any tag with that value exist in the parent
+  const tagid = "terminal_id-" + terminal_id;
+  const tagElement = tagContainer.querySelector("#" + tagid);
+  if (!tagElement) {
+    // create the tag if it does not exists
+    const newTag = document.createElement("button");
+    newTag.setAttribute("class", "bbsButton bbsButton-tag-secondary small");
+    newTag.setAttribute("id", tagid);
+    newTag.setAttribute("data-terminal_id", terminal_id);
+    newTag.setAttribute("onclick", "removeTerminalMultiselectTag(event)");
+    newTag.innerHTML = `
+    <span>${terminalMarket.label}</span>
+    <span class="msicon notranslate">clear</span>
+    `;
+    tagContainer.appendChild(newTag);
+
+    // mark option as selected
+    const menuoption = event.currentTarget.closest("li");
+    menuoption.classList.add("selected");
+  } else {
+    // remove the tag element and mark the item non selected
+    tagElement.remove();
+    // mark option as unselected
+    const menuoption = event.currentTarget.closest("li");
+    menuoption.classList.remove("selected");
+  }
+
+  // focus the input
+  inputElement.focus();
+};
+
 // Based ont the country,
 // this function adds options in the
 // .bbs-combobox's menu.
@@ -790,6 +1211,12 @@ const addCountryStateOptions = (event, prcn_CountryId) => {
   otherCountryInput.value = "";
 
   const combobox = document.querySelector("#stateSelectionCombobox");
+
+  // TODO:PT - low priority, the bootstrap dropdown is still opening
+  // even if you have disabled the button using the filedset.
+  // This is due to the data-bs-toggle="dropdown" set on a div and
+  // not on a button.
+
   // enable state and city selection
   document.querySelector("#us-canada-mexico").removeAttribute("disabled");
 
@@ -843,7 +1270,6 @@ const addCountryStateOptions = (event, prcn_CountryId) => {
 // this will add the tags in the .multiselect-tag-container
 // if it exits or append one in the combobox
 const handleMultiselectOptionSelection = (event, prst_stateid) => {
-
   // states e.g.
   // [{
   //   prst_stateid: 1,
@@ -927,12 +1353,10 @@ const removeMultiselectTag = (event) => {
   event.currentTarget.remove();
 };
 
-// This is called when Other countries
-// radio is selected.
-const enableOtherCountriesInput = (event, id) => {
-  const otherCountryInput = document.querySelector("#" + id);
-  otherCountryInput.removeAttribute("disabled");
-  otherCountryInput.focus();
+const selectNoneCountry = (event) => {
+  const otherCountryInput = document.querySelector("#otherCountries");
+  otherCountryInput.setAttribute("disabled", "disabled");
+  otherCountryInput.value = "";
 
   // disabled state and city selection
   const stateCitiselector = document.querySelector("#us-canada-mexico");
@@ -941,8 +1365,33 @@ const enableOtherCountriesInput = (event, id) => {
 
   // Clear the existing multiseled tags
   stateCitiselector.querySelector(".multiselect-tag-container").innerHTML = "";
+};
+// This is called when Other countries
+// radio is selected.
+const enableOtherCountriesInput = (event, id) => {
+  selectNoneCountry();
 
-  // TODO:PT - Populate other country selection list.
+  const otherCountrySelect = document.querySelector("#" + id);
+  otherCountrySelect.removeAttribute("disabled");
+  otherCountrySelect.innerHTML = "";
+
+  // Populate other country selection list
+  // const countries = [
+  //   { prcn_CountryId: 1, prcn_Country: "USA" },
+  // ]
+
+  for (let i in countries) {
+    // skip US, Canada and Mexico
+    if (i < 3) continue;
+
+    const option = document.createElement("option");
+    option.setAttribute("value", countries[i].prcn_CountryId);
+    option.dataset.prcn_CountryId = countries[i].prcn_CountryId;
+    option.innerHTML = countries[i].prcn_Country;
+
+    otherCountrySelect.appendChild(option);
+  }
+  otherCountrySelect.focus();
 };
 
 const handleKeydownInComboInput = (event) => {
