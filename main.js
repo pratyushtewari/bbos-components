@@ -67,115 +67,723 @@ const toggleAccordion = (event) => {
   event.preventDefault();
 };
 
-const us = [
-  "Alabama",
-  "Alaska",
-  "Arizona",
-  "Arkansas",
-  "California",
-  "Colorado",
-  "Connecticut",
-  "Delaware",
-  "Florida",
-  "Georgia",
-  "Hawaii",
-  "Idaho",
-  "Illinois",
-  "Indiana",
-  "Iowa",
-  "Kansas",
-  "Kentucky",
-  "Louisiana",
-  "Maine",
-  "Maryland",
-  "Massachusetts",
-  "Michigan",
-  "Minnesota",
-  "Mississippi",
-  "Missouri",
-  "Montana",
-  "Nebraska",
-  "Nevada",
-  "New Hampshire",
-  "New Jersey",
-  "New Mexico",
-  "New York",
-  "North Carolina",
-  "North Dakota",
-  "Ohio",
-  "Oklahoma",
-  "Oregon",
-  "Pennsylvania",
-  "Rhode Island",
-  "South Carolina",
-  "South Dakota",
-  "Tennessee",
-  "Texas",
-  "Utah",
-  "Vermont",
-  "Virginia",
-  "Washington",
-  "West Virginia",
-  "Wisconsin",
-  "Wyoming",
+  // TODO:JMT - CHANGE THIS TO THE DATA SOURCE FROM THE BBOS
+const countries = [
+  { prcn_CountryId: 1, prcn_Country: "USA" },
+  { prcn_CountryId: 2, prcn_Country: "Canada" },
+  { prcn_CountryId: 3, prcn_Country: "Mexico" },
+  { prcn_CountryId: 5, prcn_Country: "Antigua and Barbuda" },
+  { prcn_CountryId: 6, prcn_Country: "Argentina" },
+  { prcn_CountryId: 7, prcn_Country: "Aruba" },
+  { prcn_CountryId: 8, prcn_Country: "Australia" },
+  { prcn_CountryId: 9, prcn_Country: "Austria" },
+  { prcn_CountryId: 10, prcn_Country: "Bahamas" },
+  { prcn_CountryId: 11, prcn_Country: "Barbados" },
+  { prcn_CountryId: 12, prcn_Country: "Belgium" },
+  { prcn_CountryId: 13, prcn_Country: "Belize" },
+  { prcn_CountryId: 14, prcn_Country: "Bermuda" },
+  { prcn_CountryId: 15, prcn_Country: "Bolivia" },
+  { prcn_CountryId: 16, prcn_Country: "Brazil" },
+  { prcn_CountryId: 17, prcn_Country: "Cameroon" },
+  { prcn_CountryId: 18, prcn_Country: "Cayman Islands" },
+  { prcn_CountryId: 19, prcn_Country: "Chile" },
+  { prcn_CountryId: 20, prcn_Country: "China" },
+  { prcn_CountryId: 21, prcn_Country: "Colombia" },
+  { prcn_CountryId: 22, prcn_Country: "Costa Rica" },
+  { prcn_CountryId: 23, prcn_Country: "Croatia" },
+  { prcn_CountryId: 24, prcn_Country: "Cyprus" },
+  { prcn_CountryId: 25, prcn_Country: "Czech Republic" },
+  { prcn_CountryId: 26, prcn_Country: "Denmark" },
+  { prcn_CountryId: 27, prcn_Country: "Dominica" },
+  { prcn_CountryId: 28, prcn_Country: "Dominican Republic" },
+  { prcn_CountryId: 29, prcn_Country: "Ecuador" },
+  { prcn_CountryId: 30, prcn_Country: "Egypt" },
+  { prcn_CountryId: 31, prcn_Country: "El Salvador" },
+  { prcn_CountryId: 32, prcn_Country: "England" },
+  { prcn_CountryId: 33, prcn_Country: "Fiji Islands, Repub. of" },
+  { prcn_CountryId: 34, prcn_Country: "Finland" },
+  { prcn_CountryId: 35, prcn_Country: "France" },
+  { prcn_CountryId: 36, prcn_Country: "Germany" },
+  { prcn_CountryId: 37, prcn_Country: "Greece" },
+  { prcn_CountryId: 39, prcn_Country: "Guatemala" },
+  { prcn_CountryId: 40, prcn_Country: "Guyana" },
+  { prcn_CountryId: 41, prcn_Country: "Haiti" },
+  { prcn_CountryId: 42, prcn_Country: "Honduras" },
+  { prcn_CountryId: 43, prcn_Country: "Hong Kong" },
+  { prcn_CountryId: 44, prcn_Country: "Hungary" },
+  { prcn_CountryId: 45, prcn_Country: "Iceland" },
+  { prcn_CountryId: 46, prcn_Country: "India" },
+  { prcn_CountryId: 47, prcn_Country: "Indonesia" },
+  { prcn_CountryId: 48, prcn_Country: "Ireland" },
+  { prcn_CountryId: 49, prcn_Country: "Israel" },
+  { prcn_CountryId: 50, prcn_Country: "Italy" },
+  { prcn_CountryId: 51, prcn_Country: "Jamaica" },
+  { prcn_CountryId: 52, prcn_Country: "Japan" },
+  { prcn_CountryId: 53, prcn_Country: "Korea, Repub. of" },
+  { prcn_CountryId: 54, prcn_Country: "Kuwait" },
+  { prcn_CountryId: 55, prcn_Country: "Malaysia" },
+  { prcn_CountryId: 56, prcn_Country: "Monaco" },
+  { prcn_CountryId: 57, prcn_Country: "Morocco" },
+  { prcn_CountryId: 58, prcn_Country: "Netherlands" },
+  { prcn_CountryId: 59, prcn_Country: "Curacao" },
+  { prcn_CountryId: 60, prcn_Country: "New Zealand" },
+  { prcn_CountryId: 61, prcn_Country: "Nicaragua" },
+  { prcn_CountryId: 62, prcn_Country: "Nigeria, Fed. Repub. of" },
+  { prcn_CountryId: 63, prcn_Country: "Northern Ireland" },
+  { prcn_CountryId: 64, prcn_Country: "Norway" },
+  { prcn_CountryId: 65, prcn_Country: "Pakistan" },
+  { prcn_CountryId: 66, prcn_Country: "Panama" },
+  { prcn_CountryId: 67, prcn_Country: "Peru" },
+  { prcn_CountryId: 68, prcn_Country: "Philippines" },
+  { prcn_CountryId: 69, prcn_Country: "Poland" },
+  { prcn_CountryId: 70, prcn_Country: "Portugal" },
+  { prcn_CountryId: 71, prcn_Country: "Russia" },
+  { prcn_CountryId: 72, prcn_Country: "Singapore, Repub. of" },
+  { prcn_CountryId: 73, prcn_Country: "South Africa, Repub. of" },
+  { prcn_CountryId: 74, prcn_Country: "Spain" },
+  { prcn_CountryId: 75, prcn_Country: "St. Lucia" },
+  { prcn_CountryId: 76, prcn_Country: "Sweden" },
+  { prcn_CountryId: 77, prcn_Country: "Switzerland" },
+  { prcn_CountryId: 78, prcn_Country: "Taiwan" },
+  { prcn_CountryId: 79, prcn_Country: "Thailand" },
+  { prcn_CountryId: 80, prcn_Country: "Trinidad and Tobago" },
+  { prcn_CountryId: 81, prcn_Country: "Turkey" },
+  { prcn_CountryId: 82, prcn_Country: "United Arab Emirates" },
+  { prcn_CountryId: 83, prcn_Country: "Uruguay" },
+  { prcn_CountryId: 84, prcn_Country: "Venezuela" },
+  { prcn_CountryId: 85, prcn_Country: "Vietnam" },
+  { prcn_CountryId: 87, prcn_Country: "Zambia" },
+  { prcn_CountryId: 88, prcn_Country: "American Samoa" },
+  { prcn_CountryId: 89, prcn_Country: "Scotland" },
+  { prcn_CountryId: 90, prcn_Country: "Jordan" },
+  { prcn_CountryId: 91, prcn_Country: "Mauritius" },
+  { prcn_CountryId: 92, prcn_Country: "Bangladesh" },
+  { prcn_CountryId: 93, prcn_Country: "Romania" },
+  { prcn_CountryId: 95, prcn_Country: "Kenya" },
+  { prcn_CountryId: 96, prcn_Country: "Ghana" },
+  { prcn_CountryId: 97, prcn_Country: "Saudi Arabia, Kingdom of" },
+  { prcn_CountryId: 98, prcn_Country: "Wales" },
+  { prcn_CountryId: 99, prcn_Country: "Latvia" },
+  { prcn_CountryId: 100, prcn_Country: "Senegal" },
+  { prcn_CountryId: 101, prcn_Country: "Macedonia, Repub. of." },
+  { prcn_CountryId: 102, prcn_Country: "Tanzania" },
+  { prcn_CountryId: 103, prcn_Country: "British Virgin Islands" },
+  { prcn_CountryId: 104, prcn_Country: "Bahrain, Kingdom of" },
+  { prcn_CountryId: 105, prcn_Country: "Estonia" },
+  { prcn_CountryId: 106, prcn_Country: "Ukraine" },
+  { prcn_CountryId: 107, prcn_Country: "Algeria" },
+  { prcn_CountryId: 108, prcn_Country: "Madagascar, Repub. of" },
+  { prcn_CountryId: 109, prcn_Country: "Cote D'Ivoire, Repub. of" },
+  { prcn_CountryId: 110, prcn_Country: "Burkina Faso" },
+  { prcn_CountryId: 111, prcn_Country: "Qatar" },
+  { prcn_CountryId: 112, prcn_Country: "Luxembourg" },
+  { prcn_CountryId: 113, prcn_Country: "Equatorial Guinea, Repub. of" },
+  { prcn_CountryId: 114, prcn_Country: "Bulgaria" },
+  { prcn_CountryId: 115, prcn_Country: "Paraguay, Repub. of" },
+  { prcn_CountryId: 116, prcn_Country: "Anguilla" },
+  { prcn_CountryId: 117, prcn_Country: "Lebanon" },
+  { prcn_CountryId: 118, prcn_Country: "Republic of Mali" },
+  { prcn_CountryId: 119, prcn_Country: "Ethiopia" },
 ];
 
-const mexico = [
-  "Aguascalientes",
-  "Baja California Sur",
-  "Baja California",
-  "Campeche",
-  "Chiapas",
-  "Chihuahua",
-  "Coahuila",
-  "Colima",
-  "Durango",
-  "Guanajuato",
-  "Guerrero",
-  "Hidalgo",
-  "Jalisco",
-  "México City",
-  "México",
-  "Michoacán",
-  "Morelos",
-  "Nayarit",
-  "Nuevo León",
-  "Oaxaca",
-  "Puebla",
-  "Querétaro",
-  "Quintana Roo",
-  "San Luis Potosí",
-  "Sinaloa",
-  "Sonora",
-  "Tabasco",
-  "Tamaulipas",
-  "Tlaxcala",
-  "Veracruz",
-  "Yucatán",
-  "Zacatecas",
-];
-
-const canada = [
-  "Alberta",
-  "British Columbia",
-  "Manitoba",
-  "New Brunswick",
-  "Newfoundland and Labrador",
-  "Northwest Territories",
-  "Nova Scotia",
-  "Nunavut",
-  "Ontario",
-  "Prince Edward Island",
-  "Quebec",
-  "Saskatchewan",
-  "Yukon",
+  // TODO:JMT - CHANGE THIS TO THE DATA SOURCE FROM THE BBOS
+const states = [
+  {
+    prst_stateid: 1,
+    prst_state: "Alabama",
+    prst_countryid: 1,
+    prst_Abbreviation: "AL",
+  },
+  {
+    prst_stateid: 2,
+    prst_state: "Alaska",
+    prst_countryid: 1,
+    prst_Abbreviation: "AK",
+  },
+  {
+    prst_stateid: 3,
+    prst_state: "Arizona",
+    prst_countryid: 1,
+    prst_Abbreviation: "AZ",
+  },
+  {
+    prst_stateid: 4,
+    prst_state: "Arkansas",
+    prst_countryid: 1,
+    prst_Abbreviation: "AR",
+  },
+  {
+    prst_stateid: 5,
+    prst_state: "California",
+    prst_countryid: 1,
+    prst_Abbreviation: "CA",
+  },
+  {
+    prst_stateid: 6,
+    prst_state: "Colorado",
+    prst_countryid: 1,
+    prst_Abbreviation: "CO",
+  },
+  {
+    prst_stateid: 7,
+    prst_state: "Connecticut",
+    prst_countryid: 1,
+    prst_Abbreviation: "CT",
+  },
+  {
+    prst_stateid: 8,
+    prst_state: "Delaware",
+    prst_countryid: 1,
+    prst_Abbreviation: "DE",
+  },
+  {
+    prst_stateid: 9,
+    prst_state: "District of Columbia",
+    prst_countryid: 1,
+    prst_Abbreviation: "DC",
+  },
+  {
+    prst_stateid: 10,
+    prst_state: "Florida",
+    prst_countryid: 1,
+    prst_Abbreviation: "FL",
+  },
+  {
+    prst_stateid: 11,
+    prst_state: "Georgia",
+    prst_countryid: 1,
+    prst_Abbreviation: "GA",
+  },
+  {
+    prst_stateid: 12,
+    prst_state: "Hawaii",
+    prst_countryid: 1,
+    prst_Abbreviation: "HI",
+  },
+  {
+    prst_stateid: 13,
+    prst_state: "Idaho",
+    prst_countryid: 1,
+    prst_Abbreviation: "ID",
+  },
+  {
+    prst_stateid: 14,
+    prst_state: "Illinois",
+    prst_countryid: 1,
+    prst_Abbreviation: "IL",
+  },
+  {
+    prst_stateid: 15,
+    prst_state: "Indiana",
+    prst_countryid: 1,
+    prst_Abbreviation: "IN",
+  },
+  {
+    prst_stateid: 16,
+    prst_state: "Iowa",
+    prst_countryid: 1,
+    prst_Abbreviation: "IA",
+  },
+  {
+    prst_stateid: 17,
+    prst_state: "Kansas",
+    prst_countryid: 1,
+    prst_Abbreviation: "KS",
+  },
+  {
+    prst_stateid: 18,
+    prst_state: "Kentucky",
+    prst_countryid: 1,
+    prst_Abbreviation: "KY",
+  },
+  {
+    prst_stateid: 19,
+    prst_state: "Louisiana",
+    prst_countryid: 1,
+    prst_Abbreviation: "LA",
+  },
+  {
+    prst_stateid: 20,
+    prst_state: "Maine",
+    prst_countryid: 1,
+    prst_Abbreviation: "ME",
+  },
+  {
+    prst_stateid: 21,
+    prst_state: "Maryland",
+    prst_countryid: 1,
+    prst_Abbreviation: "MD",
+  },
+  {
+    prst_stateid: 22,
+    prst_state: "Massachusetts",
+    prst_countryid: 1,
+    prst_Abbreviation: "MA",
+  },
+  {
+    prst_stateid: 23,
+    prst_state: "Michigan",
+    prst_countryid: 1,
+    prst_Abbreviation: "MI",
+  },
+  {
+    prst_stateid: 24,
+    prst_state: "Minnesota",
+    prst_countryid: 1,
+    prst_Abbreviation: "MN",
+  },
+  {
+    prst_stateid: 25,
+    prst_state: "Mississippi",
+    prst_countryid: 1,
+    prst_Abbreviation: "MS",
+  },
+  {
+    prst_stateid: 26,
+    prst_state: "Missouri",
+    prst_countryid: 1,
+    prst_Abbreviation: "MO",
+  },
+  {
+    prst_stateid: 27,
+    prst_state: "Montana",
+    prst_countryid: 1,
+    prst_Abbreviation: "MT",
+  },
+  {
+    prst_stateid: 28,
+    prst_state: "Nebraska",
+    prst_countryid: 1,
+    prst_Abbreviation: "NE",
+  },
+  {
+    prst_stateid: 29,
+    prst_state: "Nevada",
+    prst_countryid: 1,
+    prst_Abbreviation: "NV",
+  },
+  {
+    prst_stateid: 30,
+    prst_state: "New Hampshire",
+    prst_countryid: 1,
+    prst_Abbreviation: "NH",
+  },
+  {
+    prst_stateid: 31,
+    prst_state: "New Jersey",
+    prst_countryid: 1,
+    prst_Abbreviation: "NJ",
+  },
+  {
+    prst_stateid: 32,
+    prst_state: "New Mexico",
+    prst_countryid: 1,
+    prst_Abbreviation: "NM",
+  },
+  {
+    prst_stateid: 33,
+    prst_state: "New York",
+    prst_countryid: 1,
+    prst_Abbreviation: "NY",
+  },
+  {
+    prst_stateid: 34,
+    prst_state: "North Carolina",
+    prst_countryid: 1,
+    prst_Abbreviation: "NC",
+  },
+  {
+    prst_stateid: 35,
+    prst_state: "North Dakota",
+    prst_countryid: 1,
+    prst_Abbreviation: "ND",
+  },
+  {
+    prst_stateid: 36,
+    prst_state: "Ohio",
+    prst_countryid: 1,
+    prst_Abbreviation: "OH",
+  },
+  {
+    prst_stateid: 37,
+    prst_state: "Oklahoma",
+    prst_countryid: 1,
+    prst_Abbreviation: "OK",
+  },
+  {
+    prst_stateid: 38,
+    prst_state: "Oregon",
+    prst_countryid: 1,
+    prst_Abbreviation: "OR",
+  },
+  {
+    prst_stateid: 39,
+    prst_state: "Pennsylvania",
+    prst_countryid: 1,
+    prst_Abbreviation: "PA",
+  },
+  {
+    prst_stateid: 40,
+    prst_state: "Rhode Island",
+    prst_countryid: 1,
+    prst_Abbreviation: "RI",
+  },
+  {
+    prst_stateid: 41,
+    prst_state: "South Carolina",
+    prst_countryid: 1,
+    prst_Abbreviation: "SC",
+  },
+  {
+    prst_stateid: 42,
+    prst_state: "South Dakota",
+    prst_countryid: 1,
+    prst_Abbreviation: "SD",
+  },
+  {
+    prst_stateid: 43,
+    prst_state: "Tennessee",
+    prst_countryid: 1,
+    prst_Abbreviation: "TN",
+  },
+  {
+    prst_stateid: 44,
+    prst_state: "Texas",
+    prst_countryid: 1,
+    prst_Abbreviation: "TX",
+  },
+  {
+    prst_stateid: 45,
+    prst_state: "Utah",
+    prst_countryid: 1,
+    prst_Abbreviation: "UT",
+  },
+  {
+    prst_stateid: 46,
+    prst_state: "Vermont",
+    prst_countryid: 1,
+    prst_Abbreviation: "VT",
+  },
+  {
+    prst_stateid: 47,
+    prst_state: "Virginia",
+    prst_countryid: 1,
+    prst_Abbreviation: "VA",
+  },
+  {
+    prst_stateid: 48,
+    prst_state: "Washington",
+    prst_countryid: 1,
+    prst_Abbreviation: "WA",
+  },
+  {
+    prst_stateid: 49,
+    prst_state: "West Virginia",
+    prst_countryid: 1,
+    prst_Abbreviation: "WV",
+  },
+  {
+    prst_stateid: 50,
+    prst_state: "Wisconsin",
+    prst_countryid: 1,
+    prst_Abbreviation: "WI",
+  },
+  {
+    prst_stateid: 51,
+    prst_state: "Wyoming",
+    prst_countryid: 1,
+    prst_Abbreviation: "WY",
+  },
+  {
+    prst_stateid: 1015,
+    prst_state: "Puerto Rico",
+    prst_countryid: 1,
+    prst_Abbreviation: "PR",
+  },
+  {
+    prst_stateid: 1016,
+    prst_state: "Guam",
+    prst_countryid: 1,
+    prst_Abbreviation: "GU",
+  },
+  {
+    prst_stateid: 1017,
+    prst_state: "Virgin Islands",
+    prst_countryid: 1,
+    prst_Abbreviation: "VI",
+  },
+  {
+    prst_stateid: 52,
+    prst_state: "Alberta",
+    prst_countryid: 2,
+    prst_Abbreviation: "AB",
+  },
+  {
+    prst_stateid: 53,
+    prst_state: "British Columbia",
+    prst_countryid: 2,
+    prst_Abbreviation: "BC",
+  },
+  {
+    prst_stateid: 54,
+    prst_state: "Manitoba",
+    prst_countryid: 2,
+    prst_Abbreviation: "MB",
+  },
+  {
+    prst_stateid: 55,
+    prst_state: "New Brunswick",
+    prst_countryid: 2,
+    prst_Abbreviation: "NB",
+  },
+  {
+    prst_stateid: 56,
+    prst_state: "Newfoundland and Labrador",
+    prst_countryid: 2,
+    prst_Abbreviation: "NL",
+  },
+  {
+    prst_stateid: 57,
+    prst_state: "Northwest Territories",
+    prst_countryid: 2,
+    prst_Abbreviation: "NT",
+  },
+  {
+    prst_stateid: 58,
+    prst_state: "Nova Scotia",
+    prst_countryid: 2,
+    prst_Abbreviation: "NS",
+  },
+  {
+    prst_stateid: 59,
+    prst_state: "Ontario",
+    prst_countryid: 2,
+    prst_Abbreviation: "ON",
+  },
+  {
+    prst_stateid: 60,
+    prst_state: "Prince Edward Island",
+    prst_countryid: 2,
+    prst_Abbreviation: "PE",
+  },
+  {
+    prst_stateid: 61,
+    prst_state: "Quebec",
+    prst_countryid: 2,
+    prst_Abbreviation: "QC",
+  },
+  {
+    prst_stateid: 62,
+    prst_state: "Saskatchewan",
+    prst_countryid: 2,
+    prst_Abbreviation: "SK",
+  },
+  {
+    prst_stateid: 63,
+    prst_state: "Yukon",
+    prst_countryid: 2,
+    prst_Abbreviation: "YT",
+  },
+  {
+    prst_stateid: 64,
+    prst_state: "Aguascalientes",
+    prst_countryid: 3,
+    prst_Abbreviation: "Ags",
+  },
+  {
+    prst_stateid: 65,
+    prst_state: "Baja California",
+    prst_countryid: 3,
+    prst_Abbreviation: "BCN",
+  },
+  {
+    prst_stateid: 66,
+    prst_state: "Baja California Sur",
+    prst_countryid: 3,
+    prst_Abbreviation: "BCS",
+  },
+  {
+    prst_stateid: 67,
+    prst_state: "Campeche",
+    prst_countryid: 3,
+    prst_Abbreviation: "Camp",
+  },
+  {
+    prst_stateid: 68,
+    prst_state: "Chiapas",
+    prst_countryid: 3,
+    prst_Abbreviation: "Chis",
+  },
+  {
+    prst_stateid: 69,
+    prst_state: "Chihuahua",
+    prst_countryid: 3,
+    prst_Abbreviation: "Chih",
+  },
+  {
+    prst_stateid: 70,
+    prst_state: "Coahuila",
+    prst_countryid: 3,
+    prst_Abbreviation: "Coah",
+  },
+  {
+    prst_stateid: 71,
+    prst_state: "Colima",
+    prst_countryid: 3,
+    prst_Abbreviation: "Col",
+  },
+  {
+    prst_stateid: 72,
+    prst_state: "Durango",
+    prst_countryid: 3,
+    prst_Abbreviation: "Dgo",
+  },
+  {
+    prst_stateid: 73,
+    prst_state: "Estado de Mexico",
+    prst_countryid: 3,
+    prst_Abbreviation: "Mex",
+  },
+  {
+    prst_stateid: 74,
+    prst_state: "Ciudad de Mexico",
+    prst_countryid: 3,
+    prst_Abbreviation: "CDMX",
+  },
+  {
+    prst_stateid: 75,
+    prst_state: "Guanajuato",
+    prst_countryid: 3,
+    prst_Abbreviation: "Gto",
+  },
+  {
+    prst_stateid: 76,
+    prst_state: "Guerrero",
+    prst_countryid: 3,
+    prst_Abbreviation: "Gro",
+  },
+  {
+    prst_stateid: 77,
+    prst_state: "Hidalgo",
+    prst_countryid: 3,
+    prst_Abbreviation: "Hgo",
+  },
+  {
+    prst_stateid: 78,
+    prst_state: "Jalisco",
+    prst_countryid: 3,
+    prst_Abbreviation: "Jal",
+  },
+  {
+    prst_stateid: 79,
+    prst_state: "Michoacan",
+    prst_countryid: 3,
+    prst_Abbreviation: "Mich",
+  },
+  {
+    prst_stateid: 80,
+    prst_state: "Morelos",
+    prst_countryid: 3,
+    prst_Abbreviation: "Mor",
+  },
+  {
+    prst_stateid: 81,
+    prst_state: "Nayarit",
+    prst_countryid: 3,
+    prst_Abbreviation: "Nay",
+  },
+  {
+    prst_stateid: 82,
+    prst_state: "Nuevo Leon",
+    prst_countryid: 3,
+    prst_Abbreviation: "NL",
+  },
+  {
+    prst_stateid: 83,
+    prst_state: "Oaxaca",
+    prst_countryid: 3,
+    prst_Abbreviation: "Oax",
+  },
+  {
+    prst_stateid: 84,
+    prst_state: "Puebla",
+    prst_countryid: 3,
+    prst_Abbreviation: "Pue",
+  },
+  {
+    prst_stateid: 85,
+    prst_state: "Queretaro",
+    prst_countryid: 3,
+    prst_Abbreviation: "Qro",
+  },
+  {
+    prst_stateid: 86,
+    prst_state: "Quintana Roo",
+    prst_countryid: 3,
+    prst_Abbreviation: "QR",
+  },
+  {
+    prst_stateid: 87,
+    prst_state: "San Luis Potosi",
+    prst_countryid: 3,
+    prst_Abbreviation: "SLP",
+  },
+  {
+    prst_stateid: 88,
+    prst_state: "Sinaloa",
+    prst_countryid: 3,
+    prst_Abbreviation: "Sin",
+  },
+  {
+    prst_stateid: 89,
+    prst_state: "Sonora",
+    prst_countryid: 3,
+    prst_Abbreviation: "Son",
+  },
+  {
+    prst_stateid: 90,
+    prst_state: "Tabasco",
+    prst_countryid: 3,
+    prst_Abbreviation: "Tab",
+  },
+  {
+    prst_stateid: 91,
+    prst_state: "Tamaulipas",
+    prst_countryid: 3,
+    prst_Abbreviation: "Tamps",
+  },
+  {
+    prst_stateid: 92,
+    prst_state: "Tlaxcala",
+    prst_countryid: 3,
+    prst_Abbreviation: "Tlax",
+  },
+  {
+    prst_stateid: 93,
+    prst_state: "Veracruz",
+    prst_countryid: 3,
+    prst_Abbreviation: "Ver",
+  },
+  {
+    prst_stateid: 94,
+    prst_state: "Yucatan",
+    prst_countryid: 3,
+    prst_Abbreviation: "Yuc",
+  },
+  {
+    prst_stateid: 95,
+    prst_state: "Zacatecas",
+    prst_countryid: 3,
+    prst_Abbreviation: "Zac",
+  },
 ];
 
 // Based ont the country,
 // this function adds options in the
 // .bbs-combobox's menu.
-const addCountryStateOptions = (event, country) => {
-  // TODO:PT - USE CONTRY and STATE IDS instead of names
+const addCountryStateOptions = (event, prcn_CountryId) => {
+  // prcn_CountryId 1 == USA, 2 == Canada, 3 == Mexico
+
   // clear and disable other-countries input
   const otherCountryInput = document.querySelector("#otherCountries");
   otherCountryInput.setAttribute("disabled", "disabled");
@@ -193,11 +801,21 @@ const addCountryStateOptions = (event, country) => {
   // clear the previous list
   optionContainer.innerHTML = "";
 
-  // TODO:JMT - CHANGE THIS TO THE DATA SOURCE FROM THE BBOS
-  const states =
-    country === "mexico" ? mexico : country === "canada" ? canada : us;
+  // states e.g.
+  // [{
+  //   prst_stateid: 1,
+  //   prst_state: "Alabama",
+  //   prst_countryid: 1,
+  //   prst_Abbreviation: "AL",
+  // }],
 
-  for (let i in states) {
+  // fiter the states for the selected prcn_CountryId
+  const filteredStates = states.filter(
+    (state) => state.prst_countryid == prcn_CountryId,
+  );
+
+  // populate the state combobox
+  for (let i in filteredStates) {
     const outer = document.createElement("li");
     optionContainer.appendChild(outer);
 
@@ -206,15 +824,15 @@ const addCountryStateOptions = (event, country) => {
 
     option.setAttribute(
       "onclick",
-      `handleMultiselectOptionSelection(event, "${states[i]}")`,
+      `handleMultiselectOptionSelection(event, "${filteredStates[i].prst_stateid}")`,
     );
-    option.setAttribute("data-value", states[i]);
+    option.setAttribute("data-prst_stateid", filteredStates[i].prst_stateid);
     option.setAttribute("tabindex", "-1");
     option.setAttribute("class", "bbsButton bbsButton-menu-item dropdown-item");
     option.setAttribute("role", "option");
     option.setAttribute("type", "button");
     option.innerHTML = `
-      <span class="text-label">${states[i]}</span>
+      <span class="text-label">${filteredStates[i].prst_state} (${filteredStates[i].prst_Abbreviation})</span>
       <span class="msicon notranslate">check</span>
       `;
   }
@@ -224,8 +842,21 @@ const addCountryStateOptions = (event, country) => {
 // .bbs-combobox. call this function with the value,
 // this will add the tags in the .multiselect-tag-container
 // if it exits or append one in the combobox
-const handleMultiselectOptionSelection = (event, value) => {
-  // TODO:PT - USE CONTRY and STATE IDS instead of names
+const handleMultiselectOptionSelection = (event, prst_stateid) => {
+
+  // states e.g.
+  // [{
+  //   prst_stateid: 1,
+  //   prst_state: "Alabama",
+  //   prst_countryid: 1,
+  //   prst_Abbreviation: "AL",
+  // }],
+
+  // find the state
+  const stateobject = states.find(
+    (state) => state.prst_stateid == prst_stateid,
+  );
+
   event.stopPropagation();
   const comboboxParent = event.currentTarget.closest(".bbs-combobox");
   const inputElement = comboboxParent.querySelector("input");
@@ -238,22 +869,18 @@ const handleMultiselectOptionSelection = (event, value) => {
     comboboxParent.appendChild(tagContainer);
   }
 
-  // const inputValue = event.target.value;
-  // focus the input
-  // inputElement.value = "";
-  inputElement.focus();
-
   // check if there is any tag with that value exist in the parent
-  const tagid = "data-" + value.replace(" ", "-");
+  const tagid = "prst_stateid-" + prst_stateid;
   const tagElement = tagContainer.querySelector("#" + tagid);
   if (!tagElement) {
     // create the tag if it does not exists
     const newTag = document.createElement("button");
     newTag.setAttribute("class", "bbsButton bbsButton-tag-secondary small");
     newTag.setAttribute("id", tagid);
+    newTag.setAttribute("data-prst_stateid", prst_stateid);
     newTag.setAttribute("onclick", "removeMultiselectTag(event)");
     newTag.innerHTML = `
-    <span>${value}</span>
+    <span>${stateobject.prst_state}</span>
     <span class="msicon notranslate">clear</span>
     `;
     tagContainer.appendChild(newTag);
@@ -269,30 +896,25 @@ const handleMultiselectOptionSelection = (event, value) => {
     menuoption.classList.remove("selected");
   }
 
-  // focus the input (it is automatic)
+  // focus the input
+  inputElement.focus();
 };
 
 // if a removable bbsButton bbsButton-tag-secondary
 // is clicked, this is the function
 // that needs to be called to remove it
 const removeMultiselectTag = (event) => {
-  // TODO:PT - Make on the X on the tag clicable and focasable
-  // TODO:PT - USE CONTRY and STATE IDS instead of names
+  // TODO:PT - low priority, Make on the X on the tag clicable and focasable
+
   const comboboxParent = event.currentTarget.closest(".bbs-combobox");
   const menu = comboboxParent.querySelector(".dropdown-menu");
-  const value = event.currentTarget.id
-    .replace("data-", "")
-    .replace("-", " ")
-    .toLowerCase();
+  const data_prst_stateid = event.currentTarget.dataset.prst_stateid;
 
-  // Filter the menu items based on the input
-  const optionss = menu.querySelectorAll("li");
-  optionss.forEach((htmlElement) => {
-    const innervalue = htmlElement.children[0].innerHTML.toLowerCase().trim();
-    if (innervalue.includes(value)) {
-      htmlElement.classList.remove("selected");
-    }
-  });
+  const menuitembutton = menu.querySelector(
+    `li button[data-prst_stateid="${data_prst_stateid}"]`,
+  );
+  if (menuitembutton) menuitembutton.parentElement.classList.remove("selected");
+
   const nextsibling = event.currentTarget.nextElementSibling;
   const prevsibling = event.currentTarget.previousElementSibling;
   if (nextsibling) {
@@ -320,15 +942,13 @@ const enableOtherCountriesInput = (event, id) => {
   // Clear the existing multiseled tags
   stateCitiselector.querySelector(".multiselect-tag-container").innerHTML = "";
 
-  // TODO:JMT - CHANGE THIS TO THE DATA SOURCE FROM THE BBOS
-
-  // TODO:PT - Populate a template country selection list.
+  // TODO:PT - Populate other country selection list.
 };
 
 const handleKeydownInComboInput = (event) => {
   const key = event.key;
 
-  // TODO - somehow Escape key is not detected here at all.
+  // TODO:PT - somehow Escape key is not detected here at all.
   // cannot close the menu because of that.
 
   if (key == "ArrowDown" || key == "ArrowUp") {
