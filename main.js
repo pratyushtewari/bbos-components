@@ -189,591 +189,591 @@ const countries = [
 // TODO:JMT - CHANGE THIS TO THE DATA SOURCE FROM THE BBOS
 const states = [
   {
-    prst_stateid: 1,
-    prst_state: "Alabama",
-    prst_countryid: 1,
+    prst_StateId: 1,
+    prst_State: "Alabama",
+    prst_CountryId: 1,
     prst_Abbreviation: "AL",
   },
   {
-    prst_stateid: 2,
-    prst_state: "Alaska",
-    prst_countryid: 1,
+    prst_StateId: 2,
+    prst_State: "Alaska",
+    prst_CountryId: 1,
     prst_Abbreviation: "AK",
   },
   {
-    prst_stateid: 3,
-    prst_state: "Arizona",
-    prst_countryid: 1,
+    prst_StateId: 3,
+    prst_State: "Arizona",
+    prst_CountryId: 1,
     prst_Abbreviation: "AZ",
   },
   {
-    prst_stateid: 4,
-    prst_state: "Arkansas",
-    prst_countryid: 1,
+    prst_StateId: 4,
+    prst_State: "Arkansas",
+    prst_CountryId: 1,
     prst_Abbreviation: "AR",
   },
   {
-    prst_stateid: 5,
-    prst_state: "California",
-    prst_countryid: 1,
+    prst_StateId: 5,
+    prst_State: "California",
+    prst_CountryId: 1,
     prst_Abbreviation: "CA",
   },
   {
-    prst_stateid: 6,
-    prst_state: "Colorado",
-    prst_countryid: 1,
+    prst_StateId: 6,
+    prst_State: "Colorado",
+    prst_CountryId: 1,
     prst_Abbreviation: "CO",
   },
   {
-    prst_stateid: 7,
-    prst_state: "Connecticut",
-    prst_countryid: 1,
+    prst_StateId: 7,
+    prst_State: "Connecticut",
+    prst_CountryId: 1,
     prst_Abbreviation: "CT",
   },
   {
-    prst_stateid: 8,
-    prst_state: "Delaware",
-    prst_countryid: 1,
+    prst_StateId: 8,
+    prst_State: "Delaware",
+    prst_CountryId: 1,
     prst_Abbreviation: "DE",
   },
   {
-    prst_stateid: 9,
-    prst_state: "District of Columbia",
-    prst_countryid: 1,
+    prst_StateId: 9,
+    prst_State: "District of Columbia",
+    prst_CountryId: 1,
     prst_Abbreviation: "DC",
   },
   {
-    prst_stateid: 10,
-    prst_state: "Florida",
-    prst_countryid: 1,
+    prst_StateId: 10,
+    prst_State: "Florida",
+    prst_CountryId: 1,
     prst_Abbreviation: "FL",
   },
   {
-    prst_stateid: 11,
-    prst_state: "Georgia",
-    prst_countryid: 1,
+    prst_StateId: 11,
+    prst_State: "Georgia",
+    prst_CountryId: 1,
     prst_Abbreviation: "GA",
   },
   {
-    prst_stateid: 12,
-    prst_state: "Hawaii",
-    prst_countryid: 1,
+    prst_StateId: 12,
+    prst_State: "Hawaii",
+    prst_CountryId: 1,
     prst_Abbreviation: "HI",
   },
   {
-    prst_stateid: 13,
-    prst_state: "Idaho",
-    prst_countryid: 1,
+    prst_StateId: 13,
+    prst_State: "Idaho",
+    prst_CountryId: 1,
     prst_Abbreviation: "ID",
   },
   {
-    prst_stateid: 14,
-    prst_state: "Illinois",
-    prst_countryid: 1,
+    prst_StateId: 14,
+    prst_State: "Illinois",
+    prst_CountryId: 1,
     prst_Abbreviation: "IL",
   },
   {
-    prst_stateid: 15,
-    prst_state: "Indiana",
-    prst_countryid: 1,
+    prst_StateId: 15,
+    prst_State: "Indiana",
+    prst_CountryId: 1,
     prst_Abbreviation: "IN",
   },
   {
-    prst_stateid: 16,
-    prst_state: "Iowa",
-    prst_countryid: 1,
+    prst_StateId: 16,
+    prst_State: "Iowa",
+    prst_CountryId: 1,
     prst_Abbreviation: "IA",
   },
   {
-    prst_stateid: 17,
-    prst_state: "Kansas",
-    prst_countryid: 1,
+    prst_StateId: 17,
+    prst_State: "Kansas",
+    prst_CountryId: 1,
     prst_Abbreviation: "KS",
   },
   {
-    prst_stateid: 18,
-    prst_state: "Kentucky",
-    prst_countryid: 1,
+    prst_StateId: 18,
+    prst_State: "Kentucky",
+    prst_CountryId: 1,
     prst_Abbreviation: "KY",
   },
   {
-    prst_stateid: 19,
-    prst_state: "Louisiana",
-    prst_countryid: 1,
+    prst_StateId: 19,
+    prst_State: "Louisiana",
+    prst_CountryId: 1,
     prst_Abbreviation: "LA",
   },
   {
-    prst_stateid: 20,
-    prst_state: "Maine",
-    prst_countryid: 1,
+    prst_StateId: 20,
+    prst_State: "Maine",
+    prst_CountryId: 1,
     prst_Abbreviation: "ME",
   },
   {
-    prst_stateid: 21,
-    prst_state: "Maryland",
-    prst_countryid: 1,
+    prst_StateId: 21,
+    prst_State: "Maryland",
+    prst_CountryId: 1,
     prst_Abbreviation: "MD",
   },
   {
-    prst_stateid: 22,
-    prst_state: "Massachusetts",
-    prst_countryid: 1,
+    prst_StateId: 22,
+    prst_State: "Massachusetts",
+    prst_CountryId: 1,
     prst_Abbreviation: "MA",
   },
   {
-    prst_stateid: 23,
-    prst_state: "Michigan",
-    prst_countryid: 1,
+    prst_StateId: 23,
+    prst_State: "Michigan",
+    prst_CountryId: 1,
     prst_Abbreviation: "MI",
   },
   {
-    prst_stateid: 24,
-    prst_state: "Minnesota",
-    prst_countryid: 1,
+    prst_StateId: 24,
+    prst_State: "Minnesota",
+    prst_CountryId: 1,
     prst_Abbreviation: "MN",
   },
   {
-    prst_stateid: 25,
-    prst_state: "Mississippi",
-    prst_countryid: 1,
+    prst_StateId: 25,
+    prst_State: "Mississippi",
+    prst_CountryId: 1,
     prst_Abbreviation: "MS",
   },
   {
-    prst_stateid: 26,
-    prst_state: "Missouri",
-    prst_countryid: 1,
+    prst_StateId: 26,
+    prst_State: "Missouri",
+    prst_CountryId: 1,
     prst_Abbreviation: "MO",
   },
   {
-    prst_stateid: 27,
-    prst_state: "Montana",
-    prst_countryid: 1,
+    prst_StateId: 27,
+    prst_State: "Montana",
+    prst_CountryId: 1,
     prst_Abbreviation: "MT",
   },
   {
-    prst_stateid: 28,
-    prst_state: "Nebraska",
-    prst_countryid: 1,
+    prst_StateId: 28,
+    prst_State: "Nebraska",
+    prst_CountryId: 1,
     prst_Abbreviation: "NE",
   },
   {
-    prst_stateid: 29,
-    prst_state: "Nevada",
-    prst_countryid: 1,
+    prst_StateId: 29,
+    prst_State: "Nevada",
+    prst_CountryId: 1,
     prst_Abbreviation: "NV",
   },
   {
-    prst_stateid: 30,
-    prst_state: "New Hampshire",
-    prst_countryid: 1,
+    prst_StateId: 30,
+    prst_State: "New Hampshire",
+    prst_CountryId: 1,
     prst_Abbreviation: "NH",
   },
   {
-    prst_stateid: 31,
-    prst_state: "New Jersey",
-    prst_countryid: 1,
+    prst_StateId: 31,
+    prst_State: "New Jersey",
+    prst_CountryId: 1,
     prst_Abbreviation: "NJ",
   },
   {
-    prst_stateid: 32,
-    prst_state: "New Mexico",
-    prst_countryid: 1,
+    prst_StateId: 32,
+    prst_State: "New Mexico",
+    prst_CountryId: 1,
     prst_Abbreviation: "NM",
   },
   {
-    prst_stateid: 33,
-    prst_state: "New York",
-    prst_countryid: 1,
+    prst_StateId: 33,
+    prst_State: "New York",
+    prst_CountryId: 1,
     prst_Abbreviation: "NY",
   },
   {
-    prst_stateid: 34,
-    prst_state: "North Carolina",
-    prst_countryid: 1,
+    prst_StateId: 34,
+    prst_State: "North Carolina",
+    prst_CountryId: 1,
     prst_Abbreviation: "NC",
   },
   {
-    prst_stateid: 35,
-    prst_state: "North Dakota",
-    prst_countryid: 1,
+    prst_StateId: 35,
+    prst_State: "North Dakota",
+    prst_CountryId: 1,
     prst_Abbreviation: "ND",
   },
   {
-    prst_stateid: 36,
-    prst_state: "Ohio",
-    prst_countryid: 1,
+    prst_StateId: 36,
+    prst_State: "Ohio",
+    prst_CountryId: 1,
     prst_Abbreviation: "OH",
   },
   {
-    prst_stateid: 37,
-    prst_state: "Oklahoma",
-    prst_countryid: 1,
+    prst_StateId: 37,
+    prst_State: "Oklahoma",
+    prst_CountryId: 1,
     prst_Abbreviation: "OK",
   },
   {
-    prst_stateid: 38,
-    prst_state: "Oregon",
-    prst_countryid: 1,
+    prst_StateId: 38,
+    prst_State: "Oregon",
+    prst_CountryId: 1,
     prst_Abbreviation: "OR",
   },
   {
-    prst_stateid: 39,
-    prst_state: "Pennsylvania",
-    prst_countryid: 1,
+    prst_StateId: 39,
+    prst_State: "Pennsylvania",
+    prst_CountryId: 1,
     prst_Abbreviation: "PA",
   },
   {
-    prst_stateid: 40,
-    prst_state: "Rhode Island",
-    prst_countryid: 1,
+    prst_StateId: 40,
+    prst_State: "Rhode Island",
+    prst_CountryId: 1,
     prst_Abbreviation: "RI",
   },
   {
-    prst_stateid: 41,
-    prst_state: "South Carolina",
-    prst_countryid: 1,
+    prst_StateId: 41,
+    prst_State: "South Carolina",
+    prst_CountryId: 1,
     prst_Abbreviation: "SC",
   },
   {
-    prst_stateid: 42,
-    prst_state: "South Dakota",
-    prst_countryid: 1,
+    prst_StateId: 42,
+    prst_State: "South Dakota",
+    prst_CountryId: 1,
     prst_Abbreviation: "SD",
   },
   {
-    prst_stateid: 43,
-    prst_state: "Tennessee",
-    prst_countryid: 1,
+    prst_StateId: 43,
+    prst_State: "Tennessee",
+    prst_CountryId: 1,
     prst_Abbreviation: "TN",
   },
   {
-    prst_stateid: 44,
-    prst_state: "Texas",
-    prst_countryid: 1,
+    prst_StateId: 44,
+    prst_State: "Texas",
+    prst_CountryId: 1,
     prst_Abbreviation: "TX",
   },
   {
-    prst_stateid: 45,
-    prst_state: "Utah",
-    prst_countryid: 1,
+    prst_StateId: 45,
+    prst_State: "Utah",
+    prst_CountryId: 1,
     prst_Abbreviation: "UT",
   },
   {
-    prst_stateid: 46,
-    prst_state: "Vermont",
-    prst_countryid: 1,
+    prst_StateId: 46,
+    prst_State: "Vermont",
+    prst_CountryId: 1,
     prst_Abbreviation: "VT",
   },
   {
-    prst_stateid: 47,
-    prst_state: "Virginia",
-    prst_countryid: 1,
+    prst_StateId: 47,
+    prst_State: "Virginia",
+    prst_CountryId: 1,
     prst_Abbreviation: "VA",
   },
   {
-    prst_stateid: 48,
-    prst_state: "Washington",
-    prst_countryid: 1,
+    prst_StateId: 48,
+    prst_State: "Washington",
+    prst_CountryId: 1,
     prst_Abbreviation: "WA",
   },
   {
-    prst_stateid: 49,
-    prst_state: "West Virginia",
-    prst_countryid: 1,
+    prst_StateId: 49,
+    prst_State: "West Virginia",
+    prst_CountryId: 1,
     prst_Abbreviation: "WV",
   },
   {
-    prst_stateid: 50,
-    prst_state: "Wisconsin",
-    prst_countryid: 1,
+    prst_StateId: 50,
+    prst_State: "Wisconsin",
+    prst_CountryId: 1,
     prst_Abbreviation: "WI",
   },
   {
-    prst_stateid: 51,
-    prst_state: "Wyoming",
-    prst_countryid: 1,
+    prst_StateId: 51,
+    prst_State: "Wyoming",
+    prst_CountryId: 1,
     prst_Abbreviation: "WY",
   },
   {
-    prst_stateid: 1015,
-    prst_state: "Puerto Rico",
-    prst_countryid: 1,
+    prst_StateId: 1015,
+    prst_State: "Puerto Rico",
+    prst_CountryId: 1,
     prst_Abbreviation: "PR",
   },
   {
-    prst_stateid: 1016,
-    prst_state: "Guam",
-    prst_countryid: 1,
+    prst_StateId: 1016,
+    prst_State: "Guam",
+    prst_CountryId: 1,
     prst_Abbreviation: "GU",
   },
   {
-    prst_stateid: 1017,
-    prst_state: "Virgin Islands",
-    prst_countryid: 1,
+    prst_StateId: 1017,
+    prst_State: "Virgin Islands",
+    prst_CountryId: 1,
     prst_Abbreviation: "VI",
   },
   {
-    prst_stateid: 52,
-    prst_state: "Alberta",
-    prst_countryid: 2,
+    prst_StateId: 52,
+    prst_State: "Alberta",
+    prst_CountryId: 2,
     prst_Abbreviation: "AB",
   },
   {
-    prst_stateid: 53,
-    prst_state: "British Columbia",
-    prst_countryid: 2,
+    prst_StateId: 53,
+    prst_State: "British Columbia",
+    prst_CountryId: 2,
     prst_Abbreviation: "BC",
   },
   {
-    prst_stateid: 54,
-    prst_state: "Manitoba",
-    prst_countryid: 2,
+    prst_StateId: 54,
+    prst_State: "Manitoba",
+    prst_CountryId: 2,
     prst_Abbreviation: "MB",
   },
   {
-    prst_stateid: 55,
-    prst_state: "New Brunswick",
-    prst_countryid: 2,
+    prst_StateId: 55,
+    prst_State: "New Brunswick",
+    prst_CountryId: 2,
     prst_Abbreviation: "NB",
   },
   {
-    prst_stateid: 56,
-    prst_state: "Newfoundland and Labrador",
-    prst_countryid: 2,
+    prst_StateId: 56,
+    prst_State: "Newfoundland and Labrador",
+    prst_CountryId: 2,
     prst_Abbreviation: "NL",
   },
   {
-    prst_stateid: 57,
-    prst_state: "Northwest Territories",
-    prst_countryid: 2,
+    prst_StateId: 57,
+    prst_State: "Northwest Territories",
+    prst_CountryId: 2,
     prst_Abbreviation: "NT",
   },
   {
-    prst_stateid: 58,
-    prst_state: "Nova Scotia",
-    prst_countryid: 2,
+    prst_StateId: 58,
+    prst_State: "Nova Scotia",
+    prst_CountryId: 2,
     prst_Abbreviation: "NS",
   },
   {
-    prst_stateid: 59,
-    prst_state: "Ontario",
-    prst_countryid: 2,
+    prst_StateId: 59,
+    prst_State: "Ontario",
+    prst_CountryId: 2,
     prst_Abbreviation: "ON",
   },
   {
-    prst_stateid: 60,
-    prst_state: "Prince Edward Island",
-    prst_countryid: 2,
+    prst_StateId: 60,
+    prst_State: "Prince Edward Island",
+    prst_CountryId: 2,
     prst_Abbreviation: "PE",
   },
   {
-    prst_stateid: 61,
-    prst_state: "Quebec",
-    prst_countryid: 2,
+    prst_StateId: 61,
+    prst_State: "Quebec",
+    prst_CountryId: 2,
     prst_Abbreviation: "QC",
   },
   {
-    prst_stateid: 62,
-    prst_state: "Saskatchewan",
-    prst_countryid: 2,
+    prst_StateId: 62,
+    prst_State: "Saskatchewan",
+    prst_CountryId: 2,
     prst_Abbreviation: "SK",
   },
   {
-    prst_stateid: 63,
-    prst_state: "Yukon",
-    prst_countryid: 2,
+    prst_StateId: 63,
+    prst_State: "Yukon",
+    prst_CountryId: 2,
     prst_Abbreviation: "YT",
   },
   {
-    prst_stateid: 64,
-    prst_state: "Aguascalientes",
-    prst_countryid: 3,
+    prst_StateId: 64,
+    prst_State: "Aguascalientes",
+    prst_CountryId: 3,
     prst_Abbreviation: "Ags",
   },
   {
-    prst_stateid: 65,
-    prst_state: "Baja California",
-    prst_countryid: 3,
+    prst_StateId: 65,
+    prst_State: "Baja California",
+    prst_CountryId: 3,
     prst_Abbreviation: "BCN",
   },
   {
-    prst_stateid: 66,
-    prst_state: "Baja California Sur",
-    prst_countryid: 3,
+    prst_StateId: 66,
+    prst_State: "Baja California Sur",
+    prst_CountryId: 3,
     prst_Abbreviation: "BCS",
   },
   {
-    prst_stateid: 67,
-    prst_state: "Campeche",
-    prst_countryid: 3,
+    prst_StateId: 67,
+    prst_State: "Campeche",
+    prst_CountryId: 3,
     prst_Abbreviation: "Camp",
   },
   {
-    prst_stateid: 68,
-    prst_state: "Chiapas",
-    prst_countryid: 3,
+    prst_StateId: 68,
+    prst_State: "Chiapas",
+    prst_CountryId: 3,
     prst_Abbreviation: "Chis",
   },
   {
-    prst_stateid: 69,
-    prst_state: "Chihuahua",
-    prst_countryid: 3,
+    prst_StateId: 69,
+    prst_State: "Chihuahua",
+    prst_CountryId: 3,
     prst_Abbreviation: "Chih",
   },
   {
-    prst_stateid: 70,
-    prst_state: "Coahuila",
-    prst_countryid: 3,
+    prst_StateId: 70,
+    prst_State: "Coahuila",
+    prst_CountryId: 3,
     prst_Abbreviation: "Coah",
   },
   {
-    prst_stateid: 71,
-    prst_state: "Colima",
-    prst_countryid: 3,
+    prst_StateId: 71,
+    prst_State: "Colima",
+    prst_CountryId: 3,
     prst_Abbreviation: "Col",
   },
   {
-    prst_stateid: 72,
-    prst_state: "Durango",
-    prst_countryid: 3,
+    prst_StateId: 72,
+    prst_State: "Durango",
+    prst_CountryId: 3,
     prst_Abbreviation: "Dgo",
   },
   {
-    prst_stateid: 73,
-    prst_state: "Estado de Mexico",
-    prst_countryid: 3,
+    prst_StateId: 73,
+    prst_State: "Estado de Mexico",
+    prst_CountryId: 3,
     prst_Abbreviation: "Mex",
   },
   {
-    prst_stateid: 74,
-    prst_state: "Ciudad de Mexico",
-    prst_countryid: 3,
+    prst_StateId: 74,
+    prst_State: "Ciudad de Mexico",
+    prst_CountryId: 3,
     prst_Abbreviation: "CDMX",
   },
   {
-    prst_stateid: 75,
-    prst_state: "Guanajuato",
-    prst_countryid: 3,
+    prst_StateId: 75,
+    prst_State: "Guanajuato",
+    prst_CountryId: 3,
     prst_Abbreviation: "Gto",
   },
   {
-    prst_stateid: 76,
-    prst_state: "Guerrero",
-    prst_countryid: 3,
+    prst_StateId: 76,
+    prst_State: "Guerrero",
+    prst_CountryId: 3,
     prst_Abbreviation: "Gro",
   },
   {
-    prst_stateid: 77,
-    prst_state: "Hidalgo",
-    prst_countryid: 3,
+    prst_StateId: 77,
+    prst_State: "Hidalgo",
+    prst_CountryId: 3,
     prst_Abbreviation: "Hgo",
   },
   {
-    prst_stateid: 78,
-    prst_state: "Jalisco",
-    prst_countryid: 3,
+    prst_StateId: 78,
+    prst_State: "Jalisco",
+    prst_CountryId: 3,
     prst_Abbreviation: "Jal",
   },
   {
-    prst_stateid: 79,
-    prst_state: "Michoacan",
-    prst_countryid: 3,
+    prst_StateId: 79,
+    prst_State: "Michoacan",
+    prst_CountryId: 3,
     prst_Abbreviation: "Mich",
   },
   {
-    prst_stateid: 80,
-    prst_state: "Morelos",
-    prst_countryid: 3,
+    prst_StateId: 80,
+    prst_State: "Morelos",
+    prst_CountryId: 3,
     prst_Abbreviation: "Mor",
   },
   {
-    prst_stateid: 81,
-    prst_state: "Nayarit",
-    prst_countryid: 3,
+    prst_StateId: 81,
+    prst_State: "Nayarit",
+    prst_CountryId: 3,
     prst_Abbreviation: "Nay",
   },
   {
-    prst_stateid: 82,
-    prst_state: "Nuevo Leon",
-    prst_countryid: 3,
+    prst_StateId: 82,
+    prst_State: "Nuevo Leon",
+    prst_CountryId: 3,
     prst_Abbreviation: "NL",
   },
   {
-    prst_stateid: 83,
-    prst_state: "Oaxaca",
-    prst_countryid: 3,
+    prst_StateId: 83,
+    prst_State: "Oaxaca",
+    prst_CountryId: 3,
     prst_Abbreviation: "Oax",
   },
   {
-    prst_stateid: 84,
-    prst_state: "Puebla",
-    prst_countryid: 3,
+    prst_StateId: 84,
+    prst_State: "Puebla",
+    prst_CountryId: 3,
     prst_Abbreviation: "Pue",
   },
   {
-    prst_stateid: 85,
-    prst_state: "Queretaro",
-    prst_countryid: 3,
+    prst_StateId: 85,
+    prst_State: "Queretaro",
+    prst_CountryId: 3,
     prst_Abbreviation: "Qro",
   },
   {
-    prst_stateid: 86,
-    prst_state: "Quintana Roo",
-    prst_countryid: 3,
+    prst_StateId: 86,
+    prst_State: "Quintana Roo",
+    prst_CountryId: 3,
     prst_Abbreviation: "QR",
   },
   {
-    prst_stateid: 87,
-    prst_state: "San Luis Potosi",
-    prst_countryid: 3,
+    prst_StateId: 87,
+    prst_State: "San Luis Potosi",
+    prst_CountryId: 3,
     prst_Abbreviation: "SLP",
   },
   {
-    prst_stateid: 88,
-    prst_state: "Sinaloa",
-    prst_countryid: 3,
+    prst_StateId: 88,
+    prst_State: "Sinaloa",
+    prst_CountryId: 3,
     prst_Abbreviation: "Sin",
   },
   {
-    prst_stateid: 89,
-    prst_state: "Sonora",
-    prst_countryid: 3,
+    prst_StateId: 89,
+    prst_State: "Sonora",
+    prst_CountryId: 3,
     prst_Abbreviation: "Son",
   },
   {
-    prst_stateid: 90,
-    prst_state: "Tabasco",
-    prst_countryid: 3,
+    prst_StateId: 90,
+    prst_State: "Tabasco",
+    prst_CountryId: 3,
     prst_Abbreviation: "Tab",
   },
   {
-    prst_stateid: 91,
-    prst_state: "Tamaulipas",
-    prst_countryid: 3,
+    prst_StateId: 91,
+    prst_State: "Tamaulipas",
+    prst_CountryId: 3,
     prst_Abbreviation: "Tamps",
   },
   {
-    prst_stateid: 92,
-    prst_state: "Tlaxcala",
-    prst_countryid: 3,
+    prst_StateId: 92,
+    prst_State: "Tlaxcala",
+    prst_CountryId: 3,
     prst_Abbreviation: "Tlax",
   },
   {
-    prst_stateid: 93,
-    prst_state: "Veracruz",
-    prst_countryid: 3,
+    prst_StateId: 93,
+    prst_State: "Veracruz",
+    prst_CountryId: 3,
     prst_Abbreviation: "Ver",
   },
   {
-    prst_stateid: 94,
-    prst_state: "Yucatan",
-    prst_countryid: 3,
+    prst_StateId: 94,
+    prst_State: "Yucatan",
+    prst_CountryId: 3,
     prst_Abbreviation: "Yuc",
   },
   {
-    prst_stateid: 95,
-    prst_state: "Zacatecas",
-    prst_countryid: 3,
+    prst_StateId: 95,
+    prst_State: "Zacatecas",
+    prst_CountryId: 3,
     prst_Abbreviation: "Zac",
   },
 ];
@@ -1026,7 +1026,7 @@ const addMultiselectTerminalMarkets = () => {
 
     outer.setAttribute(
       "onclick",
-      `handleTerminalMultiselectOptionSelection(event, "${terminalMarkets[i].prtm_TerminalMarketId}")`,
+      `handleMultiselectTerminalMarketsSelection(event, "${terminalMarkets[i].prtm_TerminalMarketId}")`,
     );
     // terminal_id;
     outer.setAttribute(
@@ -1095,7 +1095,7 @@ const getOrCreateTagContainer = (comboboxParent) => {
   return tagContainer;
 };
 
-const handleTerminalMultiselectOptionSelection = (event, terminal_id) => {
+const handleMultiselectTerminalMarketsSelection = (event, optionId) => {
   // const terminalMarkets = [
   //   {
   //   prtm_TerminalMarketId: "0",
@@ -1105,7 +1105,7 @@ const handleTerminalMultiselectOptionSelection = (event, terminal_id) => {
 
   // find the market
   const terminalMarket = terminalMarkets.find(
-    (object) => object.prtm_TerminalMarketId == terminal_id,
+    (object) => object.prtm_TerminalMarketId == optionId,
   );
 
   event.stopPropagation();
@@ -1115,17 +1115,17 @@ const handleTerminalMultiselectOptionSelection = (event, terminal_id) => {
 
   const [name, city] = terminalMarket.prtm_FullMarketName.split(" | ");
   const tagLabel = name.substring(0, 15) + "..., " + city;
+
   // check if there is any tag with that value exist in the parent
-  // const tagid = "terminal_id-" + terminal_id;
   const tagElement = tagContainer.querySelector(
-    `button[data-multiselect_id="${terminal_id}"]`,
+    `button[data-multiselect_id="${optionId}"]`,
   );
   if (!tagElement) {
     // create the tag if it does not exists
     // and mark item as selected
     const newTag = document.createElement("button");
     newTag.setAttribute("class", "bbsButton bbsButton-tag-secondary small");
-    newTag.setAttribute("data-multiselect_id", terminal_id);
+    newTag.setAttribute("data-multiselect_id", optionId);
     newTag.setAttribute("onclick", "removeMultiselectTag(event)");
     newTag.innerHTML = `
     <span>${tagLabel}</span>
@@ -1151,8 +1151,8 @@ const handleTerminalMultiselectOptionSelection = (event, terminal_id) => {
 // Based ont the country,
 // this function adds options in the
 // .bbs-combobox's menu.
-const addMultiselectState = (event, prcn_CountryId) => {
-  // prcn_CountryId 1 == USA, 2 == Canada, 3 == Mexico
+const addMultiselectState = (event, optionId) => {
+  // optionId 1 == USA, 2 == Canada, 3 == Mexico
 
   // clear and disable other-countries input
   const otherCountryInput = document.querySelector("#otherCountries");
@@ -1179,15 +1179,15 @@ const addMultiselectState = (event, prcn_CountryId) => {
 
   // states e.g.
   // [{
-  //   prst_stateid: 1,
-  //   prst_state: "Alabama",
-  //   prst_countryid: 1,
+  //   prst_StateId: 1,
+  //   prst_State: "Alabama",
+  //   prst_CountryId: 1,
   //   prst_Abbreviation: "AL",
   // }],
 
-  // fiter the states for the selected prcn_CountryId
+  // fiter the states for the selected optionId
   const filteredStates = states.filter(
-    (state) => state.prst_countryid == prcn_CountryId,
+    (state) => state.prst_CountryId == optionId,
   );
 
   // populate the state combobox
@@ -1198,15 +1198,15 @@ const addMultiselectState = (event, prcn_CountryId) => {
     outer.appendChild(option);
 
     const label = decodeURI(
-      `${filteredStates[i].prst_state} (${filteredStates[i].prst_Abbreviation})`,
+      `${filteredStates[i].prst_State} (${filteredStates[i].prst_Abbreviation})`,
     );
 
     outer.setAttribute(
       "onclick",
-      `handleStateMultiselectSelection(event, "${filteredStates[i].prst_stateid}")`,
+      `handleMultiselectStateSelection(event, "${filteredStates[i].prst_StateId}")`,
     );
 
-    outer.setAttribute("data-multiselect_id", filteredStates[i].prst_stateid);
+    outer.setAttribute("data-multiselect_id", filteredStates[i].prst_StateId);
     outer.setAttribute("data-search_string", label);
 
     option.setAttribute("tabindex", "-1");
@@ -1224,17 +1224,17 @@ const addMultiselectState = (event, prcn_CountryId) => {
 // .bbs-combobox. call this function with the value,
 // this will add the tags in the .multiselect-tag-container
 // if it exits or append one in the combobox
-const handleStateMultiselectSelection = (event, optionid) => {
+const handleMultiselectStateSelection = (event, optionId) => {
   // states e.g.
   // [{
-  //   prst_stateid: 1,
-  //   prst_state: "Alabama",
-  //   prst_countryid: 1,
+  //   prst_StateId: 1,
+  //   prst_State: "Alabama",
+  //   prst_CountryId: 1,
   //   prst_Abbreviation: "AL",
   // }],
 
   // find the state
-  const stateobject = states.find((state) => state.prst_stateid == optionid);
+  const stateobject = states.find((state) => state.prst_StateId == optionId);
 
   event.stopPropagation();
   const comboboxParent = event.currentTarget.closest(".bbs-combobox");
@@ -1242,21 +1242,18 @@ const handleStateMultiselectSelection = (event, optionid) => {
   const tagContainer = getOrCreateTagContainer(comboboxParent);
 
   // check if there is any tag with that value exist in the parent
-  // const tagid = "prst_stateid-" + prst_stateid;
-  // // const tagElement = tagContainer.querySelector("#" + tagid);
-
   const tagElement = tagContainer.querySelector(
-    `button[data-multiselect_id="${optionid}"]`,
+    `button[data-multiselect_id="${optionId}"]`,
   );
 
   if (!tagElement) {
     // create the tag if it does not exists
     const newTag = document.createElement("button");
     newTag.setAttribute("class", "bbsButton bbsButton-tag-secondary small");
-    newTag.setAttribute("data-multiselect_id", optionid);
+    newTag.setAttribute("data-multiselect_id", optionId);
     newTag.setAttribute("onclick", "removeMultiselectTag(event)");
     newTag.innerHTML = `
-    <span>${stateobject.prst_state}</span>
+    <span>${stateobject.prst_State}</span>
     <span class="msicon notranslate">clear</span>
     `;
     tagContainer.appendChild(newTag);
