@@ -529,26 +529,6 @@
                           </div>
                         </div>
                         <div class="input-wrapper">
-                          <p class="label">
-                            <span>Rejected shipments</span>
-                            <button
-                              class="msicon notranslate help"
-                              data-bs-toggle="tooltip"
-                              data-bs-placement="right"
-                              data-bs-html="true"
-                              data-bs-title="Show companies that take rejected shipments"
-                            >
-                              help
-                            </button>
-                          </p>
-                          <div class="bbs-checkbox-input">
-                            <input type="checkbox" id="handle_rejects" />
-                            <label for="handle_rejects"
-                              >Handles rejected shipments</label
-                            ><br />
-                          </div>
-                        </div>
-                        <div class="input-wrapper">
                           <label for="phonenumber">Phone</label>
                           <p>
                             <input
@@ -780,7 +760,7 @@
                                 type="radio"
                                 id="country-usa"
                                 name="select-country"
-                                onchange="addCountryStateOptions(event, '1')"
+                                onchange="addMultiselectState(event, '1')"
                                 value="usa"
                               />
                               <label for="country-usa">USA</label>
@@ -790,7 +770,7 @@
                                 type="radio"
                                 id="country-canada"
                                 name="select-country"
-                                onchange="addCountryStateOptions(event, '2')"
+                                onchange="addMultiselectState(event, '2')"
                                 value="canada"
                               />
                               <label for="country-canada">Canada</label>
@@ -800,7 +780,7 @@
                                 type="radio"
                                 id="country-mexico"
                                 name="select-country"
-                                onchange="addCountryStateOptions(event, '3')"
+                                onchange="addMultiselectState(event, '3')"
                                 value="mexico"
                               />
                               <label for="country-mexico">Mexico</label>
@@ -889,7 +869,7 @@
                               </div>
                               <ul class="dropdown-menu tw-w-full" role="menu">
                                 <!-- // this will be filled by javascript function
-                                      // addCountryStateOptions (event, country)-->
+                                      // addMultiselectState (event, country)-->
                               </ul>
                             </div>
                             <p class="caption">US, Canada or Mexico only</p>
@@ -911,12 +891,11 @@
                         </fieldset>
 
                         <div data-info="Terminal Markets" class="input-wrapper">
-                          <label for="terminal-markets-input"
-                            >Terminal Markets</label
-                          >
+                          <label for="terminal-markets-input">
+                            Terminal Markets
+                          </label>
 
                           <div
-                            onload="addTerminalMarkets()"
                             class="bbs-combobox"
                             id="terminalMarketSelectionCombobox"
                           >
@@ -948,7 +927,7 @@
                             </div>
                             <ul class="dropdown-menu tw-w-full" role="menu">
                               <!-- // this will be filled by javascript function
-                                      // addCountryStateOptions (event, country)-->
+                                      // addMultiselectState (event, country)-->
                             </ul>
                           </div>
                         </div>
@@ -1009,7 +988,7 @@
                   </div>
                 </div>
                 <!-- Commodities -->
-                <div class="bbs-accordion-item open">
+                <div class="bbs-accordion-item">
                   <button
                     onclick="toggleAccordion(event)"
                     class="bbs-accordion-header"
@@ -1028,7 +1007,7 @@
                   </button>
                   <div class="bbs-accordion-content">
                     <div class="content-wrapper">
-                      <fieldset class="tw-flex tw-flex-col tw-gap-4">
+                      <fieldset class="tw-flex tw-flex-col tw-gap-4" disabled>
                         <!-- Matching Criteria -->
                         <div class="input-wrapper">
                           <p class="label">Matching Criteria</p>
@@ -1037,7 +1016,7 @@
                             <div class="bbs-radio-input">
                               <input
                                 type="radio"
-                                id="ny-commodity"
+                                id="any-commodity"
                                 name="any-all-commodities"
                                 value="any-commodity"
                                 checked
@@ -1063,7 +1042,7 @@
                         <!-- Categories -->
                         <div data-info="Categories" class="input-wrapper">
                           <div class="tw-flex tw-justify-between">
-                            <label for="commodity-categories"
+                            <label for="commodity-categories-input"
                               >Commodities</label
                             >
                             <a
@@ -1077,7 +1056,6 @@
                             </a>
                           </div>
                           <div
-                            onload="addTerminalMarkets()"
                             class="bbs-combobox"
                             id="commodity-categories-combo"
                           >
@@ -1109,7 +1087,7 @@
                             </div>
                             <ul class="dropdown-menu tw-w-full" role="menu">
                               <!-- // this will be filled by javascript function
-                                      // addCountryStateOptions (event, country)-->
+                                      // addMultiselectState (event, country)-->
                             </ul>
                           </div>
                         </div>
@@ -1228,7 +1206,7 @@
                   </div>
                 </div>
                 <!-- Classification -->
-                <div class="bbs-accordion-item">
+                <div class="bbs-accordion-item open">
                   <button
                     onclick="toggleAccordion(event)"
                     class="bbs-accordion-header"
@@ -1241,15 +1219,291 @@
                     <div class="label">
                       <span class="text-label">Classification</span>
                       <span class="caption">
-                        Industry supplier or type of service
+                        Rejected shipments, Industry supplier or type of service
                       </span>
                     </div>
                   </button>
                   <div class="bbs-accordion-content">
-                    <div class="content-wrapper tw-opacity-50">
-                      <fieldset disabled class="tw-flex tw-flex-col tw-gap-4">
-                        <img src="/assets/there_is_nothing_here.svg" />
-                        <span>THERE IS NOTHING HERE</span>
+                    <div class="content-wrapper">
+                      <fieldset class="tw-flex tw-flex-col tw-gap-4">
+                        <!-- Rejected shipment -->
+                        <div class="input-wrapper">
+                          <p class="label">
+                            <span>Rejected shipments</span>
+                            <button
+                              class="msicon notranslate help"
+                              data-bs-toggle="tooltip"
+                              data-bs-placement="right"
+                              data-bs-html="true"
+                              data-bs-title="Show companies that take rejected shipments"
+                            >
+                              help
+                            </button>
+                          </p>
+                          <div class="bbs-checkbox-input">
+                            <input type="checkbox" id="handle_rejects" />
+                            <label for="handle_rejects"
+                              >Handles rejected shipments</label
+                            ><br />
+                          </div>
+                        </div>
+                        <hr />
+                        <!-- Matching Criteria -->
+                        <div class="input-wrapper">
+                          <p class="label">Matching Criteria</p>
+
+                          <div class="tw-mt-2 tw-flex tw-gap-8">
+                            <div class="bbs-radio-input">
+                              <input
+                                type="radio"
+                                id="any-classification"
+                                name="any-all-commodities"
+                                value="any-classification"
+                                checked
+                              />
+                              <label for="any-classification"
+                                >Any one of the selected</label
+                              >
+                            </div>
+                            <div class="bbs-radio-input">
+                              <input
+                                type="radio"
+                                id="all-classification"
+                                name="any-all-commodities"
+                                value="all-classification"
+                              />
+                              <label for="all-classification"
+                                >All one of the selected</label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <hr />
+                        <!-- Produce Buyer -->
+                        <div class="input-wrapper">
+
+                          <div class="tw-flex tw-justify-between">
+                            <p class="label"
+                              >Produce Buyer</label
+                            >
+                            <div>
+
+                              <button
+                                href="/BBOS/KnowYourCommodity.aspx"
+                                class="bbsButton bbsButton-tertiary small"
+                              >
+                                <span class="text-label">See All</span>
+                                <span class="msicon notranslate"
+                                  >arrow_outward</span
+                                >
+                              </button>
+
+                              <div class="bbs-checkbox-input-group">
+                                <input type="checkbox" id="produce-buyer-all" />
+                                <label class="label" for="produce-buyer-all">
+                                  Produce Buyer
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                        <div class="input-wrapper">
+                          <div class="tw-grid tw-grid-cols-2 tw-gap-y-2">
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="buying-office" /><label
+                                class="label"
+                                for="buying-office"
+                              >
+                                Buying Office (68)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="packer" /><label
+                                class="label"
+                                for="packer"
+                              >
+                                Packer (1,577)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="canner" /><label
+                                class="label"
+                                for="canner"
+                              >
+                                Canner (13)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="peeler" /><label
+                                class="label"
+                                for="peeler"
+                              >
+                                Peeler (6)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="chipper" /><label
+                                class="label"
+                                for="chipper"
+                              >
+                                Chipper (25)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="pickler" /><label
+                                class="label"
+                                for="pickler"
+                              >
+                                Pickler (4)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input
+                                type="checkbox"
+                                id="commission-merchant"
+                              /><label class="label" for="commission-merchant">
+                                Commission Merchant (276)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="preserver" /><label
+                                class="label"
+                                for="preserver"
+                              >
+                                Preserver (5)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="processor" /><label
+                                class="label"
+                                for="processor"
+                              >
+                                Processor (353)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="dehydrator" /><label
+                                class="label"
+                                for="dehydrator"
+                              >
+                                Dehydrator (4)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="receiver" /><label
+                                class="label"
+                                for="receiver"
+                              >
+                                Receiver (3,717)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="distributor" /><label
+                                class="label"
+                                for="distributor"
+                              >
+                                Distributor (2,694)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="repacker" /><label
+                                class="label"
+                                for="repacker"
+                              >
+                                Repacker (618)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="foodservice" /><label
+                                class="label"
+                                for="foodservice"
+                              >
+                                Foodservice (881)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="restaurant" /><label
+                                class="label"
+                                for="restaurant"
+                              >
+                                Restaurant (20)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="freezer" /><label
+                                class="label"
+                                for="freezer"
+                              >
+                                Freezer (16)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="retail" /><label
+                                class="label"
+                                for="retail"
+                              >
+                                Retail (1,946)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input
+                                type="checkbox"
+                                id="fresh-cut-processor"
+                              /><label class="label" for="fresh-cut-processor">
+                                Fresh Cut Processor (296)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="retail" /><label
+                                class="label"
+                                for="retail"
+                              >
+                                Retail (1,946)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="importer" /><label
+                                class="label"
+                                for="importer"
+                              >
+                                Importer (2,577)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input
+                                type="checkbox"
+                                id="wholesale-grocer"
+                              /><label class="label" for="wholesale-grocer">
+                                Wholesale Grocer (475)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="jobber" /><label
+                                class="label"
+                                for="jobber"
+                              >
+                                Jobber (2,453)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input
+                                type="checkbox"
+                                id="short-haul-trucker"
+                              /><label class="label" for="short-haul-trucker">
+                                Short Haul Trucker (53)
+                              </label>
+                            </div>
+                            <div class="bbs-checkbox-input">
+                              <input type="checkbox" id="juicer" /><label
+                                class="label"
+                                for="juicer"
+                              >
+                                Juicer (23)
+                              </label>
+                            </div>
+                          </div>
+                        </div>
                       </fieldset>
                     </div>
                   </div>

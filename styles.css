@@ -525,9 +525,11 @@ a {
     @apply tw-flex
     tw-items-start
     tw-gap-1.5;
-    label {
+    &:not(.group) {
+      label {
       @apply tw-font-normal;
     }
+  }
     input {
       @apply tw-mt-1;
     }
