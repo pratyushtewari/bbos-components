@@ -992,13 +992,13 @@ const terminalMarkets = [
   },
 ];
 
-// Based ont the country,
+// Based on the country,
 // this function adds options in the
 // .bbs-combobox's menu.
 
 const addMultiselectTerminalMarkets = () => {
   const combobox = document.querySelector("#terminalMarketSelectionCombobox");
-
+  if (combobox == null) return;
   // Clear the existing multiseled tags
   combobox.querySelector(".multiselect-tag-container").innerHTML = "";
 
@@ -1305,7 +1305,13 @@ const enableOtherCountriesInput = (event, id) => {
 
   for (let i in countries) {
     // skip US, Canada and Mexico
-    if (i < 3) continue;
+    if (
+      countries[i].prcn_CountryId == 1 ||
+      countries[i].prcn_CountryId == 2 ||
+      countries[i].prcn_CountryId == 3
+    ) {
+      continue;
+    }
 
     const option = document.createElement("option");
     option.setAttribute("value", countries[i].prcn_CountryId);
