@@ -1473,3 +1473,12 @@ const clearallsearch = () => {
     },
   );
 };
+
+const toggleZipcodeInput = (checked, id) => {
+  const input = document.querySelector("#" + id);
+  if (checked) {
+    input.removeAttribute("disabled");
+  } else {
+    input.setAttribute("disabled", "disabled");
+  }
+};

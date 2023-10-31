@@ -154,6 +154,14 @@ a {
         hover:tw-bg-bg-component-hover
         active:tw-bg-bg-component-active;
       }
+      &.small {
+        @apply tw-px-1.5
+        tw-py-0.5
+        tw-text-xs;
+        .msicon {
+          @apply tw-pt-[1px];
+        }
+      }
     }
     /*
     Rounded tag button - best with a close end icon
@@ -341,7 +349,7 @@ a {
 
   .left-sidebar {
     @apply tw-max-w-[200px]
-    tw-border-r
+    tw-border-x
     tw-border-border
     tw-bg-bg-primary
     tw-p-2
@@ -376,9 +384,34 @@ a {
   }
   /* Divider */
   hr {
-    @apply tw-w-full
-    tw-border-border
+    @apply tw-border-border
     tw-opacity-75;
+  }
+
+  /* Some overrides to make the hr full bleed in
+  its respoective containers */
+  .left-sidebar {
+    hr {
+      @apply tw-mx-[-8px];
+    }
+  }
+  .bbsMenu {
+    hr {
+      width: calc(100% + 8px);
+      margin: 0 -4px;
+    }
+  }
+
+  .bbs-accordion {
+    .bbs-accordion-item {
+      .bbs-accordion-content {
+        .content-wrapper {
+          hr {
+            @apply tw-mx-[-16px];
+          }
+        }
+      }
+    }
   }
   /* Global nav */
   .top-nav {
@@ -477,6 +510,9 @@ a {
     tw-break-words
     tw-text-sm
     tw-font-semibold;
+    &.normal {
+      @apply tw-font-normal;
+    }
   }
   .help {
     @apply tw-ms-1 tw-mt-0.5 tw-text-text-secondary;

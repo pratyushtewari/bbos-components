@@ -457,6 +457,7 @@
             <div class="search-form tw-max-w-[400px]">
               <h2>Search Produce Companies</h2>
               <div class="bbs-accordion">
+                <!-- Company Details -->
                 <div class="bbs-accordion-item">
                   <button
                     onclick="toggleAccordion(event)"
@@ -595,6 +596,7 @@
                     </div>
                   </div>
                 </div>
+                <!-- BBS score or rating -->
                 <div class="bbs-accordion-item">
                   <button
                     onclick="toggleAccordion(event)"
@@ -744,7 +746,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="bbs-accordion-item open">
+                <!-- Location -->
+                <div class="bbs-accordion-item">
                   <button
                     onclick="toggleAccordion(event)"
                     class="bbs-accordion-header"
@@ -764,7 +767,7 @@
                   </button>
                   <div class="bbs-accordion-content">
                     <div class="content-wrapper">
-                      <fieldset class="tw-flex tw-flex-col tw-gap-4">
+                      <fieldset class="tw-flex tw-flex-col tw-gap-4" disabled>
                         <div
                           data-info="Country Selection"
                           class="input-wrapper"
@@ -908,10 +911,12 @@
                         </fieldset>
 
                         <div data-info="Terminal Markets" class="input-wrapper">
-                          <label for="na-states-input">Terminal Markets</label>
+                          <label for="terminal-markets-input"
+                            >Terminal Markets</label
+                          >
 
                           <div
-                            onload="addTerminalMarkets"
+                            onload="addTerminalMarkets()"
                             class="bbs-combobox"
                             id="terminalMarketSelectionCombobox"
                           >
@@ -927,7 +932,7 @@
                                 placeholder="Add Terminal markets"
                                 type="text"
                                 class="tw-w-full"
-                                id="na-states-input"
+                                id="terminal-markets-input"
                                 onkeydown="handleKeydownInComboInput(event)"
                                 oninput="handleComboMenuTyping(event)"
                               />
@@ -948,11 +953,63 @@
                           </div>
                         </div>
                         <hr />
+                        <div data-info="Distance" class="input-wrapper">
+                          <label for="distance-input">Distance</label>
+
+                          <p>
+                            <input
+                              class="full-width"
+                              id="distance-input"
+                              type="text"
+                              placeholder="Distance in miles"
+                              aria-label="Distance in miles"
+                            />
+                          </p>
+                          <p class="caption">
+                            Distance search is only available for US and
+                            Canadian zip codes and does not affect the country
+                            and the state selection above.
+                          </p>
+
+                          <div class="tw-mt-1 tw-flex tw-items-center tw-gap-4">
+                            <div class="bbs-radio-input tw-w-[150px]">
+                              <input
+                                type="radio"
+                                id="zipcode-distance"
+                                name="distance-from"
+                                onchange="toggleZipcodeInput(true, 'zipcode')"
+                                value="zipcode"
+                              />
+                              <label for="zipcode-distance">Zip code</label>
+                            </div>
+                            <input
+                              class="full-width"
+                              id="zipcode"
+                              type="text"
+                              placeholder="e.g. M5V 3L9 or 10035"
+                              aria-label="Zip code or postal code"
+                              disabled
+                            />
+                          </div>
+                          <div class="bbs-radio-input tw-w-[150px]">
+                            <input
+                              type="radio"
+                              id="terminal-market-distance"
+                              name="distance-from"
+                              onchange="toggleZipcodeInput(false, 'zipcode')"
+                              value="other"
+                            />
+                            <label for="terminal-market-distance"
+                              >Terminal Market</label
+                            >
+                          </div>
+                        </div>
                       </fieldset>
                     </div>
                   </div>
                 </div>
-                <div class="bbs-accordion-item">
+                <!-- Commodities -->
+                <div class="bbs-accordion-item open">
                   <button
                     onclick="toggleAccordion(event)"
                     class="bbs-accordion-header"
@@ -970,14 +1027,207 @@
                     </div>
                   </button>
                   <div class="bbs-accordion-content">
-                    <div class="content-wrapper tw-opacity-50">
-                      <fieldset disabled class="tw-flex tw-flex-col tw-gap-4">
-                        <img src="/assets/there_is_nothing_here.svg" />
-                        <span>THERE IS NOTHING HERE</span>
+                    <div class="content-wrapper">
+                      <fieldset class="tw-flex tw-flex-col tw-gap-4">
+                        <!-- Matching Criteria -->
+                        <div class="input-wrapper">
+                          <p class="label">Matching Criteria</p>
+
+                          <div class="tw-mt-2 tw-flex tw-gap-8">
+                            <div class="bbs-radio-input">
+                              <input
+                                type="radio"
+                                id="ny-commodity"
+                                name="any-all-commodities"
+                                value="any-commodity"
+                                checked
+                              />
+                              <label for="any-commodity"
+                                >Any one of the selected</label
+                              >
+                            </div>
+                            <div class="bbs-radio-input">
+                              <input
+                                type="radio"
+                                id="all-commodity"
+                                name="any-all-commodities"
+                                value="all-commodity"
+                              />
+                              <label for="all-commodity"
+                                >All one of the selected</label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <hr />
+                        <!-- Categories -->
+                        <div data-info="Categories" class="input-wrapper">
+                          <div class="tw-flex tw-justify-between">
+                            <label for="commodity-categories"
+                              >Commodities</label
+                            >
+                            <a
+                              href="/BBOS/KnowYourCommodity.aspx"
+                              class="bbsButton bbsButton-tertiary small"
+                            >
+                              <span class="text-label">See All</span>
+                              <span class="msicon notranslate"
+                                >arrow_outward</span
+                              >
+                            </a>
+                          </div>
+                          <div
+                            onload="addTerminalMarkets()"
+                            class="bbs-combobox"
+                            id="commodity-categories-combo"
+                          >
+                            <div class="multiselect-tag-container"></div>
+
+                            <div
+                              class="bbs-combobox-input"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                              data-bs-auto-close="outside"
+                            >
+                              <input
+                                placeholder="Add commodities"
+                                type="text"
+                                class="tw-w-full"
+                                id="commodity-categories-input"
+                                onkeydown="handleKeydownInComboInput(event)"
+                                oninput="handleComboMenuTyping(event)"
+                              />
+
+                              <button
+                                class="bbsButton bbsButton-secondary"
+                                type="button"
+                              >
+                                <span class="msicon notranslate">
+                                  expand_more
+                                </span>
+                              </button>
+                            </div>
+                            <ul class="dropdown-menu tw-w-full" role="menu">
+                              <!-- // this will be filled by javascript function
+                                      // addCountryStateOptions (event, country)-->
+                            </ul>
+                          </div>
+                        </div>
+                        <hr />
+                        <!-- Growing Method -->
+                        <div class="input-wrapper">
+                          <p class="label">Growing Method</p>
+                          <div class="tw-mt-2 tw-flex tw-flex-wrap tw-gap-x-4">
+                            <div class="bbs-radio-input">
+                              <input
+                                type="radio"
+                                id="growing-Any"
+                                name="growing-commodities"
+                                value="growing-Any"
+                                checked
+                              />
+                              <label for="growing-Any">Any</label>
+                            </div>
+                            <div class="bbs-radio-input">
+                              <input
+                                type="radio"
+                                id="growing-Greenhouse"
+                                name="growing-commodities"
+                                value="growing-Greenhouse"
+                              />
+                              <label for="growing-Greenhouse">Greenhouse</label>
+                            </div>
+                            <div class="bbs-radio-input">
+                              <input
+                                type="radio"
+                                id="growing-Hydroponic"
+                                name="growing-commodities"
+                                value="growing-Hydroponic"
+                              />
+                              <label for="growing-Hydroponic">Hydroponic</label>
+                            </div>
+                            <div class="bbs-radio-input">
+                              <input
+                                type="radio"
+                                id="growing-organic"
+                                name="growing-commodities"
+                                value="growing-organic"
+                              />
+                              <label for="growing-organic">Organic</label>
+                            </div>
+                          </div>
+                        </div>
+                        <hr />
+                        <!-- Attributes -->
+                        <div>
+                          <p class="label">Attributes</p>
+                          <p class="caption">
+                            Selecting other country disables State, city,
+                            Terminal Market, and distance feature
+                          </p>
+                        </div>
+                        <div class="input-wrapper">
+                          <label class="normal" for="countryOfOrigin"
+                            >Country Of Origin</label
+                          >
+
+                          <select
+                            id="countryOfOrigin"
+                            aria-label="Small select example"
+                          >
+                            <option selected value="1">Any</option>
+                            <option value="2">China</option>
+                            <option value="3">Korea</option>
+                            <option value="4">...</option>
+                          </select>
+                        </div>
+                        <div class="input-wrapper">
+                          <label class="normal" for="sizeGroup"
+                            >Size group</label
+                          >
+
+                          <select
+                            id="sizeGroup"
+                            aria-label="Small select example"
+                          >
+                            <option selected value="1">Any</option>
+                            <option value="2">Baby</option>
+                            <option value="3">Long</option>
+                            <option value="4">Mini</option>
+                          </select>
+                        </div>
+
+                        <div class="input-wrapper">
+                          <label class="normal" for="style">Style</label>
+
+                          <select id="style" aria-label="Small select example">
+                            <option selected value="1">Any</option>
+                            <option value="2">Chips</option>
+                            <option value="3">Pulp</option>
+                            <option value="4">...</option>
+                          </select>
+                        </div>
+
+                        <div class="input-wrapper">
+                          <label class="normal" for="Treatment"
+                            >Treatment</label
+                          >
+
+                          <select
+                            id="Treatment"
+                            aria-label="Small select example"
+                          >
+                            <option selected value="1">Any</option>
+                            <option value="2">Dried</option>
+                            <option value="3">Frozen</option>
+                            <option value="4">Pickled</option>
+                          </select>
+                        </div>
                       </fieldset>
                     </div>
                   </div>
                 </div>
+                <!-- Classification -->
                 <div class="bbs-accordion-item">
                   <button
                     onclick="toggleAccordion(event)"
@@ -1004,6 +1254,7 @@
                     </div>
                   </div>
                 </div>
+                <!-- Licenses and Certifications -->
                 <div class="bbs-accordion-item">
                   <button
                     onclick="toggleAccordion(event)"
@@ -1032,6 +1283,7 @@
                     </div>
                   </div>
                 </div>
+                <!-- Other Details -->
                 <div class="bbs-accordion-item">
                   <button
                     onclick="toggleAccordion(event)"
@@ -1556,11 +1808,12 @@
                 <span class="msicon notranslate">lock</span>
               </button>
               <button class="bbsButton bbsButton-tag-secondary">
-                Close tag<span class="msicon notranslate">close</span>
+                <span class="text-lable">Close tag</span>
+                <span class="msicon notranslate">close</span>
               </button>
               <button disabled class="bbsButton bbsButton-tag-secondary">
                 <span class="msicon notranslate">search</span>
-                <span>Close tag</span>
+                <span class="text-lable">Close tag</span>
                 <span class="msicon notranslate">lock</span>
               </button>
             </div>
