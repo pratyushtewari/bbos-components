@@ -760,7 +760,7 @@
                                 type="radio"
                                 id="country-usa"
                                 name="select-country"
-                                onchange="addMultiselectState(event, '1')"
+                                onchange="MulSel_createOpt_CountryState(event, '1')"
                                 value="usa"
                               />
                               <label for="country-usa">USA</label>
@@ -770,7 +770,7 @@
                                 type="radio"
                                 id="country-canada"
                                 name="select-country"
-                                onchange="addMultiselectState(event, '2')"
+                                onchange="MulSel_createOpt_CountryState(event, '2')"
                                 value="canada"
                               />
                               <label for="country-canada">Canada</label>
@@ -780,7 +780,7 @@
                                 type="radio"
                                 id="country-mexico"
                                 name="select-country"
-                                onchange="addMultiselectState(event, '3')"
+                                onchange="MulSel_createOpt_CountryState(event, '3')"
                                 value="mexico"
                               />
                               <label for="country-mexico">Mexico</label>
@@ -854,8 +854,8 @@
                                   type="text"
                                   class="tw-w-full"
                                   id="na-states-input"
-                                  onkeydown="handleKeydownInComboInput(event)"
-                                  oninput="handleComboMenuTyping(event)"
+                                  onkeydown="MulSel_onkeydown(event)"
+                                  oninput="MulSel_oninput(event)"
                                 />
 
                                 <button
@@ -869,7 +869,7 @@
                               </div>
                               <ul class="dropdown-menu tw-w-full" role="menu">
                                 <!-- // this will be filled by javascript function
-                                      // addMultiselectState (event, country)-->
+                                      // MulSel_createOpt_CountryState (event, country)-->
                               </ul>
                             </div>
                             <p class="caption">US, Canada or Mexico only</p>
@@ -912,8 +912,8 @@
                                 type="text"
                                 class="tw-w-full"
                                 id="terminal-markets-input"
-                                onkeydown="handleKeydownInComboInput(event)"
-                                oninput="handleComboMenuTyping(event)"
+                                onkeydown="MulSel_onkeydown(event)"
+                                oninput="MulSel_oninput(event)"
                               />
 
                               <button
@@ -927,7 +927,7 @@
                             </div>
                             <ul class="dropdown-menu tw-w-full" role="menu">
                               <!-- // this will be filled by javascript function
-                                      // addMultiselectState (event, country)-->
+                                      // MulSel_createOpt_CountryState (event, country)-->
                             </ul>
                           </div>
                         </div>
@@ -1072,8 +1072,8 @@
                                 type="text"
                                 class="tw-w-full"
                                 id="commodity-categories-input"
-                                onkeydown="handleKeydownInComboInput(event)"
-                                oninput="handleComboMenuTyping(event)"
+                                onkeydown="MulSel_onkeydown(event)"
+                                oninput="MulSel_oninput(event)"
                               />
 
                               <button
@@ -1087,7 +1087,7 @@
                             </div>
                             <ul class="dropdown-menu tw-w-full" role="menu">
                               <!-- // this will be filled by javascript function
-                                      // addMultiselectState (event, country)-->
+                                      // MulSel_createOpt_CountryState (event, country)-->
                             </ul>
                           </div>
                         </div>

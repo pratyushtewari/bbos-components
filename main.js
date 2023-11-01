@@ -992,11 +992,120 @@ const terminalMarkets = [
   },
 ];
 
+// if a removable bbsButton bbsButton-tag-secondary
+// is clicked, this is the function
+// that needs to be called to remove it
+const MulSel_onclickTag = (event) => {
+  // TODO:PT - low priority, Make on the X on the tag clicable and focasable
+
+  const comboboxParent = event.currentTarget.closest(".bbs-combobox");
+  const menu = comboboxParent.querySelector(".dropdown-menu");
+  const multiselect_id = event.currentTarget.dataset.multiselect_id;
+
+  const menuitem = menu.querySelector(
+    `li[data-multiselect_id="${multiselect_id}"]`,
+  );
+  if (menuitem) menuitem.classList.remove("selected");
+
+  const nextsibling = event.currentTarget.nextElementSibling;
+  const prevsibling = event.currentTarget.previousElementSibling;
+  if (nextsibling) {
+    nextsibling.focus();
+    nextsibling.classList.add("focus-visible");
+  } else if (prevsibling) {
+    prevsibling.focus();
+    prevsibling.classList.add("focus-visible");
+  }
+  event.currentTarget.remove();
+};
+
+const MulSel_onkeydown = (event) => {
+  const key = event.key;
+
+  // TODO:PT - somehow Escape key is not detected here at all.
+  // cannot close the menu because of that.
+
+  if (key == "ArrowDown" || key == "ArrowUp") {
+    event.preventDefault();
+
+    // Bootstrap stuff!!
+    // find the instance of the dropdown
+    // this is the div with data-bs-toggle="dropdown" attribute
+    const instance = bootstrap.Dropdown.getOrCreateInstance(
+      event.currentTarget.closest('[data-bs-toggle="dropdown"]'),
+    );
+    if (instance) {
+      instance.show();
+      instance._selectMenuItem(event);
+    }
+  }
+};
+
+// Open the combobox menu when
+// user starts typing inside
+// the combobox .bbs-combobox
+// and filters the content
+const MulSel_oninput = (event) => {
+  const inputValue = event.currentTarget.value;
+  const menu = event.currentTarget
+    .closest(".bbs-combobox")
+    .querySelector(".dropdown-menu");
+
+  const instance = bootstrap.Dropdown.getOrCreateInstance(
+    event.currentTarget.closest(".bbs-combobox-input"),
+  );
+  if (instance) {
+    instance.show();
+  }
+
+  // Filter the menu items based on the input
+  const optionss = menu.querySelectorAll("li");
+  optionss.forEach((htmlElement) => {
+    // text-label
+    const value = htmlElement
+      .getAttribute("data-search_string")
+      .toLowerCase()
+      .trim();
+    if (value.includes(inputValue.toLowerCase().trim())) {
+      htmlElement.classList.remove("tw-hidden");
+    } else {
+      htmlElement.classList.add("tw-hidden");
+    }
+  });
+
+  // Show no options if empty
+  if (menu.querySelectorAll("li:not(.tw-hidden)").length <= 0) {
+    let noResults = menu.querySelector("p.notfound");
+    if (!noResults) noResults = document.createElement("p");
+    noResults.setAttribute("class", "menu-no-data notfound");
+    noResults.innerHTML = "No results found with the string " + inputValue;
+    menu.appendChild(noResults);
+  } else {
+    const nodata = menu.querySelector(".menu-no-data");
+    if (nodata) {
+      nodata.remove();
+    }
+  }
+
+  event.stopPropagation();
+};
+
+const getOrCreateTagContainer = (comboboxParent) => {
+  let tagContainer = comboboxParent.querySelector(".multiselect-tag-container");
+  if (!tagContainer) {
+    // create a tag container
+    // and append it to the parent of the input
+    tagContainer = document.createElement("div");
+    tagContainer.setAttribute("class", "multiselect-tag-container");
+    comboboxParent.appendChild(tagContainer);
+  }
+  return tagContainer;
+};
+
 // Based on the country,
 // this function adds options in the
 // .bbs-combobox's menu.
-
-const addMultiselectTerminalMarkets = () => {
+const MulSel_createOpt_TerminalMKT = () => {
   const combobox = document.querySelector("#terminalMarketSelectionCombobox");
   if (combobox == null) return;
   // Clear the existing multiseled tags
@@ -1026,7 +1135,7 @@ const addMultiselectTerminalMarkets = () => {
 
     outer.setAttribute(
       "onclick",
-      `handleMultiselectTerminalMarketsSelection(event, "${terminalMarkets[i].prtm_TerminalMarketId}")`,
+      `MulSel_onclickOpt_TerminalMkt(event, "${terminalMarkets[i].prtm_TerminalMarketId}")`,
     );
     // terminal_id;
     outer.setAttribute(
@@ -1053,49 +1162,10 @@ const addMultiselectTerminalMarkets = () => {
 
 // call the above function
 (() => {
-  addMultiselectTerminalMarkets();
+  MulSel_createOpt_TerminalMKT();
 })();
 
-// if a removable bbsButton bbsButton-tag-secondary
-// is clicked, this is the function
-// that needs to be called to remove it
-const removeMultiselectTag = (event) => {
-  // TODO:PT - low priority, Make on the X on the tag clicable and focasable
-
-  const comboboxParent = event.currentTarget.closest(".bbs-combobox");
-  const menu = comboboxParent.querySelector(".dropdown-menu");
-  const multiselect_id = event.currentTarget.dataset.multiselect_id;
-
-  const menuitem = menu.querySelector(
-    `li[data-multiselect_id="${multiselect_id}"]`,
-  );
-  if (menuitem) menuitem.classList.remove("selected");
-
-  const nextsibling = event.currentTarget.nextElementSibling;
-  const prevsibling = event.currentTarget.previousElementSibling;
-  if (nextsibling) {
-    nextsibling.focus();
-    nextsibling.classList.add("focus-visible");
-  } else if (prevsibling) {
-    prevsibling.focus();
-    prevsibling.classList.add("focus-visible");
-  }
-  event.currentTarget.remove();
-};
-
-const getOrCreateTagContainer = (comboboxParent) => {
-  let tagContainer = comboboxParent.querySelector(".multiselect-tag-container");
-  if (!tagContainer) {
-    // create a tag container
-    // and append it to the parent of the input
-    tagContainer = document.createElement("div");
-    tagContainer.setAttribute("class", "multiselect-tag-container");
-    comboboxParent.appendChild(tagContainer);
-  }
-  return tagContainer;
-};
-
-const handleMultiselectTerminalMarketsSelection = (event, optionId) => {
+const MulSel_onclickOpt_TerminalMkt = (event, optionId) => {
   // const terminalMarkets = [
   //   {
   //   prtm_TerminalMarketId: "0",
@@ -1126,7 +1196,7 @@ const handleMultiselectTerminalMarketsSelection = (event, optionId) => {
     const newTag = document.createElement("button");
     newTag.setAttribute("class", "bbsButton bbsButton-tag-secondary small");
     newTag.setAttribute("data-multiselect_id", optionId);
-    newTag.setAttribute("onclick", "removeMultiselectTag(event)");
+    newTag.setAttribute("onclick", "MulSel_onclickTag(event)");
     newTag.innerHTML = `
     <span>${tagLabel}</span>
     <span class="msicon notranslate">clear</span>
@@ -1151,7 +1221,7 @@ const handleMultiselectTerminalMarketsSelection = (event, optionId) => {
 // Based ont the country,
 // this function adds options in the
 // .bbs-combobox's menu.
-const addMultiselectState = (event, optionId) => {
+const MulSel_createOpt_CountryState = (event, optionId) => {
   // optionId 1 == USA, 2 == Canada, 3 == Mexico
 
   // clear and disable other-countries input
@@ -1203,7 +1273,7 @@ const addMultiselectState = (event, optionId) => {
 
     outer.setAttribute(
       "onclick",
-      `handleMultiselectStateSelection(event, "${filteredStates[i].prst_StateId}")`,
+      `MulSel_onclickOpt_CountryState(event, "${filteredStates[i].prst_StateId}")`,
     );
 
     outer.setAttribute("data-multiselect_id", filteredStates[i].prst_StateId);
@@ -1224,7 +1294,7 @@ const addMultiselectState = (event, optionId) => {
 // .bbs-combobox. call this function with the value,
 // this will add the tags in the .multiselect-tag-container
 // if it exits or append one in the combobox
-const handleMultiselectStateSelection = (event, optionId) => {
+const MulSel_onclickOpt_CountryState = (event, optionId) => {
   // states e.g.
   // [{
   //   prst_StateId: 1,
@@ -1251,7 +1321,7 @@ const handleMultiselectStateSelection = (event, optionId) => {
     const newTag = document.createElement("button");
     newTag.setAttribute("class", "bbsButton bbsButton-tag-secondary small");
     newTag.setAttribute("data-multiselect_id", optionId);
-    newTag.setAttribute("onclick", "removeMultiselectTag(event)");
+    newTag.setAttribute("onclick", "MulSel_onclickTag(event)");
     newTag.innerHTML = `
     <span>${stateobject.prst_State}</span>
     <span class="msicon notranslate">clear</span>
@@ -1286,6 +1356,7 @@ const selectNoneCountry = (event) => {
   // Clear the existing multiseled tags
   stateCitiselector.querySelector(".multiselect-tag-container").innerHTML = "";
 };
+
 // This is called when Other countries
 // radio is selected.
 const enableOtherCountriesInput = (event, id) => {
@@ -1318,78 +1389,6 @@ const enableOtherCountriesInput = (event, id) => {
     otherCountrySelect.appendChild(option);
   }
   otherCountrySelect.focus();
-};
-
-const handleKeydownInComboInput = (event) => {
-  const key = event.key;
-
-  // TODO:PT - somehow Escape key is not detected here at all.
-  // cannot close the menu because of that.
-
-  if (key == "ArrowDown" || key == "ArrowUp") {
-    event.preventDefault();
-
-    // Bootstrap stuff!!
-    // find the instance of the dropdown
-    // this is the div with data-bs-toggle="dropdown" attribute
-    const instance = bootstrap.Dropdown.getOrCreateInstance(
-      event.currentTarget.closest('[data-bs-toggle="dropdown"]'),
-    );
-    if (instance) {
-      instance.show();
-      instance._selectMenuItem(event);
-    }
-  }
-};
-
-// Open the combobox menu when
-// user starts typing inside
-// the combobox .bbs-combobox
-// and filters the content
-const handleComboMenuTyping = (event) => {
-  const inputValue = event.currentTarget.value;
-  const menu = event.currentTarget
-    .closest(".bbs-combobox")
-    .querySelector(".dropdown-menu");
-
-  const instance = bootstrap.Dropdown.getOrCreateInstance(
-    event.currentTarget.closest(".bbs-combobox-input"),
-  );
-  if (instance) {
-    instance.show();
-  }
-
-  // Filter the menu items based on the input
-  const optionss = menu.querySelectorAll("li");
-  optionss.forEach((htmlElement) => {
-    // text-label
-    const value = htmlElement
-      .getAttribute("data-search_string")
-      .toLowerCase()
-      .trim();
-    if (value.includes(inputValue.toLowerCase().trim())) {
-      htmlElement.classList.remove("tw-hidden");
-    } else {
-      htmlElement.classList.add("tw-hidden");
-    }
-  });
-
-  // Show no options if empty
-  if (menu.querySelectorAll("li:not(.tw-hidden)").length <= 0) {
-    let noResults = menu.querySelector("p.notfound");
-    if (!noResults) noResults = document.createElement("p");
-    noResults.setAttribute("class", "menu-no-data notfound");
-    noResults.innerHTML =
-      "No unselected states found with the string " + inputValue;
-    menu.appendChild(noResults);
-  } else {
-    const nodata = menu.querySelector(".menu-no-data");
-    if (nodata) {
-      nodata.remove();
-    }
-  }
-
-  event.stopPropagation();
 };
 
 const clearallsearch = () => {
