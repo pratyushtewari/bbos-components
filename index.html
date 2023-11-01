@@ -760,7 +760,7 @@
                                 type="radio"
                                 id="country-usa"
                                 name="select-country"
-                                onchange="MulSel_createOpt_CountryState(event, '1')"
+                                onchange="mulSel_createOpt_CountryState(event, '1')"
                                 value="usa"
                               />
                               <label for="country-usa">USA</label>
@@ -770,7 +770,7 @@
                                 type="radio"
                                 id="country-canada"
                                 name="select-country"
-                                onchange="MulSel_createOpt_CountryState(event, '2')"
+                                onchange="mulSel_createOpt_CountryState(event, '2')"
                                 value="canada"
                               />
                               <label for="country-canada">Canada</label>
@@ -780,7 +780,7 @@
                                 type="radio"
                                 id="country-mexico"
                                 name="select-country"
-                                onchange="MulSel_createOpt_CountryState(event, '3')"
+                                onchange="mulSel_createOpt_CountryState(event, '3')"
                                 value="mexico"
                               />
                               <label for="country-mexico">Mexico</label>
@@ -838,13 +838,13 @@
                             <label for="na-states-input">State</label>
 
                             <div
-                              class="bbs-combobox"
-                              id="stateSelectionCombobox"
+                              class="bbs-mulSel"
+                              id="countryState-mulSel"
                             >
-                              <div class="multiselect-tag-container"></div>
+                              <div class="mulSel-tag-container"></div>
 
                               <div
-                                class="bbs-combobox-input"
+                                class="bbs-mulSel-input"
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false"
                                 data-bs-auto-close="outside"
@@ -854,8 +854,8 @@
                                   type="text"
                                   class="tw-w-full"
                                   id="na-states-input"
-                                  onkeydown="MulSel_onkeydown(event)"
-                                  oninput="MulSel_oninput(event)"
+                                  onkeydown="mulSel_onkeydown(event)"
+                                  oninput="mulSel_oninput(event)"
                                 />
 
                                 <button
@@ -869,7 +869,7 @@
                               </div>
                               <ul class="dropdown-menu tw-w-full" role="menu">
                                 <!-- // this will be filled by javascript function
-                                      // MulSel_createOpt_CountryState (event, country)-->
+                                      // mulSel_createOpt_CountryState (event, country)-->
                               </ul>
                             </div>
                             <p class="caption">US, Canada or Mexico only</p>
@@ -896,13 +896,13 @@
                           </label>
 
                           <div
-                            class="bbs-combobox"
-                            id="terminalMarketSelectionCombobox"
+                            class="bbs-mulSel"
+                            id="terminalMkt-mulSel"
                           >
-                            <div class="multiselect-tag-container"></div>
+                            <div class="mulSel-tag-container"></div>
 
                             <div
-                              class="bbs-combobox-input"
+                              class="bbs-mulSel-input"
                               data-bs-toggle="dropdown"
                               aria-expanded="false"
                               data-bs-auto-close="outside"
@@ -912,8 +912,8 @@
                                 type="text"
                                 class="tw-w-full"
                                 id="terminal-markets-input"
-                                onkeydown="MulSel_onkeydown(event)"
-                                oninput="MulSel_oninput(event)"
+                                onkeydown="mulSel_onkeydown(event)"
+                                oninput="mulSel_oninput(event)"
                               />
 
                               <button
@@ -927,7 +927,7 @@
                             </div>
                             <ul class="dropdown-menu tw-w-full" role="menu">
                               <!-- // this will be filled by javascript function
-                                      // MulSel_createOpt_CountryState (event, country)-->
+                                      // mulSel_createOpt_CountryState (event, country)-->
                             </ul>
                           </div>
                         </div>
@@ -1056,13 +1056,13 @@
                             </a>
                           </div>
                           <div
-                            class="bbs-combobox"
-                            id="commodity-categories-combo"
+                            class="bbs-mulSel"
+                            id="commodity-mulSel"
                           >
-                            <div class="multiselect-tag-container"></div>
+                            <div class="mulSel-tag-container"></div>
 
                             <div
-                              class="bbs-combobox-input"
+                              class="bbs-mulSel-input"
                               data-bs-toggle="dropdown"
                               aria-expanded="false"
                               data-bs-auto-close="outside"
@@ -1072,8 +1072,8 @@
                                 type="text"
                                 class="tw-w-full"
                                 id="commodity-categories-input"
-                                onkeydown="MulSel_onkeydown(event)"
-                                oninput="MulSel_oninput(event)"
+                                onkeydown="mulSel_onkeydown(event)"
+                                oninput="mulSel_oninput(event)"
                               />
 
                               <button
@@ -1087,7 +1087,7 @@
                             </div>
                             <ul class="dropdown-menu tw-w-full" role="menu">
                               <!-- // this will be filled by javascript function
-                                      // MulSel_createOpt_CountryState (event, country)-->
+                                      // mulSel_createOpt_CountryState (event, country)-->
                             </ul>
                           </div>
                         </div>
@@ -1178,7 +1178,7 @@
                         <div class="input-wrapper">
                           <label class="normal" for="style">Style</label>
 
-                          <select id="style" aria-label="Small select example">
+                          <select aria-label="Small select example">
                             <option selected value="1">Any</option>
                             <option value="2">Chips</option>
                             <option value="3">Pulp</option>
@@ -1660,484 +1660,6 @@
               <!-- Selection criteria ends -->
             </div>
           </div>
-          <br />
-          <details>
-            <summary>Show components</summary>
-            <div class="container">
-              <div class="tw-my-4 tw-flex tw-items-center tw-justify-between">
-                <p class="caption">39 Companies found</p>
-                <div class="bbsButtonGroup rounded tw-justify-end">
-                  <button class="bbsButton bbsButton-secondary filled">
-                    <span class="msicon notranslate">thumbs_up_down</span>
-                    <span>Rate Company</span>
-                  </button>
-                  <button class="bbsButton bbsButton-secondary filled">
-                    <span class="msicon notranslate">summarize</span>
-                    <span>Get business Report</span>
-                  </button>
-                  <button class="bbsButton bbsButton-secondary filled">
-                    <span class="msicon notranslate">compare_arrows</span>
-                    <span>Analyze companies</span></button
-                  ><button class="bbsButton bbsButton-secondary filled">
-                    <span class="msicon notranslate">export_notes</span>
-                    <span>Export Data</span></button
-                  ><button class="bbsButton bbsButton-secondary filled">
-                    <span class="msicon notranslate"
-                      >local_printshop</span
-                    ></button
-                  ><button class="bbsButton bbsButton-secondary filled">
-                    <span class="msicon notranslate">location_pin</span></button
-                  ><button class="bbsButton bbsButton-secondary filled">
-                    <span class="msicon notranslate"
-                      >sound_detection_dog_barking</span
-                    ></button
-                  ><button class="bbsButton bbsButton-secondary filled">
-                    <span class="msicon notranslate">mode_edit_outline</span>
-                  </button>
-                </div>
-              </div>
-              <div
-                class="tw-grid tw-grid-cols-1 tw-gap-4 md:tw-grid-cols-2 lg:tw-grid-cols-3"
-              >
-                <div class="tw-h-full">
-                  <div class="market-update-block clr-block-1">clr-block-1</div>
-                </div>
-                <div class="tw-h-full">
-                  <div class="market-update-block clr-block-2">clr-block-2</div>
-                </div>
-                <div class="tw-h-full">
-                  <div class="market-update-block clr-block-3">clr-block-3</div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              style="z-index: 1000; width: 400px; left: 2px; top: 37px"
-              class="AutoCompleteFlyout"
-            >
-              <div class="AutoCompleteFlyoutItem">
-                <p class="AutoCompleteFlyoutItem-title">
-                  Straight From The Farm (H)
-                </p>
-                <p class="AutoCompleteFlyoutItem-subtext">
-                  Saunders Enterprises, LLC.
-                </p>
-                <p class="AutoCompleteFlyoutItem-subtext">Orlando, FL</p>
-              </div>
-              <div class="AutoCompleteFlyoutHilightedItem">
-                <p class="AutoCompleteFlyoutItem-title">
-                  Straight From The Farm (H)
-                </p>
-                <p class="AutoCompleteFlyoutItem-subtext">
-                  Saunders Enterprises, LLC.
-                </p>
-                <p class="AutoCompleteFlyoutItem-subtext">Orlando, FL</p>
-              </div>
-              <div class="AutoCompleteFlyoutItem">
-                <p class="AutoCompleteFlyoutItem-title">
-                  Straight From The Farm (H)
-                </p>
-                <p class="AutoCompleteFlyoutItem-subtext">
-                  Saunders Enterprises, LLC.
-                </p>
-                <p class="AutoCompleteFlyoutItem-subtext">Orlando, FL</p>
-              </div>
-            </div>
-            <div
-              class="tw-my-4 tw-grid tw-grid-cols-1 tw-gap-4 md:tw-grid-cols-2 lg:tw-grid-cols-3"
-            >
-              <div class="bbs-list-panel">
-                <div class="bbs-list-panel-heading">
-                  <h3 class="">Quick Search</h3>
-                </div>
-
-                <div class="bbs-list-group">
-                  <a class="bbs-list-item" id="contentMain_liCompanySearch">
-                    <div>
-                      <p
-                        class="bbs-list-item-title"
-                        id="contentMain_hlCompanySearch"
-                      >
-                        Search Companies
-                      </p>
-                      <p class="bbs-list-item-subtext">
-                        This is the subtext (optional)
-                      </p>
-                    </div>
-                    <span class="msicon notranslate">chevron_right</span>
-                  </a>
-                  <a
-                    class="bbs-list-item"
-                    id="contentMain_liClaimActivitySearch"
-                  >
-                    <div>
-                      <p
-                        class="bbs-list-item-title"
-                        id="contentMain_hlClaimActivitySearch"
-                      >
-                        Search Claims Activity Table (C.A.T.)
-                      </p>
-                    </div>
-                    <span class="msicon notranslate">chevron_right</span>
-                  </a>
-                  <a class="bbs-list-item" id="contentMain_liPersonSearch">
-                    <div>
-                      <p
-                        class="bbs-list-item-title"
-                        id="contentMain_hlPersonSearch"
-                      >
-                        Search People
-                      </p>
-                    </div>
-                    <span class="msicon notranslate">chevron_right</span>
-                  </a>
-                  <a
-                    class="bbs-list-item"
-                    id="contentMain_liCompanyUpdateSearch"
-                  >
-                    <div>
-                      <p
-                        class="bbs-list-item-title"
-                        id="contentMain_hlCompanyUpdateSearch"
-                      >
-                        Search Company Updates
-                      </p>
-                    </div>
-                    <span class="msicon notranslate">chevron_right</span>
-                  </a>
-
-                  <a class="bbs-list-item" id="contentMain_liSavedSearches">
-                    <div>
-                      <p
-                        class="bbs-list-item-title"
-                        id="contentMain_hlSavedSearches"
-                      >
-                        Saved Searches
-                      </p>
-                    </div>
-                    <span class="msicon notranslate">chevron_right</span>
-                  </a>
-
-                  <a class="bbs-list-item" id="contentMain_liRecentViews">
-                    <div>
-                      <p
-                        class="bbs-list-item-title"
-                        id="contentMain_hlRecentViews"
-                      >
-                        Recent Views
-                      </p>
-                    </div>
-                    <span class="msicon notranslate">chevron_right</span>
-                  </a>
-
-                  <a class="bbs-list-item" id="contentMain_liLastCompanySearch">
-                    <div>
-                      <p
-                        class="bbs-list-item-title"
-                        id="contentMain_hlLastCompanySearch"
-                      >
-                        Last Company Search
-                      </p>
-                    </div>
-                    <span class="msicon notranslate">chevron_right</span>
-                  </a>
-                </div>
-              </div>
-              <div class="bbs-list-panel">
-                <div class="bbs-list-panel-heading">
-                  <h3 class="">Quick Search</h3>
-                </div>
-
-                <div class="bbs-list-group">
-                  <a class="bbs-list-item" id="contentMain_liCompanySearch">
-                    <div>
-                      <p
-                        class="bbs-list-item-title"
-                        id="contentMain_hlCompanySearch"
-                      >
-                        Search Companies
-                      </p>
-                      <p class="bbs-list-item-subtext">
-                        This is the subtext (optional)
-                      </p>
-                    </div>
-                    <span class="msicon notranslate">chevron_right</span>
-                  </a>
-                  <a
-                    class="bbs-list-item"
-                    id="contentMain_liClaimActivitySearch"
-                  >
-                    <div>
-                      <p
-                        class="bbs-list-item-title"
-                        id="contentMain_hlClaimActivitySearch"
-                      >
-                        Search Claims Activity Table (C.A.T.)
-                      </p>
-                    </div>
-                    <span class="msicon notranslate">chevron_right</span>
-                  </a>
-                  <a class="bbs-list-item" id="contentMain_liPersonSearch">
-                    <div>
-                      <p
-                        class="bbs-list-item-title"
-                        id="contentMain_hlPersonSearch"
-                      >
-                        Search People
-                      </p>
-                    </div>
-                    <span class="msicon notranslate">chevron_right</span>
-                  </a>
-                  <a
-                    class="bbs-list-item"
-                    id="contentMain_liCompanyUpdateSearch"
-                  >
-                    <div>
-                      <p
-                        class="bbs-list-item-title"
-                        id="contentMain_hlCompanyUpdateSearch"
-                      >
-                        Search Company Updates
-                      </p>
-                    </div>
-                    <span class="msicon notranslate">chevron_right</span>
-                  </a>
-
-                  <a class="bbs-list-item" id="contentMain_liSavedSearches">
-                    <div>
-                      <p
-                        class="bbs-list-item-title"
-                        id="contentMain_hlSavedSearches"
-                      >
-                        Saved Searches
-                      </p>
-                    </div>
-                    <span class="msicon notranslate">chevron_right</span>
-                  </a>
-
-                  <a class="bbs-list-item" id="contentMain_liRecentViews">
-                    <div>
-                      <p
-                        class="bbs-list-item-title"
-                        id="contentMain_hlRecentViews"
-                      >
-                        Recent Views
-                      </p>
-                    </div>
-                    <span class="msicon notranslate">chevron_right</span>
-                  </a>
-
-                  <a class="bbs-list-item" id="contentMain_liLastCompanySearch">
-                    <div>
-                      <p
-                        class="bbs-list-item-title"
-                        id="contentMain_hlLastCompanySearch"
-                      >
-                        Last Company Search
-                      </p>
-                    </div>
-                    <span class="msicon notranslate">chevron_right</span>
-                  </a>
-                </div>
-              </div>
-              <div class="bbs-list-panel">
-                <div class="bbs-list-panel-heading">
-                  <h3 class="">Quick Search</h3>
-                </div>
-
-                <div class="bbs-list-group">
-                  <a class="bbs-list-item" id="contentMain_liCompanySearch">
-                    <div>
-                      <p
-                        class="bbs-list-item-title"
-                        id="contentMain_hlCompanySearch"
-                      >
-                        Search Companies
-                      </p>
-                      <p class="bbs-list-item-subtext">
-                        This is the subtext (optional)
-                      </p>
-                    </div>
-                    <span class="msicon notranslate">chevron_right</span>
-                  </a>
-                  <a
-                    class="bbs-list-item"
-                    id="contentMain_liClaimActivitySearch"
-                  >
-                    <div>
-                      <p
-                        class="bbs-list-item-title"
-                        id="contentMain_hlClaimActivitySearch"
-                      >
-                        Search Claims Activity Table (C.A.T.)
-                      </p>
-                    </div>
-                    <span class="msicon notranslate">chevron_right</span>
-                  </a>
-                  <a class="bbs-list-item" id="contentMain_liPersonSearch">
-                    <div>
-                      <p
-                        class="bbs-list-item-title"
-                        id="contentMain_hlPersonSearch"
-                      >
-                        Search People
-                      </p>
-                    </div>
-                    <span class="msicon notranslate">chevron_right</span>
-                  </a>
-                  <a
-                    class="bbs-list-item"
-                    id="contentMain_liCompanyUpdateSearch"
-                  >
-                    <div>
-                      <p
-                        class="bbs-list-item-title"
-                        id="contentMain_hlCompanyUpdateSearch"
-                      >
-                        Search Company Updates
-                      </p>
-                    </div>
-                    <span class="msicon notranslate">chevron_right</span>
-                  </a>
-
-                  <a class="bbs-list-item" id="contentMain_liSavedSearches">
-                    <div>
-                      <p
-                        class="bbs-list-item-title"
-                        id="contentMain_hlSavedSearches"
-                      >
-                        Saved Searches
-                      </p>
-                    </div>
-                    <span class="msicon notranslate">chevron_right</span>
-                  </a>
-
-                  <a class="bbs-list-item" id="contentMain_liRecentViews">
-                    <div>
-                      <p
-                        class="bbs-list-item-title"
-                        id="contentMain_hlRecentViews"
-                      >
-                        Recent Views
-                      </p>
-                    </div>
-                    <span class="msicon notranslate">chevron_right</span>
-                  </a>
-
-                  <a class="bbs-list-item" id="contentMain_liLastCompanySearch">
-                    <div>
-                      <p
-                        class="bbs-list-item-title"
-                        id="contentMain_hlLastCompanySearch"
-                      >
-                        Last Company Search
-                      </p>
-                    </div>
-                    <span class="msicon notranslate">chevron_right</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div
-              class="tw-my-4 tw-grid tw-grid-cols-1 tw-gap-4 md:tw-grid-cols-2 lg:tw-grid-cols-3"
-            ></div>
-            <div class="tw-grid tw-grid-cols-2 tw-gap-2">
-              <h2>Buttons</h2>
-              <h2>Disabled</h2>
-              <button class="bbsButton bbsButton-primary">
-                <span class="msicon notranslate">search</span>
-                <span>Primary Button</span>
-              </button>
-              <button disabled class="bbsButton bbsButton-primary">
-                <span class="msicon notranslate">search</span>
-                <span>Primary Button</span>
-                <span class="msicon notranslate">lock</span>
-              </button>
-              <button class="bbsButton bbsButton-secondary">
-                <span class="msicon notranslate">search</span>Secondary Button
-              </button>
-              <button disabled class="bbsButton bbsButton-secondary">
-                <span class="msicon notranslate">search</span>
-                <span>Secondary Button</span>
-                <span class="msicon notranslate">lock</span>
-              </button>
-              <button class="bbsButton bbsButton-tag-secondary">
-                <span class="text-lable">Close tag</span>
-                <span class="msicon notranslate">close</span>
-              </button>
-              <button disabled class="bbsButton bbsButton-tag-secondary">
-                <span class="msicon notranslate">search</span>
-                <span class="text-lable">Close tag</span>
-                <span class="msicon notranslate">lock</span>
-              </button>
-            </div>
-            <div class="tw-grid tw-grid-cols-4 tw-gap-2">
-              <div
-                class="tw-rounded tw-border tw-border-border tw-bg-bg-primary tw-p-2"
-              >
-                <h2 class="tw-font-bold">On bg-primary</h2>
-                <div class="tw-text-brand">brand</div>
-                <div class="tw-text-border">border</div>
-                <div class="tw-text-focus-outline">focus-outline</div>
-                <div class="tw-text-text-primary">text-primary</div>
-                <div class="tw-text-text-secondary">text-secondary</div>
-                <div class="tw-text-text-tertiary">text-tertiary</div>
-                <div class="tw-text-text-disabled">text-disabled</div>
-                <div class="tw-text-success">success</div>
-                <div class="tw-text-warn">warn</div>
-                <div class="tw-text-info">info</div>
-                <div class="tw-text-error">error</div>
-              </div>
-              <div
-                class="tw-rounded tw-border tw-border-border tw-bg-bg-secondary tw-p-2"
-              >
-                <h2 class="tw-font-bold">On bg-secondary</h2>
-                <div class="tw-text-brand">brand</div>
-                <div class="tw-text-border">border</div>
-                <div class="tw-text-focus-outline">focus-outline</div>
-                <div class="tw-text-text-primary">text-primary</div>
-                <div class="tw-text-text-secondary">text-secondary</div>
-                <div class="tw-text-text-tertiary">text-tertiary</div>
-                <div class="tw-text-text-disabled">text-disabled</div>
-                <div class="tw-text-success">success</div>
-                <div class="tw-text-warn">warn</div>
-                <div class="tw-text-info">info</div>
-                <div class="tw-text-error">error</div>
-              </div>
-              <div
-                class="tw-rounded tw-border tw-border-border tw-bg-bg-tertiary tw-p-2"
-              >
-                <h2 class="tw-font-bold">On bg-tertiary</h2>
-                <div class="tw-text-brand">brand</div>
-                <div class="tw-text-border">border</div>
-                <div class="tw-text-focus-outline">focus-outline</div>
-                <div class="tw-text-text-primary">text-primary</div>
-                <div class="tw-text-text-secondary">text-secondary</div>
-                <div class="tw-text-text-tertiary">text-tertiary</div>
-                <div class="tw-text-text-disabled">text-disabled</div>
-                <div class="tw-text-success">success</div>
-                <div class="tw-text-warn">warn</div>
-                <div class="tw-text-info">info</div>
-                <div class="tw-text-error">error</div>
-              </div>
-              <div
-                class="tw-rounded tw-border tw-border-border tw-bg-bg-disabled tw-p-2"
-              >
-                <h2 class="tw-font-bold">On bg-disabled</h2>
-                <div class="tw-text-brand">brand</div>
-                <div class="tw-text-border">border</div>
-                <div class="tw-text-focus-outline">focus-outline</div>
-                <div class="tw-text-text-primary">text-primary</div>
-                <div class="tw-text-text-secondary">text-secondary</div>
-                <div class="tw-text-text-tertiary">text-tertiary</div>
-                <div class="tw-text-text-disabled">text-disabled</div>
-                <div class="tw-text-success">success</div>
-                <div class="tw-text-warn">warn</div>
-                <div class="tw-text-info">info</div>
-                <div class="tw-text-error">error</div>
-              </div>
-            </div>
-          </details>
         </div>
       </div>
     </div>
@@ -2201,185 +1723,9 @@
       </div>
     </footer>
 
-    <div class="bbsModal tw-hidden">
-      <div class="bbsSidebar show tw-relative tw-top-0">
-        <div
-          class="tw-sticky tw-top-0 tw-border-b tw-border-border tw-bg-bg-primary tw-p-4"
-        >
-          <div class="tw-flex tw-justify-between">
-            <div class="tw-flex">
-              <button
-                onclick="hidesidebar()"
-                class="bbsButton bbsButton-tertiary"
-              >
-                <span class="msicon notranslate">clear</span>
-              </button>
-              <span class="title">Search criteria</span>
-            </div>
-            <div class="tw-flex tw-gap-3">
-              <form action="index.html" class="tw-w-full">
-                <button type="submit" class="bbsButton bbsButton-secondary">
-                  <span class="msicon notranslate">arrow_back</span>
-                  <span>Back to edit search</span>
-                </button>
-              </form>
-              <button class="bbsButton bbsButton-primary filled tw-w-full">
-                <span class="msicon notranslate">saved_search</span>
-                <span>Save Search</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="tw-p-4">
-          <div class="search-criteria-group">
-            <div class="title-container">
-              <div class="label">Company Details</div>
-            </div>
-            <div class="content-container">
-              <div class="input-container">
-                <p class="subheading">Company Name</p>
-                <div class="tag-container">
-                  <span class="tag">Test name</span>
-                </div>
-              </div>
-
-              <div class="input-container">
-                <p class="subheading">Handles rejected shipments</p>
-                <div class="tag-container">
-                  <span class="tag">Yes</span>
-                </div>
-              </div>
-              <div class="input-container">
-                <p class="subheading">Phone</p>
-                <div class="tag-container">
-                  <span class="tag">201384938</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="search-criteria-group">
-            <div class="title-container">
-              <div class="label">Rating</div>
-            </div>
-            <div class="content-container">
-              <div class="input-container">
-                <p class="subheading">Blue Book Score</p>
-                <div class="tag-container">
-                  <span class="tag">Equal to: 20</span>
-                </div>
-              </div>
-              <div class="input-container">
-                <p class="subheading">Trade Practices</p>
-                <div class="tag-container">
-                  <span class="tag">XXXX - Excellent</span>
-                  <span class="tag">XX - Unsatisfactory</span>
-                  <span class="tag">XXX - Good</span>
-                  <span class="tag">X - Poor</span>
-                </div>
-              </div>
-              <div class="input-container">
-                <p class="subheading">Pay Description</p>
-                <div class="tag-container">
-                  <span class="tag">AA - 1 - 14 days on average</span>
-                  <span class="tag">D - 36 - 45 days on average</span>
-                  <span class="tag">A - 15-21 days on average</span>
-                  <span class="tag">E - 46 - 60 days on average</span>
-                  <span class="tag">B - 22 - 28 days on average</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="search-criteria-group">
-            <div class="title-container">
-              <div class="label">Rating</div>
-            </div>
-            <div class="content-container">
-              <div class="input-container">
-                <p class="subheading">Blue Book Score</p>
-                <div class="tag-container">
-                  <span class="tag">Equal to: 20</span>
-                </div>
-              </div>
-              <div class="input-container">
-                <p class="subheading">Trade Practices</p>
-                <div class="tag-container">
-                  <span class="tag">XXXX - Excellent</span>
-                  <span class="tag">XX - Unsatisfactory</span>
-                  <span class="tag">XXX - Good</span>
-                  <span class="tag">X - Poor</span>
-                </div>
-              </div>
-              <div class="input-container">
-                <p class="subheading">Pay Description</p>
-                <div class="tag-container">
-                  <span class="tag">AA - 1 - 14 days on average</span>
-                  <span class="tag">D - 36 - 45 days on average</span>
-                  <span class="tag">A - 15-21 days on average</span>
-                  <span class="tag">E - 46 - 60 days on average</span>
-                  <span class="tag">B - 22 - 28 days on average</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="search-criteria-group">
-            <div class="title-container">
-              <div class="label">Rating</div>
-            </div>
-            <div class="content-container">
-              <div class="input-container">
-                <p class="subheading">Blue Book Score</p>
-                <div class="tag-container">
-                  <span class="tag">Equal to: 20</span>
-                </div>
-              </div>
-              <div class="input-container">
-                <p class="subheading">Trade Practices</p>
-                <div class="tag-container">
-                  <span class="tag">XXXX - Excellent</span>
-                  <span class="tag">XX - Unsatisfactory</span>
-                  <span class="tag">XXX - Good</span>
-                  <span class="tag">X - Poor</span>
-                </div>
-              </div>
-              <div class="input-container tw-overflow-none">
-                <p class="subheading">Pay Description</p>
-                <div class="tag-container">
-                  <span class="tag">AA - 1 - 14 days on average</span>
-                  <span class="tag">D - 36 - 45 days on average</span>
-                  <span class="tag">A - 15-21 days on average</span>
-                  <span class="tag">E - 46 - 60 days on average</span>
-                  <span class="tag">B - 22 - 28 days on average</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <script async src="main.js"></script>
 
     <script>
-      const showsidebar = () => {
-        document.querySelector("body").style.overflow = "hidden";
-        const modal = document.querySelector(".bbsModal");
-        modal.classList.remove("tw-hidden");
-
-        setTimeout(function () {
-          const bbsSidebar = modal.querySelector(".bbsSidebar");
-          bbsSidebar.classList.add("show");
-        }, 100);
-      };
-      const hidesidebar = () => {
-        const modal = document.querySelector(".bbsModal");
-        const bbsSidebar = modal.querySelector(".bbsSidebar");
-        bbsSidebar.classList.remove("show");
-        setTimeout(function () {
-          document.querySelector("body").style.overflow = "auto";
-          const modal = document.querySelector(".bbsModal");
-          modal.classList.add("tw-hidden");
-        }, 300);
-      };
       const tooltipTriggerList = document.querySelectorAll(
         '[data-bs-toggle="tooltip"]',
       );

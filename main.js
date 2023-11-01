@@ -992,19 +992,29 @@ const terminalMarkets = [
   },
 ];
 
+const mulSel_filldata = (mulSel_id, csvOptionIds) => {
+  const optionIds = csvOptionIds.split(",");
+  const mulSel_parent = document.querySelector("#" + mulSel_id);
+  optionIds.forEach((optionId) => {
+    // find the menu item and make is selected
+    const menuitem = mulSel_parent.querySelector(
+      `li[data-mulSel_id="${optionId}"]`,
+    );
+    if (menuitem) menuitem.click();
+  });
+};
+
 // if a removable bbsButton bbsButton-tag-secondary
 // is clicked, this is the function
 // that needs to be called to remove it
-const MulSel_onclickTag = (event) => {
+const mulSel_onclickTag = (event) => {
   // TODO:PT - low priority, Make on the X on the tag clicable and focasable
 
-  const comboboxParent = event.currentTarget.closest(".bbs-combobox");
-  const menu = comboboxParent.querySelector(".dropdown-menu");
-  const multiselect_id = event.currentTarget.dataset.multiselect_id;
+  const mulSelParent = event.currentTarget.closest(".bbs-mulSel");
+  const menu = mulSelParent.querySelector(".dropdown-menu");
+  const mulSel_id = event.currentTarget.dataset.mulSel_id;
 
-  const menuitem = menu.querySelector(
-    `li[data-multiselect_id="${multiselect_id}"]`,
-  );
+  const menuitem = menu.querySelector(`li[data-mulSel_id="${mulSel_id}"]`);
   if (menuitem) menuitem.classList.remove("selected");
 
   const nextsibling = event.currentTarget.nextElementSibling;
@@ -1019,7 +1029,7 @@ const MulSel_onclickTag = (event) => {
   event.currentTarget.remove();
 };
 
-const MulSel_onkeydown = (event) => {
+const mulSel_onkeydown = (event) => {
   const key = event.key;
 
   // TODO:PT - somehow Escape key is not detected here at all.
@@ -1041,18 +1051,18 @@ const MulSel_onkeydown = (event) => {
   }
 };
 
-// Open the combobox menu when
+// Open the mulSel menu when
 // user starts typing inside
-// the combobox .bbs-combobox
+// the mulSel .bbs-mulSel
 // and filters the content
-const MulSel_oninput = (event) => {
+const mulSel_oninput = (event) => {
   const inputValue = event.currentTarget.value;
   const menu = event.currentTarget
-    .closest(".bbs-combobox")
+    .closest(".bbs-mulSel")
     .querySelector(".dropdown-menu");
 
   const instance = bootstrap.Dropdown.getOrCreateInstance(
-    event.currentTarget.closest(".bbs-combobox-input"),
+    event.currentTarget.closest(".bbs-mulSel-input"),
   );
   if (instance) {
     instance.show();
@@ -1090,28 +1100,28 @@ const MulSel_oninput = (event) => {
   event.stopPropagation();
 };
 
-const getOrCreateTagContainer = (comboboxParent) => {
-  let tagContainer = comboboxParent.querySelector(".multiselect-tag-container");
+const getOrCreateTagContainer = (mulSelParent) => {
+  let tagContainer = mulSelParent.querySelector(".mulSel-tag-container");
   if (!tagContainer) {
     // create a tag container
     // and append it to the parent of the input
     tagContainer = document.createElement("div");
-    tagContainer.setAttribute("class", "multiselect-tag-container");
-    comboboxParent.appendChild(tagContainer);
+    tagContainer.setAttribute("class", "mulSel-tag-container");
+    mulSelParent.appendChild(tagContainer);
   }
   return tagContainer;
 };
 
 // Based on the country,
 // this function adds options in the
-// .bbs-combobox's menu.
-const MulSel_createOpt_TerminalMKT = () => {
-  const combobox = document.querySelector("#terminalMarketSelectionCombobox");
-  if (combobox == null) return;
+// .bbs-mulSel's menu.
+const mulSel_createOpt_TerminalMKT = () => {
+  const mulSel = document.querySelector("#terminalMkt-mulSel");
+  if (mulSel == null) return;
   // Clear the existing multiseled tags
-  combobox.querySelector(".multiselect-tag-container").innerHTML = "";
+  mulSel.querySelector(".mulSel-tag-container").innerHTML = "";
 
-  const optionContainer = combobox.querySelector("ul.dropdown-menu");
+  const optionContainer = mulSel.querySelector("ul.dropdown-menu");
 
   // clear the previous list
   optionContainer.innerHTML = "";
@@ -1123,7 +1133,7 @@ const MulSel_createOpt_TerminalMKT = () => {
   //     "Jefferson County Truck Growers Association/Alabama Farmers Market | Birmingham, AL",
   // }],
 
-  // populate the state combobox
+  // populate the state mulSel
   for (let i in terminalMarkets) {
     const [name, city] = terminalMarkets[i].prtm_FullMarketName.split(" | ");
 
@@ -1135,11 +1145,11 @@ const MulSel_createOpt_TerminalMKT = () => {
 
     outer.setAttribute(
       "onclick",
-      `MulSel_onclickOpt_TerminalMkt(event, "${terminalMarkets[i].prtm_TerminalMarketId}")`,
+      `mulSel_onclickOpt_TerminalMkt(event, "${terminalMarkets[i].prtm_TerminalMarketId}")`,
     );
     // terminal_id;
     outer.setAttribute(
-      "data-multiselect_id",
+      "data-mulSel_id",
       terminalMarkets[i].prtm_TerminalMarketId,
     );
     outer.setAttribute(
@@ -1162,10 +1172,10 @@ const MulSel_createOpt_TerminalMKT = () => {
 
 // call the above function
 (() => {
-  MulSel_createOpt_TerminalMKT();
+  mulSel_createOpt_TerminalMKT();
 })();
 
-const MulSel_onclickOpt_TerminalMkt = (event, optionId) => {
+const mulSel_onclickOpt_TerminalMkt = (event, optionId) => {
   // const terminalMarkets = [
   //   {
   //   prtm_TerminalMarketId: "0",
@@ -1179,24 +1189,24 @@ const MulSel_onclickOpt_TerminalMkt = (event, optionId) => {
   );
 
   event.stopPropagation();
-  const comboboxParent = event.currentTarget.closest(".bbs-combobox");
+  const mulSelParent = event.currentTarget.closest(".bbs-mulSel");
 
-  const tagContainer = getOrCreateTagContainer(comboboxParent);
+  const tagContainer = getOrCreateTagContainer(mulSelParent);
 
   const [name, city] = terminalMarket.prtm_FullMarketName.split(" | ");
   const tagLabel = name.substring(0, 15) + "..., " + city;
 
   // check if there is any tag with that value exist in the parent
   const tagElement = tagContainer.querySelector(
-    `button[data-multiselect_id="${optionId}"]`,
+    `button[data-mulSel_id="${optionId}"]`,
   );
   if (!tagElement) {
     // create the tag if it does not exists
     // and mark item as selected
     const newTag = document.createElement("button");
     newTag.setAttribute("class", "bbsButton bbsButton-tag-secondary small");
-    newTag.setAttribute("data-multiselect_id", optionId);
-    newTag.setAttribute("onclick", "MulSel_onclickTag(event)");
+    newTag.setAttribute("data-mulSel_id", optionId);
+    newTag.setAttribute("onclick", "mulSel_onclickTag(event)");
     newTag.innerHTML = `
     <span>${tagLabel}</span>
     <span class="msicon notranslate">clear</span>
@@ -1215,13 +1225,13 @@ const MulSel_onclickOpt_TerminalMkt = (event, optionId) => {
   }
 
   // focus the input
-  comboboxParent.querySelector("input").focus();
+  mulSelParent.querySelector("input").focus();
 };
 
 // Based ont the country,
 // this function adds options in the
-// .bbs-combobox's menu.
-const MulSel_createOpt_CountryState = (event, optionId) => {
+// .bbs-mulSel's menu.
+const mulSel_createOpt_CountryState = (event, optionId) => {
   // optionId 1 == USA, 2 == Canada, 3 == Mexico
 
   // clear and disable other-countries input
@@ -1229,7 +1239,7 @@ const MulSel_createOpt_CountryState = (event, optionId) => {
   otherCountryInput.setAttribute("disabled", "disabled");
   otherCountryInput.value = "";
 
-  const combobox = document.querySelector("#stateSelectionCombobox");
+  const mulSel = document.querySelector("#countryState-mulSel");
 
   // TODO:PT - low priority, the bootstrap dropdown is still opening
   // even if you have disabled the button using the filedset.
@@ -1240,9 +1250,9 @@ const MulSel_createOpt_CountryState = (event, optionId) => {
   document.querySelector("#us-canada-mexico").removeAttribute("disabled");
 
   // Clear the existing multiseled tags
-  combobox.querySelector(".multiselect-tag-container").innerHTML = "";
+  mulSel.querySelector(".mulSel-tag-container").innerHTML = "";
 
-  const optionContainer = combobox.querySelector("ul.dropdown-menu");
+  const optionContainer = mulSel.querySelector("ul.dropdown-menu");
 
   // clear the previous list
   optionContainer.innerHTML = "";
@@ -1260,7 +1270,7 @@ const MulSel_createOpt_CountryState = (event, optionId) => {
     (state) => state.prst_CountryId == optionId,
   );
 
-  // populate the state combobox
+  // populate the state mulSel
   for (let i in filteredStates) {
     const outer = document.createElement("li");
     optionContainer.appendChild(outer);
@@ -1273,10 +1283,10 @@ const MulSel_createOpt_CountryState = (event, optionId) => {
 
     outer.setAttribute(
       "onclick",
-      `MulSel_onclickOpt_CountryState(event, "${filteredStates[i].prst_StateId}")`,
+      `mulSel_onclickOpt_CountryState(event, "${filteredStates[i].prst_StateId}")`,
     );
 
-    outer.setAttribute("data-multiselect_id", filteredStates[i].prst_StateId);
+    outer.setAttribute("data-mulSel_id", filteredStates[i].prst_StateId);
     outer.setAttribute("data-search_string", label);
 
     option.setAttribute("tabindex", "-1");
@@ -1291,10 +1301,10 @@ const MulSel_createOpt_CountryState = (event, optionId) => {
 };
 
 // When you need to add tags from the
-// .bbs-combobox. call this function with the value,
-// this will add the tags in the .multiselect-tag-container
-// if it exits or append one in the combobox
-const MulSel_onclickOpt_CountryState = (event, optionId) => {
+// .bbs-mulSel. call this function with the value,
+// this will add the tags in the .mulSel-tag-container
+// if it exits or append one in the mulSel
+const mulSel_onclickOpt_CountryState = (event, optionId) => {
   // states e.g.
   // [{
   //   prst_StateId: 1,
@@ -1307,21 +1317,21 @@ const MulSel_onclickOpt_CountryState = (event, optionId) => {
   const stateobject = states.find((state) => state.prst_StateId == optionId);
 
   event.stopPropagation();
-  const comboboxParent = event.currentTarget.closest(".bbs-combobox");
+  const mulSelParent = event.currentTarget.closest(".bbs-mulSel");
 
-  const tagContainer = getOrCreateTagContainer(comboboxParent);
+  const tagContainer = getOrCreateTagContainer(mulSelParent);
 
   // check if there is any tag with that value exist in the parent
   const tagElement = tagContainer.querySelector(
-    `button[data-multiselect_id="${optionId}"]`,
+    `button[data-mulSel_id="${optionId}"]`,
   );
 
   if (!tagElement) {
     // create the tag if it does not exists
     const newTag = document.createElement("button");
     newTag.setAttribute("class", "bbsButton bbsButton-tag-secondary small");
-    newTag.setAttribute("data-multiselect_id", optionId);
-    newTag.setAttribute("onclick", "MulSel_onclickTag(event)");
+    newTag.setAttribute("data-mulSel_id", optionId);
+    newTag.setAttribute("onclick", "mulSel_onclickTag(event)");
     newTag.innerHTML = `
     <span>${stateobject.prst_State}</span>
     <span class="msicon notranslate">clear</span>
@@ -1340,7 +1350,7 @@ const MulSel_onclickOpt_CountryState = (event, optionId) => {
   }
 
   // focus the input
-  comboboxParent.querySelector("input").focus();
+  mulSelParent.querySelector("input").focus();
 };
 
 const selectNoneCountry = (event) => {
@@ -1354,7 +1364,7 @@ const selectNoneCountry = (event) => {
   stateCitiselector.setAttribute("disabled", "disabled");
 
   // Clear the existing multiseled tags
-  stateCitiselector.querySelector(".multiselect-tag-container").innerHTML = "";
+  stateCitiselector.querySelector(".mulSel-tag-container").innerHTML = "";
 };
 
 // This is called when Other countries

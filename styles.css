@@ -268,9 +268,9 @@ a {
     }
   }
 
-  .bbs-combobox {
+  .bbs-mulSel {
     @apply tw-relative;
-    .bbs-combobox-input {
+    .bbs-mulSel-input {
       @apply tw-flex;
       input {
         @apply tw-rounded-r-none
@@ -766,7 +766,7 @@ a {
     }
   }
 
-  .multiselect-tag-container {
+  .mulSel-tag-container {
     @apply tw-mt-1
     tw-flex
     tw-flex-wrap
