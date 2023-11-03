@@ -1721,6 +1721,308 @@
       const radio_country_other = document.getElementById(
         "radio_country_other",
       );
+
+      // TODO:JMT - CHANGE THIS TO THE DATA SOURCE FROM THE BBOS
+      const countries = [
+        { prcn_CountryId: 1, prcn_Country: "USA" },
+        { prcn_CountryId: 2, prcn_Country: "Canada" },
+        { prcn_CountryId: 3, prcn_Country: "Mexico" },
+        { prcn_CountryId: 5, prcn_Country: "Antigua and Barbuda" },
+        { prcn_CountryId: 6, prcn_Country: "Argentina" },
+        { prcn_CountryId: 7, prcn_Country: "Aruba" },
+        { prcn_CountryId: 8, prcn_Country: "Australia" },
+        { prcn_CountryId: 9, prcn_Country: "Austria" },
+        { prcn_CountryId: 10, prcn_Country: "Bahamas" },
+        { prcn_CountryId: 11, prcn_Country: "Barbados" },
+        { prcn_CountryId: 12, prcn_Country: "Belgium" },
+        { prcn_CountryId: 13, prcn_Country: "Belize" },
+        { prcn_CountryId: 14, prcn_Country: "Bermuda" },
+        { prcn_CountryId: 15, prcn_Country: "Bolivia" },
+        { prcn_CountryId: 16, prcn_Country: "Brazil" },
+        { prcn_CountryId: 17, prcn_Country: "Cameroon" },
+        { prcn_CountryId: 18, prcn_Country: "Cayman Islands" },
+        { prcn_CountryId: 19, prcn_Country: "Chile" },
+        { prcn_CountryId: 20, prcn_Country: "China" },
+        { prcn_CountryId: 21, prcn_Country: "Colombia" },
+        { prcn_CountryId: 22, prcn_Country: "Costa Rica" },
+      ];
+
+      // TODO:JMT - CHANGE THIS TO THE DATA SOURCE FROM THE BBOS
+      const states = [
+        {
+          prst_StateId: 1,
+          prst_State: "Alabama",
+          prst_CountryId: 1,
+          prst_Abbreviation: "AL",
+        },
+        {
+          prst_StateId: 2,
+          prst_State: "Alaska",
+          prst_CountryId: 1,
+          prst_Abbreviation: "AK",
+        },
+        {
+          prst_StateId: 3,
+          prst_State: "Arizona",
+          prst_CountryId: 1,
+          prst_Abbreviation: "AZ",
+        },
+        {
+          prst_StateId: 4,
+          prst_State: "Arkansas",
+          prst_CountryId: 1,
+          prst_Abbreviation: "AR",
+        },
+        {
+          prst_StateId: 5,
+          prst_State: "California",
+          prst_CountryId: 1,
+          prst_Abbreviation: "CA",
+        },
+        {
+          prst_StateId: 6,
+          prst_State: "Colorado",
+          prst_CountryId: 1,
+          prst_Abbreviation: "CO",
+        },
+        {
+          prst_StateId: 7,
+          prst_State: "Connecticut",
+          prst_CountryId: 1,
+          prst_Abbreviation: "CT",
+        },
+        {
+          prst_StateId: 8,
+          prst_State: "Delaware",
+          prst_CountryId: 1,
+          prst_Abbreviation: "DE",
+        },
+
+        {
+          prst_StateId: 52,
+          prst_State: "Alberta",
+          prst_CountryId: 2,
+          prst_Abbreviation: "AB",
+        },
+        {
+          prst_StateId: 53,
+          prst_State: "British Columbia",
+          prst_CountryId: 2,
+          prst_Abbreviation: "BC",
+        },
+        {
+          prst_StateId: 54,
+          prst_State: "Manitoba",
+          prst_CountryId: 2,
+          prst_Abbreviation: "MB",
+        },
+        {
+          prst_StateId: 55,
+          prst_State: "New Brunswick",
+          prst_CountryId: 2,
+          prst_Abbreviation: "NB",
+        },
+        {
+          prst_StateId: 56,
+          prst_State: "Newfoundland and Labrador",
+          prst_CountryId: 2,
+          prst_Abbreviation: "NL",
+        },
+        {
+          prst_StateId: 57,
+          prst_State: "Northwest Territories",
+          prst_CountryId: 2,
+          prst_Abbreviation: "NT",
+        },
+        {
+          prst_StateId: 58,
+          prst_State: "Nova Scotia",
+          prst_CountryId: 2,
+          prst_Abbreviation: "NS",
+        },
+        {
+          prst_StateId: 59,
+          prst_State: "Ontario",
+          prst_CountryId: 2,
+          prst_Abbreviation: "ON",
+        },
+        {
+          prst_StateId: 60,
+          prst_State: "Prince Edward Island",
+          prst_CountryId: 2,
+          prst_Abbreviation: "PE",
+        },
+
+        {
+          prst_StateId: 64,
+          prst_State: "Aguascalientes",
+          prst_CountryId: 3,
+          prst_Abbreviation: "Ags",
+        },
+        {
+          prst_StateId: 65,
+          prst_State: "Baja California",
+          prst_CountryId: 3,
+          prst_Abbreviation: "BCN",
+        },
+        {
+          prst_StateId: 66,
+          prst_State: "Baja California Sur",
+          prst_CountryId: 3,
+          prst_Abbreviation: "BCS",
+        },
+        {
+          prst_StateId: 67,
+          prst_State: "Campeche",
+          prst_CountryId: 3,
+          prst_Abbreviation: "Camp",
+        },
+        {
+          prst_StateId: 68,
+          prst_State: "Chiapas",
+          prst_CountryId: 3,
+          prst_Abbreviation: "Chis",
+        },
+        {
+          prst_StateId: 69,
+          prst_State: "Chihuahua",
+          prst_CountryId: 3,
+          prst_Abbreviation: "Chih",
+        },
+        {
+          prst_StateId: 70,
+          prst_State: "Coahuila",
+          prst_CountryId: 3,
+          prst_Abbreviation: "Coah",
+        },
+        {
+          prst_StateId: 71,
+          prst_State: "Colima",
+          prst_CountryId: 3,
+          prst_Abbreviation: "Col",
+        },
+        {
+          prst_StateId: 72,
+          prst_State: "Durango",
+          prst_CountryId: 3,
+          prst_Abbreviation: "Dgo",
+        },
+        {
+          prst_StateId: 73,
+          prst_State: "Estado de Mexico",
+          prst_CountryId: 3,
+          prst_Abbreviation: "Mex",
+        },
+      ];
+
+      // TODO:JMT - CHANGE THIS TO THE DATA SOURCE FROM THE BBOS
+      const terminalMarkets = [
+        {
+          prtm_TerminalMarketId: "0",
+          prtm_FullMarketName:
+            "Jefferson County Truck Growers Association/Alabama Farmers Market",
+          prtm_City: "Birmingham",
+          prtm_State: "AL",
+        },
+        {
+          prtm_TerminalMarketId: "1",
+          prtm_FullMarketName: "Montgomery State Farmers Market",
+          prtm_City: "Montgomery",
+          prtm_State: "AL",
+        },
+        {
+          prtm_TerminalMarketId: "2",
+          prtm_FullMarketName: "Los Angeles Wholesale Produce Market",
+          prtm_City: "Los Angeles",
+          prtm_State: "CA",
+        },
+        {
+          prtm_TerminalMarketId: "3",
+          prtm_FullMarketName: "Seventh Street City Market",
+          prtm_City: "Los Angeles",
+          prtm_State: "CA",
+        },
+        {
+          prtm_TerminalMarketId: "4",
+          prtm_FullMarketName: "Oakland Produce Mark",
+          prtm_City: "Oakland",
+          prtm_State: "CA",
+        },
+        {
+          prtm_TerminalMarketId: "5",
+          prtm_FullMarketName: "The SF Mark",
+          prtm_City: "San Francisco",
+          prtm_State: "CA",
+        },
+
+        {
+          prtm_TerminalMarketId: "25",
+          prtm_FullMarketName: "Detroit Produce Terminal",
+          prtm_City: "Detroit",
+          prtm_State: "MI",
+        },
+        {
+          prtm_TerminalMarketId: "26",
+          prtm_FullMarketName: "St. Louis Produce Market",
+          prtm_City: "St. Louis",
+          prtm_State: "MO",
+        },
+        {
+          prtm_TerminalMarketId: "27",
+          prtm_FullMarketName: "Chihuahua Wholesale Produce Market",
+          prtm_City: "Chihuahua",
+          prtm_State: "MX",
+        },
+        {
+          prtm_TerminalMarketId: "28",
+          prtm_FullMarketName: "Culiacan Wholesale Produce Market",
+          prtm_City: "Culiacan",
+          prtm_State: "MX",
+        },
+        {
+          prtm_TerminalMarketId: "29",
+          prtm_FullMarketName: "Guadalajara Wholesale Produce Market",
+          prtm_City: "Guadalajara",
+          prtm_State: "MX",
+        },
+        {
+          prtm_TerminalMarketId: "30",
+          prtm_FullMarketName: "Mexico City Wholesale Produce Market",
+          prtm_City: "Mexico City",
+          prtm_State: "MX",
+        },
+        {
+          prtm_TerminalMarketId: "31",
+          prtm_FullMarketName: "Western North Carolina Farmers Market",
+          prtm_City: "Asheville",
+          prtm_State: "NC",
+        },
+        {
+          prtm_TerminalMarketId: "32",
+          prtm_FullMarketName: "Raleigh Farmers Market",
+          prtm_City: "Raleigh",
+          prtm_State: "NC",
+        },
+
+        {
+          prtm_TerminalMarketId: "46",
+          prtm_FullMarketName: "McAllen Produce Terminal Market",
+          prtm_City: "McAllen",
+          prtm_State: "TX",
+        },
+        {
+          prtm_TerminalMarketId: "47",
+          prtm_FullMarketName: "San Antonio Produce Terminal Market",
+          prtm_City: "San Antonio",
+          prtm_State: "TX",
+        },
+        {
+          prtm_TerminalMarketId: "48",
+          prtm_FullMarketName: "San Antonio Wholesale Produce Market",
+          prtm_City: "San Antonio",
+          prtm_State: "TX",
+        },
+      ];
     </script>
     <script async src="main.js"></script>
 
