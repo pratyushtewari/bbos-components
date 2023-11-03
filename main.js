@@ -530,3 +530,168 @@ const toggleZipcodeInput = (checked, id) => {
     input.setAttribute("disabled", "disabled");
   }
 };
+
+
+const printTopLevelParents = () => {
+  commodities.forEach((commodity, i) => {
+    //  console.log("for", i);
+    const topLevelParentIndex = findTopLevelCommodityParent(i);
+
+    console.log(
+      commodity.prcm_FullName,
+      ":",
+      commodities[topLevelParentIndex].prcm_FullName,
+    );
+  });
+};
+
+const findTopLevelCommodityParent = (i) => {
+  // [{
+  //     "prcm_CommodityId": 537,
+  //     "prcm_ParentId": 535,
+  //     "prcm_Level": 5,
+  //     "prcm_name": "Yellow",
+  //     "prcm_commoditycode": "Yellow",
+  //     "prcm_DisplayOrder": 4840,
+  //     "prcm_FullName": "Yellow Tomato"
+  // }],
+
+  if (commodities[i].prcm_Level != 1) {
+    const parentID = commodities[i].prcm_ParentId;
+    const index = commodities.findIndex(
+      (commodity) => commodity.prcm_CommodityId === parentID,
+    );
+    // top level not found...
+    // continue recuursion
+    return findTopLevelCommodityParent(index);
+  } else {
+    // found the TopLevetParent - Stop reccursion
+    return i;
+  }
+};
+
+// this function adds options in the
+// .bbs-mulSel's menu.
+
+const mulSel_createOpt_Commodities = (optionId) => {
+  const mulSel = document.querySelector("#commodity-mulSel");
+
+  // TODO:PT - low priority, the bootstrap dropdown is still opening
+  // even if you have disabled the button using the filedset.
+  // This is due to the data-bs-toggle="dropdown" set on a div and
+  // not on a button.
+
+  // Clear the existing multiseled tags
+  mulSel.querySelector(".mulSel-tag-container").innerHTML = "";
+
+  const optionContainer = mulSel.querySelector("ul.dropdown-menu");
+
+  // clear the previous list
+  optionContainer.innerHTML = "";
+  // populate the mulSel
+
+  commodities.forEach((commodity, i) => {
+    const topLevelParentIndex = findTopLevelCommodityParent(i);
+
+    if (topLevelParentIndex == i) {
+    }
+
+    let name = commodity.prcm_FullName;
+
+    let parentName = commodities[topLevelParentIndex].prcm_FullName;
+
+    let allClass = "";
+    if (topLevelParentIndex == i) {
+      // this is the TopLevelParent itself
+      // parentName = "All " + parentName;
+      name = "* All " + name;
+      allClass = "tw-font-semibold";
+    }
+
+    const outer = document.createElement("li");
+    optionContainer.appendChild(outer);
+    const option = document.createElement("button");
+    outer.appendChild(option);
+
+    const label = `${name} ${parentName}`;
+    const tagClass = "c-" + commodities[topLevelParentIndex].prcm_CommodityId;
+
+    outer.setAttribute(
+      "onclick",
+      `mulSel_onclickOpt_Commodities(event, "${commodities.prcm_CommodityId}")`,
+    );
+
+    outer.setAttribute("data-mulSel_id", commodities.prcm_CommodityId);
+    outer.setAttribute("data-search_string", label);
+
+    option.setAttribute("tabindex", "-1");
+    option.setAttribute("class", "bbsButton bbsButton-menu-item dropdown-item");
+    option.setAttribute("role", "option");
+    option.setAttribute("type", "button");
+    option.innerHTML = `
+      <div class="tw-flex tw-gap-2">
+        <span class="text-label ${allClass}">${name}</span>
+        <span class="bbsButton bbsButton-tag-secondary smaller ${tagClass}">${parentName}</span>
+      </div>
+      <span class="msicon notranslate">check</span>
+     `;
+  });
+};
+
+// call the above function
+(() => {
+  mulSel_createOpt_Commodities();
+})();
+
+// When you need to add tags from the
+// .bbs-mulSel. call this function with the value,
+// this will add the tags in the .mulSel-tag-container
+// if it exits or append one in the mulSel
+const mulSel_onclickOpt_Commodities = (event, optionId) => {
+  // states e.g.
+  // [{
+  //   prst_StateId: 1,
+  //   prst_State: "Alabama",
+  //   prst_CountryId: 1,
+  //   prst_Abbreviation: "AL",
+  // }],
+
+  // find the state
+  const stateobject = states.find((state) => state.prst_StateId == optionId);
+
+  event.stopPropagation();
+  const mulSelParent = event.currentTarget.closest(".bbs-mulSel");
+
+  const tagContainer = getOrCreateTagContainer(mulSelParent);
+
+  // check if there is any tag with that value exist in the parent
+  const tagElement = tagContainer.querySelector(
+    `button[data-mulSel_id="${optionId}"]`,
+  );
+
+  if (!tagElement) {
+    // create the tag if it does not exists
+    const newTag = document.createElement("button");
+    newTag.setAttribute("class", "bbsButton bbsButton-tag-secondary small");
+    newTag.setAttribute("data-mulSel_id", optionId);
+    newTag.setAttribute("onclick", "mulSel_onclickTag(event)");
+    newTag.innerHTML = `
+    <span>${stateobject.prst_State}</span>
+    <span class="msicon notranslate">clear</span>
+    `;
+    tagContainer.appendChild(newTag);
+
+    // mark option as selected
+    const menuoption = event.currentTarget.closest("li");
+    menuoption.classList.add("selected");
+  } else {
+    // remove the tag element and mark the item non selected
+    tagElement.remove();
+    // mark option as unselected
+    const menuoption = event.currentTarget.closest("li");
+    menuoption.classList.remove("selected");
+  }
+
+  // focus the input
+  mulSelParent.querySelector("input").focus();
+};
