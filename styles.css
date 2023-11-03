@@ -187,37 +187,34 @@ a {
         .msicon {
           @apply tw-pt-[1px];
         }
-        &.c-1 {
-          /* 1	  |	Flower/Plant/Tree */
-          @apply tw-bg-yellow-50;
-        }
-        &.c-16 {
-          /* 16	|	Food (non-produce) */
-          @apply tw-bg-slate-50;
-        }
-        &.c-37 {
-          /* 37	|	Fruit */
-          @apply tw-bg-red-50;
-        }
-        &.c-248 {
-          /* 248	|	Herb */
-          @apply tw-bg-cyan-50;
-        }
-        &.c-271 {
-          /* 271	|	Nut */
-          @apply tw-bg-sky-50;
-        }
-        &.c-287 {
-          /* 287	|	Spice */
-          @apply tw-bg-purple-50;
-        }
-        &.c-291 {
-          /* 291	|	Vegetable */
-          @apply tw-bg-green-50;
-        }
-
-
-
+      }
+      &.c-1 {
+        /* 1	  |	Flower/Plant/Tree */
+        @apply tw-bg-yellow-50;
+      }
+      &.c-16 {
+        /* 16	|	Food (non-produce) */
+        @apply tw-bg-slate-50;
+      }
+      &.c-37 {
+        /* 37	|	Fruit */
+        @apply tw-bg-red-50;
+      }
+      &.c-248 {
+        /* 248	|	Herb */
+        @apply tw-bg-cyan-50;
+      }
+      &.c-271 {
+        /* 271	|	Nut */
+        @apply tw-bg-sky-50;
+      }
+      &.c-287 {
+        /* 287	|	Spice */
+        @apply tw-bg-purple-50;
+      }
+      &.c-291 {
+        /* 291	|	Vegetable */
+        @apply tw-bg-green-50;
       }
     }
     /* Menu item button -- supposed to in to a menu or top-nav */

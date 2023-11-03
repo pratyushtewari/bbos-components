@@ -531,7 +531,6 @@ const toggleZipcodeInput = (checked, id) => {
   }
 };
 
-
 const printTopLevelParents = () => {
   commodities.forEach((commodity, i) => {
     //  console.log("for", i);
@@ -618,10 +617,10 @@ const mulSel_createOpt_Commodities = (optionId) => {
 
     outer.setAttribute(
       "onclick",
-      `mulSel_onclickOpt_Commodities(event, "${commodities.prcm_CommodityId}")`,
+      `mulSel_onclickOpt_Commodities(event, "${commodity.prcm_CommodityId}", "${tagClass}")`,
     );
 
-    outer.setAttribute("data-mulSel_id", commodities.prcm_CommodityId);
+    outer.setAttribute("data-mulSel_id", commodity.prcm_CommodityId);
     outer.setAttribute("data-search_string", label);
 
     option.setAttribute("tabindex", "-1");
@@ -647,17 +646,11 @@ const mulSel_createOpt_Commodities = (optionId) => {
 // .bbs-mulSel. call this function with the value,
 // this will add the tags in the .mulSel-tag-container
 // if it exits or append one in the mulSel
-const mulSel_onclickOpt_Commodities = (event, optionId) => {
-  // states e.g.
-  // [{
-  //   prst_StateId: 1,
-  //   prst_State: "Alabama",
-  //   prst_CountryId: 1,
-  //   prst_Abbreviation: "AL",
-  // }],
-
-  // find the state
-  const stateobject = states.find((state) => state.prst_StateId == optionId);
+const mulSel_onclickOpt_Commodities = (event, optionId, tagClass) => {
+  // find the commodity
+  const commodity = commodities.find(
+    (commodity) => commodity.prcm_CommodityId == optionId,
+  );
 
   event.stopPropagation();
   const mulSelParent = event.currentTarget.closest(".bbs-mulSel");
@@ -668,15 +661,19 @@ const mulSel_onclickOpt_Commodities = (event, optionId) => {
   const tagElement = tagContainer.querySelector(
     `button[data-mulSel_id="${optionId}"]`,
   );
+  // const tagClass = "c-" + commodities[topLevelParentIndex].prcm_CommodityId;
 
   if (!tagElement) {
     // create the tag if it does not exists
     const newTag = document.createElement("button");
-    newTag.setAttribute("class", "bbsButton bbsButton-tag-secondary small");
+    newTag.setAttribute(
+      "class",
+      `bbsButton bbsButton-tag-secondary small ${tagClass}`,
+    );
     newTag.setAttribute("data-mulSel_id", optionId);
     newTag.setAttribute("onclick", "mulSel_onclickTag(event)");
     newTag.innerHTML = `
-    <span>${stateobject.prst_State}</span>
+    <span>${commodity.prcm_FullName}</span>
     <span class="msicon notranslate">clear</span>
     `;
     tagContainer.appendChild(newTag);
