@@ -4,7 +4,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 export default {
   prefix: "tw-",
-  content: ["./index.html", "./src/**/*.js"],
+  content: ["./index.html", "./playground.html", "./search.html"],
   theme: {
     extend: {
       colors: {

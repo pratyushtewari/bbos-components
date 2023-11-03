@@ -758,43 +758,43 @@
                             <div class="bbs-radio-input">
                               <input
                                 type="radio"
-                                id="country-usa"
+                                id="radio_country_usa"
                                 name="select-country"
-                                onchange="mulSel_createOpt_CountryState(event, '1')"
+                                onchange="mulSel_createOpt_CountryState('1')"
                                 value="usa"
                               />
-                              <label for="country-usa">USA</label>
+                              <label for="radio_country_usa">USA</label>
                             </div>
                             <div class="bbs-radio-input">
                               <input
                                 type="radio"
-                                id="country-canada"
+                                id="radio_country_canada"
                                 name="select-country"
-                                onchange="mulSel_createOpt_CountryState(event, '2')"
+                                onchange="mulSel_createOpt_CountryState('2')"
                                 value="canada"
                               />
-                              <label for="country-canada">Canada</label>
+                              <label for="radio_country_canada">Canada</label>
                             </div>
                             <div class="bbs-radio-input">
                               <input
                                 type="radio"
-                                id="country-mexico"
+                                id="radio_country_mexico"
                                 name="select-country"
-                                onchange="mulSel_createOpt_CountryState(event, '3')"
+                                onchange="mulSel_createOpt_CountryState('3')"
                                 value="mexico"
                               />
-                              <label for="country-mexico">Mexico</label>
+                              <label for="radio_country_mexico">Mexico</label>
                             </div>
                             <div class="bbs-radio-input">
                               <input
                                 type="radio"
-                                id="country-none"
+                                id="radio_country_none"
                                 name="select-country"
                                 onchange="selectNoneCountry(event)"
                                 value="none"
                                 checked
                               />
-                              <label for="country-none">None</label>
+                              <label for="radio_country_none">None</label>
                             </div>
                           </div>
                           <div data-info="Other Country" class="input-wrapper">
@@ -802,12 +802,12 @@
                               <div class="bbs-radio-input">
                                 <input
                                   type="radio"
-                                  id="country-other"
+                                  id="radio_country_other"
                                   name="select-country"
-                                  onchange="enableOtherCountriesInput(event, 'otherCountries')"
+                                  onchange="enableOtherCountriesInput('otherCountries')"
                                   value="other"
                                 />
-                                <label for="country-other">Other</label>
+                                <label for="radio_country_other">Other</label>
                               </div>
 
                               <div class="tw-w-full">
@@ -837,10 +837,7 @@
                           >
                             <label for="na-states-input">State</label>
 
-                            <div
-                              class="bbs-mulSel"
-                              id="countryState-mulSel"
-                            >
+                            <div class="bbs-mulSel" id="countryState-mulSel">
                               <div class="mulSel-tag-container"></div>
 
                               <div
@@ -869,7 +866,7 @@
                               </div>
                               <ul class="dropdown-menu tw-w-full" role="menu">
                                 <!-- // this will be filled by javascript function
-                                      // mulSel_createOpt_CountryState (event, country)-->
+                                      // mulSel_createOpt_CountryState (country)-->
                               </ul>
                             </div>
                             <p class="caption">US, Canada or Mexico only</p>
@@ -895,10 +892,7 @@
                             Terminal Markets
                           </label>
 
-                          <div
-                            class="bbs-mulSel"
-                            id="terminalMkt-mulSel"
-                          >
+                          <div class="bbs-mulSel" id="terminalMkt-mulSel">
                             <div class="mulSel-tag-container"></div>
 
                             <div
@@ -927,7 +921,7 @@
                             </div>
                             <ul class="dropdown-menu tw-w-full" role="menu">
                               <!-- // this will be filled by javascript function
-                                      // mulSel_createOpt_CountryState (event, country)-->
+                                      // mulSel_createOpt_CountryState (country)-->
                             </ul>
                           </div>
                         </div>
@@ -1055,10 +1049,7 @@
                               >
                             </a>
                           </div>
-                          <div
-                            class="bbs-mulSel"
-                            id="commodity-mulSel"
-                          >
+                          <div class="bbs-mulSel" id="commodity-mulSel">
                             <div class="mulSel-tag-container"></div>
 
                             <div
@@ -1087,7 +1078,7 @@
                             </div>
                             <ul class="dropdown-menu tw-w-full" role="menu">
                               <!-- // this will be filled by javascript function
-                                      // mulSel_createOpt_CountryState (event, country)-->
+                                      // mulSel_createOpt_CountryState (country)-->
                             </ul>
                           </div>
                         </div>
@@ -1281,13 +1272,9 @@
                         <hr />
                         <!-- Produce Buyer -->
                         <div class="input-wrapper">
-
                           <div class="tw-flex tw-justify-between">
-                            <p class="label"
-                              >Produce Buyer</label
-                            >
+                            <p class="label">Produce Buyer</p>
                             <div>
-
                               <button
                                 href="/BBOS/KnowYourCommodity.aspx"
                                 class="bbsButton bbsButton-tertiary small"
@@ -1306,7 +1293,6 @@
                               </div>
                             </div>
                           </div>
-
                         </div>
                         <div class="input-wrapper">
                           <div class="tw-grid tw-grid-cols-2 tw-gap-y-2">
@@ -1722,7 +1708,20 @@
         </div>
       </div>
     </footer>
-
+    <script>
+      // Hack to overcome aspx creating these objects and replacing the actual ids.
+      const radio_country_none = document.getElementById("radio_country_none");
+      const radio_country_usa = document.getElementById("radio_country_usa");
+      const radio_country_canada = document.getElementById(
+        "radio_country_canada",
+      );
+      const radio_country_mexico = document.getElementById(
+        "radio_country_mexico",
+      );
+      const radio_country_other = document.getElementById(
+        "radio_country_other",
+      );
+    </script>
     <script async src="main.js"></script>
 
     <script>

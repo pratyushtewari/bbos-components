@@ -783,216 +783,336 @@ const terminalMarkets = [
   {
     prtm_TerminalMarketId: "0",
     prtm_FullMarketName:
-      "Jefferson County Truck Growers Association/Alabama Farmers Market | Birmingham, AL",
+      "Jefferson County Truck Growers Association/Alabama Farmers Market",
+    prtm_City: "Birmingham",
+    prtm_State: "AL",
   },
   {
     prtm_TerminalMarketId: "1",
-    prtm_FullMarketName: "Montgomery State Farmers Market | Montgomery, AL",
+    prtm_FullMarketName: "Montgomery State Farmers Market",
+    prtm_City: "Montgomery",
+    prtm_State: "AL",
   },
   {
     prtm_TerminalMarketId: "2",
-    prtm_FullMarketName:
-      "Los Angeles Wholesale Produce Market | Los Angeles, CA",
+    prtm_FullMarketName: "Los Angeles Wholesale Produce Market",
+    prtm_City: "Los Angeles",
+    prtm_State: "CA",
   },
   {
     prtm_TerminalMarketId: "3",
-    prtm_FullMarketName: "Seventh Street City Market | Los Angeles, CA",
+    prtm_FullMarketName: "Seventh Street City Market",
+    prtm_City: "Los Angeles",
+    prtm_State: "CA",
   },
   {
     prtm_TerminalMarketId: "4",
-    prtm_FullMarketName: "Oakland Produce Mark | Oakland, CA",
+    prtm_FullMarketName: "Oakland Produce Mark",
+    prtm_City: "Oakland",
+    prtm_State: "CA",
   },
   {
     prtm_TerminalMarketId: "5",
-    prtm_FullMarketName: "The SF Mark | San Francisco, CA",
+    prtm_FullMarketName: "The SF Mark",
+    prtm_City: "San Francisco",
+    prtm_State: "CA",
   },
   {
     prtm_TerminalMarketId: "6",
-    prtm_FullMarketName: "Golden Gate Produce Terminal | So. San Francisco, CA",
+    prtm_FullMarketName: "Golden Gate Produce Terminal",
+    prtm_City: "So. San Francisco",
+    prtm_State: "CA",
   },
   {
     prtm_TerminalMarketId: "7",
-    prtm_FullMarketName: "State of Connecticut Regional Market | Hartford, CT",
+    prtm_FullMarketName: "State of Connecticut Regional Market",
+    prtm_City: "Hartford",
+    prtm_State: "CT",
   },
   {
     prtm_TerminalMarketId: "8",
-    prtm_FullMarketName: "Florida City State Farmers Market | Florida City, FL",
+    prtm_FullMarketName: "Florida City State Farmers Market",
+    prtm_City: "Florida City",
+    prtm_State: "FL",
   },
   {
     prtm_TerminalMarketId: "9",
-    prtm_FullMarketName: "Fort Myers State Farmers Market | Fort Myers, FL",
+    prtm_FullMarketName: "Fort Myers State Farmers Market",
+    prtm_City: "Fort Myers",
+    prtm_State: "FL",
   },
   {
     prtm_TerminalMarketId: "10",
-    prtm_FullMarketName: "Fort Pierce State Farmers Market | Fort Pierce, FL",
+    prtm_FullMarketName: "Fort Pierce State Farmers Market",
+    prtm_City: "Fort Pierce",
+    prtm_State: "FL",
   },
   {
     prtm_TerminalMarketId: "11",
-    prtm_FullMarketName: "Immokalee State Farmers Market | Immokalee, FL",
+    prtm_FullMarketName: "Immokalee State Farmers Market",
+    prtm_City: "Immokalee",
+    prtm_State: "FL",
   },
   {
     prtm_TerminalMarketId: "12",
-    prtm_FullMarketName: "Miami Produce Cent | Miami, FL",
+    prtm_FullMarketName: "Miami Produce Cent",
+    prtm_City: "Miami",
+    prtm_State: "FL",
   },
   {
     prtm_TerminalMarketId: "13",
-    prtm_FullMarketName: "Plant City State Farmers Market | Plant City, FL",
+    prtm_FullMarketName: "Plant City State Farmers Market",
+    prtm_City: "Plant City",
+    prtm_State: "FL",
   },
   {
     prtm_TerminalMarketId: "14",
-    prtm_FullMarketName:
-      "Edward L. Myrick State Farmers Market | Pompano Beach, FL",
+    prtm_FullMarketName: "Edward L. Myrick State Farmers Market",
+    prtm_City: "Pompano Beach",
+    prtm_State: "FL",
   },
   {
     prtm_TerminalMarketId: "15",
-    prtm_FullMarketName: "Tampa Wholesale Produce Market | Tampa, FL",
+    prtm_FullMarketName: "Tampa Wholesale Produce Market",
+    prtm_City: "Tampa",
+    prtm_State: "FL",
   },
   {
     prtm_TerminalMarketId: "16",
-    prtm_FullMarketName: "Cordele State Farmers Market | Cordele, GA",
+    prtm_FullMarketName: "Cordele State Farmers Market",
+    prtm_City: "Cordele",
+    prtm_State: "GA",
   },
   {
     prtm_TerminalMarketId: "17",
-    prtm_FullMarketName: "Atlanta State Farmers Market | Forest Park, GA",
+    prtm_FullMarketName: "Atlanta State Farmers Market",
+    prtm_City: "Forest Park",
+    prtm_State: "GA",
   },
   {
     prtm_TerminalMarketId: "18",
-    prtm_FullMarketName: "Savannah State Farmers Market | Savannah, GA",
+    prtm_FullMarketName: "Savannah State Farmers Market",
+    prtm_City: "Savannah",
+    prtm_State: "GA",
   },
   {
     prtm_TerminalMarketId: "19",
-    prtm_FullMarketName: "Thomasville State Farmers Market | Thomasville, GA",
+    prtm_FullMarketName: "Thomasville State Farmers Market",
+    prtm_City: "Thomasville",
+    prtm_State: "GA",
   },
   {
     prtm_TerminalMarketId: "20",
-    prtm_FullMarketName: "Chicago International Produce Market | Chicago, IL",
+    prtm_FullMarketName: "Chicago International Produce Market",
+    prtm_City: "Chicago",
+    prtm_State: "IL",
   },
   {
     prtm_TerminalMarketId: "21",
-    prtm_FullMarketName: "Louisville Produce Terminal | Louisville, KY",
+    prtm_FullMarketName: "Louisville Produce Terminal",
+    prtm_City: "Louisville",
+    prtm_State: "KY",
   },
   {
     prtm_TerminalMarketId: "22",
-    prtm_FullMarketName: "New England Produce Center | Chelsea, MA",
+    prtm_FullMarketName: "New England Produce Center",
+    prtm_City: "Chelsea",
+    prtm_State: "MA",
   },
   {
     prtm_TerminalMarketId: "23",
-    prtm_FullMarketName: "Maryland Wholesale Produce Market | Jessup, MD",
+    prtm_FullMarketName: "Maryland Wholesale Produce Market",
+    prtm_City: "Jessup",
+    prtm_State: "MD",
   },
   {
     prtm_TerminalMarketId: "24",
-    prtm_FullMarketName: "Detroit Eastern Market | Detroit, MI",
+    prtm_FullMarketName: "Detroit Eastern Market",
+    prtm_City: "Detroit",
+    prtm_State: "MI",
   },
   {
     prtm_TerminalMarketId: "25",
-    prtm_FullMarketName: "Detroit Produce Terminal | Detroit, MI",
+    prtm_FullMarketName: "Detroit Produce Terminal",
+    prtm_City: "Detroit",
+    prtm_State: "MI",
   },
   {
     prtm_TerminalMarketId: "26",
-    prtm_FullMarketName: "St. Louis Produce Market | St. Louis, MO",
+    prtm_FullMarketName: "St. Louis Produce Market",
+    prtm_City: "St. Louis",
+    prtm_State: "MO",
   },
   {
     prtm_TerminalMarketId: "27",
-    prtm_FullMarketName: "Chihuahua Wholesale Produce Market | Chihuahua, MX",
+    prtm_FullMarketName: "Chihuahua Wholesale Produce Market",
+    prtm_City: "Chihuahua",
+    prtm_State: "MX",
   },
   {
     prtm_TerminalMarketId: "28",
-    prtm_FullMarketName: "Culiacan Wholesale Produce Market | Culiacan, MX",
+    prtm_FullMarketName: "Culiacan Wholesale Produce Market",
+    prtm_City: "Culiacan",
+    prtm_State: "MX",
   },
   {
     prtm_TerminalMarketId: "29",
-    prtm_FullMarketName:
-      "Guadalajara Wholesale Produce Market | Guadalajara, MX",
+    prtm_FullMarketName: "Guadalajara Wholesale Produce Market",
+    prtm_City: "Guadalajara",
+    prtm_State: "MX",
   },
   {
     prtm_TerminalMarketId: "30",
-    prtm_FullMarketName:
-      "Mexico City Wholesale Produce Market | Mexico City, MX",
+    prtm_FullMarketName: "Mexico City Wholesale Produce Market",
+    prtm_City: "Mexico City",
+    prtm_State: "MX",
   },
   {
     prtm_TerminalMarketId: "31",
-    prtm_FullMarketName:
-      "Western North Carolina Farmers Market | Asheville, NC",
+    prtm_FullMarketName: "Western North Carolina Farmers Market",
+    prtm_City: "Asheville",
+    prtm_State: "NC",
   },
   {
     prtm_TerminalMarketId: "32",
-    prtm_FullMarketName: "Raleigh Farmers Market | Raleigh, NC",
+    prtm_FullMarketName: "Raleigh Farmers Market",
+    prtm_City: "Raleigh",
+    prtm_State: "NC",
   },
   {
     prtm_TerminalMarketId: "33",
-    prtm_FullMarketName:
-      "Vineland Co-op Produce Auction Assn., Inc. | Vineland, NJ",
+    prtm_FullMarketName: "Vineland Co-op Produce Auction Assn., Inc.",
+    prtm_City: "Vineland",
+    prtm_State: "NJ",
   },
   {
     prtm_TerminalMarketId: "34",
-    prtm_FullMarketName:
-      "Hunts Point Terminal Produce Co-op Association, Inc. | Bronx, NY",
+    prtm_FullMarketName: "Hunts Point Terminal Produce Co-op Association, Inc.",
+    prtm_City: "Bronx",
+    prtm_State: "NY",
   },
   {
     prtm_TerminalMarketId: "35",
-    prtm_FullMarketName: "Brooklyn Terminal Market | Brooklyn, NY",
+    prtm_FullMarketName: "Brooklyn Terminal Market",
+    prtm_City: "Brooklyn",
+    prtm_State: "NY",
   },
   {
     prtm_TerminalMarketId: "36",
-    prtm_FullMarketName: "Niagara Frontier Food Terminal | Buffalo, NY",
+    prtm_FullMarketName: "Niagara Frontier Food Terminal",
+    prtm_City: "Buffalo",
+    prtm_State: "NY",
   },
   {
     prtm_TerminalMarketId: "37",
-    prtm_FullMarketName: "Capital District Regional Market | Menands, NY",
+    prtm_FullMarketName: "Capital District Regional Market",
+    prtm_City: "Menands",
+    prtm_State: "NY",
   },
   {
     prtm_TerminalMarketId: "38",
-    prtm_FullMarketName:
-      "Genesee Valley Regional Market Authority | Rochester, NY",
+    prtm_FullMarketName: "Genesee Valley Regional Market Authority",
+    prtm_City: "Rochester",
+    prtm_State: "NY",
   },
   {
     prtm_TerminalMarketId: "39",
-    prtm_FullMarketName:
-      "Central New York Regional Market Authority | Syracuse, NY",
+    prtm_FullMarketName: "Central New York Regional Market Authority",
+    prtm_City: "Syracuse",
+    prtm_State: "NY",
   },
   {
     prtm_TerminalMarketId: "40",
-    prtm_FullMarketName: "Cleveland Produce Terminal | Cleveland, OH",
+    prtm_FullMarketName: "Cleveland Produce Terminal",
+    prtm_City: "Cleveland",
+    prtm_State: "OH",
   },
   {
     prtm_TerminalMarketId: "41",
-    prtm_FullMarketName: "Produce Terminal Company | Columbus, OH",
+    prtm_FullMarketName: "Produce Terminal Company",
+    prtm_City: "Columbus",
+    prtm_State: "OH",
   },
   {
     prtm_TerminalMarketId: "42",
-    prtm_FullMarketName: "Ontario Food Terminal | Toronto, ON",
+    prtm_FullMarketName: "Ontario Food Terminal",
+    prtm_City: "Toronto",
+    prtm_State: "ON",
   },
   {
     prtm_TerminalMarketId: "43",
-    prtm_FullMarketName:
-      "Philadelphia Wholesale Produce Market | Philadelphia, PA",
+    prtm_FullMarketName: "Philadelphia Wholesale Produce Market",
+    prtm_City: "Philadelphia",
+    prtm_State: "PA",
   },
   {
     prtm_TerminalMarketId: "44",
-    prtm_FullMarketName:
-      "South Carolina State Farmers Market | West Columbia, SC",
+    prtm_FullMarketName: "South Carolina State Farmers Market",
+    prtm_City: "West Columbia",
+    prtm_State: "SC",
   },
   {
     prtm_TerminalMarketId: "45",
-    prtm_FullMarketName: "Houston Produce Center | Houston, TX",
+    prtm_FullMarketName: "Houston Produce Center",
+    prtm_City: "Houston",
+    prtm_State: "TX",
   },
   {
     prtm_TerminalMarketId: "46",
-    prtm_FullMarketName: "McAllen Produce Terminal Market | McAllen, TX",
+    prtm_FullMarketName: "McAllen Produce Terminal Market",
+    prtm_City: "McAllen",
+    prtm_State: "TX",
   },
   {
     prtm_TerminalMarketId: "47",
-    prtm_FullMarketName:
-      "San Antonio Produce Terminal Market | San Antonio, TX",
+    prtm_FullMarketName: "San Antonio Produce Terminal Market",
+    prtm_City: "San Antonio",
+    prtm_State: "TX",
   },
   {
     prtm_TerminalMarketId: "48",
-    prtm_FullMarketName:
-      "San Antonio Wholesale Produce Market | San Antonio, TX",
+    prtm_FullMarketName: "San Antonio Wholesale Produce Market",
+    prtm_City: "San Antonio",
+    prtm_State: "TX",
   },
 ];
 
+const countryState_setData = (countryId, csvStateIds) => {
+  // countryState_setData(1) - just select USA no state
+  // countryState_setData(1, "") - Just select USA no state
+  // countryState_setData(1, "1,2,3,4"); - USA and first four state
+  // countryState_setData(5); -- Other - Aruba
+  // countryState_setData(5, ""); -- Other - Aruba
+  // countryState_setData(5, "1,2,3,4"); -- Other - Aruba
+
+  const radioElement =
+    !countryId || countryId == 0
+      ? radio_country_none
+      : countryId == 1
+      ? radio_country_usa
+      : countryId == 2
+      ? radio_country_canada
+      : countryId == 3
+      ? radio_country_mexico
+      : radio_country_other;
+
+  radioElement.checked = true;
+  radioElement.onchange();
+
+  if (countryId == null || countryId < 1) {
+    // select nonel
+    // already happened above.
+  } else if (countryId < 4) {
+    mulSel_filldata("countryState-mulSel", csvStateIds);
+  } else {
+    // select other country and its id
+    const otherCountrySelect = enableOtherCountriesInput("otherCountries");
+    otherCountrySelect.value = countryId;
+  }
+};
+
 const mulSel_filldata = (mulSel_id, csvOptionIds) => {
+  if (csvOptionIds == null) return;
   const optionIds = csvOptionIds.split(",");
   const mulSel_parent = document.querySelector("#" + mulSel_id);
   optionIds.forEach((optionId) => {
@@ -1012,7 +1132,7 @@ const mulSel_onclickTag = (event) => {
 
   const mulSelParent = event.currentTarget.closest(".bbs-mulSel");
   const menu = mulSelParent.querySelector(".dropdown-menu");
-  const mulSel_id = event.currentTarget.dataset.mulSel_id;
+  const mulSel_id = event.currentTarget.getAttribute("data-mulSel_id");
 
   const menuitem = menu.querySelector(`li[data-mulSel_id="${mulSel_id}"]`);
   if (menuitem) menuitem.classList.remove("selected");
@@ -1115,7 +1235,7 @@ const getOrCreateTagContainer = (mulSelParent) => {
 // Based on the country,
 // this function adds options in the
 // .bbs-mulSel's menu.
-const mulSel_createOpt_TerminalMKT = () => {
+const mulSel_createOpt_TerminalMkt = () => {
   const mulSel = document.querySelector("#terminalMkt-mulSel");
   if (mulSel == null) return;
   // Clear the existing multiseled tags
@@ -1127,15 +1247,20 @@ const mulSel_createOpt_TerminalMKT = () => {
   optionContainer.innerHTML = "";
 
   // const terminalMarkets = [
-  //   {
+  // {
   //   prtm_TerminalMarketId: "0",
   //   prtm_FullMarketName:
-  //     "Jefferson County Truck Growers Association/Alabama Farmers Market | Birmingham, AL",
-  // }],
+  //     "Jefferson County Truck Growers Association/Alabama Farmers Market",
+  //   prtm_City: "Birmingham",
+  //   prtm_State: "AL",
+  // }
+  // ],
 
   // populate the state mulSel
   for (let i in terminalMarkets) {
-    const [name, city] = terminalMarkets[i].prtm_FullMarketName.split(" | ");
+    const name = terminalMarkets[i].prtm_FullMarketName;
+    const city = terminalMarkets[i].prtm_City;
+    const state = terminalMarkets[i].prtm_State;
 
     const outer = document.createElement("li");
     optionContainer.appendChild(outer);
@@ -1152,10 +1277,7 @@ const mulSel_createOpt_TerminalMKT = () => {
       "data-mulSel_id",
       terminalMarkets[i].prtm_TerminalMarketId,
     );
-    outer.setAttribute(
-      "data-search_string",
-      decodeURI(terminalMarkets[i].prtm_FullMarketName),
-    );
+    outer.setAttribute("data-search_string", name + " " + city + " " + state);
     option.setAttribute("tabindex", "-1");
     option.setAttribute("class", "bbsButton bbsButton-menu-item dropdown-item");
     option.setAttribute("role", "option");
@@ -1163,7 +1285,7 @@ const mulSel_createOpt_TerminalMKT = () => {
     option.innerHTML = `
       <div class="tw-flex tw-flex-col">
         <span class="text-label">${name}</span>
-        <span class="caption">${city}</span>
+        <span class="caption">${city}, ${state}</span>
       </div>
       <span class="msicon notranslate">check</span>
       `;
@@ -1172,7 +1294,7 @@ const mulSel_createOpt_TerminalMKT = () => {
 
 // call the above function
 (() => {
-  mulSel_createOpt_TerminalMKT();
+  mulSel_createOpt_TerminalMkt();
 })();
 
 const mulSel_onclickOpt_TerminalMkt = (event, optionId) => {
@@ -1193,7 +1315,9 @@ const mulSel_onclickOpt_TerminalMkt = (event, optionId) => {
 
   const tagContainer = getOrCreateTagContainer(mulSelParent);
 
-  const [name, city] = terminalMarket.prtm_FullMarketName.split(" | ");
+  const name = terminalMarket.prtm_FullMarketName;
+  const city = terminalMarket.prtm_City;
+
   const tagLabel = name.substring(0, 15) + "..., " + city;
 
   // check if there is any tag with that value exist in the parent
@@ -1231,7 +1355,7 @@ const mulSel_onclickOpt_TerminalMkt = (event, optionId) => {
 // Based ont the country,
 // this function adds options in the
 // .bbs-mulSel's menu.
-const mulSel_createOpt_CountryState = (event, optionId) => {
+const mulSel_createOpt_CountryState = (optionId) => {
   // optionId 1 == USA, 2 == Canada, 3 == Mexico
 
   // clear and disable other-countries input
@@ -1277,9 +1401,7 @@ const mulSel_createOpt_CountryState = (event, optionId) => {
     const option = document.createElement("button");
     outer.appendChild(option);
 
-    const label = decodeURI(
-      `${filteredStates[i].prst_State} (${filteredStates[i].prst_Abbreviation})`,
-    );
+    const label = `${filteredStates[i].prst_State} (${filteredStates[i].prst_Abbreviation})`;
 
     outer.setAttribute(
       "onclick",
@@ -1369,7 +1491,7 @@ const selectNoneCountry = (event) => {
 
 // This is called when Other countries
 // radio is selected.
-const enableOtherCountriesInput = (event, id) => {
+const enableOtherCountriesInput = (id) => {
   selectNoneCountry();
 
   const otherCountrySelect = document.querySelector("#" + id);
@@ -1393,12 +1515,13 @@ const enableOtherCountriesInput = (event, id) => {
 
     const option = document.createElement("option");
     option.setAttribute("value", countries[i].prcn_CountryId);
-    option.dataset.prcn_CountryId = countries[i].prcn_CountryId;
+    option.setAttribute("data-prcn_CountryId", countries[i].prcn_CountryId);
     option.innerHTML = countries[i].prcn_Country;
 
     otherCountrySelect.appendChild(option);
   }
   otherCountrySelect.focus();
+  return otherCountrySelect;
 };
 
 const clearallsearch = () => {
