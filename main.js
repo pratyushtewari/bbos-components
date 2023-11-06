@@ -692,3 +692,27 @@ const mulSel_onclickOpt_Commodities = (event, optionId, tagClass) => {
   // focus the input
   mulSelParent.querySelector("input").focus();
 };
+
+const toggleAllCheckboxes = (isChecked, idThatContainsCheckboxes) => {
+  [
+    ...document.querySelectorAll(
+      `#${idThatContainsCheckboxes}  input[type=checkbox]`,
+    ),
+  ].forEach((checkbox) => {
+    checkbox.checked = isChecked;
+  });
+};
+
+const toggleExpandCollapse = (button, idToOpenClose) => {
+  const isCollapsed =
+    button.querySelector(".msicon").innerHTML == "expand_more" ? true : false;
+  if (isCollapsed) {
+    button.querySelector(".text-label").innerHTML = "Collapse";
+    button.querySelector(".msicon").innerHTML = "expand_less";
+    document.getElementById(idToOpenClose).classList.remove("tw-hidden");
+  } else {
+    document.getElementById(idToOpenClose).classList.add("tw-hidden");
+    button.querySelector(".text-label").innerHTML = "Expand";
+    button.querySelector(".msicon").innerHTML = "expand_more";
+  }
+};
