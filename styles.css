@@ -143,6 +143,14 @@ a {
         hover:tw-bg-bg-component-hover
         active:tw-bg-bg-component-active;
       }
+      &.small {
+        @apply tw-px-1.5
+        tw-py-0.5
+        tw-text-xs;
+        .msicon {
+          @apply tw-pt-[1px];
+        }
+      }
     }
     &.bbsButton-tertiary {
       @apply tw-border-0
