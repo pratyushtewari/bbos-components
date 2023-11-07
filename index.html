@@ -1140,82 +1140,38 @@
                         </div>
                         <hr />
                         <!-- Attributes -->
-                        <div class="tw-flow-col tw-flex">
-                          <div>
-                            <p class="label">Attributes</p>
-                            <p class="caption">
-                              Selecting other country disables State, city,
-                              Terminal Market, and distance feature
-                            </p>
-                          </div>
-                          <div class="input-wrapper">
-                            <button
-                              class="bbsButton bbsButton-secondary small"
-                              onclick="toggleExpandCollapse(this, 'attributes_content')"
-                            >
-                              <span class="text-label">Expand</span>
-                              <span class="msicon notranslate"
-                                >expand_more</span
-                              >
-                            </button>
-                          </div>
-                        </div>
-                        <div id="attributes_content" class="tw-hidden">
-                          <div class="input-wrapper">
-                            <label class="normal" for="countryOfOrigin"
-                              >Country Of Origin</label
-                            >
-
-                            <select
-                              id="countryOfOrigin"
-                              aria-label="Small select example"
-                            >
-                              <option selected value="1">Any</option>
+                        <div class="input-wrapper">
+                          <label for="attributes">Attributes</label>
+                          <p class="caption">
+                            <span class="msicon notranslate">warning</span>
+                            Only one attribute is supported at this time.
+                          </p>
+                          <select
+                            id="attributes"
+                            aria-label="Small select example"
+                          >
+                            <option selected value="1">All</option>
+                            <optgroup label="Country Of Origin">
                               <option value="2">China</option>
                               <option value="3">Korea</option>
                               <option value="4">...</option>
-                            </select>
-                          </div>
-                          <div class="input-wrapper">
-                            <label class="normal" for="sizeGroup"
-                              >Size group</label
-                            >
-
-                            <select
-                              id="sizeGroup"
-                              aria-label="Small select example"
-                            >
-                              <option selected value="1">Any</option>
+                            </optgroup>
+                            <optgroup label="Size group">
                               <option value="2">Baby</option>
                               <option value="3">Long</option>
                               <option value="4">Mini</option>
-                            </select>
-                          </div>
-                          <div class="input-wrapper">
-                            <label class="normal" for="style">Style</label>
-
-                            <select aria-label="Small select example">
-                              <option selected value="1">Any</option>
+                            </optgroup>
+                            <optgroup label="Style">
                               <option value="2">Chips</option>
                               <option value="3">Pulp</option>
                               <option value="4">...</option>
-                            </select>
-                          </div>
-                          <div class="input-wrapper">
-                            <label class="normal" for="Treatment"
-                              >Treatment</label
-                            >
-
-                            <select
-                              id="Treatment"
-                              aria-label="Small select example"
-                            >
-                              <option selected value="1">Any</option>
+                            </optgroup>
+                            <optgroup label="Treatment">
                               <option value="2">Dried</option>
                               <option value="3">Frozen</option>
                               <option value="4">Pickled</option>
-                            </select>
-                          </div>
+                            </optgroup>
+                          </select>
                         </div>
                       </fieldset>
                     </div>
