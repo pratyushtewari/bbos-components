@@ -63,7 +63,7 @@ const toggleAccordion = (event) => {
     contentWrapper.style.height = "0px";
   }
 
-  // This is needed to .net form does not automatically post back
+  // This is needed so .NET form does not automatically post back
   event.preventDefault();
 };
 
@@ -98,6 +98,7 @@ const countryState_setData = (countryId, csvStateIds) => {
     // select other country and its id
     const otherCountrySelect = enableOtherCountriesInput("otherCountries");
     otherCountrySelect.value = countryId;
+    Update_UpdatePanel();
   }
 };
 
@@ -124,8 +125,11 @@ const mulSel_onclickTag = (event) => {
   const menu = mulSelParent.querySelector(".dropdown-menu");
   const mulSel_id = event.currentTarget.getAttribute("data-mulSel_id");
 
-  const menuitem = menu.querySelector(`li[data-mulSel_id="${mulSel_id}"]`);
-  if (menuitem) menuitem.classList.remove("selected");
+  const menuitem = menu.querySelector(
+    `li.selected[data-mulSel_id="${mulSel_id}"] button`,
+  );
+  menuitem.click();
+  // if (menuitem) menuitem.classList.remove("selected");
 
   const nextsibling = event.currentTarget.nextElementSibling;
   const prevsibling = event.currentTarget.previousElementSibling;
@@ -354,6 +358,7 @@ const mulSel_createOpt_CountryState = (optionId) => {
   otherCountryInput.value = "";
 
   const mulSel = document.querySelector("#countryState-mulSel");
+  if (mulSel == null) return;
 
   // TODO:PT - low priority, the bootstrap dropdown is still opening
   // even if you have disabled the button using the filedset.
@@ -472,6 +477,7 @@ const selectNoneCountry = (event) => {
 
   // disabled state and city selection
   const stateCitiselector = document.querySelector("#us-canada-mexico");
+  if (stateCitiselector == null) return;
 
   stateCitiselector.setAttribute("disabled", "disabled");
 
@@ -574,7 +580,7 @@ const findTopLevelCommodityParent = (i) => {
 
 const mulSel_createOpt_Commodities = (optionId) => {
   const mulSel = document.querySelector("#commodity-mulSel");
-
+  if (mulSel == null) return;
   // TODO:PT - low priority, the bootstrap dropdown is still opening
   // even if you have disabled the button using the filedset.
   // This is due to the data-bs-toggle="dropdown" set on a div and
@@ -600,40 +606,42 @@ const mulSel_createOpt_Commodities = (optionId) => {
     let parentName = commodities[topLevelParentIndex].prcm_FullName;
 
     let allClass = "";
+    const parent_CommodityId =
+      commodities[topLevelParentIndex].prcm_CommodityId;
+
+    let onclickFunction = `mulSel_onclickOpt_Commodities(event, "${commodity.prcm_CommodityId}", "${parent_CommodityId}")`;
+
     if (topLevelParentIndex == i) {
       // this is the TopLevelParent itself
       // parentName = "All " + parentName;
       name = "* All " + name;
       allClass = "tw-font-semibold";
+      // onclickFunction += `; handleTopLevelCommoditySelection(event, ${commodity.prcm_CommodityId});`;
     }
 
     const outer = document.createElement("li");
-    optionContainer.appendChild(outer);
-    const option = document.createElement("button");
-    outer.appendChild(option);
-
-    const label = `${name} ${parentName}`;
-    const tagClass = "c-" + commodities[topLevelParentIndex].prcm_CommodityId;
-
-    outer.setAttribute(
-      "onclick",
-      `mulSel_onclickOpt_Commodities(event, "${commodity.prcm_CommodityId}", "${tagClass}")`,
-    );
-
     outer.setAttribute("data-mulSel_id", commodity.prcm_CommodityId);
-    outer.setAttribute("data-search_string", label);
+    // set for all children the top level parent id
+    if (topLevelParentIndex != i) {
+      outer.setAttribute("data-mulSel_parentId", parent_CommodityId);
+    }
+    outer.setAttribute("data-search_string", `${name} ${parentName}`);
 
+    const option = document.createElement("button");
+    option.setAttribute("onclick", onclickFunction);
     option.setAttribute("tabindex", "-1");
     option.setAttribute("class", "bbsButton bbsButton-menu-item dropdown-item");
     option.setAttribute("role", "option");
     option.setAttribute("type", "button");
     option.innerHTML = `
-      <div class="tw-flex tw-gap-2">
-        <span class="text-label ${allClass}">${name}</span>
-        <span class="bbsButton bbsButton-tag-secondary smaller ${tagClass}">${parentName}</span>
-      </div>
-      <span class="msicon notranslate">check</span>
-     `;
+    <div class="tw-flex tw-gap-2">
+    <span class="text-label ${allClass}">${name}</span>
+    <span class="bbsButton bbsButton-tag-secondary smaller c-${parent_CommodityId}">${parentName}</span>
+    </div>
+    <span class="msicon notranslate">check</span>
+    `;
+    outer.appendChild(option);
+    optionContainer.appendChild(outer);
   });
 };
 
@@ -646,13 +654,14 @@ const mulSel_createOpt_Commodities = (optionId) => {
 // .bbs-mulSel. call this function with the value,
 // this will add the tags in the .mulSel-tag-container
 // if it exits or append one in the mulSel
-const mulSel_onclickOpt_Commodities = (event, optionId, tagClass) => {
+const mulSel_onclickOpt_Commodities = (event, optionId, parent_CommodityId) => {
   // find the commodity
   const commodity = commodities.find(
     (commodity) => commodity.prcm_CommodityId == optionId,
   );
 
   event.stopPropagation();
+
   const mulSelParent = event.currentTarget.closest(".bbs-mulSel");
 
   const tagContainer = getOrCreateTagContainer(mulSelParent);
@@ -668,12 +677,19 @@ const mulSel_onclickOpt_Commodities = (event, optionId, tagClass) => {
     const newTag = document.createElement("button");
     newTag.setAttribute(
       "class",
-      `bbsButton bbsButton-tag-secondary small ${tagClass}`,
+      `bbsButton bbsButton-tag-secondary small c-${parent_CommodityId}`,
     );
     newTag.setAttribute("data-mulSel_id", optionId);
+    newTag.setAttribute("data-mulSel_parentId", parent_CommodityId);
     newTag.setAttribute("onclick", "mulSel_onclickTag(event)");
+
+    const tagLabel =
+      (commodity.prcm_CommodityId == parent_CommodityId
+        ? "<strong>* All </strong>"
+        : "") + commodity.prcm_FullName;
+
     newTag.innerHTML = `
-    <span>${commodity.prcm_FullName}</span>
+    <span>${tagLabel}</span>
     <span class="msicon notranslate">clear</span>
     `;
     tagContainer.appendChild(newTag);
@@ -681,12 +697,46 @@ const mulSel_onclickOpt_Commodities = (event, optionId, tagClass) => {
     // mark option as selected
     const menuoption = event.currentTarget.closest("li");
     menuoption.classList.add("selected");
+
+    // Special case: the user selected a parent level
+    if (optionId == parent_CommodityId) {
+      // remove all the selected children
+      const selectedchildren = mulSelParent.querySelectorAll(
+        `li.selected[data-mulSel_parentId="${parent_CommodityId}"] button`,
+      );
+      [...selectedchildren].forEach((htmlElement) => {
+        htmlElement.click();
+      });
+
+      // disabled all the children
+      const allchildren = mulSelParent.querySelectorAll(
+        `li[data-mulSel_parentId="${parent_CommodityId}"]`,
+      );
+
+      [...allchildren].forEach((child) => {
+        child.setAttribute("disabled", "disabled");
+        child.querySelector("button").setAttribute("disabled", "disabled");
+      });
+    }
   } else {
     // remove the tag element and mark the item non selected
     tagElement.remove();
     // mark option as unselected
     const menuoption = event.currentTarget.closest("li");
     menuoption.classList.remove("selected");
+
+    // Special case: the user unselected a parent level
+    if (optionId == parent_CommodityId) {
+      // enabled all the children
+      const allchildren = mulSelParent.querySelectorAll(
+        `li[data-mulSel_parentId="${parent_CommodityId}"]`,
+      );
+
+      [...allchildren].forEach((child) => {
+        child.removeAttribute("disabled", "disabled");
+        child.querySelector("button").removeAttribute("disabled");
+      });
+    }
   }
 
   // focus the input
@@ -715,4 +765,7 @@ const toggleExpandCollapse = (button, idToOpenClose) => {
     button.querySelector(".text-label").innerHTML = "Expand";
     button.querySelector(".msicon").innerHTML = "expand_more";
   }
+
+  // This is needed so .NET form does not automatically post back
+  event.preventDefault();
 };
