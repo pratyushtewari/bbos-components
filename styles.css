@@ -566,7 +566,7 @@ a {
   .bbs-radio-input,
   .bbs-checkbox-input {
     @apply tw-flex
-    tw-items-center
+    tw-items-baseline
     tw-gap-1.5;
     input {
       @apply tw-m-0 tw-p-0;
@@ -580,6 +580,33 @@ a {
         ;
       } */
       label {
+        @apply tw-text-xs;
+      }
+    }
+  }
+  .bbs-radio-input-group,
+  .bbs-checkbox-input-group {
+    @apply tw-mt-2
+    tw-flex
+    tw-flex-wrap
+    tw-items-center
+    tw-gap-x-5
+    tw-gap-y-1;
+    li {
+      @apply tw-flex
+        tw-items-baseline
+        tw-gap-1.5;
+      input[type="radio"] {
+        @apply tw-m-0 tw-p-0 tw-pt-1;
+      }
+      label:not(.strong),
+      .label:not(.strong) {
+        @apply tw-m-0 tw-p-0 tw-font-normal;
+      }
+    }
+    &.small {
+      label,
+      .label {
         @apply tw-text-xs;
       }
     }

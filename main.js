@@ -246,7 +246,7 @@ const mulSel_createOpt_TerminalMkt = () => {
   // }
   // ],
 
-  // populate the state mulSel
+  // populate the terminalMarket mulSel
   for (let i in terminalMarkets) {
     const name = terminalMarkets[i].prtm_FullMarketName;
     const city = terminalMarkets[i].prtm_City;
@@ -342,7 +342,7 @@ const mulSel_onclickOpt_TerminalMkt = (event, optionId) => {
   mulSelParent.querySelector("input").focus();
 };
 
-// Based ont the country,
+// Based on the country,
 // this function adds options in the
 // .bbs-mulSel's menu.
 const mulSel_createOpt_CountryState = (optionId) => {

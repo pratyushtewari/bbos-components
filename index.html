@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="./styles.css" />
     <title>BBOS COMPONENTS</title>
   </head>
+
   <body class="qa tw-flex tw-flex-col tw-items-center tw-align-middle">
     <!-- TOP NAV BAR -->
 
@@ -497,35 +498,44 @@
                         </div>
                         <div class="input-wrapper">
                           <p class="label">Type</p>
-                          <div class="tw-flex tw-items-center tw-gap-4">
-                            <div class="bbs-radio-input">
-                              <input
-                                type="radio"
-                                id="type-any"
-                                name="company_type"
-                                value="type-any"
-                              />
-                              <label for="type-any">Any</label><br />
-                            </div>
-                            <div class="bbs-radio-input">
-                              <input
-                                type="radio"
-                                id="type-headquater"
-                                name="company_type"
-                                value="type-headquater"
-                              />
-                              <label for="type-headquater">Headquater</label
-                              ><br />
-                            </div>
-                            <div class="bbs-radio-input">
-                              <input
-                                type="radio"
-                                id="type-branch"
-                                name="company_type"
-                                value="type-branch"
-                              />
-                              <label for="type-branch">Branch</label>
-                            </div>
+
+                          <div class="tw-flex tw-gap-4">
+                            <ul
+                              id="contentMain_rblCompanyType"
+                              class="bbs-radio-input-group postback"
+                            >
+                              <li>
+                                <input
+                                  id="contentMain_rblCompanyType_0"
+                                  type="radio"
+                                  name="ctl00$contentMain$rblCompanyType"
+                                  value=""
+                                  checked="checked"
+                                /><label for="contentMain_rblCompanyType_0">
+                                  Any
+                                </label>
+                              </li>
+                              <li>
+                                <input
+                                  id="contentMain_rblCompanyType_1"
+                                  type="radio"
+                                  name="ctl00$contentMain$rblCompanyType"
+                                  value="H"
+                                /><label for="contentMain_rblCompanyType_1"
+                                  >Headquarter</label
+                                >
+                              </li>
+                              <li>
+                                <input
+                                  id="contentMain_rblCompanyType_2"
+                                  type="radio"
+                                  name="ctl00$contentMain$rblCompanyType"
+                                  value="B"
+                                /><label for="contentMain_rblCompanyType_2"
+                                  >Branch</label
+                                >
+                              </li>
+                            </ul>
                           </div>
                         </div>
                         <div class="input-wrapper">
@@ -1005,32 +1015,34 @@
                         <!-- Matching Criteria -->
                         <div class="input-wrapper">
                           <p class="label">Matching Criteria</p>
-
-                          <div class="tw-mt-2 tw-flex tw-gap-8">
-                            <div class="bbs-radio-input">
+                          <ul
+                            id="contentMain_rblCommoditySearchType"
+                            class="bbs-radio-input-group postback tw-grid tw-grid-cols-2"
+                          >
+                            <li>
                               <input
+                                id="contentMain_rblCommoditySearchType_0"
                                 type="radio"
-                                id="any-commodity"
-                                name="any-all-commodities"
-                                value="any-commodity"
-                                checked
-                              />
-                              <label for="any-commodity"
-                                >Any one of the selected</label
+                                name="ctl00$contentMain$rblCommoditySearchType"
+                                value="Any"
+                                checked="checked"
+                              /><label
+                                for="contentMain_rblCommoditySearchType_0"
+                                >Any of the Selected Commodities</label
                               >
-                            </div>
-                            <div class="bbs-radio-input">
+                            </li>
+                            <li>
                               <input
+                                id="contentMain_rblCommoditySearchType_1"
                                 type="radio"
-                                id="all-commodity"
-                                name="any-all-commodities"
-                                value="all-commodity"
-                              />
-                              <label for="all-commodity"
-                                >All one of the selected</label
+                                name="ctl00$contentMain$rblCommoditySearchType"
+                                value="All"
+                              /><label
+                                for="contentMain_rblCommoditySearchType_1"
+                                >All of the Selected Commodities</label
                               >
-                            </div>
-                          </div>
+                            </li>
+                          </ul>
                         </div>
                         <hr />
                         <!-- Categories -->
@@ -1042,9 +1054,7 @@
                             <a
                               href="/BBOS/KnowYourCommodity.aspx"
                               class="bbsButton bbsButton-secondary small"
-                            ><span class="msicon notranslate"
-                                >help</span
-                              >
+                              ><span class="msicon notranslate">help</span>
                               <span class="text-label">KYC</span>
                               <span class="msicon notranslate"
                                 >arrow_outward</span
@@ -1181,7 +1191,6 @@
                               <option value="4">Mini</option>
                             </select>
                           </div>
-
                           <div class="input-wrapper">
                             <label class="normal" for="style">Style</label>
 
@@ -1192,7 +1201,6 @@
                               <option value="4">...</option>
                             </select>
                           </div>
-
                           <div class="input-wrapper">
                             <label class="normal" for="Treatment"
                               >Treatment</label
@@ -1259,32 +1267,34 @@
                         <!-- Matching Criteria -->
                         <div class="input-wrapper">
                           <p class="label">Matching Criteria</p>
-
-                          <div class="tw-mt-2 tw-flex tw-gap-8">
-                            <div class="bbs-radio-input">
+                          <ul
+                            id="contentMain_rblClassificationSearchType"
+                            class="bbs-radio-input-group postback tw-grid tw-grid-cols-2"
+                          >
+                            <li>
                               <input
+                                id="contentMain_rblClassificationSearchType_0"
                                 type="radio"
-                                id="any-classification"
-                                name="any-all-commodities"
-                                value="any-classification"
-                                checked
-                              />
-                              <label for="any-classification"
-                                >Any one of the selected</label
+                                name="ctl00$contentMain$rblClassificationSearchType"
+                                value="Any"
+                                checked="checked"
+                              /><label
+                                for="contentMain_rblClassificationSearchType_0"
+                                >Any of the Selected Commodities</label
                               >
-                            </div>
-                            <div class="bbs-radio-input">
+                            </li>
+                            <li>
                               <input
+                                id="contentMain_rblClassificationSearchType_1"
                                 type="radio"
-                                id="all-classification"
-                                name="any-all-commodities"
-                                value="all-classification"
-                              />
-                              <label for="all-classification"
-                                >All one of the selected</label
+                                name="ctl00$contentMain$rblClassificationSearchType"
+                                value="All"
+                              /><label
+                                for="contentMain_rblClassificationSearchType_1"
+                                >All of the Selected Commodities</label
                               >
-                            </div>
-                          </div>
+                            </li>
+                          </ul>
                         </div>
                         <hr />
                         <!-- Produce Buyer -->
@@ -1313,203 +1323,203 @@
                             </div>
                           </div>
 
-                          <div
-                            class="input-wrapper tw-grid tw-hidden tw-grid-cols-2 tw-gap-y-2 tw-py-2"
+                          <ul
+                            class="input-wrapper bbs-checkbox-input-group small tw-grid tw-hidden tw-grid-cols-2 tw-items-start tw-gap-y-2 tw-py-2"
                             id="classification_produce_buyer_checkboxes"
                           >
-                            <div class="bbs-checkbox-input small">
+                            <li>
                               <input type="checkbox" id="buying_office" /><label
                                 class="label"
                                 for="buying_office"
                               >
                                 Buying Office (68)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="packer" /><label
                                 class="label"
                                 for="packer"
                               >
                                 Packer (1,577)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="canner" /><label
                                 class="label"
                                 for="canner"
                               >
                                 Canner (13)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="peeler" /><label
                                 class="label"
                                 for="peeler"
                               >
                                 Peeler (6)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="chipper" /><label
                                 class="label"
                                 for="chipper"
                               >
                                 Chipper (25)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="pickler" /><label
                                 class="label"
                                 for="pickler"
                               >
                                 Pickler (4)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input
                                 type="checkbox"
                                 id="commission_merchant"
                               /><label class="label" for="commission_merchant">
                                 Commission Merchant (276)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="preserver" /><label
                                 class="label"
                                 for="preserver"
                               >
                                 Preserver (5)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="processor" /><label
                                 class="label"
                                 for="processor"
                               >
                                 Processor (353)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="dehydrator" /><label
                                 class="label"
                                 for="dehydrator"
                               >
                                 Dehydrator (4)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="receiver" /><label
                                 class="label"
                                 for="receiver"
                               >
                                 Receiver (3,717)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="distributor" /><label
                                 class="label"
                                 for="distributor"
                               >
                                 Distributor (2,694)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="repacker" /><label
                                 class="label"
                                 for="repacker"
                               >
                                 Repacker (618)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="foodservice" /><label
                                 class="label"
                                 for="foodservice"
                               >
                                 Foodservice (881)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="restaurant" /><label
                                 class="label"
                                 for="restaurant"
                               >
                                 Restaurant (20)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="freezer" /><label
                                 class="label"
                                 for="freezer"
                               >
                                 Freezer (16)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="retail" /><label
                                 class="label"
                                 for="retail"
                               >
                                 Retail (1,946)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input
                                 type="checkbox"
                                 id="fresh_cut_processor"
                               /><label class="label" for="fresh_cut_processor">
                                 Fresh Cut Processor (296)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="retail" /><label
                                 class="label"
                                 for="retail"
                               >
                                 Retail (1,946)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="importer" /><label
                                 class="label"
                                 for="importer"
                               >
                                 Importer (2,577)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input
                                 type="checkbox"
                                 id="wholesale_grocer"
                               /><label class="label" for="wholesale_grocer">
                                 Wholesale Grocer (475)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="jobber" /><label
                                 class="label"
                                 for="jobber"
                               >
                                 Jobber (2,453)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input
                                 type="checkbox"
                                 id="short_haul_trucker"
                               /><label class="label" for="short_haul_trucker">
                                 Short Haul Trucker (53)
                               </label>
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="juicer" /><label
                                 class="label"
                                 for="juicer"
                               >
                                 Juicer (23)
                               </label>
-                            </div>
-                          </div>
+                            </li>
+                          </ul>
                         </div>
 
                         <hr />
@@ -1539,52 +1549,52 @@
                             </div>
                           </div>
 
-                          <div
-                            class="input-wrapper tw-grid tw-hidden tw-grid-cols-2 tw-gap-y-2 tw-py-2"
+                          <ul
+                            class="input-wrapper bbs-checkbox-input-group small tw-grid tw-hidden tw-grid-cols-2 tw-items-start tw-gap-y-2 tw-py-2"
                             id="classification_produce_seller_checkboxes"
                           >
-                            <div class="bbs-checkbox-input small">
+                            <li>
                               <input type="checkbox" id="exporter" />
                               <label class="label" for="exporter"
                                 >Exporter (1,883)</label
                               >
-                            </div>
+                            </li>
 
-                            <div class="bbs-checkbox-input small">
+                            <li>
                               <input type="checkbox" id="produce_auction" />
                               <label class="label" for="produce_auction"
                                 >Produce Auction (2)</label
                               >
-                            </div>
+                            </li>
 
-                            <div class="bbs-checkbox-input small">
+                            <li>
                               <input type="checkbox" id="food_hub" />
                               <label class="label" for="food_hub"
                                 >Food Hub (101)</label
                               >
-                            </div>
+                            </li>
 
-                            <div class="bbs-checkbox-input small">
+                            <li>
                               <input type="checkbox" id="sales_office" />
                               <label class="label" for="sales_office"
                                 >Sales Office (92)</label
                               >
-                            </div>
+                            </li>
 
-                            <div class="bbs-checkbox-input small">
+                            <li>
                               <input type="checkbox" id="grower" />
                               <label class="label" for="grower"
                                 >Grower (3,519)</label
                               >
-                            </div>
+                            </li>
 
-                            <div class="bbs-checkbox-input small">
+                            <li>
                               <input type="checkbox" id="shipper" />
                               <label class="label" for="shipper"
                                 >Shipper (4,755)</label
                               >
-                            </div>
-                          </div>
+                            </li>
+                          </ul>
                         </div>
 
                         <hr />
@@ -1615,24 +1625,24 @@
                             </div>
                           </div>
 
-                          <div
-                            class="input-wrapper tw-grid tw-hidden tw-grid-cols-2 tw-gap-y-2 tw-py-2"
+                          <ul
+                            class="input-wrapper bbs-checkbox-input-group small tw-grid tw-hidden tw-grid-cols-2 tw-items-start tw-gap-y-2 tw-py-2"
                             id="classification_produce_broker_checkboxes"
                           >
-                            <div class="bbs-checkbox-input small">
+                            <li>
                               <input type="checkbox" id="buying_broker" />
                               <label class="label" for="buying_broker"
                                 >Buying Broker (829)</label
                               >
-                            </div>
+                            </li>
 
-                            <div class="bbs-checkbox-input small">
+                            <li>
                               <input type="checkbox" id="seller_broker" />
                               <label class="label" for="seller_broker"
                                 >Seller Broker (1,196)</label
                               >
-                            </div>
-                          </div>
+                            </li>
+                          </ul>
                         </div>
 
                         <hr />
@@ -1662,31 +1672,30 @@
                               </button>
                             </div>
                           </div>
-
-                          <div
-                            class="input-wrapper tw-grid tw-hidden tw-grid-cols-2 tw-gap-y-2 tw-py-2"
+                          <ul
+                            class="input-wrapper bbs-checkbox-input-group small tw-grid tw-hidden tw-grid-cols-2 tw-items-start tw-gap-y-2 tw-py-2"
                             id="classification_supply_chain_checkboxes"
                           >
-                            <div class="bbs-checkbox-input small">
+                            <li>
                               <input type="checkbox" id="cold_storage" />
                               <label class="label" for="cold_storage"
                                 >Cold Storage (254)</label
                               >
-                            </div>
+                            </li>
 
-                            <div class="bbs-checkbox-input small">
+                            <li>
                               <input type="checkbox" id="produce_warehouse" />
                               <label class="label" for="produce_warehouse"
                                 >Produce Warehouse (237)</label
                               >
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="load_consolidator" />
                               <label class="label" for="load_consolidator"
                                 >Load Consolidator (98)</label
                               >
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input
                                 type="checkbox"
                                 id="ripening_room_services"
@@ -1694,26 +1703,26 @@
                               <label class="label" for="ripening_room_services"
                                 >Ripening Room Services (43)</label
                               >
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="loading_point" />
                               <label class="label" for="loading_point"
                                 >Loading Point (61)</label
                               >
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="precooler" />
                               <label class="label" for="precooler"
                                 >Precooler (45)</label
                               >
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input type="checkbox" id="storage" />
                               <label class="label" for="storage"
                                 >Storage (181)</label
                               >
-                            </div>
-                            <div class="bbs-checkbox-input small">
+                            </li>
+                            <li>
                               <input
                                 type="checkbox"
                                 id="truck_loading_&_unloading_service"
@@ -1723,8 +1732,8 @@
                                 for="truck_loading_&_unloading_service"
                                 >Truck Loading & Unloading Service (14)</label
                               >
-                            </div>
-                          </div>
+                            </li>
+                          </ul>
                         </div>
                       </fieldset>
                     </div>
@@ -1743,7 +1752,7 @@
                     </div>
                     <div class="label">
                       <span class="text-label"
-                        >Licenses and Certifications</span
+                        >Licenses and Certifications (profile)</span
                       >
                       <span class="caption">
                         Volume, Licenses or certifications
