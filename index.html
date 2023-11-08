@@ -1178,7 +1178,7 @@
                   </div>
                 </div>
                 <!-- Classification -->
-                <div class="bbs-accordion-item open">
+                <div class="bbs-accordion-item">
                   <button
                     onclick="toggleAccordion(event)"
                     class="bbs-accordion-header"
@@ -1197,7 +1197,7 @@
                   </button>
                   <div class="bbs-accordion-content">
                     <div class="content-wrapper">
-                      <fieldset class="tw-flex tw-flex-col tw-gap-4">
+                      <fieldset disabled class="tw-flex tw-flex-col tw-gap-4">
                         <!-- Rejected shipment -->
                         <div class="input-wrapper">
                           <p class="label">
@@ -1696,7 +1696,7 @@
                   </div>
                 </div>
                 <!-- Licenses and Certifications -->
-                <div class="bbs-accordion-item">
+                <div class="bbs-accordion-item open">
                   <button
                     onclick="toggleAccordion(event)"
                     class="bbs-accordion-header"
@@ -1716,15 +1716,133 @@
                     </div>
                   </button>
                   <div class="bbs-accordion-content">
-                    <div class="content-wrapper tw-opacity-50">
-                      <fieldset disabled class="tw-flex tw-flex-col tw-gap-4">
-                        <img src="/assets/there_is_nothing_here.svg" />
-                        <span>THERE IS NOTHING HERE</span>
+                    <div class="content-wrapper">
+                      <fieldset class="tw-flex tw-flex-col tw-gap-4">
+                        <!-- Certifications reported -->
+                        <div>
+                          <p class="label">Certifications reported</p>
+                          <p class="caption">
+                            All certification information is self-reported.
+                          </p>
+                          <ul
+                            class="bbs-checkbox-input-group tw-grid tw-grid-cols-2 tw-gap-x-4"
+                          >
+                            <li>
+                              <input type="checkbox" id="Certified_Organic" />
+                              <label for="Certified_Organic"
+                                >Certified Organic</label
+                              >
+                            </li>
+                            <li>
+                              <input
+                                type="checkbox"
+                                id="Food_Safety_Certified"
+                              />
+                              <label for="Food_Safety_Certified"
+                                >Food Safety Certified</label
+                              >
+                            </li>
+                          </ul>
+                        </div>
+                        <!-- License Type -->
+                        <div>
+                          <p class="label">License Type</p>
+                          <ul
+                            class="bbs-checkbox-input-group tw-grid tw-grid-cols-2 tw-gap-x-4"
+                          >
+                            <li>
+                              <input type="checkbox" id="MC" />
+                              <label for="MC">MC</label>
+                            </li>
+                            <li>
+                              <input type="checkbox" id="DRC" />
+                              <label for="DRC">DRC</label>
+                            </li>
+                            <li>
+                              <input type="checkbox" id="CFIA_License" />
+                              <label for="CFIA_License">CFIA License</label>
+                            </li>
+                            <li>
+                              <input type="checkbox" id="DOT" />
+                              <label for="DOT">DOT</label>
+                            </li>
+                            <li>
+                              <input type="checkbox" id="FF" />
+                              <label for="FF">FF</label>
+                            </li>
+                            <li>
+                              <input type="checkbox" id="PACA_License" />
+                              <label for="PACA_License">PACA License</label>
+                            </li>
+                          </ul>
+                        </div>
+
+                        <!-- Brands -->
+                        <div>
+                          <div class="input-wrapper">
+                            <label for="brands">Brands</label>
+                            <p>
+                              <input
+                                class="full-width"
+                                id="brands"
+                                type="text"
+                                placeholder="Comma separated text"
+                                aria-label="Comma separated text"
+                              />
+                            </p>
+                          </div>
+                        </div>
+                        <!-- Miscellaneous listing information -->
+                        <div>
+                          <div class="input-wrapper">
+                            <label for="Miscellaneous_listing_information"
+                              >Miscellaneous listing information</label
+                            >
+                            <p>
+                              <input
+                                class="full-width"
+                                id="Miscellaneous_listing_information"
+                                type="text"
+                                placeholder="Full or part of the name"
+                                aria-label="Full or part of the name"
+                              />
+                            </p>
+                          </div>
+                        </div>
+                        <!-- Volume -->
+                        <div>
+                          <p class="label">Volume</p>
+                          <p class="caption">
+                            Annual volume by truckload (44,000 lbs).
+                          </p>
+                          <div class="tw-grid tw-grid-cols-2 tw-gap-x-4">
+                            <div class="input-wrapper">
+                              <label for="min-volume">Min</label>
+
+                              <select
+                                id="min-volume"
+                                aria-label="Small select example"
+                              >
+                                <option value="1">5 (min)</option>
+                              </select>
+                            </div>
+                            <div class="input-wrapper">
+                              <label for="max-volume">Max</label>
+
+                              <select
+                                id="max-volume"
+                                aria-label="Small select example"
+                              >
+                                <option value="1">100,000+ (max)</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
                       </fieldset>
                     </div>
                   </div>
                 </div>
-                <!-- Other Details -->
+                <!-- Custom Filters -->
                 <div class="bbs-accordion-item">
                   <button
                     onclick="toggleAccordion(event)"
@@ -1736,17 +1854,879 @@
                       >
                     </div>
                     <div class="label">
-                      <span class="text-label">Other Details</span>
+                      <span class="text-label">Custom Filters</span>
                       <span class="caption">
-                        Blue book member or other information
+                        User created list, watchdog, etc.
                       </span>
                     </div>
                   </button>
                   <div class="bbs-accordion-content">
-                    <div class="content-wrapper tw-opacity-50">
+                    <div class="content-wrapper">
                       <fieldset disabled class="tw-flex tw-flex-col tw-gap-4">
-                        <img src="/assets/there_is_nothing_here.svg" />
-                        <span>THERE IS NOTHING HERE</span>
+                        <div class="bbs-checkbox-input">
+                          <input type="checkbox" id="company_has_notes" />
+                          <label for="company_has_notes"
+                            >Company Has Notes</label
+                          ><br />
+                        </div>
+
+                        <div class="input-wrapper">
+                          <label for="AccountsPayable">Accounts Payable</label>
+                          <p>
+                            <input
+                              class="full-width"
+                              id="AccountsPayable"
+                              type="text"
+                            />
+                          </p>
+                          <div class="bbs-checkbox-input small">
+                            <input
+                              type="checkbox"
+                              id="must_have_AccountsPayable"
+                            />
+                            <label for="must_have_AccountsPayable"
+                              >Must have a value</label
+                            ><br />
+                          </div>
+                        </div>
+                        <div class="input-wrapper">
+                          <label for="BalanceOwing">Balance Owing</label>
+                          <p>
+                            <select
+                              class="tw-w-full"
+                              aria-label="Small select example"
+                            >
+                              <option selected value="1">[Any]</option>
+                              <option value="2">Over 5K</option>
+                              <option value="2">Over 10K</option>
+                              <option value="2">Over 20K</option>
+                            </select>
+                          </p>
+                          <div class="bbs-checkbox-input small">
+                            <input
+                              type="checkbox"
+                              id="must_have_BalanceOwing"
+                            />
+                            <label for="must_have_BalanceOwing"
+                              >Must have a value</label
+                            ><br />
+                          </div>
+                        </div>
+                        <div class="input-wrapper">
+                          <label for="Called">Called</label>
+                          <p>
+                            <select
+                              class="tw-w-full"
+                              aria-label="Small select example"
+                            >
+                              <option selected value="1">[Any]</option>
+                              <option value="2">Yes</option>
+                              <option value="2">No</option>
+                            </select>
+                          </p>
+                          <div class="bbs-checkbox-input small">
+                            <input type="checkbox" id="must_have_Called" />
+                            <label for="must_have_Called"
+                              >Must have a value</label
+                            ><br />
+                          </div>
+                        </div>
+                        <div class="input-wrapper">
+                          <label for="CustomContact">Custom Contact</label>
+                          <p>
+                            <input
+                              class="full-width"
+                              id="CustomContact"
+                              type="text"
+                            />
+                          </p>
+                          <div class="bbs-checkbox-input small">
+                            <input
+                              type="checkbox"
+                              id="must_have_CustomContact"
+                            />
+                            <label for="must_have_CustomContact"
+                              >Must have a value</label
+                            ><br />
+                          </div>
+                        </div>
+                        <div class="input-wrapper">
+                          <label for="CustomIdentifier"
+                            >Custom Identifier</label
+                          >
+                          <p>
+                            <input
+                              class="full-width"
+                              id="CustomIdentifier"
+                              type="text"
+                            />
+                          </p>
+                          <div class="bbs-checkbox-input small">
+                            <input
+                              type="checkbox"
+                              id="must_have_CustomIdentifier"
+                            />
+                            <label for="must_have_CustomIdentifier"
+                              >Must have a value</label
+                            ><br />
+                          </div>
+                        </div>
+                        <div class="input-wrapper">
+                          <label for="phonenumber">Phone</label>
+                          <p>
+                            <input
+                              class="full-width"
+                              id="phonenumber"
+                              type="text"
+                            />
+                          </p>
+                          <div class="bbs-checkbox-input small">
+                            <input type="checkbox" id="must_have_phonenumber" />
+                            <label for="must_have_phonenumber"
+                              >Must have a value</label
+                            ><br />
+                          </div>
+                        </div>
+                        <div class="input-wrapper">
+                          <label for="NoSellList">No Sell List</label>
+                          <p>
+                            <input
+                              class="full-width"
+                              id="NoSellList"
+                              type="text"
+                            />
+                          </p>
+                          <div class="bbs-checkbox-input small">
+                            <input type="checkbox" id="must_have_NoSellList" />
+                            <label for="must_have_NoSellList"
+                              >Must have a value</label
+                            ><br />
+                          </div>
+                        </div>
+                        <div class="input-wrapper">
+                          <label for="SalesRep">Sales Rep</label>
+                          <p>
+                            <select
+                              class="tw-w-full"
+                              aria-label="Small select example"
+                            >
+                              <option selected value="1">[Any]</option>
+                              <option value="2">John</option>
+                              <option value="2">Bobby</option>
+                              <option value="2">Todd</option>
+                              <option value="2">Susan</option>
+                              <option value="2">Marry</option>
+                              <option value="3">Jimmy</option>
+                            </select>
+                          </p>
+                          <div class="bbs-checkbox-input small">
+                            <input type="checkbox" id="must_have_SalesRep" />
+                            <label for="must_have_SalesRep"
+                              >Must have a value</label
+                            ><br />
+                          </div>
+                        </div>
+                        <div class="input-wrapper">
+                          <label for="SalesRepPhone">Sales Rep Phone</label>
+                          <p>
+                            <input
+                              class="full-width"
+                              id="SalesRepPhone"
+                              type="text"
+                            />
+                          </p>
+                          <div class="bbs-checkbox-input small">
+                            <input
+                              type="checkbox"
+                              id="must_have_SalesRepPhone"
+                            />
+                            <label for="must_have_SalesRepPhone"
+                              >Must have a value</label
+                            ><br />
+                          </div>
+                        </div>
+                        <!-- Button trigger modal -->
+                        <button
+                          type="button"
+                          class="bbsButton bbsButton-secondary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#exampleModal"
+                        >
+                          <span class="msicon notranslate"
+                            >sound_detection_dog_barking</span
+                          >
+                          <span class="text-label">Select Watchdog</span>
+                          <span class="msicon notranslate">open_in_full</span>
+                        </button>
+
+                        <!-- Modal -->
+                        <div
+                          class="modal fade"
+                          id="exampleModal"
+                          tabindex="-1"
+                          aria-labelledby="exampleModalLabel"
+                          aria-hidden="true"
+                        >
+                          <div
+                            class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg"
+                          >
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h1
+                                  class="modal-title fs-5"
+                                  id="exampleModalLabel"
+                                >
+                                  Select the Watchdog Groups to restrict search
+                                  to:
+                                </h1>
+
+                                <button
+                                  type="button"
+                                  class="bbsButton bbsButton-tertiary"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                >
+                                  <span class="msicon notranslate">close</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <div>
+                                  <table
+                                    class="table table-striped table-hover"
+                                    cellspacing="0"
+                                    id="contentMain_gvUserList"
+                                    style="border-collapse: collapse"
+                                  >
+                                    <thead>
+                                      <tr>
+                                        <th
+                                          class="vertical-align-top text-center"
+                                          scope="col"
+                                        >
+                                          Select
+                                          <br />
+                                          <input
+                                            type="checkbox"
+                                            onclick="CheckAll('cbUserListID', this.checked);"
+                                            id="cbCheckAll"
+                                          />
+                                        </th>
+                                        <th
+                                          class="vertical-align-top"
+                                          scope="col"
+                                        >
+                                          <a
+                                            href="javascript:__doPostBack('ctl00$contentMain$gvUserList','Sort$prwucl_Name')"
+                                            >Watchdog Group Name</a
+                                          >
+                                        </th>
+                                        <th
+                                          class="text-nowrap vertical-align-top"
+                                          scope="col"
+                                        >
+                                          <a
+                                            href="javascript:__doPostBack('ctl00$contentMain$gvUserList','Sort$prwucl_IsPrivate')"
+                                            >Private</a
+                                          >
+                                        </th>
+                                        <th
+                                          class="vertical-align-top"
+                                          scope="col"
+                                        >
+                                          <a
+                                            href="javascript:__doPostBack('ctl00$contentMain$gvUserList','Sort$UpdatedDate')"
+                                            >Last<br />Updated</a
+                                          >
+                                        </th>
+                                        <th
+                                          class="vertical-align-top"
+                                          scope="col"
+                                        >
+                                          <a
+                                            href="javascript:__doPostBack('ctl00$contentMain$gvUserList','Sort$CompanyCount')"
+                                            >Company Count</a
+                                          >
+                                        </th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td class="text-center">
+                                          <input
+                                            type="checkbox"
+                                            name="cbUserListID"
+                                            value="1"
+                                            onclick="refreshCriteria();"
+                                          />
+                                        </td>
+                                        <td class="text-left">
+                                          <a href="UserList.aspx?UserListID=1">
+                                            Reference List
+                                          </a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                        <td class="text-left">10/18/2023</td>
+                                        <td
+                                          class="text-left vertical-align-top"
+                                        >
+                                          102
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-center">
+                                          <input
+                                            type="checkbox"
+                                            name="cbUserListID"
+                                            value="79160"
+                                            onclick="refreshCriteria();"
+                                            data-gtm-form-interact-field-id="0"
+                                          />
+                                        </td>
+                                        <td class="text-left">
+                                          <a
+                                            href="UserList.aspx?UserListID=79160"
+                                          >
+                                            MW G/S
+                                          </a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                        <td class="text-left">8/10/2022</td>
+                                        <td
+                                          class="text-left vertical-align-top"
+                                        >
+                                          46
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-center">
+                                          <input
+                                            type="checkbox"
+                                            name="cbUserListID"
+                                            value="80851"
+                                            onclick="refreshCriteria();"
+                                          />
+                                        </td>
+                                        <td class="text-left">
+                                          <a
+                                            href="UserList.aspx?UserListID=80851"
+                                          >
+                                            <img
+                                              src="/BBOS/en-us/images/Category Blue.png"
+                                              alt="California Prospects"
+                                            />
+                                            California Prospects
+                                          </a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                        <td class="text-left">1/30/2023</td>
+                                        <td
+                                          class="text-left vertical-align-top"
+                                        >
+                                          8
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-center">
+                                          <input
+                                            type="checkbox"
+                                            name="cbUserListID"
+                                            value="81311"
+                                            onclick="refreshCriteria();"
+                                          />
+                                        </td>
+                                        <td class="text-left">
+                                          <a
+                                            href="UserList.aspx?UserListID=81311"
+                                          >
+                                            <img
+                                              src="/BBOS/en-us/images/Category Green.png"
+                                              alt="Pros MT"
+                                            />
+                                            Pros MT
+                                          </a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                        <td class="text-left">3/6/2023</td>
+                                        <td
+                                          class="text-left vertical-align-top"
+                                        >
+                                          1
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-center">
+                                          <input
+                                            type="checkbox"
+                                            name="cbUserListID"
+                                            value="82455"
+                                            onclick="refreshCriteria();"
+                                          />
+                                        </td>
+                                        <td class="text-left">
+                                          <a
+                                            href="UserList.aspx?UserListID=82455"
+                                          >
+                                            <img
+                                              src="/BBOS/en-us/images/Category Yellow.png"
+                                              alt="Miami Plantains"
+                                            />
+                                            Miami Plantains
+                                          </a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                        <td class="text-left">6/22/2023</td>
+                                        <td
+                                          class="text-left vertical-align-top"
+                                        >
+                                          61
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-center">
+                                          <input
+                                            type="checkbox"
+                                            name="cbUserListID"
+                                            value="82678"
+                                            onclick="refreshCriteria();"
+                                          />
+                                        </td>
+                                        <td class="text-left">
+                                          <a
+                                            href="UserList.aspx?UserListID=82678"
+                                          >
+                                            <img
+                                              src="/BBOS/en-us/images/Category Green.png"
+                                              alt="Plant City Prospects"
+                                            />
+                                            Plant City Prospects
+                                          </a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                        <td class="text-left">7/19/2023</td>
+                                        <td
+                                          class="text-left vertical-align-top"
+                                        >
+                                          10
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-center">
+                                          <input
+                                            type="checkbox"
+                                            name="cbUserListID"
+                                            value="82711"
+                                            onclick="refreshCriteria();"
+                                          />
+                                        </td>
+                                        <td class="text-left">
+                                          <a
+                                            href="UserList.aspx?UserListID=82711"
+                                          >
+                                            Alerts List
+                                          </a>
+                                        </td>
+                                        <td class="text-left">Yes</td>
+                                        <td class="text-left">8/2/2023</td>
+                                        <td
+                                          class="text-left vertical-align-top"
+                                        >
+                                          147
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-center">
+                                          <input
+                                            type="checkbox"
+                                            name="cbUserListID"
+                                            value="82780"
+                                            onclick="refreshCriteria();"
+                                          />
+                                        </td>
+                                        <td class="text-left">
+                                          <a
+                                            href="UserList.aspx?UserListID=82780"
+                                          >
+                                            <img
+                                              src="/BBOS/en-us/images/Category Black.png"
+                                              alt="Prospects in the NE"
+                                            />
+                                            Prospects in the NE
+                                          </a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                        <td class="text-left">7/28/2023</td>
+                                        <td
+                                          class="text-left vertical-align-top"
+                                        >
+                                          325
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-center">
+                                          <input
+                                            type="checkbox"
+                                            name="cbUserListID"
+                                            value="83065"
+                                            onclick="refreshCriteria();"
+                                          />
+                                        </td>
+                                        <td class="text-left">
+                                          <a
+                                            href="UserList.aspx?UserListID=83065"
+                                          >
+                                            <img
+                                              src="/BBOS/en-us/images/Category Green.png"
+                                              alt="Compradores de Aguacate -  Florida"
+                                            />
+                                            Compradores de Aguacate - Florida
+                                          </a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                        <td class="text-left">8/22/2023</td>
+                                        <td
+                                          class="text-left vertical-align-top"
+                                        >
+                                          136
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-center">
+                                          <input
+                                            type="checkbox"
+                                            name="cbUserListID"
+                                            value="83077"
+                                            onclick="refreshCriteria();"
+                                          />
+                                        </td>
+                                        <td class="text-left">
+                                          <a
+                                            href="UserList.aspx?UserListID=83077"
+                                          >
+                                            Retailers
+                                          </a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                        <td class="text-left">8/23/2023</td>
+                                        <td
+                                          class="text-left vertical-align-top"
+                                        >
+                                          46
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-center">
+                                          <input
+                                            type="checkbox"
+                                            name="cbUserListID"
+                                            value="83093"
+                                            onclick="refreshCriteria();"
+                                          />
+                                        </td>
+                                        <td class="text-left">
+                                          <a
+                                            href="UserList.aspx?UserListID=83093"
+                                          >
+                                            Avocado SCVR
+                                          </a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                        <td class="text-left">10/24/2023</td>
+                                        <td
+                                          class="text-left vertical-align-top"
+                                        >
+                                          14
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-center">
+                                          <input
+                                            type="checkbox"
+                                            name="cbUserListID"
+                                            value="83219"
+                                            onclick="refreshCriteria();"
+                                          />
+                                        </td>
+                                        <td class="text-left">
+                                          <a
+                                            href="UserList.aspx?UserListID=83219"
+                                          >
+                                            <img
+                                              src="/BBOS/en-us/images/Category Blue.png"
+                                              alt="Iris Watch Dog List Sample"
+                                            />
+                                            Iris Watch Dog List Sample
+                                          </a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                        <td class="text-left">9/5/2023</td>
+                                        <td
+                                          class="text-left vertical-align-top"
+                                        >
+                                          150
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-center">
+                                          <input
+                                            type="checkbox"
+                                            name="cbUserListID"
+                                            value="83263"
+                                            onclick="refreshCriteria();"
+                                          />
+                                        </td>
+                                        <td class="text-left">
+                                          <a
+                                            href="UserList.aspx?UserListID=83263"
+                                          >
+                                            Transportation SCRF
+                                          </a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                        <td class="text-left">9/9/2023</td>
+                                        <td
+                                          class="text-left vertical-align-top"
+                                        >
+                                          4
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-center">
+                                          <input
+                                            type="checkbox"
+                                            name="cbUserListID"
+                                            value="83278"
+                                            onclick="refreshCriteria();"
+                                          />
+                                        </td>
+                                        <td class="text-left">
+                                          <a
+                                            href="UserList.aspx?UserListID=83278"
+                                          >
+                                            <img
+                                              src="/BBOS/en-us/images/Category Green.png"
+                                              alt="Foodservice companies in CA"
+                                            />
+                                            Foodservice companies in CA
+                                          </a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                        <td class="text-left">9/12/2023</td>
+                                        <td
+                                          class="text-left vertical-align-top"
+                                        >
+                                          23
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-center">
+                                          <input
+                                            type="checkbox"
+                                            name="cbUserListID"
+                                            value="83283"
+                                            onclick="refreshCriteria();"
+                                          />
+                                        </td>
+                                        <td class="text-left">
+                                          <a
+                                            href="UserList.aspx?UserListID=83283"
+                                          >
+                                            <img
+                                              src="/BBOS/en-us/images/Category Green.png"
+                                              alt="Lista de compradores de Tomatillo"
+                                            />
+                                            Lista de compradores de Tomatillo
+                                          </a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                        <td class="text-left">9/12/2023</td>
+                                        <td
+                                          class="text-left vertical-align-top"
+                                        >
+                                          29
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-center">
+                                          <input
+                                            type="checkbox"
+                                            name="cbUserListID"
+                                            value="83466"
+                                            onclick="refreshCriteria();"
+                                          />
+                                        </td>
+                                        <td class="text-left">
+                                          <a
+                                            href="UserList.aspx?UserListID=83466"
+                                          >
+                                            <img
+                                              src="/BBOS/en-us/images/Category Black.png"
+                                              alt="Alaska Companies"
+                                            />
+                                            Alaska Companies
+                                          </a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                        <td class="text-left">10/17/2023</td>
+                                        <td
+                                          class="text-left vertical-align-top"
+                                        >
+                                          7
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-center">
+                                          <input
+                                            type="checkbox"
+                                            name="cbUserListID"
+                                            value="83550"
+                                            onclick="refreshCriteria();"
+                                          />
+                                        </td>
+                                        <td class="text-left">
+                                          <a
+                                            href="UserList.aspx?UserListID=83550"
+                                          >
+                                            <img
+                                              src="/BBOS/en-us/images/Category Green.png"
+                                              alt="AV CA shippers"
+                                            />
+                                            AV CA shippers
+                                          </a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                        <td class="text-left">10/4/2023</td>
+                                        <td
+                                          class="text-left vertical-align-top"
+                                        >
+                                          46
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-center">
+                                          <input
+                                            type="checkbox"
+                                            name="cbUserListID"
+                                            value="83597"
+                                            onclick="refreshCriteria();"
+                                          />
+                                        </td>
+                                        <td class="text-left">
+                                          <a
+                                            href="UserList.aspx?UserListID=83597"
+                                          >
+                                            <img
+                                              src="/BBOS/en-us/images/Category Red.png"
+                                              alt="TX Watermelon"
+                                            />
+                                            TX Watermelon
+                                          </a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                        <td class="text-left">10/9/2023</td>
+                                        <td
+                                          class="text-left vertical-align-top"
+                                        >
+                                          143
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-center">
+                                          <input
+                                            type="checkbox"
+                                            name="cbUserListID"
+                                            value="83719"
+                                            onclick="refreshCriteria();"
+                                          />
+                                        </td>
+                                        <td class="text-left">
+                                          <a
+                                            href="UserList.aspx?UserListID=83719"
+                                          >
+                                            <img
+                                              src="/BBOS/en-us/images/Category Green.png"
+                                              alt="Broc in CA"
+                                            />
+                                            Broc in CA
+                                          </a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                        <td class="text-left">10/19/2023</td>
+                                        <td
+                                          class="text-left vertical-align-top"
+                                        >
+                                          85
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-center">
+                                          <input
+                                            type="checkbox"
+                                            name="cbUserListID"
+                                            value="83784"
+                                            onclick="refreshCriteria();"
+                                          />
+                                        </td>
+                                        <td class="text-left">
+                                          <a
+                                            href="UserList.aspx?UserListID=83784"
+                                          >
+                                            <img
+                                              src="/BBOS/en-us/images/Category Yellow.png"
+                                              alt="Prospects"
+                                            />
+                                            Prospects
+                                          </a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                        <td class="text-left">10/24/2023</td>
+                                        <td
+                                          class="text-left vertical-align-top"
+                                        >
+                                          1
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="text-center">
+                                          <input
+                                            type="checkbox"
+                                            name="cbUserListID"
+                                            value="83792"
+                                            onclick="refreshCriteria();"
+                                          />
+                                        </td>
+                                        <td class="text-left">
+                                          <a
+                                            href="UserList.aspx?UserListID=83792"
+                                          >
+                                            Apple SCVR
+                                          </a>
+                                        </td>
+                                        <td class="text-left"></td>
+                                        <td class="text-left">10/24/2023</td>
+                                        <td
+                                          class="text-left vertical-align-top"
+                                        >
+                                          12
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                    <tfoot></tfoot>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button
+                                  type="button"
+                                  class="bbsButton bbsButton-secondary"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                >
+                                  <span class="text-label">Close</span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </fieldset>
                     </div>
                   </div>

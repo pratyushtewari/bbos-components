@@ -109,7 +109,7 @@ const mulSel_filldata = (mulSel_id, csvOptionIds) => {
   optionIds.forEach((optionId) => {
     // find the menu item and make is selected
     const menuitem = mulSel_parent.querySelector(
-      `li[data-mulSel_id="${optionId}"]`,
+      `li[data-mulSel_id="${optionId}"] button`,
     );
     if (menuitem) menuitem.click();
   });
@@ -342,6 +342,14 @@ const mulSel_onclickOpt_TerminalMkt = (event, optionId) => {
     menuoption.classList.remove("selected");
   }
 
+  // update dropdown position
+  const instance = bootstrap.Dropdown.getOrCreateInstance(
+    mulSelParent.querySelector('[data-bs-toggle="dropdown"]'),
+  );
+  if (instance) {
+    instance.update();
+  }
+
   // focus the input
   mulSelParent.querySelector("input").focus();
 };
@@ -464,6 +472,14 @@ const mulSel_onclickOpt_CountryState = (event, optionId) => {
     // mark option as unselected
     const menuoption = event.currentTarget.closest("li");
     menuoption.classList.remove("selected");
+  }
+
+  // update dropdown position
+  const instance = bootstrap.Dropdown.getOrCreateInstance(
+    mulSelParent.querySelector('[data-bs-toggle="dropdown"]'),
+  );
+  if (instance) {
+    instance.update();
   }
 
   // focus the input
@@ -737,6 +753,14 @@ const mulSel_onclickOpt_Commodities = (event, optionId, parent_CommodityId) => {
         child.querySelector("button").removeAttribute("disabled");
       });
     }
+  }
+
+  // update dropdown position
+  const instance = bootstrap.Dropdown.getOrCreateInstance(
+    mulSelParent.querySelector('[data-bs-toggle="dropdown"]'),
+  );
+  if (instance) {
+    instance.update();
   }
 
   // focus the input
