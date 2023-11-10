@@ -611,6 +611,42 @@ a {
       }
     }
   }
+  .bbs-checkbox-input-group-col-2-small,
+  .bbs-radio-input-group-col-2-small {
+    @apply tw-mt-2
+    tw-grid
+    tw-grid-cols-2
+    tw-flex-wrap
+    tw-items-start
+    tw-gap-x-5
+    tw-gap-y-2
+    tw-py-2;
+    li {
+      @apply tw-flex
+        tw-items-start
+        tw-gap-1.5;
+      input[type="radio"] {
+        @apply tw-m-0 tw-p-0 tw-pt-1;
+      }
+      input[type="checkbox"] {
+        @apply tw-m-0 tw-p-0 tw-mt-0.5;
+      }
+      label:not(.strong),
+      .label:not(.strong) {
+        @apply tw-m-0 tw-p-0 tw-font-normal;
+      }
+      button {
+        @apply
+        tw-text-xs tw-m-0
+      }
+    }
+
+    label,
+    .label {
+      @apply tw-text-xs;
+    }
+  }
+
   .bbsBadge {
     @apply tw-rounded-3xl
     tw-border
