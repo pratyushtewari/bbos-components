@@ -115,6 +115,18 @@ const mulSel_filldata = (mulSel_id, csvOptionIds) => {
   });
 };
 
+const checboxes_filldata = (csvOptionIds) => {
+  if (csvOptionIds == null) return;
+  const checkboxIds = csvOptionIds.split(",");
+  checkboxIds.forEach((id) => {
+    const checkbox = document.querySelector("#" + id.trim());
+    if (checkbox) {
+      checkbox.checked = true;
+      if (checkbox.onchange) checkbox.onchange();
+    }
+  });
+};
+
 // if a removable bbsButton bbsButton-tag-secondary
 // is clicked, this is the function
 // that needs to be called to remove it
