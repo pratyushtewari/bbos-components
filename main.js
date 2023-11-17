@@ -1,11 +1,19 @@
 const hide = (htmlElement) => {
   htmlElement.classList.add("tw-hidden");
 };
-
 // Escape key press
-document.addEventListener("keydown", function (e) {
-  if (e.keyCode == 27) {
+document.addEventListener("keydown", function (event) {
+  const key = event.key;
+  if (key == "Escape") {
     closeALLMenu();
+    [...document.querySelectorAll('[data-bs-toggle="dropdown"]')].forEach(
+      (dropdown) => {
+        const instance = bootstrap.Dropdown.getOrCreateInstance(dropdown);
+        if (instance) {
+          instance.hide();
+        }
+      },
+    );
   }
 });
 
@@ -21,7 +29,6 @@ const closeALLMenu = () => {
     },
   );
 };
-
 const toggleTopNavMenu = (event) => {
   // close all the other open menus
   event.stopPropagation();
@@ -38,13 +45,14 @@ const toggleTopNavMenu = (event) => {
       (event) => {
         hide(sibling);
       },
-      { once: true },
+      {
+        once: true,
+      },
     );
   } else {
     sibling.classList.add("tw-hidden");
   }
 };
-
 const toggleAccordion = (event) => {
   const parentElement = event.currentTarget.parentElement;
   const isOpen = parentElement.classList.toggle("open");
@@ -66,7 +74,6 @@ const toggleAccordion = (event) => {
   // This is needed so .NET form does not automatically post back
   event.preventDefault();
 };
-
 const countryState_setData = (countryId, csvStateIds) => {
   // countryState_setData(1) - just select USA no state
   // countryState_setData(1, "") - Just select USA no state
@@ -101,7 +108,6 @@ const countryState_setData = (countryId, csvStateIds) => {
     Update_UpdatePanel();
   }
 };
-
 const mulSel_filldata = (mulSel_id, csvOptionIds) => {
   if (csvOptionIds == null) return;
   const optionIds = csvOptionIds.split(",");
@@ -113,20 +119,22 @@ const mulSel_filldata = (mulSel_id, csvOptionIds) => {
     );
     if (menuitem) menuitem.click();
   });
+  mulSel_id.closest(".bbs-mulSel-input input").blur();
 };
-
-const checboxes_filldata = (csvOptionIds) => {
-  if (csvOptionIds == null) return;
-  const checkboxIds = csvOptionIds.split(",");
-  checkboxIds.forEach((id) => {
-    const checkbox = document.querySelector("#" + id.trim());
+const checkboxes_filldata = (containerID, csvOptionValue) => {
+  if (csvOptionValue == null) return;
+  const container = document.querySelector("#" + containerID.trim());
+  const checkboxValues = csvOptionValue.split(",");
+  checkboxValues.forEach((value) => {
+    const checkbox = container.querySelector(
+      `checkbox[type=checkbox][value="${value}"]`,
+    );
     if (checkbox) {
       checkbox.checked = true;
       if (checkbox.onchange) checkbox.onchange();
     }
   });
 };
-
 // if a removable bbsButton bbsButton-tag-secondary
 // is clicked, this is the function
 // that needs to be called to remove it
@@ -158,25 +166,22 @@ const mulSel_onclickTag = (event) => {
 const mulSel_onkeydown = (event) => {
   const key = event.key;
 
-  // TODO:PT - somehow Escape key is not detected here at all.
-  // cannot close the menu because of that.
+  // Bootstrap stuff!!
+  // find the instance of the dropdown
+  // this is the div with data-bs-toggle="dropdown" attribute
+  const instance = bootstrap.Dropdown.getOrCreateInstance(
+    event.currentTarget.closest('[data-bs-toggle="dropdown"]'),
+  );
 
   if (key == "ArrowDown" || key == "ArrowUp") {
     event.preventDefault();
 
-    // Bootstrap stuff!!
-    // find the instance of the dropdown
-    // this is the div with data-bs-toggle="dropdown" attribute
-    const instance = bootstrap.Dropdown.getOrCreateInstance(
-      event.currentTarget.closest('[data-bs-toggle="dropdown"]'),
-    );
     if (instance) {
       instance.show();
       instance._selectMenuItem(event);
     }
   }
 };
-
 // Open the mulSel menu when
 // user starts typing inside
 // the mulSel .bbs-mulSel
@@ -225,7 +230,6 @@ const mulSel_oninput = (event) => {
 
   event.stopPropagation();
 };
-
 const getOrCreateTagContainer = (mulSelParent) => {
   let tagContainer = mulSelParent.querySelector(".mulSel-tag-container");
   if (!tagContainer) {
@@ -237,7 +241,6 @@ const getOrCreateTagContainer = (mulSelParent) => {
   }
   return tagContainer;
 };
-
 // Based on the country,
 // this function adds options in the
 // .bbs-mulSel's menu.
@@ -297,7 +300,6 @@ const mulSel_createOpt_TerminalMkt = () => {
       `;
   }
 };
-
 // call the above function
 (() => {
   mulSel_createOpt_TerminalMkt();
@@ -317,6 +319,8 @@ const mulSel_onclickOpt_TerminalMkt = (event, optionId) => {
   );
 
   event.stopPropagation();
+  event.preventDefault();
+
   const mulSelParent = event.currentTarget.closest(".bbs-mulSel");
 
   const tagContainer = getOrCreateTagContainer(mulSelParent);
@@ -365,7 +369,6 @@ const mulSel_onclickOpt_TerminalMkt = (event, optionId) => {
   // focus the input
   mulSelParent.querySelector("input").focus();
 };
-
 // Based on the country,
 // this function adds options in the
 // .bbs-mulSel's menu.
@@ -436,7 +439,6 @@ const mulSel_createOpt_CountryState = (optionId) => {
      `;
   }
 };
-
 // When you need to add tags from the
 // .bbs-mulSel. call this function with the value,
 // this will add the tags in the .mulSel-tag-container
@@ -454,6 +456,8 @@ const mulSel_onclickOpt_CountryState = (event, optionId) => {
   const stateobject = states.find((state) => state.prst_StateId == optionId);
 
   event.stopPropagation();
+  event.preventDefault();
+
   const mulSelParent = event.currentTarget.closest(".bbs-mulSel");
 
   const tagContainer = getOrCreateTagContainer(mulSelParent);
@@ -497,7 +501,6 @@ const mulSel_onclickOpt_CountryState = (event, optionId) => {
   // focus the input
   mulSelParent.querySelector("input").focus();
 };
-
 const selectNoneCountry = (event) => {
   const otherCountryInput = document.querySelector("#otherCountries");
   otherCountryInput.setAttribute("disabled", "disabled");
@@ -512,7 +515,6 @@ const selectNoneCountry = (event) => {
   // Clear the existing multiseled tags
   stateCitiselector.querySelector(".mulSel-tag-container").innerHTML = "";
 };
-
 // This is called when Other countries
 // radio is selected.
 const enableOtherCountriesInput = (id) => {
@@ -547,7 +549,6 @@ const enableOtherCountriesInput = (id) => {
   otherCountrySelect.focus();
   return otherCountrySelect;
 };
-
 const clearallsearch = () => {
   [...document.querySelectorAll(".search-criteria-group")].forEach(
     (htmlElement) => {
@@ -555,7 +556,6 @@ const clearallsearch = () => {
     },
   );
 };
-
 const toggleZipcodeInput = (checked, id) => {
   const input = document.querySelector("#" + id);
   if (checked) {
@@ -564,7 +564,6 @@ const toggleZipcodeInput = (checked, id) => {
     input.setAttribute("disabled", "disabled");
   }
 };
-
 const printTopLevelParents = () => {
   commodities.forEach((commodity, i) => {
     //  console.log("for", i);
@@ -577,7 +576,6 @@ const printTopLevelParents = () => {
     );
   });
 };
-
 const findTopLevelCommodityParent = (i) => {
   // [{
   //     "prcm_CommodityId": 537,
@@ -602,7 +600,6 @@ const findTopLevelCommodityParent = (i) => {
     return i;
   }
 };
-
 // this function adds options in the
 // .bbs-mulSel's menu.
 
@@ -672,7 +669,6 @@ const mulSel_createOpt_Commodities = (optionId) => {
     optionContainer.appendChild(outer);
   });
 };
-
 // call the above function
 (() => {
   mulSel_createOpt_Commodities();
@@ -689,6 +685,7 @@ const mulSel_onclickOpt_Commodities = (event, optionId, parent_CommodityId) => {
   );
 
   event.stopPropagation();
+  event.preventDefault();
 
   const mulSelParent = event.currentTarget.closest(".bbs-mulSel");
 
@@ -778,7 +775,6 @@ const mulSel_onclickOpt_Commodities = (event, optionId, parent_CommodityId) => {
   // focus the input
   mulSelParent.querySelector("input").focus();
 };
-
 const toggleAllCheckboxes = (isChecked, idThatContainsCheckboxes) => {
   [
     ...document.querySelectorAll(
@@ -788,7 +784,6 @@ const toggleAllCheckboxes = (isChecked, idThatContainsCheckboxes) => {
     checkbox.checked = isChecked;
   });
 };
-
 const toggleExpandCollapse = (button, idToOpenClose) => {
   const isCollapsed =
     button.querySelector(".msicon").innerHTML == "expand_more" ? true : false;
