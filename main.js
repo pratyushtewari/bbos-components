@@ -119,7 +119,10 @@ const mulSel_filldata = (mulSel_id, csvOptionIds) => {
     );
     if (menuitem) menuitem.click();
   });
-  mulSel_id.closest(".bbs-mulSel-input input").blur();
+  const mulSel_input = mulSel_parent.querySelector(".bbs-mulSel-input input");
+  if (mulSel_input) {
+    mulSel_input.blur();
+  }
 };
 const checkboxes_filldata = (containerID, csvOptionValue) => {
   if (csvOptionValue == null) return;
