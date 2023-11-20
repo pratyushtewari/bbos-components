@@ -130,7 +130,7 @@ const checkboxes_filldata = (containerID, csvOptionValue) => {
   const checkboxValues = csvOptionValue.split(",");
   checkboxValues.forEach((value) => {
     const checkbox = container.querySelector(
-      `checkbox[type=checkbox][value="${value}"]`,
+      `input[type=checkbox][value="${value}"]`,
     );
     if (checkbox) {
       checkbox.checked = true;
