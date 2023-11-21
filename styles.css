@@ -3,7 +3,10 @@
 @tailwind utilities;
 
 /* support bootstrap  hack */
-button, [type=button], [type=reset], [type=submit] {
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
   background-color: var(--bs-btn-bg);
 }
 
@@ -398,13 +401,19 @@ a {
   }
 
   .left-sidebar {
-    @apply tw-max-w-[200px]
+    @apply tw-sticky
+    tw-top-[46px]
+    tw-max-w-[200px]
+    tw-self-start
+    tw-overflow-y-auto
     tw-border-x
     tw-border-border
     tw-bg-bg-primary
     tw-p-2
     max-sm:tw-p-0
     md:tw-w-full;
+    height: calc(100vh - 45px);
+
     .bbsButton.bbsButton-menu-item {
       @apply tw-rounded max-sm:tw-rounded-none;
       &.selected {
@@ -635,15 +644,14 @@ a {
         @apply tw-m-0 tw-p-0 tw-pt-1;
       }
       input[type="checkbox"] {
-        @apply tw-m-0 tw-p-0 tw-mt-0.5;
+        @apply tw-m-0 tw-mt-0.5 tw-p-0;
       }
       label:not(.strong),
       .label:not(.strong) {
         @apply tw-m-0 tw-p-0 tw-font-normal;
       }
       button {
-        @apply
-        tw-text-xs tw-m-0
+        @apply tw-m-0 tw-text-xs;
       }
     }
 
@@ -673,7 +681,6 @@ a {
       tw-max-w-screen-xl;
       .main-content {
         @apply tw-w-full
-        tw-overflow-x-hidden
         tw-p-6;
       }
     }
@@ -818,6 +825,7 @@ a {
         .content-wrapper {
           @apply tw-px-4;
           height: 0px;
+          overflow: hidden;
         }
       }
     }
@@ -833,6 +841,13 @@ a {
     lg:tw-grid-cols-2;
     .search-form {
       @apply max-lg:tw-order-last;
+    }
+    .selected-criteria {
+      @apply tw-sticky
+      tw-top-[69px]
+      tw-self-start
+      tw-overflow-y-auto;
+      height: calc(100vh - 45px);
     }
   }
   /* Bootstrap tooltip */
@@ -911,12 +926,10 @@ a {
     tw-border-border
     tw-bg-white
     tw-bg-opacity-100
-    tw-shadow-lg
+    tw-text-text-primary
     tw-opacity-100
-    tw-text-text-primary;
+    tw-shadow-lg;
   }
-
-
 
   .AutoCompleteFlyoutItem,
   .AutoCompleteFlyoutShadeItem,
@@ -957,6 +970,13 @@ a {
     }
     &.clr-block-3 {
       background: #73bede;
+    }
+  }
+
+  /* for the watchdog table */
+  td {
+    a {
+      @apply tw-flex tw-gap-2;
     }
   }
   /* END OF OLD BBOS OVERWITES */
