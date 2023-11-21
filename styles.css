@@ -843,11 +843,13 @@ a {
       @apply max-lg:tw-order-last;
     }
     .selected-criteria {
-      @apply tw-sticky
+      @apply
       tw-top-[69px]
       tw-self-start
-      tw-overflow-y-auto;
-      height: calc(100vh - 45px);
+      tw-overflow-y-auto
+      /* in lg screen size there are two columns */
+      lg:tw-sticky
+      lg:tw-h-[calc(100vh-45px)];
     }
   }
   /* Bootstrap tooltip */
