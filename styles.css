@@ -10,6 +10,10 @@ button,
   background-color: var(--bs-btn-bg);
 }
 
+:root {
+  --bs-offcanvas-width: 600px;
+  --bs-offcanvas-horizontal-width:        600px;
+}
 /**
  * Google Material Symbols (new) icon-font
  */
@@ -90,29 +94,17 @@ a {
         tw-text-error;
     }
   }
-  .bbsModal {
-    @apply tw-absolute
-    tw-z-[9999]
-    tw-h-full
-    tw-w-full
-    tw-bg-slate-900
-    tw-bg-opacity-50;
+  .offcanvas.offcanvas-end.search-criteria-offcanvas {
+    @apply
+    tw-w-[600px]
+    tw-max-w-[80%];
 
-    .bbsSidebar {
-      @apply tw-absolute
-      tw-right-0
-      tw-mr-[-800px]
-      tw-h-full
-      tw-w-[800px]
-      tw-min-w-[200px]
-      tw-max-w-[80%]
-      tw-overflow-y-auto
-      tw-bg-bg-secondary
-      tw-shadow-lg;
-      transition: all 300ms;
-      &.show {
-        @apply tw-mr-0;
-      }
+    .offcanvas-header {
+      @apply
+      tw-border-b tw-border-border tw-p-2;
+    }
+    .offcanvas-body {
+      @apply tw-bg-bg-secondary;
     }
   }
   /* Button */

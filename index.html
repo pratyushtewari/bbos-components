@@ -1302,14 +1302,17 @@
 
                             <li>
                               <input
-                              id="contentMain_CHK_CLASS130"
+                                id="contentMain_CHK_CLASS130"
                                 type="checkbox"
                                 name="ctl00$contentMain$CHK_CLASS130"
                                 onclick="disableParent(this);setTimeout('__doPostBack(\'ctl00$contentMain$CHK_CLASS130\',\'\')', 0)"
                                 class="norm_lbl"
                                 parentid="CHK_CLASS1"
-                                />
-                              <label class="label" for="contentMain_CHK_CLASS130">
+                              />
+                              <label
+                                class="label"
+                                for="contentMain_CHK_CLASS130"
+                              >
                                 Packer (1,577)
                               </label>
                               <button
@@ -1719,7 +1722,7 @@
                   </div>
                 </div>
                 <!-- Licenses and Certifications -->
-                <div class="bbs-accordion-item open">
+                <div class="bbs-accordion-item">
                   <button
                     onclick="toggleAccordion(event)"
                     class="bbs-accordion-header"
@@ -1740,7 +1743,7 @@
                   </button>
                   <div class="bbs-accordion-content">
                     <div class="content-wrapper">
-                      <fieldset class="tw-flex tw-flex-col tw-gap-4">
+                      <fieldset class="tw-flex tw-flex-col tw-gap-4" disabled>
                         <!-- Certifications reported -->
                         <div>
                           <p class="label">Certifications reported</p>
@@ -2235,7 +2238,6 @@
                                           >
                                             <img
                                               src="/BBOS/en-us/images/Category Blue.png"
-
                                             />
                                             California Prospects
                                           </a>
@@ -2263,7 +2265,6 @@
                                           >
                                             <img
                                               src="/BBOS/en-us/images/Category Green.png"
-
                                             />
                                             Pros MT
                                           </a>
@@ -2291,7 +2292,6 @@
                                           >
                                             <img
                                               src="/BBOS/en-us/images/Category Yellow.png"
-
                                             />
                                             Miami Plantains
                                           </a>
@@ -2319,7 +2319,6 @@
                                           >
                                             <img
                                               src="/BBOS/en-us/images/Category Green.png"
-
                                             />
                                             Plant City Prospects
                                           </a>
@@ -2371,7 +2370,6 @@
                                           >
                                             <img
                                               src="/BBOS/en-us/images/Category Black.png"
-
                                             />
                                             Prospects in the NE
                                           </a>
@@ -2399,7 +2397,6 @@
                                           >
                                             <img
                                               src="/BBOS/en-us/images/Category Green.png"
-
                                             />
                                             Compradores de Aguacate - Florida
                                           </a>
@@ -2475,7 +2472,6 @@
                                           >
                                             <img
                                               src="/BBOS/en-us/images/Category Blue.png"
-
                                             />
                                             Iris Watch Dog List Sample
                                           </a>
@@ -2527,7 +2523,6 @@
                                           >
                                             <img
                                               src="/BBOS/en-us/images/Category Green.png"
-
                                             />
                                             Foodservice companies in CA
                                           </a>
@@ -2555,7 +2550,6 @@
                                           >
                                             <img
                                               src="/BBOS/en-us/images/Category Green.png"
-
                                             />
                                             Lista de compradores de Tomatillo
                                           </a>
@@ -2583,7 +2577,6 @@
                                           >
                                             <img
                                               src="/BBOS/en-us/images/Category Black.png"
-
                                             />
                                             Alaska Companies
                                           </a>
@@ -2611,7 +2604,6 @@
                                           >
                                             <img
                                               src="/BBOS/en-us/images/Category Green.png"
-
                                             />
                                             AV CA shippers
                                           </a>
@@ -2639,7 +2631,6 @@
                                           >
                                             <img
                                               src="/BBOS/en-us/images/Category Red.png"
-
                                             />
                                             TX Watermelon
                                           </a>
@@ -2667,7 +2658,6 @@
                                           >
                                             <img
                                               src="/BBOS/en-us/images/Category Green.png"
-
                                             />
                                             Broc in CA
                                           </a>
@@ -2695,7 +2685,6 @@
                                           >
                                             <img
                                               src="/BBOS/en-us/images/Category Yellow.png"
-
                                             />
                                             Prospects
                                           </a>
@@ -2749,6 +2738,330 @@
                               </div>
                             </div>
                           </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+                <!-- Internal Criteria -->
+                <div class="bbs-accordion-item open">
+                  <button
+                    onclick="toggleAccordion(event)"
+                    class="bbs-accordion-header"
+                  >
+                    <div>
+                      <span class="msicon notranslate expand-icon"
+                        >expand_more</span
+                      >
+                    </div>
+                    <div class="label">
+                      <span class="text-label">Internal Criteria</span>
+                      <span class="caption">
+                        For use by BBOS employees only
+                      </span>
+                    </div>
+                  </button>
+                  <div class="bbs-accordion-content">
+                    <div class="content-wrapper">
+                      <fieldset class="tw-flex tw-flex-col tw-gap-4">
+                        <div class="input-wrapper">
+                          <p class="label">Sales Teritory</p>
+                          <ul class="tw-my-2 tw-grid tw-grid-cols-4 tw-gap-4">
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="IN" />
+                              <label for="IN">IN</label>
+                            </li>
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="MW" />
+                              <label for="MW">MW</label>
+                            </li>
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="NE" />
+                              <label for="NE">NE</label>
+                            </li>
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="OP" />
+                              <label for="OP">OP</label>
+                            </li>
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="SE" />
+                              <label for="SE">SE</label>
+                            </li>
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="SW" />
+                              <label for="SW">SW</label>
+                            </li>
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="WC" />
+                              <label for="WC">WC</label>
+                            </li>
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="WD" />
+                              <label for="WD">WD</label>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="input-wrapper">
+                          <label for="Territory_Code">Territory Code</label>
+                          <p>
+                            <select
+                              class="tw-w-full"
+                              aria-label="Small select example"
+                            >
+                              <option selected="selected" value=""></option>
+                              <option value="IN-51-01">
+                                IN-51-01 NORTH WEST MEXICO
+                              </option>
+                              <option value="IN-51-02">
+                                IN-51-02 NORTH CENTRAL MEXICO
+                              </option>
+                              <option value="IN-51-03">
+                                IN-51-03 CENTRAL MEXICO
+                              </option>
+                              <option value="IN-51-04">
+                                IN-51-04 SOUTH CENTRAL MEXICO
+                              </option>
+                              <option value="MW-06-01">...</option>
+                            </select>
+                          </p>
+                        </div>
+                        <div class="input-wrapper">
+                          <label for="contentMain_ddlMembershipTypeCode"
+                            >Membership Type</label
+                          >
+                          <p>
+                            <select
+                              class="tw-w-full"
+                              aria-label="Small select example"
+                              id="contentMain_ddlMembershipTypeCode"
+                            >
+                              <option selected="selected" value="">
+                                All Companies
+                              </option>
+                              <option value="M">Member Companies</option>
+                              <option value="NM">Non-Member Companies</option>
+                            </select>
+                          </p>
+                        </div>
+                        <div class="input-wrapper">
+                          <p class="label">Sales Teritory</p>
+                          <ul class="tw-my-2 tw-grid tw-grid-cols-4 tw-gap-4">
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="BBS50-APR-CSUPD" />
+                              <label for="BBS50-APR-CSUPD"
+                                >BBS50-APR-CSUPD</label
+                              >
+                            </li>
+
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="BBS50-OCT-CSUPD" />
+                              <label for="BBS50-OCT-CSUPD"
+                                >BBS50-OCT-CSUPD</label
+                              >
+                            </li>
+
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="BBS50-OCT-LIC" />
+                              <label for="BBS50-OCT-LIC">BBS50-OCT-LIC</label>
+                            </li>
+
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="BBS75-APR" />
+                              <label for="BBS75-APR">BBS75-APR</label>
+                            </li>
+
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="BBS75-OCT" />
+                              <label for="BBS75-OCT">BBS75-OCT</label>
+                            </li>
+
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="BBSINTL" />
+                              <label for="BBSINTL">BBSINTL</label>
+                            </li>
+
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="BBS50-APR-LIC" />
+                              <label for="BBS50-APR-LIC">BBS50-APR-LIC</label>
+                            </li>
+
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="BBS50" />
+                              <label for="BBS50">BBS50</label>
+                            </li>
+
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="BBS100" />
+                              <label for="BBS100">BBS100</label>
+                            </li>
+
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="BBS100-E" />
+                              <label for="BBS100-E">BBS100-E</label>
+                            </li>
+
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="BBS150" />
+                              <label for="BBS150">BBS150</label>
+                            </li>
+
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="BBS135" />
+                              <label for="BBS135">BBS135</label>
+                            </li>
+
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="BBS200" />
+                              <label for="BBS200">BBS200</label>
+                            </li>
+
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="BBS250" />
+                              <label for="BBS250">BBS250</label>
+                            </li>
+
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="BBS300" />
+                              <label for="BBS300">BBS300</label>
+                            </li>
+
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="BBS350" />
+                              <label for="BBS350">BBS350</label>
+                            </li>
+
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="BBS355" />
+                              <label for="BBS355">BBS355</label>
+                            </li>
+
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="BBS375" />
+                              <label for="BBS375">BBS375</label>
+                            </li>
+
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="BBS395" />
+                              <label for="BBS395">BBS395</label>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="input-wrapper">
+                          <label for="Avail_Licenses"
+                            ># of Avail Licenses</label
+                          >
+                          <p class="tw-flex tw-gap-4">
+                            <select aria-label="Small select example">
+                              <option selected value="1">Equal to</option>
+                              <option value="2">Greate than</option>
+                              <option value="3">Less than</option>
+                            </select>
+                            <input
+                              class="full-width"
+                              id="Avail_Licenses"
+                              type="text"
+                            />
+                          </p>
+                        </div>
+                        <div class="input-wrapper">
+                          <label for="Active_Licenses"
+                            ># of Active Licenses</label
+                          >
+                          <p class="tw-flex tw-gap-4">
+                            <select aria-label="Small select example">
+                              <option selected value="1">Equal to</option>
+                              <option value="2">Greate than</option>
+                              <option value="3">Less than</option>
+                            </select>
+                            <input
+                              class="full-width"
+                              id="Active_Licenses"
+                              type="text"
+                            />
+                          </p>
+                        </div>
+                        <div class="input-wrapper">
+                          <label for="Bus_Reports_Avail"
+                            ># of Bus Reports Avail</label
+                          >
+                          <p class="tw-flex tw-gap-4">
+                            <select aria-label="Small select example">
+                              <option selected value="1">Equal to</option>
+                              <option value="2">Greate than</option>
+                              <option value="3">Less than</option>
+                            </select>
+                            <input
+                              class="full-width"
+                              id="Bus_Reports_Avail"
+                              type="text"
+                            />
+                          </p>
+                        </div>
+                        <div class="input-wrapper">
+                          <label for="Bus_Reports_Used"
+                            ># of Bus Reports Used</label
+                          >
+                          <p class="tw-flex tw-gap-4">
+                            <select aria-label="Small select example">
+                              <option selected value="1">Equal to</option>
+                              <option value="2">Greate than</option>
+                              <option value="3">Less than</option>
+                            </select>
+                            <input
+                              class="full-width"
+                              id="Bus_Reports_Used"
+                              type="text"
+                            />
+                          </p>
+                        </div>
+
+                        <div class="bbs-checkbox-input">
+                          <input type="checkbox" id="Receives_Promo_Faxes" />
+                          <label class="strong" for="Receives_Promo_Faxes"
+                            >Receives Promo Faxes</label
+                          ><br />
+                        </div>
+
+                        <div class="bbs-checkbox-input">
+                          <input type="checkbox" id="Receives_Promo_Emails" />
+                          <label class="strong" for="Receives_Promo_Emails"
+                            >Receives Promo Emails</label
+                          ><br />
+                        </div>
+
+                        <div class="input-wrapper">
+                          <label for="Membership_Revenue"
+                            >Membership Revenue</label
+                          >
+                          <p class="tw-flex tw-gap-4">
+                            <select aria-label="Small select example">
+                              <option selected value="1">Equal to</option>
+                              <option value="2">Greate than</option>
+                              <option value="3">Less than</option>
+                            </select>
+                            <input
+                              class="full-width"
+                              id="Membership_Revenue"
+                              type="text"
+                            />
+                          </p>
+                        </div>
+                        <div class="input-wrapper">
+                          <label for="Advertising_Revenue"
+                            >Advertising Revenue</label
+                          >
+                          <p class="tw-flex tw-gap-4">
+                            <select aria-label="Small select example">
+                              <option selected value="1">Equal to</option>
+                              <option value="2">Greate than</option>
+                              <option value="3">Less than</option>
+                            </select>
+                            <input
+                              class="full-width"
+                              id="Advertising_Revenue"
+                              type="text"
+                            />
+                          </p>
                         </div>
                       </fieldset>
                     </div>

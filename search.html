@@ -470,8 +470,11 @@
                 <span class="msicon notranslate">saved_search</span>
                 <span>Save Search</span>
               </button>
+
               <button
-                onclick="showsidebar()"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"
                 class="bbsButton bbsButton-secondary filled full-width"
               >
                 <span class="msicon notranslate">manage_search</span>
@@ -515,6 +518,171 @@
                   <span class="msicon notranslate">export_notes</span>
                   <span>Export Data</span>
                 </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Show the selected search criteria in the bootstrap offcanvas -->
+          <div
+            class="offcanvas offcanvas-end search-criteria-offcanvas"
+            tabindex="-1"
+            id="offcanvasRight"
+            aria-labelledby="Search criteria"
+          >
+            <div class="offcanvas-header">
+              <div class="tw-flex tw-w-full tw-justify-between">
+                <div class="tw-flex">
+                  <button
+                    class="bbsButton bbsButton-tertiary"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
+                  >
+                    <span class="msicon notranslate">clear</span>
+                  </button>
+                  <h5
+                    class="offcanvas-title"
+                    id="offcanvasRightLabel"
+                    class="title"
+                  >
+                    Search criteria
+                  </h5>
+                </div>
+                <div class="tw-flex tw-gap-3">
+                  <form action="index.html" class="tw-w-full">
+                    <button type="submit" class="bbsButton bbsButton-secondary">
+                      <span class="msicon notranslate">arrow_back</span>
+                      <span>Back to edit search</span>
+                    </button>
+                  </form>
+                  <button class="bbsButton bbsButton-primary filled tw-w-full">
+                    <span class="msicon notranslate">saved_search</span>
+                    <span>Save Search</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="offcanvas-body">
+              <div class="search-criteria-group">
+                <div class="title-container">
+                  <div class="label">Company Details</div>
+                </div>
+                <div class="content-container">
+                  <div class="input-container">
+                    <p class="subheading">Company Name</p>
+                    <div class="tag-container">
+                      <span class="tag">Test name</span>
+                    </div>
+                  </div>
+
+                  <div class="input-container">
+                    <p class="subheading">Handles rejected shipments</p>
+                    <div class="tag-container">
+                      <span class="tag">Yes</span>
+                    </div>
+                  </div>
+                  <div class="input-container">
+                    <p class="subheading">Phone</p>
+                    <div class="tag-container">
+                      <span class="tag">201384938</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="search-criteria-group">
+                <div class="title-container">
+                  <div class="label">Rating</div>
+                </div>
+                <div class="content-container">
+                  <div class="input-container">
+                    <p class="subheading">Blue Book Score</p>
+                    <div class="tag-container">
+                      <span class="tag">Equal to: 20</span>
+                    </div>
+                  </div>
+                  <div class="input-container">
+                    <p class="subheading">Trade Practices</p>
+                    <div class="tag-container">
+                      <span class="tag">XXXX - Excellent</span>
+                      <span class="tag">XX - Unsatisfactory</span>
+                      <span class="tag">XXX - Good</span>
+                      <span class="tag">X - Poor</span>
+                    </div>
+                  </div>
+                  <div class="input-container">
+                    <p class="subheading">Pay Description</p>
+                    <div class="tag-container">
+                      <span class="tag">AA - 1 - 14 days on average</span>
+                      <span class="tag">D - 36 - 45 days on average</span>
+                      <span class="tag">A - 15-21 days on average</span>
+                      <span class="tag">E - 46 - 60 days on average</span>
+                      <span class="tag">B - 22 - 28 days on average</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="search-criteria-group">
+                <div class="title-container">
+                  <div class="label">Rating</div>
+                </div>
+                <div class="content-container">
+                  <div class="input-container">
+                    <p class="subheading">Blue Book Score</p>
+                    <div class="tag-container">
+                      <span class="tag">Equal to: 20</span>
+                    </div>
+                  </div>
+                  <div class="input-container">
+                    <p class="subheading">Trade Practices</p>
+                    <div class="tag-container">
+                      <span class="tag">XXXX - Excellent</span>
+                      <span class="tag">XX - Unsatisfactory</span>
+                      <span class="tag">XXX - Good</span>
+                      <span class="tag">X - Poor</span>
+                    </div>
+                  </div>
+                  <div class="input-container">
+                    <p class="subheading">Pay Description</p>
+                    <div class="tag-container">
+                      <span class="tag">AA - 1 - 14 days on average</span>
+                      <span class="tag">D - 36 - 45 days on average</span>
+                      <span class="tag">A - 15-21 days on average</span>
+                      <span class="tag">E - 46 - 60 days on average</span>
+                      <span class="tag">B - 22 - 28 days on average</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="search-criteria-group">
+                <div class="title-container">
+                  <div class="label">Rating</div>
+                </div>
+                <div class="content-container">
+                  <div class="input-container">
+                    <p class="subheading">Blue Book Score</p>
+                    <div class="tag-container">
+                      <span class="tag">Equal to: 20</span>
+                    </div>
+                  </div>
+                  <div class="input-container">
+                    <p class="subheading">Trade Practices</p>
+                    <div class="tag-container">
+                      <span class="tag">XXXX - Excellent</span>
+                      <span class="tag">XX - Unsatisfactory</span>
+                      <span class="tag">XXX - Good</span>
+                      <span class="tag">X - Poor</span>
+                    </div>
+                  </div>
+                  <div class="input-container tw-overflow-none">
+                    <p class="subheading">Pay Description</p>
+                    <div class="tag-container">
+                      <span class="tag">AA - 1 - 14 days on average</span>
+                      <span class="tag">D - 36 - 45 days on average</span>
+                      <span class="tag">A - 15-21 days on average</span>
+                      <span class="tag">E - 46 - 60 days on average</span>
+                      <span class="tag">B - 22 - 28 days on average</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -586,185 +754,9 @@
         </div>
       </div>
     </footer>
-
-    <div class="bbsModal tw-hidden">
-      <div class="bbsSidebar show tw-relative tw-top-0">
-        <div
-          class="tw-sticky tw-top-0 tw-border-b tw-border-border tw-bg-bg-primary tw-p-4"
-        >
-          <div class="tw-flex tw-justify-between">
-            <div class="tw-flex">
-              <button
-                onclick="hidesidebar()"
-                class="bbsButton bbsButton-tertiary"
-              >
-                <span class="msicon notranslate">clear</span>
-              </button>
-              <span class="title">Search criteria</span>
-            </div>
-            <div class="tw-flex tw-gap-3">
-              <form action="index.html" class="tw-w-full">
-                <button type="submit" class="bbsButton bbsButton-secondary">
-                  <span class="msicon notranslate">arrow_back</span>
-                  <span>Back to edit search</span>
-                </button>
-              </form>
-              <button class="bbsButton bbsButton-primary filled tw-w-full">
-                <span class="msicon notranslate">saved_search</span>
-                <span>Save Search</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="tw-p-4">
-          <div class="search-criteria-group">
-            <div class="title-container">
-              <div class="label">Company Details</div>
-            </div>
-            <div class="content-container">
-              <div class="input-container">
-                <p class="subheading">Company Name</p>
-                <div class="tag-container">
-                  <span class="tag">Test name</span>
-                </div>
-              </div>
-
-              <div class="input-container">
-                <p class="subheading">Handles rejected shipments</p>
-                <div class="tag-container">
-                  <span class="tag">Yes</span>
-                </div>
-              </div>
-              <div class="input-container">
-                <p class="subheading">Phone</p>
-                <div class="tag-container">
-                  <span class="tag">201384938</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="search-criteria-group">
-            <div class="title-container">
-              <div class="label">Rating</div>
-            </div>
-            <div class="content-container">
-              <div class="input-container">
-                <p class="subheading">Blue Book Score</p>
-                <div class="tag-container">
-                  <span class="tag">Equal to: 20</span>
-                </div>
-              </div>
-              <div class="input-container">
-                <p class="subheading">Trade Practices</p>
-                <div class="tag-container">
-                  <span class="tag">XXXX - Excellent</span>
-                  <span class="tag">XX - Unsatisfactory</span>
-                  <span class="tag">XXX - Good</span>
-                  <span class="tag">X - Poor</span>
-                </div>
-              </div>
-              <div class="input-container">
-                <p class="subheading">Pay Description</p>
-                <div class="tag-container">
-                  <span class="tag">AA - 1 - 14 days on average</span>
-                  <span class="tag">D - 36 - 45 days on average</span>
-                  <span class="tag">A - 15-21 days on average</span>
-                  <span class="tag">E - 46 - 60 days on average</span>
-                  <span class="tag">B - 22 - 28 days on average</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="search-criteria-group">
-            <div class="title-container">
-              <div class="label">Rating</div>
-            </div>
-            <div class="content-container">
-              <div class="input-container">
-                <p class="subheading">Blue Book Score</p>
-                <div class="tag-container">
-                  <span class="tag">Equal to: 20</span>
-                </div>
-              </div>
-              <div class="input-container">
-                <p class="subheading">Trade Practices</p>
-                <div class="tag-container">
-                  <span class="tag">XXXX - Excellent</span>
-                  <span class="tag">XX - Unsatisfactory</span>
-                  <span class="tag">XXX - Good</span>
-                  <span class="tag">X - Poor</span>
-                </div>
-              </div>
-              <div class="input-container">
-                <p class="subheading">Pay Description</p>
-                <div class="tag-container">
-                  <span class="tag">AA - 1 - 14 days on average</span>
-                  <span class="tag">D - 36 - 45 days on average</span>
-                  <span class="tag">A - 15-21 days on average</span>
-                  <span class="tag">E - 46 - 60 days on average</span>
-                  <span class="tag">B - 22 - 28 days on average</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="search-criteria-group">
-            <div class="title-container">
-              <div class="label">Rating</div>
-            </div>
-            <div class="content-container">
-              <div class="input-container">
-                <p class="subheading">Blue Book Score</p>
-                <div class="tag-container">
-                  <span class="tag">Equal to: 20</span>
-                </div>
-              </div>
-              <div class="input-container">
-                <p class="subheading">Trade Practices</p>
-                <div class="tag-container">
-                  <span class="tag">XXXX - Excellent</span>
-                  <span class="tag">XX - Unsatisfactory</span>
-                  <span class="tag">XXX - Good</span>
-                  <span class="tag">X - Poor</span>
-                </div>
-              </div>
-              <div class="input-container tw-overflow-none">
-                <p class="subheading">Pay Description</p>
-                <div class="tag-container">
-                  <span class="tag">AA - 1 - 14 days on average</span>
-                  <span class="tag">D - 36 - 45 days on average</span>
-                  <span class="tag">A - 15-21 days on average</span>
-                  <span class="tag">E - 46 - 60 days on average</span>
-                  <span class="tag">B - 22 - 28 days on average</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <script async src="main.js"></script>
 
     <script>
-      const showsidebar = () => {
-        document.querySelector("body").style.overflow = "hidden";
-        const modal = document.querySelector(".bbsModal");
-        modal.classList.remove("tw-hidden");
-
-        setTimeout(function () {
-          const bbsSidebar = modal.querySelector(".bbsSidebar");
-          bbsSidebar.classList.add("show");
-        }, 100);
-      };
-      const hidesidebar = () => {
-        const modal = document.querySelector(".bbsModal");
-        const bbsSidebar = modal.querySelector(".bbsSidebar");
-        bbsSidebar.classList.remove("show");
-        setTimeout(function () {
-          document.querySelector("body").style.overflow = "auto";
-          const modal = document.querySelector(".bbsModal");
-          modal.classList.add("tw-hidden");
-        }, 300);
-      };
       const tooltipTriggerList = document.querySelectorAll(
         '[data-bs-toggle="tooltip"]',
       );
