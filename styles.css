@@ -12,7 +12,7 @@ button,
 
 :root {
   --bs-offcanvas-width: 600px;
-  --bs-offcanvas-horizontal-width:        600px;
+  --bs-offcanvas-horizontal-width: 600px;
 }
 /**
  * Google Material Symbols (new) icon-font
@@ -72,7 +72,11 @@ a {
  */
 @layer components {
   body {
-    @apply tw-text-text-primary;
+    @apply tw-overflow-x-visible
+    /* this is to make the sticky work,
+    there is an overflow hidden in the legacy css file */
+    tw-overflow-y-visible
+    tw-text-text-primary;
     &.qa::after {
       content: "QA";
       @apply tw-pointer-events-none
@@ -95,13 +99,11 @@ a {
     }
   }
   .offcanvas.offcanvas-end.search-criteria-offcanvas {
-    @apply
-    tw-w-[600px]
+    @apply tw-w-[600px]
     tw-max-w-[80%];
 
     .offcanvas-header {
-      @apply
-      tw-border-b tw-border-border tw-p-2;
+      @apply tw-border-b tw-border-border tw-p-2;
     }
     .offcanvas-body {
       @apply tw-bg-bg-secondary;
@@ -835,11 +837,10 @@ a {
       @apply max-lg:tw-order-last;
     }
     .selected-criteria {
-      @apply
-      tw-top-[69px]
-      tw-self-start
-      tw-overflow-y-auto
-      /* in lg screen size there are two columns */
+      @apply /*
+      in
+      lg
+      screen size there are two columns */ tw-top-[69px] tw-self-start tw-overflow-y-auto
       lg:tw-sticky
       lg:tw-h-[calc(100vh-45px)];
     }
