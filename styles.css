@@ -72,9 +72,9 @@ a {
  */
 @layer components {
   body {
-    @apply tw-overflow-x-visible
-    /* this is to make the sticky work,
-    there is an overflow hidden in the legacy css file */
+    @apply /*
+    this is to make the sticky work, there
+    is an overflow hidden in the legacy css file */ tw-overflow-x-visible
     tw-overflow-y-visible
     tw-text-text-primary;
     &.qa::after {
@@ -258,7 +258,10 @@ a {
   }
 
   .bbsButtonGroup {
-    @apply tw-flex;
+    @apply tw-grid
+    tw-grid-cols-2
+    tw-gap-y-2
+    lg:tw-grid-cols-4;
 
     .bbsButton {
       @apply tw-rounded-none
@@ -272,6 +275,7 @@ a {
       }
     }
     &.rounded {
+      @apply tw-grid-cols-4;
       .bbsButton {
         &:first-child {
           @apply tw-rounded-l-full;
@@ -279,6 +283,16 @@ a {
         &:last-child {
           @apply tw-rounded-r-full;
         }
+      }
+    }
+    &:not(.rounded) {
+      &:nth-child(2n + 1) {
+        @apply tw-rounded-l lg:tw-rounded-none;
+      }
+
+      &:nth-child(2n) {
+        @apply tw-rounded-r tw-border-r
+        lg:tw-rounded-none lg:tw-border-r-0;
       }
     }
   }
@@ -974,6 +988,10 @@ a {
       @apply tw-flex tw-gap-2;
     }
   }
+  .digicert img {
+    @apply tw-h-5;
+  }
+
   /* END OF OLD BBOS OVERWITES */
   /* end of the layer components */
 }
