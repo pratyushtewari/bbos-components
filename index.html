@@ -2765,7 +2765,7 @@
                     <div class="content-wrapper">
                       <fieldset class="tw-flex tw-flex-col tw-gap-4">
                         <div class="input-wrapper">
-                          <p class="label">Primary Service</p>
+                          <p class="label">Sales Teritory</p>
                           <ul class="tw-my-2 tw-grid tw-grid-cols-4 tw-gap-4">
                             <li class="bbs-checkbox-input small">
                               <input type="checkbox" id="IN" />
@@ -2844,7 +2844,7 @@
                           </p>
                         </div>
                         <div class="input-wrapper">
-                          <p class="label">Sales Teritory</p>
+                          <p class="label">Primary Service</p>
                           <ul class="tw-my-2 tw-grid tw-grid-cols-4 tw-gap-4">
                             <li class="bbs-checkbox-input small">
                               <input type="checkbox" id="BBS50-APR-CSUPD" />
@@ -3070,28 +3070,32 @@
               </div>
             </div>
             <div class="selected-criteria tw-w-[400px]">
-              <h2>Selected Criteria</h2>
-              <div class="tw-flex tw-gap-3">
-                <button
-                  onclick="clearallsearch()"
-                  class="bbsButton bbsButton-secondary filled full-width"
-                >
-                  <span class="msicon notranslate">clear</span>
-                  <span>Clear all</span>
-                </button>
-                <button class="bbsButton bbsButton-secondary filled full-width">
-                  <span class="msicon notranslate">saved_search</span>
-                  <span>Save Search</span>
-                </button>
-                <form action="search.html" class="tw-w-full">
+              <div class="tw-sticky tw-top-0 tw-bg-bg-secondary tw-pb-2">
+                <h2>Selected Criteria</h2>
+                <div class="tw-grid tw-grid-cols-1 tw-gap-3 md:tw-grid-cols-3">
                   <button
-                    type="submit"
-                    class="bbsButton bbsButton-primary full-width"
+                    onclick="clearallsearch()"
+                    class="bbsButton bbsButton-secondary filled full-width"
                   >
-                    <span class="msicon notranslate">search</span>
-                    <span>Search</span>
+                    <span class="msicon notranslate">clear</span>
+                    <span>Clear all</span>
                   </button>
-                </form>
+                  <button
+                    class="bbsButton bbsButton-secondary filled full-width"
+                  >
+                    <span class="msicon notranslate">saved_search</span>
+                    <span>Save Search</span>
+                  </button>
+                  <form action="search.html" class="tw-w-full">
+                    <button
+                      type="submit"
+                      class="bbsButton bbsButton-primary full-width"
+                    >
+                      <span class="msicon notranslate">search</span>
+                      <span>Search</span>
+                    </button>
+                  </form>
+                </div>
               </div>
               <!-- Selection criteria begins -->
               <div class="search-criteria-group">
@@ -3160,6 +3164,78 @@
                   </div>
                 </div>
               </div>
+              <div class="search-criteria-group">
+                <div class="title-container">
+                  <div class="label">Rating</div>
+                  <button class="bbsButton bbsButton-tertiary">
+                    <span class="msicon notranslate">clear</span>
+                    <span>Clear</span>
+                  </button>
+                </div>
+                <div class="content-container">
+                  <div class="input-container">
+                    <p class="subheading">Blue Book Score</p>
+                    <div class="tag-container">
+                      <span class="tag">Equal to: 20</span>
+                    </div>
+                  </div>
+                  <div class="input-container">
+                    <p class="subheading">Trade Practices</p>
+                    <div class="tag-container">
+                      <span class="tag">XXXX - Excellent</span>
+                      <span class="tag">XX - Unsatisfactory</span>
+                      <span class="tag">XXX - Good</span>
+                      <span class="tag">X - Poor</span>
+                    </div>
+                  </div>
+                  <div class="input-container">
+                    <p class="subheading">Pay Description</p>
+                    <div class="tag-container">
+                      <span class="tag">AA - 1 - 14 days on average</span>
+                      <span class="tag">D - 36 - 45 days on average</span>
+                      <span class="tag">A - 15-21 days on average</span>
+                      <span class="tag">E - 46 - 60 days on average</span>
+                      <span class="tag">B - 22 - 28 days on average</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="search-criteria-group">
+                <div class="title-container">
+                  <div class="label">Rating</div>
+                  <button class="bbsButton bbsButton-tertiary">
+                    <span class="msicon notranslate">clear</span>
+                    <span>Clear</span>
+                  </button>
+                </div>
+                <div class="content-container">
+                  <div class="input-container">
+                    <p class="subheading">Blue Book Score</p>
+                    <div class="tag-container">
+                      <span class="tag">Equal to: 20</span>
+                    </div>
+                  </div>
+                  <div class="input-container">
+                    <p class="subheading">Trade Practices</p>
+                    <div class="tag-container">
+                      <span class="tag">XXXX - Excellent</span>
+                      <span class="tag">XX - Unsatisfactory</span>
+                      <span class="tag">XXX - Good</span>
+                      <span class="tag">X - Poor</span>
+                    </div>
+                  </div>
+                  <div class="input-container">
+                    <p class="subheading">Pay Description</p>
+                    <div class="tag-container">
+                      <span class="tag">AA - 1 - 14 days on average</span>
+                      <span class="tag">D - 36 - 45 days on average</span>
+                      <span class="tag">A - 15-21 days on average</span>
+                      <span class="tag">E - 46 - 60 days on average</span>
+                      <span class="tag">B - 22 - 28 days on average</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <!-- Selection criteria ends -->
             </div>
           </div>
@@ -3183,11 +3259,11 @@
               <p class="tw--my-1 tw-text-sm tw-text-success">
                 Credit Rating and Marketing Information
               </p>
-              <p class="tw-flex tw-gap-2 tw-pt-2">
-                <img
-                  class="tw-h-5"
-                  src="/assets/digiCert-basic-seal-new.svg "
-                />
+              <div class="tw-flex tw-gap-2 tw-pt-2">
+                <div class="digicert">
+                  <img src="/assets/digiCert-basic-seal-new.svg " />
+                </div>
+
                 <a class="social" href="#">
                   <img src="/assets/youtube.svg"
                 /></a>
@@ -3200,7 +3276,7 @@
                 <a class="social" href="#">
                   <img src="/assets/facebook-f.svg"
                 /></a>
-              </p>
+              </div>
             </div>
           </div>
           <div class="right-links">
@@ -3219,7 +3295,7 @@
           </div>
         </div>
         <div
-          class="tw-flex tw-flex-col tw-items-center tw-border tw-border-t-border tw-pt-2 tw-text-xs"
+          class="tw-flex tw-flex-col tw-items-center tw-border-t tw-border-t-border tw-pt-2 tw-text-xs"
         >
           © 2023 Blue Book Services | 630 668-3500
         </div>
