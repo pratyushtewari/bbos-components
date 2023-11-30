@@ -391,8 +391,8 @@ const mulSel_createOpt_CountryState = (optionId) => {
   // This is due to the data-bs-toggle="dropdown" set on a div and
   // not on a button.
 
-  // enable state and city selection
-  document.querySelector("#us-canada-mexico").removeAttribute("disabled");
+  // enable state selection
+  document.querySelector("#us_canada_mexico_state").removeAttribute("disabled");
 
   // Clear the existing multiseled tags
   mulSel.querySelector(".mulSel-tag-container").innerHTML = "";
@@ -509,14 +509,20 @@ const selectNoneCountry = (event) => {
   otherCountryInput.setAttribute("disabled", "disabled");
   otherCountryInput.value = "";
 
+  const stateSlector = document.querySelector("#us_canada_mexico_state");
+  if (stateSlector) {
+    stateSlector.setAttribute("disabled", "disabled");
+    // Clear the existing multiseled tags
+    stateSlector.querySelector(".mulSel-tag-container").innerHTML = "";
+  }
+
   // disabled state and city selection
-  const stateCitiselector = document.querySelector("#us-canada-mexico");
-  if (stateCitiselector == null) return;
-
-  stateCitiselector.setAttribute("disabled", "disabled");
-
-  // Clear the existing multiseled tags
-  stateCitiselector.querySelector(".mulSel-tag-container").innerHTML = "";
+  const citySelector = document.querySelector("#us_canada_mexico_city");
+  if (citySelector) {
+    citySelector.setAttribute("disabled", "disabled");
+    // Clear the existing multiseled tags
+    citySelector.querySelector(input).value = "";
+  }
 };
 // This is called when Other countries
 // radio is selected.
