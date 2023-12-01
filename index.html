@@ -885,7 +885,8 @@
                         <fieldset
                           id="us_canada_mexico_city"
                           disabled
-                          class="tw-flex tw-flex-col tw-gap-4">
+                          class="tw-flex tw-flex-col tw-gap-4"
+                        >
                           <div data-info="City Selection" class="input-wrapper">
                             <label for="cityName">City</label>
 
@@ -1868,6 +1869,116 @@
                               </select>
                             </div>
                           </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+                <!-- Local Source -->
+                <div class="bbs-accordion-item">
+                  <button
+                    onclick="toggleAccordion(event)"
+                    class="bbs-accordion-header"
+                  >
+                    <div>
+                      <span class="msicon notranslate expand-icon"
+                        >expand_more</span
+                      >
+                    </div>
+                    <div class="label">
+                      <span class="text-label">Local Source</span>
+                    </div>
+                  </button>
+                  <div class="bbs-accordion-content">
+                    <div class="content-wrapper">
+                      <fieldset disabled class="tw-flex tw-flex-col tw-gap-4">
+                        <p class="caption tw-text-text-secondary">
+                          Searching using this page results in data provided by
+                          <a href="">Meister Media Worldwide, Inc.</a>
+                        </p>
+
+                        <div class="input-wrapper">
+                          <p class="label">
+                            <span>Local Source Data:</span>
+                            <button
+                              class="msicon notranslate help"
+                              data-bs-toggle="tooltip"
+                              data-bs-trigger="hover focus"
+                              data-bs-placement="right"
+                              data-bs-html="true"
+                              data-bs-title="To change your default settings to include / exclude / limit to local source data records, please go to the <a href='UserProfile.aspx'>User Profile</a> page to make changes."
+                            >
+                              help
+                            </button>
+                          </p>
+
+                          <p>
+                            <select
+                              id="ddlIncludeLocalSource"
+                              class="tw-w-full"
+                              aria-label="Small select example"
+                            >
+                              <option selected value="1">
+                                Include Local Source
+                              </option>
+                              <option value="2">Exclude Local Source</option>
+                              <option value="3">Limit to Local Source</option>
+                            </select>
+                          </p>
+                        </div>
+                        <div class="input-wrapper">
+                          <div class="bbs-checkbox-input">
+                            <input type="checkbox" id="cbCertifiedOrganic" />
+                            <label for="cbCertifiedOrganic">Grows Organic</label
+                            ><br />
+                          </div>
+                        </div>
+                        <div class="input-wrapper">
+                          <p class="label">Local Source Data</p>
+
+                          <div class="bbs-checkbox-input">
+                            <input type="checkbox" id="cblAlsoOperates_0" />
+                            <label for="cblAlsoOperates_0"
+                              >Roadside Market</label
+                            ><br />
+                          </div>
+                          <div class="bbs-checkbox-input">
+                            <input type="checkbox" id="cblAlsoOperates_1" />
+                            <label for="cblAlsoOperates_1"
+                              >Packing Facility</label
+                            ><br />
+                          </div>
+                          <div class="bbs-checkbox-input">
+                            <input type="checkbox" id="cblAlsoOperates_2" />
+                            <label for="cblAlsoOperates_2">Greenhouse</label
+                            ><br />
+                          </div>
+                        </div>
+                        <div class="input-wrapper">
+                          <p class="label">Total Acres</p>
+                          <ul class="tw-my-2 tw-grid tw-grid-cols-2 tw-gap-2">
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="CHK_TOTAL_ACRES_0" />
+                              <label for="CHK_TOTAL_ACRES_0">25 - 99 acres</label>
+                            </li>
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="CHK_TOTAL_ACRES_1" />
+                              <label for="CHK_TOTAL_ACRES_1">100 - 499 acres</label>
+                            </li>
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="CHK_TOTAL_ACRES_2" />
+                              <label for="CHK_TOTAL_ACRES_2">500 - 999 acres</label>
+                            </li>
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="CHK_TOTAL_ACRES_3" />
+                              <label for="CHK_TOTAL_ACRES_3">1000 - 2499 acres</label>
+                            </li>
+                            <li class="bbs-checkbox-input small">
+                              <input type="checkbox" id="CHK_TOTAL_ACRES_4" />
+                              <label for="CHK_TOTAL_ACRES_4">2500 + acres</label>
+                            </li>
+
+                          </ul>
                         </div>
                       </fieldset>
                     </div>
