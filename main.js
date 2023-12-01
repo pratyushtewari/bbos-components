@@ -383,6 +383,8 @@ const mulSel_createOpt_CountryState = (optionId) => {
   otherCountryInput.setAttribute("disabled", "disabled");
   otherCountryInput.value = "";
 
+  setIsDisabled("us_canada_mexico_city", true);
+
   const mulSel = document.querySelector("#countryState-mulSel");
   if (mulSel == null) return;
 
@@ -485,12 +487,20 @@ const mulSel_onclickOpt_CountryState = (event, optionId) => {
     // mark option as selected
     const menuoption = event.currentTarget.closest("li");
     menuoption.classList.add("selected");
+
+    // Enable city selection
+    setIsDisabled("us_canada_mexico_city", false);
   } else {
     // remove the tag element and mark the item non selected
     tagElement.remove();
     // mark option as unselected
     const menuoption = event.currentTarget.closest("li");
     menuoption.classList.remove("selected");
+
+    // If there are no more tags left then disable city
+    if (!tagContainer.children.length) {
+      setIsDisabled("us_canada_mexico_city", true);
+    }
   }
 
   // update dropdown position
@@ -503,6 +513,17 @@ const mulSel_onclickOpt_CountryState = (event, optionId) => {
 
   // focus the input
   mulSelParent.querySelector("input").focus();
+};
+const setIsDisabled = (id, isDisabled) => {
+  const fieldsetElement = document.querySelector(`#${id}`);
+  if (fieldsetElement) {
+    if (isDisabled) {
+      fieldsetElement.setAttribute("disabled", isDisabled);
+      fieldsetElement.querySelector("input").value = "";
+    } else {
+      fieldsetElement.removeAttribute("disabled");
+    }
+  }
 };
 const selectNoneCountry = (event) => {
   const otherCountryInput = document.querySelector("#otherCountries");
