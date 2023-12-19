@@ -64,9 +64,6 @@ button:disabled {
   tw-outline-focus-outline;
   z-index: 9999;
 }
-a {
-  @apply hover:tw-bg-bg-component-hover;
-}
 /**
  * components and css using tailwind css
  */
@@ -237,7 +234,7 @@ a {
       tw-rounded-none
       tw-border-none
       tw-px-4
-      tw-py-3
+      tw-py-2
       tw-text-left;
       > p {
         @apply tw-flex
@@ -408,45 +405,105 @@ a {
     }
   }
 
+  .bbs-menu-item {
+    @apply tw-flex
+      tw-w-full
+      tw-gap-2
+      tw-px-4
+      tw-py-2
+      hover:tw-bg-bg-component-hover
+      active:tw-bg-bg-component-active;
+    /* each child is vertically stacked */
+    & > * {
+      @apply tw-flex tw-flex-col;
+    }
+
+    .text-content {
+      @apply tw-flex-grow
+        tw-text-left;
+      .label {
+        @apply tw-text-sm
+          tw-font-normal
+          tw-text-text-primary;
+      }
+      .caption {
+        @apply tw-text-start
+          tw-text-xs
+          tw-text-text-secondary;
+      }
+    }
+
+    &.selected {
+      @apply tw-shadow-selected-vertical
+        tw-bg-bg-component-active
+        tw-text-brand;
+      .text-content {
+        .label {
+          @apply tw-text-brand;
+        }
+      }
+    }
+    &.disabled, &:disabled {
+      @apply
+        tw-bg-bg-disabled
+        tw-text-text-disabled
+        ;
+      .text-content {
+        .label, .caption {
+          @apply tw-text-text-disabled;
+        }
+      }
+      &.new::after {
+        @apply tw-text-text-disabled;
+      }
+    }
+    &.new::after {
+      content: "NEW";
+      @apply tw-pt-1
+        tw-text-[10px]
+        tw-text-violet-800;
+    }
+  }
+
   .left-sidebar {
     @apply tw-sticky
     tw-top-[46px]
-    tw-max-w-[200px]
+    tw-max-w-[240px]
     tw-self-start
     tw-overflow-y-auto
     tw-border-x
     tw-border-border
     tw-bg-bg-primary
-    tw-p-2
     max-sm:tw-p-0
     md:tw-w-full;
     height: calc(100vh - 45px);
 
     .bbsButton.bbsButton-menu-item {
-      @apply tw-rounded max-sm:tw-rounded-none;
       &.selected {
-        @apply tw-bg-bg-component-selected
-        tw-shadow-none;
+        @apply tw-shadow-selected-vertical
+        tw-bg-bg-component-active
+        tw-text-brand;
       }
       .text-label {
         @apply tw-whitespace-break-spaces
          max-sm:tw-hidden;
       }
-      .bbsBadge {
+      .bbsBadge,
+      .new-bbsBadge {
         @apply max-sm:tw-hidden;
       }
     }
     .group-label {
-      @apply tw-pointer-events-none
+      @apply /*
+      */
+      tw-pointer-events-none
       tw-py-2
-      tw-ps-2
-      tw-text-xs
-      tw-font-semibold
+      tw-ps-2 tw-text-xs tw-font-semibold
       tw-text-text-secondary
       max-sm:tw-hidden;
     }
     hr {
-      @apply tw-my-3;
+      @apply tw-my-1;
     }
   }
   /* Divider */
@@ -706,6 +763,9 @@ a {
       > img {
         @apply tw-m-auto
         tw-h-4;
+      }
+      &:hover {
+        @apply tw-bg-bg-component-hover;
       }
     }
     .footer-container {

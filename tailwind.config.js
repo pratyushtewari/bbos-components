@@ -31,6 +31,7 @@ export default {
       },
       boxShadow: {
         "selected-horizontal": "inset 0 -2px 0 #0055A5",
+        "selected-vertical": "inset 4px 0 0 #0055A5",
       },
       screens: {
         xs: "400px",
