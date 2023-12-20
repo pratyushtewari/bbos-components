@@ -29,299 +29,384 @@
 
     <div class="top-nav">
       <div class="top-nav-container">
-        <div class="tw-flex-grow">
-          <div class="top-nav-logo">
-            <img src="/assets/BBS_logo_small.svg" />
-            <img
-              class="tw-hidden xl:tw-inline-block"
-              style="width: 122px; height: 12px"
-              src="/assets/Blue-Book-Services.png"
-            />
-          </div>
-          <button class="bbsButton bbsButton-menu-item">
-            <p>
-              <span class="msicon notranslate">home</span>
-              <span class="text-label tw-hidden md:tw-inline-block">Home</span>
-            </p>
-          </button>
-          <!-- advanced-search-dropdown -->
-          <div>
-            <button
-              class="bbsButton bbsButton-menu-item selected"
-              id="advanced-search-dropdown"
-              onclick="toggleTopNavMenu(event)"
-            >
-              <p>
-                <span class="msicon notranslate">search</span>
-                <span class="text-label tw-hidden md:tw-inline-block"
-                  >Advanced Search</span
-                >
-              </p>
-            </button>
-            <div id="search-top-menu" class="bbsMenu tw-absolute tw-hidden">
-              <button class="bbsButton bbsButton-menu-item">
-                <p>
-                  <span class="msicon notranslate">factory</span>
-                  <span class="text-label">Company Search</span>
-                  <span class="bbsBadge">New</span>
-                </p>
-              </button>
-              <span
-                class="tw-d-inline-block tw-w-full"
-                tabindex="0"
-                data-bs-toggle="tooltip"
-                data-bs-placement="right"
-                data-bs-html="true"
-                data-bs-title="This option is not available with your membership"
-              >
-                <button disabled class="bbsButton bbsButton-menu-item">
-                  <p>
-                    <span class="msicon notranslate">person_search</span>
-                    <span class="text-label">People Search</span>
-                    <span class="msicon notranslate">lock</span>
-                  </p>
-                </button>
-              </span>
-
-              <button class="bbsButton bbsButton-menu-item">
-                <p>
-                  <span class="msicon notranslate">work_history</span>Company
-                  Updates
-                </p>
-              </button>
-              <button class="bbsButton bbsButton-menu-item">
-                <p>
-                  <span class="msicon notranslate">universal_currency_alt</span
-                  >Claim Search
-                </p>
-              </button>
-              <hr />
-              <button class="bbsButton bbsButton-menu-item">
-                <p>
-                  <span class="msicon notranslate">history</span>Recent Views
-                </p>
-              </button>
-              <button class="bbsButton bbsButton-menu-item">
-                <p>
-                  <span class="msicon notranslate">youtube_searched_for</span
-                  >Run Last Search
-                </p>
-              </button>
-              <hr />
-              <button class="bbsButton bbsButton-menu-item">
-                <p>
-                  <span class="msicon notranslate">saved_search</span>Saved
-                  Searches
-                </p>
-              </button>
+        <div class="top-nav-logo">
+          <img src="/assets/BBS_logo_small.svg" />
+          <img
+            class="tw-hidden xl:tw-inline-block"
+            style="width: 122px; height: 12px"
+            src="/assets/Blue-Book-Services.png"
+          />
+        </div>
+        <!-- Home button -->
+        <div>
+          <button class="bbs-menu-item horizontal" type="button">
+            <span class="msicon notranslate">home</span>
+            <div class="text-content">
+              <span class="label">Home</span>
             </div>
-          </div>
-          <!-- tools-dropdown -->
-          <div>
-            <button
-              id="tools-dropdown"
-              onclick="toggleTopNavMenu(event)"
-              class="bbsButton bbsButton-menu-item"
-            >
-              <p>
-                <span class="msicon notranslate">handyman</span>
-                <span class="text-label tw-hidden md:tw-inline-block"
-                  >Tools</span
-                >
-              </p>
-            </button>
-            <div id="tools-top-menu" class="bbsMenu tw-absolute tw-hidden">
-              <button class="bbsButton bbsButton-menu-item">
-                <p><span class="text-label">Notes</span></p>
-                <p class="caption">
-                  Save important details about companies and share it with
-                  coworkers
-                </p>
+          </button>
+        </div>
+        <!-- advanced-search-dropdown -->
+        <div class="dropdown">
+          <button
+            class="bbs-menu-item horizontal selected"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            type="button"
+          >
+            <span class="msicon notranslate">search</span>
+            <div class="text-content">
+              <span class="label">Advanced Search</span>
+            </div>
+          </button>
+
+          <ul class="dropdown-menu">
+            <li>
+              <button class="bbs-menu-item new dropdown-item">
+                <span class="msicon notranslate">factory</span>
+                <div class="text-content">
+                  <span class="label">Company Search</span>
+                </div>
               </button>
-              <button class="bbsButton bbsButton-menu-item">
-                <p>
-                  <span class="text-label">Watchdog Groups & Alerts</span>
-                </p>
-                <p class="caption">
-                  Create your own custom lists of companies which you can then
-                  use for a variety of purposes
-                </p>
+            </li>
+
+            <li>
+              <button class="bbs-menu-item dropdown-item" disabled>
+                <span class="msicon notranslate">person_search</span>
+                <div class="text-content">
+                  <span class="label">People Search</span>
+                  <span class="caption"
+                    >This option is not available with your membership</span
+                  >
+                </div>
+                <span class="msicon notranslate">lock</span>
               </button>
-              <button class="bbsButton bbsButton-menu-item">
-                <p>
-                  <span class="text-label"
+            </li>
+
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <span class="msicon notranslate">work_history</span>
+                <div class="text-content">
+                  <span class="label">Company Updates</span>
+                </div>
+              </button>
+            </li>
+
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <span class="msicon notranslate">universal_currency_alt</span>
+                <div class="text-content">
+                  <span class="label">Claim Search</span>
+                </div>
+              </button>
+            </li>
+
+            <li><hr /></li>
+
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <span class="msicon notranslate">history</span>
+                <div class="text-content">
+                  <span class="label">Recent Views</span>
+                </div>
+              </button>
+            </li>
+
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <span class="msicon notranslate">youtube_searched_for</span>
+                <div class="text-content">
+                  <span class="label">Run Last Search</span>
+                </div>
+              </button>
+            </li>
+
+            <li><hr /></li>
+
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <span class="msicon notranslate">saved_search</span>
+                <div class="text-content">
+                  <span class="label">Saved Searches</span>
+                </div>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <!-- tools-dropdown -->
+        <div class="dropdown">
+          <button
+            class="bbs-menu-item horizontal"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            type="button"
+          >
+            <span class="msicon notranslate">handyman</span>
+            <div class="text-content">
+              <span class="label">Tools</span>
+            </div>
+          </button>
+
+          <ul class="dropdown-menu">
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <div class="text-content">
+                  <span class="label">Notes</span>
+                  <span class="caption"
+                    >Save important details about companies and share it with
+                    coworkers</span
+                  >
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <div class="text-content">
+                  <span class="label">Watchdog Groups & Alerts</span>
+                  <span class="caption"
+                    >Create your own custom lists of companies which you can
+                    then use for a variety of purposes</span
+                  >
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <div class="text-content">
+                  <span class="label"
                     >Trading Assistance / Collection Services</span
                   >
-                </p>
-                <p class="caption">
-                  Blue Book Services collection and claim activity involving
-                  your company.
-                </p>
+                  <span class="caption"
+                    >Blue Book Services collection and claim activity
+                    involving your company</span
+                  >
+                </div>
               </button>
-              <button class="bbsButton bbsButton-menu-item">
-                <p><span class="text-label">Online Business Reports</span></p>
-                <p class="caption">
-                  Blue Book Online Business Reports that you have purchased
-                </p>
+            </li>
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <div class="text-content">
+                  <span class="label">Online Business Reports</span>
+                  <span class="caption"
+                    >Blue Book Online Business Reports that you have
+                    purchased</span
+                  >
+                </div>
               </button>
-              <button class="bbsButton bbsButton-menu-item">
-                <p>
-                  <span class="text-label">Submit Trade Experience Survey</span>
-                </p>
-                <p class="caption">
-                  Confidentially share feedback about trade partners to keep
-                  Blue Book Ratings accurate.
-                </p>
+            </li>
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <div class="text-content">
+                  <span class="label">Submit Trade Experience Survey</span>
+                  <span class="caption"
+                    >Confidentially share feedback about trade partners to
+                    keep Blue Book Ratings accurate</span
+                  >
+                </div>
               </button>
-              <button class="bbsButton bbsButton-menu-item">
-                <p><span class="text-label">Additional Tools</span></p>
-                <p class="caption">Mobile apps, Industry information, etc</p>
+            </li>
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <div class="text-content">
+                  <span class="label">Additional Tools</span>
+                  <span class="caption"
+                    >Mobile apps, Industry information, etc</span
+                  >
+                </div>
               </button>
-              <hr />
-              <button class="bbsButton bbsButton-menu-item">
-                <p><span class="text-label">Custom Data</span></p>
-                <p class="caption">
-                  Special fields of information that you add into BBOS that are
-                  specific to your organization.
-                </p>
+            </li>
+            <li><hr /></li>
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <div class="text-content">
+                  <span class="label">Custom Data</span>
+                  <span class="caption"
+                    >Special fields of information that you add into BBOS that
+                    are specific to your organization</span
+                  >
+                </div>
               </button>
-            </div>
-          </div>
-          <!-- learning-dropdown -->
-          <div>
-            <button
-              id="learning-dropdown"
-              onclick="toggleTopNavMenu(event)"
-              class="bbsButton bbsButton-menu-item"
-            >
-              <p>
-                <span class="msicon notranslate">school</span>
-                <span class="text-label tw-hidden md:tw-inline-block"
-                  >Learning</span
-                >
-              </p>
-            </button>
-            <div id="learning-top-menu" class="bbsMenu tw-absolute tw-hidden">
-              <button class="bbsButton bbsButton-menu-item">
-                <p><span class="text-label">Learning Center Search</span></p>
-              </button>
-              <button class="bbsButton bbsButton-menu-item">
-                <p>
-                  <span class="text-label">Produce Blueprints Magazine</span>
-                </p>
-              </button>
-              <button class="bbsButton bbsButton-menu-item">
-                <p><span class="text-label">Know Your Commodity</span></p>
-              </button>
-              <button class="bbsButton bbsButton-menu-item">
-                <p><span class="text-label">Reference Documents</span></p>
-              </button>
-              <button class="bbsButton bbsButton-menu-item">
-                <p><span class="text-label">Membership Guide</span></p>
-              </button>
-              <button class="bbsButton bbsButton-menu-item">
-                <p><span class="text-label">New Hire Academy</span></p>
-              </button>
-              <button class="bbsButton bbsButton-menu-item">
-                <p>
-                  <span class="text-label">Blue Book Membership Training</span>
-                </p>
-              </button>
-              <hr />
-              <button class="bbsButton bbsButton-menu-item">
-                <p>
-                  <span class="msicon notranslate">menu_book</span>
-                  <span class="text-label">Blueprints Flipbook</span>
-                  <span class="msicon notranslate">arrow_outward</span>
-                </p>
-              </button>
-              <button class="bbsButton bbsButton-menu-item">
-                <p>
-                  <span class="msicon notranslate">full_coverage</span>
-                  <span class="text-label">News / Articles</span>
-                  <span class="msicon notranslate">arrow_outward</span>
-                </p>
-              </button>
-              <button class="bbsButton bbsButton-menu-item">
-                <p>
-                  <span class="msicon notranslate">key</span>
-                  <span class="text-label">Rating Key Numerals</span>
-                  <span class="msicon notranslate">arrow_outward</span>
-                </p>
-              </button>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
-        <div class="tw-flex-grow-0">
-          <div class="input-wrapper left-icon">
-            <span class="icon-left msicon notranslate">search</span>
-            <input
-              class="pill"
-              type="search"
-              placeholder="Quick Search a company name or BBS id"
-            />
-          </div>
-          <!-- account-setting-dropdown -->
-          <div>
-            <button
-              id="account-dropdown"
-              onclick="toggleTopNavMenu(event)"
-              class="bbsButton bbsButton-menu-item"
-            >
-              <p><span class="msicon notranslate">account_circle</span></p>
-            </button>
-            <div
-              id="account-top-menu"
-              class="bbsMenu tw-absolute tw-right-0 tw-hidden"
-            >
-              <button class="bbsButton bbsButton-menu-item">
-                <p>
-                  <span class="notranslate msicon">home</span>
-                  <span class="text-label">My Company Profile </span>
-                </p>
-              </button>
-              <button class="bbsButton bbsButton-menu-item">
-                <p>
-                  <span class="msicon notranslate">message</span>
-                  <span class="text-label">Message Center</span>
-                  <span class="bbsBadge">9</span>
-                </p>
-              </button>
-              <button class="bbsButton bbsButton-menu-item">
-                <p>
-                  <span class="msicon notranslate">settings</span>
-                  <span class="text-label">Account Settings</span>
-                </p>
-              </button>
-              <hr />
-
-              <button class="bbsButton bbsButton-menu-item">
-                <p>
-                  <span class="msicon notranslate">g_translate</span>
-                  <span class="text-label">Cambiar a Español</span>
-                </p>
-              </button>
-              <button class="bbsButton bbsButton-menu-item">
-                <p>
-                  <span class="msicon notranslate">help</span>
-                  <span class="text-label">Help and Support</span>
-                </p>
-              </button>
-              <hr />
-              <button class="bbsButton bbsButton-menu-item">
-                <p>
-                  <span class="msicon notranslate">logout</span>
-                  <span class="text-label">Logout</span>
-                </p>
-              </button>
+        <!-- learning-dropdown -->
+        <div class="dropdown">
+          <button
+            class="bbs-menu-item horizontal"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            type="button"
+          >
+            <span class="msicon notranslate">school</span>
+            <div class="text-content">
+              <span class="label">Learning</span>
             </div>
-          </div>
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <div class="text-content">
+                  <span class="label">Learning Center Search</span>
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <div class="text-content">
+                  <span class="label">Produce Blueprints Magazine</span>
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <div class="text-content">
+                  <span class="label">Know Your Commodity</span>
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <div class="text-content">
+                  <span class="label">Reference Documents</span>
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <div class="text-content">
+                  <span class="label">Membership Guide</span>
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <div class="text-content">
+                  <span class="label">New Hire Academy</span>
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <div class="text-content">
+                  <span class="label">Blue Book Membership Training</span>
+                </div>
+              </button>
+            </li>
+            <li><hr /></li>
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <span class="msicon notranslate">menu_book</span>
+                <div class="text-content">
+                  <span class="label">Blueprints Flipbook</span>
+                </div>
+                <span class="msicon notranslate">arrow_outward</span>
+              </button>
+            </li>
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <span class="msicon notranslate">full_coverage</span>
+                <div class="text-content">
+                  <span class="label">News / Articles</span>
+                </div>
+                <span class="msicon notranslate">arrow_outward</span>
+              </button>
+            </li>
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <span class="msicon notranslate">key</span>
+                <div class="text-content">
+                  <span class="label">Rating Key Numerals</span>
+                </div>
+                <span class="msicon notranslate">arrow_outward</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <!-- spacer -->
+        <div class="tw-flex-grow"></div>
+        <!-- company quick search -->
+        <div class="input-wrapper left-icon ">
+          <span class="icon-left msicon notranslate">search</span>
+          <input
+            style="margin:0"
+            class="pill"
+            type="search"
+            placeholder="Quick Search a company name or BBS id"
+          />
+        </div>
+        <!-- account-setting-dropdown -->
+        <div class="dropdown">
+          <button
+            class="bbs-menu-item horizontal"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            type="button"
+          >
+            <span class="msicon notranslate">account_circle</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <button class="bbs-menu-item dropdown-item new">
+                <span class="notranslate msicon">home</span>
+
+                <div class="text-content">
+                  <span class="label">My Company Profile</span>
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <span class="notranslate msicon">message</span>
+
+                <div class="text-content">
+                  <span class="label">Message Center</span>
+                </div>
+                <span class="bbsBadge">9</span>
+              </button>
+            </li>
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <span class="notranslate msicon">settings</span>
+                <div class="text-content">
+                  <span class="label">Account Settings</span>
+                </div>
+              </button>
+            </li>
+            <li><hr /></li>
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <span class="notranslate msicon">g_translate</span>
+                <div class="text-content">
+                  <span class="label">Cambiar a Español</span>
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="bbs-menu-item dropdown-item new" disabled>
+                <span class="notranslate msicon">help</span>
+                <div class="text-content">
+                  <span class="label">Help and Support</span>
+                </div>
+                <span class="notranslate msicon">lock</span>
+              </button>
+            </li>
+            <li><hr /></li>
+            <li>
+              <button class="bbs-menu-item dropdown-item">
+                <span class="notranslate msicon">logout</span>
+                <div class="text-content">
+                  <span class="label">Logout</span>
+                </div>
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
     <!-- Content  -->
     <div class="content">
       <div class="content-container">
+
         <div class="left-sidebar">
           <p class="group-label">Trade Intelligence</p>
           <button
@@ -487,7 +572,9 @@
             </div>
             <span class="msicon notranslate">image</span>
           </button>
+
         </div>
+
         <div class="main-content">
           <div class="search-selection-container">
             <div class="search-form tw-max-w-[400px]">

@@ -297,13 +297,11 @@ button:disabled {
   /* Menu or listbox -
   */
   .dropdown-menu {
-    @apply tw-min-w-[200px]
-    tw-max-w-[400px]
-    tw-rounded-md
+    @apply tw-rounded-md
     tw-border
     tw-border-border
     tw-bg-white
-    tw-p-1 tw-shadow-lg;
+    tw-shadow-lg;
   }
   .bbsMenu {
     @apply tw-z-[100]
@@ -407,19 +405,20 @@ button:disabled {
 
   .bbs-menu-item {
     @apply tw-flex
-      tw-w-full
-      tw-gap-2
-      tw-px-4
-      tw-py-2
-      hover:tw-bg-bg-component-hover
-      active:tw-bg-bg-component-active;
-    /* each child is vertically stacked */
+    tw-w-full
+    tw-gap-2
+    tw-px-4
+    tw-py-2
+    hover:tw-bg-bg-component-hover
+    active:tw-bg-bg-component-active;
     & > * {
+      /* internal content of each child of menu item is vertically stacked */
       @apply tw-flex tw-flex-col;
     }
 
     .text-content {
       @apply tw-flex-grow
+        tw-gap-1
         tw-text-left;
       .label {
         @apply tw-text-sm
@@ -427,29 +426,34 @@ button:disabled {
           tw-text-text-primary;
       }
       .caption {
-        @apply tw-text-start
+        @apply tw-whitespace-normal
+          tw-text-start
           tw-text-xs
           tw-text-text-secondary;
       }
     }
 
     &.selected {
-      @apply tw-shadow-selected-vertical
-        tw-bg-bg-component-active
-        tw-text-brand;
+      @apply tw-bg-bg-component-active
+        tw-text-brand
+        tw-shadow-selected-vertical;
       .text-content {
         .label {
           @apply tw-text-brand;
         }
       }
+      &.horizontal {
+        @apply tw-shadow-selected-horizontal;
+      }
     }
-    &.disabled, &:disabled {
-      @apply
-        tw-bg-bg-disabled
-        tw-text-text-disabled
-        ;
+
+    &.disabled,
+    &:disabled {
+      @apply tw-bg-bg-disabled
+        tw-text-text-disabled;
       .text-content {
-        .label, .caption {
+        .label,
+        .caption {
           @apply tw-text-text-disabled;
         }
       }
@@ -467,7 +471,6 @@ button:disabled {
 
   .left-sidebar {
     @apply tw-sticky
-    tw-top-[46px]
     tw-max-w-[240px]
     tw-self-start
     tw-overflow-y-auto
@@ -475,14 +478,14 @@ button:disabled {
     tw-border-border
     tw-bg-bg-primary
     max-sm:tw-p-0
-    md:tw-w-full;
-    height: calc(100vh - 45px);
-
+    md:tw-w-full
+    tw-top-[40px];
+    height: calc(100vh - 40px);
     .bbsButton.bbsButton-menu-item {
       &.selected {
-        @apply tw-shadow-selected-vertical
-        tw-bg-bg-component-active
-        tw-text-brand;
+        @apply tw-bg-bg-component-active
+        tw-text-brand
+        tw-shadow-selected-vertical;
       }
       .text-label {
         @apply tw-whitespace-break-spaces
@@ -502,28 +505,12 @@ button:disabled {
       tw-text-text-secondary
       max-sm:tw-hidden;
     }
-    hr {
-      @apply tw-my-1;
-    }
   }
   /* Divider */
   hr {
-    @apply tw-border-border
+    @apply tw-my-2
+    tw-border-border
     tw-opacity-75;
-  }
-
-  /* Some overrides to make the hr full bleed in
-  its respoective containers */
-  .left-sidebar {
-    hr {
-      @apply tw-mx-[-8px];
-    }
-  }
-  .bbsMenu {
-    hr {
-      width: calc(100% + 8px);
-      margin: 0 -4px;
-    }
   }
 
   .bbs-accordion {
@@ -596,7 +583,7 @@ button:disabled {
       @apply tw-pointer-events-none
       tw-absolute
       tw-left-2
-      tw-top-2.5
+      tw-top-1
       tw-inline-block
       tw-cursor-text
       tw-text-text-tertiary;
