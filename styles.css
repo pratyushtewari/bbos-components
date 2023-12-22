@@ -19,7 +19,7 @@ button,
  */
 .msicon {
   font-family: "Material Symbols Outlined";
-  /* color: currentColor; */
+  text-align: center;
   font-variation-settings:
     "FILL" 0,
     "wght" 400,
@@ -403,11 +403,16 @@ button:disabled {
     }
   }
 
-  .bbs-menu-item {
+  /* dropdown-item is a class from bootstrap 5.3
+  needed to work with dropdown */
+  .bbs-menu-item,
+  .dropdown-item,
+  .bbs-top-nav-item {
     @apply tw-flex
     tw-w-full
     tw-gap-2
-    tw-px-4
+    tw-pl-4
+    tw-pr-3
     tw-py-2
     hover:tw-bg-bg-component-hover
     active:tw-bg-bg-component-active;
@@ -415,7 +420,6 @@ button:disabled {
       /* internal content of each child of menu item is vertically stacked */
       @apply tw-flex tw-flex-col;
     }
-
     .text-content {
       @apply tw-flex-grow
         tw-gap-1
@@ -435,15 +439,11 @@ button:disabled {
 
     &.selected {
       @apply tw-bg-bg-component-active
-        tw-text-brand
-        tw-shadow-selected-vertical;
+        tw-text-brand;
       .text-content {
         .label {
           @apply tw-text-brand;
         }
-      }
-      &.horizontal {
-        @apply tw-shadow-selected-horizontal;
       }
     }
 
@@ -465,12 +465,34 @@ button:disabled {
       content: "NEW";
       @apply tw-pt-1
         tw-text-[10px]
-        tw-text-violet-800;
+        tw-text-violet-800
+        max-md:tw-hidden;
+    }
+  }
+
+  .bbs-top-nav-item,
+  .bbs-menu-item {
+    .text-content,
+    .msicon.end {
+      @apply max-md:tw-hidden;
+    }
+  }
+
+  .bbs-menu-item {
+    &.selected {
+      @apply tw-shadow-selected-vertical;
+    }
+  }
+
+  .bbs-top-nav-item {
+    &.selected {
+      @apply tw-shadow-selected-horizontal;
     }
   }
 
   .left-sidebar {
     @apply tw-sticky
+    tw-top-[40px]
     tw-max-w-[240px]
     tw-self-start
     tw-overflow-y-auto
@@ -478,8 +500,7 @@ button:disabled {
     tw-border-border
     tw-bg-bg-primary
     max-sm:tw-p-0
-    md:tw-w-full
-    tw-top-[40px];
+    md:tw-w-full;
     height: calc(100vh - 40px);
     .bbsButton.bbsButton-menu-item {
       &.selected {
@@ -496,14 +517,34 @@ button:disabled {
         @apply max-sm:tw-hidden;
       }
     }
+    /* Bootstrap override */
+    .accordion-header {
+      @apply tw-bg-bg-secondary;
+      .accordion-button {
+        padding: 0px;
+        background: none;
+        &::after {
+          content: "expand_more";
+          font-family: "Material Symbols Outlined";
+          text-align: center;
+          font-variation-settings:
+            "FILL" 0,
+            "wght" 400,
+            "GRAD" 0,
+            "opsz" 24;
+          background: none;
+        }
+      }
+    }
+    /* .accordion-collapse.show {
+      padding-bottom: 24px;
+    } */
     .group-label {
-      @apply /*
-      */
-      tw-pointer-events-none
+      @apply tw-pointer-events-none
       tw-py-2
       tw-ps-2 tw-text-xs tw-font-semibold
       tw-text-text-secondary
-      max-sm:tw-hidden;
+      max-md:tw-hidden;
     }
   }
   /* Divider */
