@@ -808,11 +808,68 @@ button:disabled {
       tw-w-full
       tw-max-w-screen-xl;
       .main-content {
-        @apply tw-w-full
-        tw-p-6;
+        @apply tw-w-full;
       }
     }
   }
+
+  .company-hero {
+    height: 208px;
+    img.backdrop {
+      display: flex;
+      height: 150px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .logo {
+      @apply tw-absolute
+        -tw-mt-20
+        tw-ml-4
+        tw-rounded-lg
+        tw-border
+        tw-border-border
+        tw-bg-bg-primary
+        tw-p-3;
+      img {
+        @apply tw-h-28
+                tw-rounded-[4px]
+        tw-object-cover;
+      }
+    }
+  }
+
+  .tag {
+    @apply /*
+    */
+    tw-flex
+    tw-w-fit tw-gap-1
+    tw-rounded-full tw-border
+    tw-border-border
+    tw-bg-bg-tertiary
+    tw-px-2
+    tw-py-0.5
+    tw-text-[10px];
+    &.green {
+      @apply tw-border-green-200
+      tw-bg-green-50;
+    }
+  }
+  .text-title {
+    @apply
+    tw-text-2xl
+    tw-font-semibold;
+  }
+  .text-base {
+    @apply
+    tw-text-sm;
+  }
+  .text-sm {
+     @apply tw-text-xs;
+  }
+  .text-xxs {
+    @apply tw-text-[10px];
+  }
+
   .footer {
     @apply tw-flex
     tw-w-full
