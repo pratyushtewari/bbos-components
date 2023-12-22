@@ -403,6 +403,58 @@ button:disabled {
     }
   }
 
+  /* Global nav */
+  .top-nav {
+    @apply tw-sticky tw-top-0
+    tw-z-[100]
+    tw-flex
+    tw-w-full
+    tw-items-center
+    tw-justify-center
+    tw-border-b
+    tw-border-border
+    tw-bg-white;
+    .top-nav-container {
+      @apply tw-relative
+      tw-flex
+      tw-w-full
+      tw-max-w-screen-xl
+      tw-flex-row
+      tw-items-center
+      tw-gap-1
+      tw-align-middle;
+      > div {
+        @apply tw-flex
+        tw-align-middle;
+      }
+      /* .input-wrapper {
+        input,
+        select {
+          @apply tw-w-[118px] md:tw-w-[300px];
+        }
+      } */
+    }
+    .top-nav-logo {
+      @apply tw-flex
+      tw-flex-row
+      tw-items-center
+      tw-gap-2
+      tw-px-2;
+      > div {
+        @apply tw-flex
+        tw-flex-row
+        tw-items-center
+        tw-gap-1
+        tw-align-middle;
+      }
+    }
+  }
+
+  .nav-toggle-button {
+    @apply lg:tw-hidden
+    !important;
+  }
+
   /* dropdown-item is a class from bootstrap 5.3
   needed to work with dropdown */
   .bbs-menu-item,
@@ -411,9 +463,9 @@ button:disabled {
     @apply tw-flex
     tw-w-full
     tw-gap-2
+    tw-py-2
     tw-pl-4
     tw-pr-3
-    tw-py-2
     hover:tw-bg-bg-component-hover
     active:tw-bg-bg-component-active;
     & > * {
@@ -465,16 +517,17 @@ button:disabled {
       content: "NEW";
       @apply tw-pt-1
         tw-text-[10px]
-        tw-text-violet-800
-        max-md:tw-hidden;
+        tw-text-violet-800;
     }
   }
 
-  .bbs-top-nav-item,
-  .bbs-menu-item {
+  .bbs-top-nav-item {
     .text-content,
     .msicon.end {
-      @apply max-md:tw-hidden;
+      @apply max-lg:tw-hidden;
+    }
+    &.selected {
+      @apply tw-shadow-selected-horizontal;
     }
   }
 
@@ -484,12 +537,8 @@ button:disabled {
     }
   }
 
-  .bbs-top-nav-item {
-    &.selected {
-      @apply tw-shadow-selected-horizontal;
-    }
-  }
-
+  /* Depricated
+  Use nav-sidebar instead */
   .left-sidebar {
     @apply tw-sticky
     tw-top-[40px]
@@ -517,6 +566,40 @@ button:disabled {
         @apply max-sm:tw-hidden;
       }
     }
+    .group-label {
+      @apply tw-pointer-events-none
+      tw-py-2
+      tw-ps-2 tw-text-xs tw-font-semibold
+      tw-text-text-secondary
+      max-md:tw-hidden;
+    }
+  }
+
+  .nav-sidebar {
+    @apply tw-fixed
+    tw-top-0
+    tw-h-full
+    tw-max-w-[240px]
+    tw-self-start
+    tw-overflow-y-auto
+    tw-border-x
+    tw-border-border
+    tw-bg-bg-primary
+    max-sm:tw-p-0
+    md:tw-w-full
+    lg:tw-sticky
+    lg:tw-top-[40px]
+    lg:tw-h-[calc(100vh-40px)];
+    .bbsButton.bbsButton-menu-item {
+      &.selected {
+        @apply tw-bg-bg-component-active
+        tw-text-brand
+        tw-shadow-selected-vertical;
+      }
+      .text-label {
+        @apply tw-whitespace-break-spaces;
+      }
+    }
     /* Bootstrap override */
     .accordion-header {
       @apply tw-bg-bg-secondary;
@@ -536,17 +619,14 @@ button:disabled {
         }
       }
     }
-    /* .accordion-collapse.show {
-      padding-bottom: 24px;
-    } */
     .group-label {
       @apply tw-pointer-events-none
       tw-py-2
       tw-ps-2 tw-text-xs tw-font-semibold
-      tw-text-text-secondary
-      max-md:tw-hidden;
+      tw-text-text-secondary;
     }
   }
+
   /* Divider */
   hr {
     @apply tw-my-2
@@ -565,52 +645,7 @@ button:disabled {
       }
     }
   }
-  /* Global nav */
-  .top-nav {
-    @apply tw-sticky tw-top-0
-    tw-z-[100]
-    tw-flex
-    tw-w-full
-    tw-items-center
-    tw-justify-center
-    tw-border-b
-    tw-border-border
-    tw-bg-white;
-    .top-nav-container {
-      @apply tw-relative
-      tw-flex
-      tw-w-full
-      tw-max-w-screen-xl
-      tw-flex-row
-      tw-items-center
-      tw-gap-1
-      tw-align-middle;
-      > div {
-        @apply tw-flex
-        tw-align-middle;
-      }
-      .input-wrapper {
-        input,
-        select {
-          @apply tw-w-[118px] md:tw-w-[300px];
-        }
-      }
-    }
-    .top-nav-logo {
-      @apply tw-flex
-      tw-flex-row
-      tw-items-center
-      tw-gap-2
-      tw-px-2;
-      > div {
-        @apply tw-flex
-        tw-flex-row
-        tw-items-center
-        tw-gap-1
-        tw-align-middle;
-      }
-    }
-  }
+
   .caption {
     @apply tw-text-start
     tw-text-xs

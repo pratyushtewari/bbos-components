@@ -27,20 +27,26 @@
   <body class="qa tw-flex tw-flex-col tw-items-center tw-align-middle">
     <!-- TOP NAV BAR -->
 
-    <div class="top-nav">
+    <header class="top-nav">
       <div class="top-nav-container">
-        <div class="top-nav-logo">
-          <img src="/assets/BBS_logo_small.svg" />
-          <img
-            class="tw-hidden xl:tw-inline-block"
-            style="width: 122px; height: 12px"
-            src="/assets/Blue-Book-Services.png"
-          />
+        <div class="nav-toggle-button">
+          <button
+            class="bbs-top-nav-item"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#bdSidebar"
+            aria-controls="bdSidebar"
+            aria-label="Toggle Company Details navigation"
+          >
+            <span class="msicon notranslate">menu</span>
+          </button>
         </div>
         <!-- Home button -->
         <div>
           <button class="bbs-top-nav-item" type="button">
-            <span class="msicon notranslate">home</span>
+            <span
+              ><img class="tw-h-6 tw-w-4" src="/assets/BBS_logo_small.svg"
+            /></span>
             <div class="text-content">
               <span class="label">Home</span>
             </div>
@@ -325,13 +331,14 @@
         <!-- spacer -->
         <div class="tw-flex-grow"></div>
         <!-- company quick search -->
+
         <div class="input-wrapper left-icon">
           <span class="icon-left msicon notranslate">search</span>
           <input
             style="margin: 0"
             class="pill"
             type="search"
-            placeholder="Quick Search a company name or BBS id"
+            placeholder="Quick Search"
           />
         </div>
         <!-- account-setting-dropdown -->
@@ -402,11 +409,24 @@
           </ul>
         </div>
       </div>
-    </div>
+    </header>
     <!-- Content  -->
     <div class="content">
       <div class="content-container">
-        <div class="left-sidebar">
+        <aside class="offcanvas-lg offcanvas-start nav-sidebar" id="bdSidebar">
+          <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">
+              Company Details
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+              data-bs-target="#bdSidebar"
+            ></button>
+          </div>
+
           <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
               <div class="accordion-header">
@@ -425,61 +445,31 @@
                 id="flush_collapseOne"
                 class="accordion-collapse collapse show"
               >
-                <button
-                  class="bbs-menu-item new selected"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="Company Profile"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+                <button class="bbs-menu-item new selected">
                   <span class="msicon notranslate">storefront</span>
                   <div class="text-content">
                     <span class="label">Company Profile</span>
                   </div>
                 </button>
-                <button
-                  class="bbs-menu-item"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="AR Reports"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+                <button class="bbs-menu-item">
                   <span class="msicon notranslate">request_quote</span>
                   <div class="text-content">
                     <span class="label">AR Reports</span>
                   </div>
                 </button>
-                <button
-                  class="bbs-menu-item"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="Claim Activity Report"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+                <button class="bbs-menu-item">
                   <span class="msicon notranslate">account_balance</span>
                   <div class="text-content">
                     <span class="label">Claim Activity Report</span>
                   </div>
                 </button>
-                <button
-                  class="bbs-menu-item"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="Branches & Affiliations"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+                <button class="bbs-menu-item">
                   <span class="msicon notranslate">account_tree</span>
                   <div class="text-content">
                     <span class="label">Branches & Affiliations</span>
                   </div>
                 </button>
-                <button
-                  class="bbs-menu-item new"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="Social Media"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+                <button class="bbs-menu-item new">
                   <span class="msicon notranslate">public</span>
                   <div class="text-content">
                     <span class="label">Social Media</span>
@@ -504,13 +494,7 @@
                 id="flush_collapseTwo"
                 class="accordion-collapse collapse show"
               >
-                <button
-                  class="bbs-menu-item"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="Contacts"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+                <button class="bbs-menu-item">
                   <span class="msicon notranslate">contacts</span>
                   <div class="text-content">
                     <span class="label">Contacts</span>
@@ -535,39 +519,21 @@
                 id="flush_collapseThree"
                 class="accordion-collapse collapse show"
               >
-                <button
-                  class="bbs-menu-item"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="Produce Blueprints Magazine"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+                <button class="bbs-menu-item">
                   <span class="msicon notranslate">menu_book</span>
                   <div class="text-content">
                     <span class="label">Produce Blueprints Magazine</span>
                   </div>
                   <span class="msicon notranslate end">arrow_outward</span>
                 </button>
-                <button
-                  class="bbs-menu-item"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="Know Your Commodity"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+                <button class="bbs-menu-item">
                   <span class="msicon notranslate">cognition</span>
                   <div class="text-content">
                     <span class="label">Know Your Commodity</span>
                   </div>
                   <span class="msicon notranslate end">arrow_outward</span>
                 </button>
-                <button
-                  class="bbs-menu-item"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="The Produce Reporter"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+                <button class="bbs-menu-item">
                   <span class="msicon notranslate">newspaper</span>
                   <div class="text-content">
                     <span class="label">The Produce Reporter</span>
@@ -589,41 +555,20 @@
                   <span class="group-label">Services</span>
                 </button>
               </div>
-              <div
-                id="flush_collapseFour"
-                class="accordion-collapse collapse"
-              >
-                <button
-                  class="bbs-menu-item new"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="Title"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+              <div id="flush_collapseFour" class="accordion-collapse collapse">
+                <button class="bbs-menu-item new">
                   <span class="msicon notranslate">thumb_up_off_alt</span>
                   <div class="text-content">
                     <span class="label">Rate Company</span>
                   </div>
                 </button>
-                <button
-                  class="bbs-menu-item new"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="Title"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+                <button class="bbs-menu-item new">
                   <span class="msicon notranslate">edit</span>
                   <div class="text-content">
                     <span class="label">Suggest an edit</span>
                   </div>
                 </button>
-                <button
-                  class="bbs-menu-item"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="Title"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+                <button class="bbs-menu-item">
                   <span class="msicon notranslate">shield_with_heart</span>
                   <div class="text-content">
                     <span class="label"
@@ -632,13 +577,7 @@
                     >
                   </div>
                 </button>
-                <button
-                  class="bbs-menu-item new"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="Title"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+                <button class="bbs-menu-item new">
                   <span class="msicon notranslate">policy</span>
                   <div class="text-content">
                     <span class="label"
@@ -647,26 +586,14 @@
                   </div>
                 </button>
 
-                <button
-                  class="bbs-menu-item new"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="Title"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+                <button class="bbs-menu-item new">
                   <span class="msicon notranslate">verified_user</span>
                   <div class="text-content">
                     <span class="label">Request Credit Reference Check</span>
                   </div>
                 </button>
 
-                <button
-                  class="bbs-menu-item"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="Title"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+                <button class="bbs-menu-item">
                   <span class="msicon notranslate">gavel</span>
                   <div class="text-content">
                     <span class="label"
@@ -689,43 +616,22 @@
                   <span class="group-label">Downloads</span>
                 </button>
               </div>
-              <div
-                id="flush_collapseFive"
-                class="accordion-collapse collapse"
-              >
-                <button
-                  class="bbs-menu-item"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="Title"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+              <div id="flush_collapseFive" class="accordion-collapse collapse">
+                <button class="bbs-menu-item">
                   <span class="msicon notranslate">file_download</span>
                   <div class="text-content">
                     <span class="label">Blue Book Business Report (free)</span>
                   </div>
                 </button>
 
-                <button
-                  class="bbs-menu-item new"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="Title"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+                <button class="bbs-menu-item new">
                   <span class="msicon notranslate">file_download</span>
                   <div class="text-content">
                     <span class="label">Tear Sheet (free)</span>
                   </div>
                 </button>
 
-                <button
-                  class="bbs-menu-item new"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="Title"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+                <button class="bbs-menu-item new">
                   <span class="msicon notranslate">file_download</span>
                   <div class="text-content">
                     <span class="label">Experian Report</span>
@@ -746,42 +652,21 @@
                   <span class="group-label">Lists & Subscriptions</span>
                 </button>
               </div>
-              <div
-                id="flush_collapseSix"
-                class="accordion-collapse collapse"
-              >
-                <button
-                  class="bbs-menu-item"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="Title"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+              <div id="flush_collapseSix" class="accordion-collapse collapse">
+                <button class="bbs-menu-item">
                   <span class="msicon notranslate">notes</span>
                   <div class="text-content">
                     <span class="label">Notes</span>
                   </div>
                 </button>
-                <button
-                  class="bbs-menu-item"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="Title"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+                <button class="bbs-menu-item">
                   <span class="msicon notranslate">notifications_active</span>
                   <div class="text-content">
                     <span class="label">Add / Remove Alert</span>
                     <span class="caption">Subscribe for all key updates</span>
                   </div>
                 </button>
-                <button
-                  class="bbs-menu-item"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="Title"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+                <button class="bbs-menu-item">
                   <span class="msicon notranslate"
                     >sound_detection_dog_barking</span
                   >
@@ -805,17 +690,8 @@
                   <span class="group-label">Misc</span>
                 </button>
               </div>
-              <div
-                id="flush_collapseSeven"
-                class="accordion-collapse collapse"
-              >
-                <button
-                  class="bbs-menu-item"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="right"
-                  data-bs-title="Title"
-                  data-bs-custom-class="md:tw-hidden"
-                >
+              <div id="flush_collapseSeven" class="accordion-collapse collapse">
+                <button class="bbs-menu-item">
                   <span class="msicon notranslate">dashboard_customize</span>
                   <div class="text-content">
                     <span class="label">Update Custom data</span>
@@ -830,9 +706,9 @@
           <br />
           <br />
           <br />
-        </div>
+        </aside>
 
-        <div class="main-content"></div>
+        <main class="main-content"></main>
       </div>
     </div>
     <!-- Footer -->
@@ -912,12 +788,7 @@
     <script src="main.js"></script>
 
     <script>
-      const tooltipTriggerList = document.querySelectorAll(
-        '[data-bs-toggle="tooltip"]',
-      );
-      const tooltipList = [...tooltipTriggerList].map(
-        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl),
-      );
+      const tooltipTriggerList = document.querySelectorAll();
     </script>
   </body>
 </html>

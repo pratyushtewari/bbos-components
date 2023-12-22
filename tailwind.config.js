@@ -33,8 +33,19 @@ export default {
         "selected-horizontal": "inset 0 -2px 0 #0055A5",
         "selected-vertical": "inset 4px 0 0 #0055A5",
       },
+      // Matching Bootstrap breakpoints
       screens: {
-        xs: "400px",
+        // => @media (min-width: 640px) { ... }
+        sm: "576px",
+        // => @media (min-width: 768px) { ... }
+        md: "768px",
+        // => @media (min-width: 1024px) { ... }
+        lg: "992px",
+        // => @media (min-width: 1280px) { ... }
+        xl: "1200px",
+        // => @media (min-width: 1536px) { ... }
+        "2xl": "1400px",
+        xxl: "1400px",
       },
     },
   },
