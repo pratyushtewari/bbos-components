@@ -163,10 +163,16 @@ button:disabled {
           @apply tw-pt-[1px];
         }
       }
+            &.pill {
+        @apply
+        tw-px-3
+         tw-rounded-full;
+      }
       &.round {
         @apply tw-h-10
         tw-w-10 tw-rounded-full;
       }
+
     }
     &.bbsButton-tertiary {
       @apply tw-border-0
@@ -186,6 +192,7 @@ button:disabled {
           @apply tw-pt-[1px];
         }
       }
+
     }
     /*
     Rounded tag button - best with a close end icon

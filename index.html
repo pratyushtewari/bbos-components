@@ -808,16 +808,8 @@
               <div class="bbs-card-body tw-flex tw-flex-col tw-gap-y-4">
                 <!-- About -->
                 <div class="tw-flex tw-flex-col tw-gap-y-2">
-                  <div class="tw-flex">
-                    <h5 class="tw-flex-grow">About</h5>
-                    <button
-                      class="bbsButton bbsButton-tertiary small"
-                      onclick="togglePartialExpandCollapse(this, 'about_company')"
-                    >
-                      <span class="text-label">Expand</span>
-                      <span class="msicon notranslate">expand_more</span>
-                    </button>
-                  </div>
+                  <h5 class="tw-flex-grow">About</h5>
+
                   <div class="partial collapsed tw-text-sm" id="about_company">
                     Sawtooth Wood Products specializes in log construction in
                     Ketchum, Hailey, Sun Valley, and Bellevue, and we take great
@@ -830,19 +822,26 @@
                     business, we have the knowledge and experience to get the
                     job done right.
                   </div>
+                  <div class="tw-flex tw-items-center">
+                    <hr class="tw-flex-grow"/>
+                    <button
+                      class="bbsButton bbsButton-secondary small pill"
+                      onclick="togglePartialExpandCollapse(this, 'about_company')"
+                    >
+                      <span class="text-label">Show more</span>
+                      <span class="msicon notranslate">expand_more</span>
+                    </button>
+                    <hr class="tw-flex-grow"/>
+                  </div>
                 </div>
                 <!-- Premium Listing Info -->
                 <div class="tw-flex tw-flex-col tw-gap-y-2">
-                  <div class="tw-flex">
-                    <h5 class="tw-flex-grow">Premium Listing Information</h5>
-                    <button
-                      class="bbsButton bbsButton-tertiary small"
-                      onclick="togglePartialExpandCollapse(this, 'primium_listing_info')"
-                    >
-                      <span class="text-label">Expand</span>
-                      <span class="msicon notranslate">expand_more</span>
-                    </button>
-                  </div>
+                  <h5 class="tw-flex-grow">
+
+                      <span class="msicon notranslate">workspace_premium</span>
+
+                    Premium Listing Information
+                  </h5>
                   <div
                     class="partial collapsed tw-text-sm"
                     id="primium_listing_info"
@@ -863,6 +862,17 @@
                     <p>Classifications:</p>
                     <p>Retail/Yard/Dealer,</p>
                     <p>Secondary Manufacturer</p>
+                  </div>
+                  <div class="tw-flex tw-items-center">
+                    <hr class="tw-flex-grow"/>
+                    <button
+                      class="bbsButton bbsButton-secondary small pill"
+                      onclick="togglePartialExpandCollapse(this, 'primium_listing_info')"
+                    >
+                      <span class="text-label">Show more</span>
+                      <span class="msicon notranslate">expand_more</span>
+                    </button>
+                    <hr class="tw-flex-grow"/>
                   </div>
                 </div>
                 <!-- Photos -->
