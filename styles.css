@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
 /* support bootstrap  hack */
 button,
 [type="button"],
@@ -151,6 +163,10 @@ button:disabled {
           @apply tw-pt-[1px];
         }
       }
+      &.round {
+        @apply tw-h-10
+        tw-w-10 tw-rounded-full;
+      }
     }
     &.bbsButton-tertiary {
       @apply tw-border-0
@@ -196,33 +212,83 @@ button:disabled {
           @apply tw-pt-[1px];
         }
       }
-      &.c-1 {
+      &.square {
+        @apply tw-gap-1
+        tw-rounded-[4px]
+        tw-px-2
+        tw-py-[4px]
+        tw-text-xs;
+        .msicon {
+          @apply tw-pt-[1px];
+        }
+      }
+      &.c-1,
+      &.yellow,
+      &.notes {
         /* 1	  |	Flower/Plant/Tree */
-        @apply tw-bg-yellow-50;
+        @apply tw-border-yellow-700
+        tw-bg-yellow-50
+        tw-text-yellow-900
+        hover:tw-bg-yellow-100
+        active:tw-bg-yellow-200;
       }
-      &.c-16 {
+      &.c-16,
+      &.slate {
         /* 16	|	Food (non-produce) */
-        @apply tw-bg-slate-50;
+        @apply tw-border-slate-700
+        tw-bg-slate-50
+        tw-text-slate-900
+        hover:tw-bg-slate-100
+        active:tw-bg-slate-200;
       }
-      &.c-37 {
+      &.c-37,
+      &.red {
         /* 37	|	Fruit */
-        @apply tw-bg-red-50;
+        @apply tw-border-red-700
+        tw-bg-red-50
+        tw-text-red-900
+        hover:tw-bg-red-100
+        active:tw-bg-red-200;
       }
-      &.c-248 {
+      &.c-248,
+      &.cyan,
+      &.new {
         /* 248	|	Herb */
-        @apply tw-bg-cyan-50;
+        @apply tw-border-cyan-700
+        tw-bg-cyan-50
+        tw-text-cyan-900
+        hover:tw-bg-cyan-100
+        active:tw-bg-cyan-200;
       }
-      &.c-271 {
+      &.c-271,
+      &.sky,
+      &.watchdog {
         /* 271	|	Nut */
-        @apply tw-bg-sky-50;
+        @apply tw-border-sky-700
+        tw-bg-sky-50
+        tw-text-sky-900
+        hover:tw-bg-sky-100
+        active:tw-bg-sky-200;
       }
-      &.c-287 {
+      &.c-287,
+      &.purple,
+      &.changed {
         /* 287	|	Spice */
-        @apply tw-bg-purple-50;
+        @apply tw-border-purple-700
+        tw-bg-purple-50
+        tw-text-purple-900
+        hover:tw-bg-purple-100
+        active:tw-bg-purple-200;
       }
-      &.c-291 {
+      &.c-291,
+      &.green,
+      &.organic {
         /* 291	|	Vegetable */
-        @apply tw-bg-green-50;
+        @apply tw-border-green-700
+        tw-bg-green-50
+        tw-text-green-900
+        hover:tw-bg-green-100
+        active:tw-bg-green-200;
       }
     }
     /* Menu item button -- supposed to in to a menu or top-nav */
@@ -813,31 +879,6 @@ button:disabled {
     }
   }
 
-  .company-hero {
-    height: 208px;
-    img.backdrop {
-      display: flex;
-      height: 150px;
-      width: 100%;
-      object-fit: cover;
-    }
-    .logo {
-      @apply tw-absolute
-        -tw-mt-20
-        tw-ml-4
-        tw-rounded-lg
-        tw-border
-        tw-border-border
-        tw-bg-bg-primary
-        tw-p-3;
-      img {
-        @apply tw-h-28
-                tw-rounded-[4px]
-        tw-object-cover;
-      }
-    }
-  }
-
   .tag {
     @apply /*
     */
@@ -854,17 +895,28 @@ button:disabled {
       tw-bg-green-50;
     }
   }
+
+  /* Heading/5 */
+  /* font-family: SF Pro Text;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 24px;  */
+  h5 {
+    @apply tw-text-base
+    tw-font-semibold;
+  }
+
+  h3,
   .text-title {
-    @apply
-    tw-text-2xl
+    @apply tw-text-2xl
     tw-font-semibold;
   }
   .text-base {
-    @apply
-    tw-text-sm;
+    @apply tw-text-sm;
   }
   .text-sm {
-     @apply tw-text-xs;
+    @apply tw-text-xs;
   }
   .text-xxs {
     @apply tw-text-[10px];
@@ -1096,6 +1148,117 @@ button:disabled {
 
     button {
       @apply tw-max-w-xs;
+    }
+  }
+
+  .partial.collapsed {
+    height: 2.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .bbs-alert {
+    @apply tw-flex
+    tw-gap-2
+    tw-rounded
+    tw-border
+    tw-border-border
+    tw-px-4
+    tw-py-2
+    tw-text-xs;
+
+    &.alert-primary {
+      @apply tw-border-indigo-300
+      tw-bg-indigo-50
+      tw-text-indigo-900;
+    }
+  }
+
+  .photo-reel {
+    @apply tw-relative;
+    .images {
+      scroll-behavior: smooth;
+      @apply tw-flex
+      tw-w-full
+      tw-max-w-full
+      tw-gap-x-2
+      tw-overflow-auto
+      tw-px-6;
+      img {
+        @apply tw-h-[150px]
+        tw-rounded;
+      }
+    }
+
+    .edge-gradient {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      position: absolute;
+      pointer-events: none;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 10%,
+        rgba(255, 255, 255, 0) 90%,
+        rgba(255, 255, 255, 1) 100%
+      );
+    }
+
+    button {
+      position: absolute;
+      top: 40%;
+      @apply tw-text-2xl;
+      &.next {
+        right: 0;
+      }
+    }
+  }
+
+  .company-hero {
+    height: 208px;
+    img.backdrop {
+      display: flex;
+      height: 150px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .logo {
+      @apply tw-absolute
+        -tw-mt-20
+        tw-ml-4
+        tw-rounded-lg
+        tw-border
+        tw-border-border
+        tw-bg-bg-primary
+        tw-p-3;
+      img {
+        @apply tw-h-28
+                tw-rounded-[4px]
+        tw-object-cover;
+      }
+    }
+  }
+  .company-bio {
+    @apply tw-flex tw-flex-col tw-gap-2 tw-px-4;
+  }
+
+  /* company details page */
+  .company-overview {
+    @apply tw-grid
+
+    tw-grid-cols-1
+    tw-gap-4
+    tw-px-4
+    md:tw-grid-cols-12;
+  }
+  .bbs-card {
+    @apply tw-rounded-lg
+    tw-border
+    tw-border-border
+    tw-bg-bg-primary;
+    .bbs-card-body {
+      @apply tw-p-4;
     }
   }
 

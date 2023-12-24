@@ -830,3 +830,42 @@ const toggleExpandCollapse = (button, idToOpenClose) => {
   // This is needed so .NET form does not automatically post back
   event.preventDefault();
 };
+
+const togglePartialExpandCollapse = (button, idToOpenClose) => {
+  const isCollapsed =
+    button.querySelector(".msicon").innerHTML == "expand_more" ? true : false;
+  if (isCollapsed) {
+    button.querySelector(".text-label").innerHTML = "Collapse";
+    button.querySelector(".msicon").innerHTML = "expand_less";
+    document.getElementById(idToOpenClose).classList.remove("collapsed");
+  } else {
+    document.getElementById(idToOpenClose).classList.add("collapsed");
+    button.querySelector(".text-label").innerHTML = "Expand";
+    button.querySelector(".msicon").innerHTML = "expand_more";
+  }
+
+  // This is needed so .NET form does not automatically post back
+  event.preventDefault();
+};
+
+const scrollX = (button, amount, idToscroll) => {
+  document.getElementById(idToscroll).scrollLeft += amount;
+};
+
+const photoModal = document.getElementById("photoModal");
+if (photoModal) {
+  photoModal.addEventListener("show.bs.modal", (event) => {
+    // Button that triggered the modal
+    const button = event.relatedTarget;
+    // Extract info from data-bs-* attributes
+    const imgurl = button.getAttribute("data-bs-imgurl");
+    // If necessary, you could initiate an Ajax request here
+    // and then do the updating in a callback.
+
+    // Update the modal's content.
+    const img = photoModal.querySelector(".modal-body > img");
+    if (img) {
+      img.setAttribute("src", imgurl);
+    }
+  });
+}
