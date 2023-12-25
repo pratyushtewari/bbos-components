@@ -835,12 +835,12 @@ const togglePartialExpandCollapse = (button, idToOpenClose) => {
   const isCollapsed =
     button.querySelector(".msicon").innerHTML == "expand_more" ? true : false;
   if (isCollapsed) {
-    button.querySelector(".text-label").innerHTML = "Collapse";
+    button.querySelector(".text-label").innerHTML = "Show less";
     button.querySelector(".msicon").innerHTML = "expand_less";
     document.getElementById(idToOpenClose).classList.remove("collapsed");
   } else {
     document.getElementById(idToOpenClose).classList.add("collapsed");
-    button.querySelector(".text-label").innerHTML = "Expand";
+    button.querySelector(".text-label").innerHTML = "Show more";
     button.querySelector(".msicon").innerHTML = "expand_more";
   }
 
