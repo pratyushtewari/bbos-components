@@ -804,7 +804,7 @@
             </div>
           </section>
           <section class="company-overview">
-            <div class="bbs-card tw-col-span-8">
+            <div class="bbs-card tw-col-span-1 md:tw-col-span-8">
               <div class="bbs-card-body tw-flex tw-flex-col tw-gap-y-4">
                 <!-- About -->
                 <div class="tw-flex tw-flex-col tw-gap-y-2">
@@ -861,8 +861,6 @@
                     <p>Classifications:</p>
                     <p>Retail/Yard/Dealer,</p>
                     <p>Secondary Manufacturer</p>
-
-                    <score-chart score="sdf"></score-chart>
                   </div>
                   <div class="tw-flex tw-items-center">
                     <hr class="tw-flex-grow" />
@@ -962,9 +960,32 @@
                 </div>
               </div>
             </div>
-            <div class="card tw-col-span-4">
-              <div class="card-body">
-                <score-chart></score-chart>
+            <div class="bbs-card tw-col-span-1 md:tw-col-span-4">
+              <div class="bbs-card-body">
+                <h5 class="tw-flex-grow">Trade activity summary</h5>
+                <score-chart
+                  min="1"
+                  max="4"
+                  stops="4"
+                  current_value="2.6"
+                  change="-1"
+                  begin_label="Poor"
+                  end_label="Excellent"
+                ></score-chart>
+                <br />
+                <hr />
+                <br />
+                <h5 class="tw-flex-grow">Blue Book Score</h5>
+
+                <score-chart
+                  min="500"
+                  max="1000"
+                  stops="6"
+                  current_value="876"
+                  change="10"
+                  begin_label="High Risk"
+                  end_label="Low Risk"
+                ></score-chart>
               </div>
             </div>
           </section>

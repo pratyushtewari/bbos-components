@@ -1,10 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 const colors = require("tailwindcss/colors");
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 export default {
   prefix: "tw-",
-  content: ["./*.html"],
+  content: ["./*.html", "./score_chart.js"],
   theme: {
     extend: {
       colors: {

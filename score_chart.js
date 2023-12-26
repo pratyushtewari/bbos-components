@@ -1,69 +1,102 @@
 class ScoreChart extends HTMLElement {
   constructor() {
     super();
+    this.id = Date.now();
     this.min = 0;
     this.max = 100;
-    this.score = 50;
-    this.direction = 0; // any negative, anypositive, or zero
+    this.current_value = 50;
+    this.change = 0; // any negative, anypositive, or zero
     this.stops = 10; // including min and max
-    this.begin_label = "Begin";
-    this.end_label = "End";
+    this.begin_label = "start";
+    this.end_label = "end";
   }
 
   // component attributes
   static get observedAttributes() {
-    return ["score"];
+    return [
+      "id",
+      "min",
+      "max",
+      "current_value",
+      "change",
+      "stops",
+      "begin_label",
+      "end_label",
+    ];
   }
 
   connectedCallback() {
-    const scoreChartTemplate = document.createElement("template");
-    scoreChartTemplate.id = "score_chart_template";
-    scoreChartTemplate.innerHTML = `
-    <div>
-      <div class="main-label">
-        <span>323</span>
-        <span class="msicon notranslate tw-text-success"
-          >arrow_upward</span
-        >
+    this.min = Number.parseFloat(this.min);
+    this.max = Number.parseFloat(this.max);
+    this.current_value = Number.parseFloat(this.current_value);
+    this.change = Number.parseFloat(this.change);
+    this.stops = Number.parseFloat(this.stops);
+
+    if (this.change < 0) {
+    }
+    const [change_icon, change_color] =
+      this.change > 0
+        ? ["trending_up", "success"]
+        : this.change == 0
+        ? ["trending_flat", "primary"]
+        : ["trending_down", "error"];
+
+    const percentage = Number.parseFloat(
+      ((this.current_value - this.min) * 100) / (this.max - this.min),
+    ).toPrecision(2);
+
+    const steps = [];
+
+    const pushStep = (value) => {
+      steps.push(
+        `<div class="steps">
+          <span>${value}</span>
+          <span>&#x2022;</span>
+        </div>`,
+      );
+    };
+
+    pushStep(this.min);
+    const jump = Math.floor((this.max - this.min) / (this.stops - 1));
+    for (let i = 1; i < this.stops - 1; ++i) {
+      pushStep(this.min + jump * i);
+    }
+    pushStep(this.max);
+
+    const innerHTML = `
+    <div id="">
+      <div class="main-label tw-gap-2">
+      <span class="msicon notranslate tw-text-${change_color}">${change_icon}</span>
+      <span>${this.current_value}</span>
       </div>
       <div class="stops">
         <div class="label-top">
-          <span>0</span>
-          <span>100</span>
-          <span>200</span>
-          <span>300</span>
-          <span>400</span>
-          <span>500</span>
+          ${steps.join("")}
         </div>
         <div class="gradient label-middle">
-          <span>&#x2022;</span>
-          <span>&#x2022;</span>
-          <span>&#x2022;</span>
-          <span>&#x2022;</span>
-          <span>&#x2022;</span>
-          <span>&#x2022;</span>
+        <div class="value" style="left: calc(${percentage}% - 9px) "></div>
         </div>
-        <div class="value msicon notranslate" style="left: 50%">
-          adjust
-        </div>
+        <hr class="axis"/>
+
         <div class="label-bottom">
-          <span>Risky</span>
-          <span>Safe</span>
+          <span>${this.begin_label}</span>
+          <span>${this.end_label}</span>
         </div>
       </div>
     </div>
     `;
-    const clonedTemplate = scoreChartTemplate.content.cloneNode(true),
-      hwMsg = `Hello ${this.score}`;
 
-    const temp = document.importNode(scoreChartTemplate.content, true);
+    this.innerHTML = innerHTML;
 
-    Array.from(temp.querySelectorAll(".hw-text")).forEach(
-      (n) => (n.textContent = hwMsg),
-    );
+    // The below logic is to position the
+    // gradient between the lables.
+    const firstWidth = this.querySelector(".steps:first-child").offsetWidth;
+    const lastWidth = this.querySelector(".steps:last-child").offsetWidth;
+    const gradient = this.querySelector(".gradient");
+    const offset = (firstWidth + lastWidth) / 2;
+    const gradientWidth = `calc(100% - ${offset}px)`;
 
-    this.appendChild(temp);
-    // shadow.append(template);
+    this.querySelector(".gradient").style.width = gradientWidth;
   }
 
   // attribute change

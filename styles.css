@@ -1250,7 +1250,6 @@ line-height: 24px;  */
   /* company details page */
   .company-overview {
     @apply tw-grid
-
     tw-grid-cols-1
     tw-gap-4
     tw-px-4
@@ -1283,15 +1282,30 @@ line-height: 24px;  */
       }
 
       .value {
-        @apply tw-absolute
-      tw-top-[10px]
+        @apply tw-relative
+      tw-top-[-6px]
       tw-flex
+      tw-rounded-full
+      tw-border-2
+      tw-border-white
+      tw-bg-brand
       tw-text-base
       tw-font-semibold
       tw-text-text-primary;
+        height: 16px;
+        width: 16px;
+        z-index: 1;
+      }
+      .steps {
+        @apply tw-flex
+        tw-flex-col
+        tw-items-center;
+        z-index: 1;
       }
       .gradient {
-        @apply tw-text-text-primary/50;
+        @apply tw-w-full
+        tw-self-center
+        tw-text-text-primary/50;
         background: linear-gradient(
           90deg,
           #b42222 0%,
@@ -1299,12 +1313,13 @@ line-height: 24px;  */
           #73d13d 70.46%,
           #237804 100%
         );
-        /* height: 4px; */
-        line-height: 4px;
+        height: 5px;
+        margin-top: -13px;
         padding-bottom: 1px;
       }
-      .label-middle {
-        /* margin-top: -8px; */
+      .axis {
+        margin-top: -7px;
+        z-index: 0;
       }
     }
   }
