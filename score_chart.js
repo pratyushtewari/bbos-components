@@ -20,14 +20,37 @@ class ScoreChart extends HTMLElement {
     scoreChartTemplate.id = "score_chart_template";
     scoreChartTemplate.innerHTML = `
     <div>
-        <p>Rating</p>
-        <div class="rating-stars">
-            <div class="rating-star star-1 hw-text">star-1</div>
-            <div class="rating-star star-2">star-2</div>
-            <div class="rating-star star-3 hw-text">star-3</div>
-            <div class="rating-star star-4">star-4</div>
-            <div class="rating-star star-5 hw-text">star-5</div>
+      <div class="main-label">
+        <span>323</span>
+        <span class="msicon notranslate tw-text-success"
+          >arrow_upward</span
+        >
+      </div>
+      <div class="stops">
+        <div class="label-top">
+          <span>0</span>
+          <span>100</span>
+          <span>200</span>
+          <span>300</span>
+          <span>400</span>
+          <span>500</span>
         </div>
+        <div class="gradient label-middle">
+          <span>&#x2022;</span>
+          <span>&#x2022;</span>
+          <span>&#x2022;</span>
+          <span>&#x2022;</span>
+          <span>&#x2022;</span>
+          <span>&#x2022;</span>
+        </div>
+        <div class="value msicon notranslate" style="left: 50%">
+          adjust
+        </div>
+        <div class="label-bottom">
+          <span>Risky</span>
+          <span>Safe</span>
+        </div>
+      </div>
     </div>
     `;
     const clonedTemplate = scoreChartTemplate.content.cloneNode(true),

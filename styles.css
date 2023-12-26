@@ -163,16 +163,14 @@ button:disabled {
           @apply tw-pt-[1px];
         }
       }
-            &.pill {
-        @apply
-        tw-px-3
-         tw-rounded-full;
+      &.pill {
+        @apply tw-rounded-full
+         tw-px-3;
       }
       &.round {
         @apply tw-h-10
         tw-w-10 tw-rounded-full;
       }
-
     }
     &.bbsButton-tertiary {
       @apply tw-border-0
@@ -192,7 +190,6 @@ button:disabled {
           @apply tw-pt-[1px];
         }
       }
-
     }
     /*
     Rounded tag button - best with a close end icon
@@ -1266,6 +1263,49 @@ line-height: 24px;  */
     tw-bg-bg-primary;
     .bbs-card-body {
       @apply tw-p-4;
+    }
+  }
+
+  score-chart {
+    .main-label {
+      @apply tw-flex
+      tw-text-xl
+      tw-font-semibold;
+      top: -12px;
+    }
+    .stops {
+      @apply tw-relative tw-flex tw-flex-col
+      tw-gap-1
+      tw-text-xs
+      tw-text-text-tertiary;
+      & > * {
+        @apply tw-flex tw-justify-between;
+      }
+
+      .value {
+        @apply tw-absolute
+      tw-top-[10px]
+      tw-flex
+      tw-text-base
+      tw-font-semibold
+      tw-text-text-primary;
+      }
+      .gradient {
+        @apply tw-text-text-primary/50;
+        background: linear-gradient(
+          90deg,
+          #b42222 0%,
+          #ffc53d 34.52%,
+          #73d13d 70.46%,
+          #237804 100%
+        );
+        /* height: 4px; */
+        line-height: 4px;
+        padding-bottom: 1px;
+      }
+      .label-middle {
+        /* margin-top: -8px; */
+      }
     }
   }
 
