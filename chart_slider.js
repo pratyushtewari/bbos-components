@@ -1,4 +1,4 @@
-class ScoreChart extends HTMLElement {
+class ChartSlider extends HTMLElement {
   constructor() {
     super();
     this.id = Date.now();
@@ -32,8 +32,6 @@ class ScoreChart extends HTMLElement {
     this.change = Number.parseFloat(this.change);
     this.stops = Number.parseFloat(this.stops);
 
-    if (this.change < 0) {
-    }
     const [change_icon, change_color] =
       this.change > 0
         ? ["trending_up", "success"]
@@ -65,9 +63,9 @@ class ScoreChart extends HTMLElement {
 
     const innerHTML = `
     <div id="">
-      <div class="main-label tw-gap-2">
-      <span class="msicon notranslate tw-text-${change_color}">${change_icon}</span>
-      <span>${this.current_value}</span>
+      <div class="current-value tw-gap-2">
+        <span class="msicon notranslate tw-text-${change_color}">${change_icon}</span>
+        <span>${this.current_value}</span>
       </div>
       <div class="stops">
         <div class="label-top">
@@ -90,7 +88,6 @@ class ScoreChart extends HTMLElement {
     // gradient between the lables.
     const firstWidth = this.querySelector(".steps:first-child").offsetWidth;
     const lastWidth = this.querySelector(".steps:last-child").offsetWidth;
-    const gradient = this.querySelector(".gradient");
     const offset = (firstWidth + lastWidth) / 2;
     const gradientWidth = `calc(100% - ${offset}px)`;
 
@@ -104,4 +101,4 @@ class ScoreChart extends HTMLElement {
   }
 }
 
-customElements.define("score-chart", ScoreChart);
+customElements.define("chart-slider", ChartSlider);

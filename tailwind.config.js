@@ -4,7 +4,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 export default {
   prefix: "tw-",
-  content: ["./*.html", "./score_chart.js"],
+  content: ["./*.html", "./*.js"],
   theme: {
     extend: {
       colors: {
