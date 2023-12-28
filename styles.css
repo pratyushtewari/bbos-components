@@ -22,6 +22,11 @@ button,
   background-color: var(--bs-btn-bg);
 }
 
+a {
+  @apply tw-text-brand
+  tw-underline;
+}
+
 :root {
   --bs-offcanvas-width: 600px;
   --bs-offcanvas-horizontal-width: 600px;
@@ -1256,7 +1261,8 @@ line-height: 24px;  */
     md:tw-grid-cols-12;
   }
   .bbs-card {
-    @apply tw-rounded-lg
+    @apply tw-overflow-clip
+    tw-rounded-lg
     tw-border
     tw-border-border
     tw-bg-bg-primary;
@@ -1283,18 +1289,21 @@ line-height: 24px;  */
 
       .value {
         @apply tw-relative
-      tw-top-[-6px]
-      tw-flex
-      tw-rounded-full
-      tw-border-2
-      tw-border-white
-      tw-bg-brand
-      tw-text-base
-      tw-font-semibold
-      tw-text-text-primary;
-        height: 16px;
-        width: 16px;
+        tw-top-[-4px]
+        tw-flex
+        tw-rounded-full
+        tw-border-2
+        tw-border-white
+        tw-bg-brand
+        tw-text-base
+        tw-font-semibold;
+        height: 13px;
+        width: 13px;
         z-index: 1;
+      }
+      .dot {
+        @apply tw-text-text-primary
+        tw-mix-blend-luminosity;
       }
       .steps {
         @apply tw-flex
@@ -1317,9 +1326,27 @@ line-height: 24px;  */
         margin-top: -13px;
         padding-bottom: 1px;
       }
-      .axis {
+      /* .axis {
         margin-top: -7px;
         z-index: 0;
+      } */
+    }
+  }
+  .help-popover {
+    @apply tw-shadow-lg;
+    .popover-header {
+      @apply tw-px-4
+      tw-py-2
+      tw-text-sm tw-font-semibold;
+    }
+    .popover-body {
+      @apply tw-flex
+      tw-flex-col
+      tw-gap-2
+      tw-text-xs;
+      ol {
+        padding: 10px;
+        list-style: auto;
       }
     }
   }

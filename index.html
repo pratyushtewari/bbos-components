@@ -960,36 +960,120 @@
                 </div>
               </div>
             </div>
-            <div class="bbs-card tw-col-span-1 md:tw-col-span-4">
-              <div class="bbs-card-body">
-                <h5 class="tw-flex-grow">Trade activity summary</h5>
-                <score-chart
-                  min="1"
-                  max="4"
-                  stops="4"
-                  current_value="2.6"
-                  change="-1"
-                  begin_label="Poor"
-                  end_label="Excellent"
-                ></score-chart>
-                <br />
+            <div
+              class="tw-col-span-1 tw-flex tw-flex-col tw-gap-4 tw-self-start md:tw-col-span-4"
+            >
+              <div class="bbs-card">
+                <div class="tw-p-4 tw-pb-2">
+                  <div class="tw-flex tw-items-center">
+                    <h5 class="tw-flex-grow">Rating</h5>
+                    <button
+                      tabindex="0"
+                      class="bbsButton bbsButton-tertiary small"
+                      role="button"
+                      data-bs-toggle="popover"
+                      data-bs-title="Rating"
+                      data-bs-trigger="focus"
+                      data-bs-custom-class="help-popover"
+                      data-bs-html="true"
+                      data-bs-content="
+                    <p>A Blue Book Services rating consists of three main elements.</p>
+                      <ol>
+                        <li><strong> WORTH ESTIMATE</strong> - financial rating </li>
+                        <li><strong>“X” RATING</strong> - trade practices rating </li>
+                        <li><strong>PAY DESCRIPTION</strong> – average number of days for payment rating</li>
+                      </ol>
+                    <p>Click <a target='_blank' href='https://apps.bluebookservices.com/BBOS/GetPublicationFile.aspx?PublicationArticleID=6215&PublicationCode=BBS'>here</a> to know more.</p>
+                    "
+                    >
+                      <span class="msicon notranslate">help</span>
+                    </button>
+                  </div>
+                  <p class="tw-text-xl tw-font-semibold">1000M XXXX AA</p>
+                  <div class="tw-flex tw-items-center">
+                    <p class="tw-flex-grow tw-text-text-secondary">
+                      <span class="text-xxs">Since</span
+                      ><span class="tw-text-xs">12/03/2023</span>
+                    </p>
+                    <button class="bbsButton bbsButton-secondary small">
+                      <span>Rate</span>
+                    </button>
+                  </div>
+                </div>
                 <hr />
-                <br />
-                <h5 class="tw-flex-grow">Blue Book Score</h5>
-
-                <score-chart
-                  min="500"
-                  max="1000"
-                  stops="6"
-                  current_value="876"
-                  change="10"
-                  begin_label="High Risk"
-                  end_label="Low Risk"
-                ></score-chart>
+                <div class="tw-p-4 tw-pt-2">
+                  <div class="tw-flex tw-items-center">
+                    <h5 class="tw-flex-grow">Credit Score</h5>
+                    <button
+                      tabindex="0"
+                      class="bbsButton bbsButton-tertiary small"
+                      role="button"
+                      data-bs-toggle="popover"
+                      data-bs-title="Credit Score"
+                      data-bs-trigger="focus"
+                      data-bs-custom-class="help-popover"
+                      data-bs-html="true"
+                      data-bs-content="
+                    <p>A Blue Book Credit Score is a number between 500 and 999, with 999 being the highest favorable score, assigned to companies buying produce.</p>
+                    <p>Blue Book Credit Scores are based on data and statistics related to credit worthiness, with the primary attribute being pay information received on the particular company.</p>
+                    <p>Click <a target='_blank' href='https://apps.bluebookservices.com/BBOS/GetPublicationFile.aspx?PublicationArticleID=6215&PublicationCode=BBS'>here</a> to know more.</p>
+                    "
+                    >
+                      <span class="msicon notranslate">help</span>
+                    </button>
+                  </div>
+                  <p class="tw-text-xl tw-font-semibold">876</p>
+                  <div class="tw-flex tw-items-center">
+                    <p class="tw-flex-grow tw-text-text-secondary">
+                      <span class="text-xxs">Since</span
+                      ><span class="tw-text-xs">12/03/2023</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h5 class="tw-mb-2">
+                  <span class="msicon notranslate">location_on</span> Map
+                </h5>
+                <div class="bbs-card">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2896.1920968092013!2d-114.25776470000001!3d43.4565866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54abd3affa467e07%3A0x7bd5b70f05ef5645!2s775%20S%20Main%20St%2C%20Bellevue%2C%20ID%2083313!5e0!3m2!1sen!2sus!4v1703787747702!5m2!1sen!2sus"
+                    width="768"
+                    height="200"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                  <p
+                    class="text-base tw-p-2 tw-font-semibold tw-text-text-secondary"
+                  >
+                    775 S Main St, Bellevue, ID 83313
+                  </p>
+                </div>
               </div>
             </div>
           </section>
-          <section class="company-performance"></section>
+          <section class="company-performance">
+            <score-chart
+              min="1"
+              max="4"
+              stops="4"
+              current_value="2.6"
+              change="-1"
+              begin_label="Poor"
+              end_label="Excellent"
+            ></score-chart>
+            <score-chart
+              min="500"
+              max="1000"
+              stops="6"
+              current_value="876"
+              change="10"
+              begin_label="High Risk"
+              end_label="Low Risk"
+            ></score-chart>
+          </section>
           <section class="company-ar"></section>
           <section class="company-updates-news"></section>
           <section class="company-business-details"></section>
@@ -1079,6 +1163,13 @@
       );
       const tooltipList = [...tooltipTriggerList].map(
         (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl),
+      );
+
+      const popoverTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="popover"]',
+      );
+      const popoverList = [...popoverTriggerList].map(
+        (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl),
       );
     </script>
   </body>

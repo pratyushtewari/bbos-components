@@ -51,7 +51,7 @@ class ScoreChart extends HTMLElement {
       steps.push(
         `<div class="steps">
           <span>${value}</span>
-          <span>&#x2022;</span>
+          <span class="dot">&#x2022;</span>
         </div>`,
       );
     };
@@ -74,10 +74,8 @@ class ScoreChart extends HTMLElement {
           ${steps.join("")}
         </div>
         <div class="gradient label-middle">
-        <div class="value" style="left: calc(${percentage}% - 9px) "></div>
+        <div class="value dot" style="left: calc(${percentage}% - 9px) "></div>
         </div>
-        <hr class="axis"/>
-
         <div class="label-bottom">
           <span>${this.begin_label}</span>
           <span>${this.end_label}</span>
