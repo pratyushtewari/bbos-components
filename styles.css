@@ -1285,7 +1285,8 @@ button:disabled {
     md:tw-grid-cols-12;
   }
 
-  .company-performance {
+  .company-performance,
+  .company-updates-news {
     @apply tw-px-4;
   }
 
