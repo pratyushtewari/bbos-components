@@ -772,30 +772,44 @@
                 Blue Book Company #123456
               </p>
               <div class="tw-flex tw-gap-2">
-                <button class="bbsButton bbsButton-tag-secondary square notes">
+                <button
+                  class="bbsButton bbsButton-tag-secondary square notes"
+                  data-bs-toggle="tooltip"
+                  data-bs-title="View Notes"
+                >
                   <span class="msicon notranslate">note_stack</span>
                   <span>Notes (5)</span>
                 </button>
                 <button
                   class="bbsButton bbsButton-tag-secondary square changed"
+                  data-bs-toggle="tooltip"
+                  data-bs-title="Updated in the last 120 days"
                 >
                   <span class="msicon notranslate">change_history</span>
                   <span>Changed</span>
                 </button>
                 <button
                   class="bbsButton bbsButton-tag-secondary square watchdog"
+                  data-bs-toggle="tooltip"
+                  data-bs-title="Added to watchdog list"
                 >
                   <span class="msicon notranslate"
                     >sound_detection_dog_barking</span
                   >
                   <span>Watchdog</span>
                 </button>
-                <button class="bbsButton bbsButton-tag-secondary square new">
+                <button
+                  class="bbsButton bbsButton-tag-secondary square new"
+                  data-bs-toggle="tooltip"
+                  data-bs-title="Listed in the last 270 days"
+                >
                   <span class="msicon notranslate">release_alert</span>
                   <span>New</span>
                 </button>
                 <button
                   class="bbsButton bbsButton-tag-secondary square organic"
+                  data-bs-toggle="tooltip"
+                  data-bs-title="Certified Organic"
                 >
                   <span class="msicon notranslate">grass</span>
                   <span>Organic</span>
@@ -804,165 +818,202 @@
             </div>
           </section>
           <section class="company-overview">
-            <div class="bbs-card tw-col-span-1 md:tw-col-span-8">
-              <div class="bbs-card-body tw-flex tw-flex-col tw-gap-y-4">
-                <!-- About -->
-                <div class="tw-flex tw-flex-col tw-gap-y-2">
-                  <h5 class="tw-flex-grow">About</h5>
-
-                  <div class="partial collapsed tw-text-sm" id="about_company">
-                    Sawtooth Wood Products specializes in log construction in
-                    Ketchum, Hailey, Sun Valley, and Bellevue, and we take great
-                    pride in our ability to create stunning, one-of-a-kind homes
-                    and buildings that capture the essence of the Wood River
-                    Valley. We are also experts in fence installation, and we
-                    take great care to ensure that every fence we build is
-                    strong, durable, and beautiful. Whether a simple picket
-                    fence for a backyard or a large security fence for a
-                    business, we have the knowledge and experience to get the
-                    job done right.
-                  </div>
-                  <div class="tw-flex tw-items-center">
-                    <hr class="tw-flex-grow" />
-                    <button
-                      class="bbsButton bbsButton-secondary small pill"
-                      onclick="togglePartialExpandCollapse(this, 'about_company')"
-                    >
-                      <span class="text-label">Show more</span>
-                      <span class="msicon notranslate">expand_more</span>
-                    </button>
-                    <hr class="tw-flex-grow" />
-                  </div>
-                </div>
-                <!-- Premium Listing Info -->
-                <div class="tw-flex tw-flex-col tw-gap-y-2">
-                  <h5 class="tw-flex-grow">
-                    <span class="msicon notranslate">workspace_premium</span>
-
-                    Premium Listing Information
+            <div
+              class="tw-col-span-1 tw-flex tw-flex-col tw-gap-4 md:tw-col-span-8"
+            >
+              <!-- Pinned notes -->
+              <div class="bbs-card bbs-card-alert">
+                <div class="bbs-card-body">
+                  <h5 class="card-title">
+                    <span class="msicon notranslate">push_pin</span> Pinned note
                   </h5>
-                  <div
-                    class="partial collapsed tw-text-sm"
-                    id="primium_listing_info"
-                  >
-                    <p>Bellevue, ID</p>
-                    <p>Sawtooth Wood Products & Equipment.</p>
-                    <p>(A d/b/a of Idaho Sawtooth Wood</p>
-                    <p>Products, LLC)</p>
-                    <p>(A wholly-owned subsidiary of</p>
-                    <p>Kvell International Holdings,</p>
-                    <p>Inc., Hailey, ID)</p>
-                    <p>775 S Main St. (83313-6037)</p>
-                    <p>Phone 208 788-4705</p>
-                    <p>FAX 208 788-9898</p>
-                    <p>E-Mail:</p>
-                    <p>info@sawtoothwoodproducts.com</p>
-                    <p>Web Site: sawtoothwoodproducts.com</p>
-                    <p>Classifications:</p>
-                    <p>Retail/Yard/Dealer,</p>
-                    <p>Secondary Manufacturer</p>
-                  </div>
-                  <div class="tw-flex tw-items-center">
-                    <hr class="tw-flex-grow" />
-                    <button
-                      class="bbsButton bbsButton-secondary small pill"
-                      onclick="togglePartialExpandCollapse(this, 'primium_listing_info')"
-                    >
-                      <span class="text-label">Show more</span>
-                      <span class="msicon notranslate">expand_more</span>
-                    </button>
-                    <hr class="tw-flex-grow" />
+                  <div>
+                    <p>
+                      This is the first line of a pinned note. This is the
+                      second line of a pinned note.
+                    </p>
+                    <p>...</p>
+                    <div class="tw-flex tw-items-center">
+                      <p class="tw-flex-grow tw-text-text-secondary">
+                        <span class="text-xxs">Last Updated: </span
+                        ><span class="tw-text-xs">1/1/2024 12:33 PM</span>
+                      </p>
+                      <button class="bbsButton bbsButton-secondary small">
+                        <span>Show more</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
-                <!-- Photos -->
-                <div class="tw-flex tw-flex-col tw-gap-y-2">
-                  <h5 class="tw-flex-grow">Photos</h5>
+              </div>
 
-                  <div class="photo-reel">
-                    <div class="images no-scrollbar" id="company_photos">
-                      <img
-                        type="button"
-                        data-bs-toggle="modal"
-                        data-bs-target="#photoModal"
-                        data-bs-imgurl="https://sawtoothwoodproducts.com/wp-content/uploads/sawtooth-log-custom-milling-1.jpg"
-                        src="https://sawtoothwoodproducts.com/wp-content/uploads/sawtooth-log-custom-milling-1.jpg"
-                      />
-                      <img
-                        type="button"
-                        data-bs-toggle="modal"
-                        data-bs-target="#photoModal"
-                        data-bs-imgurl="https://sawtoothwoodproducts.com/wp-content/uploads/sawtooth-log-construction-1.jpg"
-                        src="https://sawtoothwoodproducts.com/wp-content/uploads/sawtooth-log-construction-1.jpg"
-                      />
+              <!-- company details -->
+              <div class="bbs-card">
+                <div class="bbs-card-body tw-flex tw-flex-col tw-gap-y-4">
+                  <!-- About -->
+                  <div class="tw-flex tw-flex-col tw-gap-y-2">
+                    <h5 class="tw-flex-grow">About</h5>
 
-                      <img
-                        type="button"
-                        data-bs-toggle="modal"
-                        data-bs-target="#photoModal"
-                        data-bs-imgurl="https://sawtoothwoodproducts.com/wp-content/uploads/sawtooth-custom-built-gates-2.jpeg"
-                        src="https://sawtoothwoodproducts.com/wp-content/uploads/sawtooth-custom-built-gates-2.jpeg"
-                      />
-
-                      <img
-                        type="button"
-                        data-bs-toggle="modal"
-                        data-bs-target="#photoModal"
-                        data-bs-imgurl="https://sawtoothwoodproducts.com/wp-content/uploads/fencing-contractor-ketchum-id-our-work-cross-buck-fence-1.jpeg"
-                        src="https://sawtoothwoodproducts.com/wp-content/uploads/fencing-contractor-ketchum-id-our-work-cross-buck-fence-1.jpeg"
-                      />
-
-                      <img
-                        type="button"
-                        data-bs-toggle="modal"
-                        data-bs-target="#photoModal"
-                        data-bs-imgurl="https://sawtoothwoodproducts.com/wp-content/uploads/fencing-contractor-ketchum-id-our-work-vinyl-fence-1.jpeg"
-                        src="https://sawtoothwoodproducts.com/wp-content/uploads/fencing-contractor-ketchum-id-our-work-vinyl-fence-1.jpeg"
-                      />
-                    </div>
-                    <div class="edge-gradient"></div>
-                    <button
-                      onclick="scrollX(this, -200, 'company_photos')"
-                      class="bbsButton bbsButton-secondary filled round before"
-                    >
-                      <span class="msicon notranslate">navigate_before</span>
-                    </button>
-                    <button
-                      onclick="scrollX(this, 200, 'company_photos')"
-                      class="bbsButton bbsButton-secondary filled round next"
-                    >
-                      <span class="msicon notranslate">navigate_next</span>
-                    </button>
                     <div
-                      class="modal modal-xl"
-                      id="photoModal"
-                      tabindex="-1"
-                      aria-hidden="true"
+                      class="partial collapsed tw-text-sm"
+                      id="about_company"
                     >
-                      <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                          <div class="modal-body">
-                            <img style="margin: auto" src="" />
+                      Sawtooth Wood Products specializes in log construction in
+                      Ketchum, Hailey, Sun Valley, and Bellevue, and we take
+                      great pride in our ability to create stunning,
+                      one-of-a-kind homes and buildings that capture the essence
+                      of the Wood River Valley. We are also experts in fence
+                      installation, and we take great care to ensure that every
+                      fence we build is strong, durable, and beautiful. Whether
+                      a simple picket fence for a backyard or a large security
+                      fence for a business, we have the knowledge and experience
+                      to get the job done right.
+                    </div>
+                    <div class="tw-flex tw-items-center">
+                      <hr class="tw-flex-grow" />
+                      <button
+                        class="bbsButton bbsButton-secondary small pill"
+                        onclick="togglePartialExpandCollapse(this, 'about_company')"
+                      >
+                        <span class="text-label">Show more</span>
+                        <span class="msicon notranslate">expand_more</span>
+                      </button>
+                      <hr class="tw-flex-grow" />
+                    </div>
+                  </div>
+                  <!-- Premium Listing Info -->
+                  <div class="tw-flex tw-flex-col tw-gap-y-2">
+                    <h5 class="tw-flex-grow">
+                      <span class="msicon notranslate">workspace_premium</span>
+
+                      Premium Listing Information
+                    </h5>
+                    <div
+                      class="partial collapsed tw-text-sm"
+                      id="primium_listing_info"
+                    >
+                      <p>Bellevue, ID</p>
+                      <p>Sawtooth Wood Products & Equipment.</p>
+                      <p>(A d/b/a of Idaho Sawtooth Wood</p>
+                      <p>Products, LLC)</p>
+                      <p>(A wholly-owned subsidiary of</p>
+                      <p>Kvell International Holdings,</p>
+                      <p>Inc., Hailey, ID)</p>
+                      <p>775 S Main St. (83313-6037)</p>
+                      <p>Phone 208 788-4705</p>
+                      <p>FAX 208 788-9898</p>
+                      <p>E-Mail:</p>
+                      <p>info@sawtoothwoodproducts.com</p>
+                      <p>Web Site: sawtoothwoodproducts.com</p>
+                      <p>Classifications:</p>
+                      <p>Retail/Yard/Dealer,</p>
+                      <p>Secondary Manufacturer</p>
+                    </div>
+                    <div class="tw-flex tw-items-center">
+                      <hr class="tw-flex-grow" />
+                      <button
+                        class="bbsButton bbsButton-secondary small pill"
+                        onclick="togglePartialExpandCollapse(this, 'primium_listing_info')"
+                      >
+                        <span class="text-label">Show more</span>
+                        <span class="msicon notranslate">expand_more</span>
+                      </button>
+                      <hr class="tw-flex-grow" />
+                    </div>
+                  </div>
+                  <!-- Photos -->
+                  <div class="tw-flex tw-flex-col tw-gap-y-2">
+                    <h5 class="tw-flex-grow">Photos</h5>
+
+                    <div class="photo-reel">
+                      <div class="images no-scrollbar" id="company_photos">
+                        <img
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#photoModal"
+                          data-bs-imgurl="https://sawtoothwoodproducts.com/wp-content/uploads/sawtooth-log-custom-milling-1.jpg"
+                          src="https://sawtoothwoodproducts.com/wp-content/uploads/sawtooth-log-custom-milling-1.jpg"
+                        />
+                        <img
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#photoModal"
+                          data-bs-imgurl="https://sawtoothwoodproducts.com/wp-content/uploads/sawtooth-log-construction-1.jpg"
+                          src="https://sawtoothwoodproducts.com/wp-content/uploads/sawtooth-log-construction-1.jpg"
+                        />
+
+                        <img
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#photoModal"
+                          data-bs-imgurl="https://sawtoothwoodproducts.com/wp-content/uploads/sawtooth-custom-built-gates-2.jpeg"
+                          src="https://sawtoothwoodproducts.com/wp-content/uploads/sawtooth-custom-built-gates-2.jpeg"
+                        />
+
+                        <img
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#photoModal"
+                          data-bs-imgurl="https://sawtoothwoodproducts.com/wp-content/uploads/fencing-contractor-ketchum-id-our-work-cross-buck-fence-1.jpeg"
+                          src="https://sawtoothwoodproducts.com/wp-content/uploads/fencing-contractor-ketchum-id-our-work-cross-buck-fence-1.jpeg"
+                        />
+
+                        <img
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#photoModal"
+                          data-bs-imgurl="https://sawtoothwoodproducts.com/wp-content/uploads/fencing-contractor-ketchum-id-our-work-vinyl-fence-1.jpeg"
+                          src="https://sawtoothwoodproducts.com/wp-content/uploads/fencing-contractor-ketchum-id-our-work-vinyl-fence-1.jpeg"
+                        />
+                      </div>
+                      <div class="edge-gradient"></div>
+                      <button
+                        onclick="scrollX(this, -200, 'company_photos')"
+                        class="bbsButton bbsButton-secondary filled round before"
+                      >
+                        <span class="msicon notranslate">navigate_before</span>
+                      </button>
+                      <button
+                        onclick="scrollX(this, 200, 'company_photos')"
+                        class="bbsButton bbsButton-secondary filled round next"
+                      >
+                        <span class="msicon notranslate">navigate_next</span>
+                      </button>
+                      <div
+                        class="modal modal-xl"
+                        id="photoModal"
+                        tabindex="-1"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-body">
+                              <img style="margin: auto" src="" />
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <!-- Alerts -->
-                <div class="bbs-alert alert-primary" role="alert">
-                  <span class="msicon notranslate">info</span>
+                  <!-- Alerts -->
+                  <div class="bbs-alert alert-info" role="alert">
+                    <div class="alert-title">
+                      <span class="msicon notranslate">info</span>
 
-                  <span
-                    >Data provided in collaboration with Miller Wood Trade
-                    Publication / Green Book</span
-                  >
+                      <span
+                        >Data provided in collaboration with Miller Wood Trade
+                        Publication / Green Book</span
+                      >
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+
             <div
               class="tw-col-span-1 tw-flex tw-flex-col tw-gap-4 tw-self-start md:tw-col-span-4"
             >
+              <!-- Company Metrics -->
               <div class="bbs-card">
                 <div class="bbs-card-body no-padding">
                   <div class="tw-p-4">
@@ -1033,6 +1084,7 @@
                   </div>
                 </div>
               </div>
+              <!-- Company Map -->
               <div class="bbs-card">
                 <h5 class="tw-mb-2">
                   <span class="msicon notranslate">location_on</span> Map
@@ -1130,6 +1182,9 @@
                       </td>
                       <td>
                         <chart-box value="XXXX"></chart-box>
+                        <chart-box value="XXX"></chart-box>
+                        <chart-box value="XX"></chart-box>
+                        <chart-box value="X"></chart-box>
                       </td>
                       <td>
                         <div class="tw-flex tw-flex-col tw-gap-2">
