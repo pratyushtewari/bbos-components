@@ -17,7 +17,13 @@ export default {
     viteStaticCopy({
       targets: [
         {
-          src: "main.js",
+          src: [
+            "main.js",
+            "card_title.js",
+            "chart_box.js",
+            "chart_slider.js",
+            "mockdata.js",
+          ],
           dest: "./",
         },
       ],
@@ -28,16 +34,15 @@ export default {
         search: /="\/assets\//g, // you can use RegEXP to search in content
         replace: '="assets/', // replace search string with this
       },
-
       {
         fileName: "index.html",
-        search: '<script src="mockdata.js"></script>', // you can use RegEXP to search in content
-        replace: '<script src="Scripts/mockdata.js"></script>', // replace search string with this
+        search: '<script src="', // you can use RegEXP to search in content
+        replace: '<script src="Scripts/', // replace search string with this
       },
       {
         fileName: "index.html",
-        search: '<script src="main.js"></script>', // you can use RegEXP to search in content
-        replace: '<script src="Scripts/main.js"></script>', // replace search string with this
+        search: 'href="/styles.css"', // you can use RegEXP to search in content
+        replace: 'href="Content\\styles.css"', // replace search string with this
       },
     ]),
   ],

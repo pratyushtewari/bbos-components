@@ -19,9 +19,9 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <title>Company Profile</title>
     <!-- Replace with <link rel="stylesheet" href="Content\styles.css" /> -->
     <link rel="stylesheet" href="./styles.css" />
-    <title>Company Profile</title>
   </head>
 
   <body class="qa tw-flex tw-flex-col tw-items-center tw-align-middle">
@@ -67,12 +67,23 @@
 
           <ul class="dropdown-menu">
             <li>
-              <button class="new dropdown-item">
+              <a class="new dropdown-item"
+              href="advancedSearch.html">
                 <span class="msicon notranslate">factory</span>
                 <div class="text-content">
                   <span class="label">Company Search</span>
                 </div>
-              </button>
+              </a>
+            </li>
+
+            <li>
+              <a id="hlAdvancedCompanySearch" class="bbsButton bbsButton-menu-item" href="javascript:__doPostBack('ctl00$hlAdvancedCompanySearch','')">
+                                <p>
+                                    <span class="msicon notranslate">factory</span>
+                                    <span class="text-label">Advanced Company Search</span>
+                                    <span class="bbsBadge">New</span>
+                                </p>
+                            </a>
             </li>
 
             <li>
@@ -760,7 +771,7 @@
               <div class="tw-flex tw-flex-col tw-items-center tw-text-center">
                 <img
                   class="tw-h-16 tw-w-16"
-                  src="/public/assets/BBOS_Trading_partner_logo.svg"
+                  src="/assets/BBOS_Trading_partner_logo.svg"
                 />
                 <p class="text-xxs tw-text-text-secondary">
                   Trading Partners<br />Since 1929
@@ -1035,7 +1046,7 @@
                           <li><strong>“X” RATING</strong> - trade practices rating </li>
                           <li><strong>PAY DESCRIPTION</strong> – average number of days for payment rating</li>
                         </ol>
-                      <p>Click <a target='_blank' href='https://apps.bluebookservices.com/BBOS/GetPublicationFile.aspx?PublicationArticleID=6215&PublicationCode=BBS'>here</a> to know more.</p>
+                      <p>Click <a class='link' target='_blank' href='https://apps.bluebookservices.com/BBOS/GetPublicationFile.aspx?PublicationArticleID=6215&PublicationCode=BBS'>here</a> to know more.</p>
                       "
                       >
                         <span class="msicon notranslate">help</span>
@@ -1068,7 +1079,7 @@
                         data-bs-content="
                           <p>A Blue Book Credit Score is a number between 500 and 999, with 999 being the highest favorable score, assigned to companies buying produce.</p>
                           <p>Blue Book Credit Scores are based on data and statistics related to credit worthiness, with the primary attribute being pay information received on the particular company.</p>
-                          <p>Click <a target='_blank' href='https://apps.bluebookservices.com/BBOS/GetPublicationFile.aspx?PublicationArticleID=6215&PublicationCode=BBS'>here</a> to know more.</p>
+                          <p>Click <a class='link' target='_blank' href='https://apps.bluebookservices.com/BBOS/GetPublicationFile.aspx?PublicationArticleID=6215&PublicationCode=BBS'>here</a> to know more.</p>
                         "
                       >
                         <span class="msicon notranslate">help</span>
