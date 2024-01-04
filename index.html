@@ -67,23 +67,12 @@
 
           <ul class="dropdown-menu">
             <li>
-              <a class="new dropdown-item"
-              href="advancedSearch.html">
-                <span class="msicon notranslate">factory</span>
+              <a class="new dropdown-item" href="advancedSearch.html">
+                <span class="msicon notranslate">manage_search</span>
                 <div class="text-content">
                   <span class="label">Company Search</span>
                 </div>
               </a>
-            </li>
-
-            <li>
-              <a id="hlAdvancedCompanySearch" class="bbsButton bbsButton-menu-item" href="javascript:__doPostBack('ctl00$hlAdvancedCompanySearch','')">
-                                <p>
-                                    <span class="msicon notranslate">factory</span>
-                                    <span class="text-label">Advanced Company Search</span>
-                                    <span class="bbsBadge">New</span>
-                                </p>
-                            </a>
             </li>
 
             <li>
@@ -336,6 +325,15 @@
                 <span class="msicon notranslate">arrow_outward</span>
               </button>
             </li>
+            <li>
+              <button class="dropdown-item">
+                <span class="msicon notranslate">edit_notifications</span>
+                <div class="text-content">
+                  <span class="label">Manage Alerts</span>
+                </div>
+                <span class="msicon notranslate">arrow_outward</span>
+              </button>
+            </li>
           </ul>
         </div>
         <!-- spacer -->
@@ -449,17 +447,29 @@
                   aria-expanded="false"
                   aria-controls="flush_collapseOne"
                 >
-                  <span class="group-label">Trade Intelligence</span>
+                  <span class="group-label">Company Details</span>
                 </button>
               </div>
               <div
                 id="flush_collapseOne"
                 class="accordion-collapse collapse show"
               >
-                <button class="bbs-menu-item new selected">
+                <button class="bbs-menu-item new selected update">
                   <span class="msicon notranslate">storefront</span>
                   <div class="text-content">
                     <span class="label">Company Profile</span>
+                    <span class="caption">
+                      <span class="update">
+                        <span class="msicon notranslate">priority_high</span
+                        >Listed in last 270 days</span
+                      >
+                    </span>
+                  </div>
+                </button>
+                <button class="bbs-menu-item">
+                  <span class="msicon notranslate">contacts</span>
+                  <div class="text-content">
+                    <span class="label">Contacts</span>
                   </div>
                 </button>
                 <button class="bbs-menu-item">
@@ -472,6 +482,12 @@
                   <span class="msicon notranslate">account_balance</span>
                   <div class="text-content">
                     <span class="label">Claim Activity Report</span>
+                    <span class="caption">
+                      <span class="update">
+                        <span class="msicon notranslate">priority_high</span>New
+                        claim reported</span
+                      >
+                    </span>
                   </div>
                 </button>
                 <button class="bbs-menu-item">
@@ -480,79 +496,29 @@
                     <span class="label">Branches & Affiliations</span>
                   </div>
                 </button>
-                <button class="bbs-menu-item new">
-                  <span class="msicon notranslate">public</span>
+                <button class="bbs-menu-item">
+                  <span class="msicon notranslate">campaign</span>
                   <div class="text-content">
-                    <span class="label">Social Media</span>
+                    <span class="label">Company Updates</span>
+                    <span class="caption">
+                      <span class="update">
+                        <span class="msicon notranslate -tw-ml-1"
+                          >priority_high</span
+                        >Updated 66 days ago</span
+                      >
+                    </span>
                   </div>
+                </button>
+                <button class="bbs-menu-item">
+                  <span class="msicon notranslate">note_stack</span>
+                  <div class="text-content">
+                    <span class="label">Notes</span>
+                  </div>
+                  <span class="bbsBadge">1200</span>
                 </button>
               </div>
             </div>
-            <div class="accordion-item">
-              <div class="accordion-header">
-                <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#flush_collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="flush_collapseTwo"
-                >
-                  <span class="group-label">Sales Intelligence</span>
-                </button>
-              </div>
-              <div
-                id="flush_collapseTwo"
-                class="accordion-collapse collapse show"
-              >
-                <button class="bbs-menu-item">
-                  <span class="msicon notranslate">contacts</span>
-                  <div class="text-content">
-                    <span class="label">Contacts</span>
-                  </div>
-                </button>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <div class="accordion-header">
-                <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#flush_collapseThree"
-                  aria-expanded="false"
-                  aria-controls="flush_collapseThree"
-                >
-                  <span class="group-label">Market Intelligence</span>
-                </button>
-              </div>
-              <div
-                id="flush_collapseThree"
-                class="accordion-collapse collapse show"
-              >
-                <button class="bbs-menu-item">
-                  <span class="msicon notranslate">menu_book</span>
-                  <div class="text-content">
-                    <span class="label">Produce Blueprints Magazine</span>
-                  </div>
-                  <span class="msicon notranslate end">arrow_outward</span>
-                </button>
-                <button class="bbs-menu-item">
-                  <span class="msicon notranslate">cognition</span>
-                  <div class="text-content">
-                    <span class="label">Know Your Commodity</span>
-                  </div>
-                  <span class="msicon notranslate end">arrow_outward</span>
-                </button>
-                <button class="bbs-menu-item">
-                  <span class="msicon notranslate">newspaper</span>
-                  <div class="text-content">
-                    <span class="label">The Produce Reporter</span>
-                  </div>
-                  <span class="msicon notranslate end">arrow_outward</span>
-                </button>
-              </div>
-            </div>
+
             <div class="accordion-item">
               <div class="accordion-header">
                 <button
@@ -567,27 +533,7 @@
                 </button>
               </div>
               <div id="flush_collapseFour" class="accordion-collapse collapse">
-                <button class="bbs-menu-item new">
-                  <span class="msicon notranslate">thumb_up_off_alt</span>
-                  <div class="text-content">
-                    <span class="label">Rate Company</span>
-                  </div>
-                </button>
-                <button class="bbs-menu-item new">
-                  <span class="msicon notranslate">edit</span>
-                  <div class="text-content">
-                    <span class="label">Suggest an edit</span>
-                  </div>
-                </button>
-                <button class="bbs-menu-item">
-                  <span class="msicon notranslate">shield_with_heart</span>
-                  <div class="text-content">
-                    <span class="label"
-                      >Add this company to <i>my references</i> list
-                      Description</span
-                    >
-                  </div>
-                </button>
+
                 <button class="bbs-menu-item new">
                   <span class="msicon notranslate">policy</span>
                   <div class="text-content">
@@ -638,13 +584,6 @@
                 <button class="bbs-menu-item new">
                   <span class="msicon notranslate">file_download</span>
                   <div class="text-content">
-                    <span class="label">Tear Sheet (free)</span>
-                  </div>
-                </button>
-
-                <button class="bbs-menu-item new">
-                  <span class="msicon notranslate">file_download</span>
-                  <div class="text-content">
                     <span class="label">Experian Report</span>
                   </div>
                 </button>
@@ -653,55 +592,58 @@
             <div class="accordion-item">
               <div class="accordion-header">
                 <button
-                  class="accordion-button collapsed"
+                  class="accordion-button"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#flush_collapseSix"
-                  aria-expanded="false"
+                  aria-expanded="true"
                   aria-controls="flush_collapseSix"
                 >
-                  <span class="group-label">Lists & Subscriptions</span>
+                  <span class="group-label">Actions</span>
                 </button>
               </div>
-              <div id="flush_collapseSix" class="accordion-collapse collapse">
+              <div id="flush_collapseSix" class="accordion-collapse collapse show">
                 <button class="bbs-menu-item">
-                  <span class="msicon notranslate">notes</span>
+                  <span class="msicon notranslate">thumb_up_off_alt</span>
                   <div class="text-content">
-                    <span class="label">Notes</span>
+                    <span class="label">Rate Company</span>
                   </div>
                 </button>
+
                 <button class="bbs-menu-item">
-                  <span class="msicon notranslate">notifications_active</span>
+                  <span class="msicon notranslate">shield_with_heart</span>
                   <div class="text-content">
-                    <span class="label">Add / Remove Alert</span>
-                    <span class="caption">Subscribe for all key updates</span>
+                    <span class="label"
+                      >Add to my reference list
+                      </span
+                    >
+                  </div>
+                </button>
+
+
+                <button class="bbs-menu-item">
+                  <span class="msicon notranslate">notification_add</span>
+                  <div class="text-content">
+                    <span class="label">Subscribe for alerts</span>
+                    <span class="caption">Currently not subscribed</span>
                   </div>
                 </button>
                 <button class="bbs-menu-item">
                   <span class="msicon notranslate"
-                    >sound_detection_dog_barking</span
+                    >playlist_add</span
                   >
                   <div class="text-content">
-                    <span class="label">Manage Watchdogs</span>
-                    <span class="caption">List of company groups</span>
+                    <span class="label">Add to watchdogs</span>
                   </div>
                 </button>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <div class="accordion-header">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#flush_collapseSeven"
-                  aria-expanded="false"
-                  aria-controls="flush_collapseSeven"
-                >
-                  <span class="group-label">Misc</span>
+                <button class="bbs-menu-item">
+                  <span class="msicon notranslate"
+                    >playlist_remove</span
+                  >
+                  <div class="text-content">
+                    <span class="label">Remove from watchdogs</span>
+                  </div>
                 </button>
-              </div>
-              <div id="flush_collapseSeven" class="accordion-collapse collapse">
                 <button class="bbs-menu-item">
                   <span class="msicon notranslate">dashboard_customize</span>
                   <div class="text-content">
@@ -710,6 +652,7 @@
                 </button>
               </div>
             </div>
+
             <!-- End of Accrodions -->
           </div>
 
@@ -820,10 +763,18 @@
                 <button
                   class="bbsButton bbsButton-tag-secondary square organic"
                   data-bs-toggle="tooltip"
-                  data-bs-title="Certified Organic"
+                  data-bs-title="Certified Organic & Food safety"
                 >
-                  <span class="msicon notranslate">grass</span>
-                  <span>Organic</span>
+                  <span class="msicon notranslate">verified</span>
+                  <span>Certified</span>
+                </button>
+                <button
+                  class="bbsButton bbsButton-tag-secondary square new"
+                  data-bs-toggle="tooltip"
+                  data-bs-title="New claim reported"
+                >
+                  <span class="msicon notranslate">account_balance</span>
+                  <span>New claim</span>
                 </button>
               </div>
             </div>

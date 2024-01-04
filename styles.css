@@ -76,10 +76,16 @@ button:disabled {
  */
 :focus,
 .focus-visible:focus:not(:focus-visible) {
-  @apply tw-outline
+  @apply tw-no-underline
+  tw-outline
   tw-outline-1
-  tw-outline-focus-outline;
-  z-index: 9999;
+  tw-outline-focus-outline
+  !important;
+}
+
+a:hover,
+a:focus {
+  @apply tw-no-underline;
 }
 /**
  * components and css using tailwind css
@@ -542,7 +548,8 @@ button:disabled {
     tw-pl-4
     tw-pr-3
     hover:tw-bg-bg-component-hover
-    active:tw-bg-bg-component-active;
+    active:tw-bg-bg-component-active
+    active:tw-text-text-primary;
     & > * {
       /* internal content of each child of menu item is vertically stacked */
       @apply tw-flex tw-flex-col;
@@ -558,11 +565,16 @@ button:disabled {
       }
       .caption {
         @apply tw-whitespace-normal
-          tw-text-start
           tw-text-xs
-          tw-text-text-secondary;
+          tw-text-text-secondary
+          tw-flex;
+
+          .update {
+            @apply tw-text-violet-800
+          }
       }
     }
+
 
     &.selected {
       @apply tw-bg-bg-component-active
@@ -590,9 +602,13 @@ button:disabled {
     }
     &.new::after {
       content: "NEW";
-      @apply tw-pt-1
+      @apply tw-self-center
         tw-text-[10px]
         tw-text-violet-800;
+    }
+
+    .bbsBadge {
+      @apply tw-self-center;
     }
   }
 
@@ -644,7 +660,7 @@ button:disabled {
     .group-label {
       @apply tw-pointer-events-none
       tw-py-2
-      tw-ps-2 tw-text-xs tw-font-semibold
+      tw-ps-2
       tw-text-text-secondary
       max-md:tw-hidden;
     }
@@ -704,7 +720,8 @@ button:disabled {
     .group-label {
       @apply tw-pointer-events-none
       tw-py-2
-      tw-ps-2 tw-text-xs tw-font-semibold
+      tw-ps-2
+      tw-text-sm
       tw-text-text-secondary;
     }
   }
@@ -742,10 +759,8 @@ button:disabled {
     tw-flex-col;
     > .icon-left {
       @apply tw-pointer-events-none
-      tw-absolute
-      tw-left-2
-      tw-top-1
-      tw-inline-block
+      tw-relative
+      tw-left-6
       tw-cursor-text
       tw-text-text-tertiary;
     }
@@ -769,10 +784,12 @@ button:disabled {
     }
 
     &.left-icon {
+      @apply tw-flex
+        tw-flex-row
+        tw-items-center;
       input,
       select {
-        @apply tw-my-2
-        tw-ps-7;
+        @apply tw-ps-7;
       }
     }
   }
@@ -874,11 +891,14 @@ button:disabled {
     @apply tw-rounded-3xl
     tw-border
     tw-border-violet-800
-    tw-bg-violet-100
+    tw-bg-violet-50
     tw-px-1.5
     tw-text-[10px]
     tw-text-violet-800;
   }
+
+
+  /* Main Content area between header and footer */
   .content {
     @apply tw-flex tw-w-full
     tw-items-center
