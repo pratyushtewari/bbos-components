@@ -522,7 +522,7 @@
             <div class="accordion-item">
               <div class="accordion-header">
                 <button
-                  class="accordion-button collapsed"
+                  class="accordion-button"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#flush_collapseFour"
@@ -532,8 +532,10 @@
                   <span class="group-label">Services</span>
                 </button>
               </div>
-              <div id="flush_collapseFour" class="accordion-collapse collapse">
-
+              <div
+                id="flush_collapseFour"
+                class="accordion-collapse collapse show"
+              >
                 <button class="bbs-menu-item new">
                   <span class="msicon notranslate">policy</span>
                   <div class="text-content">
@@ -563,7 +565,7 @@
             <div class="accordion-item">
               <div class="accordion-header">
                 <button
-                  class="accordion-button collapsed"
+                  class="accordion-button"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#flush_collapseFive"
@@ -573,7 +575,10 @@
                   <span class="group-label">Downloads</span>
                 </button>
               </div>
-              <div id="flush_collapseFive" class="accordion-collapse collapse">
+              <div
+                id="flush_collapseFive"
+                class="accordion-collapse collapse show"
+              >
                 <button class="bbs-menu-item">
                   <span class="msicon notranslate">file_download</span>
                   <div class="text-content">
@@ -602,7 +607,10 @@
                   <span class="group-label">Actions</span>
                 </button>
               </div>
-              <div id="flush_collapseSix" class="accordion-collapse collapse show">
+              <div
+                id="flush_collapseSix"
+                class="accordion-collapse collapse show"
+              >
                 <button class="bbs-menu-item">
                   <span class="msicon notranslate">thumb_up_off_alt</span>
                   <div class="text-content">
@@ -613,13 +621,9 @@
                 <button class="bbs-menu-item">
                   <span class="msicon notranslate">shield_with_heart</span>
                   <div class="text-content">
-                    <span class="label"
-                      >Add to my reference list
-                      </span
-                    >
+                    <span class="label">Add to my reference list </span>
                   </div>
                 </button>
-
 
                 <button class="bbs-menu-item">
                   <span class="msicon notranslate">notification_add</span>
@@ -629,17 +633,13 @@
                   </div>
                 </button>
                 <button class="bbs-menu-item">
-                  <span class="msicon notranslate"
-                    >playlist_add</span
-                  >
+                  <span class="msicon notranslate">playlist_add</span>
                   <div class="text-content">
                     <span class="label">Add to watchdogs</span>
                   </div>
                 </button>
                 <button class="bbs-menu-item">
-                  <span class="msicon notranslate"
-                    >playlist_remove</span
-                  >
+                  <span class="msicon notranslate">playlist_remove</span>
                   <div class="text-content">
                     <span class="label">Remove from watchdogs</span>
                   </div>
@@ -958,7 +958,7 @@
                   </div>
 
                   <!-- Alerts -->
-                  <div class="bbs-alert alert-info" role="alert">
+                  <!-- <div class="bbs-alert alert-info" role="alert">
                     <div class="alert-title">
                       <span class="msicon notranslate">info</span>
 
@@ -967,7 +967,7 @@
                         Publication / Green Book</span
                       >
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -978,6 +978,36 @@
               <!-- Company Metrics -->
               <div class="bbs-card">
                 <div class="bbs-card-body no-padding">
+                  <div class="tw-p-4">
+                    <div class="tw-flex tw-items-center">
+                      <h5 class="tw-flex-grow">Credit Score</h5>
+                      <button
+                        tabindex="0"
+                        class="bbsButton bbsButton-tertiary small"
+                        role="button"
+                        data-bs-toggle="popover"
+                        data-bs-title="Credit Score"
+                        data-bs-trigger="focus"
+                        data-bs-custom-class="help-popover"
+                        data-bs-html="true"
+                        data-bs-content="
+                          <p>A Blue Book Credit Score is a number between 500 and 999, with 999 being the highest favorable score, assigned to companies buying produce.</p>
+                          <p>Blue Book Credit Scores are based on data and statistics related to credit worthiness, with the primary attribute being pay information received on the particular company.</p>
+                          <p>Click <a class='link' target='_blank' href='https://apps.bluebookservices.com/BBOS/GetPublicationFile.aspx?PublicationArticleID=6215&PublicationCode=BBS'>here</a> to know more.</p>
+                        "
+                      >
+                        <span class="msicon notranslate">help</span>
+                      </button>
+                    </div>
+                    <p class="tw-text-xl tw-font-semibold">876</p>
+                    <div class="tw-flex tw-items-center">
+                      <p class="tw-flex-grow tw-text-text-secondary">
+                        <span class="text-xxs">Since</span
+                        ><span class="tw-text-xs">12/03/2023</span>
+                      </p>
+                    </div>
+                  </div>
+                  <hr class="no-margin" />
                   <div class="tw-p-4">
                     <div class="tw-flex tw-items-center">
                       <h5 class="tw-flex-grow">Rating</h5>
@@ -1012,36 +1042,6 @@
                       <button class="bbsButton bbsButton-secondary small">
                         <span>Rate</span>
                       </button>
-                    </div>
-                  </div>
-                  <hr class="no-margin" />
-                  <div class="tw-p-4">
-                    <div class="tw-flex tw-items-center">
-                      <h5 class="tw-flex-grow">Credit Score</h5>
-                      <button
-                        tabindex="0"
-                        class="bbsButton bbsButton-tertiary small"
-                        role="button"
-                        data-bs-toggle="popover"
-                        data-bs-title="Credit Score"
-                        data-bs-trigger="focus"
-                        data-bs-custom-class="help-popover"
-                        data-bs-html="true"
-                        data-bs-content="
-                          <p>A Blue Book Credit Score is a number between 500 and 999, with 999 being the highest favorable score, assigned to companies buying produce.</p>
-                          <p>Blue Book Credit Scores are based on data and statistics related to credit worthiness, with the primary attribute being pay information received on the particular company.</p>
-                          <p>Click <a class='link' target='_blank' href='https://apps.bluebookservices.com/BBOS/GetPublicationFile.aspx?PublicationArticleID=6215&PublicationCode=BBS'>here</a> to know more.</p>
-                        "
-                      >
-                        <span class="msicon notranslate">help</span>
-                      </button>
-                    </div>
-                    <p class="tw-text-xl tw-font-semibold">876</p>
-                    <div class="tw-flex tw-items-center">
-                      <p class="tw-flex-grow tw-text-text-secondary">
-                        <span class="text-xxs">Since</span
-                        ><span class="tw-text-xs">12/03/2023</span>
-                      </p>
                     </div>
                   </div>
                 </div>
@@ -1088,185 +1088,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>
-                        <card-title
-                          title="Credit worth estimate"
-                          popover_content="
-                              <p>Trading & pay practice responses reflect the experience of
-                              those who have reported dealings with the subject company.
-                              </p><p>
-                              Blue Book ratings are not based solely on trading experience
-                              report averages; rather, experienced rating and financial
-                              analysts also take into consideration other important factors
-                              such as the trend of trading experiences reported over time,
-                              a/r aging and other trading and financial data.
-                              </p><p> Additionally,
-                              trade information may be reflective of disputed transactions
-                              and/or product sold on an open or consignment basis.
-                              </p><p>
-                              For definitions of symbols and terminology, please review the
-                              appropriate reference material in the BBOS Learning Center's
-                              Membership Guide.
-                              </p>
-                              "
-                          caption="Financial rating"
-                        />
-                      </td>
-                      <td>100K</td>
-                      <td>N/A</td>
-                    </tr>
-
-                    <tr>
-                      <td>
-                        <card-title
-                          title="“X” Rating"
-                          popover_content="
-                              <p>Trading & pay practice responses reflect the experience of
-                              those who have reported dealings with the subject company.
-                              </p><p>
-                              Blue Book ratings are not based solely on trading experience
-                              report averages; rather, experienced rating and financial
-                              analysts also take into consideration other important factors
-                              such as the trend of trading experiences reported over time,
-                              a/r aging and other trading and financial data.
-                              </p><p> Additionally,
-                              trade information may be reflective of disputed transactions
-                              and/or product sold on an open or consignment basis.
-                              </p><p>
-                              For definitions of symbols and terminology, please review the
-                              appropriate reference material in the BBOS Learning Center's
-                              Membership Guide.
-                              </p>
-                              "
-                          caption="Trade Practices Rating"
-                        />
-                      </td>
-                      <td>
-                        <chart-box value="XXXX"></chart-box>
-                        <chart-box value="XXX"></chart-box>
-                        <chart-box value="XX"></chart-box>
-                        <chart-box value="X"></chart-box>
-                      </td>
-                      <td>
-                        <div class="tw-flex tw-flex-col tw-gap-2">
-                          <h5>Low Risk</h5>
-                          <p class="tw-text-sm">
-                            Monitor the account for trade survey changes via
-                            Business Reports.
-                          </p>
-                          <button
-                            class="bbsButton bbsButton-secondary small tw-self-end"
-                          >
-                            <span class="msicon notranslate">history</span>
-                            <span>See History</span>
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>
-                        <card-title
-                          title="Trade Activity Summary"
-                          popover_content="
-                              <p>Trading & pay practice responses reflect the experience of
-                              those who have reported dealings with the subject company.
-                              </p><p>
-                              Blue Book ratings are not based solely on trading experience
-                              report averages; rather, experienced rating and financial
-                              analysts also take into consideration other important factors
-                              such as the trend of trading experiences reported over time,
-                              a/r aging and other trading and financial data.
-                              </p><p> Additionally,
-                              trade information may be reflective of disputed transactions
-                              and/or product sold on an open or consignment basis.
-                              </p><p>
-                              For definitions of symbols and terminology, please review the
-                              appropriate reference material in the BBOS Learning Center's
-                              Membership Guide.
-                              </p>
-                              "
-                          caption="Average Number of Days for Payment Rating"
-                        />
-                      </td>
-                      <td>
-                        <chart-slider
-                          min="1"
-                          max="4"
-                          stops="4"
-                          current_value="3.2"
-                          change="-1"
-                          begin_label="Poor"
-                          end_label="Excellent"
-                        ></chart-slider>
-                      </td>
-                      <td>
-                        <div class="tw-flex tw-flex-col tw-gap-2">
-                          <h5>Excellent</h5>
-                          <p class="tw-text-sm">Pays within 0-14 days</p>
-                          <button
-                            class="bbsButton bbsButton-secondary small tw-self-end"
-                          >
-                            <span class="msicon notranslate">history</span>
-                            <span>See History</span>
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>
-                        <card-title
-                          title="Pay Description"
-                          popover_content="
-                              <p>Trading & pay practice responses reflect the experience of
-                              those who have reported dealings with the subject company.
-                              </p><p>
-                              Blue Book ratings are not based solely on trading experience
-                              report averages; rather, experienced rating and financial
-                              analysts also take into consideration other important factors
-                              such as the trend of trading experiences reported over time,
-                              a/r aging and other trading and financial data.
-                              </p><p> Additionally,
-                              trade information may be reflective of disputed transactions
-                              and/or product sold on an open or consignment basis.
-                              </p><p>
-                              For definitions of symbols and terminology, please review the
-                              appropriate reference material in the BBOS Learning Center's
-                              Membership Guide.
-                              </p>
-                              "
-                          caption="Average Number of Days for Payment Rating"
-                        />
-                      </td>
-                      <td>
-                        <chart-box value="AA"></chart-box>
-                        <chart-box value="A"></chart-box>
-                        <chart-box value="B"></chart-box>
-                        <chart-box value="C"></chart-box>
-                        <chart-box value="D"></chart-box>
-                        <chart-box value="E"></chart-box>
-                        <chart-box value="F"></chart-box>
-
-                        <p class="tw-flex-grow tw-text-text-tertiary">
-                          <span class="text-xxs">Last updated</span>
-                          <span class="tw-text-xs">12/03/2023</span>
-                        </p>
-                      </td>
-                      <td>
-                        <div class="tw-flex tw-flex-col tw-gap-2">
-                          <h5>Excellent</h5>
-                          <p class="tw-text-sm">Pays within 0-14 days</p>
-                          <button
-                            class="bbsButton bbsButton-secondary small tw-self-end"
-                          >
-                            <span class="msicon notranslate">history</span>
-                            <span>See History</span>
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
+                    <!-- Blue Book Credit Score -->
                     <tr>
                       <td>
                         <card-title
@@ -1316,14 +1138,361 @@
                           </p>
                           <button
                             class="bbsButton bbsButton-secondary small tw-self-end"
+                            type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#BBCS_history_modal"
                           >
                             <span class="msicon notranslate">history</span>
                             <span>See History</span>
                           </button>
+                          <!-- Vertically centered scrollable modal -->
+                          <div
+                            class="modal fade"
+                            id="BBCS_history_modal"
+                            data-bs-backdrop="static"
+                            data-bs-keyboard="false"
+                            tabindex="-1"
+                            aria-labelledby="BBCS_history_modalLabel"
+                            aria-hidden="true"
+                          >
+                            <div
+                              class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+                            >
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h1
+                                    class="modal-title fs-5"
+                                    id="BBCS_history_modalLabel"
+                                  >
+                                    Blue Book Credit Score History
+                                  </h1>
+                                  <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                  ></button>
+                                </div>
+                                <div class="modal-body">...</div>
+                                <div class="modal-footer">
+                                  <button
+                                    type="button"
+                                    class="btn btn-secondary"
+                                    data-bs-dismiss="modal"
+                                  >
+                                    Close
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </td>
                     </tr>
+                    <!-- Credit worth estimate -->
+                    <tr>
+                      <td>
+                        <card-title
+                          title="Credit worth estimate"
+                          popover_content="
+                              <p>Trading & pay practice responses reflect the experience of
+                              those who have reported dealings with the subject company.
+                              </p><p>
+                              Blue Book ratings are not based solely on trading experience
+                              report averages; rather, experienced rating and financial
+                              analysts also take into consideration other important factors
+                              such as the trend of trading experiences reported over time,
+                              a/r aging and other trading and financial data.
+                              </p><p> Additionally,
+                              trade information may be reflective of disputed transactions
+                              and/or product sold on an open or consignment basis.
+                              </p><p>
+                              For definitions of symbols and terminology, please review the
+                              appropriate reference material in the BBOS Learning Center's
+                              Membership Guide.
+                              </p>
+                              "
+                          caption="Financial rating"
+                        />
+                      </td>
+                      <td>100K</td>
+                      <td>N/A</td>
+                    </tr>
+                    <!-- "X" Rating -->
+                    <tr>
+                      <td>
+                        <card-title
+                          title='"X" Rating'
+                          popover_content="
+                              <p>Trading & pay practice responses reflect the experience of
+                              those who have reported dealings with the subject company.
+                              </p><p>
+                              Blue Book ratings are not based solely on trading experience
+                              report averages; rather, experienced rating and financial
+                              analysts also take into consideration other important factors
+                              such as the trend of trading experiences reported over time,
+                              a/r aging and other trading and financial data.
+                              </p><p> Additionally,
+                              trade information may be reflective of disputed transactions
+                              and/or product sold on an open or consignment basis.
+                              </p><p>
+                              For definitions of symbols and terminology, please review the
+                              appropriate reference material in the BBOS Learning Center's
+                              Membership Guide.
+                              </p>
+                              "
+                          caption="Trade Practices Rating"
+                        />
+                      </td>
+                      <td>
+                        <chart-box value="XXX"></chart-box>
+                      </td>
+                      <td>
+                        <div class="tw-flex tw-flex-col tw-gap-2">
+                          <h5>Low Risk</h5>
+                          <p class="tw-text-sm">
+                            Monitor the account for trade survey changes via
+                            Business Reports.
+                          </p>
+                          <button
+                            class="bbsButton bbsButton-secondary small tw-self-end"
+                            type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#XRating_history_modal"
+                          >
+                            <span class="msicon notranslate">history</span>
+                            <span>See History</span>
+                          </button>
+                          <!-- Vertically centered scrollable modal -->
+                          <div
+                            class="modal fade"
+                            id="XRating_history_modal"
+                            data-bs-backdrop="static"
+                            data-bs-keyboard="false"
+                            tabindex="-1"
+                            aria-labelledby="XRating_history_modalLabel"
+                            aria-hidden="true"
+                          >
+                            <div
+                              class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+                            >
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h1
+                                    class="modal-title fs-5"
+                                    id="XRating_history_modalLabel"
+                                  >
+                                    X rating History
+                                  </h1>
+                                  <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                  ></button>
+                                </div>
+                                <div class="modal-body">...</div>
+                                <div class="modal-footer">
+                                  <button
+                                    type="button"
+                                    class="btn btn-secondary"
+                                    data-bs-dismiss="modal"
+                                  >
+                                    Close
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- Trade Activity Summary -->
+                    <tr>
+                      <td>
+                        <card-title
+                          title="Trade Activity Summary"
+                          popover_content="
+                              <p>Trading & pay practice responses reflect the experience of
+                              those who have reported dealings with the subject company.
+                              </p><p>
+                              Blue Book ratings are not based solely on trading experience
+                              report averages; rather, experienced rating and financial
+                              analysts also take into consideration other important factors
+                              such as the trend of trading experiences reported over time,
+                              a/r aging and other trading and financial data.
+                              </p><p> Additionally,
+                              trade information may be reflective of disputed transactions
+                              and/or product sold on an open or consignment basis.
+                              </p><p>
+                              For definitions of symbols and terminology, please review the
+                              appropriate reference material in the BBOS Learning Center's
+                              Membership Guide.
+                              </p>
+                              "
+                          caption="Average Number of Days for Payment Rating"
+                        />
+                      </td>
+                      <td>
+                        <chart-slider
+                          min="1"
+                          max="4"
+                          stops="4"
+                          current_value="3.2"
+                          change="-1"
+                          begin_label="Poor"
+                          end_label="Excellent"
+                        ></chart-slider>
+                      </td>
+                      <td>
+                        <div class="tw-flex tw-flex-col tw-gap-2">
+                          <h5>Excellent</h5>
+                          <p class="tw-text-sm">Pays within 0-14 days</p>
+                          <button
+                            class="bbsButton bbsButton-secondary small tw-self-end"
+                            type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#TAS_history_modal"
+                          >
+                            <span class="msicon notranslate">history</span>
+                            <span>See History</span>
+                          </button>
+                          <!-- Vertically centered scrollable modal -->
+                          <div
+                            class="modal fade"
+                            id="TAS_history_modal"
+                            data-bs-backdrop="static"
+                            data-bs-keyboard="false"
+                            tabindex="-1"
+                            aria-labelledby="TAS_history_modalLabel"
+                            aria-hidden="true"
+                          >
+                            <div
+                              class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+                            >
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h1
+                                    class="modal-title fs-5"
+                                    id="TAS_history_modalLabel"
+                                  >
+                                    Trade Activity Summary History
+                                  </h1>
+                                  <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                  ></button>
+                                </div>
+                                <div class="modal-body">...</div>
+                                <div class="modal-footer">
+                                  <button
+                                    type="button"
+                                    class="btn btn-secondary"
+                                    data-bs-dismiss="modal"
+                                  >
+                                    Close
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- Pay Description -->
+                    <tr>
+                      <td>
+                        <card-title
+                          title="Pay Description"
+                          popover_content="
+                              <p>Trading & pay practice responses reflect the experience of
+                              those who have reported dealings with the subject company.
+                              </p><p>
+                              Blue Book ratings are not based solely on trading experience
+                              report averages; rather, experienced rating and financial
+                              analysts also take into consideration other important factors
+                              such as the trend of trading experiences reported over time,
+                              a/r aging and other trading and financial data.
+                              </p><p> Additionally,
+                              trade information may be reflective of disputed transactions
+                              and/or product sold on an open or consignment basis.
+                              </p><p>
+                              For definitions of symbols and terminology, please review the
+                              appropriate reference material in the BBOS Learning Center's
+                              Membership Guide.
+                              </p>
+                              "
+                          caption="Average Number of Days for Payment Rating"
+                        />
+                      </td>
+                      <td>
+                        <chart-box value="C"></chart-box>
 
+                        <p class="tw-flex-grow tw-text-text-tertiary">
+                          <span class="text-xxs">Last updated</span>
+                          <span class="tw-text-xs">12/03/2023</span>
+                        </p>
+                      </td>
+                      <td>
+                        <div class="tw-flex tw-flex-col tw-gap-2">
+                          <h5>Excellent</h5>
+                          <p class="tw-text-sm">Pays within 0-14 days</p>
+                          <button
+                            class="bbsButton bbsButton-secondary small tw-self-end"
+                            type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#PayDesc_history_modal"
+                          >
+                            <span class="msicon notranslate">history</span>
+                            <span>See History</span>
+                          </button>
+                          <!-- Vertically centered scrollable modal -->
+                          <div
+                            class="modal fade"
+                            id="PayDesc_history_modal"
+                            data-bs-backdrop="static"
+                            data-bs-keyboard="false"
+                            tabindex="-1"
+                            aria-labelledby="PayDesc_history_modalLabel"
+                            aria-hidden="true"
+                          >
+                            <div
+                              class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+                            >
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h1
+                                    class="modal-title fs-5"
+                                    id="PayDesc_history_modalLabel"
+                                  >
+                                    Pay Description History
+                                  </h1>
+                                  <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                  ></button>
+                                </div>
+                                <div class="modal-body">...</div>
+                                <div class="modal-footer">
+                                  <button
+                                    type="button"
+                                    class="btn btn-secondary"
+                                    data-bs-dismiss="modal"
+                                  >
+                                    Close
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- Key updates -->
                     <tr>
                       <td>
                         <card-title
@@ -1376,9 +1545,9 @@
           <section class="company-updates-news">
             <div class="bbs-card">
               <h5 class="tw-mb-2">Updates and news</h5>
-              <!-- Alerts -->
               <div class="tw-flex tw-flex-col tw-gap-4">
-                <div class="bbs-alert alert-attention" role="alert">
+                <!-- Alerts -->
+                <!-- <div class="bbs-alert alert-attention" role="alert">
                   <h5 class="alert-title">
                     <span class="msicon notranslate">person_alert</span>
 
@@ -1387,7 +1556,8 @@
                       [Produce Company Title]</span
                     >
                   </h5>
-                </div>
+                </div> -->
+                <!-- News -->
                 <div class="list-group">
                   <a
                     href="#"

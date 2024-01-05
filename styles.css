@@ -564,17 +564,16 @@ a:focus {
           tw-text-text-primary;
       }
       .caption {
-        @apply tw-whitespace-normal
+        @apply tw-flex
+          tw-whitespace-normal
           tw-text-xs
-          tw-text-text-secondary
-          tw-flex;
+          tw-text-text-secondary;
 
-          .update {
-            @apply tw-text-violet-800
-          }
+        .update {
+          @apply tw-text-violet-800;
+        }
       }
     }
-
 
     &.selected {
       @apply tw-bg-bg-component-active
@@ -896,7 +895,6 @@ a:focus {
     tw-text-[10px]
     tw-text-violet-800;
   }
-
 
   /* Main Content area between header and footer */
   .content {
