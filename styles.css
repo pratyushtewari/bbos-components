@@ -1274,7 +1274,7 @@ a:focus {
       width: 100%;
       object-fit: cover;
     }
-    .logo {
+    .company-logo {
       @apply tw-absolute
         -tw-mt-20
         tw-ml-4
