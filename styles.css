@@ -1304,7 +1304,8 @@ a:focus {
   }
 
   .company-performance,
-  .company-updates-news {
+  .company-updates-news,
+  .company-business-details {
     @apply tw-px-4;
   }
 
