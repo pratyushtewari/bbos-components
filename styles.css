@@ -671,7 +671,9 @@ a:focus {
     .accordion-button {
       @apply tw-bg-none
         tw-px-4
-        tw-py-2;
+        tw-py-2
+        hover:tw-bg-bg-component-hover
+      active:tw-bg-bg-component-active;
       background: none;
       &:not(.collapsed) {
         @apply tw-bg-none tw-shadow-none;
@@ -1187,6 +1189,9 @@ a:focus {
     text-overflow: ellipsis;
     &.partial-2-5 {
       height: 2.5rem;
+    }
+    &.partial-4 {
+      height: 4rem;
     }
     &.partial-8 {
       height: 8rem;
