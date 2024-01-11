@@ -665,30 +665,30 @@ a:focus {
     }
   }
 
-      /* Bootstrap override */
-    .accordion-header {
-      @apply tw-bg-bg-primary;
-      .accordion-button {
-        @apply tw-bg-none
+  /* Bootstrap override */
+  .accordion-header {
+    @apply tw-bg-bg-primary;
+    .accordion-button {
+      @apply tw-bg-none
         tw-px-4
         tw-py-2;
+      background: none;
+      &:not(.collapsed) {
+        @apply tw-bg-none tw-shadow-none;
+      }
+      &::after {
+        content: "expand_more";
+        font-family: "Material Symbols Outlined";
+        text-align: center;
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
         background: none;
-        &:not(.collapsed) {
-          @apply tw-bg-none tw-shadow-none;
-        }
-        &::after {
-          content: "expand_more";
-          font-family: "Material Symbols Outlined";
-          text-align: center;
-          font-variation-settings:
-            "FILL" 0,
-            "wght" 400,
-            "GRAD" 0,
-            "opsz" 24;
-          background: none;
-        }
       }
     }
+  }
 
   .nav-sidebar {
     @apply /*
@@ -1483,8 +1483,18 @@ a:focus {
   /* Bootstrap overrides */
   .company-performance {
     .bbs-card-body {
-      @apply tw-overflow-auto;
+      .table {
+        td,
+        th {
+          @apply tw-p-4;
+        }
+      }
     }
+  }
+  /* Table inside a card-body no-padding is flushed */
+  .bbs-card-body {
+    @apply tw-overflow-auto;
+
     .table {
       @apply tw-m-0;
       thead tr th {
@@ -1497,9 +1507,9 @@ a:focus {
       }
       td,
       th {
-        @apply tw-border-0 tw-p-4;
-        &:not(:first-child, :last-child) {
-          @apply tw-border-l tw-border-r;
+        @apply tw-border-0 tw-p-2;
+        &:not(:last-child) {
+          @apply tw-border-r;
         }
       }
     }

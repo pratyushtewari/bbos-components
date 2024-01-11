@@ -852,47 +852,6 @@
                       <hr class="tw-flex-grow" />
                     </div>
                   </div>
-                  <!-- Local Source Info -->
-                  <div
-                    class="tw-flex tw-flex-col tw-gap-y-2"
-                    id="contentMain_ucLocalSource_pnlLocalSourceData"
-                  >
-                    <h5>Local Source</h5>
-
-                    <table class="table">
-                      <tbody>
-                        <!-- Blue Book Credit Score -->
-                        <tr>
-                          <td>Also Operates:</td>
-                          <td>-</td>
-                        </tr>
-                        <tr>
-                          <td>Grows Organic:</td>
-                          <td>Yes</td>
-                        </tr>
-                        <tr>
-                          <td>Total Acres:</td>
-                          <td>500 - 999 acres</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <!-- Alerts -->
-                    <div class="bbs-alert alert-info" role="alert">
-                      <div class="alert-title">
-                        <span class="msicon notranslate">info</span>
-
-                        <span
-                          >Local Source Data provided by
-                          <a
-                            href="https://www.meistermedia.com"
-                            class="link"
-                            target="_blank"
-                            >Meister Media Worldwide, Inc.</a
-                          >
-                        </span>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -1532,6 +1491,67 @@
                 class="bbs-card-body accordion accordion-flush no-padding"
                 id="business_details_accordion"
               >
+                <!-- Local Source -->
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush_collapseLocalSource"
+                      aria-expanded="false"
+                      aria-controls="flush_collapseLocalSource"
+                    >
+                      <h5>Local source</h5>
+                    </button>
+                  </div>
+                  <div
+                    id="flush_collapseLocalSource"
+                    class="accordion-collapse collapse show tw-p-4"
+                  >
+                    <div class="bbs-card">
+                      <!-- Local Source Info -->
+                      <div
+                        class="bbs-card-body no-padding"
+                        id="contentMain_ucLocalSource_pnlLocalSourceData"
+                      >
+                        <table class="table">
+                          <tbody>
+                            <!-- Blue Book Credit Score -->
+                            <tr>
+                              <td>Also Operates:</td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <td>Grows Organic:</td>
+                              <td>Yes</td>
+                            </tr>
+                            <tr>
+                              <td>Total Acres:</td>
+                              <td>500 - 999 acres</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- Alerts -->
+                        <div class="bbs-alert alert-info" role="alert">
+                          <div class="alert-title">
+                            <span class="msicon notranslate">info</span>
+
+                            <span
+                              >Local Source Data provided by
+                              <a
+                                href="https://www.meistermedia.com"
+                                class="link"
+                                target="_blank"
+                                >Meister Media Worldwide, Inc.</a
+                              >
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <!-- Trade Association Memberships -->
                 <div class="accordion-item">
                   <div class="accordion-header">
@@ -1543,9 +1563,7 @@
                       aria-expanded="false"
                       aria-controls="flush_collapseTradeAssociations"
                     >
-                      <span class="group-label"
-                        >Trade Association Memberships</span
-                      >
+                      <h5>Trade Association Memberships</h5>
                     </button>
                   </div>
                   <div
@@ -1595,121 +1613,125 @@
                 <div class="accordion-item">
                   <div class="accordion-header">
                     <button
-                      class="accordion-button"
+                      class="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush_classifications"
                       aria-expanded="false"
                       aria-controls="flush_classifications"
                     >
-                      <span class="group-label">Classifications</span>
+                      <h5>Classifications</h5>
                     </button>
                   </div>
                   <div
                     id="flush_classifications"
-                    class="accordion-collapse collapse show tw-p-4"
+                    class="accordion-collapse collapse tw-p-4"
                   >
-                    <table
-                      class="table table-striped table-hover tab_bdy tw-rounded-lg tw-outline tw-outline-1 tw-outline-border"
-                      cellspacing="0"
-                      sortasc="False"
-                      sortfield="prcl_Abbreviation"
-                      id="contentMain_ucClassifications_gvClassifications"
-                      style="border-collapse: collapse"
-                    >
-                      <thead>
-                        <tr>
-                          <th class="text-nowrap explicitlink" scope="col">
-                            <a
-                              href="javascript:__doPostBack('ctl00$contentMain$ucClassifications$gvClassifications','Sort$prcl_Abbreviation')"
-                              >Abbreviation</a
-                            >
-                            <i class="glyphicon glyphicon-triangle-bottom"></i>
-                          </th>
-                          <th class="text-nowrap explicitlink" scope="col">
-                            <a
-                              href="javascript:__doPostBack('ctl00$contentMain$ucClassifications$gvClassifications','Sort$Name')"
-                              >Description</a
-                            >
-                          </th>
-                          <th class="text-nowrap" scope="col">Definition</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="text-left">R</td>
-                          <td class="text-nowrap text-left">Receiver</td>
-                          <td class="text-left">
-                            Purchases and takes physical possession of trucklots
-                            or carlots and locally resells same intact or in
-                            jobbing lots.
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="text-left">J</td>
-                          <td class="text-nowrap text-left">Jobber</td>
-                          <td class="text-left">
-                            Sells locally in small lots and purchases from
-                            receivers on their local market.
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="text-left">Imp</td>
-                          <td class="text-nowrap text-left">Importer</td>
-                          <td class="text-left">
-                            Buys product from suppliers located in another
-                            country.
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="text-left">Exp</td>
-                          <td class="text-nowrap text-left">Exporter</td>
-                          <td class="text-left">
-                            Sells product to buyers located in another country.
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="text-left">Dstr</td>
-                          <td class="text-nowrap text-left">Distributor</td>
-                          <td class="text-left">
-                            Purchases product in own name usually from shippers
-                            or other distributors, and generally sells outside
-                            their local area; however, in most cases does not
-                            take physical possession of merchandise.
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="text-left">C</td>
-                          <td class="text-nowrap text-left">
-                            Commission Merchant
-                          </td>
-                          <td class="text-left">
-                            Acts as agent for the sale of merchandise on
-                            consignment.
-                          </td>
-                        </tr>
-                      </tbody>
-                      <tfoot></tfoot>
-                    </table>
+                    <div class="bbs-card-body no-padding">
+                      <table
+                        class="table"
+                        cellspacing="0"
+                        sortasc="False"
+                        sortfield="prcl_Abbreviation"
+                        id="contentMain_ucClassifications_gvClassifications"
+                        style="border-collapse: collapse"
+                      >
+                        <thead>
+                          <tr>
+                            <th class="text-nowrap explicitlink" scope="col">
+                              <a
+                                href="javascript:__doPostBack('ctl00$contentMain$ucClassifications$gvClassifications','Sort$prcl_Abbreviation')"
+                                >Abbreviation</a
+                              >
+                              <i
+                                class="glyphicon glyphicon-triangle-bottom"
+                              ></i>
+                            </th>
+                            <th class="text-nowrap explicitlink" scope="col">
+                              <a
+                                href="javascript:__doPostBack('ctl00$contentMain$ucClassifications$gvClassifications','Sort$Name')"
+                                >Description</a
+                              >
+                            </th>
+                            <th class="text-nowrap" scope="col">Definition</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>R</td>
+                            <td>Receiver</td>
+                            <td>
+                              Purchases and takes physical possession of
+                              trucklots or carlots and locally resells same
+                              intact or in jobbing lots.
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>J</td>
+                            <td>Jobber</td>
+                            <td>
+                              Sells locally in small lots and purchases from
+                              receivers on their local market.
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Imp</td>
+                            <td>Importer</td>
+                            <td>
+                              Buys product from suppliers located in another
+                              country.
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Exp</td>
+                            <td>Exporter</td>
+                            <td>
+                              Sells product to buyers located in another
+                              country.
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Dstr</td>
+                            <td>Distributor</td>
+                            <td>
+                              Purchases product in own name usually from
+                              shippers or other distributors, and generally
+                              sells outside their local area; however, in most
+                              cases does not take physical possession of
+                              merchandise.
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>C</td>
+                            <td>Commission Merchant</td>
+                            <td>
+                              Acts as agent for the sale of merchandise on
+                              consignment.
+                            </td>
+                          </tr>
+                        </tbody>
+                        <tfoot></tfoot>
+                      </table>
+                    </div>
                   </div>
                 </div>
                 <!-- Commodities -->
                 <div class="accordion-item">
                   <div class="accordion-header">
                     <button
-                      class="accordion-button"
+                      class="accordion-button collapsed"
                       type="button"
                       data-bs-toggle="collapse"
                       data-bs-target="#flush_Commodities"
                       aria-expanded="false"
                       aria-controls="flush_Commodities"
                     >
-                      <span class="group-label">Commodities</span>
+                      <h5>Commodities</h5>
                     </button>
                   </div>
                   <div
                     id="flush_Commodities"
-                    class="accordion-collapse collapse show tw-p-4"
+                    class="accordion-collapse collapse tw-p-4"
                   >
                     <div class="bbs-card">
                       <button
@@ -2042,6 +2064,81 @@
 
                         <div>Vegetable (V)</div>
                       </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Custom Data -->
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush_CustomData"
+                      aria-expanded="false"
+                      aria-controls="flush_CustomData"
+                    >
+                      <h5>Custom Data</h5>
+                    </button>
+                  </div>
+                  <div
+                    id="flush_CustomData"
+                    class="accordion-collapse collapse tw-p-4"
+                  >
+                    <div class="bbs-card-body no-padding">
+                      <table
+                        class="table"
+                        cellspacing="0"
+                        sortasc="False"
+                        sortfield="prcl_Abbreviation"
+                        id="contentMain_ucCustomData_gvCustomData"
+                        style="border-collapse: collapse"
+                      >
+                        <tbody>
+                          <tr>
+                            <td>Accounts Payable</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>Balance Owing</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>Called</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>Current Customer</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>Custom Contact</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>Custom Identifier</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>No Sell List</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>Sales Rep</td>
+                            <td>Bobb</td>
+                          </tr>
+                          <tr>
+                            <td>Sales Rep Phone</td>
+                            <td>-</td>
+                          </tr>
+                          <tr>
+                            <td>Testing</td>
+                            <td>-</td>
+                          </tr>
+                        </tbody>
+                        <tfoot></tfoot>
+                      </table>
                     </div>
                   </div>
                 </div>
