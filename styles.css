@@ -665,6 +665,31 @@ a:focus {
     }
   }
 
+      /* Bootstrap override */
+    .accordion-header {
+      @apply tw-bg-bg-primary;
+      .accordion-button {
+        @apply tw-bg-none
+        tw-px-4
+        tw-py-2;
+        background: none;
+        &:not(.collapsed) {
+          @apply tw-bg-none tw-shadow-none;
+        }
+        &::after {
+          content: "expand_more";
+          font-family: "Material Symbols Outlined";
+          text-align: center;
+          font-variation-settings:
+            "FILL" 0,
+            "wght" 400,
+            "GRAD" 0,
+            "opsz" 24;
+          background: none;
+        }
+      }
+    }
+
   .nav-sidebar {
     @apply /*
     */
@@ -692,30 +717,7 @@ a:focus {
         @apply tw-whitespace-break-spaces;
       }
     }
-    /* Bootstrap override */
-    .accordion-header {
-      @apply tw-bg-bg-primary;
-      .accordion-button {
-        @apply tw-bg-none
-        tw-px-4
-        tw-py-2;
-        background: none;
-        &:not(.collapsed) {
-          @apply tw-bg-none tw-shadow-none;
-        }
-        &::after {
-          content: "expand_more";
-          font-family: "Material Symbols Outlined";
-          text-align: center;
-          font-variation-settings:
-            "FILL" 0,
-            "wght" 400,
-            "GRAD" 0,
-            "opsz" 24;
-          background: none;
-        }
-      }
-    }
+
     .group-label {
       @apply tw-pointer-events-none
       tw-py-2
@@ -1177,6 +1179,17 @@ a:focus {
 
     button {
       @apply tw-max-w-xs;
+    }
+  }
+
+  .collapsed {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &.partial-2-5 {
+      height: 2.5rem;
+    }
+    &.partial-8 {
+      height: 8rem;
     }
   }
 

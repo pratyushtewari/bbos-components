@@ -429,11 +429,13 @@
             </h5>
             <button
               type="button"
-              class="btn-close"
+              class="bbsButton bbsButton-tertiary"
               data-bs-dismiss="offcanvas"
               aria-label="Close"
               data-bs-target="#bdSidebar"
-            ></button>
+            >
+              <span class="msicon notranslate">close</span>
+            </button>
           </div>
 
           <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -813,13 +815,12 @@
                 <div class="bbs-card-body tw-flex tw-flex-col tw-gap-y-4">
                   <!-- Premium Listing Info -->
                   <div class="tw-flex tw-flex-col tw-gap-y-2">
-                    <h5 class="tw-flex-grow">
+                    <h5>
                       <span class="msicon notranslate">workspace_premium</span>
-
                       Premium Listing Information
                     </h5>
                     <div
-                      class="partial collapsed tw-text-sm"
+                      class="partial-2-5 collapsed tw-text-sm"
                       id="primium_listing_info"
                     >
                       <p>Bellevue, ID</p>
@@ -851,16 +852,45 @@
                       <hr class="tw-flex-grow" />
                     </div>
                   </div>
+                  <!-- Local Source Info -->
+                  <div
+                    class="tw-flex tw-flex-col tw-gap-y-2"
+                    id="contentMain_ucLocalSource_pnlLocalSourceData"
+                  >
+                    <h5>Local Source</h5>
 
-                  <!-- Alerts -->
-                  <div class="bbs-alert alert-info" role="alert">
-                    <div class="alert-title">
-                      <span class="msicon notranslate">info</span>
+                    <table class="table">
+                      <tbody>
+                        <!-- Blue Book Credit Score -->
+                        <tr>
+                          <td>Also Operates:</td>
+                          <td>-</td>
+                        </tr>
+                        <tr>
+                          <td>Grows Organic:</td>
+                          <td>Yes</td>
+                        </tr>
+                        <tr>
+                          <td>Total Acres:</td>
+                          <td>500 - 999 acres</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- Alerts -->
+                    <div class="bbs-alert alert-info" role="alert">
+                      <div class="alert-title">
+                        <span class="msicon notranslate">info</span>
 
-                      <span
-                        >Data provided in collaboration with Miller Wood Trade
-                        Publication / Green Book</span
-                      >
+                        <span
+                          >Local Source Data provided by
+                          <a
+                            href="https://www.meistermedia.com"
+                            class="link"
+                            target="_blank"
+                            >Meister Media Worldwide, Inc.</a
+                          >
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1498,390 +1528,524 @@
           <section class="company-business-details">
             <div class="bbs-card no-padding">
               <h5 class="tw-mb-2">Business Details</h5>
-              <div class="bbs-card-body no-padding">
+              <div
+                class="bbs-card-body accordion accordion-flush no-padding"
+                id="business_details_accordion"
+              >
                 <!-- Trade Association Memberships -->
-                <div class="tw-p-4">
-                  <h5 class="tw-mb-2">Trade Association Memberships</h5>
-                  <div class="tw-flex tw-flex-wrap tw-justify-evenly tw-gap-4">
-                    <a
-                      href="https://qaapps.bluebookservices.com/BBOSUI/ExternalLink.aspx?BBOSURL=http://cpma.ca&BBOSID=113654&BBOSType=C&TriggerPage=/BBOSUI/CompanyDetailsSummary.aspx"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush_collapseTradeAssociations"
+                      aria-expanded="false"
+                      aria-controls="flush_collapseTradeAssociations"
                     >
-                      <img
-                        src="assets/trade_associations/CPMA.png"
-                        alt="Canadian Produce Marketing Association"
-                        border="0"
-                      />
-                    </a>
-                    <a
-                      href="https://qaapps.bluebookservices.com/BBOSUI/ExternalLink.aspx?BBOSURL=http://cpma.ca&BBOSID=113654&BBOSType=C&TriggerPage=/BBOSUI/CompanyDetailsSummary.aspx"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img
-                        src="assets/trade_associations/IFPA.png"
-                        alt="Canadian Produce Marketing Association"
-                        border="0"
-                      />
-                    </a>
-                    <a
-                      href="https://qaapps.bluebookservices.com/BBOSUI/ExternalLink.aspx?BBOSURL=http://cpma.ca&BBOSID=113654&BBOSType=C&TriggerPage=/BBOSUI/CompanyDetailsSummary.aspx"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img
-                        src="assets/trade_associations/PBH.png"
-                        alt="Canadian Produce Marketing Association"
-                        border="0"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <hr />
-                <!-- Commodities -->
-                <div class="tw-p-4">
-                  <div class="tw-mb-2 tw-flex tw-items-center">
-                    <h5>Commodities</h5>
-                    <button tabindex="0" class="bbsButton bbsButton-tertiary">
-                      <span class="msicon notranslate">print</span>
+                      <span class="group-label"
+                        >Trade Association Memberships</span
+                      >
                     </button>
                   </div>
                   <div
-                    class="partial collapsed tw-grid tw-gap-x-4 md:tw-grid-cols-2 lg:tw-grid-cols-4"
-                    id="commodities_list"
+                    id="flush_collapseTradeAssociations"
+                    class="accordion-collapse collapse show tw-p-4"
                   >
-                    <div>Asian Fruit (Asianf)</div>
-                    <div>Asian Vegetable (Asianv)</div>
-
-                    <div>
+                    <div
+                      class="tw-flex tw-flex-wrap tw-justify-evenly tw-gap-4"
+                    >
                       <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_2"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=13"
+                        href="https://qaapps.bluebookservices.com/BBOSUI/ExternalLink.aspx?BBOSURL=http://cpma.ca&BBOSID=113654&BBOSType=C&TriggerPage=/BBOSUI/CompanyDetailsSummary.aspx"
                         target="_blank"
-                        >Avocado</a
+                        rel="noopener noreferrer"
                       >
-                      (Av)
-                    </div>
-
-                    <div>Berries (Bs)</div>
-
-                    <div>
+                        <img
+                          src="assets/trade_associations/CPMA.png"
+                          alt="Canadian Produce Marketing Association"
+                          border="0"
+                        />
+                      </a>
                       <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_4"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=31"
+                        href="https://qaapps.bluebookservices.com/BBOSUI/ExternalLink.aspx?BBOSURL=http://cpma.ca&BBOSID=113654&BBOSType=C&TriggerPage=/BBOSUI/CompanyDetailsSummary.aspx"
                         target="_blank"
-                        >Cabbage</a
+                        rel="noopener noreferrer"
                       >
-                      (Cab)
-                    </div>
-
-                    <div>
+                        <img
+                          src="assets/trade_associations/IFPA.png"
+                          alt="Canadian Produce Marketing Association"
+                          border="0"
+                        />
+                      </a>
                       <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_5"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=33"
+                        href="https://qaapps.bluebookservices.com/BBOSUI/ExternalLink.aspx?BBOSURL=http://cpma.ca&BBOSID=113654&BBOSType=C&TriggerPage=/BBOSUI/CompanyDetailsSummary.aspx"
                         target="_blank"
-                        >Cantaloupe</a
+                        rel="noopener noreferrer"
                       >
-                      (Cants)
+                        <img
+                          src="assets/trade_associations/PBH.png"
+                          alt="Canadian Produce Marketing Association"
+                          border="0"
+                        />
+                      </a>
                     </div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_6"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=37"
-                        target="_blank"
-                        >Carrot</a
-                      >
-                      (Ct)
-                    </div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_7"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=41"
-                        target="_blank"
-                        >Celery</a
-                      >
-                      (Cel)
-                    </div>
-
-                    <div>China fruit (Chinf)</div>
-
-                    <div>China vegetable (Chinv)</div>
-
-                    <div>Citrus (Cit)</div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_11"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=59"
-                        target="_blank"
-                        >Cucumber</a
-                      >
-                      (Ck)
-                    </div>
-
-                    <div>Fruit (F)</div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_13"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=75"
-                        target="_blank"
-                        >Garlic</a
-                      >
-                      (Garlic)
-                    </div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_14"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=81"
-                        target="_blank"
-                        >Grape</a
-                      >
-                      (Gs)
-                    </div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_15"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=79"
-                        target="_blank"
-                        >Grapefruit</a
-                      >
-                      (Gf)
-                    </div>
-
-                    <div>Hispanic Fruit (Hispanicf)</div>
-
-                    <div>Hispanic Vegetable (Hispanicv)</div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_18"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=91"
-                        target="_blank"
-                        >Honeydew</a
-                      >
-                      (Hyd)
-                    </div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_19"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=85"
-                        target="_blank"
-                        >Horseradish greens</a
-                      >
-                      (Hrgn)
-                    </div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_20"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=99"
-                        target="_blank"
-                        >Lettuce</a
-                      >
-                      (Let)
-                    </div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_21"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=101"
-                        target="_blank"
-                        >Lime</a
-                      >
-                      (Ls)
-                    </div>
-
-                    <div>Mexico fruit (Mexf)</div>
-
-                    <div>Mexico vegetable (Mexv)</div>
-
-                    <div>Mixed vegetable (Mixedv)</div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_25"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=109"
-                        target="_blank"
-                        >Mushroom</a
-                      >
-                      (M)
-                    </div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_26"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=111"
-                        target="_blank"
-                        >Nectarine</a
-                      >
-                      (Nec)
-                    </div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_27"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=115"
-                        target="_blank"
-                        >Onion</a
-                      >
-                      (O)
-                    </div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_28"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=117"
-                        target="_blank"
-                        >Orange</a
-                      >
-                      (Or)
-                    </div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_29"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=26758"
-                        target="_blank"
-                        >Parsnip</a
-                      >
-                      (Par)
-                    </div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_30"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=123"
-                        target="_blank"
-                        >Peach</a
-                      >
-                      (Pc)
-                    </div>
-
-                    <div>Peanut (Pn)</div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_32"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=129"
-                        target="_blank"
-                        >Pepper</a
-                      >
-                      (Pp)
-                    </div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_33"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=14370"
-                        target="_blank"
-                        >Plum</a
-                      >
-                      (Pl)
-                    </div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_34"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=147"
-                        target="_blank"
-                        >Radish</a
-                      >
-                      (Rd)
-                    </div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_35"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=115"
-                        target="_blank"
-                        >Set onion</a
-                      >
-                      (Seto)
-                    </div>
-
-                    <div>Soft Fruit (Softf)</div>
-
-                    <div>Specialty Vegetable (Specialtyv)</div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_38"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=163"
-                        target="_blank"
-                        >Strawberry</a
-                      >
-                      (St)
-                    </div>
-
-                    <div>Sweet corn (Sweetcorn)</div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_40"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=165"
-                        target="_blank"
-                        >Sweet Potato</a
-                      >
-                      (Sp)
-                    </div>
-
-                    <div>
-                      <a
-                        id="contentMain_ucCommoditiesList_repCommodities_aDescription_41"
-                        class="link"
-                        href="KnowYourCommodityView.aspx?ArticleID=169"
-                        target="_blank"
-                        >Tomato</a
-                      >
-                      (Tom)
-                    </div>
-
-                    <div>Vegetable (V)</div>
                   </div>
                 </div>
-                <div class="tw-flex tw-items-center">
-                  <hr class="tw-flex-grow" />
-                  <button
-                    class="bbsButton bbsButton-secondary small pill"
-                    onclick="togglePartialExpandCollapse(this, 'commodities_list')"
+                <!-- Classifications -->
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush_classifications"
+                      aria-expanded="false"
+                      aria-controls="flush_classifications"
+                    >
+                      <span class="group-label">Classifications</span>
+                    </button>
+                  </div>
+                  <div
+                    id="flush_classifications"
+                    class="accordion-collapse collapse show tw-p-4"
                   >
-                    <span class="text-label">Show more</span>
-                    <span class="msicon notranslate">expand_more</span>
-                  </button>
-                  <hr class="tw-flex-grow" />
+                    <table
+                      class="table table-striped table-hover tab_bdy tw-rounded-lg tw-outline tw-outline-1 tw-outline-border"
+                      cellspacing="0"
+                      sortasc="False"
+                      sortfield="prcl_Abbreviation"
+                      id="contentMain_ucClassifications_gvClassifications"
+                      style="border-collapse: collapse"
+                    >
+                      <thead>
+                        <tr>
+                          <th class="text-nowrap explicitlink" scope="col">
+                            <a
+                              href="javascript:__doPostBack('ctl00$contentMain$ucClassifications$gvClassifications','Sort$prcl_Abbreviation')"
+                              >Abbreviation</a
+                            >
+                            <i class="glyphicon glyphicon-triangle-bottom"></i>
+                          </th>
+                          <th class="text-nowrap explicitlink" scope="col">
+                            <a
+                              href="javascript:__doPostBack('ctl00$contentMain$ucClassifications$gvClassifications','Sort$Name')"
+                              >Description</a
+                            >
+                          </th>
+                          <th class="text-nowrap" scope="col">Definition</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="text-left">R</td>
+                          <td class="text-nowrap text-left">Receiver</td>
+                          <td class="text-left">
+                            Purchases and takes physical possession of trucklots
+                            or carlots and locally resells same intact or in
+                            jobbing lots.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">J</td>
+                          <td class="text-nowrap text-left">Jobber</td>
+                          <td class="text-left">
+                            Sells locally in small lots and purchases from
+                            receivers on their local market.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">Imp</td>
+                          <td class="text-nowrap text-left">Importer</td>
+                          <td class="text-left">
+                            Buys product from suppliers located in another
+                            country.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">Exp</td>
+                          <td class="text-nowrap text-left">Exporter</td>
+                          <td class="text-left">
+                            Sells product to buyers located in another country.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">Dstr</td>
+                          <td class="text-nowrap text-left">Distributor</td>
+                          <td class="text-left">
+                            Purchases product in own name usually from shippers
+                            or other distributors, and generally sells outside
+                            their local area; however, in most cases does not
+                            take physical possession of merchandise.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-left">C</td>
+                          <td class="text-nowrap text-left">
+                            Commission Merchant
+                          </td>
+                          <td class="text-left">
+                            Acts as agent for the sale of merchandise on
+                            consignment.
+                          </td>
+                        </tr>
+                      </tbody>
+                      <tfoot></tfoot>
+                    </table>
+                  </div>
                 </div>
+                <!-- Commodities -->
+                <div class="accordion-item">
+                  <div class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush_Commodities"
+                      aria-expanded="false"
+                      aria-controls="flush_Commodities"
+                    >
+                      <span class="group-label">Commodities</span>
+                    </button>
+                  </div>
+                  <div
+                    id="flush_Commodities"
+                    class="accordion-collapse collapse show tw-p-4"
+                  >
+                    <div class="bbs-card">
+                      <button
+                        tabindex="0"
+                        class="bbsButton bbsButton-tertiary tw-right-0"
+                      >
+                        <span class="msicon notranslate">print</span>
+                        <span class="text-label">Print</span>
+                      </button>
+                      <div
+                        class="bbs-card-body tw-grid tw-gap-x-4 md:tw-grid-cols-2 lg:tw-grid-cols-3"
+                        id="commodities_list"
+                      >
+                        <div>Asian Fruit (Asianf)</div>
+                        <div>Asian Vegetable (Asianv)</div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_2"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=13"
+                            target="_blank"
+                            >Avocado</a
+                          >
+                          (Av)
+                        </div>
+
+                        <div>Berries (Bs)</div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_4"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=31"
+                            target="_blank"
+                            >Cabbage</a
+                          >
+                          (Cab)
+                        </div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_5"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=33"
+                            target="_blank"
+                            >Cantaloupe</a
+                          >
+                          (Cants)
+                        </div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_6"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=37"
+                            target="_blank"
+                            >Carrot</a
+                          >
+                          (Ct)
+                        </div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_7"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=41"
+                            target="_blank"
+                            >Celery</a
+                          >
+                          (Cel)
+                        </div>
+
+                        <div>China fruit (Chinf)</div>
+
+                        <div>China vegetable (Chinv)</div>
+
+                        <div>Citrus (Cit)</div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_11"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=59"
+                            target="_blank"
+                            >Cucumber</a
+                          >
+                          (Ck)
+                        </div>
+
+                        <div>Fruit (F)</div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_13"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=75"
+                            target="_blank"
+                            >Garlic</a
+                          >
+                          (Garlic)
+                        </div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_14"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=81"
+                            target="_blank"
+                            >Grape</a
+                          >
+                          (Gs)
+                        </div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_15"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=79"
+                            target="_blank"
+                            >Grapefruit</a
+                          >
+                          (Gf)
+                        </div>
+
+                        <div>Hispanic Fruit (Hispanicf)</div>
+
+                        <div>Hispanic Vegetable (Hispanicv)</div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_18"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=91"
+                            target="_blank"
+                            >Honeydew</a
+                          >
+                          (Hyd)
+                        </div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_19"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=85"
+                            target="_blank"
+                            >Horseradish greens</a
+                          >
+                          (Hrgn)
+                        </div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_20"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=99"
+                            target="_blank"
+                            >Lettuce</a
+                          >
+                          (Let)
+                        </div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_21"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=101"
+                            target="_blank"
+                            >Lime</a
+                          >
+                          (Ls)
+                        </div>
+
+                        <div>Mexico fruit (Mexf)</div>
+
+                        <div>Mexico vegetable (Mexv)</div>
+
+                        <div>Mixed vegetable (Mixedv)</div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_25"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=109"
+                            target="_blank"
+                            >Mushroom</a
+                          >
+                          (M)
+                        </div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_26"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=111"
+                            target="_blank"
+                            >Nectarine</a
+                          >
+                          (Nec)
+                        </div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_27"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=115"
+                            target="_blank"
+                            >Onion</a
+                          >
+                          (O)
+                        </div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_28"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=117"
+                            target="_blank"
+                            >Orange</a
+                          >
+                          (Or)
+                        </div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_29"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=26758"
+                            target="_blank"
+                            >Parsnip</a
+                          >
+                          (Par)
+                        </div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_30"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=123"
+                            target="_blank"
+                            >Peach</a
+                          >
+                          (Pc)
+                        </div>
+
+                        <div>Peanut (Pn)</div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_32"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=129"
+                            target="_blank"
+                            >Pepper</a
+                          >
+                          (Pp)
+                        </div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_33"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=14370"
+                            target="_blank"
+                            >Plum</a
+                          >
+                          (Pl)
+                        </div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_34"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=147"
+                            target="_blank"
+                            >Radish</a
+                          >
+                          (Rd)
+                        </div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_35"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=115"
+                            target="_blank"
+                            >Set onion</a
+                          >
+                          (Seto)
+                        </div>
+
+                        <div>Soft Fruit (Softf)</div>
+
+                        <div>Specialty Vegetable (Specialtyv)</div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_38"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=163"
+                            target="_blank"
+                            >Strawberry</a
+                          >
+                          (St)
+                        </div>
+
+                        <div>Sweet corn (Sweetcorn)</div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_40"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=165"
+                            target="_blank"
+                            >Sweet Potato</a
+                          >
+                          (Sp)
+                        </div>
+
+                        <div>
+                          <a
+                            id="contentMain_ucCommoditiesList_repCommodities_aDescription_41"
+                            class="link"
+                            href="KnowYourCommodityView.aspx?ArticleID=169"
+                            target="_blank"
+                            >Tomato</a
+                          >
+                          (Tom)
+                        </div>
+
+                        <div>Vegetable (V)</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End of Accrodions -->
               </div>
             </div>
           </section>
