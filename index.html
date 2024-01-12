@@ -995,7 +995,7 @@
                               Membership Guide.
                               </p>
                               "
-                          caption="Pay information of buyers"
+                          caption="Predicts the likelihood of delinquency and / or default within the next 12 months."
                         />
                       </td>
                       <td>
@@ -1017,8 +1017,9 @@
                         <div class="tw-flex tw-flex-col tw-gap-2">
                           <h5>Low Risk</h5>
                           <p class="tw-text-sm">
-                            Monitor the account for trade survey changes via
-                            Business Reports.
+                            The company is "low" risk of experiencing a negative
+                            credit event within the next 12 months based upon
+                            the company&lsquo;s trading and pay performance.
                           </p>
                           <button
                             class="bbsButton bbsButton-secondary small tw-self-end"
@@ -1107,29 +1108,14 @@
                       <td>
                         <card-title
                           title='"X" Rating'
-                          popover_content="
-                              <p>Trading & pay practice responses reflect the experience of
-                              those who have reported dealings with the subject company.
-                              </p><p>
-                              Blue Book ratings are not based solely on trading experience
-                              report averages; rather, experienced rating and financial
-                              analysts also take into consideration other important factors
-                              such as the trend of trading experiences reported over time,
-                              a/r aging and other trading and financial data.
-                              </p><p> Additionally,
-                              trade information may be reflective of disputed transactions
-                              and/or product sold on an open or consignment basis.
-                              </p><p>
-                              For definitions of symbols and terminology, please review the
-                              appropriate reference material in the BBOS Learning Center's
-                              Membership Guide.
-                              </p>
-                              "
                           caption="Trade Practices Rating"
                         />
                       </td>
                       <td>
-                        <chart-box value="XXX"></chart-box>
+                        <chart-box value="X"></chart-box><br />
+                        <chart-box value="XX"></chart-box><br />
+                        <chart-box value="XXX"></chart-box><br />
+                        <chart-box value="XXXX"></chart-box><br />
                       </td>
                       <td>
                         <div class="tw-flex tw-flex-col tw-gap-2">
@@ -1196,24 +1182,6 @@
                       <td>
                         <card-title
                           title="Trade Activity Summary"
-                          popover_content="
-                              <p>Trading & pay practice responses reflect the experience of
-                              those who have reported dealings with the subject company.
-                              </p><p>
-                              Blue Book ratings are not based solely on trading experience
-                              report averages; rather, experienced rating and financial
-                              analysts also take into consideration other important factors
-                              such as the trend of trading experiences reported over time,
-                              a/r aging and other trading and financial data.
-                              </p><p> Additionally,
-                              trade information may be reflective of disputed transactions
-                              and/or product sold on an open or consignment basis.
-                              </p><p>
-                              For definitions of symbols and terminology, please review the
-                              appropriate reference material in the BBOS Learning Center's
-                              Membership Guide.
-                              </p>
-                              "
                           caption="Average Number of Days for Payment Rating"
                         />
                       </td>
@@ -1222,8 +1190,28 @@
                           min="1"
                           max="4"
                           stops="4"
-                          current_value="3.2"
+                          current_value="1.5"
                           change="-1"
+                          begin_label="Poor"
+                          end_label="Excellent"
+                        ></chart-slider>
+                        <br />
+                        <chart-slider
+                          min="1"
+                          max="4"
+                          stops="4"
+                          current_value="2.5"
+                          change="0"
+                          begin_label="Poor"
+                          end_label="Excellent"
+                        ></chart-slider>
+                        <br />
+                        <chart-slider
+                          min="1"
+                          max="4"
+                          stops="4"
+                          current_value="3.5"
+                          change="1"
                           begin_label="Poor"
                           end_label="Excellent"
                         ></chart-slider>
@@ -1290,29 +1278,23 @@
                       <td>
                         <card-title
                           title="Pay Description"
-                          popover_content="
-                              <p>Trading & pay practice responses reflect the experience of
-                              those who have reported dealings with the subject company.
-                              </p><p>
-                              Blue Book ratings are not based solely on trading experience
-                              report averages; rather, experienced rating and financial
-                              analysts also take into consideration other important factors
-                              such as the trend of trading experiences reported over time,
-                              a/r aging and other trading and financial data.
-                              </p><p> Additionally,
-                              trade information may be reflective of disputed transactions
-                              and/or product sold on an open or consignment basis.
-                              </p><p>
-                              For definitions of symbols and terminology, please review the
-                              appropriate reference material in the BBOS Learning Center's
-                              Membership Guide.
-                              </p>
-                              "
                           caption="Average Number of Days for Payment Rating"
                         />
                       </td>
                       <td>
+                        <chart-box value="AA"></chart-box>
+                        <br />
+                        <chart-box value="A"></chart-box>
+                        <br />
+                        <chart-box value="B"></chart-box>
+                        <br />
                         <chart-box value="C"></chart-box>
+                        <br />
+                        <chart-box value="D"></chart-box>
+                        <br />
+                        <chart-box value="E"></chart-box>
+                        <br />
+                        <chart-box value="F"></chart-box>
 
                         <p class="tw-flex-grow tw-text-text-tertiary">
                           <span class="text-xxs">Last updated</span>
@@ -1379,27 +1361,7 @@
                     <!-- Key updates -->
                     <tr>
                       <td>
-                        <card-title
-                          title="Key updates"
-                          popover_content="
-                              <p>Trading & pay practice responses reflect the experience of
-                              those who have reported dealings with the subject company.
-                              </p><p>
-                              Blue Book ratings are not based solely on trading experience
-                              report averages; rather, experienced rating and financial
-                              analysts also take into consideration other important factors
-                              such as the trend of trading experiences reported over time,
-                              a/r aging and other trading and financial data.
-                              </p><p> Additionally,
-                              trade information may be reflective of disputed transactions
-                              and/or product sold on an open or consignment basis.
-                              </p><p>
-                              For definitions of symbols and terminology, please review the
-                              appropriate reference material in the BBOS Learning Center's
-                              Membership Guide.
-                              </p>
-                              "
-                        />
+                        <card-title title="Key updates" />
                       </td>
                       <td>
                         <span class="tw-font-semibold">150, 40</span>

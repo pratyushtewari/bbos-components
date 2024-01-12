@@ -3,7 +3,7 @@ class CardTitle extends HTMLElement {
     super();
     this.id = Date.now();
     this.title = "Title";
-    this.popover_content = "popover_content";
+    this.popover_content = "";
     this.caption = ""; // optional
   }
 
@@ -13,23 +13,29 @@ class CardTitle extends HTMLElement {
   }
 
   connectedCallback() {
+    const popoverHTML =
+      this.popover_content == ""
+        ? ""
+        : `
+    <button
+      tabindex="0"
+      class="bbsButton bbsButton-tertiary small"
+      role="button"
+      data-bs-toggle="popover"
+      data-bs-title="${this.title}"
+      data-bs-trigger="focus"
+      data-bs-custom-class="help-popover"
+      data-bs-html="true"
+      data-bs-content="${this.popover_content}"
+    >
+      <span class="msicon notranslate">help</span>
+    </button>
+    `;
     const innerHTML = `
     <div>
       <div class="tw-flex tw-items-center">
         <h5 class="tw-flex-grow">${this.title}</h5>
-        <button
-          tabindex="0"
-          class="bbsButton bbsButton-tertiary small"
-          role="button"
-          data-bs-toggle="popover"
-          data-bs-title="${this.title}"
-          data-bs-trigger="focus"
-          data-bs-custom-class="help-popover"
-          data-bs-html="true"
-          data-bs-content="${this.popover_content}"
-        >
-          <span class="msicon notranslate">help</span>
-        </button>
+        ${popoverHTML}
       </div>
       <p class="caption">${this.caption}</p>
     </div>
