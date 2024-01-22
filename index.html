@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
 
-  <body class="qa tw-flex tw-flex-col tw-items-center tw-align-middle">
+  <body class=" tw-flex tw-flex-col tw-items-center tw-align-middle">
     <!-- TOP NAV BAR -->
     <header class="top-nav">
       <div class="top-nav-container">
@@ -521,7 +521,7 @@
               </div>
             </div>
 
-            <div class="accordion-item">
+            <div class="accordion-item collapsed">
               <div class="accordion-header">
                 <button
                   class="accordion-button"
@@ -536,7 +536,7 @@
               </div>
               <div
                 id="flush_collapseFour"
-                class="accordion-collapse collapse show"
+                class="accordion-collapse collapse"
               >
                 <button class="bbs-menu-item new">
                   <span class="msicon notranslate">policy</span>
@@ -564,7 +564,7 @@
                 </button>
               </div>
             </div>
-            <div class="accordion-item">
+            <div class="accordion-item collapsed">
               <div class="accordion-header">
                 <button
                   class="accordion-button"
@@ -579,7 +579,7 @@
               </div>
               <div
                 id="flush_collapseFive"
-                class="accordion-collapse collapse show"
+                class="accordion-collapse collapse"
               >
                 <button class="bbs-menu-item">
                   <span class="msicon notranslate">file_download</span>
@@ -596,7 +596,7 @@
                 </button>
               </div>
             </div>
-            <div class="accordion-item">
+            <div class="accordion-item collapsed">
               <div class="accordion-header">
                 <button
                   class="accordion-button"
@@ -611,7 +611,7 @@
               </div>
               <div
                 id="flush_collapseSix"
-                class="accordion-collapse collapse show"
+                class="accordion-collapse collapse"
               >
                 <button class="bbs-menu-item">
                   <span class="msicon notranslate">thumb_up_off_alt</span>
@@ -813,6 +813,37 @@
               <!-- company details -->
               <div class="bbs-card">
                 <div class="bbs-card-body tw-flex tw-flex-col tw-gap-y-4">
+                                    <!-- About -->
+                  <div class="tw-flex tw-flex-col tw-gap-y-2">
+                    <h5 class="tw-flex-grow">About</h5>
+
+                    <div
+                      class="partial collapsed tw-text-sm"
+                      id="about_company"
+                    >
+                      Sawtooth Wood Products specializes in log construction in
+                      Ketchum, Hailey, Sun Valley, and Bellevue, and we take
+                      great pride in our ability to create stunning,
+                      one-of-a-kind homes and buildings that capture the essence
+                      of the Wood River Valley. We are also experts in fence
+                      installation, and we take great care to ensure that every
+                      fence we build is strong, durable, and beautiful. Whether
+                      a simple picket fence for a backyard or a large security
+                      fence for a business, we have the knowledge and experience
+                      to get the job done right.
+                    </div>
+                    <div class="tw-flex tw-items-center">
+                      <hr class="tw-flex-grow" />
+                      <button
+                        class="bbsButton bbsButton-secondary small pill"
+                        onclick="togglePartialExpandCollapse(this, 'about_company')"
+                      >
+                        <span class="text-label">Show more</span>
+                        <span class="msicon notranslate">expand_more</span>
+                      </button>
+                      <hr class="tw-flex-grow" />
+                    </div>
+                  </div>
                   <!-- Premium Listing Info -->
                   <div class="tw-flex tw-flex-col tw-gap-y-2">
                     <h5>
@@ -850,6 +881,80 @@
                         <span class="msicon notranslate">expand_more</span>
                       </button>
                       <hr class="tw-flex-grow" />
+                    </div>
+                  </div>
+                  <!-- Photos -->
+                  <div class="tw-flex tw-flex-col tw-gap-y-2">
+                    <h5 class="tw-flex-grow">Photos</h5>
+
+                    <div class="photo-reel">
+                      <div class="images no-scrollbar" id="company_photos">
+                        <img
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#photoModal"
+                          data-bs-imgurl="https://sawtoothwoodproducts.com/wp-content/uploads/sawtooth-log-custom-milling-1.jpg"
+                          src="https://sawtoothwoodproducts.com/wp-content/uploads/sawtooth-log-custom-milling-1.jpg"
+                        />
+                        <img
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#photoModal"
+                          data-bs-imgurl="https://sawtoothwoodproducts.com/wp-content/uploads/sawtooth-log-construction-1.jpg"
+                          src="https://sawtoothwoodproducts.com/wp-content/uploads/sawtooth-log-construction-1.jpg"
+                        />
+
+                        <img
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#photoModal"
+                          data-bs-imgurl="https://sawtoothwoodproducts.com/wp-content/uploads/sawtooth-custom-built-gates-2.jpeg"
+                          src="https://sawtoothwoodproducts.com/wp-content/uploads/sawtooth-custom-built-gates-2.jpeg"
+                        />
+
+                        <img
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#photoModal"
+                          data-bs-imgurl="https://sawtoothwoodproducts.com/wp-content/uploads/fencing-contractor-ketchum-id-our-work-cross-buck-fence-1.jpeg"
+                          src="https://sawtoothwoodproducts.com/wp-content/uploads/fencing-contractor-ketchum-id-our-work-cross-buck-fence-1.jpeg"
+                        />
+
+                        <img
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#photoModal"
+                          data-bs-imgurl="https://sawtoothwoodproducts.com/wp-content/uploads/fencing-contractor-ketchum-id-our-work-vinyl-fence-1.jpeg"
+                          src="https://sawtoothwoodproducts.com/wp-content/uploads/fencing-contractor-ketchum-id-our-work-vinyl-fence-1.jpeg"
+                        />
+                      </div>
+                      <div class="edge-gradient"></div>
+                      <button
+                        onclick="scrollX(this, -200, 'company_photos')"
+                        class="bbsButton bbsButton-secondary filled round before"
+                      >
+                        <span class="msicon notranslate">navigate_before</span>
+                      </button>
+                      <button
+                        onclick="scrollX(this, 200, 'company_photos')"
+                        class="bbsButton bbsButton-secondary filled round next"
+                      >
+                        <span class="msicon notranslate">navigate_next</span>
+                      </button>
+                      <div
+                        class="modal modal-xl"
+                        id="photoModal"
+                        tabindex="-1"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-body">
+                              <img style="margin: auto" src="" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1004,7 +1109,6 @@
                           max="1000"
                           stops="6"
                           current_value="876"
-                          change="1"
                           begin_label="High Risk"
                           end_label="Low Risk"
                         ></chart-slider>
@@ -1191,7 +1295,6 @@
                           max="4"
                           stops="4"
                           current_value="1.5"
-                          change="-1"
                           begin_label="Poor"
                           end_label="Excellent"
                         ></chart-slider>
@@ -1199,9 +1302,8 @@
                         <chart-slider
                           min="1"
                           max="4"
-                          stops="4"
+                          stops="7"
                           current_value="2.5"
-                          change="0"
                           begin_label="Poor"
                           end_label="Excellent"
                         ></chart-slider>
@@ -1211,7 +1313,6 @@
                           max="4"
                           stops="4"
                           current_value="3.5"
-                          change="1"
                           begin_label="Poor"
                           end_label="Excellent"
                         ></chart-slider>

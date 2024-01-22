@@ -5,7 +5,7 @@ class ChartSlider extends HTMLElement {
     this.min = 0;
     this.max = 100;
     this.current_value = 50;
-    this.change = 0; // any negative, anypositive, or zero
+    this.change = ""; // any negative, anypositive, or zero, "" for hiding it
     this.stops = 10; // including min and max
     this.begin_label = "start";
     this.end_label = "end";
@@ -29,15 +29,18 @@ class ChartSlider extends HTMLElement {
     this.min = Number.parseFloat(this.min);
     this.max = Number.parseFloat(this.max);
     this.current_value = Number.parseFloat(this.current_value);
-    this.change = Number.parseFloat(this.change);
+    let trend_arrrow_HTML = "";
+    if (this.change != "") {
+      this.change = Number.parseFloat(this.change);
+      const [change_icon, change_color] =
+        this.change > 0
+          ? ["trending_up", "success"]
+          : this.change == 0
+          ? ["trending_flat", "primary"]
+          : ["trending_down", "error"];
+      trend_arrrow_HTML = `<span class="msicon notranslate tw-text-${change_color}">${change_icon}</span>`;
+    }
     this.stops = Number.parseFloat(this.stops);
-
-    const [change_icon, change_color] =
-      this.change > 0
-        ? ["trending_up", "success"]
-        : this.change == 0
-        ? ["trending_flat", "primary"]
-        : ["trending_down", "error"];
 
     const percentage = Number.parseFloat(
       ((this.current_value - this.min) * 100) / (this.max - this.min),
@@ -55,7 +58,7 @@ class ChartSlider extends HTMLElement {
     };
 
     pushStep(this.min);
-    const jump = Math.floor((this.max - this.min) / (this.stops - 1));
+    const jump = (this.max - this.min) / (this.stops - 1);
     for (let i = 1; i < this.stops - 1; ++i) {
       pushStep(this.min + jump * i);
     }
@@ -64,7 +67,7 @@ class ChartSlider extends HTMLElement {
     const innerHTML = `
     <div id="">
       <div class="current-value tw-gap-2">
-        <span class="msicon notranslate tw-text-${change_color}">${change_icon}</span>
+        ${trend_arrrow_HTML}
         <span>${this.current_value}</span>
       </div>
       <div class="stops">
