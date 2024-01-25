@@ -613,7 +613,7 @@ a:focus {
   .bbs-top-nav-item {
     .text-content,
     .msicon.end {
-      @apply max-lg:tw-hidden;
+      @apply tw-whitespace-nowrap max-lg:tw-hidden;
     }
     &.selected {
       @apply tw-shadow-selected-horizontal;

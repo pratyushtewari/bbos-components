@@ -7,6 +7,7 @@ class ChartSlider extends HTMLElement {
     this.current_value = 50;
     this.change = ""; // any negative, anypositive, or zero, "" for hiding it
     this.stops = 10; // including min and max
+    this.stops_labels = "";
     this.begin_label = "start";
     this.end_label = "end";
   }
@@ -20,6 +21,7 @@ class ChartSlider extends HTMLElement {
       "current_value",
       "change",
       "stops",
+      "stops_labels",
       "begin_label",
       "end_label",
     ];
@@ -47,7 +49,6 @@ class ChartSlider extends HTMLElement {
     ).toPrecision(2);
 
     const steps = [];
-
     const pushStep = (value) => {
       steps.push(
         `<div class="steps">
@@ -56,13 +57,19 @@ class ChartSlider extends HTMLElement {
         </div>`,
       );
     };
-
-    pushStep(this.min);
-    const jump = (this.max - this.min) / (this.stops - 1);
-    for (let i = 1; i < this.stops - 1; ++i) {
-      pushStep(this.min + jump * i);
+    if (this.stops_labels) {
+      const labels = this.stops_labels.split(",");
+      labels.forEach((label) => {
+        pushStep(label.trim());
+      });
+    } else {
+      pushStep(this.min);
+      const jump = (this.max - this.min) / (this.stops - 1);
+      for (let i = 1; i < this.stops - 1; ++i) {
+        pushStep(this.min + jump * i);
+      }
+      pushStep(this.max);
     }
-    pushStep(this.max);
 
     const innerHTML = `
     <div id="">
