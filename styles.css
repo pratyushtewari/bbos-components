@@ -494,6 +494,10 @@ a:focus {
     tw-border-b
     tw-border-border
     tw-bg-white;
+    &.dark {
+      @apply tw-border-none tw-bg-brand;
+      /* background: linear-gradient(90deg, #0062af 0%, #1c3c6c 100%); */
+    }
     .top-nav-container {
       @apply tw-relative
       tw-flex
@@ -558,8 +562,7 @@ a:focus {
         tw-gap-1
         tw-text-left;
       .label {
-        @apply
-          tw-font-normal
+        @apply tw-font-normal
           tw-text-text-primary;
       }
       .caption {
@@ -615,8 +618,28 @@ a:focus {
     .msicon.end {
       @apply tw-whitespace-nowrap max-lg:tw-hidden;
     }
-    &.selected {
-      @apply tw-shadow-selected-horizontal;
+  }
+
+  .top-nav.dark {
+    .bbs-top-nav-item {
+      @apply hover:tw-bg-bg-component-hover-dark
+      active:tw-bg-bg-component-active-dark
+      active:tw-text-text-primary-dark
+      tw-text-white;
+      &.selected {
+        @apply tw-bg-bg-component-active-dark tw-shadow-selected-horizontal-dark;
+      }
+      .text-content {
+        .label {
+          @apply tw-text-text-primary-dark;
+        }
+        .caption {
+          @apply tw-text-text-secondary-dark;
+          .update {
+            @apply tw-text-violet-200;
+          }
+        }
+      }
     }
   }
 
@@ -1069,8 +1092,7 @@ a:focus {
           @apply tw-flex
           tw-flex-col
           tw-items-start
-          tw-gap-1
-          ;
+          tw-gap-1;
         }
         .expand-icon {
           transition: all 250ms;

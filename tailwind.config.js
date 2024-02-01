@@ -19,9 +19,15 @@ export default {
         "bg-component-hover": colors.slate[200],
         "bg-component-active": colors.slate[100],
         "bg-component-selected": colors.violet[100],
+
+        "bg-component-hover-dark": colors.slate[800],
+        "bg-component-active-dark": colors.slate[900],
+        "bg-component-selected-dark": colors.violet[800],
         "focus-outline": colors.violet[600],
         "text-primary": colors.slate[800],
+        "text-primary-dark": colors.slate[200],
         "text-secondary": colors.slate[500],
+        "text-secondary-dark": colors.slate[400],
         "text-tertiary": colors.slate[400],
         "text-disabled": colors.zinc[300],
         success: colors.green[700],
@@ -30,8 +36,9 @@ export default {
         error: colors.red[700],
       },
       boxShadow: {
-        "selected-horizontal": "inset 0 -2px 0 #0055A5",
-        "selected-vertical": "inset 4px 0 0 #0055A5",
+        "selected-horizontal": "inset 0 -2px 0 #1A3D6C",
+        "selected-horizontal-dark": "inset 0 -2px 0 #6B9BDB",
+        "selected-vertical": "inset 4px 0 0 #1A3D6C",
       },
       // Matching Bootstrap breakpoints
       screens: {
