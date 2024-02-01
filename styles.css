@@ -495,8 +495,9 @@ a:focus {
     tw-border-border
     tw-bg-white;
     &.dark {
-      @apply tw-border-none tw-bg-brand;
-      /* background: linear-gradient(90deg, #0062af 0%, #1c3c6c 100%); */
+      @apply /* */ tw-border-none
+      tw-bg-brand;
+      background: linear-gradient(180deg, #0062af 0%, #1c3c6c 100%);
     }
     .top-nav-container {
       @apply tw-relative
@@ -622,12 +623,12 @@ a:focus {
 
   .top-nav.dark {
     .bbs-top-nav-item {
-      @apply hover:tw-bg-bg-component-hover-dark
-      active:tw-bg-bg-component-active-dark
+      @apply hover:tw-bg-bg-component-hover-dark/50
+      active:tw-bg-bg-component-active-dark/50
       active:tw-text-text-primary-dark
       tw-text-white;
       &.selected {
-        @apply tw-bg-bg-component-active-dark tw-shadow-selected-horizontal-dark;
+        @apply tw-bg-bg-component-active-dark/50;
       }
       .text-content {
         .label {
@@ -817,6 +818,7 @@ a:focus {
       }
     }
   }
+
   label,
   .label {
     @apply tw-break-words

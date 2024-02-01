@@ -19,7 +19,6 @@ export default {
         "bg-component-hover": colors.slate[200],
         "bg-component-active": colors.slate[100],
         "bg-component-selected": colors.violet[100],
-
         "bg-component-hover-dark": colors.slate[800],
         "bg-component-active-dark": colors.slate[900],
         "bg-component-selected-dark": colors.violet[800],
@@ -37,7 +36,7 @@ export default {
       },
       boxShadow: {
         "selected-horizontal": "inset 0 -2px 0 #1A3D6C",
-        "selected-horizontal-dark": "inset 0 -2px 0 #6B9BDB",
+        "selected-horizontal-dark": "inset 0 -2px 0 #8b5cf6",
         "selected-vertical": "inset 4px 0 0 #1A3D6C",
       },
       // Matching Bootstrap breakpoints
