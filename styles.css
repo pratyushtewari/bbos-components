@@ -808,6 +808,12 @@ a:focus {
       }
     }
 
+    &.dark {
+      input {
+        @apply tw-bg-transparent tw-text-white;
+      }
+    }
+
     &.left-icon {
       @apply tw-flex
         tw-flex-row
