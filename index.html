@@ -338,7 +338,7 @@
         <div class="tw-flex-grow"></div>
         <!-- company quick search -->
 
-        <div class="input-wrapper left-icon tw-w-full dark">
+        <div class="input-wrapper left-icon dark tw-w-full">
           <span class="icon-left msicon notranslate">search</span>
           <input
             style="margin: 0"
@@ -416,7 +416,7 @@
                     <span class="label">Log Out</span>
                     <span class="label">Tewari, Pratyush</span>
                     <span class="caption">System Admin Access</span>
-                </div>
+                  </div>
                 </div>
               </button>
             </li>
@@ -674,10 +674,11 @@
             </div>
           </section>
           <section class="company-bio">
-            <div class="tw-flex tw-gap-6">
-              <div class="tw-flex-grow tw-gap-2">
-                <div class="tw-flex tw-flex-col tw-gap-2">
-                  <div class="company-tags tw-flex tw-gap-1">
+            <div class="tw-flex tw-flex-col tw-gap-2">
+              <div class="tw-flex">
+                <!-- Tags, Name and address -->
+                <div class="tw-flex tw-grow tw-flex-col tw-gap-2">
+                  <div class="company-tags">
                     <div class="tag green">
                       <span class="msicon notranslate"
                         >temp_preferences_eco</span
@@ -692,28 +693,40 @@
                       <span>Produce Seller</span>
                     </div>
                   </div>
-                  <h3>Produce Company Title</h3>
-                  <p class="text-base tw-font-semibold tw-text-text-secondary">
+                  <h3>Produce Company TitleTitleTitleTitleTitleTitle</h3>
+                  <p class="company-address">
                     <span class="msicon notranslate">location_on</span>
                     St address, city, State, Zip, Country
                   </p>
-                  <p class="text-sm tw-flex tw-gap-2 tw-text-text-secondary">
-                    <a>
-                      <span class="msicon notranslate">link</span>
-                      <span class="notranslate">www.website.com</span>
-                    </a>
-                    <span>
-                      <span class="msicon notranslate">phone</span>
-                      <span class="notranslate"> 708 343-4545</span>
-                    </span>
+                </div>
+                <!-- trading seals -->
+                <div class="tw-flex tw-flex-col tw-items-center tw-text-center">
+                  <div class="tw-flex">
+                    <img class="tw-h-16 tw-w-16" src="/assets/Seal_Trade.svg" />
+                  </div>
+                  <p class="text-xxs tw-text-text-secondary">
+                    Trading Member<br />Since 1929
                   </p>
                 </div>
               </div>
-              <!-- trading partner -->
-              <div class="tw-flex tw-flex-col tw-items-center tw-text-center">
-                <img class="tw-h-16 tw-w-16" src="/assets/seal_trade.svg" />
-                <p class="text-xxs tw-text-text-secondary">
-                  Trading Partners<br />Since 1929
+              <div class="company-contacts">
+                <a>
+                  <span class="msicon notranslate">link</span>
+                  <span class="notranslate"
+                    >www.websitewebsitewebsitewebsitewebsitewebsitewebsitewebsitewebsitewebsite.com</span
+                  >
+                </a>
+
+                <a>
+                  <span class="msicon notranslate">email</span>
+                  <span class="notranslate"
+                    >email@companycompanycompanycompany.com</span
+                  >
+                </a>
+
+                <p>
+                  <span class="msicon notranslate">phone</span>
+                  <span class="notranslate"> 708 343-4545</span>
                 </p>
               </div>
             </div>
@@ -983,7 +996,7 @@
                       </button>
                     </div>
                     <p class="tw-text-xl tw-font-semibold">876</p>
-                    <div class="tw-flex tw-items-center  tw-mt-2">
+                    <div class="tw-mt-2 tw-flex tw-items-center">
                       <button
                         class="bbsButton bbsButton-secondary small"
                         type="button"
@@ -1022,7 +1035,7 @@
                       </button>
                     </div>
                     <p class="tw-text-xl tw-font-semibold">1000M XXXX AA</p>
-                    <div class="tw-flex tw-justify-between tw-mt-2">
+                    <div class="tw-mt-2 tw-flex tw-justify-between">
                       <button
                         class="bbsButton bbsButton-secondary small"
                         type="button"
@@ -1186,22 +1199,17 @@
                     <!-- Rating -->
                     <tr>
                       <td>
-                        <card-title
-                          title='Rating'
-                          />
-                        </td>
-                      <td>
-                        1000M XXXX(40) AA
+                        <card-title title="Rating" />
                       </td>
+                      <td>1000M XXXX(40) AA</td>
                       <td>
                         <div class="tw-flex tw-flex-col tw-gap-2">
-
                           <button
                             class="bbsButton bbsButton-secondary small full-width"
                             type="button"
                             data-bs-toggle="modal"
                             data-bs-target="#XRating_history_modal"
-                            >
+                          >
                             <span class="msicon notranslate">history</span>
                             <span>See History</span>
                           </button>
@@ -1214,7 +1222,7 @@
                             tabindex="-1"
                             aria-labelledby="XRating_history_modalLabel"
                             aria-hidden="true"
-                            >
+                          >
                             <div
                               class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
                             >
@@ -1239,7 +1247,7 @@
                                     type="button"
                                     class="btn btn-secondary"
                                     data-bs-dismiss="modal"
-                                    >
+                                  >
                                     Close
                                   </button>
                                 </div>
@@ -1250,9 +1258,11 @@
                       </td>
                     </tr>
                     <tr>
-                      <td colspan="3" >
+                      <td colspan="3">
                         <p class="caption">Rating Breakdown</p>
-                        <div class="tw-border tw-border-border tw-rounded tw-mt-4 tw-overflow-hidden">
+                        <div
+                          class="tw-mt-4 tw-overflow-hidden tw-rounded tw-border tw-border-border"
+                        >
                           <table class="table">
                             <!-- Credit worth estimate -->
                             <tr>
@@ -1283,31 +1293,30 @@
                               <td style="width: 33%; min-width: 300px">100K</td>
                               <td style="width: 33%; min-width: 300px">N/A</td>
                             </tr>
-                    <!-- "X" Rating -->
-                    <tr>
-                      <td>
-                        <card-title
-                          title='"X" Rating'
-                          caption="Trade Practices Rating"
-                          />
-                        </td>
-                      <td>
-                        <chart-box value="X"></chart-box><br />
-                        <chart-box value="XX"></chart-box><br />
-                        <chart-box value="XXX"></chart-box><br />
-                        <chart-box value="XXXX"></chart-box><br />
-                      </td>
-                      <td>
-                        <div class="tw-flex tw-flex-col tw-gap-2">
-                          <h5>Low Risk</h5>
-                          <p class="tw-text-sm">
-                            Monitor the account for trade survey changes via
-                            Business Reports.
-                          </p>
-
-                        </div>
-                      </td>
-                    </tr>
+                            <!-- "X" Rating -->
+                            <tr>
+                              <td>
+                                <card-title
+                                  title='"X" Rating'
+                                  caption="Trade Practices Rating"
+                                />
+                              </td>
+                              <td>
+                                <chart-box value="X"></chart-box><br />
+                                <chart-box value="XX"></chart-box><br />
+                                <chart-box value="XXX"></chart-box><br />
+                                <chart-box value="XXXX"></chart-box><br />
+                              </td>
+                              <td>
+                                <div class="tw-flex tw-flex-col tw-gap-2">
+                                  <h5>Low Risk</h5>
+                                  <p class="tw-text-sm">
+                                    Monitor the account for trade survey changes
+                                    via Business Reports.
+                                  </p>
+                                </div>
+                              </td>
+                            </tr>
                             <!-- Pay Description -->
                             <tr>
                               <td>
@@ -1339,9 +1348,9 @@
                               <td>
                                 <div class="tw-flex tw-flex-col tw-gap-2">
                                   <h5>Excellent</h5>
-                                  <p class="tw-text-sm">Pays within 0-14 days</p>
-
-
+                                  <p class="tw-text-sm">
+                                    Pays within 0-14 days
+                                  </p>
                                 </div>
                               </td>
                             </tr>
@@ -1358,13 +1367,14 @@
                                   <p class="tw-text-sm">
                                     <span class="tw-font-semibold">150</span> -
                                     Financial statement this subsidiary not made
-                                    available. Parent company provides consolidated
-                                    financial figures including subsidiaries.
+                                    available. Parent company provides
+                                    consolidated financial figures including
+                                    subsidiaries.
                                   </p>
                                   <p>
-                                    <span class="tw-font-semibold">40</span> - Reported
-                                    affiliated with one or more firms or individuals in
-                                    the same line of business.
+                                    <span class="tw-font-semibold">40</span> -
+                                    Reported affiliated with one or more firms
+                                    or individuals in the same line of business.
                                   </p>
                                 </div>
                               </td>
@@ -1373,34 +1383,33 @@
                         </div>
                       </td>
                     </tr>
-                                                <!-- Trade Activity Summary -->
-                                                <tr>
-                                                  <td>
-                                                    <card-title
-                                                      title="Trade Activity Summary"
-                                                      caption="A numeric value depicting aggregate Trade Practices data reported over the last six months."
-                                                    />
-                                                  </td>
-                                                  <td>
-                                                    <chart-slider
-                                                      min="1"
-                                                      max="4"
-                                                      stops="4"
-                                                      change="-1"
-                                                      current_value="3.2"
-                                                      stops_labels="X,XX,XXX,XXXX"
-                                                      begin_label="Poor"
-                                                      end_label="Excellent"
-                                                    ></chart-slider>
-                                                  </td>
-                                                  <td>
-                                                    <div class="tw-flex tw-flex-col tw-gap-2">
-                                                      <h5>Excellent</h5>
-                                                      <p class="tw-text-sm">Pays within 0-14 days</p>
-
-                                                    </div>
-                                                  </td>
-                                                </tr>
+                    <!-- Trade Activity Summary -->
+                    <tr>
+                      <td>
+                        <card-title
+                          title="Trade Activity Summary"
+                          caption="A numeric value depicting aggregate Trade Practices data reported over the last six months."
+                        />
+                      </td>
+                      <td>
+                        <chart-slider
+                          min="1"
+                          max="4"
+                          stops="4"
+                          change="-1"
+                          current_value="3.2"
+                          stops_labels="X,XX,XXX,XXXX"
+                          begin_label="Poor"
+                          end_label="Excellent"
+                        ></chart-slider>
+                      </td>
+                      <td>
+                        <div class="tw-flex tw-flex-col tw-gap-2">
+                          <h5>Excellent</h5>
+                          <p class="tw-text-sm">Pays within 0-14 days</p>
+                        </div>
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -2264,7 +2273,7 @@
           >
             <img class="tw-w-[300px]" src="/assets/BBOS_logo_full.svg" />
             <div class="tw-flex tw-flex-col tw-gap-1">
-              <div class="tw-flex tw-gap-2 tw-pt-2">
+              <div class="tw-flex tw-gap-2 tw-pl-24 tw-pt-2">
                 <div class="digicert">
                   <img src="/assets/digiCert-basic-seal-new.svg " />
                 </div>

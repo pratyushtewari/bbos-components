@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        brand: "#0055A5",
+        brand: "#0062AF",
         border: colors.slate[300],
         "border-disabled": colors.zinc[300],
         "border-component": colors.slate[300],
@@ -35,9 +35,9 @@ export default {
         error: colors.red[700],
       },
       boxShadow: {
-        "selected-horizontal": "inset 0 -2px 0 #1A3D6C",
+        "selected-horizontal": "inset 0 -2px 0 #0062AF",
         "selected-horizontal-dark": "inset 0 -2px 0 #8b5cf6",
-        "selected-vertical": "inset 4px 0 0 #1A3D6C",
+        "selected-vertical": "inset 4px 0 0 #0062AF",
       },
       // Matching Bootstrap breakpoints
       screens: {

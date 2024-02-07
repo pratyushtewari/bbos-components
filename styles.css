@@ -42,6 +42,8 @@ a.link {
     "wght" 400,
     "GRAD" 0,
     "opsz" 24;
+  flex-shrink: 0;
+  flex-grow: 0;
 }
 
 /**
@@ -495,8 +497,8 @@ a:focus {
     tw-border-border
     tw-bg-white;
     &.dark {
-      @apply /* */ tw-border-none
-      tw-bg-brand;
+      @apply tw-border-none;
+      /* tw-bg-brand; */
       background: linear-gradient(180deg, #0062af 0%, #1c3c6c 100%);
     }
     .top-nav-container {
@@ -569,7 +571,7 @@ a:focus {
       .caption {
         @apply tw-flex
           tw-whitespace-normal
-          tw-text-sm
+          tw-text-xs
           tw-text-text-secondary;
 
         .update {
@@ -623,10 +625,10 @@ a:focus {
 
   .top-nav.dark {
     .bbs-top-nav-item {
-      @apply hover:tw-bg-bg-component-hover-dark/50
+      @apply tw-text-white
+      hover:tw-bg-bg-component-hover-dark/50
       active:tw-bg-bg-component-active-dark/50
-      active:tw-text-text-primary-dark
-      tw-text-white;
+      active:tw-text-text-primary-dark;
       &.selected {
         @apply tw-bg-bg-component-active-dark/50;
       }
@@ -950,7 +952,8 @@ a:focus {
     */
     tw-flex
     tw-w-fit tw-gap-1
-    tw-rounded-full tw-border
+    tw-whitespace-nowrap tw-rounded-full
+    tw-border
     tw-border-border
     tw-bg-bg-tertiary
     tw-px-2
@@ -1336,6 +1339,22 @@ a:focus {
   }
   .company-bio {
     @apply tw-flex tw-flex-col tw-gap-2 tw-px-4;
+  }
+
+  .company-tags {
+    @apply tw-flex tw-flex-wrap tw-gap-1;
+  }
+  .company-address {
+    @apply text-base tw-font-semibold tw-text-text-secondary;
+  }
+  .company-contacts {
+    @apply text-sm tw-flex tw-flex-col tw-flex-wrap tw-gap-2 tw-text-text-secondary;
+    > * {
+      @apply tw-flex tw-w-full tw-gap-1;
+      > * {
+        @apply tw-overflow-hidden tw-text-ellipsis tw-whitespace-nowrap;
+      }
+    }
   }
 
   /* company details page */
