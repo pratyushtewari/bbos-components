@@ -499,7 +499,7 @@ a:focus {
     &.dark {
       @apply tw-border-none;
       /* tw-bg-brand; */
-      background: linear-gradient(180deg, #0062af 0%, #1c3c6c 100%);
+      background: linear-gradient(180deg, #0062AF 0%, #1A3D6C 100%);
     }
     .top-nav-container {
       @apply tw-relative
