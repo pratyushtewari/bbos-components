@@ -28,9 +28,17 @@ class ChartSlider extends HTMLElement {
   }
 
   connectedCallback() {
-    this.min = Number.parseFloat(this.min);
-    this.max = Number.parseFloat(this.max);
-    this.current_value = Number.parseFloat(this.current_value);
+    const min = Number.parseFloat(this.min);
+    const max = Number.parseFloat(this.max);
+    const current_value = Number.parseFloat(this.current_value);
+
+    const isNaN = Number.isNaN(min && max && current_value);
+    if (isNaN) {
+      console.error(
+        `ChartSlider: min:[${this.min}], max:[${this.max}] or current_value:[${this.current_value}] is not a number.`,
+      );
+    }
+
     let trend_arrrow_HTML = "";
     if (this.change != "") {
       this.change = Number.parseFloat(this.change);
@@ -45,7 +53,7 @@ class ChartSlider extends HTMLElement {
     this.stops = Number.parseFloat(this.stops);
 
     const percentage = Number.parseFloat(
-      ((this.current_value - this.min) * 100) / (this.max - this.min),
+      ((current_value - min) * 100) / (max - min),
     ).toPrecision(2);
 
     const steps = [];
@@ -57,25 +65,28 @@ class ChartSlider extends HTMLElement {
         </div>`,
       );
     };
+
+
     if (this.stops_labels) {
       const labels = this.stops_labels.split(",");
       labels.forEach((label) => {
         pushStep(label.trim());
       });
     } else {
-      pushStep(this.min);
-      const jump = (this.max - this.min) / (this.stops - 1);
+      pushStep(min);
+      const jump = (max - min) / (this.stops - 1);
       for (let i = 1; i < this.stops - 1; ++i) {
-        pushStep(this.min + jump * i);
+        pushStep(Math.round( (min + jump * i)*100)/100);
       }
-      pushStep(this.max);
+      pushStep(max);
     }
 
-    const innerHTML = `
+    const innerHTML = !isNaN
+      ? `
     <div id="">
       <div class="current-value tw-gap-2">
         ${trend_arrrow_HTML}
-        <span>${this.current_value}</span>
+        <span>${current_value}</span>
       </div>
       <div class="stops">
         <div class="label-top">
@@ -90,7 +101,25 @@ class ChartSlider extends HTMLElement {
         </div>
       </div>
     </div>
-    `;
+    `
+      : `
+    <div id="">
+      <div class="current-value tw-gap-2">
+
+        <span>N/A</span>
+      </div>
+      <div class="stops">
+        <div class="label-top">
+        &nbsp;
+        </div>
+        <div class="gradient label-middle">
+        </div>
+        <div class="label-bottom">
+          <span> &nbsp;</span>
+          <span> &nbsp;</span>
+        </div>
+      </div>
+    </div>`;
 
     this.innerHTML = innerHTML;
 
