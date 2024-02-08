@@ -56,6 +56,11 @@ class ChartSlider extends HTMLElement {
       ((current_value - min) * 100) / (max - min),
     ).toPrecision(2);
 
+    const current_location_html =
+      (current_value >= min && current_value <= max)
+        ? `<div class="value dot" style="left: calc(${percentage}% - 9px) "></div>`
+        : ``;
+
     const steps = [];
     const pushStep = (value) => {
       steps.push(
@@ -66,7 +71,6 @@ class ChartSlider extends HTMLElement {
       );
     };
 
-
     if (this.stops_labels) {
       const labels = this.stops_labels.split(",");
       labels.forEach((label) => {
@@ -76,7 +80,7 @@ class ChartSlider extends HTMLElement {
       pushStep(min);
       const jump = (max - min) / (this.stops - 1);
       for (let i = 1; i < this.stops - 1; ++i) {
-        pushStep(Math.round( (min + jump * i)*100)/100);
+        pushStep(Math.round((min + jump * i) * 100) / 100);
       }
       pushStep(max);
     }
@@ -93,7 +97,7 @@ class ChartSlider extends HTMLElement {
           ${steps.join("")}
         </div>
         <div class="gradient label-middle">
-        <div class="value dot" style="left: calc(${percentage}% - 9px) "></div>
+          ${current_location_html}
         </div>
         <div class="label-bottom">
           <span>${this.begin_label}</span>
