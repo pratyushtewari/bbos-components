@@ -499,7 +499,7 @@ a:focus {
     &.dark {
       @apply tw-border-none;
       /* tw-bg-brand; */
-      background: linear-gradient(180deg, #0062AF 0%, #1A3D6C 100%);
+      background: linear-gradient(180deg, #0062af 0%, #1a3d6c 100%);
     }
     .top-nav-container {
       @apply tw-relative
@@ -1347,7 +1347,7 @@ a:focus {
   .company-address {
     @apply text-base tw-font-semibold tw-text-text-secondary;
   }
-  .company-contacts {
+  .company-phone {
     @apply text-sm tw-flex tw-flex-col tw-flex-wrap tw-gap-2 tw-text-text-secondary;
     > * {
       @apply tw-flex tw-w-full tw-gap-1;
@@ -1368,7 +1368,14 @@ a:focus {
 
   .company-performance,
   .company-updates-news,
-  .company-business-details {
+  .company-business-details,
+  .company-contacts,
+  .company-notes,
+  .company-updates,
+  .company-claims,
+  .company-chains,
+  .company-branches,
+  .company-arreports {
     @apply tw-px-4;
   }
 
