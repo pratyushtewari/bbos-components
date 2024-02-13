@@ -18,11 +18,8 @@ export default {
       targets: [
         {
           src: [
-            "main.js",
-            "card_title.js",
-            "chart_box.js",
-            "chart_slider.js",
-            "mockdata.js",
+            "*.js",
+            "*.html",
           ],
           dest: "./",
         },

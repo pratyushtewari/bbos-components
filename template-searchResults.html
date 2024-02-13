@@ -19,12 +19,11 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <title>Company Profile</title>
     <!-- Replace with <link rel="stylesheet" href="Content\styles.css" /> -->
     <link rel="stylesheet" href="./styles.css" />
+    <title>BBOS COMPONENTS</title>
   </head>
-
-  <body class="tw-flex tw-flex-col tw-items-center tw-align-middle">
+  <body class="qa tw-flex tw-flex-col tw-items-center tw-align-middle">
     <!-- TOP NAV BAR -->
     <header class="top-nav dark">
       <div class="top-nav-container">
@@ -42,12 +41,14 @@
         </div>
         <!-- Home button -->
         <div>
-          <button class="bbs-top-nav-item" type="button">
-            <span class="msicon notranslate">home</span>
-            <div class="text-content">
-              <span class="label">Home</span>
-            </div>
-          </button>
+          <a href="index.html">
+            <button class="bbs-top-nav-item" type="button">
+              <span class="msicon notranslate">home</span>
+              <div class="text-content">
+                <span class="label">Home</span>
+              </div>
+            </button>
+          </a>
         </div>
         <!-- advanced-search-dropdown -->
         <div class="dropdown">
@@ -65,7 +66,7 @@
 
           <ul class="dropdown-menu">
             <li>
-              <a class="new dropdown-item" href="advancedSearch.html">
+              <a class="new dropdown-item" href="template-advancedSearch.html">
                 <span class="msicon notranslate">manage_search</span>
                 <div class="text-content">
                   <span class="label">Company Search</span>
@@ -431,7 +432,7 @@
         <aside class="offcanvas-lg offcanvas-start nav-sidebar" id="bdSidebar">
           <div class="offcanvas-header border-bottom">
             <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">
-              Company Details
+              Advanced Search
             </h5>
             <button
               type="button"
@@ -455,232 +456,113 @@
                   aria-expanded="false"
                   aria-controls="flush_collapseOne"
                 >
-                  <span class="group-label">Company Details</span>
+                  <span class="group-label">Industry Type</span>
                 </button>
               </div>
               <div
                 id="flush_collapseOne"
                 class="accordion-collapse collapse show"
               >
-                <a href="index.html">
-                  <button class="bbs-menu-item new update">
-                    <span class="msicon notranslate">storefront</span>
-                    <div class="text-content">
-                      <span class="label">Company Profile</span>
-                      <span class="caption">
-                        <span class="update">
-                          <span class="msicon notranslate">priority_high</span
-                          >Listed in last 270 days</span
-                        >
-                      </span>
-                    </div>
-                  </button>
-                </a>
-                <a href="contacts.html">
-                  <button class="bbs-menu-item">
-                    <span class="msicon notranslate">contacts</span>
-                    <div class="text-content">
-                      <span class="label">Contacts</span>
-                    </div>
-                  </button>
-                </a>
-                <a href="arreports.html">
-                  <button class="bbs-menu-item">
-                    <span class="msicon notranslate">request_quote</span>
-                    <div class="text-content">
-                      <span class="label">AR Reports</span>
-                    </div>
-                  </button>
-                </a>
-                <a href="claimactivityreport.html">
-                  <button class="bbs-menu-item">
-                    <span class="msicon notranslate">account_balance</span>
-                    <div class="text-content">
-                      <span class="label">Claim Activity Report</span>
-                      <span class="caption">
-                        <span class="update">
-                          <span class="msicon notranslate">priority_high</span
-                          >New claim reported</span
-                        >
-                      </span>
-                    </div>
-                  </button>
-                </a>
-                <a href="branches.html">
-                  <button class="bbs-menu-item selected">
-                    <span class="msicon notranslate">account_tree</span>
-                    <div class="text-content">
-                      <span class="label">Branches & Affiliations</span>
-                    </div>
-                  </button>
-                </a>
-                <a href="news.html">
-                  <button class="bbs-menu-item">
-                    <span class="msicon notranslate">newsmode</span>
-                    <div class="text-content">
-                      <span class="label">News and Articles</span>
-                    </div>
-                  </button>
-                </a>
-                <a href="companyupdates.html">
-                  <button class="bbs-menu-item">
-                    <span class="msicon notranslate">campaign</span>
-                    <div class="text-content">
-                      <span class="label">Company Updates</span>
-                      <span class="caption">
-                        <span class="update">
-                          <span class="msicon notranslate -tw-ml-1"
-                            >priority_high</span
-                          >Updated 66 days ago</span
-                        >
-                      </span>
-                    </div>
-                  </button>
-                </a>
-                <a href="notes.html">
-                  <button class="bbs-menu-item">
-                    <span class="msicon notranslate">note_stack</span>
-                    <div class="text-content">
-                      <span class="label">Notes</span>
-                    </div>
-                    <span class="bbsBadge">1200</span>
-                  </button>
-                </a>
-                <a href="chainstoreguide.html">
-                  <button class="bbs-menu-item">
-                    <span class="msicon notranslate">local_grocery_store</span>
-                    <div class="text-content">
-                      <span class="label">Chain Store Guide</span>
-                    </div>
-                  </button>
-                </a>
+                <button class="bbs-menu-item new selected">
+                  <span class="msicon notranslate">psychiatry</span>
+                  <div class="text-content">
+                    <span class="label">Produce</span>
+                  </div>
+                </button>
+                <button class="bbs-menu-item new">
+                  <span class="msicon notranslate">local_shipping</span>
+                  <div class="text-content">
+                    <span class="label">Transport</span>
+                  </div>
+                </button>
+                <button class="bbs-menu-item new">
+                  <span class="msicon notranslate">conveyor_belt</span>
+                  <div class="text-content">
+                    <span class="label">Supply</span>
+                  </div>
+                </button>
               </div>
             </div>
-
-            <div class="accordion-item collapsed">
+            <div class="accordion-item">
               <div class="accordion-header">
                 <button
                   class="accordion-button"
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#flush_collapseFour"
+                  data-bs-target="#flush_collapseTwo"
                   aria-expanded="false"
-                  aria-controls="flush_collapseFour"
+                  aria-controls="flush_collapseTwo"
                 >
-                  <span class="group-label">Services</span>
+                  <span class="group-label">My Lists</span>
                 </button>
               </div>
-              <div id="flush_collapseFour" class="accordion-collapse collapse">
-                <button class="bbs-menu-item new">
-                  <span class="msicon notranslate">policy</span>
-                  <div class="text-content">
-                    <span class="label"
-                      >Request background check on company or principals</span
-                    >
-                  </div>
-                </button>
-
-                <button class="bbs-menu-item new">
-                  <span class="msicon notranslate">verified_user</span>
-                  <div class="text-content">
-                    <span class="label">Request Credit Reference Check</span>
-                  </div>
-                </button>
-
+              <div
+                id="flush_collapseTwo"
+                class="accordion-collapse collapse show"
+              >
                 <button class="bbs-menu-item">
-                  <span class="msicon notranslate">gavel</span>
+                  <span class="msicon notranslate">saved_search</span>
                   <div class="text-content">
-                    <span class="label"
-                      >Request Trading Assistance / Open a collection</span
-                    >
+                    <span class="label">Saved Searches</span>
+                  </div>
+                </button>
+                <button class="bbs-menu-item">
+                  <span class="msicon notranslate">history</span>
+                  <div class="text-content">
+                    <span class="label">Recent Views</span>
+                  </div>
+                </button>
+                <button class="bbs-menu-item">
+                  <span class="msicon notranslate">youtube_searched_for</span>
+                  <div class="text-content">
+                    <span class="label">Run Last Search</span>
                   </div>
                 </button>
               </div>
             </div>
-            <div class="accordion-item collapsed">
+            <div class="accordion-item">
               <div class="accordion-header">
                 <button
                   class="accordion-button"
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#flush_collapseFive"
+                  data-bs-target="#flush_collapseThree"
                   aria-expanded="false"
-                  aria-controls="flush_collapseFive"
+                  aria-controls="flush_collapseThree"
                 >
-                  <span class="group-label">Downloads</span>
+                  <span class="group-label">Other Searches</span>
                 </button>
               </div>
-              <div id="flush_collapseFive" class="accordion-collapse collapse">
+              <div
+                id="flush_collapseThree"
+                class="accordion-collapse collapse show"
+              >
                 <button class="bbs-menu-item">
-                  <span class="msicon notranslate">file_download</span>
+                  <span class="msicon notranslate">person_search</span>
                   <div class="text-content">
-                    <span class="label">Blue Book Business Report (free)</span>
+                    <span class="label">People Search</span>
                   </div>
                 </button>
-
-                <button class="bbs-menu-item new">
-                  <span class="msicon notranslate">file_download</span>
+                <button class="bbs-menu-item">
+                  <span class="msicon notranslate">work_history</span>
                   <div class="text-content">
-                    <span class="label">Experian Report</span>
+                    <span class="label">Company updates</span>
+                  </div>
+                </button>
+                <button class="bbs-menu-item">
+                  <span class="msicon notranslate">universal_currency_alt</span>
+                  <div class="text-content">
+                    <span class="label">Claim Search</span>
                   </div>
                 </button>
               </div>
             </div>
-            <div class="accordion-item collapsed">
-              <div class="accordion-header">
-                <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#flush_collapseSix"
-                  aria-expanded="true"
-                  aria-controls="flush_collapseSix"
-                >
-                  <span class="group-label">Actions</span>
-                </button>
+            <button class="bbs-menu-item">
+              <span class="msicon notranslate">help</span>
+              <div class="text-content">
+                <span class="label">Help</span>
               </div>
-              <div id="flush_collapseSix" class="accordion-collapse collapse">
-                <button class="bbs-menu-item">
-                  <span class="msicon notranslate">thumb_up_off_alt</span>
-                  <div class="text-content">
-                    <span class="label">Rate Company</span>
-                  </div>
-                </button>
-
-                <button class="bbs-menu-item">
-                  <span class="msicon notranslate">shield_with_heart</span>
-                  <div class="text-content">
-                    <span class="label">Add to my reference list </span>
-                  </div>
-                </button>
-
-                <button class="bbs-menu-item">
-                  <span class="msicon notranslate">notification_add</span>
-                  <div class="text-content">
-                    <span class="label">Subscribe for alerts</span>
-                    <span class="caption">Currently not subscribed</span>
-                  </div>
-                </button>
-                <button class="bbs-menu-item">
-                  <span class="msicon notranslate">playlist_add</span>
-                  <div class="text-content">
-                    <span class="label">Add to watchdogs</span>
-                  </div>
-                </button>
-                <button class="bbs-menu-item">
-                  <span class="msicon notranslate">playlist_remove</span>
-                  <div class="text-content">
-                    <span class="label">Remove from watchdogs</span>
-                  </div>
-                </button>
-                <button class="bbs-menu-item">
-                  <span class="msicon notranslate">dashboard_customize</span>
-                  <div class="text-content">
-                    <span class="label">Update Custom data</span>
-                  </div>
-                </button>
-              </div>
-            </div>
+            </button>
 
             <!-- End of Accrodions -->
           </div>
@@ -690,139 +572,247 @@
           <br />
           <br />
         </aside>
-        <!-- Main  -->
-        <main class="main-content tw-flex tw-flex-col tw-gap-y-4">
-          <section class="company-hero">
-            <img
-              class="backdrop"
-              src="https://sawtoothwoodproducts.com/wp-content/uploads/sawtooth-log-home-hero.jpg"
-            />
-            <div class="company-logo">
-              <img
-                src="https://ptewari.com/_nuxt/PratyushMonogramLogo.I3jIMysO.png"
-              />
-            </div>
-          </section>
-          <section class="company-bio">
-            <div class="tw-flex tw-flex-col tw-gap-2">
-              <div class="tw-flex">
-                <!-- Tags, Name and address -->
-                <div class="tw-flex tw-grow tw-flex-col tw-gap-2">
-                  <div class="company-tags">
-                    <div class="tag green">
-                      <span class="msicon notranslate"
-                        >temp_preferences_eco</span
-                      >
-                      <span>Produce</span>
-                    </div>
-                    <div class="vr"></div>
-                    <div class="tag">
-                      <span>Produce Buyer</span>
-                    </div>
-                    <div class="tag">
-                      <span>Produce Seller</span>
-                    </div>
-                  </div>
-                  <h3>Produce Company Title</h3>
-                  <p class="company-address">
-                    <span class="msicon notranslate">location_on</span>
-                    St address, city, State, Zip, Country
-                  </p>
-                </div>
-                <!-- trading seals -->
-                <div class="tw-flex tw-flex-col tw-items-center tw-text-center">
-                  <div class="tw-flex">
-                    <img class="tw-h-16 tw-w-16" src="/assets/Seal_Trade.svg" />
-                  </div>
-                  <p class="text-xxs tw-text-text-secondary">
-                    Trading Member<br />Since 1929
-                  </p>
-                </div>
-              </div>
-              <div class="company-phone">
-                <a>
-                  <span class="msicon notranslate">link</span>
-                  <span class="notranslate">www.website.com</span>
-                </a>
+        <div class="main-content tw-p-4">
+          <div class="tw-items-top tw-flex tw-justify-between">
+            <h2>Search Results</h2>
 
-                <a>
-                  <span class="msicon notranslate">email</span>
-                  <span class="notranslate">email@company.com</span>
-                </a>
+            <div class="tw-flex tw-gap-3">
+              <form action="template-advancedSearch.html" class="tw-w-full">
+                <button
+                  type="submit"
+                  class="bbsButton bbsButton-secondary filled"
+                >
+                  <span class="msicon notranslate">arrow_back</span>
+                  <span>Back to edit search</span>
+                </button>
+              </form>
+              <button class="bbsButton bbsButton-secondary filled full-width">
+                <span class="msicon notranslate">saved_search</span>
+                <span>Save Search</span>
+              </button>
 
-                <p>
-                  <span class="msicon notranslate">phone</span>
-                  <span class="notranslate"> 708 343-4545</span>
-                </p>
+              <button
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"
+                class="bbsButton bbsButton-secondary filled full-width"
+              >
+                <span class="msicon notranslate">manage_search</span>
+                <span>Show search criteria</span>
+              </button>
+            </div>
+          </div>
+          <div>
+            <p class="caption tw-mb-2">39 Companies found</p>
+            <div class="tw-flex tw-flex-col tw-gap-2 lg:tw-flex-row">
+              <div class="bbsButtonGroup rounded tw-w-fit">
+                <button class="bbsButton bbsButton-secondary filled">
+                  <span class="msicon notranslate">local_printshop</span>
+                </button>
+                <button class="bbsButton bbsButton-secondary filled">
+                  <span class="msicon notranslate">location_pin</span>
+                </button>
+                <button class="bbsButton bbsButton-secondary filled">
+                  <span class="msicon notranslate">
+                    sound_detection_dog_barking
+                  </span>
+                </button>
+                <button class="bbsButton bbsButton-secondary filled">
+                  <span class="msicon notranslate">mode_edit_outline</span>
+                </button>
+              </div>
+              <div class="bbsButtonGroup tw-grow">
+                <button class="bbsButton bbsButton-secondary full-width filled">
+                  <span class="msicon notranslate">thumbs_up_down</span>
+                  <span>Rate Company</span>
+                </button>
+                <button class="bbsButton bbsButton-secondary full-width filled">
+                  <span class="msicon notranslate">summarize</span>
+                  <span>Get business Report</span>
+                </button>
+                <button class="bbsButton bbsButton-secondary full-width filled">
+                  <span class="msicon notranslate">compare_arrows</span>
+                  <span>Analyze companies</span>
+                </button>
+                <button class="bbsButton bbsButton-secondary full-width filled">
+                  <span class="msicon notranslate">export_notes</span>
+                  <span>Export Data</span>
+                </button>
               </div>
             </div>
-            <div class="tw-flex tw-flex-wrap tw-gap-x-6 tw-gap-y-2">
-              <p class="text-sm tw-flex-grow tw-text-text-secondary">
-                Blue Book Company #123456
-              </p>
-              <div class="tw-flex tw-flex-wrap tw-gap-2">
-                <button
-                  class="bbsButton bbsButton-tag-secondary square notes"
-                  data-bs-toggle="tooltip"
-                  data-bs-title="View Notes"
-                >
-                  <span class="msicon notranslate">note_stack</span>
-                  <span>Notes (5)</span>
-                </button>
-                <button
-                  class="bbsButton bbsButton-tag-secondary square changed"
-                  data-bs-toggle="tooltip"
-                  data-bs-title="Updated in the last 120 days"
-                >
-                  <span class="msicon notranslate">lightbulb</span>
-                  <span>Changed</span>
-                </button>
-                <button
-                  class="bbsButton bbsButton-tag-secondary square watchdog"
-                  data-bs-toggle="tooltip"
-                  data-bs-title="Added to watchdog list"
-                >
-                  <span class="msicon notranslate"
-                    >sound_detection_dog_barking</span
+          </div>
+
+          <!-- Show the selected search criteria in the bootstrap offcanvas -->
+          <div
+            class="offcanvas offcanvas-end search-criteria-offcanvas"
+            tabindex="-1"
+            id="offcanvasRight"
+            aria-labelledby="Search criteria"
+          >
+            <div class="offcanvas-header">
+              <div class="tw-flex tw-w-full tw-justify-between">
+                <div class="tw-flex">
+                  <button
+                    class="bbsButton bbsButton-tertiary"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
                   >
-                  <span>Watchdog</span>
-                </button>
-                <button
-                  class="bbsButton bbsButton-tag-secondary square new"
-                  data-bs-toggle="tooltip"
-                  data-bs-title="Listed in the last 270 days"
-                >
-                  <span class="msicon notranslate">temp_preferences_custom</span>
-                  <span>New</span>
-                </button>
-                <button
-                  class="bbsButton bbsButton-tag-secondary square organic"
-                  data-bs-toggle="tooltip"
-                  data-bs-title="Certified Organic & Food safety"
-                >
-                  <span class="msicon notranslate">verified</span>
-                  <span>Certified</span>
-                </button>
-                <button
-                  class="bbsButton bbsButton-tag-secondary square new"
-                  data-bs-toggle="tooltip"
-                  data-bs-title="New claim reported"
-                >
-                  <span class="msicon notranslate">account_balance</span>
-                  <span>New claim</span>
-                </button>
+                    <span class="msicon notranslate">clear</span>
+                  </button>
+                  <h5
+                    class="offcanvas-title"
+                    id="offcanvasRightLabel"
+                    class="title"
+                  >
+                    Search criteria
+                  </h5>
+                </div>
+                <div class="tw-flex tw-gap-3">
+                  <form action="index.html" class="tw-w-full">
+                    <button type="submit" class="bbsButton bbsButton-secondary">
+                      <span class="msicon notranslate">arrow_back</span>
+                      <span>Back to edit search</span>
+                    </button>
+                  </form>
+                  <button class="bbsButton bbsButton-primary filled tw-w-full">
+                    <span class="msicon notranslate">saved_search</span>
+                    <span>Save Search</span>
+                  </button>
+                </div>
               </div>
             </div>
-          </section>
-          <p class="page-heading">Branches and Affiliations</p>
-          <section class="company-branches">
-            <!-- JT:TODO - Replace the content here with actual panels and tables -->
-            <img src="/assets/branches.png" alt="">
-          </section>
-          <br />
-          <br />
-          <br />
-        </main>
+            <div class="offcanvas-body">
+              <div class="search-criteria-group">
+                <div class="title-container">
+                  <div class="label">Company Details</div>
+                </div>
+                <div class="content-container">
+                  <div class="input-container">
+                    <p class="subheading">Company Name</p>
+                    <div class="tag-container">
+                      <span class="tag">Test name</span>
+                    </div>
+                  </div>
+
+                  <div class="input-container">
+                    <p class="subheading">Handles rejected shipments</p>
+                    <div class="tag-container">
+                      <span class="tag">Yes</span>
+                    </div>
+                  </div>
+                  <div class="input-container">
+                    <p class="subheading">Phone</p>
+                    <div class="tag-container">
+                      <span class="tag">201384938</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="search-criteria-group">
+                <div class="title-container">
+                  <div class="label">Rating</div>
+                </div>
+                <div class="content-container">
+                  <div class="input-container">
+                    <p class="subheading">Blue Book Score</p>
+                    <div class="tag-container">
+                      <span class="tag">Equal to: 20</span>
+                    </div>
+                  </div>
+                  <div class="input-container">
+                    <p class="subheading">Trade Practices</p>
+                    <div class="tag-container">
+                      <span class="tag">XXXX - Excellent</span>
+                      <span class="tag">XX - Unsatisfactory</span>
+                      <span class="tag">XXX - Good</span>
+                      <span class="tag">X - Poor</span>
+                    </div>
+                  </div>
+                  <div class="input-container">
+                    <p class="subheading">Pay Description</p>
+                    <div class="tag-container">
+                      <span class="tag">AA - 1 - 14 days on average</span>
+                      <span class="tag">D - 36 - 45 days on average</span>
+                      <span class="tag">A - 15-21 days on average</span>
+                      <span class="tag">E - 46 - 60 days on average</span>
+                      <span class="tag">B - 22 - 28 days on average</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="search-criteria-group">
+                <div class="title-container">
+                  <div class="label">Rating</div>
+                </div>
+                <div class="content-container">
+                  <div class="input-container">
+                    <p class="subheading">Blue Book Score</p>
+                    <div class="tag-container">
+                      <span class="tag">Equal to: 20</span>
+                    </div>
+                  </div>
+                  <div class="input-container">
+                    <p class="subheading">Trade Practices</p>
+                    <div class="tag-container">
+                      <span class="tag">XXXX - Excellent</span>
+                      <span class="tag">XX - Unsatisfactory</span>
+                      <span class="tag">XXX - Good</span>
+                      <span class="tag">X - Poor</span>
+                    </div>
+                  </div>
+                  <div class="input-container">
+                    <p class="subheading">Pay Description</p>
+                    <div class="tag-container">
+                      <span class="tag">AA - 1 - 14 days on average</span>
+                      <span class="tag">D - 36 - 45 days on average</span>
+                      <span class="tag">A - 15-21 days on average</span>
+                      <span class="tag">E - 46 - 60 days on average</span>
+                      <span class="tag">B - 22 - 28 days on average</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="search-criteria-group">
+                <div class="title-container">
+                  <div class="label">Rating</div>
+                </div>
+                <div class="content-container">
+                  <div class="input-container">
+                    <p class="subheading">Blue Book Score</p>
+                    <div class="tag-container">
+                      <span class="tag">Equal to: 20</span>
+                    </div>
+                  </div>
+                  <div class="input-container">
+                    <p class="subheading">Trade Practices</p>
+                    <div class="tag-container">
+                      <span class="tag">XXXX - Excellent</span>
+                      <span class="tag">XX - Unsatisfactory</span>
+                      <span class="tag">XXX - Good</span>
+                      <span class="tag">X - Poor</span>
+                    </div>
+                  </div>
+                  <div class="input-container tw-overflow-none">
+                    <p class="subheading">Pay Description</p>
+                    <div class="tag-container">
+                      <span class="tag">AA - 1 - 14 days on average</span>
+                      <span class="tag">D - 36 - 45 days on average</span>
+                      <span class="tag">A - 15-21 days on average</span>
+                      <span class="tag">E - 46 - 60 days on average</span>
+                      <span class="tag">B - 22 - 28 days on average</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <img
+            style="border-radius: 4px"
+            class="tw-mt-2 tw-border tw-border-border"
+            src="assets/search_results.jpeg"
+          />
+        </div>
       </div>
     </div>
     <!-- Footer -->
@@ -876,25 +866,7 @@
         </div>
       </div>
     </footer>
-    <script>
-      // Hack to overcome aspx creating these objects and replacing the actual ids.
-      const radio_country_none = document.getElementById("radio_country_none");
-      const radio_country_usa = document.getElementById("radio_country_usa");
-      const radio_country_canada = document.getElementById(
-        "radio_country_canada",
-      );
-      const radio_country_mexico = document.getElementById(
-        "radio_country_mexico",
-      );
-      const radio_country_other = document.getElementById(
-        "radio_country_other",
-      );
-    </script>
-    <script src="mockdata.js"></script>
-    <script src="main.js"></script>
-    <script src="chart_slider.js"></script>
-    <script src="chart_box.js"></script>
-    <script src="card_title.js"></script>
+    <script async src="main.js"></script>
 
     <script>
       const tooltipTriggerList = document.querySelectorAll(
@@ -902,13 +874,6 @@
       );
       const tooltipList = [...tooltipTriggerList].map(
         (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl),
-      );
-
-      const popoverTriggerList = document.querySelectorAll(
-        '[data-bs-toggle="popover"]',
-      );
-      const popoverList = [...popoverTriggerList].map(
-        (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl),
       );
     </script>
   </body>
