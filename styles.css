@@ -1379,6 +1379,15 @@ a:focus {
     @apply tw-px-4;
   }
 
+  .page-heading {
+    @apply tw-px-4 tw-text-center
+    tw-font-semibold tw-text-lg tw-pt-4 tw-flex tw-gap-4 tw-items-center;
+    &::after, &::before {
+      content: "";
+      @apply tw-border-t tw-border-black tw-flex-grow tw-h-0;
+    }
+  }
+
   .bbs-card {
     .bbs-card-body {
       @apply tw-overflow-clip

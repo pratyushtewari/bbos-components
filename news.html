@@ -705,7 +705,7 @@
           </section>
           <section class="company-bio">
             <div class="tw-flex tw-flex-col tw-gap-2">
-              <div class="tw-grid tw-gap-2">
+              <div class="tw-flex">
                 <!-- Tags, Name and address -->
                 <div class="tw-flex tw-grow tw-flex-col tw-gap-2">
                   <div class="company-tags">
@@ -728,84 +728,95 @@
                     <span class="msicon notranslate">location_on</span>
                     St address, city, State, Zip, Country
                   </p>
-                  <div class="company-phone">
-                    <a>
-                      <span class="msicon notranslate">link</span>
-                      <span class="notranslate">www.website.com</span>
-                    </a>
-
-                    <a>
-                      <span class="msicon notranslate">email</span>
-                      <span class="notranslate">email@company.com</span>
-                    </a>
-
-                    <p>
-                      <span class="msicon notranslate">phone</span>
-                      <span class="notranslate"> 708 343-4545</span>
-                    </p>
-                    <p>Blue Book Company #123456</p>
-                  </div>
-                  <!-- company button tags -->
-                  <div class="tw-flex tw-flex-wrap tw-gap-2">
-                    <button
-                      class="bbsButton bbsButton-tag-secondary square notes"
-                      data-bs-toggle="tooltip"
-                      data-bs-title="View Notes"
-                    >
-                      <span class="msicon notranslate">note_stack</span>
-                      <span>Notes (5)</span>
-                    </button>
-                    <button
-                      class="bbsButton bbsButton-tag-secondary square changed"
-                      data-bs-toggle="tooltip"
-                      data-bs-title="Updated in the last 120 days"
-                    >
-                      <span class="msicon notranslate">lightbulb</span>
-                      <span>Changed</span>
-                    </button>
-                    <button
-                      class="bbsButton bbsButton-tag-secondary square watchdog"
-                      data-bs-toggle="tooltip"
-                      data-bs-title="Added to watchdog list"
-                    >
-                      <span class="msicon notranslate"
-                        >sound_detection_dog_barking</span
-                      >
-                      <span>Watchdog</span>
-                    </button>
-                    <button
-                      class="bbsButton bbsButton-tag-secondary square new"
-                      data-bs-toggle="tooltip"
-                      data-bs-title="Listed in the last 270 days"
-                    >
-                      <span class="msicon notranslate"
-                        >temp_preferences_custom</span
-                      >
-                      <span>New</span>
-                    </button>
-                    <button
-                      class="bbsButton bbsButton-tag-secondary square organic"
-                      data-bs-toggle="tooltip"
-                      data-bs-title="Certified Organic & Food safety"
-                    >
-                      <span class="msicon notranslate">verified</span>
-                      <span>Certified</span>
-                    </button>
-                    <button
-                      class="bbsButton bbsButton-tag-secondary square new"
-                      data-bs-toggle="tooltip"
-                      data-bs-title="New claim reported"
-                    >
-                      <span class="msicon notranslate">account_balance</span>
-                      <span>New claim</span>
-                    </button>
-                  </div>
                 </div>
+                <!-- trading seals -->
+                <div class="tw-flex tw-flex-col tw-items-center tw-text-center">
+                  <div class="tw-flex">
+                    <img class="tw-h-16 tw-w-16" src="/assets/Seal_Trade.svg" />
+                  </div>
+                  <p class="text-xxs tw-text-text-secondary">
+                    Trading Member<br />Since 1929
+                  </p>
+                </div>
+              </div>
+              <div class="company-phone">
+                <a>
+                  <span class="msicon notranslate">link</span>
+                  <span class="notranslate">www.website.com</span>
+                </a>
+
+                <a>
+                  <span class="msicon notranslate">email</span>
+                  <span class="notranslate">email@company.com</span>
+                </a>
+
+                <p>
+                  <span class="msicon notranslate">phone</span>
+                  <span class="notranslate"> 708 343-4545</span>
+                </p>
+              </div>
+            </div>
+            <div class="tw-flex tw-flex-wrap tw-gap-x-6 tw-gap-y-2">
+              <p class="text-sm tw-flex-grow tw-text-text-secondary">
+                Blue Book Company #123456
+              </p>
+              <div class="tw-flex tw-flex-wrap tw-gap-2">
+                <button
+                  class="bbsButton bbsButton-tag-secondary square notes"
+                  data-bs-toggle="tooltip"
+                  data-bs-title="View Notes"
+                >
+                  <span class="msicon notranslate">note_stack</span>
+                  <span>Notes (5)</span>
+                </button>
+                <button
+                  class="bbsButton bbsButton-tag-secondary square changed"
+                  data-bs-toggle="tooltip"
+                  data-bs-title="Updated in the last 120 days"
+                >
+                  <span class="msicon notranslate">lightbulb</span>
+                  <span>Changed</span>
+                </button>
+                <button
+                  class="bbsButton bbsButton-tag-secondary square watchdog"
+                  data-bs-toggle="tooltip"
+                  data-bs-title="Added to watchdog list"
+                >
+                  <span class="msicon notranslate"
+                    >sound_detection_dog_barking</span
+                  >
+                  <span>Watchdog</span>
+                </button>
+                <button
+                  class="bbsButton bbsButton-tag-secondary square new"
+                  data-bs-toggle="tooltip"
+                  data-bs-title="Listed in the last 270 days"
+                >
+                  <span class="msicon notranslate">temp_preferences_custom</span>
+                  <span>New</span>
+                </button>
+                <button
+                  class="bbsButton bbsButton-tag-secondary square organic"
+                  data-bs-toggle="tooltip"
+                  data-bs-title="Certified Organic & Food safety"
+                >
+                  <span class="msicon notranslate">verified</span>
+                  <span>Certified</span>
+                </button>
+                <button
+                  class="bbsButton bbsButton-tag-secondary square new"
+                  data-bs-toggle="tooltip"
+                  data-bs-title="New claim reported"
+                >
+                  <span class="msicon notranslate">account_balance</span>
+                  <span>New claim</span>
+                </button>
               </div>
             </div>
           </section>
+          <p class="page-heading">News</p>
           <section class="company-notes">
-            <!-- JT:TODO - Replace the content here with actual table -->
+            <!-- JT:TODO - Replace the content here with actual panels and tables -->
             <img src="/assets/news.png" alt="">
           </section>
           <br />
