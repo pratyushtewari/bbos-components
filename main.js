@@ -115,7 +115,7 @@ const mulSel_filldata = (mulSel_id, csvOptionIds) => {
   optionIds.forEach((optionId) => {
     // find the menu item and make is selected
     const menuitem = mulSel_parent.querySelector(
-      `li[data-mulSel_id="${optionId}"] button`,
+      `li[data-mulSel_id="${optionId}"]`,
     );
     if (menuitem) menuitem.click();
   });
@@ -149,7 +149,7 @@ const mulSel_onclickTag = (event) => {
   const mulSel_id = event.currentTarget.getAttribute("data-mulSel_id");
 
   const menuitem = menu.querySelector(
-    `li.selected[data-mulSel_id="${mulSel_id}"] button`,
+    `li.selected[data-mulSel_id="${mulSel_id}"]`,
   );
   menuitem.click();
   // if (menuitem) menuitem.classList.remove("selected");
@@ -542,7 +542,7 @@ const selectNoneCountry = (event) => {
   if (citySelector) {
     citySelector.setAttribute("disabled", "disabled");
     // Clear the existing multiseled tags
-    citySelector.querySelector(input).value = "";
+    citySelector.querySelector("input").value = "";
   }
 };
 // This is called when Other countries
@@ -681,9 +681,9 @@ const mulSel_createOpt_Commodities = (optionId) => {
       outer.setAttribute("data-mulSel_parentId", parent_CommodityId);
     }
     outer.setAttribute("data-search_string", `${name} ${parentName}`);
+    outer.setAttribute("onclick", onclickFunction);
 
     const option = document.createElement("button");
-    option.setAttribute("onclick", onclickFunction);
     option.setAttribute("tabindex", "-1");
     option.setAttribute("class", "bbsButton bbsButton-menu-item dropdown-item");
     option.setAttribute("role", "option");
@@ -757,7 +757,7 @@ const mulSel_onclickOpt_Commodities = (event, optionId, parent_CommodityId) => {
     if (optionId == parent_CommodityId) {
       // remove all the selected children
       const selectedchildren = mulSelParent.querySelectorAll(
-        `li.selected[data-mulSel_parentId="${parent_CommodityId}"] button`,
+        `li.selected[data-mulSel_parentId="${parent_CommodityId}"]`,
       );
       [...selectedchildren].forEach((htmlElement) => {
         htmlElement.click();
