@@ -124,6 +124,17 @@ const mulSel_filldata = (mulSel_id, csvOptionIds) => {
     mulSel_input.blur();
   }
 };
+const mulSel_reset = (mulSel_id) => {
+  // pick all the selected items and perform click event
+  // on them to unselect them
+  const mulSel_parent = document.querySelector("#" + mulSel_id);
+  [...mulSel_parent.querySelectorAll("li.selected")].forEach(
+    (option) => {
+      option.click();
+    },
+  );
+
+}
 const checkboxes_filldata = (containerID, csvOptionValue) => {
   if (csvOptionValue == null) return;
   const container = document.querySelector("#" + containerID.trim());
