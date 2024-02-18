@@ -1,7 +1,4 @@
-const hide = (htmlElement) => {
-  htmlElement.classList.add("tw-hidden");
-};
-// Escape key press
+// Escape key press for the bootstrap dropdown
 document.addEventListener("keydown", function (event) {
   const key = event.key;
   if (key == "Escape") {
@@ -10,49 +7,13 @@ document.addEventListener("keydown", function (event) {
       (dropdown) => {
         const instance = bootstrap.Dropdown.getOrCreateInstance(dropdown);
         if (instance) {
-          instance.hide();
+          instance.classList.add("tw-hidden");
         }
       },
     );
   }
 });
 
-// close any open menu
-document.addEventListener("click", function (e) {
-  closeALLMenu();
-});
-
-const closeALLMenu = () => {
-  [...document.querySelectorAll(".bbsMenu:not(.tw-hidden)")].forEach(
-    (htmlElement) => {
-      htmlElement.classList.add("tw-hidden");
-    },
-  );
-};
-const toggleTopNavMenu = (event) => {
-  // close all the other open menus
-  event.stopPropagation();
-  const sibling = event.currentTarget.parentElement.querySelector(".bbsMenu");
-  //check if this is closed. this is important to know because we are closing all the menus before opening this one.
-  const isClosed = sibling.classList.contains("tw-hidden");
-  closeALLMenu();
-  // this is just to prevent adding a lot of event listners
-  // this still adds at max two listners.
-  if (isClosed) {
-    sibling.classList.remove("tw-hidden");
-    document.addEventListener(
-      "click",
-      (event) => {
-        hide(sibling);
-      },
-      {
-        once: true,
-      },
-    );
-  } else {
-    sibling.classList.add("tw-hidden");
-  }
-};
 const toggleAccordion = (event) => {
   const parentElement = event.currentTarget.parentElement;
   const isOpen = parentElement.classList.toggle("open");
@@ -74,6 +35,28 @@ const toggleAccordion = (event) => {
   // This is needed so .NET form does not automatically post back
   event.preventDefault();
 };
+
+const checkboxes_filldata = (containerID, csvOptionValue) => {
+  if (csvOptionValue == null) return;
+  const container = document.querySelector("#" + containerID.trim());
+  const checkboxValues = csvOptionValue.split(",");
+  checkboxValues.forEach((value) => {
+    const checkbox = container.querySelector(
+      `input[type=checkbox][value="${value}"]`,
+    );
+    if (checkbox) {
+      checkbox.checked = true;
+      if (checkbox.onchange) checkbox.onchange();
+    }
+  });
+};
+
+/**
+ * This method uses mulSel_filldata to set the
+ * states selected for a particular country
+ * @param {string} countryId
+ * @param {string} csvStateIds
+ */
 const countryState_setData = (countryId, csvStateIds) => {
   // countryState_setData(1) - just select USA no state
   // countryState_setData(1, "") - Just select USA no state
@@ -82,6 +65,7 @@ const countryState_setData = (countryId, csvStateIds) => {
   // countryState_setData(5, ""); -- Other - Aruba
   // countryState_setData(5, "1,2,3,4"); -- Other - Aruba
 
+  // these radio elements objects are created in index.html due to aspx bad intelligence.
   const radioElement =
     !countryId || countryId == 0
       ? radio_country_none
@@ -108,6 +92,15 @@ const countryState_setData = (countryId, csvStateIds) => {
     Update_UpdatePanel();
   }
 };
+
+/**
+ * This method iterates over the menu options in the
+ * multiselect and then performs a click action on
+ * items that match the ids in the argument csv string.
+ * @param {string} mulSel_id
+ * @param {string} csvOptionIds
+ * @returns
+ */
 const mulSel_filldata = (mulSel_id, csvOptionIds) => {
   if (csvOptionIds == null) return;
   const optionIds = csvOptionIds.split(",");
@@ -124,6 +117,11 @@ const mulSel_filldata = (mulSel_id, csvOptionIds) => {
     mulSel_input.blur();
   }
 };
+
+/**
+ * Remove all the selected items from the multi_select
+ * @param {string} mulSel_id
+ */
 const mulSel_reset = (mulSel_id) => {
   // pick all the selected items and perform click event
   // on them to unselect them
@@ -135,23 +133,11 @@ const mulSel_reset = (mulSel_id) => {
   );
 
 }
-const checkboxes_filldata = (containerID, csvOptionValue) => {
-  if (csvOptionValue == null) return;
-  const container = document.querySelector("#" + containerID.trim());
-  const checkboxValues = csvOptionValue.split(",");
-  checkboxValues.forEach((value) => {
-    const checkbox = container.querySelector(
-      `input[type=checkbox][value="${value}"]`,
-    );
-    if (checkbox) {
-      checkbox.checked = true;
-      if (checkbox.onchange) checkbox.onchange();
-    }
-  });
-};
-// if a removable bbsButton bbsButton-tag-secondary
-// is clicked, this is the function
-// that needs to be called to remove it
+
+/**
+ * if a removable bbsButton bbsButton-tag-secondary is clicked, this is the function that needs to be called to remove it
+ * @param {object} event
+ */
 const mulSel_onclickTag = (event) => {
   // TODO:PT - low priority, Make on the X on the tag clicable and focasable
 
@@ -159,11 +145,17 @@ const mulSel_onclickTag = (event) => {
   const menu = mulSelParent.querySelector(".dropdown-menu");
   const mulSel_id = event.currentTarget.getAttribute("data-mulSel_id");
 
+  // Find the corresponding item related to the clicked tag
   const menuitem = menu.querySelector(
     `li.selected[data-mulSel_id="${mulSel_id}"]`,
   );
-  menuitem.click();
-  // if (menuitem) menuitem.classList.remove("selected");
+
+  // click on the menuitem so that it can
+  // finish other related actions pertaining to
+  // removing the selected item.
+  if (menuitem) {
+    menuitem.click();
+  }
 
   const nextsibling = event.currentTarget.nextElementSibling;
   const prevsibling = event.currentTarget.previousElementSibling;
@@ -177,6 +169,11 @@ const mulSel_onclickTag = (event) => {
   event.currentTarget.remove();
 };
 
+/**
+ * Handle arrow up and down from the multiselect input to focus
+ * on the items in drop down menu
+ * @param {object} event
+ */
 const mulSel_onkeydown = (event) => {
   const key = event.key;
 
@@ -196,10 +193,13 @@ const mulSel_onkeydown = (event) => {
     }
   }
 };
-// Open the mulSel menu when
-// user starts typing inside
-// the mulSel .bbs-mulSel
-// and filters the content
+
+/**
+ * Handle typing inside mulSel .bbs-mulSel
+ * open the dropdown
+ * and filters the content
+ * @param {object} event
+ */
 const mulSel_oninput = (event) => {
   const inputValue = event.currentTarget.value;
   const menu = event.currentTarget
@@ -244,7 +244,12 @@ const mulSel_oninput = (event) => {
 
   event.stopPropagation();
 };
-const getOrCreateTagContainer = (mulSelParent) => {
+
+/**
+ * helper function for creating tags for the multiselect
+ * @param {object} event
+ */
+const mulSel_getOrCreateTagContainer = (mulSelParent) => {
   let tagContainer = mulSelParent.querySelector(".mulSel-tag-container");
   if (!tagContainer) {
     // create a tag container
@@ -255,6 +260,7 @@ const getOrCreateTagContainer = (mulSelParent) => {
   }
   return tagContainer;
 };
+
 // Based on the country,
 // this function adds options in the
 // .bbs-mulSel's menu.
@@ -314,6 +320,7 @@ const mulSel_createOpt_TerminalMkt = () => {
       `;
   }
 };
+
 // call the above function
 (() => {
   mulSel_createOpt_TerminalMkt();
@@ -337,7 +344,7 @@ const mulSel_onclickOpt_TerminalMkt = (event, optionId) => {
 
   const mulSelParent = event.currentTarget.closest(".bbs-mulSel");
 
-  const tagContainer = getOrCreateTagContainer(mulSelParent);
+  const tagContainer = mulSel_getOrCreateTagContainer(mulSelParent);
 
   const name = terminalMarket.prtm_FullMarketName;
   const city = terminalMarket.prtm_City;
@@ -383,6 +390,7 @@ const mulSel_onclickOpt_TerminalMkt = (event, optionId) => {
   // focus the input
   mulSelParent.querySelector("input").focus();
 };
+
 // Based on the country,
 // this function adds options in the
 // .bbs-mulSel's menu.
@@ -455,6 +463,7 @@ const mulSel_createOpt_CountryState = (optionId) => {
      `;
   }
 };
+
 // When you need to add tags from the
 // .bbs-mulSel. call this function with the value,
 // this will add the tags in the .mulSel-tag-container
@@ -476,7 +485,7 @@ const mulSel_onclickOpt_CountryState = (event, optionId) => {
 
   const mulSelParent = event.currentTarget.closest(".bbs-mulSel");
 
-  const tagContainer = getOrCreateTagContainer(mulSelParent);
+  const tagContainer = mulSel_getOrCreateTagContainer(mulSelParent);
 
   // check if there is any tag with that value exist in the parent
   const tagElement = tagContainer.querySelector(
@@ -524,125 +533,7 @@ const mulSel_onclickOpt_CountryState = (event, optionId) => {
 
   // focus the input
   mulSelParent.querySelector("input").focus();
-};
-const setIsDisabled = (id, isDisabled) => {
-  const fieldsetElement = document.querySelector(`#${id}`);
-  if (fieldsetElement) {
-    if (isDisabled) {
-      fieldsetElement.setAttribute("disabled", isDisabled);
-      fieldsetElement.querySelector("input").value = "";
-    } else {
-      fieldsetElement.removeAttribute("disabled");
-    }
-  }
-};
-const selectNoneCountry = (event) => {
-  const otherCountryInput = document.querySelector("#otherCountries");
-  otherCountryInput.setAttribute("disabled", "disabled");
-  otherCountryInput.value = "";
 
-  const stateSlector = document.querySelector("#us_canada_mexico_state");
-  if (stateSlector) {
-    stateSlector.setAttribute("disabled", "disabled");
-    // Clear the existing multiseled tags
-    stateSlector.querySelector(".mulSel-tag-container").innerHTML = "";
-  }
-
-  // disabled state and city selection
-  const citySelector = document.querySelector("#us_canada_mexico_city");
-  if (citySelector) {
-    citySelector.setAttribute("disabled", "disabled");
-    // Clear the existing multiseled tags
-    citySelector.querySelector("input").value = "";
-  }
-};
-// This is called when Other countries
-// radio is selected.
-const enableOtherCountriesInput = (id) => {
-  selectNoneCountry();
-
-  const otherCountrySelect = document.querySelector("#" + id);
-  otherCountrySelect.removeAttribute("disabled");
-  otherCountrySelect.innerHTML = "";
-
-  // Populate other country selection list
-  // const countries = [
-  //   { prcn_CountryId: 1, prcn_Country: "USA" },
-  // ]
-
-  for (let i in countries) {
-    // skip US, Canada and Mexico
-    if (
-      countries[i].prcn_CountryId == 1 ||
-      countries[i].prcn_CountryId == 2 ||
-      countries[i].prcn_CountryId == 3
-    ) {
-      continue;
-    }
-
-    const option = document.createElement("option");
-    option.setAttribute("value", countries[i].prcn_CountryId);
-    option.setAttribute("data-prcn_CountryId", countries[i].prcn_CountryId);
-    option.innerHTML = countries[i].prcn_Country;
-
-    otherCountrySelect.appendChild(option);
-  }
-  otherCountrySelect.focus();
-  return otherCountrySelect;
-};
-const clearallsearch = () => {
-  [...document.querySelectorAll(".search-criteria-group")].forEach(
-    (htmlElement) => {
-      htmlElement.remove();
-    },
-  );
-};
-const toggleZipcodeInput = (checked, id) => {
-  const input = document.querySelector("#" + id);
-  if (checked) {
-    input.removeAttribute("disabled");
-  } else {
-    input.setAttribute("disabled", "disabled");
-  }
-};
-const printTopLevelParents = () => {
-  commodities.forEach((commodity, i) => {
-    //  console.log("for", i);
-    const topLevelParentIndex = findTopLevelCommodityParent(i);
-
-    console.log(
-      commodity.prcm_FullName,
-      ":",
-      commodities[topLevelParentIndex].prcm_FullName,
-    );
-  });
-};
-const findTopLevelCommodityParent = (i) => {
-  // [{
-  //     "prcm_CommodityId": 537,
-  //     "prcm_ParentId": 535,
-  //     "prcm_Level": 5,
-  //     "prcm_name": "Yellow",
-  //     "prcm_commoditycode": "Yellow",
-  //     "prcm_DisplayOrder": 4840,
-  //     "prcm_FullName": "Yellow Tomato"
-  // }],
-
-  if (commodities[i].prcm_Level != 1) {
-    const parentID = commodities[i].prcm_ParentId;
-    const index = commodities.findIndex(
-      (commodity) => commodity.prcm_CommodityId === parentID,
-    );
-    // top level not found...
-    // continue recuursion
-    return findTopLevelCommodityParent(index);
-  } else {
-    // found the TopLevetParent - Stop reccursion
-    return i;
-  }
-};
-// this function adds options in the
-// .bbs-mulSel's menu.
 
 const mulSel_createOpt_Commodities = (optionId) => {
   const mulSel = document.querySelector("#commodity-mulSel");
@@ -730,7 +621,7 @@ const mulSel_onclickOpt_Commodities = (event, optionId, parent_CommodityId) => {
 
   const mulSelParent = event.currentTarget.closest(".bbs-mulSel");
 
-  const tagContainer = getOrCreateTagContainer(mulSelParent);
+  const tagContainer = mulSel_getOrCreateTagContainer(mulSelParent);
 
   // check if there is any tag with that value exist in the parent
   const tagElement = tagContainer.querySelector(
@@ -816,6 +707,122 @@ const mulSel_onclickOpt_Commodities = (event, optionId, parent_CommodityId) => {
   // focus the input
   mulSelParent.querySelector("input").focus();
 };
+
+
+};
+
+const setIsDisabled = (id, isDisabled) => {
+  const fieldsetElement = document.querySelector(`#${id}`);
+  if (fieldsetElement) {
+    if (isDisabled) {
+      fieldsetElement.setAttribute("disabled", isDisabled);
+      fieldsetElement.querySelector("input").value = "";
+    } else {
+      fieldsetElement.removeAttribute("disabled");
+    }
+  }
+};
+
+const selectNoneCountry = (event) => {
+  const otherCountryInput = document.querySelector("#otherCountries");
+  otherCountryInput.setAttribute("disabled", "disabled");
+  otherCountryInput.value = "";
+
+  const stateSlector = document.querySelector("#us_canada_mexico_state");
+  if (stateSlector) {
+    stateSlector.setAttribute("disabled", "disabled");
+    // Clear the existing multiseled tags
+    stateSlector.querySelector(".mulSel-tag-container").innerHTML = "";
+  }
+
+  // disabled state and city selection
+  const citySelector = document.querySelector("#us_canada_mexico_city");
+  if (citySelector) {
+    citySelector.setAttribute("disabled", "disabled");
+    // Clear the existing multiseled tags
+    citySelector.querySelector("input").value = "";
+  }
+};
+
+// This is called when Other countries
+// radio is selected.
+const enableOtherCountriesInput = (id) => {
+  selectNoneCountry();
+
+  const otherCountrySelect = document.querySelector("#" + id);
+  otherCountrySelect.removeAttribute("disabled");
+  otherCountrySelect.innerHTML = "";
+
+  // Populate other country selection list
+  // const countries = [
+  //   { prcn_CountryId: 1, prcn_Country: "USA" },
+  // ]
+
+  for (let i in countries) {
+    // skip US, Canada and Mexico
+    if (
+      countries[i].prcn_CountryId == 1 ||
+      countries[i].prcn_CountryId == 2 ||
+      countries[i].prcn_CountryId == 3
+    ) {
+      continue;
+    }
+
+    const option = document.createElement("option");
+    option.setAttribute("value", countries[i].prcn_CountryId);
+    option.setAttribute("data-prcn_CountryId", countries[i].prcn_CountryId);
+    option.innerHTML = countries[i].prcn_Country;
+
+    otherCountrySelect.appendChild(option);
+  }
+  otherCountrySelect.focus();
+  return otherCountrySelect;
+};
+
+const clearallsearch = () => {
+  [...document.querySelectorAll(".search-criteria-group")].forEach(
+    (htmlElement) => {
+      htmlElement.remove();
+    },
+  );
+};
+
+const toggleZipcodeInput = (checked, id) => {
+  const input = document.querySelector("#" + id);
+  if (checked) {
+    input.removeAttribute("disabled");
+  } else {
+    input.setAttribute("disabled", "disabled");
+  }
+};
+
+const findTopLevelCommodityParent = (i) => {
+  // [{
+  //     "prcm_CommodityId": 537,
+  //     "prcm_ParentId": 535,
+  //     "prcm_Level": 5,
+  //     "prcm_name": "Yellow",
+  //     "prcm_commoditycode": "Yellow",
+  //     "prcm_DisplayOrder": 4840,
+  //     "prcm_FullName": "Yellow Tomato"
+  // }],
+
+  if (commodities[i].prcm_Level != 1) {
+    const parentID = commodities[i].prcm_ParentId;
+    const index = commodities.findIndex(
+      (commodity) => commodity.prcm_CommodityId === parentID,
+    );
+    // top level not found...
+    // continue recuursion
+    return findTopLevelCommodityParent(index);
+  } else {
+    // found the TopLevetParent - Stop reccursion
+    return i;
+  }
+};
+
+// this function adds options in the
+// .bbs-mulSel's menu.
 const toggleAllCheckboxes = (isChecked, idThatContainsCheckboxes) => {
   [
     ...document.querySelectorAll(
@@ -825,6 +832,7 @@ const toggleAllCheckboxes = (isChecked, idThatContainsCheckboxes) => {
     checkbox.checked = isChecked;
   });
 };
+
 const toggleExpandCollapse = (button, idToOpenClose) => {
   const isCollapsed =
     button.querySelector(".msicon").innerHTML == "expand_more" ? true : false;
