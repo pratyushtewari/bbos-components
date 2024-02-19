@@ -126,13 +126,10 @@ const mulSel_reset = (mulSel_id) => {
   // pick all the selected items and perform click event
   // on them to unselect them
   const mulSel_parent = document.querySelector("#" + mulSel_id);
-  [...mulSel_parent.querySelectorAll("li.selected")].forEach(
-    (option) => {
-      option.click();
-    },
-  );
-
-}
+  [...mulSel_parent.querySelectorAll("li.selected")].forEach((option) => {
+    option.click();
+  });
+};
 
 /**
  * if a removable bbsButton bbsButton-tag-secondary is clicked, this is the function that needs to be called to remove it
@@ -533,7 +530,7 @@ const mulSel_onclickOpt_CountryState = (event, optionId) => {
 
   // focus the input
   mulSelParent.querySelector("input").focus();
-
+};
 
 const mulSel_createOpt_Commodities = (optionId) => {
   const mulSel = document.querySelector("#commodity-mulSel");
@@ -706,9 +703,6 @@ const mulSel_onclickOpt_Commodities = (event, optionId, parent_CommodityId) => {
 
   // focus the input
   mulSelParent.querySelector("input").focus();
-};
-
-
 };
 
 const setIsDisabled = (id, isDisabled) => {
