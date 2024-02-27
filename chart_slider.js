@@ -40,11 +40,11 @@ class ChartSlider extends HTMLElement {
     const current_value = Number.parseFloat(this.current_value);
 
     const isNaN = Number.isNaN(min && max && current_value);
-    if (isNaN) {
-      console.error(
-        `ChartSlider: min:[${this.min}], max:[${this.max}] or current_value:[${this.current_value}] is not a number.`,
-      );
-    }
+    // if (isNaN) {
+    //   console.warn(
+    //     `ChartSlider: min:[${this.min}], max:[${this.max}] or current_value:[${this.current_value}] is not a number.`,
+    //   );
+    // }
 
     let trend_arrrow_HTML = "";
     if (this.change != "") {
@@ -136,12 +136,13 @@ class ChartSlider extends HTMLElement {
 
     // The below logic is to position the
     // gradient between the lables.
-    const firstWidth = this.querySelector(".steps:first-child").offsetWidth;
-    const lastWidth = this.querySelector(".steps:last-child").offsetWidth;
-    const offset = (firstWidth + lastWidth) / 2;
-    const gradientWidth = `calc(100% - ${offset}px)`;
-
-    this.querySelector(".gradient").style.width = gradientWidth;
+    if (!isNaN && !this.hide_labels) {
+      const firstWidth = this.querySelector(".steps:first-child").offsetWidth;
+      const lastWidth = this.querySelector(".steps:last-child").offsetWidth;
+      const offset = (firstWidth + lastWidth) / 2;
+      const gradientWidth = `calc(100% - ${offset}px)`;
+      this.querySelector(".gradient").style.width = gradientWidth;
+    }
   }
 
   // attribute change
