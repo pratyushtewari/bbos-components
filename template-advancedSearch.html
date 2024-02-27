@@ -892,6 +892,7 @@
                                 name="select-country"
                                 onchange="mulSel_createOpt_CountryState('1')"
                                 value="usa"
+                                checked
                               />
                               <label for="radio_country_usa">USA</label>
                             </div>
@@ -922,7 +923,7 @@
                                 name="select-country"
                                 onchange="selectNoneCountry(event)"
                                 value="none"
-                                checked
+
                               />
                               <label for="radio_country_none">None</label>
                             </div>
@@ -1004,7 +1005,6 @@
                         </fieldset>
                         <fieldset
                           id="us_canada_mexico_city"
-                          disabled
                           class="tw-flex tw-flex-col tw-gap-4"
                         >
                           <div data-info="City Selection" class="input-wrapper">
@@ -2482,9 +2482,7 @@
                                           <a
                                             href="UserList.aspx?UserListID=80851"
                                           >
-                                            <img
-                                              src="/BBOS/en-us/images/Category Blue.png"
-                                            />
+
                                             California Prospects
                                           </a>
                                         </td>
@@ -2509,9 +2507,7 @@
                                           <a
                                             href="UserList.aspx?UserListID=81311"
                                           >
-                                            <img
-                                              src="/BBOS/en-us/images/Category Green.png"
-                                            />
+
                                             Pros MT
                                           </a>
                                         </td>
@@ -2536,9 +2532,7 @@
                                           <a
                                             href="UserList.aspx?UserListID=82455"
                                           >
-                                            <img
-                                              src="/BBOS/en-us/images/Category Yellow.png"
-                                            />
+
                                             Miami Plantains
                                           </a>
                                         </td>
@@ -2563,9 +2557,7 @@
                                           <a
                                             href="UserList.aspx?UserListID=82678"
                                           >
-                                            <img
-                                              src="/BBOS/en-us/images/Category Green.png"
-                                            />
+
                                             Plant City Prospects
                                           </a>
                                         </td>
@@ -2614,9 +2606,7 @@
                                           <a
                                             href="UserList.aspx?UserListID=82780"
                                           >
-                                            <img
-                                              src="/BBOS/en-us/images/Category Black.png"
-                                            />
+
                                             Prospects in the NE
                                           </a>
                                         </td>
@@ -2641,9 +2631,7 @@
                                           <a
                                             href="UserList.aspx?UserListID=83065"
                                           >
-                                            <img
-                                              src="/BBOS/en-us/images/Category Green.png"
-                                            />
+
                                             Compradores de Aguacate - Florida
                                           </a>
                                         </td>
@@ -2716,9 +2704,7 @@
                                           <a
                                             href="UserList.aspx?UserListID=83219"
                                           >
-                                            <img
-                                              src="/BBOS/en-us/images/Category Blue.png"
-                                            />
+
                                             Iris Watch Dog List Sample
                                           </a>
                                         </td>
@@ -2767,9 +2753,7 @@
                                           <a
                                             href="UserList.aspx?UserListID=83278"
                                           >
-                                            <img
-                                              src="/BBOS/en-us/images/Category Green.png"
-                                            />
+
                                             Foodservice companies in CA
                                           </a>
                                         </td>
@@ -2794,9 +2778,7 @@
                                           <a
                                             href="UserList.aspx?UserListID=83283"
                                           >
-                                            <img
-                                              src="/BBOS/en-us/images/Category Green.png"
-                                            />
+
                                             Lista de compradores de Tomatillo
                                           </a>
                                         </td>
@@ -2821,9 +2803,7 @@
                                           <a
                                             href="UserList.aspx?UserListID=83466"
                                           >
-                                            <img
-                                              src="/BBOS/en-us/images/Category Black.png"
-                                            />
+
                                             Alaska Companies
                                           </a>
                                         </td>
@@ -2848,9 +2828,7 @@
                                           <a
                                             href="UserList.aspx?UserListID=83550"
                                           >
-                                            <img
-                                              src="/BBOS/en-us/images/Category Green.png"
-                                            />
+
                                             AV CA shippers
                                           </a>
                                         </td>
@@ -2875,9 +2853,7 @@
                                           <a
                                             href="UserList.aspx?UserListID=83597"
                                           >
-                                            <img
-                                              src="/BBOS/en-us/images/Category Red.png"
-                                            />
+
                                             TX Watermelon
                                           </a>
                                         </td>
@@ -2902,9 +2878,7 @@
                                           <a
                                             href="UserList.aspx?UserListID=83719"
                                           >
-                                            <img
-                                              src="/BBOS/en-us/images/Category Green.png"
-                                            />
+
                                             Broc in CA
                                           </a>
                                         </td>
@@ -2929,9 +2903,7 @@
                                           <a
                                             href="UserList.aspx?UserListID=83784"
                                           >
-                                            <img
-                                              src="/BBOS/en-us/images/Category Yellow.png"
-                                            />
+
                                             Prospects
                                           </a>
                                         </td>
@@ -3563,6 +3535,11 @@
       const tooltipList = [...tooltipTriggerList].map(
         (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl),
       );
+            // initialization
+      (() => {
+        mulSel_createOpt_TerminalMkt();
+        mulSel_createOpt_CountryState(1);
+      })();
     </script>
   </body>
 </html>

@@ -5,6 +5,7 @@ class ChartSlider extends HTMLElement {
     this.min = 0;
     this.max = 100;
     this.current_value = 50;
+    this.hide_labels = false;
     this.change = ""; // any negative, anypositive, or zero, "" for hiding it
     this.stops = 10; // including min and max
     this.stops_labels = "";
@@ -19,6 +20,7 @@ class ChartSlider extends HTMLElement {
       "min",
       "max",
       "current_value",
+      "hide_labels",
       "change",
       "stops",
       "stops_labels",
@@ -30,6 +32,11 @@ class ChartSlider extends HTMLElement {
   connectedCallback() {
     const min = Number.parseFloat(this.min);
     const max = Number.parseFloat(this.max);
+    const hideLabels =
+      String(this.hide_labels).toLowerCase() == "true"
+        ? 'style="display:none;"'
+        : "";
+    const ifHiddenLabel = hideLabels ? 'style="margin-top:0"' : "";
     const current_value = Number.parseFloat(this.current_value);
 
     const isNaN = Number.isNaN(min && max && current_value);
@@ -57,7 +64,7 @@ class ChartSlider extends HTMLElement {
     ).toPrecision(2);
 
     const current_location_html =
-      (current_value >= min && current_value <= max)
+      current_value >= min && current_value <= max
         ? `<div class="value dot" style="left: calc(${percentage}% - 9px) "></div>`
         : ``;
 
@@ -93,13 +100,13 @@ class ChartSlider extends HTMLElement {
         <span>${current_value}</span>
       </div>
       <div class="stops">
-        <div class="label-top">
+        <div class="label-top" ${hideLabels}>
           ${steps.join("")}
         </div>
-        <div class="gradient label-middle">
+        <div class="gradient label-middle" ${ifHiddenLabel}>
           ${current_location_html}
         </div>
-        <div class="label-bottom">
+        <div class="label-bottom" ${hideLabels}>
           <span>${this.begin_label}</span>
           <span>${this.end_label}</span>
         </div>

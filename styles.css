@@ -452,9 +452,9 @@ a:focus {
     tw-border-border
     tw-bg-white;
     &.dark {
-      @apply tw-border-none;
-      /* tw-bg-brand; */
-      background: linear-gradient(180deg, #0062af 0%, #1a3d6c 100%);
+      @apply tw-border-none
+      tw-bg-brand;
+      /* background: linear-gradient(180deg, #0062af 0%, #1a3d6c 100%); */
     }
     .top-nav-container {
       @apply tw-relative
@@ -1144,7 +1144,8 @@ a:focus {
         tw-flex-wrap
         tw-gap-2;
         .tag {
-          @apply tw-rounded
+          @apply tw-whitespace-normal
+          tw-rounded
           tw-border
           tw-border-border
           tw-bg-bg-secondary
@@ -1335,11 +1336,12 @@ a:focus {
   }
 
   .page-heading {
-    @apply tw-px-4 tw-text-center
-    tw-font-semibold tw-text-lg tw-pt-4 tw-flex tw-gap-4 tw-items-center;
-    &::after, &::before {
+    @apply tw-flex tw-items-center
+    tw-gap-4 tw-px-4 tw-pt-4 tw-text-center tw-text-lg tw-font-semibold;
+    &::after,
+    &::before {
       content: "";
-      @apply tw-border-t tw-border-black tw-flex-grow tw-h-0;
+      @apply tw-h-0 tw-flex-grow tw-border-t tw-border-black;
     }
   }
 
@@ -1440,12 +1442,22 @@ a:focus {
       &.selected {
         background-color: #15803d;
       }
+      &.partial {
+        outline: dashed 2px #15803d;
+        outline-offset: -2px;
+        color: #15803d;
+      }
       background-color: #eefcf3;
     }
     .a,
     .xxx {
       &.selected {
         background-color: #6d9834;
+      }
+      &.partial {
+        outline: dashed 2px #6d9834;
+        outline-offset: -2px;
+        color: #6d9834;
       }
       background-color: #f5faf0;
     }
@@ -1459,6 +1471,12 @@ a:focus {
     .xx {
       &.selected {
         background-color: #fbbf24;
+        @apply tw-text-text-primary;
+      }
+      &.partial {
+        outline: dashed 2px #fbbf24;
+        outline-offset: -2px;
+        @apply tw-text-text-primary;
       }
       background-color: #fef9eb;
     }

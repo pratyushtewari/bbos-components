@@ -318,11 +318,6 @@ const mulSel_createOpt_TerminalMkt = () => {
   }
 };
 
-// call the above function
-(() => {
-  mulSel_createOpt_TerminalMkt();
-})();
-
 const mulSel_onclickOpt_TerminalMkt = (event, optionId) => {
   // const terminalMarkets = [
   //   {
@@ -388,6 +383,18 @@ const mulSel_onclickOpt_TerminalMkt = (event, optionId) => {
   mulSelParent.querySelector("input").focus();
 };
 
+const setIsDisabled = (id, isDisabled) => {
+  const fieldsetElement = document.querySelector(`#${id}`);
+  if (fieldsetElement) {
+    if (isDisabled) {
+      fieldsetElement.setAttribute("disabled", isDisabled);
+      fieldsetElement.querySelector("input").value = "";
+    } else {
+      fieldsetElement.removeAttribute("disabled");
+    }
+  }
+};
+
 // Based on the country,
 // this function adds options in the
 // .bbs-mulSel's menu.
@@ -399,7 +406,9 @@ const mulSel_createOpt_CountryState = (optionId) => {
   otherCountryInput.setAttribute("disabled", "disabled");
   otherCountryInput.value = "";
 
-  setIsDisabled("us_canada_mexico_city", true);
+  // clear and enable the city
+  document.querySelector("#us_canada_mexico_city input").value = "";
+  setIsDisabled("us_canada_mexico_city", false);
 
   const mulSel = document.querySelector("#countryState-mulSel");
   if (mulSel == null) return;
@@ -505,8 +514,6 @@ const mulSel_onclickOpt_CountryState = (event, optionId) => {
     const menuoption = event.currentTarget.closest("li");
     menuoption.classList.add("selected");
 
-    // Enable city selection
-    setIsDisabled("us_canada_mexico_city", false);
   } else {
     // remove the tag element and mark the item non selected
     tagElement.remove();
@@ -514,10 +521,6 @@ const mulSel_onclickOpt_CountryState = (event, optionId) => {
     const menuoption = event.currentTarget.closest("li");
     menuoption.classList.remove("selected");
 
-    // If there are no more tags left then disable city
-    if (!tagContainer.children.length) {
-      setIsDisabled("us_canada_mexico_city", true);
-    }
   }
 
   // update dropdown position
@@ -530,6 +533,31 @@ const mulSel_onclickOpt_CountryState = (event, optionId) => {
 
   // focus the input
   mulSelParent.querySelector("input").focus();
+};
+
+const findTopLevelCommodityParent = (i) => {
+  // [{
+  //     "prcm_CommodityId": 537,
+  //     "prcm_ParentId": 535,
+  //     "prcm_Level": 5,
+  //     "prcm_name": "Yellow",
+  //     "prcm_commoditycode": "Yellow",
+  //     "prcm_DisplayOrder": 4840,
+  //     "prcm_FullName": "Yellow Tomato"
+  // }],
+
+  if (commodities[i].prcm_Level != 1) {
+    const parentID = commodities[i].prcm_ParentId;
+    const index = commodities.findIndex(
+      (commodity) => commodity.prcm_CommodityId === parentID,
+    );
+    // top level not found...
+    // continue recuursion
+    return findTopLevelCommodityParent(index);
+  } else {
+    // found the TopLevetParent - Stop reccursion
+    return i;
+  }
 };
 
 const mulSel_createOpt_Commodities = (optionId) => {
@@ -705,17 +733,6 @@ const mulSel_onclickOpt_Commodities = (event, optionId, parent_CommodityId) => {
   mulSelParent.querySelector("input").focus();
 };
 
-const setIsDisabled = (id, isDisabled) => {
-  const fieldsetElement = document.querySelector(`#${id}`);
-  if (fieldsetElement) {
-    if (isDisabled) {
-      fieldsetElement.setAttribute("disabled", isDisabled);
-      fieldsetElement.querySelector("input").value = "";
-    } else {
-      fieldsetElement.removeAttribute("disabled");
-    }
-  }
-};
 
 const selectNoneCountry = (event) => {
   const otherCountryInput = document.querySelector("#otherCountries");
@@ -790,30 +807,7 @@ const toggleZipcodeInput = (checked, id) => {
   }
 };
 
-const findTopLevelCommodityParent = (i) => {
-  // [{
-  //     "prcm_CommodityId": 537,
-  //     "prcm_ParentId": 535,
-  //     "prcm_Level": 5,
-  //     "prcm_name": "Yellow",
-  //     "prcm_commoditycode": "Yellow",
-  //     "prcm_DisplayOrder": 4840,
-  //     "prcm_FullName": "Yellow Tomato"
-  // }],
 
-  if (commodities[i].prcm_Level != 1) {
-    const parentID = commodities[i].prcm_ParentId;
-    const index = commodities.findIndex(
-      (commodity) => commodity.prcm_CommodityId === parentID,
-    );
-    // top level not found...
-    // continue recuursion
-    return findTopLevelCommodityParent(index);
-  } else {
-    // found the TopLevetParent - Stop reccursion
-    return i;
-  }
-};
 
 // this function adds options in the
 // .bbs-mulSel's menu.
