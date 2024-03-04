@@ -276,7 +276,7 @@ const mulSel_getOrCreateTagContainer = (mulSelParent) => {
 // Based on the country,
 // this function adds options in the
 // .bbs-mulSel's menu.
-const mulSel_createOpt_TerminalMkt = () => {
+const mulSel_createOpt_TerminalMkt = (terminalMarketList) => {
   const mulSel = document.querySelector("#terminalMkt-mulSel");
   if (mulSel == null) return;
   // Clear the existing multiseled tags
@@ -298,10 +298,10 @@ const mulSel_createOpt_TerminalMkt = () => {
   // ],
 
   // populate the terminalMarket mulSel
-  for (let i in terminalMarkets) {
-    const name = terminalMarkets[i].prtm_FullMarketName;
-    const city = terminalMarkets[i].prtm_City;
-    const state = terminalMarkets[i].prtm_State;
+  for (let i in terminalMarketList) {
+    const name = terminalMarketList[i].prtm_FullMarketName;
+    const city = terminalMarketList[i].prtm_City;
+    const state = terminalMarketList[i].prtm_State;
 
     const outer = document.createElement("li");
     optionContainer.appendChild(outer);
@@ -311,12 +311,12 @@ const mulSel_createOpt_TerminalMkt = () => {
 
     outer.setAttribute(
       "onclick",
-      `mulSel_onclickOpt_TerminalMkt(event, "${terminalMarkets[i].prtm_TerminalMarketId}")`,
+      `mulSel_onclickOpt_TerminalMkt(event, "${terminalMarketList[i].prtm_TerminalMarketId}")`,
     );
     // terminal_id;
     outer.setAttribute(
       "data-mulSel_id",
-      terminalMarkets[i].prtm_TerminalMarketId,
+      terminalMarketList[i].prtm_TerminalMarketId,
     );
     outer.setAttribute("data-search_string", name + " " + city + " " + state);
     option.setAttribute("tabindex", "-1");
@@ -548,6 +548,11 @@ const mulSel_onclickOpt_CountryState = (event, optionId) => {
 
   // focus the input
   mulSelParent.querySelector("input").focus();
+
+  // call refreshTerminalMarkets, if defined
+  if (typeof refreshTerminalMarkets === "function") {
+    refreshTerminalMarkets();
+  }
 };
 
 const findTopLevelCommodityParent = (i) => {
@@ -890,4 +895,25 @@ if (photoModal) {
       img.setAttribute("src", imgurl);
     }
   });
+}
+
+//Simulate real clicks for checkboxes to disable them as needed
+function clickIfChecked(pID) {
+    var cb = document.getElementById(pID);
+    if (!cb.checked)
+        return;
+
+    clickForce(pID);
+}
+
+function clickForce(pID) {
+    var cb = document.getElementById(pID);
+
+    var event = new MouseEvent('click', {
+        view: window,
+        bubbles: true,
+        cancelable: true
+    });
+
+    var cancelled = !cb.dispatchEvent(event);
 }
