@@ -78,6 +78,7 @@ const countryState_setData = (countryId, csvStateIds) => {
       : radio_country_other;
 
   radioElement.checked = true;
+  // The following onchange event causes the state selection to reset.
   radioElement.onchange();
 
   if (countryId == null || countryId < 1) {
@@ -94,6 +95,20 @@ const countryState_setData = (countryId, csvStateIds) => {
 };
 
 /**
+ * This method just selects one state id from given the name of the state
+ * @param {string} stateName
+ */
+const mulSel_selectSingleStateByName = (stateName) => {
+  if (states) {
+    const state = states.find((state) => state.prst_State.toLowerCase() == stateName.trim().toLowerCase())
+    if (state) {
+      mulSel_filldata("countryState-mulSel", String(state.prst_StateId));
+    }
+  }
+}
+
+
+/**
  * This method iterates over the menu options in the
  * multiselect and then performs a click action on
  * items that match the ids in the argument csv string.
@@ -108,7 +123,7 @@ const mulSel_filldata = (mulSel_id, csvOptionIds) => {
   optionIds.forEach((optionId) => {
     // find the menu item and make is selected
     const menuitem = mulSel_parent.querySelector(
-      `li[data-mulSel_id="${optionId}"]`,
+      `li[data-mulSel_id="${optionId}"]:not(.selected)`,
     );
     if (menuitem) menuitem.click();
   });
