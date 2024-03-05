@@ -747,14 +747,16 @@
                 <!-- trading seals -->
                 <div class="tw-flex tw-flex-col tw-items-center tw-text-center">
                   <div class="tw-flex">
-                    <img class="tw-h-[100px] tw-w-[100px]" src="/assets/seal_trade.svg" />
+                    <img
+                      class="tw-h-[100px] tw-w-[100px]"
+                      src="/assets/seal_trade.svg"
+                    />
                   </div>
                   <p class="text-xxs tw-text-text-secondary">
                     Trading Member<br />Since 1929
                   </p>
                 </div>
               </div>
-
             </div>
             <div class="tw-flex tw-flex-wrap tw-gap-x-6 tw-gap-y-2">
               <p class="text-sm tw-flex-grow tw-text-text-secondary">
@@ -2353,8 +2355,68 @@
         >
           © 2023 Blue Book Services | 630 668-3500
         </div>
+        <button
+          class="bbsButton bbsButton-secondary small full-width"
+          type="button"
+          data-bs-toggle="modal"
+          data-bs-target="#welcome_to_new_BBOS_modal"
+        >
+          <span class="msicon notranslate">history</span>
+          <span>let's go!</span>
+        </button>
       </div>
     </footer>
+    <!-- Vertically centered scrollable modal -->
+    <div
+      class="modal fade"
+      id="welcome_to_new_BBOS_modal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="welcome_to_new_BBOS_modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <p class="title" id="welcome_to_new_BBOS_modalLabel">
+              Say hello to Blue Book’s new website!
+            </p>
+          </div>
+          <div class="modal-body">
+            <div class="party"></div>
+            <p>
+              <span class="higlight">We’ve upgraded the whole website, focusing on making it more
+              intuitive and user friendly. We’ve also added new features
+              recently that we think you’re going to love!</span>
+            </p>
+            <p>Top features and improvements including:</p>
+            <ul class="features">
+              <li>Brand new profile page</li>
+              <li>More intuitive credit ratings information</li>
+              <li>New search page</li>
+              <li>Who’s viewed my profile</li>
+            </ul>
+            <p>
+              If you aren’t quite ready for the move yet, you can temporarily
+              switch to the classic BBOS (just click on your name in the upper
+              right-hand corner).
+            </p>
+            <p>Ready to jump in!</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="bbsButton bbsButton-primary tw-mx-auto"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              Let's go!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <script>
       // Hack to overcome aspx creating these objects and replacing the actual ids.
       // this is used by countryState_setData function. Do not remove these.
