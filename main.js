@@ -917,3 +917,17 @@ function clickForce(pID) {
 
     var cancelled = !cb.dispatchEvent(event);
 }
+
+function printCompanyProfile() {
+  $('body').addClass('for-print');
+  window.print();
+  $('body').removeClass('for-print');
+}
+
+window.addEventListener("beforeprint", (event) => {
+  $('body').addClass('for-print');
+});
+
+window.addEventListener("afterprint", (event) => {
+  $('body').removeClass('for-print');
+});

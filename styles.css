@@ -1556,13 +1556,13 @@ a:focus {
 
   #welcome_to_new_BBOS_modal {
     .modal-content {
-      background-image: url("/assets/confetti.svg");
+      background-image: url("../assets/confetti.svg");
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
     }
     .party {
-      background-image: url("/assets/party.png");
+      background-image: url("../assets/party.png");
       background-position: center;
       background-repeat: no-repeat;
       background-size: 50px;
@@ -1574,23 +1574,22 @@ a:focus {
       background-color: white;
     }
     .title {
-      @apply
-      tw-w-full
+      @apply tw-w-full
       tw-text-center
-      tw-font-bold
       tw-text-lg
-      ;
+      tw-font-bold;
     }
-    .modal-header, .modal-footer {
-      @apply tw-text-center tw-border-none;
+    .modal-header,
+    .modal-footer {
+      @apply tw-border-none tw-text-center;
     }
     .modal-body {
-      @apply tw-text-center tw-px-8 tw-py-0 tw-space-y-4;
+      @apply tw-space-y-4 tw-px-8 tw-py-0 tw-text-center;
       .features {
-        @apply tw-py-4 tw-px-8 tw-bg-bg-tertiary tw-border tw-rounded;
+        @apply tw-rounded tw-border tw-bg-bg-tertiary tw-px-8 tw-py-4;
       }
       li {
-        @apply tw-text-left tw-list-disc;
+        @apply tw-list-disc tw-text-left;
       }
     }
   }
@@ -1670,4 +1669,27 @@ a:focus {
 
   /* END OF OLD BBOS OVERWITES */
   /* end of the layer components */
+}
+
+/* Sets the company profile for printing */
+body.for-print {
+  #bdSidebar,
+  .top-nav,
+  .backdrop,
+  .footer,
+  #companyPrintButton {
+    @apply tw-hidden;
+  }
+  .content {
+    background-color: white;
+  }
+  #printHeader {
+    display: flex !important;
+  }
+  .company-hero {
+    height: 10rem;
+    .company-logo {
+      margin-top: 1rem;
+    }
+  }
 }
