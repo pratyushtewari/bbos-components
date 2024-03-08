@@ -573,34 +573,35 @@
           <br />
         </aside>
         <div class="main-content tw-p-4">
-          <div class="tw-items-top tw-flex tw-justify-between">
-            <h2>Search Results</h2>
+          <h2>Search Results</h2>
+          <div
+            class="tw-flex tw-w-full tw-flex-wrap tw-justify-end tw-gap-3 "
+          >
+            <button
+              type="submit"
+              class="bbsButton bbsButton-secondary filled max-sm:full-width"
+              onclick="template-advancedSearch.html"
+            >
+              <span class="msicon notranslate">arrow_back</span>
+              <span>Back to edit search</span>
+            </button>
 
-            <div class="tw-flex tw-gap-3">
-              <form action="template-advancedSearch.html" class="tw-w-full">
-                <button
-                  type="submit"
-                  class="bbsButton bbsButton-secondary filled"
-                >
-                  <span class="msicon notranslate">arrow_back</span>
-                  <span>Back to edit search</span>
-                </button>
-              </form>
-              <button class="bbsButton bbsButton-secondary filled full-width">
-                <span class="msicon notranslate">saved_search</span>
-                <span>Save Search</span>
-              </button>
+            <button
+              class="bbsButton bbsButton-secondary filled max-sm:full-width"
+            >
+              <span class="msicon notranslate">saved_search</span>
+              <span>Save Search</span>
+            </button>
 
-              <button
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasRight"
-                aria-controls="offcanvasRight"
-                class="bbsButton bbsButton-secondary filled full-width"
-              >
-                <span class="msicon notranslate">manage_search</span>
-                <span>Show search criteria</span>
-              </button>
-            </div>
+            <button
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight"
+              class="bbsButton bbsButton-secondary filled max-sm:full-width"
+            >
+              <span class="msicon notranslate">manage_search</span>
+              <span>Show search criteria</span>
+            </button>
           </div>
           <div>
             <p class="caption tw-mb-2">39 Companies found</p>
