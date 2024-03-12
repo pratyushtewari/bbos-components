@@ -75,7 +75,7 @@ class ChartBox extends HTMLElement {
       } else if (this.value.toUpperCase() == "(149)") {
         this.innerHTML += `
         <br>
-        <span class="tw-font-semibold">149</span> - Reports received indicating pay variable and/or beyond terms withvendors, suppliers, and/or transportation firms.
+        <span class="tw-font-semibold">149</span> - Reports received indicating pay variable and/or beyond terms with vendors, suppliers, and/or transportation firms.
         <br>
         `;
       }

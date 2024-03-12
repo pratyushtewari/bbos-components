@@ -11,6 +11,7 @@ class ChartSlider extends HTMLElement {
     this.stops_labels = "";
     this.begin_label = "start";
     this.end_label = "end";
+    this.href = "";
   }
 
   // component attributes
@@ -26,6 +27,7 @@ class ChartSlider extends HTMLElement {
       "stops_labels",
       "begin_label",
       "end_label",
+      "href"
     ];
   }
 
@@ -92,12 +94,14 @@ class ChartSlider extends HTMLElement {
       pushStep(max);
     }
 
+    const current_value_html = (this.href) ? `<a href="${this.href}">${current_value}</a>` : current_value
+
     const innerHTML = !isNaN
       ? `
     <div id="">
       <div class="current-value tw-gap-2">
         ${trend_arrrow_HTML}
-        <span>${current_value}</span>
+        <span>${current_value_html}</span>
       </div>
       <div class="stops">
         <div class="label-top" ${hideLabels}>
