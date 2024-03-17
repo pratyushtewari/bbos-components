@@ -62,8 +62,9 @@ a.link {
   background-image: url("../assets/whosViewedNotEnabled.png");
   background-size: contain;
   background-repeat: no-repeat;
+  @apply tw-border tw-rounded-md tw-overflow-clip;
   .backdrop {
-    @apply tw-flex tw-h-full tw-backdrop-blur-sm;
+    @apply tw-flex tw-h-full;
     .container {
       @apply tw-m-auto
       tw-my-28
