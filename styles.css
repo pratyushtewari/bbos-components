@@ -30,6 +30,53 @@ a.link {
 :root {
   --bs-offcanvas-width: 600px;
   --bs-offcanvas-horizontal-width: 600px;
+  --bs-table-striped-bg: #f8fafc;
+}
+.whosviewd.table {
+  .table-light {
+    --bs-table-bg: #f1f5f9;
+    --bs-table-border-color: #cbd5e1;
+  }
+  tr:nth-of-type(even) > * {
+    background-color: #f8fafc;
+  }
+  tr:nth-of-type(odd) > * {
+    --bs-table-striped-bg: white;
+  }
+  tr:last-child > td {
+    border-color: transparent;
+  }
+  img {
+    max-height: 60px;
+    max-width: 100px;
+    margin: auto;
+  }
+  td {
+    vertical-align: middle;
+  }
+  a {
+    color: #8b5cf6;
+  }
+}
+.whosviewedNotEnabled {
+  background-image: url("../assets/whosViewedNotEnabled.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  .backdrop {
+    @apply tw-flex tw-h-full tw-backdrop-blur-sm;
+    .container {
+      @apply tw-m-auto
+      tw-my-28
+      tw-max-w-[500px]
+      tw-rounded-md
+      tw-bg-brand
+      tw-p-4
+      tw-py-16
+      tw-text-center
+      tw-text-lg
+      tw-text-text-primary-dark;
+    }
+  }
 }
 /**
  * Google Material Symbols (new) icon-font

@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <title>Company Profile</title>
+    <!-- Replace with <link rel="stylesheet" href="Content\styles.css" /> -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body class="tw-flex tw-flex-col tw-items-center tw-align-middle">
+    <!-- TOP NAV BAR -->
+    <header class="top-nav dark">
+      <div class="top-nav-container">
+        <div class="nav-toggle-button">
+          <button
+            class="bbs-top-nav-item"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#bdSidebar"
+            aria-controls="bdSidebar"
+            aria-label="Toggle Company Details navigation"
+          >
+            <span class="msicon notranslate">menu</span>
+          </button>
+        </div>
+        <!-- Home button -->
+        <div>
+          <a href="index.html">
+            <button class="bbs-top-nav-item" type="button">
+              <span class="msicon notranslate">home</span>
+              <div class="text-content">
+                <span class="label">Home</span>
+              </div>
+            </button>
+          </a>
+        </div>
+        <!-- advanced-search-dropdown -->
+        <div class="dropdown">
+          <button
+            class="bbs-top-nav-item selected"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            type="button"
+          >
+            <span class="msicon notranslate">search</span>
+            <div class="text-content">
+              <span class="label">Advanced Search</span>
+            </div>
+          </button>
+
+          <ul class="dropdown-menu">
+            <li>
+              <a class="new dropdown-item" href="template-advancedSearch.html">
+                <span class="msicon notranslate">manage_search</span>
+                <div class="text-content">
+                  <span class="label">Company Search</span>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <button class="dropdown-item" disabled>
+                <span class="msicon notranslate">person_search</span>
+                <div class="text-content">
+                  <span class="label">People Search</span>
+                  <span class="caption"
+                    >This option is not available with your membership</span
+                  >
+                </div>
+                <span class="msicon notranslate">lock</span>
+              </button>
+            </li>
+
+            <li>
+              <button class="dropdown-item">
+                <span class="msicon notranslate">work_history</span>
+                <div class="text-content">
+                  <span class="label">Company Updates</span>
+                </div>
+              </button>
+            </li>
+
+            <li>
+              <button class="dropdown-item">
+                <span class="msicon notranslate">universal_currency_alt</span>
+                <div class="text-content">
+                  <span class="label">Claim Search</span>
+                </div>
+              </button>
+            </li>
+
+            <li><hr /></li>
+
+            <li>
+              <button class="dropdown-item">
+                <span class="msicon notranslate">history</span>
+                <div class="text-content">
+                  <span class="label">Recent Views</span>
+                </div>
+              </button>
+            </li>
+
+            <li>
+              <button class="dropdown-item">
+                <span class="msicon notranslate">youtube_searched_for</span>
+                <div class="text-content">
+                  <span class="label">Run Last Search</span>
+                </div>
+              </button>
+            </li>
+
+            <li><hr /></li>
+
+            <li>
+              <button class="dropdown-item">
+                <span class="msicon notranslate">saved_search</span>
+                <div class="text-content">
+                  <span class="label">Saved Searches</span>
+                </div>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <!-- tools-dropdown -->
+        <div class="dropdown">
+          <button
+            class="bbs-top-nav-item"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            type="button"
+          >
+            <span class="msicon notranslate">handyman</span>
+            <div class="text-content">
+              <span class="label">Tools</span>
+            </div>
+          </button>
+
+          <ul class="dropdown-menu">
+            <li>
+              <button class="dropdown-item">
+                <div class="text-content">
+                  <span class="label">Notes</span>
+                  <span class="caption"
+                    >Save important details about companies and share it with
+                    coworkers</span
+                  >
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item">
+                <div class="text-content">
+                  <span class="label">Watchdog Groups & Alerts</span>
+                  <span class="caption"
+                    >Create your own custom lists of companies which you can
+                    then use for a variety of purposes</span
+                  >
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item">
+                <div class="text-content">
+                  <span class="label"
+                    >Trading Assistance / Collection Services</span
+                  >
+                  <span class="caption"
+                    >Blue Book Services collection and claim activity involving
+                    your company</span
+                  >
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item">
+                <div class="text-content">
+                  <span class="label">Online Business Reports</span>
+                  <span class="caption"
+                    >Blue Book Online Business Reports that you have
+                    purchased</span
+                  >
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item">
+                <div class="text-content">
+                  <span class="label">Submit Trade Experience Survey</span>
+                  <span class="caption"
+                    >Confidentially share feedback about trade partners to keep
+                    Blue Book Ratings accurate</span
+                  >
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item">
+                <div class="text-content">
+                  <span class="label">Additional Tools</span>
+                  <span class="caption"
+                    >Mobile apps, Industry information, etc</span
+                  >
+                </div>
+              </button>
+            </li>
+            <li><hr /></li>
+            <li>
+              <button class="dropdown-item">
+                <div class="text-content">
+                  <span class="label">Custom Data</span>
+                  <span class="caption"
+                    >Special fields of information that you add into BBOS that
+                    are specific to your organization</span
+                  >
+                </div>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <!-- learning-dropdown -->
+        <div class="dropdown">
+          <button
+            class="bbs-top-nav-item"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            type="button"
+          >
+            <span class="msicon notranslate">school</span>
+            <div class="text-content">
+              <span class="label">Learning</span>
+            </div>
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <button class="dropdown-item">
+                <div class="text-content">
+                  <span class="label">Learning Center Search</span>
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item">
+                <div class="text-content">
+                  <span class="label">Produce Blueprints Magazine</span>
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item">
+                <div class="text-content">
+                  <span class="label">Know Your Commodity</span>
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item">
+                <div class="text-content">
+                  <span class="label">Reference Documents</span>
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item">
+                <div class="text-content">
+                  <span class="label">Membership Guide</span>
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item">
+                <div class="text-content">
+                  <span class="label">New Hire Academy</span>
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item">
+                <div class="text-content">
+                  <span class="label">Blue Book Membership Training</span>
+                </div>
+              </button>
+            </li>
+            <li><hr /></li>
+            <li>
+              <button class="dropdown-item">
+                <span class="msicon notranslate">menu_book</span>
+                <div class="text-content">
+                  <span class="label">Blueprints Flipbook</span>
+                </div>
+                <span class="msicon notranslate">arrow_outward</span>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item">
+                <span class="msicon notranslate">full_coverage</span>
+                <div class="text-content">
+                  <span class="label">News / Articles</span>
+                </div>
+                <span class="msicon notranslate">arrow_outward</span>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item">
+                <span class="msicon notranslate">key</span>
+                <div class="text-content">
+                  <span class="label">Rating Key Numerals</span>
+                </div>
+                <span class="msicon notranslate">arrow_outward</span>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item">
+                <span class="msicon notranslate">edit_notifications</span>
+                <div class="text-content">
+                  <span class="label">Manage Alerts</span>
+                </div>
+                <span class="msicon notranslate">arrow_outward</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <!-- spacer -->
+        <div class="tw-flex-grow"></div>
+        <!-- company quick search -->
+
+        <div class="input-wrapper left-icon dark tw-w-full">
+          <span class="icon-left msicon notranslate">search</span>
+          <input
+            style="margin: 0"
+            class="pill tw-w-full"
+            type="search"
+            placeholder="Quick Search"
+          />
+        </div>
+        <!-- account-setting-dropdown -->
+        <div class="dropdown">
+          <button
+            class="bbs-top-nav-item"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            type="button"
+          >
+            <span class="msicon notranslate">account_circle</span>
+            <div class="text-content">
+              <span class="label">Pratyush</span>
+            </div>
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <button class="dropdown-item new">
+                <span class="notranslate msicon">home</span>
+
+                <div class="text-content">
+                  <span class="label">My Company Profile</span>
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item">
+                <span class="notranslate msicon">message</span>
+
+                <div class="text-content">
+                  <span class="label">Message Center</span>
+                </div>
+                <span class="bbsBadge">9</span>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item">
+                <span class="notranslate msicon">settings</span>
+                <div class="text-content">
+                  <span class="label">Account Settings</span>
+                </div>
+              </button>
+            </li>
+            <li><hr /></li>
+            <li>
+              <button class="dropdown-item">
+                <span class="notranslate msicon">g_translate</span>
+                <div class="text-content">
+                  <span class="label">Cambiar a Español</span>
+                </div>
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item new" disabled>
+                <span class="notranslate msicon">help</span>
+                <div class="text-content">
+                  <span class="label">Help and Support</span>
+                </div>
+                <span class="notranslate msicon">lock</span>
+              </button>
+            </li>
+            <li><hr /></li>
+            <li>
+              <button class="dropdown-item">
+                <span class="notranslate msicon">logout</span>
+                <div class="text-content">
+                  <span class="label">Logout</span>
+                  <div class="text-content">
+                    <span class="label">Log Out</span>
+                    <span class="label">Tewari, Pratyush</span>
+                    <span class="caption">System Admin Access</span>
+                  </div>
+                </div>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- Content  -->
+    <div class="content">
+      <div class="content-container">
+        <!-- Main  -->
+        <main class="main-content tw-m-4 tw-flex tw-flex-col tw-gap-y-4">
+          <p class="tw-text-lg tw-font-semibold">
+            People are reviewing your company's profile!
+          </p>
+          <p class="">
+            Employees from the following firms recently viewed your company's
+            profile on bluebook.
+          </p>
+          <div>
+            <p class="tw-pb-2 tw-text-sm tw-text-text-secondary">
+              This is a rolling list of the 10 most recent firms that viewed
+              your profile
+            </p>
+            <div class="tw-overflow-clip tw-rounded-md tw-border">
+              <table class="whosviewd table table-striped tw-m-0">
+                <thead class="table-light">
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Company</th>
+                    <th scope="col">Rating</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Blue Book ID</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <img
+                        src="https://qaapps.bluebookservices.com/BBSUtils/GetLogo.aspx?LogoFile=102030\102030.jpg&RawSize=1"
+                      />
+                    </td>
+                    <td>Strube Celery & Vegetable Co.</td>
+                    <td>1000M XXXX(40) AA</td>
+                    <td>Chicago, IL</td>
+                    <td>
+                      <a
+                        href="https://qaapps.bluebookservices.com/BBOSUI/Company.aspx?CompanyID=102030"
+                        >102030</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img
+                        src="https://qaapps.bluebookservices.com/BBSUtils/GetLogo.aspx?LogoFile=102175\102175.jpg&RawSize=1"
+                      />
+                    </td>
+
+                    <td>Tom Lange Company, Inc.</td>
+                    <td>15,000M XXXX(30)(40) B</td>
+                    <td>Saint Louis, MO</td>
+                    <td>
+                      <a
+                        href="https://qaapps.bluebookservices.com/BBOSUI/Company.aspx?CompanyID=102175"
+                        >102175</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img
+                        src="https://qaapps.bluebookservices.com/BBSUtils/GetLogo.aspx?LogoFile=155976\155976.jpg&RawSize=1"
+                      />
+                    </td>
+
+                    <td>Ciruli Brothers, LLC.</td>
+                    <td>400M XXXX(40) B</td>
+                    <td>Rio Rico, AZ</td>
+                    <td>
+                      <a
+                        href="https://qaapps.bluebookservices.com/BBOSUI/Company.aspx?CompanyID=155976"
+                        >155976</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>New-Cal Produce, Inc.</td>
+                    <td>300M XXX A</td>
+                    <td>Woodland, CA</td>
+                    <td>
+                      <a
+                        href="https://qaapps.bluebookservices.com/BBOSUI/Company.aspx?CompanyID=126257"
+                        >126257</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img
+                        src="https://qaapps.bluebookservices.com/BBSUtils/GetLogo.aspx?LogoFile=113654\113654.jpg&RawSize=1"
+                      />
+                    </td>
+                    <td>Stemilt Growers, LLC.</td>
+                    <td>10,000M XXX B</td>
+                    <td>Wenatchee, WA</td>
+                    <td>
+                      <a
+                        href="https://qaapps.bluebookservices.com/BBOSUI/Company.aspx?CompanyID=113654"
+                        >113654</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <img
+                        src="https://qaapps.bluebookservices.com/BBSUtils/GetLogo.aspx?LogoFile=165373\165373.jpg&RawSize=1"
+                      />
+                    </td>
+                    <td>Prima Wawona</td>
+                    <td>(84)(85)(40)</td>
+                    <td>Cutler, CA</td>
+                    <td>
+                      <a
+                        href="https://qaapps.bluebookservices.com/BBOSUI/Company.aspx?CompanyID=165373"
+                        >165373</a
+                      >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <br />
+          <div class="whosviewedNotEnabled">
+            <div class="backdrop">
+              <div class="container">
+                <p>This feature has not been enabled.</p>
+                <p>
+                  Click <a class="tw-underline" href="">here</a> to unlock this
+                  list.
+                </p>
+              </div>
+            </div>
+          </div>
+          <br />
+          <br />
+        </main>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="tw-flex tw-flex-col tw-gap-4 md:tw-flex-row">
+          <div
+            class="tw-flex tw-flex-grow tw-flex-col tw-gap-2 tw-align-middle"
+          >
+            <img class="tw-w-[300px]" src="/assets/BBOS_logo_full.svg" />
+            <div class="tw-flex tw-flex-col tw-gap-1">
+              <div class="tw-flex tw-gap-2 tw-pl-24 tw-pt-2">
+                <div class="digicert">
+                  <img src="/assets/digiCert-basic-seal-new.svg " />
+                </div>
+
+                <a class="social" href="#">
+                  <img src="/assets/youtube.svg"
+                /></a>
+                <a class="social" href="#">
+                  <img src="/assets/linkedin-in.svg"
+                /></a>
+                <a class="social" href="#">
+                  <img src="/assets/x-twitter.svg"
+                /></a>
+                <a class="social" href="#">
+                  <img src="/assets/facebook-f.svg"
+                /></a>
+              </div>
+            </div>
+          </div>
+          <div class="right-links">
+            <div>
+              <p><a href="#">Home</a></p>
+              <p><a href="#">Terms Of Use</a></p>
+              <p><a href="#">Advertise</a></p>
+              <p><a href="#">Feedback</a></p>
+            </div>
+            <div>
+              <p><a href="#">Contact Us</a></p>
+              <p><a href="#">Privacy Policy</a></p>
+              <p><a href="#">Community Standards</a></p>
+              <p><a href="#">Membership Agreement</a></p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tw-flex tw-flex-col tw-items-center tw-border-t tw-border-t-border tw-pt-2 tw-text-xs"
+        >
+          © 2023 Blue Book Services | 630 668-3500
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Hack to overcome aspx creating these objects and replacing the actual ids.
+      const radio_country_none = document.getElementById("radio_country_none");
+      const radio_country_usa = document.getElementById("radio_country_usa");
+      const radio_country_canada = document.getElementById(
+        "radio_country_canada",
+      );
+      const radio_country_mexico = document.getElementById(
+        "radio_country_mexico",
+      );
+      const radio_country_other = document.getElementById(
+        "radio_country_other",
+      );
+    </script>
+    <script src="main.js"></script>
+
+    <script>
+      const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]',
+      );
+      const tooltipList = [...tooltipTriggerList].map(
+        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl),
+      );
+
+      const popoverTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="popover"]',
+      );
+      const popoverList = [...popoverTriggerList].map(
+        (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl),
+      );
+    </script>
+  </body>
+</html>
