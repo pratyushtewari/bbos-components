@@ -431,27 +431,37 @@
       <div class="content-container">
         <!-- Main  -->
         <main class="main-content tw-m-4 tw-flex tw-flex-col tw-gap-y-4">
-          <p class="tw-text-lg tw-font-semibold">
-            People are reviewing your company's profile!
-          </p>
-          <p class="">
+          <!-- Alerts -->
+          <div class="bbs-alert alert-special tw-mt-4" role="alert">
+            <div class="alert-title">
+              <span class="msicon notranslate">temp_preferences_custom</span>
+              <span
+                >This is a premium membership feature, and available free for a
+                limited time.</span
+              >
+            </div>
+          </div>
+          <h3>People are reviewing your company's profile!</h3>
+          <p>
             Employees from the following firms recently viewed your company's
             profile on bluebook.
           </p>
           <div>
-            <p class="tw-pb-2 tw-text-sm tw-text-text-secondary">
+            <p class="caption">
               This is a rolling list of the 10 most recent firms that viewed
               your profile
             </p>
-            <div class="tw-overflow-clip tw-rounded-md tw-border">
-              <table class="whosviewd table table-striped tw-m-0">
+
+            <!-- Filled State begin -->
+            <div class="whosviewd">
+              <table class="table table-striped tw-m-0">
                 <thead class="table-light">
                   <tr>
                     <th scope="col"></th>
                     <th scope="col">Company</th>
                     <th scope="col">Rating</th>
                     <th scope="col">Location</th>
-                    <th scope="col">Blue Book ID</th>
+                    <th scope="col">BB#</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -461,15 +471,15 @@
                         src="https://qaapps.bluebookservices.com/BBSUtils/GetLogo.aspx?LogoFile=102030\102030.jpg&RawSize=1"
                       />
                     </td>
-                    <td>Strube Celery & Vegetable Co.</td>
-                    <td>1000M XXXX(40) AA</td>
-                    <td>Chicago, IL</td>
                     <td>
                       <a
                         href="https://qaapps.bluebookservices.com/BBOSUI/Company.aspx?CompanyID=102030"
-                        >102030</a
+                        >Strube Celery & Vegetable Co.</a
                       >
                     </td>
+                    <td>1000M XXXX(40) AA</td>
+                    <td>Chicago, IL</td>
+                    <td>102030</td>
                   </tr>
                   <tr>
                     <td>
@@ -478,15 +488,15 @@
                       />
                     </td>
 
-                    <td>Tom Lange Company, Inc.</td>
-                    <td>15,000M XXXX(30)(40) B</td>
-                    <td>Saint Louis, MO</td>
                     <td>
                       <a
                         href="https://qaapps.bluebookservices.com/BBOSUI/Company.aspx?CompanyID=102175"
-                        >102175</a
+                        >Tom Lange Company, Inc.</a
                       >
                     </td>
+                    <td>15,000M XXXX(30)(40) B</td>
+                    <td>Saint Louis, MO</td>
+                    <td>102175</td>
                   </tr>
                   <tr>
                     <td>
@@ -495,27 +505,27 @@
                       />
                     </td>
 
-                    <td>Ciruli Brothers, LLC.</td>
-                    <td>400M XXXX(40) B</td>
-                    <td>Rio Rico, AZ</td>
                     <td>
                       <a
                         href="https://qaapps.bluebookservices.com/BBOSUI/Company.aspx?CompanyID=155976"
-                        >155976</a
+                        >Ciruli Brothers, LLC.</a
                       >
                     </td>
+                    <td>400M XXXX(40) B</td>
+                    <td>Rio Rico, AZ</td>
+                    <td>155976</td>
                   </tr>
                   <tr>
                     <td></td>
-                    <td>New-Cal Produce, Inc.</td>
-                    <td>300M XXX A</td>
-                    <td>Woodland, CA</td>
                     <td>
                       <a
                         href="https://qaapps.bluebookservices.com/BBOSUI/Company.aspx?CompanyID=126257"
-                        >126257</a
+                        >New-Cal Produce, Inc.</a
                       >
                     </td>
+                    <td>300M XXX A</td>
+                    <td>Woodland, CA</td>
+                    <td>126257</td>
                   </tr>
                   <tr>
                     <td>
@@ -523,15 +533,15 @@
                         src="https://qaapps.bluebookservices.com/BBSUtils/GetLogo.aspx?LogoFile=113654\113654.jpg&RawSize=1"
                       />
                     </td>
-                    <td>Stemilt Growers, LLC.</td>
-                    <td>10,000M XXX B</td>
-                    <td>Wenatchee, WA</td>
                     <td>
                       <a
                         href="https://qaapps.bluebookservices.com/BBOSUI/Company.aspx?CompanyID=113654"
-                        >113654</a
+                        >Stemilt Growers, LLC.</a
                       >
                     </td>
+                    <td>10,000M XXX B</td>
+                    <td>Wenatchee, WA</td>
+                    <td>113654</td>
                   </tr>
                   <tr>
                     <td>
@@ -539,21 +549,52 @@
                         src="https://qaapps.bluebookservices.com/BBSUtils/GetLogo.aspx?LogoFile=165373\165373.jpg&RawSize=1"
                       />
                     </td>
-                    <td>Prima Wawona</td>
-                    <td>(84)(85)(40)</td>
-                    <td>Cutler, CA</td>
                     <td>
                       <a
                         href="https://qaapps.bluebookservices.com/BBOSUI/Company.aspx?CompanyID=165373"
-                        >165373</a
+                        >Prima Wawona</a
                       >
                     </td>
+                    <td>(84)(85)(40)</td>
+                    <td>Cutler, CA</td>
+                    <td>165373</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
+          <!-- Filled State end -->
+
           <br />
+          <hr />
+          <br />
+
+          <!-- Empty State begin -->
+          <div class="whosviewd">
+            <table class="table table-striped tw-m-0">
+              <thead class="table-light">
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Company</th>
+                  <th scope="col">Rating</th>
+                  <th scope="col">Location</th>
+                  <th scope="col">BB#</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <div class="emptylist">
+              As of now, no employee of any company has visited your company's
+              profile.
+            </div>
+          </div>
+          <!-- Empty State End -->
+
+          <br />
+          <hr />
+          <br />
+
+          <!-- Not enabled State begin -->
           <div class="whosviewedNotEnabled">
             <div class="backdrop">
               <div class="container">
@@ -565,6 +606,8 @@
               </div>
             </div>
           </div>
+          <!-- Not enabled State End -->
+
           <br />
           <br />
         </main>
