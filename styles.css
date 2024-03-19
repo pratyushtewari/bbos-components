@@ -1770,4 +1770,18 @@ body.for-print {
       margin-top: 1rem;
     }
   }
+  chart-box .selected {
+    border: 1px solid black;
+  }
+  chart-slider {
+    .stops {
+      .gradient,
+      .value.dot {
+        border: 1px solid black;
+      }
+    }
+  }
+  .accordion-item .collapse:not(.show) {
+    display: block;
+  }
 }
