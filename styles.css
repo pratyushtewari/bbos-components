@@ -61,7 +61,7 @@ a.link {
       vertical-align: middle;
     }
     a {
-      color: #8b5cf6;
+      @apply tw-text-brand;
     }
   }
   .emptylist {
@@ -1491,7 +1491,7 @@ a:focus {
       }
       .gradient {
         @apply tw-w-full
-        tw-self-center
+        tw-relative
         tw-text-text-primary/50;
         background: linear-gradient(
           90deg,

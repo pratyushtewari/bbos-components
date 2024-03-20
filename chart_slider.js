@@ -145,7 +145,9 @@ class ChartSlider extends HTMLElement {
       const lastWidth = this.querySelector(".steps:last-child").offsetWidth;
       const offset = (firstWidth + lastWidth) / 2;
       const gradientWidth = `calc(100% - ${offset}px)`;
-      this.querySelector(".gradient").style.width = gradientWidth;
+      const gradientElement = this.querySelector(".gradient");
+      gradientElement.style.width = gradientWidth;
+      gradientElement.style.left = `${firstWidth/2}px`;
     }
   }
 
