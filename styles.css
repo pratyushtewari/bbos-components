@@ -88,7 +88,7 @@ a.link {
     .container {
       @apply tw-m-auto
       tw-my-28
-      tw-max-w-[500px]
+      tw-max-w-[650px]
       tw-rounded-md
       tw-bg-brand
       tw-p-4
@@ -112,6 +112,13 @@ a.link {
     "opsz" 24;
   flex-shrink: 0;
   flex-grow: 0;
+  &.filled {
+    font-variation-settings:
+      "FILL" 1,
+      "wght" 400,
+      "GRAD" 0,
+      "opsz" 24;
+  }
 }
 
 /**
@@ -990,7 +997,7 @@ a:focus {
 
   h3,
   .text-title {
-    @apply tw-text-2xl
+    @apply tw-text-lg
     tw-font-semibold;
   }
 
@@ -1018,7 +1025,10 @@ a:focus {
     tw-justify-center
     tw-border-t
     tw-border-border
-    tw-bg-bg-tertiary;
+    tw-bg-bg-tertiary
+    tw-bg-cover
+    tw-bg-no-repeat;
+    background-image: url("../assets/liquid-cheese-4.svg");
     .social {
       @apply tw-w-6
       tw-text-center;
@@ -1036,7 +1046,8 @@ a:focus {
       tw-max-w-screen-xl
       tw-flex-col
       tw-gap-1
-      tw-p-4;
+      tw-p-4
+      tw-pt-8;
     }
     .right-links {
       @apply tw-flex
@@ -1366,8 +1377,9 @@ a:focus {
         tw-p-3;
       img {
         @apply tw-h-28
-                tw-rounded-[4px]
-        tw-object-cover;
+        tw-max-w-[300px]
+        tw-rounded-[4px]
+        tw-object-contain;
       }
     }
   }
@@ -1450,6 +1462,27 @@ a:focus {
     }
   }
 
+  .bbs-card-bordered {
+    @apply tw-overflow-clip
+      tw-rounded-lg
+      tw-border
+      tw-border-border
+      tw-bg-bg-primary;
+
+    .bbs-card-header {
+      @apply tw-border-b
+      tw-bg-bg-tertiary
+      tw-p-3
+      tw-font-semibold;
+    }
+    .bbs-card-body {
+      @apply tw-p-3;
+      &.no-padding {
+        @apply tw-p-0;
+      }
+    }
+  }
+
   chart-slider {
     .current-value {
       @apply tw-flex
@@ -1490,8 +1523,8 @@ a:focus {
         z-index: 1;
       }
       .gradient {
-        @apply tw-w-full
-        tw-relative
+        @apply tw-relative
+        tw-w-full
         tw-text-text-primary/50;
         background: linear-gradient(
           90deg,
@@ -1716,22 +1749,60 @@ a:focus {
     @apply tw-bg-bg-component-hover;
   }
 
-  .market-update-block {
-    &.clr-block-1,
-    &.clr-block-2,
-    &.clr-block-3 {
+  .home-info-blocks {
+    &.block-1,
+    &.block-2,
+    &.block-3 {
       @apply tw-h-full
-      tw-rounded
+      tw-overflow-clip
+      tw-rounded-lg
+      tw-border-brand
+      tw-text-text-primary-dark
       tw-shadow-none;
+      background-image: url("/public/assets/slanted-gradient.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      a {
+        @apply tw-text-text-primary-dark tw-underline;
+      }
+      li {
+        list-style: disc !important;
+      }
+      .home-info-blocks-header {
+        @apply tw-flex
+        tw-w-full
+        tw-gap-2
+        tw-bg-black/30
+        tw-p-3
+        tw-text-lg
+        tw-font-semibold
+        tw-text-text-primary-dark;
+      }
+      .home-info-blocks-content {
+        @apply tw-p-3;
+      }
     }
-    &.clr-block-1 {
-      background: #337ab7;
+    &.block-1 {
+      @apply tw-border tw-bg-bg-tertiary;
+      background-image: url("../assets/liquid-cheese-1.svg");
+      /* .home-info-blocks-header {
+        background-color: #475569;
+      } */
     }
-    &.clr-block-2 {
-      background: #9cc54a;
+    &.block-2 {
+      @apply tw-border tw-bg-bg-tertiary;
+      background-image: url("../assets/liquid-cheese-2.svg");
+      /* .home-info-blocks-header {
+        background-color: #00c400;
+      } */
     }
-    &.clr-block-3 {
-      background: #73bede;
+    &.block-3 {
+      @apply tw-border tw-bg-bg-tertiary;
+      background-image: url("../assets/liquid-cheese-3.svg");
+      /* .home-info-blocks-header {
+        background-color: #0062af;
+      } */
     }
   }
 
