@@ -1437,12 +1437,19 @@ a:focus {
 
   .bbs-card {
     .bbs-card-body {
-      @apply tw-overflow-clip
+      @apply
       tw-rounded-lg
-      tw-border
-      tw-border-border
+      tw-outline-border
+      tw-outline-1
+      tw-outline
       tw-bg-bg-primary
       tw-p-4;
+      & >:last-child {
+        @apply tw-rounded-b-lg;
+      }
+      & >:first-child {
+        @apply tw-rounded-t-lg;
+      }
       &.no-padding {
         @apply tw-p-0;
       }
@@ -1463,21 +1470,32 @@ a:focus {
   }
 
   .bbs-card-bordered {
-    @apply tw-overflow-clip
+    @apply
       tw-rounded-lg
-      tw-border
+      tw-outline-border
+      tw-outline-1
+      tw-outline
       tw-border-border
       tw-bg-bg-primary;
 
     .bbs-card-header {
-      @apply tw-border-b
+      @apply
+      tw-rounded-t-lg
+      tw-border-b
       tw-bg-bg-tertiary
       tw-p-3
       tw-font-semibold;
     }
     .bbs-card-body {
-      @apply tw-p-3;
+      @apply
+      tw-p-3
+      tw-rounded-b-lg
+      ;
       &.no-padding {
+
+        & >:last-child {
+          @apply tw-rounded-b-lg;
+        }
         @apply tw-p-0;
       }
     }
@@ -1630,7 +1648,7 @@ a:focus {
     }
   }
 
-  /* Bootstrap overrides */
+  /* Bootstrap overrides
   .company-performance {
     .bbs-card-body {
       .table {
@@ -1640,10 +1658,9 @@ a:focus {
         }
       }
     }
-  }
+  } */
   /* Table inside a card-body no-padding is flushed */
   .bbs-card-body {
-    @apply tw-overflow-auto;
 
     .table {
       @apply tw-m-0;
@@ -1657,7 +1674,7 @@ a:focus {
       }
       td,
       th {
-        @apply tw-border-0 tw-p-2;
+        @apply tw-border-0 tw-p-3;
         &:not(:last-child) {
           @apply tw-border-r;
         }
