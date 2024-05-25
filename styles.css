@@ -419,7 +419,8 @@ a:focus {
 
     .bbsButton {
       @apply tw-rounded-none
-      tw-border-r-0;
+      tw-border-r-0
+      tw-w-auto;
       &:first-child {
         @apply tw-rounded-l;
       }
@@ -447,6 +448,26 @@ a:focus {
       &:nth-child(2n) {
         @apply tw-rounded-r tw-border-r
         lg:tw-rounded-none lg:tw-border-r-0;
+      }
+    }
+  }
+
+  .bbsButton-group-nowrap {
+    @apply
+    tw-flex
+    tw-gap-y-2;
+
+
+    .bbsButton {
+      @apply tw-rounded-none
+      tw-border-r-0
+      tw-w-auto;
+      &:first-child {
+        @apply tw-rounded-l-xl;
+      }
+      &:last-child {
+        @apply tw-rounded-r-xl
+        tw-border-r;
       }
     }
   }
@@ -843,6 +864,11 @@ a:focus {
     &.dark {
       input {
         @apply tw-bg-transparent tw-text-white tw-placeholder-white/50 !important;
+      }
+    }
+    &.light {
+      input {
+        @apply tw-bg-bg-primary tw-text-text-primary tw-placeholder-text-primary/50 !important;
       }
     }
 
@@ -1648,24 +1674,18 @@ a:focus {
     }
   }
 
-  /* Bootstrap overrides
-  .company-performance {
-    .bbs-card-body {
-      .table {
-        td,
-        th {
-          @apply tw-p-4;
-        }
-      }
-    }
-  } */
+  /* Bootstrap overrides */
+  /* This is to bring back the chrvron in the select */
+  select.form-control {
+    appearance: auto;
+  }
   /* Table inside a card-body no-padding is flushed */
   .bbs-card-body {
 
     .table {
       @apply tw-m-0;
       thead tr th {
-        @apply tw-border-b tw-bg-bg-tertiary;
+        @apply tw-border-b tw-bg-bg-tertiary tw-font-semibold;
       }
       tr {
         &:not(:last-child) {
