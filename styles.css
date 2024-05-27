@@ -223,6 +223,23 @@ a:focus {
     tw-py-1
     hover:tw-bg-bg-component-hover
     active:tw-bg-bg-component-active;
+    &.disabled,
+    &:disabled {
+      @apply tw-bg-bg-disabled
+        tw-text-text-disabled
+        hover:tw-bg-bg-disabled
+        tw-border-border-component
+        !important;
+      .text-content {
+        .label,
+        .caption {
+          @apply tw-text-text-disabled;
+        }
+      }
+      &.new::after {
+        @apply tw-text-text-disabled;
+      }
+    }
     &.full-width {
       @apply tw-w-full;
     }
@@ -418,9 +435,9 @@ a:focus {
     lg:tw-grid-cols-4;
 
     .bbsButton {
-      @apply tw-rounded-none
-      tw-border-r-0
-      tw-w-auto;
+      @apply tw-w-auto
+      tw-rounded-none
+      tw-border-r-0;
       &:first-child {
         @apply tw-rounded-l;
       }
@@ -453,15 +470,13 @@ a:focus {
   }
 
   .bbsButton-group-nowrap {
-    @apply
-    tw-flex
+    @apply tw-flex
     tw-gap-y-2;
 
-
     .bbsButton {
-      @apply tw-rounded-none
-      tw-border-r-0
-      tw-w-auto;
+      @apply tw-w-auto
+      tw-rounded-none
+      tw-border-r-0;
       &:first-child {
         @apply tw-rounded-l-xl;
       }
@@ -1463,17 +1478,16 @@ a:focus {
 
   .bbs-card {
     .bbs-card-body {
-      @apply
-      tw-rounded-lg
-      tw-outline-border
-      tw-outline-1
-      tw-outline
+      @apply tw-rounded-lg
       tw-bg-bg-primary
-      tw-p-4;
-      & >:last-child {
+      tw-p-4
+      tw-outline
+      tw-outline-1
+      tw-outline-border;
+      & > :last-child {
         @apply tw-rounded-b-lg;
       }
-      & >:first-child {
+      & > :first-child {
         @apply tw-rounded-t-lg;
       }
       &.no-padding {
@@ -1496,30 +1510,25 @@ a:focus {
   }
 
   .bbs-card-bordered {
-    @apply
-      tw-rounded-lg
-      tw-outline-border
-      tw-outline-1
-      tw-outline
+    @apply tw-rounded-lg
       tw-border-border
-      tw-bg-bg-primary;
+      tw-bg-bg-primary
+      tw-outline
+      tw-outline-1
+      tw-outline-border;
 
     .bbs-card-header {
-      @apply
-      tw-rounded-t-lg
+      @apply tw-rounded-t-lg
       tw-border-b
       tw-bg-bg-tertiary
       tw-p-3
       tw-font-semibold;
     }
     .bbs-card-body {
-      @apply
-      tw-p-3
-      tw-rounded-b-lg
-      ;
+      @apply tw-rounded-b-lg
+      tw-p-3;
       &.no-padding {
-
-        & >:last-child {
+        & > :last-child {
           @apply tw-rounded-b-lg;
         }
         @apply tw-p-0;
@@ -1681,7 +1690,6 @@ a:focus {
   }
   /* Table inside a card-body no-padding is flushed */
   .bbs-card-body {
-
     .table {
       @apply tw-m-0;
       thead tr th {
@@ -1891,5 +1899,19 @@ body.for-print {
   }
   .accordion-item .collapse:not(.show) {
     display: block;
+  }
+}
+
+.main-content-old {
+  width: 100%;
+}
+
+#subMenuBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  .items {
+    display: flex;
+    overflow: hidden;
   }
 }

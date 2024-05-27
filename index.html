@@ -705,6 +705,62 @@
         </aside>
         <!-- Main  -->
         <main class="main-content tw-flex tw-flex-col tw-gap-y-4">
+          <div class="col-xs-12" id="subMenuBar">
+            <button
+              class="bbsButton bbsButton-secondary round filled"
+              type="button"
+              onclick="scrollX(this, -200, 'custom_menu_links')"
+            >
+              <span class="msicon notranslate">chevron_left</span>
+            </button>
+            <div class="items bbsButton-group-nowrap" id="custom_menu_links">
+              <a
+                onclick="DisableValidation();"
+                id="SubmenuBar_btnCompanyListing"
+                class="bbsButton bbsButton-primary "
+                >Manage Company Listing</a
+              ><a
+                onclick="DisableValidation();"
+                id="SubmenuBar_btnManageMembership"
+                class="bbsButton bbsButton-secondary filled disabled"
+                >Manage Membership</a
+              ><a
+                onclick="DisableValidation();"
+                id="SubmenuBar_btnManageLogo"
+                class="bbsButton bbsButton-secondary filled"
+                >Manage Logo</a
+              ><a
+                onclick="DisableValidation();"
+                id="SubmenuBar_btnConnectionList"
+                class="bbsButton bbsButton-secondary filled"
+                >Manage Reference List</a
+              ><a
+                onclick="DisableValidation();"
+                id="SubmenuBar_btnFinancialStatement"
+                class="bbsButton bbsButton-secondary filled"
+                >Upload Financial Statement</a
+              ><a
+                onclick="DisableValidation();"
+                id="SubmenuBar_btnUploadAccountsReceivable"
+                class="bbsButton bbsButton-secondary filled"
+                >Upload Accounts Receivable</a
+              ><a
+                onclick="DisableValidation();"
+                id="SubmenuBar_btnUserProfile"
+                class="bbsButton bbsButton-secondary filled"
+                >User Profile</a
+              >
+            </div>
+
+            <button
+              class="bbsButton bbsButton-secondary round filled"
+              type="button"
+              onclick="scrollX(this, 200, 'custom_menu_links')"
+            >
+              <span class="msicon notranslate">chevron_right</span>
+            </button>
+          </div>
+
           <section class="company-hero">
             <img class="backdrop" src="assets/hero.svg" />
             <div class="company-logo">
@@ -2430,10 +2486,29 @@
         </div>
       </div>
     </div>
-    <div class="bbsButton-group" role="group" aria-label="Basic outlined example">
-      <a href="#BBSICases" class="bbsButton bbsButton-secondary filled" id="btnBBSICases">test</a>
-      <a href="#PACACases" class="bbsButton bbsButton-secondary filled" id="btnPACACases">test</a>
-      <a href="#Lawsuit" class="bbsButton bbsButton-secondary filled" id="btnLawsuit">test</a>
+    <div
+      class="bbsButton-group"
+      role="group"
+      aria-label="Basic outlined example"
+    >
+      <a
+        href="#BBSICases"
+        class="bbsButton bbsButton-secondary filled"
+        id="btnBBSICases"
+        >test</a
+      >
+      <a
+        href="#PACACases"
+        class="bbsButton bbsButton-secondary filled"
+        id="btnPACACases"
+        >test</a
+      >
+      <a
+        href="#Lawsuit"
+        class="bbsButton bbsButton-secondary filled"
+        id="btnLawsuit"
+        >test</a
+      >
     </div>
     <script>
       // Hack to overcome aspx creating these objects and replacing the actual ids.
