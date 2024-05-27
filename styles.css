@@ -1903,7 +1903,7 @@ body.for-print {
 }
 
 .main-content-old {
-  width: 100%;
+  max-width: 100%;
 }
 
 #subMenuBar {
