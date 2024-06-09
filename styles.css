@@ -225,10 +225,10 @@ a:focus {
     active:tw-bg-bg-component-active;
     &.disabled,
     &:disabled {
-      @apply tw-bg-bg-disabled
+      @apply tw-border-border-component
+        tw-bg-bg-disabled
         tw-text-text-disabled
         hover:tw-bg-bg-disabled
-        tw-border-border-component
         !important;
       .text-content {
         .label,
@@ -784,12 +784,11 @@ a:focus {
   }
 
   .nav-sidebar {
-    @apply /*
-    */
-    tw-fixed
+    @apply tw-fixed
     tw-top-0
     tw-h-full
     tw-max-w-[240px]
+    tw-flex-shrink-0
     tw-self-start
     tw-overflow-y-auto
     tw-border-x tw-border-border tw-bg-bg-primary
@@ -1750,6 +1749,32 @@ a:focus {
     }
   }
 
+  /* This is a splitview with two panels in the md and lg screen with 8 and 4 cols.
+  Use bbslayout_second_onTop when In the sm screen with one column - the second split is positioned first.
+  To be used for search or filter layouts. */
+  .bbslayout_splitView {
+    @apply tw-grid
+    md:tw-grid-cols-12;
+
+    .bbslayout_first_split {
+      @apply tw-col-start-1 md:tw-col-end-9 md:tw-row-start-1;
+    }
+
+    .bbslayout_second_split {
+      @apply md:tw-col-start-9 md:tw-col-end-13;
+    }
+
+    &.bbslayout_second_onTop {
+      .bbslayout_first_split {
+        @apply tw-col-start-1 md:tw-col-end-9 md:tw-row-start-1;
+      }
+
+      .bbslayout_second_split {
+        @apply tw-row-start-1 md:tw-col-start-9 md:tw-col-end-13;
+      }
+    }
+  }
+
   /* OLD BBOS OVERWITES */
   /* Auto Complete Flyout from the old BBOS */
   .AutoCompleteFlyout {
@@ -1906,12 +1931,51 @@ body.for-print {
   max-width: 100%;
 }
 
-#subMenuBar {
+#subMenuBar-bkp {
   display: flex;
   align-items: center;
   gap: 8px;
   .items {
     display: flex;
     overflow: hidden;
+  }
+}
+
+#subMenuBar {
+  @apply tw-flex
+  tw-items-center
+  tw-bg-brand
+  tw-p-3;
+  .bbsButton {
+    @apply tw-text-text-primary-dark;
+    &:hover {
+      @apply tw-bg-black/30;
+    }
+  }
+  .items {
+    @apply tw-flex
+    tw-gap-y-2
+    tw-overflow-hidden;
+    .bbsButton {
+      @apply tw-w-auto
+      tw-rounded-none
+      tw-border-r-0;
+      &:first-child {
+        @apply tw-border-l-0;
+      }
+      &.disabled,
+      &:disabled {
+        @apply tw-bg-transparent tw-text-text-primary-dark/40 !important;
+      }
+      &.selected {
+        @apply tw-bg-bg-primary  tw-text-brand !important;
+      }
+    }
+  }
+}
+
+.LALA {
+  & > * {
+    @apply tw-bg-violet-300;
   }
 }
