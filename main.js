@@ -2,15 +2,15 @@
 document.addEventListener("keydown", function (event) {
   const key = event.key;
   if (key == "Escape") {
-    closeALLMenu();
-    [...document.querySelectorAll('[data-bs-toggle="dropdown"]')].forEach(
-      (dropdown) => {
-        const instance = bootstrap.Dropdown.getOrCreateInstance(dropdown);
-        if (instance) {
-          instance.classList.add("tw-hidden");
-        }
-      },
-    );
+      closeALLMenu();
+      [...document.querySelectorAll('[data-bs-toggle="dropdown"]')].forEach(
+          (dropdown) => {
+              const instance = bootstrap.Dropdown.getOrCreateInstance(dropdown);
+              if (instance) {
+                  instance.classList.add("tw-hidden");
+              }
+          },
+      );
   }
 });
 
@@ -19,17 +19,17 @@ const toggleAccordion = (event) => {
   const isOpen = parentElement.classList.toggle("open");
   const contentWrapper = parentElement.querySelector(".content-wrapper");
   if (isOpen) {
-    contentWrapper.querySelector("fieldset").removeAttribute("disabled");
+      contentWrapper.querySelector("fieldset").removeAttribute("disabled");
 
-    contentWrapper.style.height = contentWrapper.clientHeight + "px";
+      contentWrapper.style.height = contentWrapper.clientHeight + "px";
 
-    // unset it so that it can expand with new content
-    contentWrapper.style.height = "unset";
+      // unset it so that it can expand with new content
+      contentWrapper.style.height = "unset";
   } else {
-    contentWrapper
-      .querySelector("fieldset")
-      .setAttribute("disabled", "disabled");
-    contentWrapper.style.height = "0px";
+      contentWrapper
+          .querySelector("fieldset")
+          .setAttribute("disabled", "disabled");
+      contentWrapper.style.height = "0px";
   }
 
   // This is needed so .NET form does not automatically post back
@@ -41,22 +41,22 @@ const checkboxes_filldata = (containerID, csvOptionValue) => {
   const container = document.querySelector("#" + containerID.trim());
   const checkboxValues = csvOptionValue.split(",");
   checkboxValues.forEach((value) => {
-    const checkbox = container.querySelector(
-      `input[type=checkbox][value="${value}"]`,
-    );
-    if (checkbox) {
-      checkbox.checked = true;
-      if (checkbox.onchange) checkbox.onchange();
-    }
+      const checkbox = container.querySelector(
+          `input[type=checkbox][value="${value}"]`,
+      );
+      if (checkbox) {
+          checkbox.checked = true;
+          if (checkbox.onchange) checkbox.onchange();
+      }
   });
 };
 
 /**
- * This method uses mulSel_filldata to set the
- * states selected for a particular country
- * @param {string} countryId
- * @param {string} csvStateIds
- */
+* This method uses mulSel_filldata to set the
+* states selected for a particular country
+* @param {string} countryId
+* @param {string} csvStateIds
+*/
 const countryState_setData = (countryId, csvStateIds) => {
   // countryState_setData(1) - just select USA no state
   // countryState_setData(1, "") - Just select USA no state
@@ -67,89 +67,89 @@ const countryState_setData = (countryId, csvStateIds) => {
 
   // these radio elements objects are created in index.html due to aspx bad intelligence.
   const radioElement =
-    !countryId || countryId == 0
-      ? radio_country_none
-      : countryId == 1
-      ? radio_country_usa
-      : countryId == 2
-      ? radio_country_canada
-      : countryId == 3
-      ? radio_country_mexico
-      : radio_country_other;
+      !countryId || countryId == 0
+          ? radio_country_none
+          : countryId == 1
+              ? radio_country_usa
+              : countryId == 2
+                  ? radio_country_canada
+                  : countryId == 3
+                      ? radio_country_mexico
+                      : radio_country_other;
 
   radioElement.checked = true;
   // The following onchange event causes the state selection to reset.
   radioElement.onchange();
 
   if (countryId == null || countryId < 1) {
-    // select none
-    // already happened above.
+      // select none
+      // already happened above.
   } else if (countryId < 4) {
-    mulSel_filldata("countryState-mulSel", csvStateIds);
+      mulSel_filldata("countryState-mulSel", csvStateIds);
   } else {
-    // select other country and its id
-    const otherCountrySelect = enableOtherCountriesInput("otherCountries");
-    otherCountrySelect.value = countryId;
-    Update_UpdatePanel();
+      // select other country and its id
+      const otherCountrySelect = enableOtherCountriesInput("otherCountries");
+      otherCountrySelect.value = countryId;
+      Update_UpdatePanel();
   }
 };
 
 /**
- * This method just selects one state id from given the name of the state
- * @param {string} stateName
- */
+* This method just selects one state id from given the name of the state
+* @param {string} stateName
+*/
 const mulSel_selectSingleStateByName = (stateName) => {
   if (states) {
-    const state = states.find((state) => state.prst_State.toLowerCase() == stateName.trim().toLowerCase())
-    if (state) {
-      mulSel_filldata("countryState-mulSel", String(state.prst_StateId));
-    }
+      const state = states.find((state) => state.prst_State.toLowerCase() == stateName.trim().toLowerCase())
+      if (state) {
+          mulSel_filldata("countryState-mulSel", String(state.prst_StateId));
+      }
   }
 }
 
 
 /**
- * This method iterates over the menu options in the
- * multiselect and then performs a click action on
- * items that match the ids in the argument csv string.
- * @param {string} mulSel_id
- * @param {string} csvOptionIds
- * @returns
- */
+* This method iterates over the menu options in the
+* multiselect and then performs a click action on
+* items that match the ids in the argument csv string.
+* @param {string} mulSel_id
+* @param {string} csvOptionIds
+* @returns
+*/
 const mulSel_filldata = (mulSel_id, csvOptionIds) => {
   if (csvOptionIds == null) return;
   const optionIds = csvOptionIds.split(",");
   const mulSel_parent = document.querySelector("#" + mulSel_id);
   optionIds.forEach((optionId) => {
-    // find the menu item and make is selected
-    const menuitem = mulSel_parent.querySelector(
-      `li[data-mulSel_id="${optionId}"]:not(.selected)`,
-    );
-    if (menuitem) menuitem.click();
+      // find the menu item and make is selected
+      const menuitem = mulSel_parent.querySelector(
+          `li[data-mulSel_id="${optionId}"]:not(.selected)`,
+      );
+      if (menuitem) menuitem.click();
   });
   const mulSel_input = mulSel_parent.querySelector(".bbs-mulSel-input input");
   if (mulSel_input) {
-    mulSel_input.blur();
+      mulSel_input.blur();
   }
 };
 
 /**
- * Remove all the selected items from the multi_select
- * @param {string} mulSel_id
- */
+* Remove all the selected items from the multi_select
+* @param {string} mulSel_id
+*/
 const mulSel_reset = (mulSel_id) => {
   // pick all the selected items and perform click event
   // on them to unselect them
   const mulSel_parent = document.querySelector("#" + mulSel_id);
   [...mulSel_parent.querySelectorAll("li.selected")].forEach((option) => {
-    option.click();
+      option.click();
   });
 };
 
 /**
- * if a removable bbsButton bbsButton-tag-secondary is clicked, this is the function that needs to be called to remove it
- * @param {object} event
- */
+* if a removable bbsButton bbsButton-tag-secondary is clicked, this is the function that needs to be called to remove it
+* @param {object} event
+*/
 const mulSel_onclickTag = (event) => {
   // TODO:PT - low priority, Make on the X on the tag clicable and focasable
 
@@ -159,33 +159,33 @@ const mulSel_onclickTag = (event) => {
 
   // Find the corresponding item related to the clicked tag
   const menuitem = menu.querySelector(
-    `li.selected[data-mulSel_id="${mulSel_id}"]`,
+      `li.selected[data-mulSel_id="${mulSel_id}"]`,
   );
 
   // click on the menuitem so that it can
   // finish other related actions pertaining to
   // removing the selected item.
   if (menuitem) {
-    menuitem.click();
+      menuitem.click();
   }
 
   const nextsibling = event.currentTarget.nextElementSibling;
   const prevsibling = event.currentTarget.previousElementSibling;
   if (nextsibling) {
-    nextsibling.focus();
-    nextsibling.classList.add("focus-visible");
+      nextsibling.focus();
+      nextsibling.classList.add("focus-visible");
   } else if (prevsibling) {
-    prevsibling.focus();
-    prevsibling.classList.add("focus-visible");
+      prevsibling.focus();
+      prevsibling.classList.add("focus-visible");
   }
   event.currentTarget.remove();
 };
 
 /**
- * Handle arrow up and down from the multiselect input to focus
- * on the items in drop down menu
- * @param {object} event
- */
+* Handle arrow up and down from the multiselect input to focus
+* on the items in drop down menu
+* @param {object} event
+*/
 const mulSel_onkeydown = (event) => {
   const key = event.key;
 
@@ -193,82 +193,84 @@ const mulSel_onkeydown = (event) => {
   // find the instance of the dropdown
   // this is the div with data-bs-toggle="dropdown" attribute
   const instance = bootstrap.Dropdown.getOrCreateInstance(
-    event.currentTarget.closest('[data-bs-toggle="dropdown"]'),
+      event.currentTarget.closest('[data-bs-toggle="dropdown"]'),
   );
 
   if (key == "ArrowDown" || key == "ArrowUp") {
-    event.preventDefault();
+      event.preventDefault();
 
-    if (instance) {
-      instance.show();
-      instance._selectMenuItem(event);
-    }
+      if (instance) {
+          instance.show();
+          instance._selectMenuItem(event);
+      }
   }
 };
 
 /**
- * Handle typing inside mulSel .bbs-mulSel
- * open the dropdown
- * and filters the content
- * @param {object} event
- */
+* Handle typing inside mulSel .bbs-mulSel
+* open the dropdown
+* and filters the content
+* @param {object} event
+*/
 const mulSel_oninput = (event) => {
   const inputValue = event.currentTarget.value;
+  const inputValueNormalized = inputValue.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   const menu = event.currentTarget
-    .closest(".bbs-mulSel")
-    .querySelector(".dropdown-menu");
+      .closest(".bbs-mulSel")
+      .querySelector(".dropdown-menu");
 
   const instance = bootstrap.Dropdown.getOrCreateInstance(
-    event.currentTarget.closest(".bbs-mulSel-input"),
+      event.currentTarget.closest(".bbs-mulSel-input"),
   );
   if (instance) {
-    instance.show();
+      instance.show();
   }
 
   // Filter the menu items based on the input
   const optionss = menu.querySelectorAll("li");
   optionss.forEach((htmlElement) => {
-    // text-label
-    const value = htmlElement
-      .getAttribute("data-search_string")
-      .toLowerCase()
-      .trim();
-    if (value.includes(inputValue.toLowerCase().trim())) {
-      htmlElement.classList.remove("tw-hidden");
-    } else {
-      htmlElement.classList.add("tw-hidden");
-    }
+      // text-label
+      const value = htmlElement
+          .getAttribute("data-search_string")
+          .toLowerCase()
+          .trim()
+          .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      if (value.includes(inputValueNormalized.toLowerCase().trim())) {
+          htmlElement.classList.remove("tw-hidden");
+      } else {
+          htmlElement.classList.add("tw-hidden");
+      }
   });
 
   // Show no options if empty
   if (menu.querySelectorAll("li:not(.tw-hidden)").length <= 0) {
-    let noResults = menu.querySelector("p.notfound");
-    if (!noResults) noResults = document.createElement("p");
-    noResults.setAttribute("class", "menu-no-data notfound");
-    noResults.innerHTML = "No results found with the string " + inputValue;
-    menu.appendChild(noResults);
+      let noResults = menu.querySelector("p.notfound");
+      if (!noResults) noResults = document.createElement("p");
+      noResults.setAttribute("class", "menu-no-data notfound");
+      noResults.innerHTML = "No results found with the string " + inputValue;
+      menu.appendChild(noResults);
   } else {
-    const nodata = menu.querySelector(".menu-no-data");
-    if (nodata) {
-      nodata.remove();
-    }
+      const nodata = menu.querySelector(".menu-no-data");
+      if (nodata) {
+          nodata.remove();
+      }
   }
 
   event.stopPropagation();
 };
 
 /**
- * helper function for creating tags for the multiselect
- * @param {object} event
- */
+* helper function for creating tags for the multiselect
+* @param {object} event
+*/
 const mulSel_getOrCreateTagContainer = (mulSelParent) => {
   let tagContainer = mulSelParent.querySelector(".mulSel-tag-container");
   if (!tagContainer) {
-    // create a tag container
-    // and append it to the parent of the input
-    tagContainer = document.createElement("div");
-    tagContainer.setAttribute("class", "mulSel-tag-container");
-    mulSelParent.appendChild(tagContainer);
+      // create a tag container
+      // and append it to the parent of the input
+      tagContainer = document.createElement("div");
+      tagContainer.setAttribute("class", "mulSel-tag-container");
+      mulSelParent.appendChild(tagContainer);
   }
   return tagContainer;
 };
@@ -299,37 +301,37 @@ const mulSel_createOpt_TerminalMkt = (terminalMarketList) => {
 
   // populate the terminalMarket mulSel
   for (let i in terminalMarketList) {
-    const name = terminalMarketList[i].prtm_FullMarketName;
-    const city = terminalMarketList[i].prtm_City;
-    const state = terminalMarketList[i].prtm_State;
+      const name = terminalMarketList[i].prtm_FullMarketName;
+      const city = terminalMarketList[i].prtm_City;
+      const state = terminalMarketList[i].prtm_State;
 
-    const outer = document.createElement("li");
-    optionContainer.appendChild(outer);
+      const outer = document.createElement("li");
+      optionContainer.appendChild(outer);
 
-    const option = document.createElement("button");
-    outer.appendChild(option);
+      const option = document.createElement("button");
+      outer.appendChild(option);
 
-    outer.setAttribute(
-      "onclick",
-      `mulSel_onclickOpt_TerminalMkt(event, "${terminalMarketList[i].prtm_TerminalMarketId}")`,
-    );
-    // terminal_id;
-    outer.setAttribute(
-      "data-mulSel_id",
-      terminalMarketList[i].prtm_TerminalMarketId,
-    );
-    outer.setAttribute("data-search_string", name + " " + city + " " + state);
-    option.setAttribute("tabindex", "-1");
-    option.setAttribute("class", "bbsButton bbsButton-menu-item dropdown-item");
-    option.setAttribute("role", "option");
-    option.setAttribute("type", "button");
-    option.innerHTML = `
-      <div class="tw-flex tw-flex-col">
-        <span class="text-label">${name}</span>
-        <span class="caption">${city}, ${state}</span>
-      </div>
-      <span class="msicon notranslate">check</span>
-      `;
+      outer.setAttribute(
+          "onclick",
+          `mulSel_onclickOpt_TerminalMkt(event, "${terminalMarketList[i].prtm_TerminalMarketId}")`,
+      );
+      // terminal_id;
+      outer.setAttribute(
+          "data-mulSel_id",
+          terminalMarketList[i].prtm_TerminalMarketId,
+      );
+      outer.setAttribute("data-search_string", name + " " + city + " " + state);
+      option.setAttribute("tabindex", "-1");
+      option.setAttribute("class", "bbsButton bbsButton-menu-item dropdown-item");
+      option.setAttribute("role", "option");
+      option.setAttribute("type", "button");
+      option.innerHTML = `
+    <div class="tw-flex tw-flex-col">
+      <span class="text-label">${name}</span>
+      <span class="caption">${city}, ${state}</span>
+    </div>
+    <span class="msicon notranslate">check</span>
+    `;
   }
 };
 
@@ -343,7 +345,7 @@ const mulSel_onclickOpt_TerminalMkt = (event, optionId) => {
 
   // find the market
   const terminalMarket = terminalMarkets.find(
-    (object) => object.prtm_TerminalMarketId == optionId,
+      (object) => object.prtm_TerminalMarketId == optionId,
   );
 
   event.stopPropagation();
@@ -360,53 +362,59 @@ const mulSel_onclickOpt_TerminalMkt = (event, optionId) => {
 
   // check if there is any tag with that value exist in the parent
   const tagElement = tagContainer.querySelector(
-    `button[data-mulSel_id="${optionId}"]`,
+      `button[data-mulSel_id="${optionId}"]`,
   );
   if (!tagElement) {
-    // create the tag if it does not exists
-    // and mark item as selected
-    const newTag = document.createElement("button");
-    newTag.setAttribute("class", "bbsButton bbsButton-tag-secondary small");
-    newTag.setAttribute("data-mulSel_id", optionId);
-    newTag.setAttribute("onclick", "mulSel_onclickTag(event)");
-    newTag.innerHTML = `
-    <span>${tagLabel}</span>
-    <span class="msicon notranslate">clear</span>
-    `;
-    tagContainer.appendChild(newTag);
+      // create the tag if it does not exists
+      // and mark item as selected
+      const newTag = document.createElement("button");
+      newTag.setAttribute("class", "bbsButton bbsButton-tag-secondary small");
+      newTag.setAttribute("data-mulSel_id", optionId);
+      newTag.setAttribute("onclick", "mulSel_onclickTag(event)");
+      newTag.innerHTML = `
+  <span>${tagLabel}</span>
+  <span class="msicon notranslate">clear</span>
+  `;
+      tagContainer.appendChild(newTag);
 
-    // mark option as selected
-    const menuoption = event.currentTarget.closest("li");
-    menuoption.classList.add("selected");
+      // mark option as selected
+      const menuoption = event.currentTarget.closest("li");
+      menuoption.classList.add("selected");
   } else {
-    // remove the tag element and mark the item non selected
-    tagElement.remove();
-    // mark option as unselected
-    const menuoption = event.currentTarget.closest("li");
-    menuoption.classList.remove("selected");
+      // remove the tag element and mark the item non selected
+      tagElement.remove();
+      // mark option as unselected
+      const menuoption = event.currentTarget.closest("li");
+      menuoption.classList.remove("selected");
   }
 
   // update dropdown position
   const instance = bootstrap.Dropdown.getOrCreateInstance(
-    mulSelParent.querySelector('[data-bs-toggle="dropdown"]'),
+      mulSelParent.querySelector('[data-bs-toggle="dropdown"]'),
   );
   if (instance) {
-    instance.update();
+      instance.update();
+      // keep the dropdown open
+      instance.show();
   }
 
   // focus the input
-  mulSelParent.querySelector("input").focus();
+  const input = mulSelParent.querySelector("input");
+  if (input) {
+      input.focus();
+      input.select();
+  }
 };
 
 const setIsDisabled = (id, isDisabled) => {
   const fieldsetElement = document.querySelector(`#${id}`);
   if (fieldsetElement) {
-    if (isDisabled) {
-      fieldsetElement.setAttribute("disabled", isDisabled);
-      fieldsetElement.querySelector("input").value = "";
-    } else {
-      fieldsetElement.removeAttribute("disabled");
-    }
+      if (isDisabled) {
+          fieldsetElement.setAttribute("disabled", isDisabled);
+          fieldsetElement.querySelector("input").value = "";
+      } else {
+          fieldsetElement.removeAttribute("disabled");
+      }
   }
 };
 
@@ -454,34 +462,34 @@ const mulSel_createOpt_CountryState = (optionId) => {
 
   // fiter the states for the selected optionId
   const filteredStates = states.filter(
-    (state) => state.prst_CountryId == optionId,
+      (state) => state.prst_CountryId == optionId,
   );
 
   // populate the state mulSel
   for (let i in filteredStates) {
-    const outer = document.createElement("li");
-    optionContainer.appendChild(outer);
-    const option = document.createElement("button");
-    outer.appendChild(option);
+      const outer = document.createElement("li");
+      optionContainer.appendChild(outer);
+      const option = document.createElement("button");
+      outer.appendChild(option);
 
-    const label = `${filteredStates[i].prst_State} (${filteredStates[i].prst_Abbreviation})`;
+      const label = `${filteredStates[i].prst_State} (${filteredStates[i].prst_Abbreviation})`;
 
-    outer.setAttribute(
-      "onclick",
-      `mulSel_onclickOpt_CountryState(event, "${filteredStates[i].prst_StateId}")`,
-    );
+      outer.setAttribute(
+          "onclick",
+          `mulSel_onclickOpt_CountryState(event, "${filteredStates[i].prst_StateId}")`,
+      );
 
-    outer.setAttribute("data-mulSel_id", filteredStates[i].prst_StateId);
-    outer.setAttribute("data-search_string", label);
+      outer.setAttribute("data-mulSel_id", filteredStates[i].prst_StateId);
+      outer.setAttribute("data-search_string", label);
 
-    option.setAttribute("tabindex", "-1");
-    option.setAttribute("class", "bbsButton bbsButton-menu-item dropdown-item");
-    option.setAttribute("role", "option");
-    option.setAttribute("type", "button");
-    option.innerHTML = `
-      <span class="text-label">${label}</span>
-      <span class="msicon notranslate">check</span>
-     `;
+      option.setAttribute("tabindex", "-1");
+      option.setAttribute("class", "bbsButton bbsButton-menu-item dropdown-item");
+      option.setAttribute("role", "option");
+      option.setAttribute("type", "button");
+      option.innerHTML = `
+    <span class="text-label">${label}</span>
+    <span class="msicon notranslate">check</span>
+   `;
   }
 };
 
@@ -510,48 +518,54 @@ const mulSel_onclickOpt_CountryState = (event, optionId) => {
 
   // check if there is any tag with that value exist in the parent
   const tagElement = tagContainer.querySelector(
-    `button[data-mulSel_id="${optionId}"]`,
+      `button[data-mulSel_id="${optionId}"]`,
   );
 
   if (!tagElement) {
-    // create the tag if it does not exists
-    const newTag = document.createElement("button");
-    newTag.setAttribute("class", "bbsButton bbsButton-tag-secondary small");
-    newTag.setAttribute("data-mulSel_id", optionId);
-    newTag.setAttribute("onclick", "mulSel_onclickTag(event)");
-    newTag.innerHTML = `
-    <span>${stateobject.prst_State}</span>
-    <span class="msicon notranslate">clear</span>
-    `;
-    tagContainer.appendChild(newTag);
+      // create the tag if it does not exists
+      const newTag = document.createElement("button");
+      newTag.setAttribute("class", "bbsButton bbsButton-tag-secondary small");
+      newTag.setAttribute("data-mulSel_id", optionId);
+      newTag.setAttribute("onclick", "mulSel_onclickTag(event)");
+      newTag.innerHTML = `
+  <span>${stateobject.prst_State}</span>
+  <span class="msicon notranslate">clear</span>
+  `;
+      tagContainer.appendChild(newTag);
 
-    // mark option as selected
-    const menuoption = event.currentTarget.closest("li");
-    menuoption.classList.add("selected");
+      // mark option as selected
+      const menuoption = event.currentTarget.closest("li");
+      menuoption.classList.add("selected");
 
   } else {
-    // remove the tag element and mark the item non selected
-    tagElement.remove();
-    // mark option as unselected
-    const menuoption = event.currentTarget.closest("li");
-    menuoption.classList.remove("selected");
+      // remove the tag element and mark the item non selected
+      tagElement.remove();
+      // mark option as unselected
+      const menuoption = event.currentTarget.closest("li");
+      menuoption.classList.remove("selected");
 
   }
 
   // update dropdown position
   const instance = bootstrap.Dropdown.getOrCreateInstance(
-    mulSelParent.querySelector('[data-bs-toggle="dropdown"]'),
+      mulSelParent.querySelector('[data-bs-toggle="dropdown"]'),
   );
   if (instance) {
-    instance.update();
+      instance.update();
+      // keep the dropdown open
+      instance.show();
   }
 
   // focus the input
-  mulSelParent.querySelector("input").focus();
+  const input = mulSelParent.querySelector("input");
+  if (input) {
+      input.focus();
+      input.select();
+  }
 
   // call refreshTerminalMarkets, if defined
   if (typeof refreshTerminalMarkets === "function") {
-    refreshTerminalMarkets();
+      refreshTerminalMarkets();
   }
 };
 
@@ -567,16 +581,16 @@ const findTopLevelCommodityParent = (i) => {
   // }],
 
   if (commodities[i].prcm_Level != 1) {
-    const parentID = commodities[i].prcm_ParentId;
-    const index = commodities.findIndex(
-      (commodity) => commodity.prcm_CommodityId === parentID,
-    );
-    // top level not found...
-    // continue recuursion
-    return findTopLevelCommodityParent(index);
+      const parentID = commodities[i].prcm_ParentId;
+      const index = commodities.findIndex(
+          (commodity) => commodity.prcm_CommodityId === parentID,
+      );
+      // top level not found...
+      // continue recuursion
+      return findTopLevelCommodityParent(index);
   } else {
-    // found the TopLevetParent - Stop reccursion
-    return i;
+      // found the TopLevetParent - Stop reccursion
+      return i;
   }
 };
 
@@ -598,52 +612,52 @@ const mulSel_createOpt_Commodities = (optionId) => {
   // populate the mulSel
 
   commodities.forEach((commodity, i) => {
-    const topLevelParentIndex = findTopLevelCommodityParent(i);
+      const topLevelParentIndex = findTopLevelCommodityParent(i);
 
-    if (topLevelParentIndex == i) {
-    }
+      if (topLevelParentIndex == i) {
+      }
 
-    let name = commodity.prcm_FullName;
+      let name = commodity.prcm_FullName;
 
-    let parentName = commodities[topLevelParentIndex].prcm_FullName;
+      let parentName = commodities[topLevelParentIndex].prcm_FullName;
 
-    let allClass = "";
-    const parent_CommodityId =
-      commodities[topLevelParentIndex].prcm_CommodityId;
+      let allClass = "";
+      const parent_CommodityId =
+          commodities[topLevelParentIndex].prcm_CommodityId;
 
-    let onclickFunction = `mulSel_onclickOpt_Commodities(event, "${commodity.prcm_CommodityId}", "${parent_CommodityId}")`;
+      let onclickFunction = `mulSel_onclickOpt_Commodities(event, "${commodity.prcm_CommodityId}", "${parent_CommodityId}")`;
 
-    if (topLevelParentIndex == i) {
-      // this is the TopLevelParent itself
-      // parentName = "All " + parentName;
-      name = "* All " + name;
-      allClass = "tw-font-semibold";
-      // onclickFunction += `; handleTopLevelCommoditySelection(event, ${commodity.prcm_CommodityId});`;
-    }
+      if (topLevelParentIndex == i) {
+          // this is the TopLevelParent itself
+          // parentName = "All " + parentName;
+          name = "* All " + name;
+          allClass = "tw-font-semibold";
+          // onclickFunction += `; handleTopLevelCommoditySelection(event, ${commodity.prcm_CommodityId});`;
+      }
 
-    const outer = document.createElement("li");
-    outer.setAttribute("data-mulSel_id", commodity.prcm_CommodityId);
-    // set for all children the top level parent id
-    if (topLevelParentIndex != i) {
-      outer.setAttribute("data-mulSel_parentId", parent_CommodityId);
-    }
-    outer.setAttribute("data-search_string", `${name} ${parentName}`);
-    outer.setAttribute("onclick", onclickFunction);
+      const outer = document.createElement("li");
+      outer.setAttribute("data-mulSel_id", commodity.prcm_CommodityId);
+      // set for all children the top level parent id
+      if (topLevelParentIndex != i) {
+          outer.setAttribute("data-mulSel_parentId", parent_CommodityId);
+      }
+      outer.setAttribute("data-search_string", `${name} ${parentName}`);
+      outer.setAttribute("onclick", onclickFunction);
 
-    const option = document.createElement("button");
-    option.setAttribute("tabindex", "-1");
-    option.setAttribute("class", "bbsButton bbsButton-menu-item dropdown-item");
-    option.setAttribute("role", "option");
-    option.setAttribute("type", "button");
-    option.innerHTML = `
-    <div class="tw-flex tw-gap-2">
-    <span class="text-label ${allClass}">${name}</span>
-    <span class="bbsButton bbsButton-tag-secondary smaller c-${parent_CommodityId}">${parentName}</span>
-    </div>
-    <span class="msicon notranslate">check</span>
-    `;
-    outer.appendChild(option);
-    optionContainer.appendChild(outer);
+      const option = document.createElement("button");
+      option.setAttribute("tabindex", "-1");
+      option.setAttribute("class", "bbsButton bbsButton-menu-item dropdown-item");
+      option.setAttribute("role", "option");
+      option.setAttribute("type", "button");
+      option.innerHTML = `
+  <div class="tw-flex tw-gap-2">
+  <span class="text-label ${allClass}">${name}</span>
+  <span class="bbsButton bbsButton-tag-secondary smaller c-${parent_CommodityId}">${parentName}</span>
+  </div>
+  <span class="msicon notranslate">check</span>
+  `;
+      outer.appendChild(option);
+      optionContainer.appendChild(outer);
   });
 };
 // call the above function
@@ -658,7 +672,7 @@ const mulSel_createOpt_Commodities = (optionId) => {
 const mulSel_onclickOpt_Commodities = (event, optionId, parent_CommodityId) => {
   // find the commodity
   const commodity = commodities.find(
-    (commodity) => commodity.prcm_CommodityId == optionId,
+      (commodity) => commodity.prcm_CommodityId == optionId,
   );
 
   event.stopPropagation();
@@ -670,87 +684,93 @@ const mulSel_onclickOpt_Commodities = (event, optionId, parent_CommodityId) => {
 
   // check if there is any tag with that value exist in the parent
   const tagElement = tagContainer.querySelector(
-    `button[data-mulSel_id="${optionId}"]`,
+      `button[data-mulSel_id="${optionId}"]`,
   );
   // const tagClass = "c-" + commodities[topLevelParentIndex].prcm_CommodityId;
 
   if (!tagElement) {
-    // create the tag if it does not exists
-    const newTag = document.createElement("button");
-    newTag.setAttribute(
-      "class",
-      `bbsButton bbsButton-tag-secondary small c-${parent_CommodityId}`,
-    );
-    newTag.setAttribute("data-mulSel_id", optionId);
-    newTag.setAttribute("data-mulSel_parentId", parent_CommodityId);
-    newTag.setAttribute("onclick", "mulSel_onclickTag(event)");
-
-    const tagLabel =
-      (commodity.prcm_CommodityId == parent_CommodityId
-        ? "<strong>* All </strong>"
-        : "") + commodity.prcm_FullName;
-
-    newTag.innerHTML = `
-    <span>${tagLabel}</span>
-    <span class="msicon notranslate">clear</span>
-    `;
-    tagContainer.appendChild(newTag);
-
-    // mark option as selected
-    const menuoption = event.currentTarget.closest("li");
-    menuoption.classList.add("selected");
-
-    // Special case: the user selected a parent level
-    if (optionId == parent_CommodityId) {
-      // remove all the selected children
-      const selectedchildren = mulSelParent.querySelectorAll(
-        `li.selected[data-mulSel_parentId="${parent_CommodityId}"]`,
+      // create the tag if it does not exists
+      const newTag = document.createElement("button");
+      newTag.setAttribute(
+          "class",
+          `bbsButton bbsButton-tag-secondary small c-${parent_CommodityId}`,
       );
-      [...selectedchildren].forEach((htmlElement) => {
-        htmlElement.click();
-      });
+      newTag.setAttribute("data-mulSel_id", optionId);
+      newTag.setAttribute("data-mulSel_parentId", parent_CommodityId);
+      newTag.setAttribute("onclick", "mulSel_onclickTag(event)");
 
-      // disabled all the children
-      const allchildren = mulSelParent.querySelectorAll(
-        `li[data-mulSel_parentId="${parent_CommodityId}"]`,
-      );
+      const tagLabel =
+          (commodity.prcm_CommodityId == parent_CommodityId
+              ? "<strong>* All </strong>"
+              : "") + commodity.prcm_FullName;
 
-      [...allchildren].forEach((child) => {
-        child.setAttribute("disabled", "disabled");
-        child.querySelector("button").setAttribute("disabled", "disabled");
-      });
-    }
+      newTag.innerHTML = `
+  <span>${tagLabel}</span>
+  <span class="msicon notranslate">clear</span>
+  `;
+      tagContainer.appendChild(newTag);
+
+      // mark option as selected
+      const menuoption = event.currentTarget.closest("li");
+      menuoption.classList.add("selected");
+
+      // Special case: the user selected a parent level
+      if (optionId == parent_CommodityId) {
+          // remove all the selected children
+          const selectedchildren = mulSelParent.querySelectorAll(
+              `li.selected[data-mulSel_parentId="${parent_CommodityId}"]`,
+          );
+          [...selectedchildren].forEach((htmlElement) => {
+              htmlElement.click();
+          });
+
+          // disabled all the children
+          const allchildren = mulSelParent.querySelectorAll(
+              `li[data-mulSel_parentId="${parent_CommodityId}"]`,
+          );
+
+          [...allchildren].forEach((child) => {
+              child.setAttribute("disabled", "disabled");
+              child.querySelector("button").setAttribute("disabled", "disabled");
+          });
+      }
   } else {
-    // remove the tag element and mark the item non selected
-    tagElement.remove();
-    // mark option as unselected
-    const menuoption = event.currentTarget.closest("li");
-    menuoption.classList.remove("selected");
+      // remove the tag element and mark the item non selected
+      tagElement.remove();
+      // mark option as unselected
+      const menuoption = event.currentTarget.closest("li");
+      menuoption.classList.remove("selected");
 
-    // Special case: the user unselected a parent level
-    if (optionId == parent_CommodityId) {
-      // enabled all the children
-      const allchildren = mulSelParent.querySelectorAll(
-        `li[data-mulSel_parentId="${parent_CommodityId}"]`,
-      );
+      // Special case: the user unselected a parent level
+      if (optionId == parent_CommodityId) {
+          // enabled all the children
+          const allchildren = mulSelParent.querySelectorAll(
+              `li[data-mulSel_parentId="${parent_CommodityId}"]`,
+          );
 
-      [...allchildren].forEach((child) => {
-        child.removeAttribute("disabled", "disabled");
-        child.querySelector("button").removeAttribute("disabled");
-      });
-    }
+          [...allchildren].forEach((child) => {
+              child.removeAttribute("disabled", "disabled");
+              child.querySelector("button").removeAttribute("disabled");
+          });
+      }
   }
 
   // update dropdown position
   const instance = bootstrap.Dropdown.getOrCreateInstance(
-    mulSelParent.querySelector('[data-bs-toggle="dropdown"]'),
+      mulSelParent.querySelector('[data-bs-toggle="dropdown"]'),
   );
   if (instance) {
-    instance.update();
+      instance.update();
+      // keep the dropdown open
+      instance.show();
   }
 
   // focus the input
-  mulSelParent.querySelector("input").focus();
+  const input = mulSelParent.querySelector("input");
+  if (input) {
+      input.focus();
+      input.select();
+  }
 };
 
 
@@ -761,17 +781,17 @@ const selectNoneCountry = (event) => {
 
   const stateSlector = document.querySelector("#us_canada_mexico_state");
   if (stateSlector) {
-    stateSlector.setAttribute("disabled", "disabled");
-    // Clear the existing multiseled tags
-    stateSlector.querySelector(".mulSel-tag-container").innerHTML = "";
+      stateSlector.setAttribute("disabled", "disabled");
+      // Clear the existing multiseled tags
+      stateSlector.querySelector(".mulSel-tag-container").innerHTML = "";
   }
 
   // disabled state and city selection
   const citySelector = document.querySelector("#us_canada_mexico_city");
   if (citySelector) {
-    citySelector.setAttribute("disabled", "disabled");
-    // Clear the existing multiseled tags
-    citySelector.querySelector("input").value = "";
+      citySelector.setAttribute("disabled", "disabled");
+      // Clear the existing multiseled tags
+      citySelector.querySelector("input").value = "";
   }
 };
 
@@ -790,21 +810,21 @@ const enableOtherCountriesInput = (id) => {
   // ]
 
   for (let i in countries) {
-    // skip US, Canada and Mexico
-    if (
-      countries[i].prcn_CountryId == 1 ||
-      countries[i].prcn_CountryId == 2 ||
-      countries[i].prcn_CountryId == 3
-    ) {
-      continue;
-    }
+      // skip US, Canada and Mexico
+      if (
+          countries[i].prcn_CountryId == 1 ||
+          countries[i].prcn_CountryId == 2 ||
+          countries[i].prcn_CountryId == 3
+      ) {
+          continue;
+      }
 
-    const option = document.createElement("option");
-    option.setAttribute("value", countries[i].prcn_CountryId);
-    option.setAttribute("data-prcn_CountryId", countries[i].prcn_CountryId);
-    option.innerHTML = countries[i].prcn_Country;
+      const option = document.createElement("option");
+      option.setAttribute("value", countries[i].prcn_CountryId);
+      option.setAttribute("data-prcn_CountryId", countries[i].prcn_CountryId);
+      option.innerHTML = countries[i].prcn_Country;
 
-    otherCountrySelect.appendChild(option);
+      otherCountrySelect.appendChild(option);
   }
   otherCountrySelect.focus();
   return otherCountrySelect;
@@ -812,18 +832,18 @@ const enableOtherCountriesInput = (id) => {
 
 const clearallsearch = () => {
   [...document.querySelectorAll(".search-criteria-group")].forEach(
-    (htmlElement) => {
-      htmlElement.remove();
-    },
+      (htmlElement) => {
+          htmlElement.remove();
+      },
   );
 };
 
 const toggleZipcodeInput = (checked, id) => {
   const input = document.querySelector("#" + id);
   if (checked) {
-    input.removeAttribute("disabled");
+      input.removeAttribute("disabled");
   } else {
-    input.setAttribute("disabled", "disabled");
+      input.setAttribute("disabled", "disabled");
   }
 };
 
@@ -833,25 +853,25 @@ const toggleZipcodeInput = (checked, id) => {
 // .bbs-mulSel's menu.
 const toggleAllCheckboxes = (isChecked, idThatContainsCheckboxes) => {
   [
-    ...document.querySelectorAll(
-      `#${idThatContainsCheckboxes}  input[type=checkbox]`,
-    ),
+      ...document.querySelectorAll(
+          `#${idThatContainsCheckboxes}  input[type=checkbox]`,
+      ),
   ].forEach((checkbox) => {
-    checkbox.checked = isChecked;
+      checkbox.checked = isChecked;
   });
 };
 
 const toggleExpandCollapse = (button, idToOpenClose) => {
   const isCollapsed =
-    button.querySelector(".msicon").innerHTML == "expand_more" ? true : false;
+      button.querySelector(".msicon").innerHTML == "expand_more" ? true : false;
   if (isCollapsed) {
-    button.querySelector(".text-label").innerHTML = "Collapse";
-    button.querySelector(".msicon").innerHTML = "expand_less";
-    document.getElementById(idToOpenClose).classList.remove("tw-hidden");
+      button.querySelector(".text-label").innerHTML = "Collapse";
+      button.querySelector(".msicon").innerHTML = "expand_less";
+      document.getElementById(idToOpenClose).classList.remove("tw-hidden");
   } else {
-    document.getElementById(idToOpenClose).classList.add("tw-hidden");
-    button.querySelector(".text-label").innerHTML = "Expand";
-    button.querySelector(".msicon").innerHTML = "expand_more";
+      document.getElementById(idToOpenClose).classList.add("tw-hidden");
+      button.querySelector(".text-label").innerHTML = "Expand";
+      button.querySelector(".msicon").innerHTML = "expand_more";
   }
 
   // This is needed so .NET form does not automatically post back
@@ -860,15 +880,15 @@ const toggleExpandCollapse = (button, idToOpenClose) => {
 
 const togglePartialExpandCollapse = (button, idToOpenClose) => {
   const isCollapsed =
-    button.querySelector(".msicon").innerHTML == "expand_more" ? true : false;
+      button.querySelector(".msicon").innerHTML == "expand_more" ? true : false;
   if (isCollapsed) {
-    button.querySelector(".text-label").innerHTML = "Show less";
-    button.querySelector(".msicon").innerHTML = "expand_less";
-    document.getElementById(idToOpenClose).classList.remove("collapsed");
+      button.querySelector(".text-label").innerHTML = "Show less";
+      button.querySelector(".msicon").innerHTML = "expand_less";
+      document.getElementById(idToOpenClose).classList.remove("collapsed");
   } else {
-    document.getElementById(idToOpenClose).classList.add("collapsed");
-    button.querySelector(".text-label").innerHTML = "Show more";
-    button.querySelector(".msicon").innerHTML = "expand_more";
+      document.getElementById(idToOpenClose).classList.add("collapsed");
+      button.querySelector(".text-label").innerHTML = "Show more";
+      button.querySelector(".msicon").innerHTML = "expand_more";
   }
 
   // This is needed so .NET form does not automatically post back
@@ -882,40 +902,40 @@ const scrollX = (button, amount, idToscroll) => {
 const photoModal = document.getElementById("photoModal");
 if (photoModal) {
   photoModal.addEventListener("show.bs.modal", (event) => {
-    // Button that triggered the modal
-    const button = event.relatedTarget;
-    // Extract info from data-bs-* attributes
-    const imgurl = button.getAttribute("data-bs-imgurl");
-    // If necessary, you could initiate an Ajax request here
-    // and then do the updating in a callback.
+      // Button that triggered the modal
+      const button = event.relatedTarget;
+      // Extract info from data-bs-* attributes
+      const imgurl = button.getAttribute("data-bs-imgurl");
+      // If necessary, you could initiate an Ajax request here
+      // and then do the updating in a callback.
 
-    // Update the modal's content.
-    const img = photoModal.querySelector(".modal-body > img");
-    if (img) {
-      img.setAttribute("src", imgurl);
-    }
+      // Update the modal's content.
+      const img = photoModal.querySelector(".modal-body > img");
+      if (img) {
+          img.setAttribute("src", imgurl);
+      }
   });
 }
 
 //Simulate real clicks for checkboxes to disable them as needed
 function clickIfChecked(pID) {
-    var cb = document.getElementById(pID);
-    if (!cb.checked)
-        return;
+  var cb = document.getElementById(pID);
+  if (!cb.checked)
+      return;
 
-    clickForce(pID);
+  clickForce(pID);
 }
 
 function clickForce(pID) {
-    var cb = document.getElementById(pID);
+  var cb = document.getElementById(pID);
 
-    var event = new MouseEvent('click', {
-        view: window,
-        bubbles: true,
-        cancelable: true
-    });
+  var event = new MouseEvent('click', {
+      view: window,
+      bubbles: true,
+      cancelable: true
+  });
 
-    var cancelled = !cb.dispatchEvent(event);
+  var cancelled = !cb.dispatchEvent(event);
 }
 
 function printCompanyProfile() {
