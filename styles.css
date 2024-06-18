@@ -1701,7 +1701,7 @@ a:focus {
       }
       td,
       th {
-        @apply tw-border-0 tw-p-3;
+        @apply tw-border-0 tw-p-2;
         &:not(:last-child) {
           @apply tw-border-r;
         }

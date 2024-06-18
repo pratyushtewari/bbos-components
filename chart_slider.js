@@ -41,6 +41,9 @@ class ChartSlider extends HTMLElement {
     const ifHiddenLabel = hideLabels ? 'style="margin-top:0"' : "";
     const current_value = Number.parseFloat(this.current_value);
 
+    // for some stupid reason Number.parseFloat is returning string 'NaN' above instead of real Nan
+    current_value = Number.parseFloat(current_value);
+
     const isNaN = Number.isNaN(min && max && current_value);
     // if (isNaN) {
     //   console.warn(
