@@ -1706,6 +1706,12 @@ a:focus {
           @apply tw-border-r;
         }
       }
+      /* there is table inside each cell in the bbos */
+      td {
+        table, td, tr, th {
+          @apply tw-border-0 tw-p-0 !important;
+        }
+      }
     }
   }
 
