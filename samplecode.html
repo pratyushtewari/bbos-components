@@ -4,7 +4,9 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header tw-flex tw-justify-between">
-        <h5><%= Resources.Global.TypeIndustry %></h5>
+        <h5>
+          <%= Resources.Global.TypeIndustry %>
+        </h5>
         <button class="bbsButton bbsButton-secondary filled" data-bs-dismiss="modal" type="button">
           <span class="msicon notranslate">close</span>
         </button>
@@ -20,22 +22,69 @@
 
 
 
-<a id="popWhatIsIndustry" runat="server" class="clr_blc cursor_pointer" data-bs-html="true" style="color: #000;" data-bs-toggle="modal" data-bs-target="#pnlIndustry">
-  <span runat="server" data-bs-toggle="tooltip" class="msicon notranslate" data-bs-title="<%$ Resources:Global, WhatIsThis %>">help</span>
+<a id="popWhatIsIndustry" runat="server" class="clr_blc cursor_pointer" data-bs-html="true" style="color: #000;"
+  data-bs-toggle="modal" data-bs-target="#pnlIndustry">
+  <span runat="server" data-bs-toggle="tooltip" class="msicon notranslate"
+    data-bs-title="<%$ Resources:Global, WhatIsThis %>">help</span>
 </a>
 
 
-<a id="popBBNumber" runat="server" class="bbsButton bbsButton-tertiary" data-bs-trigger="hover" data-bs-html="true"  data-bs-toggle="popover" data-bs-placement="bottom">
+<a id="popBBNumber" runat="server" class="bbsButton bbsButton-tertiary" data-bs-trigger="hover" data-bs-html="true"
+  data-bs-toggle="popover" data-bs-placement="bottom">
   <span class="msicon notranslate">help</span>
 </a>
 
 
 <div class="col-md-6 ">
-    <div class="input-group tw-flex">
-      <asp:TextBox ID="txtBBID" runat="server" CssClass="form-control numbersOnly tw-flex-grow" MaxLength="8" AutoPostBack="True" />
-      <cc1:FilteredTextBoxExtender ID="ftbeBBID" runat="server" TargetControlID="txtBBID" FilterType="Numbers" />
-      <a id="popBBNumber" runat="server" class="input-group-text" data-bs-trigger="hover" data-bs-html="true" data-bs-toggle="popover" data-bs-placement="bottom">
-        <span class="msicon notranslate">help</span>
-      </a>
-    </div>
+  <div class="input-group tw-flex">
+    <asp:TextBox ID="txtBBID" runat="server" CssClass="form-control numbersOnly tw-flex-grow" MaxLength="8"
+      AutoPostBack="True" />
+    <cc1:FilteredTextBoxExtender ID="ftbeBBID" runat="server" TargetControlID="txtBBID" FilterType="Numbers" />
+    <a id="popBBNumber" runat="server" class="input-group-text" data-bs-trigger="hover" data-bs-html="true"
+      data-bs-toggle="popover" data-bs-placement="bottom">
+      <span class="msicon notranslate">help</span>
+    </a>
   </div>
+</div>
+
+
+<div class="bbs-card-bordered">
+  <div class="bbs-card-header">
+    HEADER
+  </div>
+  <div class="bbs-card-body no-padding">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Name
+        <span>Value</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+<div class="bbs-card-bordered">
+  <div class="bbs-card-header">
+    HEADER
+  </div>
+  <div class="bbs-card-body no-padding">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item d-flex justify-content-between align-items-center">Name
+        <span>Value</span>
+      </li>
+
+      <li class="list-group-item d-flex justify-content-between align-items-center">Name
+        <span>Value</span>
+      </li>
+
+      <li class="list-group-item d-flex justify-content-between align-items-center">Name
+        <span>Value</span>
+      </li>
+
+      <li class="list-group-item d-flex justify-content-between align-items-center">Name
+        <span>Value</span>
+      </li>
+    </ul>
+  </div>
+</div>

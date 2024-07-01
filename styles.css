@@ -1707,10 +1707,13 @@ a:focus {
         }
       }
       /* there is table inside each cell in the bbos */
-      td {
+      &.nested-no-padding
+      {
+        td {
         table, td, tr, th {
           @apply tw-border-0 tw-p-0 !important;
         }
+      }
       }
     }
   }
