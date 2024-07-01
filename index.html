@@ -1020,6 +1020,7 @@
                   <div class="tw-p-4">
                     <div class="tw-flex tw-items-center">
                       <h5 class="tw-flex-grow">Credit Score</h5>
+
                       <button
                         tabindex="0"
                         class="bbsButton bbsButton-tertiary small"
@@ -1038,7 +1039,15 @@
                         <span class="msicon notranslate">help</span>
                       </button>
                     </div>
-                    <p class="tw-text-xl tw-font-semibold">876</p>
+                    <chart-slider
+                          min="500"
+                          max="1000"
+                          stops="6"
+                          change="1"
+                          current_value="836"
+                          begin_label="High Risk"
+                          end_label="Low Risk"
+                        ></chart-slider>
                     <div class="tw-mt-2 tw-flex tw-items-center">
                       <button
                         class="bbsButton bbsButton-secondary small"
@@ -1103,7 +1112,6 @@
                 <div class="bbs-card-body no-padding">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2896.1920968092013!2d-114.25776470000001!3d43.4565866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54abd3affa467e07%3A0x7bd5b70f05ef5645!2s775%20S%20Main%20St%2C%20Bellevue%2C%20ID%2083313!5e0!3m2!1sen!2sus!4v1703787747702!5m2!1sen!2sus"
-                    width="400"
                     height="200"
                     style="border: 0"
                     class="tw-m-auto"

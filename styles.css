@@ -1557,22 +1557,28 @@ a:focus {
         tw-rounded-full
         tw-border-2
         tw-border-white
-        tw-bg-brand
+        tw-bg-text-primary
         tw-text-base
-        tw-font-semibold;
+        tw-font-semibold
+        tw-text-text-primary;
         height: 13px;
         width: 13px;
         z-index: 1;
       }
       .dot {
-        @apply tw-text-text-primary
-        tw-mix-blend-luminosity;
+        @apply tw-bg-text-primary/50
+        tw-text-text-primary;
+        line-height: 13px;
+        width: 1px;
+        height: 7px;
+        margin-top: 4px;
       }
       .steps {
         @apply tw-flex
         tw-flex-col
         tw-items-center;
         z-index: 1;
+        height: 30px;
       }
       .gradient {
         @apply tw-relative
@@ -1707,13 +1713,15 @@ a:focus {
         }
       }
       /* there is table inside each cell in the bbos */
-      &.nested-no-padding
-      {
+      &.nested-no-padding {
         td {
-        table, td, tr, th {
-          @apply tw-border-0 tw-p-0 !important;
+          table,
+          td,
+          tr,
+          th {
+            @apply tw-border-0 tw-p-0 !important;
+          }
         }
-      }
       }
     }
   }

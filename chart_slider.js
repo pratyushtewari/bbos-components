@@ -5,6 +5,7 @@ class ChartSlider extends HTMLElement {
     this.min = 0;
     this.max = 100;
     this.current_value = 50;
+    this.value_decimal = false;
     this.hide_labels = false;
     this.change = ""; // any negative, anypositive, or zero, "" for hiding it
     this.stops = 10; // including min and max
@@ -21,6 +22,7 @@ class ChartSlider extends HTMLElement {
       "min",
       "max",
       "current_value",
+      "value_decimal",
       "hide_labels",
       "change",
       "stops",
@@ -39,7 +41,14 @@ class ChartSlider extends HTMLElement {
         ? 'style="display:none;"'
         : "";
     const ifHiddenLabel = hideLabels ? 'style="margin-top:0"' : "";
-    const current_value = Number.parseFloat(this.current_value);
+
+    const valueDecimal = String(this.value_decimal).toLowerCase() == "true";
+
+    var current_value = "";
+    if(valueDecimal)
+        current_value = Number.parseFloat(this.current_value).toFixed(2);
+    else
+        current_value = Number.parseFloat(this.current_value);
 
     // for some stupid reason Number.parseFloat is returning string 'NaN' above instead of real Nan
     current_value = Number.parseFloat(current_value);
@@ -70,7 +79,7 @@ class ChartSlider extends HTMLElement {
 
     const current_location_html =
       current_value >= min && current_value <= max
-        ? `<div class="value dot" style="left: calc(${percentage}% - 9px) "></div>`
+        ? `<div class="value" style="left: calc(${percentage}% - 9px) "></div>`
         : ``;
 
     const steps = [];
@@ -78,7 +87,7 @@ class ChartSlider extends HTMLElement {
       steps.push(
         `<div class="steps">
           <span>${value}</span>
-          <span class="dot">&#x2022;</span>
+          <span class="dot"></span>
         </div>`,
       );
     };
