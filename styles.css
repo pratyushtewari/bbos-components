@@ -1308,6 +1308,26 @@ a:focus {
     text-overflow: ellipsis;
   }
 
+  .text-clipped {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-orient: vertical;
+    &.clip-1{
+      -webkit-line-clamp: 1;
+    }
+    &.clip-2 {
+      -webkit-line-clamp: 2;
+    }
+    &.clip-3 {
+      -webkit-line-clamp: 3;
+    }
+    &.clip-4 {
+      -webkit-line-clamp: 4;
+    }
+  }
+
   .bbs-alert {
     @apply tw-overflow-clip
     tw-rounded-lg
