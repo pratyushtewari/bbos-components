@@ -1033,6 +1033,11 @@ a:focus {
       @apply tw-border-green-200
       tw-bg-green-50;
     }
+    &.red {
+      @apply tw-border-red-200
+      tw-bg-red-50
+      tw-text-error;
+    }
   }
 
   h3,
