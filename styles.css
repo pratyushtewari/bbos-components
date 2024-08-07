@@ -758,13 +758,17 @@ a:focus {
 
   /* Bootstrap override */
   .accordion-header {
-    @apply tw-bg-bg-primary;
+    @apply tw-bg-bg-secondary;
     .accordion-button {
-      @apply tw-bg-none
-        tw-px-4
-        tw-py-2
+      @apply
+        tw-m-auto
+        tw-rounded
+        tw-border
+        tw-border-border
+        tw-px-3
+        tw-py-1
         hover:tw-bg-bg-component-hover
-      active:tw-bg-bg-component-active;
+        active:tw-bg-bg-component-active;
       background: none;
       &:not(.collapsed) {
         @apply tw-bg-none tw-shadow-none;
@@ -1319,7 +1323,7 @@ a:focus {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-box-orient: vertical;
-    &.clip-1{
+    &.clip-1 {
       -webkit-line-clamp: 1;
     }
     &.clip-2 {
