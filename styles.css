@@ -1958,13 +1958,14 @@ body.for-print {
     }
   }
   chart-box .selected {
-    border: 1px solid black;
+    outline: 1px solid black;
   }
   chart-slider {
     .stops {
       .gradient,
-      .value.dot {
-        border: 1px solid black;
+      .value,
+      .steps .dot {
+        outline: 1px solid black;
       }
     }
   }
