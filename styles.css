@@ -1722,6 +1722,18 @@ a:focus {
   select.form-control {
     appearance: auto;
   }
+  .form-label.required,
+  .form-check-label.required {
+    margin-left: 10px;
+  }
+  .form-label.required::before,
+  .form-check-label.required::before {
+    color: red;
+    content: "*";
+    position: absolute;
+    margin-left: -10px;
+  }
+
   /* Table inside a card-body no-padding is flushed */
   .bbs-card-body {
     .table {
