@@ -33,7 +33,7 @@
 
                     <div class="bbs-card-body no-padding tw-bg-bg-secondary">
 
-                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-gap-y-6  p-3">
+                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
 
                             <div class="tw-col-span-2">
                                 <label for="businessName" class="form-label ">Name of Business</label>
@@ -75,7 +75,7 @@
                             </div>
                         </div>
                         <hr \>
-                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-gap-y-6 p-3">
+                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
                             <div class="tw-col-span-2 md:tw-col-span-4">
                                 <label for="businessAddress" class="form-label required">Business
                                     Address</label>
@@ -103,7 +103,7 @@
                         </div>
                         <hr \>
 
-                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-gap-y-6 p-3">
+                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
                             <div class="tw-col-span-2 md:tw-col-span-4 tw-gap-2 tw-flex tw-flex-col">
                                 <label class="form-check-label required" for="pendingLawsuits">Legal Diligence
                                 </label>
@@ -113,14 +113,14 @@
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="legalDiligence"
                                             id="legalDiligenceYes">
-                                        <label class="form-check-label" for="legalDiligenceYes">
+                                        <label class="form-check-label tw-font-normal" for="legalDiligenceYes">
                                             Yes
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="legalDiligence"
                                             id="legalDiligenceNo">
-                                        <label class="form-check-label" for="legalDiligenceNo">
+                                        <label class="form-check-label tw-font-normal" for="legalDiligenceNo">
                                             No
                                         </label>
                                     </div>
@@ -129,7 +129,7 @@
                         </div>
                         <hr \>
 
-                        <div class="tw-flex tw-flex-col tw-gap-2 p-3">
+                        <div class="tw-flex tw-flex-col tw-gap-2 tw-p-3">
                             <label class="form-label required">Type of Business / Industry</label>
                             <ul class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-3  ">
                                 <li class="form-check">
@@ -163,7 +163,7 @@
                         </div>
                         <hr \>
 
-                        <div class="tw-flex tw-flex-col tw-gap-2 p-3">
+                        <div class="tw-flex tw-flex-col tw-gap-2 tw-p-3">
                             <label class="form-label required">What percentage of your sales are dedicated
                                 to</label>
                             <ul class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-3 tw-items-end">
@@ -188,7 +188,7 @@
                         </div>
                         <hr \>
 
-                        <div class="tw-flex tw-flex-col tw-gap-2 p-3">
+                        <div class="tw-flex tw-flex-col tw-gap-2 tw-p-3">
                             <label class="form-label required">Legal Form Under Which Business Operates </label>
                             <ul class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-3">
                                 <li class="form-check">
@@ -225,40 +225,310 @@
                     </div>
                 </div>
 
-
-                <!-- Consent signature -->
-                <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-gap-y-6 p-3">
-                    <div>
-                        <label for="lastName" class="form-label required">Last Name</label>
-                        <input type="text" class="form-control" id="lastName">
-                    </div>
-                    <div>
-                        <label for="firstName" class="form-label required">First Name</label>
-                        <input type="text" class="form-control" id="firstName">
-                    </div>
-                    <div>
-                        <label for="middleName" class="form-label ">Middle Name</label>
-                        <input type="text" class="form-control" id="middleName">
-                    </div>
-                    <div>
-                        <label for="title" class="form-label required">Title</label>
-                        <input type="text" class="form-control" id="title">
+                <div class="bbs-card-bordered tw-mt-4">
+                    <div class="bbs-card-header tw-sticky tw-top-0 tw-z-10">
+                        <p>Subject Company Key Contacts</p>
                     </div>
 
-                    <div>
-                        <label for="phone" class="form-label required">Phone</label>
-                        <input type="phone" class="form-control" id="phone">
-                    </div>
-                    <div class="tw-col-span-2 md:tw-col-span-3">
-                        <label for="email" class="form-label required">Email Address</label>
-                        <input type="email" class="form-control" id="email">
+                    <div class="bbs-card-body no-padding tw-bg-bg-secondary">
+                        <!-- Consent signature -->
+                        <label for="lastName" class="form-label tw-px-3 tw-pt-3">Company Principals</label>
+                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                            <div>
+                                <label for="lastName" class="form-label required">Last Name</label>
+                                <input type="text" class="form-control" id="lastName">
+                            </div>
+                            <div>
+                                <label for="firstName" class="form-label required">First Name</label>
+                                <input type="text" class="form-control" id="firstName">
+                            </div>
+
+                            <div>
+                                <label for="title" class="form-label required">Title</label>
+                                <input type="text" class="form-control" id="title">
+                            </div>
+                        </div>
+                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-px-3 tw-pb-3">
+                            <div>
+                                <label for="startDate" class="form-label required">Start Date</label>
+                                <input type="text" class="form-control" id="startDate">
+                            </div>
+                            <div>
+                                <label for="yearsInPosition" class="form-label required">Years in postion</label>
+                                <input type="text" class="form-control" id="yearsInPosition">
+                            </div>
+                            <div>
+                                <label for="ownership" class="form-label required">% Ownership</label>
+                                <input type="text" class="form-control" id="ownership">
+                            </div>
+                            <div class="form-check">
+                                <label class="form-label required" for="priorBankrupcies">Prior Bankrupcies?</label>
+                                <div class="tw-flex tw-gap-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="priorBankrupcies"
+                                            id="priorBankrupciesYes">
+                                        <label class="form-check-label tw-font-normal" for="priorBankrupciesYes">
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="priorBankrupcies"
+                                            id="priorBankrupciesNo">
+                                        <label class="form-check-label tw-font-normal" for="priorBankrupciesNo">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion accordion-flush tw-border-y" id="accordionAddionalKeyContacts">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                        aria-controls="flush-collapseOne">
+                                        Additional key contact One
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="lastNameOne" class="form-label">Last Name</label>
+                                                <input type="text" class="form-control" id="lastNameOne">
+                                            </div>
+                                            <div>
+                                                <label for="firstNameOne" class="form-label">First Name</label>
+                                                <input type="text" class="form-control" id="firstNameOne">
+                                            </div>
+
+                                            <div>
+                                                <label for="titleOne" class="form-label">Title</label>
+                                                <input type="text" class="form-control" id="titleOne">
+                                            </div>
+                                        </div>
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-px-3 tw-pb-3">
+                                            <div>
+                                                <label for="startDateOne" class="form-label">Start Date</label>
+                                                <input type="text" class="form-control" id="startDateOne">
+                                            </div>
+                                            <div>
+                                                <label for="yearsInPositionOne" class="form-label">Years in
+                                                    postion</label>
+                                                <input type="text" class="form-control" id="yearsInPositionOne">
+                                            </div>
+                                            <div>
+                                                <label for="ownershipOne" class="form-label">% Ownership</label>
+                                                <input type="text" class="form-control" id="ownershipOne">
+                                            </div>
+                                            <div class="form-check">
+                                                <label class="form-label" for="priorBankrupciesOne">Prior
+                                                    Bankrupcies?</label>
+                                                <div class="tw-flex tw-gap-3">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="priorBankrupciesOne" id="priorBankrupciesOneYes">
+                                                        <label class="form-check-label tw-font-normal"
+                                                            for="priorBankrupciesOneYes">
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="priorBankrupciesOne" id="priorBankrupciesOneNo">
+                                                        <label class="form-check-label tw-font-normal"
+                                                            for="priorBankrupciesOneNo">
+                                                            No
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                        aria-controls="flush-collapseTwo">
+                                        Additional key contact Two
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="lastNameTwo" class="form-label">Last Name</label>
+                                                <input type="text" class="form-control" id="lastNameTwo">
+                                            </div>
+                                            <div>
+                                                <label for="firstNameTwo" class="form-label">First Name</label>
+                                                <input type="text" class="form-control" id="firstNameTwo">
+                                            </div>
+
+                                            <div>
+                                                <label for="titleTwo" class="form-label">Title</label>
+                                                <input type="text" class="form-control" id="titleTwo">
+                                            </div>
+                                        </div>
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-px-3 tw-pb-3">
+                                            <div>
+                                                <label for="startDateTwo" class="form-label">Start Date</label>
+                                                <input type="text" class="form-control" id="startDateTwo">
+                                            </div>
+                                            <div>
+                                                <label for="yearsInPositionTwo" class="form-label">Years in
+                                                    postion</label>
+                                                <input type="text" class="form-control" id="yearsInPositionTwo">
+                                            </div>
+                                            <div>
+                                                <label for="ownershipTwo" class="form-label">% Ownership</label>
+                                                <input type="text" class="form-control" id="ownershipTwo">
+                                            </div>
+                                            <div class="form-check">
+                                                <label class="form-label" for="priorBankrupciesTwo">Prior
+                                                    Bankrupcies?</label>
+                                                <div class="tw-flex tw-gap-3">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="priorBankrupciesTwo" id="priorBankrupciesTwoYes">
+                                                        <label class="form-check-label tw-font-normal"
+                                                            for="priorBankrupciesTwoYes">
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="priorBankrupciesTwo" id="priorBankrupciesTwoNo">
+                                                        <label class="form-check-label tw-font-normal"
+                                                            for="priorBankrupciesTwoNo">
+                                                            No
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                        aria-controls="flush-collapseThree">
+                                        Additional key contact Three
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="lastNameThree" class="form-label">Last Name</label>
+                                                <input type="text" class="form-control" id="lastNameThree">
+                                            </div>
+                                            <div>
+                                                <label for="firstNameThree" class="form-label">First Name</label>
+                                                <input type="text" class="form-control" id="firstNameThree">
+                                            </div>
+
+                                            <div>
+                                                <label for="titleThree" class="form-label">Title</label>
+                                                <input type="text" class="form-control" id="titleThree">
+                                            </div>
+                                        </div>
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-px-3 tw-pb-3">
+                                            <div>
+                                                <label for="startDateThree" class="form-label">Start Date</label>
+                                                <input type="text" class="form-control" id="startDateThree">
+                                            </div>
+                                            <div>
+                                                <label for="yearsInPositionThree" class="form-label">Years in
+                                                    postion</label>
+                                                <input type="text" class="form-control" id="yearsInPositionThree">
+                                            </div>
+                                            <div>
+                                                <label for="ownershipThree" class="form-label">% Ownership</label>
+                                                <input type="text" class="form-control" id="ownershipThree">
+                                            </div>
+                                            <div class="form-check">
+                                                <label class="form-label" for="priorBankrupciesThree">Prior
+                                                    Bankrupcies?</label>
+                                                <div class="tw-flex tw-gap-3">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="priorBankrupciesThree" id="priorBankrupciesThreeYes">
+                                                        <label class="form-check-label tw-font-normal"
+                                                            for="priorBankrupciesThreeYes">
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="priorBankrupciesThree" id="priorBankrupciesThreeNo">
+                                                        <label class="form-check-label tw-font-normal"
+                                                            for="priorBankrupciesThreeNo">
+                                                            No
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-p-3 tw-items-end">
+                            <div>
+                                <label for="primaryPerson" class="form-label required">Name of the primary person responsible for payment of invoices</label>
+                                <input type="text" class="form-control" id="primaryPerson">
+                            </div>
+                            <div>
+                                <label for="primaryTitle" class="form-label required">Title</label>
+                                <input type="text" class="form-control" id="primaryTitle">
+                            </div>
+                            <div>
+                                <label for="primaryEmail" class="form-label required">Email</label>
+                                <input type="email" class="form-control" id="primaryEmail">
+                            </div>
+                            <div>
+                                <label for="phone" class="form-label required">Phone</label>
+                                <input type="text" inputmode="numeric" pattern="[0-9]*" class="form-control" id="phone">
+                            </div>
+                        </div>
+                        <hr/>
+
+                        <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-p-3 tw-items-end">
+                            <div>
+                                <label for="secondaryPerson" class="form-label">Name of the secondary person responsible for payment of invoices</label>
+                                <input type="text" class="form-control" id="secondaryPerson">
+                            </div>
+                            <div>
+                                <label for="secondaryTitle" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="secondaryTitle">
+                            </div>
+                            <div>
+                                <label for="secondaryEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="secondaryEmail">
+                            </div>
+                            <div>
+                                <label for="secondaryphone" class="form-label">Phone</label>
+                                <input type="text" inputmode="numeric" pattern="[0-9]*" class="form-control" id="secondaryphone">
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-            </section>
-
-
-
         </div>
+
+        </section>
+
+
+
+    </div>
 
 
     </div>
