@@ -537,9 +537,7 @@
                     <div class="bbs-card-header tw-sticky tw-top-0 tw-z-10">
                         <p>Trade References</p>
                     </div>
-
                     <div class="bbs-card-body no-padding tw-bg-bg-secondary">
-
                         <div class="accordion accordion-flush tw-border-y" id="accordionTradeReference">
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
@@ -1043,13 +1041,64 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-
-
                     </div>
                 </div>
             </section>
+
+            <!-- Bank Reference -->
+             <section id="bankReference">
+                <div class="bbs-card-bordered">
+                    <div class="bbs-card-header tw-sticky tw-top-0 tw-z-10">
+                        <p>Bank Reference</p>
+                    </div>
+                    <div class="bbs-card-body no-padding tw-bg-bg-secondary">
+
+                        <div class="tw-grid tw-grid-cols-1 tw-gap-4 tw-p-3">
+                            <div>
+                                <label for="BankName" class="form-label required">Bank Name</label>
+                                <input type="text" class="form-control" id="BankName">
+                            </div>
+                            <div>
+                                <label for="bankAddress" class="form-label">Bank Address</label>
+                                <textarea type="text" class="form-control" id="bankAddress"></textarea>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-4 tw-p-3">
+                            <div>
+                                <label for="BankContactName" class="form-label ">Contact Name</label>
+                                <input type="text" class="form-control" id="BankContactName">
+                            </div>
+                            <div>
+                                <label for="BankContactEmail" class="form-label ">Email Address</label>
+                                <input type="email" class="form-control" id="BankContactEmail">
+                            </div>
+                            <div>
+                                <label for="BankPhone" class="form-label required">Phone</label>
+                                <input type="tel" class="form-control" id="BankPhone">
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-4 tw-p-3">
+                            <div>
+                                <label for="AvgChekAcctBal" class="form-label ">Average Checking Account Balance</label>
+                                <input type="text" class="form-control" id="AvgChekAcctBal">
+                            </div>
+                            <div>
+                                <label for="TotalLineOfCredit" class="form-label ">Total Line Of Credit</label>
+                                <input type="email" class="form-control" id="TotalLineOfCredit">
+                            </div>
+                            <div>
+                                <label for="LineOfCreditOutstandingBal" class="form-label ">Line Of Credit Outstanding Balance</label>
+                                <input type="email" class="form-control" id="LineOfCreditOutstandingBal">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+             </section>
 
 
         </div>
