@@ -1047,7 +1047,7 @@
             </section>
 
             <!-- Bank Reference -->
-             <section id="bankReference">
+            <section id="bankReference">
                 <div class="bbs-card-bordered">
                     <div class="bbs-card-header tw-sticky tw-top-0 tw-z-10">
                         <p>Bank Reference</p>
@@ -1090,7 +1090,8 @@
                                 <input type="email" class="form-control" id="TotalLineOfCredit">
                             </div>
                             <div>
-                                <label for="LineOfCreditOutstandingBal" class="form-label ">Line Of Credit Outstanding Balance</label>
+                                <label for="LineOfCreditOutstandingBal" class="form-label ">Line Of Credit Outstanding
+                                    Balance</label>
                                 <input type="email" class="form-control" id="LineOfCreditOutstandingBal">
                             </div>
                         </div>
@@ -1098,8 +1099,146 @@
                     </div>
                 </div>
 
-             </section>
+            </section>
 
+            <!-- Business Financial Information -->
+            <section id="businessFinanceInfo">
+                <div class="bbs-card-bordered">
+                    <div class="bbs-card-header tw-sticky tw-top-0 tw-z-10">
+                        <p>Business Financial Information</p>
+                    </div>
+                    <div class="bbs-card-body no-padding tw-bg-bg-secondary">
+
+                        <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-p-3">
+                            <div>
+                                <label for="revenue" class="form-label">Revenue (latest year)</label>
+                                <input type="text" class="form-control" id="revenue">
+                            </div>
+                            <div>
+                                <label for="EBITDA" class="form-label">EBITDA (trailing 12-months)</label>
+                                <input type="text" class="form-control" id="EBITDA">
+                            </div>
+                            <div>
+                                <label for="netIncome" class="form-label">Net Income (trailing 12-months)</label>
+                                <input type="text" class="form-control" id="netIncome">
+                            </div>
+                            <div>
+                                <label for="TotalAssetsBalance" class="form-label">Total Assets Balance (latest
+                                    month-end)</label>
+                                <input type="text" class="form-control" id="TotalAssetsBalance">
+                            </div>
+                            <div>
+                                <label for="TotalDebtBalance" class="form-label">Total Debt Balance (latest
+                                    month-end)</label>
+                                <input type="text" class="form-control" id="TotalDebtBalance">
+                            </div>
+                            <div>
+                                <label for="TotalLiabilitiesBalance" class="form-label">Total Liabilities Balance
+                                    (latest month-end)</label>
+                                <input type="text" class="form-control" id="TotalLiabilitiesBalance">
+                            </div>
+                            <div class="tw-col-span-2">
+                                <label for="Notes" class="form-label">Notes</label>
+                                <textarea type="text" class="form-control" id="Notes"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Subject Company's End Customer(s) -->
+            <section id="businessFinanceInfo">
+                <div class="bbs-card-bordered">
+                    <div class="bbs-card-header tw-sticky tw-top-0 tw-z-10">
+                        <p>Subject Company's End Customer(s)</p>
+                    </div>
+                    <div class="bbs-card-body no-padding tw-bg-bg-secondary">
+
+                        <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-p-3">
+                            <div>
+                                <label for="NameOfBusinessOne" class="form-label">Name of Business</label>
+                                <input type="text" class="form-control" id="NameOfBusinessOne">
+                            </div>
+                            <div>
+                                <label for="City_StateOne" class="form-label">City / State</label>
+                                <input type="text" class="form-control" id="City_StateOne">
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-p-3">
+                            <div>
+                                <label for="NameOfBusinessTwo" class="form-label">Name of Business</label>
+                                <input type="text" class="form-control" id="NameOfBusinessTwo">
+                            </div>
+                            <div>
+                                <label for="City_StateTwo" class="form-label">City / State</label>
+                                <input type="text" class="form-control" id="City_StateTwo">
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-p-3">
+                            <div>
+                                <label for="NameOfBusinessThree" class="form-label">Name of Business</label>
+                                <input type="text" class="form-control" id="NameOfBusinessThree">
+                            </div>
+                            <div>
+                                <label for="City_StateThree" class="form-label">City / State</label>
+                                <input type="text" class="form-control" id="City_StateThree">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <div>
+                <label for="CreditLimitReq" class="form-label required">Business Credit Limit Request</label>
+                <div class="input-group tw-flex ">
+                    <span class="input-group-text">$</span>
+                    <input type="text" class="form-control" id="CreditLimitReq">
+                </div>
+            </div>
+
+            <hr/>
+            <p>
+                I hereby certify that the information contained herein is complete and accurate. This information has
+                been furnished with the understanding that it is to be used to determine the amount and conditions of
+                the credit to be extended. Furthermore, I hereby authorize the financial institution listed in this
+                credit application to release necessary information to the company for which credit is being applied for
+                in order to verify the information contained herein.
+            </p>
+
+            <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                <div>
+                    <label for="certifyLastName" class="form-label required">Last Name</label>
+                    <input type="text" class="form-control" id="certifyLastName">
+                </div>
+                <div>
+                    <label for="certifyFirstName" class="form-label required">First Name</label>
+                    <input type="text" class="form-control" id="certifyFirstName">
+                </div>
+                <div>
+                    <label for="certifyMiddleInitial" class="form-label">Middle Initial</label>
+                    <input type="text" class="form-control" id="certifyMiddleInitial">
+                </div>
+                <div>
+                    <label for="certifyTitle" class="form-label required">Title</label>
+                    <input type="text" class="form-control" id="certifyTitle">
+                </div>
+                <div>
+                    <label for="certifyPhone" class="form-label required">Phone</label>
+                    <input type="text" class="form-control" id="certifyPhone">
+                </div>
+                <div class="tw-col-span-2">
+                    <label for="certifyEmailAddress" class="form-label required">Email Address</label>
+                    <input type="text" class="form-control" id="certifyEmailAddress">
+                </div>
+                <div>
+                    <label for="certifyDate" class="form-label">Today's Date</label>
+                    <input type="text" class="form-control" id="certifyDate" disabled value="09/13/2024">
+                </div>
+            </div>
 
         </div>
     </div>
