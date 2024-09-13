@@ -21,9 +21,8 @@
 
     <!-- Content  -->
     <div class="content tw-bg-bg-primary">
-        <div class="content-container tw-flex tw-items-center tw-justify-center tw-align-middle  tw-p-8">
+        <div class="content-container tw-flex tw-flex-col tw-p-6 tw-gap-6">
 
-            <!-- JT - all these sections needs to go into a full page bootstrap modal. -->
             <!-- Company Business Information -->
             <section id="businessInformation">
                 <div class="bbs-card-bordered">
@@ -224,14 +223,16 @@
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="bbs-card-bordered tw-mt-4">
+            <!-- Key contacts -->
+            <section id="keycontacts">
+                <div class="bbs-card-bordered">
                     <div class="bbs-card-header tw-sticky tw-top-0 tw-z-10">
                         <p>Subject Company Key Contacts</p>
                     </div>
 
                     <div class="bbs-card-body no-padding tw-bg-bg-secondary">
-                        <!-- Consent signature -->
                         <label for="lastName" class="form-label tw-px-3 tw-pt-3">Company Principals</label>
                         <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
                             <div>
@@ -285,14 +286,15 @@
                         <div class="accordion accordion-flush tw-border-y" id="accordionAddionalKeyContacts">
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    <button class="accordion-button collapsed" type="button"
+                                        style="padding-top: 12px; padding-bottom: 8px" data-bs-toggle="collapse"
                                         data-bs-target="#flush-collapseOne" aria-expanded="false"
                                         aria-controls="flush-collapseOne">
                                         Additional key contact One
                                     </button>
                                 </h2>
                                 <div id="flush-collapseOne" class="accordion-collapse collapse">
-                                    <div class="accordion-body">
+                                    <div class="accordion-body tw-bg-bg-secondary">
                                         <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
                                             <div>
                                                 <label for="lastNameOne" class="form-label">Last Name</label>
@@ -350,14 +352,15 @@
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    <button class="accordion-button collapsed" type="button"
+                                        style="padding-top: 12px; padding-bottom: 8px" data-bs-toggle="collapse"
                                         data-bs-target="#flush-collapseTwo" aria-expanded="false"
                                         aria-controls="flush-collapseTwo">
                                         Additional key contact Two
                                     </button>
                                 </h2>
                                 <div id="flush-collapseTwo" class="accordion-collapse collapse">
-                                    <div class="accordion-body">
+                                    <div class="accordion-body tw-bg-bg-secondary">
                                         <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
                                             <div>
                                                 <label for="lastNameTwo" class="form-label">Last Name</label>
@@ -415,14 +418,15 @@
                             </div>
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    <button class="accordion-button collapsed" type="button"
+                                        style="padding-top: 12px; padding-bottom: 8px" data-bs-toggle="collapse"
                                         data-bs-target="#flush-collapseThree" aria-expanded="false"
                                         aria-controls="flush-collapseThree">
                                         Additional key contact Three
                                     </button>
                                 </h2>
                                 <div id="flush-collapseThree" class="accordion-collapse collapse">
-                                    <div class="accordion-body">
+                                    <div class="accordion-body tw-bg-bg-secondary">
                                         <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
                                             <div>
                                                 <label for="lastNameThree" class="form-label">Last Name</label>
@@ -483,7 +487,8 @@
 
                         <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-p-3 tw-items-end">
                             <div>
-                                <label for="primaryPerson" class="form-label required">Name of the primary person responsible for payment of invoices</label>
+                                <label for="primaryPerson" class="form-label required">Name of the primary person
+                                    responsible for payment of invoices</label>
                                 <input type="text" class="form-control" id="primaryPerson">
                             </div>
                             <div>
@@ -499,11 +504,12 @@
                                 <input type="text" inputmode="numeric" pattern="[0-9]*" class="form-control" id="phone">
                             </div>
                         </div>
-                        <hr/>
+                        <hr />
 
                         <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-p-3 tw-items-end">
                             <div>
-                                <label for="secondaryPerson" class="form-label">Name of the secondary person responsible for payment of invoices</label>
+                                <label for="secondaryPerson" class="form-label">Name of the secondary person responsible
+                                    for payment of invoices</label>
                                 <input type="text" class="form-control" id="secondaryPerson">
                             </div>
                             <div>
@@ -516,21 +522,537 @@
                             </div>
                             <div>
                                 <label for="secondaryphone" class="form-label">Phone</label>
-                                <input type="text" inputmode="numeric" pattern="[0-9]*" class="form-control" id="secondaryphone">
+                                <input type="text" inputmode="numeric" pattern="[0-9]*" class="form-control"
+                                    id="secondaryphone">
                             </div>
                         </div>
 
                     </div>
                 </div>
+            </section>
+
+            <!-- Trade References -->
+            <section id="tradeReferences">
+                <div class="bbs-card-bordered">
+                    <div class="bbs-card-header tw-sticky tw-top-0 tw-z-10">
+                        <p>Trade References</p>
+                    </div>
+
+                    <div class="bbs-card-body no-padding tw-bg-bg-secondary">
+
+                        <div class="accordion accordion-flush tw-border-y" id="accordionTradeReference">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button"
+                                        style="padding-top: 12px; padding-bottom: 8px" data-bs-toggle="collapse"
+                                        data-bs-target="#trade-ref-flush-collapseOne" aria-expanded="false"
+                                        aria-controls="trade-ref-flush-collapseOne">
+                                        <label class="form-label required tw-m-0">Reference 1 (required)</label>
+                                    </button>
+                                </h2>
+                                <div id="trade-ref-flush-collapseOne" class="accordion-collapse collapse show">
+                                    <div class="accordion-body  tw-bg-bg-secondary">
+                                        <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="businessNameOne" class="form-label">Name of Business</label>
+                                                <input type="text" class="form-control" id="businessNameOne">
+                                            </div>
+                                            <div>
+                                                <label for="blueBookNumberOne" class="form-label">Blue Book #</label>
+                                                <input type="text" class="form-control" id="blueBookNumberOne">
+                                            </div>
+                                        </div>
+                                        <div class="tw-p-3">
+                                            <label for="businessAddressOne" class="form-label">Business Address</label>
+                                            <input type="text" class="form-control" id="businessAddressOne">
+                                        </div>
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="contacNameOne" class="form-label">Contact Name</label>
+                                                <input type="text" class="form-control" id="contacNameOne">
+                                            </div>
+                                            <div>
+                                                <label for="TitleOne" class="form-label">Title</label>
+                                                <input type="text" class="form-control" id="TitleOne">
+                                            </div>
+                                            <div>
+                                                <label for="PhoneOne" class="form-label">Phone #</label>
+                                                <input type="text" class="form-control" id="PhoneOne">
+                                            </div>
+                                            <div>
+                                                <label for="emailOne" class="form-label">Email Address</label>
+                                                <input type="email" class="form-control" id="emailOne">
+                                            </div>
+                                        </div>
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="accountOpenedOne" class="form-label">Account Opened
+                                                    Since</label>
+                                                <input type="text" class="form-control" id="accountOpenedOne">
+                                            </div>
+                                            <div>
+                                                <label for="mostRecentTransactionOne" class="form-label">Most Recent
+                                                    Transaction</label>
+                                                <input type="text" class="form-control" id="mostRecentTransactionOne">
+                                            </div>
+                                            <div>
+                                                <label for="TradeExpRatingOne" class="form-label">Trade Experience
+                                                    Rating</label>
+                                                <input type="text" class="form-control" id="TradeExpRatingOne">
+                                            </div>
+                                            <div>
+                                                <label for="AveragePayOne" class="form-label">Average Pay
+                                                    Description</label>
+                                                <input type="AveragePay" class="form-control" id="AveragePayOne">
+                                            </div>
+                                        </div>
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="creditLimitOne" class="form-label">Credit Limit</label>
+                                                <input type="text" class="form-control" id="creditLimitOne">
+                                            </div>
+                                            <div>
+                                                <label for="AmountPastDueOne" class="form-label">Amount Past Due</label>
+                                                <input type="text" class="form-control" id="AmountPastDueOne">
+                                            </div>
+                                            <div class="tw-col-span-2">
+                                                <label for="commentsOne" class="form-label">Comments</label>
+                                                <textarea type="text" class="form-control" id="commentsOne"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        style="padding-top: 12px; padding-bottom: 8px" data-bs-toggle="collapse"
+                                        data-bs-target="#trade-ref-flush-collapseTwo" aria-expanded="false"
+                                        aria-controls="trade-ref-flush-collapseTwo">
+                                        <label class="form-label required tw-m-0">Reference 2 (required)</label>
+                                    </button>
+                                </h2>
+                                <div id="trade-ref-flush-collapseTwo" class="accordion-collapse collapse">
+                                    <div class="accordion-body  tw-bg-bg-secondary">
+                                        <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="businessNameTwo" class="form-label">Name of Business</label>
+                                                <input type="text" class="form-control" id="businessNameTwo">
+                                            </div>
+                                            <div>
+                                                <label for="blueBookNumberTwo" class="form-label">Blue Book #</label>
+                                                <input type="text" class="form-control" id="blueBookNumberTwo">
+                                            </div>
+                                        </div>
+                                        <div class="tw-p-3">
+                                            <label for="businessAddressTwo" class="form-label">Business Address</label>
+                                            <input type="text" class="form-control" id="businessAddressTwo">
+                                        </div>
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="contacNameTwo" class="form-label">Contact Name</label>
+                                                <input type="text" class="form-control" id="contacNameTwo">
+                                            </div>
+                                            <div>
+                                                <label for="TitleTwo" class="form-label">Title</label>
+                                                <input type="text" class="form-control" id="TitleTwo">
+                                            </div>
+                                            <div>
+                                                <label for="PhoneTwo" class="form-label">Phone #</label>
+                                                <input type="text" class="form-control" id="PhoneTwo">
+                                            </div>
+                                            <div>
+                                                <label for="emailTwo" class="form-label">Email Address</label>
+                                                <input type="email" class="form-control" id="emailTwo">
+                                            </div>
+                                        </div>
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="accountOpenedTwo" class="form-label">Account Opened
+                                                    Since</label>
+                                                <input type="text" class="form-control" id="accountOpenedTwo">
+                                            </div>
+                                            <div>
+                                                <label for="mostRecentTransactionTwo" class="form-label">Most Recent
+                                                    Transaction</label>
+                                                <input type="text" class="form-control" id="mostRecentTransactionTwo">
+                                            </div>
+                                            <div>
+                                                <label for="TradeExpRatingTwo" class="form-label">Trade Experience
+                                                    Rating</label>
+                                                <input type="text" class="form-control" id="TradeExpRatingTwo">
+                                            </div>
+                                            <div>
+                                                <label for="AveragePayTwo" class="form-label">Average Pay
+                                                    Description</label>
+                                                <input type="AveragePay" class="form-control" id="AveragePayTwo">
+                                            </div>
+                                        </div>
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="creditLimitTwo" class="form-label">Credit Limit</label>
+                                                <input type="text" class="form-control" id="creditLimitTwo">
+                                            </div>
+                                            <div>
+                                                <label for="AmountPastDueTwo" class="form-label">Amount Past Due</label>
+                                                <input type="text" class="form-control" id="AmountPastDueTwo">
+                                            </div>
+                                            <div class="tw-col-span-2">
+                                                <label for="commentsTwo" class="form-label">Comments</label>
+                                                <textarea type="text" class="form-control" id="commentsTwo"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        style="padding-top: 12px; padding-bottom: 8px" data-bs-toggle="collapse"
+                                        data-bs-target="#trade-ref-flush-collapseThree" aria-expanded="false"
+                                        aria-controls="trade-ref-flush-collapseThree">
+                                        <label class="form-label required tw-m-0">Reference 3 (required)</label>
+                                    </button>
+                                </h2>
+                                <div id="trade-ref-flush-collapseThree" class="accordion-collapse collapse">
+                                    <div class="accordion-body  tw-bg-bg-secondary">
+                                        <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="businessNameThree" class="form-label">Name of
+                                                    Business</label>
+                                                <input type="text" class="form-control" id="businessNameThree">
+                                            </div>
+                                            <div>
+                                                <label for="blueBookNumberThree" class="form-label">Blue Book #</label>
+                                                <input type="text" class="form-control" id="blueBookNumberThree">
+                                            </div>
+                                        </div>
+                                        <div class="tw-p-3">
+                                            <label for="businessAddressThree" class="form-label">Business
+                                                Address</label>
+                                            <input type="text" class="form-control" id="businessAddressThree">
+                                        </div>
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="contacNameThree" class="form-label">Contact Name</label>
+                                                <input type="text" class="form-control" id="contacNameThree">
+                                            </div>
+                                            <div>
+                                                <label for="TitleThree" class="form-label">Title</label>
+                                                <input type="text" class="form-control" id="TitleThree">
+                                            </div>
+                                            <div>
+                                                <label for="PhoneThree" class="form-label">Phone #</label>
+                                                <input type="text" class="form-control" id="PhoneThree">
+                                            </div>
+                                            <div>
+                                                <label for="emailThree" class="form-label">Email Address</label>
+                                                <input type="email" class="form-control" id="emailThree">
+                                            </div>
+                                        </div>
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="accountOpenedThree" class="form-label">Account Opened
+                                                    Since</label>
+                                                <input type="text" class="form-control" id="accountOpenedThree">
+                                            </div>
+                                            <div>
+                                                <label for="mostRecentTransactionThree" class="form-label">Most Recent
+                                                    Transaction</label>
+                                                <input type="text" class="form-control" id="mostRecentTransactionThree">
+                                            </div>
+                                            <div>
+                                                <label for="TradeExpRatingThree" class="form-label">Trade Experience
+                                                    Rating</label>
+                                                <input type="text" class="form-control" id="TradeExpRatingThree">
+                                            </div>
+                                            <div>
+                                                <label for="AveragePayThree" class="form-label">Average Pay
+                                                    Description</label>
+                                                <input type="AveragePay" class="form-control" id="AveragePayThree">
+                                            </div>
+                                        </div>
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="creditLimitThree" class="form-label">Credit Limit</label>
+                                                <input type="text" class="form-control" id="creditLimitThree">
+                                            </div>
+                                            <div>
+                                                <label for="AmountPastDueThree" class="form-label">Amount Past
+                                                    Due</label>
+                                                <input type="text" class="form-control" id="AmountPastDueThree">
+                                            </div>
+                                            <div class="tw-col-span-2">
+                                                <label for="commentsThree" class="form-label">Comments</label>
+                                                <textarea type="text" class="form-control"
+                                                    id="commentsThree"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        style="padding-top: 12px; padding-bottom: 8px" data-bs-toggle="collapse"
+                                        data-bs-target="#trade-ref-flush-collapseFour" aria-expanded="false"
+                                        aria-controls="trade-ref-flush-collapseFour">
+                                        <label class="form-label tw-m-0">Reference 4</label>
+                                    </button>
+                                </h2>
+                                <div id="trade-ref-flush-collapseFour" class="accordion-collapse collapse">
+                                    <div class="accordion-body  tw-bg-bg-secondary">
+                                        <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="businessNameFour" class="form-label">Name of
+                                                    Business</label>
+                                                <input type="text" class="form-control" id="businessNameFour">
+                                            </div>
+                                            <div>
+                                                <label for="blueBookNumberFour" class="form-label">Blue Book #</label>
+                                                <input type="text" class="form-control" id="blueBookNumberFour">
+                                            </div>
+                                        </div>
+                                        <div class="tw-p-3">
+                                            <label for="businessAddressFour" class="form-label">Business Address</label>
+                                            <input type="text" class="form-control" id="businessAddressFour">
+                                        </div>
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="contacNameFour" class="form-label">Contact Name</label>
+                                                <input type="text" class="form-control" id="contacNameFour">
+                                            </div>
+                                            <div>
+                                                <label for="TitleFour" class="form-label">Title</label>
+                                                <input type="text" class="form-control" id="TitleFour">
+                                            </div>
+                                            <div>
+                                                <label for="PhoneFour" class="form-label">Phone #</label>
+                                                <input type="text" class="form-control" id="PhoneFour">
+                                            </div>
+                                            <div>
+                                                <label for="emailFour" class="form-label">Email Address</label>
+                                                <input type="email" class="form-control" id="emailFour">
+                                            </div>
+                                        </div>
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="accountOpenedFour" class="form-label">Account Opened
+                                                    Since</label>
+                                                <input type="text" class="form-control" id="accountOpenedFour">
+                                            </div>
+                                            <div>
+                                                <label for="mostRecentTransactionFour" class="form-label">Most Recent
+                                                    Transaction</label>
+                                                <input type="text" class="form-control" id="mostRecentTransactionFour">
+                                            </div>
+                                            <div>
+                                                <label for="TradeExpRatingFour" class="form-label">Trade Experience
+                                                    Rating</label>
+                                                <input type="text" class="form-control" id="TradeExpRatingFour">
+                                            </div>
+                                            <div>
+                                                <label for="AveragePayFour" class="form-label">Average Pay
+                                                    Description</label>
+                                                <input type="AveragePay" class="form-control" id="AveragePayFour">
+                                            </div>
+                                        </div>
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="creditLimitFour" class="form-label">Credit Limit</label>
+                                                <input type="text" class="form-control" id="creditLimitFour">
+                                            </div>
+                                            <div>
+                                                <label for="AmountPastDueFour" class="form-label">Amount Past
+                                                    Due</label>
+                                                <input type="text" class="form-control" id="AmountPastDueFour">
+                                            </div>
+                                            <div class="tw-col-span-2">
+                                                <label for="commentsFour" class="form-label">Comments</label>
+                                                <textarea type="text" class="form-control" id="commentsFour"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        style="padding-top: 12px; padding-bottom: 8px" data-bs-toggle="collapse"
+                                        data-bs-target="#trade-ref-flush-collapseFive" aria-expanded="false"
+                                        aria-controls="trade-ref-flush-collapseFive">
+                                        <label class="form-label tw-m-0">Reference 5</label>
+                                    </button>
+                                </h2>
+                                <div id="trade-ref-flush-collapseFive" class="accordion-collapse collapse">
+                                    <div class="accordion-body  tw-bg-bg-secondary">
+                                        <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="businessNameFive" class="form-label">Name of
+                                                    Business</label>
+                                                <input type="text" class="form-control" id="businessNameFive">
+                                            </div>
+                                            <div>
+                                                <label for="blueBookNumberFive" class="form-label">Blue Book #</label>
+                                                <input type="text" class="form-control" id="blueBookNumberFive">
+                                            </div>
+                                        </div>
+                                        <div class="tw-p-3">
+                                            <label for="businessAddressFive" class="form-label">Business Address</label>
+                                            <input type="text" class="form-control" id="businessAddressFive">
+                                        </div>
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="contacNameFive" class="form-label">Contact Name</label>
+                                                <input type="text" class="form-control" id="contacNameFive">
+                                            </div>
+                                            <div>
+                                                <label for="TitleFive" class="form-label">Title</label>
+                                                <input type="text" class="form-control" id="TitleFive">
+                                            </div>
+                                            <div>
+                                                <label for="PhoneFive" class="form-label">Phone #</label>
+                                                <input type="text" class="form-control" id="PhoneFive">
+                                            </div>
+                                            <div>
+                                                <label for="emailFive" class="form-label">Email Address</label>
+                                                <input type="email" class="form-control" id="emailFive">
+                                            </div>
+                                        </div>
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="accountOpenedFive" class="form-label">Account Opened
+                                                    Since</label>
+                                                <input type="text" class="form-control" id="accountOpenedFive">
+                                            </div>
+                                            <div>
+                                                <label for="mostRecentTransactionFive" class="form-label">Most Recent
+                                                    Transaction</label>
+                                                <input type="text" class="form-control" id="mostRecentTransactionFive">
+                                            </div>
+                                            <div>
+                                                <label for="TradeExpRatingFive" class="form-label">Trade Experience
+                                                    Rating</label>
+                                                <input type="text" class="form-control" id="TradeExpRatingFive">
+                                            </div>
+                                            <div>
+                                                <label for="AveragePayFive" class="form-label">Average Pay
+                                                    Description</label>
+                                                <input type="AveragePay" class="form-control" id="AveragePayFive">
+                                            </div>
+                                        </div>
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="creditLimitFive" class="form-label">Credit Limit</label>
+                                                <input type="text" class="form-control" id="creditLimitFive">
+                                            </div>
+                                            <div>
+                                                <label for="AmountPastDueFive" class="form-label">Amount Past
+                                                    Due</label>
+                                                <input type="text" class="form-control" id="AmountPastDueFive">
+                                            </div>
+                                            <div class="tw-col-span-2">
+                                                <label for="commentsFive" class="form-label">Comments</label>
+                                                <textarea type="text" class="form-control" id="commentsFive"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                        style="padding-top: 12px; padding-bottom: 8px" data-bs-toggle="collapse"
+                                        data-bs-target="#trade-ref-flush-collapseSix" aria-expanded="false"
+                                        aria-controls="trade-ref-flush-collapseSix">
+                                        <label class="form-label tw-m-0">Reference 6</label>
+                                    </button>
+                                </h2>
+                                <div id="trade-ref-flush-collapseSix" class="accordion-collapse collapse">
+                                    <div class="accordion-body  tw-bg-bg-secondary">
+                                        <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="businessNameSix" class="form-label">Name of
+                                                    Business</label>
+                                                <input type="text" class="form-control" id="businessNameSix">
+                                            </div>
+                                            <div>
+                                                <label for="blueBookNumberSix" class="form-label">Blue Book #</label>
+                                                <input type="text" class="form-control" id="blueBookNumberSix">
+                                            </div>
+                                        </div>
+                                        <div class="tw-p-3">
+                                            <label for="businessAddressSix" class="form-label">Business Address</label>
+                                            <input type="text" class="form-control" id="businessAddressSix">
+                                        </div>
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="contacNameSix" class="form-label">Contact Name</label>
+                                                <input type="text" class="form-control" id="contacNameSix">
+                                            </div>
+                                            <div>
+                                                <label for="TitleSix" class="form-label">Title</label>
+                                                <input type="text" class="form-control" id="TitleSix">
+                                            </div>
+                                            <div>
+                                                <label for="PhoneSix" class="form-label">Phone #</label>
+                                                <input type="text" class="form-control" id="PhoneSix">
+                                            </div>
+                                            <div>
+                                                <label for="emailSix" class="form-label">Email Address</label>
+                                                <input type="email" class="form-control" id="emailSix">
+                                            </div>
+                                        </div>
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="accountOpenedSix" class="form-label">Account Opened
+                                                    Since</label>
+                                                <input type="text" class="form-control" id="accountOpenedSix">
+                                            </div>
+                                            <div>
+                                                <label for="mostRecentTransactionSix" class="form-label">Most Recent
+                                                    Transaction</label>
+                                                <input type="text" class="form-control" id="mostRecentTransactionSix">
+                                            </div>
+                                            <div>
+                                                <label for="TradeExpRatingSix" class="form-label">Trade Experience
+                                                    Rating</label>
+                                                <input type="text" class="form-control" id="TradeExpRatingSix">
+                                            </div>
+                                            <div>
+                                                <label for="AveragePaySix" class="form-label">Average Pay
+                                                    Description</label>
+                                                <input type="AveragePay" class="form-control" id="AveragePaySix">
+                                            </div>
+                                        </div>
+                                        <div class="tw-grid tw-grid-cols-2 md:tw-grid-cols-4 tw-gap-4 tw-p-3">
+                                            <div>
+                                                <label for="creditLimitSix" class="form-label">Credit Limit</label>
+                                                <input type="text" class="form-control" id="creditLimitSix">
+                                            </div>
+                                            <div>
+                                                <label for="AmountPastDueSix" class="form-label">Amount Past
+                                                    Due</label>
+                                                <input type="text" class="form-control" id="AmountPastDueSix">
+                                            </div>
+                                            <div class="tw-col-span-2">
+                                                <label for="commentsSix" class="form-label">Comments</label>
+                                                <textarea type="text" class="form-control" id="commentsSix"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </section>
+
+
         </div>
-
-        </section>
-
-
-
-    </div>
-
-
     </div>
 
 </body>
