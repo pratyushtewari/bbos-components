@@ -1552,6 +1552,11 @@ a:focus {
       tw-p-3
       tw-font-semibold;
     }
+    .bbs-card-footer {
+      @apply tw-rounded-b-lg
+      tw-border-t
+      tw-p-3;
+    }
     .bbs-card-body {
       @apply tw-rounded-b-lg
       tw-p-3;
