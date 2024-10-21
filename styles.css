@@ -1995,13 +1995,26 @@ body.for-print {
   max-width: 100%;
 }
 
-#subMenuBar-bkp {
+#subMenuBar-v2 {
   display: flex;
   align-items: center;
   gap: 8px;
   .items {
-    display: flex;
-    overflow: hidden;
+    @apply tw-flex
+    tw-gap-y-2
+    tw-overflow-hidden;
+    .bbsButton {
+      @apply tw-w-auto ;
+      cursor: pointer;
+      &.disabled,
+      &:disabled {
+        @apply tw-bg-transparent tw-text-text-primary-dark/40 !important;
+        cursor: default;
+      }
+      &.selected {
+        @apply tw-bg-brand  tw-text-white !important;
+      }
+    }
   }
 }
 
